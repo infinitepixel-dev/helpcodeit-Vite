@@ -1,25 +1,41 @@
 import { useState, useEffect } from "react";
 import logo from "../../assets/helpcodeitlogo.svg";
 import { NavLink } from "react-router-dom";
+// import "./Navbar.css";
 
 function Navbar() {
   const [navbarCollapse, setNavbarCollapse] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 550);
 
+  /*FIXME bg-red-500 not showing on mobile:
+need to determine why the bg-red-500 does not show in the mobile view when going between links.
+it does work when manually refreshing the page, but is not related to state changes.
+*/
+
+  // Function to get the class name for the active link and the current path
+  const getClassName = ({ isActive }, currentPath) => {
+    if (isActive) {
+      console.clear();
+      console.log("Current Path:", currentPath, "isActive: ", isActive);
+    }
+
+    return `p-2 hover:bg-slate-500 rounded ${
+      isActive ? "bg-red-500" : "bg-transparent"
+    } ${
+      isSmallScreen ? "text-right w-full" : "space-x-4"
+    } font-bold dark:text-white text-black`;
+  };
+
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 550);
-      !isSmallScreen && setNavbarCollapse(false);
     };
 
     window.addEventListener("resize", handleResize);
+    handleResize(); // Initial check
 
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -35,11 +51,14 @@ function Navbar() {
           <img
             src={logo}
             alt='help code it logo'
+            className='rounded ms-2'
             height='50px'
             width='50px'
           ></img>
         </p>
-        <div className={isSmallScreen && "justify-end py-2"}>
+        {/* Will return a non-boolean attribute error */}
+        {/* <div className={isSmallScreen && "justify-end py-2"}> */}
+        <div className={isSmallScreen ? "justify-end py-2" : undefined}>
           <button
             onClick={() => setNavbarCollapse(!navbarCollapse)}
             className={
@@ -51,7 +70,7 @@ function Navbar() {
             <svg
               className='w-6 h-6'
               fill='none'
-              stroke='currentColor'
+              stroke='white'
               viewBox='0 0 24 24'
               xmlns='http://www.w3.org/2000/svg'
             >
@@ -68,20 +87,20 @@ function Navbar() {
             className={`flex ${
               isSmallScreen
                 ? "flex-col text-right w-full dark:bg-black bg-white dark:text-white text-black"
-                : ""
+                : "space-x-4"
             } ${
               !navbarCollapse && isSmallScreen ? "hidden" : ""
-            } space-x-4 font-bold dark:text-white text-black dark:bg-black bg-white`}
+            } font-bold dark:text-white text-black`}
           >
-            {/* <a href='' className='p-2 hover:bg-slate-500 rounded' > */}
             <NavLink
               to='/'
-              className='p-2 hover:bg-slate-500 rounded'
-              activeClassName='active-link'
+              className={({ isActive }) =>
+                getClassName({ isActive }, { currentPath: "/" })
+              }
+              end
             >
               Home
             </NavLink>
-            {/* <a/> */}
             {/* Dropdown for links */}
             <div className='dropdown inline-block relative  '>
               <button
@@ -124,9 +143,15 @@ function Navbar() {
                 </li>
               </ul>
             </div>
-            <a href='' className='p-2 hover:bg-slate-500 rounded'>
+            <NavLink
+              to='/about'
+              className={({ isActive }) =>
+                getClassName({ isActive }, { currentPath: "/about" })
+              }
+              end
+            >
               About
-            </a>
+            </NavLink>
             <a href='' className='p-2 hover:bg-slate-500 rounded'>
               Services
             </a>

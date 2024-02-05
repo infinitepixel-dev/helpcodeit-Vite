@@ -3,6 +3,7 @@ import { DarkModeProvider } from "./components/Context/DarkModeProvider";
 import Navbar from "./components/Navigation/Navbar";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./components/Pages/HomePage";
+import About from "./components/Pages/About";
 
 export default function App() {
   return (
@@ -13,10 +14,10 @@ export default function App() {
         </div>
       </DarkModeProvider>
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route exact path='/' element={<HomePage />} />
         {/* <Route path='/GettingStarted' element={<GettingStarted />} /> */}
-        {/* <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route exact path='/about' element={<About />} />
+        {/*<Route path='/contact' element={<Contact />} />
         <Route path='*' element={<NotFound />} /> */}
       </Routes>
     </div>
