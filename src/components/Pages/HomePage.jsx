@@ -1,4 +1,5 @@
 import logo from "../../assets/helpcodeitlogo.svg";
+import MainCards from "../MainCards";
 
 function HomePage() {
   return (
@@ -24,6 +25,9 @@ function HomePage() {
           </div>
         </div>
         {/* !SECTION end Jumbotron */}
+      </div>
+      <div className='w-full min-h-screen dark:bg-black text-white'>
+      <MainCards />
       </div>
     </div>
   );

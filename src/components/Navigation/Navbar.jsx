@@ -51,7 +51,7 @@ it does work when manually refreshing the page, but is not related to state chan
           <img
             src={logo}
             alt='help code it logo'
-            className='rounded ms-2'
+            className='rounded-lg ms-2'
             height='50px'
             width='50px'
           ></img>

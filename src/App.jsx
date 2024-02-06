@@ -7,19 +7,20 @@ import About from "./components/Pages/About";
 
 export default function App() {
   return (
-    <div>
-      <DarkModeProvider>
-        <div className='w-full m-0 p-0'>
+    <DarkModeProvider>
+      <div>
+        <div className='w-full m-0 p-0  '>
           <Navbar />
         </div>
-      </DarkModeProvider>
-      <Routes>
-        <Route exact path='/' element={<HomePage />} />
-        {/* <Route path='/GettingStarted' element={<GettingStarted />} /> */}
-        <Route exact path='/about' element={<About />} />
-        {/*<Route path='/contact' element={<Contact />} />
+
+        <Routes>
+          <Route exact path='/' element={<HomePage />} />
+          {/* <Route path='/GettingStarted' element={<GettingStarted />} /> */}
+          <Route exact path='/about' element={<About />} />
+          {/*<Route path='/contact' element={<Contact />} />
         <Route path='*' element={<NotFound />} /> */}
-      </Routes>
-    </div>
+        </Routes>
+      </div>
+    </DarkModeProvider>
   );
 }
