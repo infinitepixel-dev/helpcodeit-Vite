@@ -7,13 +7,14 @@ function TW_CSS() {
   //ANCHOR Can enable this to test light/dark mode forcibly
   //prefersDarkMode = false;
 
-  console.log("Dark Mode: ", prefersDarkMode);
+  //   console.log("Dark Mode: ", prefersDarkMode);
 
   //SECTION[MainCards.jsx] - MainCards Component
 
   //NOTE Main Card Body
   let mainCardBody = {
-    default: "w-full mx-auto my-8",
+    default:
+      "w-full mx-auto my-8 hover:opacity-80 transition duration-300 ease-in-out",
   };
 
   //NOTE Main Card Border

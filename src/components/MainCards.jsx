@@ -17,7 +17,7 @@ export default function MainCards() {
           <img
             src={initialSetup}
             // className="w-full h-auto border-b-2 border-black dark:bg-green-500"
-            className={styles.mainCardImage + " dark:bg-green-500"}
+            className={styles.mainCardImage + " dark:bg-green-500 "}
             alt="Getting Started header"
           />
           <div className="p-4">
