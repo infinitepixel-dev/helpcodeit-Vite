@@ -39,7 +39,7 @@ it does work when manually refreshing the page, but is not related to state chan
   }, []);
 
   return (
-    <div className='w-full mx-auto px-2 dark:bg-black bg-white'>
+    <div className='w-full mx-auto px-2 dark:bg-neutral-800 bg-white'>
       <nav
         className={
           isSmallScreen && navbarCollapse
@@ -51,7 +51,7 @@ it does work when manually refreshing the page, but is not related to state chan
           <img
             src={logo}
             alt='help code it logo'
-            className='rounded ms-2'
+            className='rounded-lg ms-2'
             height='50px'
             width='50px'
           ></img>
@@ -86,7 +86,7 @@ it does work when manually refreshing the page, but is not related to state chan
           <div
             className={`flex ${
               isSmallScreen
-                ? "flex-col text-right w-full dark:bg-black bg-white dark:text-white text-black"
+                ? "flex-col text-right w-full dark:bg-neutral-800 bg-white dark:text-white text-black"
                 : "space-x-4"
             } ${
               !navbarCollapse && isSmallScreen ? "hidden" : ""

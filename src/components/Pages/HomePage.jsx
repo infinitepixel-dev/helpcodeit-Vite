@@ -1,10 +1,11 @@
 import logo from "../../assets/helpcodeitlogo.svg";
+import MainCards from "../MainCards";
 
 function HomePage() {
   return (
     <div>
       {/* SECTION Jumbotron */}
-      <div className='bg-gray-900 text-white jumbo-background hero-text'>
+      <div className='bg-neutral-800 text-white jumbo-background hero-text'>
         <div className='container mx-auto'>
           <div className='flex flex-wrap pb-1 mb-3'>
             <div className='w-full md:w-1/2 lg:w-1/3 pb-4'>
@@ -24,6 +25,9 @@ function HomePage() {
           </div>
         </div>
         {/* !SECTION end Jumbotron */}
+      </div>
+      <div className='w-full min-h-screen dark:bg-neutral-800 text-white'>
+        <MainCards />
       </div>
     </div>
   );

@@ -39,6 +39,11 @@
   border: 1px solid black;
 }
 
+.card-max {
+  width: auto;
+  height: 350px;
+}
+
 .cardImageFormat {
   max-height: 200px;
 }
