@@ -8,7 +8,7 @@ export default function MainCards() {
     <div className='grid place-items-center 2xl:grid-cols-4 lg:grid-cols-2 md:grid-cols-2 gap-10 p-5 sm:grid-cols-1  '>
       {/* SECTION Card #1 */}
       <div className='w-full mx-auto my-8'>
-        <div className='bg-white shadow-xl border border-black rounded card-max dark:bg-gray-300 '>
+        <div className='bg-white shadow-xl border border-black rounded card-max dark:bg-neutral-600 '>
           <img
             src={initialSetup}
             className='w-full h-auto border-b-2 border-black'
@@ -33,7 +33,7 @@ export default function MainCards() {
       {/* !SECTION Card #1 END*/}
       {/* SECTION Card #2 */}
       <div className='w-full  mx-auto my-8 '>
-        <div className='bg-white shadow-xl  border border-black rounded card-max dark:bg-gray-300 '>
+        <div className='bg-white shadow-xl  border border-black rounded card-max dark:bg-neutral-600 text-white'>
           <img
             src={arrayMethods}
             className='w-full h-auto border-b-2 border-black'
@@ -58,7 +58,7 @@ export default function MainCards() {
       {/* !SECTION Card #2 END  */}
       {/* SECTION Card #3 */}
       <div className='w-full p-3 mx-auto my-8'>
-        <div className='bg-white shadow-xl border border-black rounded card-max dark:bg-gray-300'>
+        <div className='bg-white shadow-xl border border-black rounded card-max dark:bg-neutral-600 text-white'>
           <img
             src={practiceEnv}
             className='w-full h-auto border-b-2 border-black'
@@ -83,7 +83,7 @@ export default function MainCards() {
       {/* !SECTION Card #3 END */}
       {/* SECTION Card #4 */}
       <div className='w-full p-3 mx-auto my-8 '>
-        <div className='bg-white shadow-xl rounded border border-black card-max dark:bg-gray-300'>
+        <div className='bg-white shadow-xl rounded border border-black card-max dark:bg-neutral-600 text-white'>
           <img
             src={unitTesting}
             className='w-full h-auto border-b-2 border-black'
