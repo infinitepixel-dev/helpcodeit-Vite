@@ -11,14 +11,14 @@ export default function MainCards() {
         <div className='bg-white shadow-xl border border-black rounded card-max dark:bg-neutral-600 '>
           <img
             src={initialSetup}
-            className='w-full h-auto border-b-2 border-black'
+            className='w-full h-auto border-b-2 border-black dark:bg-green-500'
             alt='Getting Started header'
           />
           <div className='p-4'>
-            <h5 className='text-4xl pb-8 font-bold text-black'>
+            <h5 className='text-4xl pb-8 font-bold text-black dark:text-white'>
               Initial Setup
             </h5>
-            <p className='text-black text-xl'>
+            <p className='text-black text-xl dark:text-white'>
               This page will help you setup your computer to begin programming
             </p>
             <a
@@ -36,13 +36,13 @@ export default function MainCards() {
         <div className='bg-white shadow-xl  border border-black rounded card-max dark:bg-neutral-600 text-white'>
           <img
             src={arrayMethods}
-            className='w-full h-auto border-b-2 border-black'
+            className='w-full h-auto border-b-2 border-black dark:bg-blue-950'
           />
           <div className='p-4'>
-            <h5 className='text-4xl pb-8 font-bold text-black'>
+            <h5 className='text-4xl pb-8 font-bold text-black dark:text-white'>
               Need to see the available options?
             </h5>
-            <p className='text-black text-xl '>
+            <p className='text-black text-xl dark:text-white'>
               This page contains a table with all the array methods, with
               explanations and examples.
             </p>
@@ -61,13 +61,13 @@ export default function MainCards() {
         <div className='bg-white shadow-xl border border-black rounded card-max dark:bg-neutral-600 text-white'>
           <img
             src={practiceEnv}
-            className='w-full h-auto border-b-2 border-black'
+            className='w-full h-auto border-b-2 border-black dark:bg-yellow-600'
           />
           <div className='p-4'>
-            <h5 className='text-4xl pb-8 font-bold text-black'>
+            <h5 className='text-4xl pb-8 font-bold text-black dark:text-white'>
               Want a place to code?
             </h5>
-            <p className='text-black text-xl text-overflow-ellipsis'>
+            <p className='text-black text-xl text-overflow-ellipsis dark:text-white'>
               This page has a video to walk you through getting a project
               started to get off the ground coding in Javascript.
             </p>
@@ -86,14 +86,14 @@ export default function MainCards() {
         <div className='bg-white shadow-xl rounded border border-black card-max dark:bg-neutral-600 text-white'>
           <img
             src={unitTesting}
-            className='w-full h-auto border-b-2 border-black'
+            className='w-full h-auto border-b-2 border-black dark:bg-stone-500'
           />
 
           <div className='p-4'>
-            <h5 className='text-4xl pb-8 font-bold text-black'>
+            <h5 className='text-4xl pb-8 font-bold text-black dark:text-white'>
               Mocha and Chai
             </h5>
-            <p className='text-black text-xl text-overflow-ellipsis'>
+            <p className='text-black text-xl text-overflow-ellipsis dark:text-white'>
               Unit testing is an important part of programming. This page will
               help you get started with Mocha and Chai.
             </p>
