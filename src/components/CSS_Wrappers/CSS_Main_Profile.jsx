@@ -5,9 +5,9 @@ function TW_CSS() {
   ).matches;
 
   //ANCHOR Can enable this to test light/dark mode forcibly
-  //prefersDarkMode = false;
+  //   prefersDarkMode = false;
 
-  console.log("Dark Mode: ", prefersDarkMode);
+  //   console.log("Dark Mode: ", prefersDarkMode);
 
   //SECTION[MainCards.jsx] - MainCards Component
 
@@ -18,9 +18,9 @@ function TW_CSS() {
 
   //NOTE Main Card Border
   let mainCardBorder = {
-    default: "bg-white shadow-xl border border-black rounded card-max",
+    default: "bg-white shadow-xl border border-black rounded",
     // light: "bg-white shadow-xl border border-black rounded card-max",
-    dark: "dark:bg-neutral-600 shadow-xl border border-black rounded card-max",
+    dark: "dark:bg-neutral-600 shadow-xl border border-black rounded",
   };
 
   //NOTE Main Card Image
