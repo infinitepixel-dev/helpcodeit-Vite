@@ -18,11 +18,9 @@ function TW_CSS() {
 
   //NOTE Main Card Border
   let mainCardBorder = {
-
     default: "bg-white shadow-xl border border-black rounded card-max",
     light: "bg-white shadow-xl border border-black rounded card-max",
     dark: "dark:bg-neutral-600 shadow-xl border border-black rounded card-max",
-
   };
 
   //NOTE Main Card Image
@@ -34,16 +32,18 @@ function TW_CSS() {
 
   //NOTE Main Card Title
   let mainCardTitle = {
-    default: "text-4xl pb-8 font-bold text-black",
-    light: "text-4xl pb-8 font-bold text-black",
-    dark: "text-4xl pb-8 font-bold dark:text-white",
+    default:
+      "text-4xl pb-8 font-bold text-black mt-10 px-5 text-center md:text-3xl",
+    light:
+      "text-4xl pb-8 font-bold text-black mt-10 px-5 text-center md:text-3xl",
+    dark: "text-4xl pb-8 font-bold dark:text-white mt-10 px-5 text-center md:text-3xl",
   };
 
   //NOTE Main Card Description
   let mainCardDesc = {
-    default: "text-black text-xl",
-    light: "text-black text-xl",
-    dark: "dark:text-white text-xl ",
+    default: "text-black text-xl md:text-lg",
+    light: "text-black text-xl md:text-lg",
+    dark: "dark:text-white text-xl  md:text-lg",
   };
   //!SECTION[MainCards.jsx] - MainCards Component
 
