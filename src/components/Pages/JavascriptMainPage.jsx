@@ -35,96 +35,103 @@ function JavascriptMainPage() {
         <h2 className='text-start text-2xl font-bold border-b-2'>
           Pages by Topic
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-        <div className='w-full md:w-1/2 lg:w-1/2'>
-          <ul className='list-none'>
-            <li className='py-2'>
-              <Link to='/javascript/practiceproblems' className='text-blue-500'>
-                Free Practice Problems
-              </Link>
-            </li>
-            <li className='py-2'>
-              <Link
-                to='/javascript/declaringvariables'
-                className='text-blue-500'
-              >
-                Declaring Variables
-              </Link>
-            </li>
-            <li className='py-2'>
-              <Link to='/javascript/jsfunctions' className='text-blue-500'>
-                Standard Functions
-              </Link>
-            </li>
-            <li className='py-2'>
-              <Link to='/javascript/arrowfunctions' className='text-blue-500'>
-                Arrow Functions
-              </Link>
-            </li>
-            <li className='py-2'>
-              <Link to='/javascript/arraymethods' className='text-blue-500'>
-                Array Methods
-              </Link>
-            </li>
-            <li className='py-2'>
-              <Link to='/javascript/stringmethods' className='text-blue-500'>
-                String Methods
-              </Link>
-            </li>
-            <li className='py-2'>
-              <Link
-                to='/javascript/jquerytroubleshooting'
-                className='text-blue-500'
-              >
-                Troubleshooting jQuery
-              </Link>
-            </li>
-            <li className='py-2'>
-              <Link to='/javascript/packagejsonfile' className='text-blue-500'>
-                'npm init' and Making a 'package.json' File
-              </Link>
-            </li>
-            <li className='py-2'>
-              <Link to='/javascript/objects' className='text-blue-500'>
-                Objects
-              </Link>
-            </li>
-            <li className='py-2'>
-              <Link to='/javascript/loops' className='text-blue-500'>
-                Loops
-              </Link>
-            </li>
-            <li className='py-2'>
-              <Link
-                to='/javascript/stringConcatenation'
-                className='text-blue-500'
-              >
-                String Concatenation
-              </Link>
-            </li>
-            <li className='py-2'>
-              <Link
-                to='/javascript/asynchronousfunctions'
-                className='text-blue-500'
-              >
-                Asynchronous Functions
-              </Link>
-            </li>
-            <li className='py-2'>
-              <Link
-                to='/javascript/unittestingmocha&chai'
-                className='text-blue-500'
-              >
-                Unit Testing with Mocha & Chai
-              </Link>
-            </li>
-            <li className='py-2'>
-              <Link to='/javascript/CRUD' className='text-blue-500'>
-                C.R.U.D. Operations with API's (Fetch)
-              </Link>
-            </li>
-          </ul>
-        </div>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'>
+          <div className='w-full md:w-1/2 lg:w-1/2'>
+            <ul className='list-none'>
+              <li className='py-2'>
+                <Link
+                  to='/javascript/practiceproblems'
+                  className='text-blue-500'
+                >
+                  Free Practice Problems
+                </Link>
+              </li>
+              <li className='py-2'>
+                <Link
+                  to='/javascript/declaringvariables'
+                  className='text-blue-500'
+                >
+                  Declaring Variables
+                </Link>
+              </li>
+              <li className='py-2'>
+                <Link to='/javascript/jsfunctions' className='text-blue-500'>
+                  Standard Functions
+                </Link>
+              </li>
+              <li className='py-2'>
+                <Link to='/javascript/arrowfunctions' className='text-blue-500'>
+                  Arrow Functions
+                </Link>
+              </li>
+              <li className='py-2'>
+                <Link to='/javascript/arraymethods' className='text-blue-500'>
+                  Array Methods
+                </Link>
+              </li>
+              <li className='py-2'>
+                <Link to='/javascript/stringmethods' className='text-blue-500'>
+                  String Methods
+                </Link>
+              </li>
+              <li className='py-2'>
+                <Link
+                  to='/javascript/jquerytroubleshooting'
+                  className='text-blue-500'
+                >
+                  Troubleshooting jQuery
+                </Link>
+              </li>
+              <li className='py-2'>
+                <Link
+                  to='/javascript/packagejsonfile'
+                  className='text-blue-500'
+                >
+                  &apos;npm init&apos; and Making a &apos;package.json&apos;
+                  File
+                </Link>
+              </li>
+              <li className='py-2'>
+                <Link to='/javascript/objects' className='text-blue-500'>
+                  Objects
+                </Link>
+              </li>
+              <li className='py-2'>
+                <Link to='/javascript/loops' className='text-blue-500'>
+                  Loops
+                </Link>
+              </li>
+              <li className='py-2'>
+                <Link
+                  to='/javascript/stringConcatenation'
+                  className='text-blue-500'
+                >
+                  String Concatenation
+                </Link>
+              </li>
+              <li className='py-2'>
+                <Link
+                  to='/javascript/asynchronousfunctions'
+                  className='text-blue-500'
+                >
+                  Asynchronous Functions
+                </Link>
+              </li>
+              <li className='py-2'>
+                <Link
+                  to='/javascript/unittestingmocha&chai'
+                  className='text-blue-500'
+                >
+                  Unit Testing with Mocha & Chai
+                </Link>
+              </li>
+              <li className='py-2'>
+                <Link to='/javascript/CRUD' className='text-blue-500'>
+                  C.R.U.D. Operations with API&apos;s (Fetch)
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
