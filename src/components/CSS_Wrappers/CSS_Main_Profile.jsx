@@ -5,7 +5,7 @@ function TW_CSS() {
   ).matches;
 
   //ANCHOR Can enable this to test light/dark mode forcibly
-  //prefersDarkMode = false;
+  //   prefersDarkMode = false;
 
   //   console.log("Dark Mode: ", prefersDarkMode);
 
@@ -13,15 +13,16 @@ function TW_CSS() {
 
   //NOTE Main Card Body
   let mainCardBody = {
-    default:
-      "w-full mx-auto my-8 hover:opacity-80 transition duration-300 ease-in-out",
+    default: "w-full mx-auto my-8",
   };
 
   //NOTE Main Card Border
   let mainCardBorder = {
+
     default: "bg-white shadow-xl border border-black rounded card-max",
     light: "bg-white shadow-xl border border-black rounded card-max",
     dark: "dark:bg-neutral-600 shadow-xl border border-black rounded card-max",
+
   };
 
   //NOTE Main Card Image
