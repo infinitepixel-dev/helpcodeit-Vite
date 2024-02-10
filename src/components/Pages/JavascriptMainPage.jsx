@@ -40,7 +40,7 @@ function JavascriptMainPage() {
             <ul className='list-none'>
               <li className='py-2'>
                 <Link
-                  to='/javascript/practiceproblems'
+                  to='/javascriptPrincipals/practiceproblems'
                   className='text-blue-500'
                 >
                   Free Practice Problems
@@ -48,7 +48,7 @@ function JavascriptMainPage() {
               </li>
               <li className='py-2'>
                 <Link
-                  to='/javascript/declaringvariables'
+                  to='/javascriptPrincipals/declaringvariables'
                   className='text-blue-500'
                 >
                   Declaring Variables

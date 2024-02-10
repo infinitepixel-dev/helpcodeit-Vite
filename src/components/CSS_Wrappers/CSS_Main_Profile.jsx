@@ -13,7 +13,7 @@ function TW_CSS() {
 
   //NOTE Main Card Body
   let mainCardBody = {
-    default: "w-full mx-auto my-8",
+    default: "w-full mx-auto my-10 pt-5",
   };
 
   //NOTE Main Card Border
