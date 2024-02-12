@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import javascriptlogo from "../../assets/jswithburstlogo.svg";
 
 function JavascriptMainPage() {
@@ -40,7 +40,7 @@ function JavascriptMainPage() {
             <ul className='list-none'>
               <li className='py-2'>
                 <Link
-                  to='/javascriptPrincipals/practiceproblems'
+                  to='/javascriptPrincipals/PracticeProblems'
                   className='text-blue-500'
                 >
                   Free Practice Problems
@@ -48,14 +48,14 @@ function JavascriptMainPage() {
               </li>
               <li className='py-2'>
                 <Link
-                  to='/javascriptPrincipals/declaringvariables'
+                  to='/javascriptPrincipals/DeclaringVariables'
                   className='text-blue-500'
                 >
                   Declaring Variables
                 </Link>
               </li>
               <li className='py-2'>
-                <Link to='/javascript/jsfunctions' className='text-blue-500'>
+                <Link to='/javascriptPrincipals/StandardFunctions' className='text-blue-500'>
                   Standard Functions
                 </Link>
               </li>
@@ -134,6 +134,7 @@ function JavascriptMainPage() {
           </div>
         </div>
       </div>
+      
     </div>
   );
 }

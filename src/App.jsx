@@ -1,20 +1,32 @@
 import "./App.css";
+import { useEffect} from "react";
 import { DarkModeProvider } from "./components/Context/DarkModeProvider";
 import Navbar from "./components/Navigation/Navbar";
+import hljs from "highlight.js";
+import "highlight.js/styles/github-dark.css";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./components/Pages/HomePage";
 import About from "./components/Pages/About";
 import JavascriptMainPage from "./components/Pages/JavascriptMainPage";
-import PracticeProblems from "./components/Pages/javascriptPrincipals/practiceproblems";
+import PracticeProblems from "./components/Pages/javascriptPrincipals/PracticeProblems";
 import DeclaringVariables from "./components/Pages/javascriptPrincipals/DeclaringVariables";
+import StandardFunctions from "./components/Pages/javascriptPrincipals/StandardFunctions";
+
 
 export default function App() {
+
+
+useEffect(() => {
+  hljs.highlightAll();
+
+}, []);
+
+
 
   return (
     <DarkModeProvider>
       <div>
         <div className='w-full m-0 p-0'>
-  
           <Navbar />
         </div>
 
@@ -24,13 +36,14 @@ export default function App() {
           <Route exact path='/about' element={<About />} />
           <Route path='/javascript' element={<JavascriptMainPage />} />
           <Route
-            path='/javascriptPrincipals/practiceproblems'
+            path='/javascriptPrincipals/PracticeProblems'
             element={<PracticeProblems />}
           />
           <Route
-            path='/javascriptPrincipals/declaringvariables'
+            path='/javascriptPrincipals/DeclaringVariables'
             element={<DeclaringVariables />}
           />
+          <Route path='/javascriptPrincipals/StandardFunctions' element={<StandardFunctions />} />
           {/*<Route path='/contact' element={<Contact />} />
         <Route path='*' element={<NotFound />} /> */}
         </Routes>

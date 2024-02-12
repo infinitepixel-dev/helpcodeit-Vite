@@ -3,11 +3,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&family=Roboto+Slab:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+code {
+ border-radius: 10px;
+ box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.58);
+ margin-bottom: 1rem;
+ max-width: fit-content;
 }
 
 
@@ -197,4 +208,11 @@
 
 .pressStartFont {
   font-family: "Press Start 2P", cursive;
+}
+
+.youtube-video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid black;
 }

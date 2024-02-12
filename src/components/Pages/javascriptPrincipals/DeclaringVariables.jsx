@@ -1,4 +1,5 @@
 
+
 export default function DeclaringVariables() {
   return (
     <div className='container mx-auto mukataFont'>
@@ -12,7 +13,7 @@ export default function DeclaringVariables() {
                         <p className='text-lg font-bold'>
                             A variable is like a box where we can keep things. In programming,
                             we use variables to store information like numbers, words, or more
-                            complex stuff.
+                            complex stuff. We can change the information in the box, and we can use the information in the box to do things. This makes variables very useful!
                         </p>
                     </section>
 
@@ -35,7 +36,7 @@ export default function DeclaringVariables() {
                         conditionals, which can create issues. Here&apos;s an example:
                     </p>
                     <pre>
-                        <code className='language-javascript'>
+                        <code className='javascript'>
                             var myName = &apos;Alice&apos;;
                         </code>
                     </pre>
@@ -48,7 +49,7 @@ export default function DeclaringVariables() {
                         later. Here&apos;s an example:
                     </p>
                     <pre>
-                        <code className='language-javascript'>
+                        <code className='javascript'>
                             let myAge = 10; myAge = 11; // You can change it!
                         </code>
                     </pre>
@@ -61,13 +62,13 @@ export default function DeclaringVariables() {
                         &apos;const&apos;. Here&apos;s how:
                     </p>
                     <pre>
-                        <code className='language-javascript'>
+                        <code className='javascript'>
                             const mySchool = &apos;Cool School&apos;;
                         </code>
                     </pre>
                 </section>
 
-                <section>
+                <section className="pb-32">
                     <h2>Summary</h2>
                     <p>
                         Use &apos;var&apos; if you see old code, &apos;let&apos; if you want
