@@ -25,7 +25,7 @@ function Card({
       {/* Grid Start */}
       <div className={`${styles.mainCardBody}`}>
         <div
-          className={`grid grid-rows-4 place-items-center ${styles.mainCardBorder} min-h-80 gap-y-4`}
+          className={`grid grid-rows-4 pb-5 place-items-center ${styles.mainCardBorder}  gap-y-4`}
         >
           {/* Grid Row 1: Card Image */}
           <img
@@ -37,7 +37,9 @@ function Card({
           />
 
           {/* Grid Row 2: Card Title */}
-          <h5 className={`row-span-1 ${styles.mainCardTitle}`}>{title}</h5>
+          <h5 className={`row-span-1  ${styles.mainCardTitle}`}>
+            {title}
+          </h5>
 
           {/* Grid Row 3: Card Description */}
           <p className={`row-span-1 m-5 ${styles.mainCardDescription}`}>
@@ -45,10 +47,10 @@ function Card({
           </p>
 
           {/* Grid Row 4: Card Action - Button */}
-          <div className="row-span-1 w-full flex justify-center items-center pb-5">
+          <div className='row-span-1  w-2/3 flex justify-center items-center'>
             <a
               href={actionHref}
-              className={`w-full text-4xl text-center text-white px-2 py-5 rounded font-bold hover:opacity-50 transition duration-300 ease-in-out ${
+              className={`w-full h-auto text-3xl text-center text-white p-2  my-5 rounded-xl border border-black font-bold hover:opacity-50 transition duration-300 ease-in-out ${
                 customCSS.letsGoBtn ? customCSS.letsGoBtn : "bg-blue-500"
               }`}
             >
