@@ -10,6 +10,7 @@ import About from "./components/Pages/About";
 import JavascriptMainPage from "./components/Pages/JavascriptMainPage";
 import PracticeProblems from "./components/Pages/javascriptPrincipals/PracticeProblems";
 import DeclaringVariables from "./components/Pages/javascriptPrincipals/DeclaringVariables";
+import CodePractice from "./components/Sub_Components/Code_Practice";
 import StandardFunctions from "./components/Pages/javascriptPrincipals/StandardFunctions";
 
 
@@ -31,21 +32,23 @@ useEffect(() => {
         </div>
 
         <Routes>
-          <Route exact path='/' element={<HomePage />} />
+          <Route exact path="/" element={<HomePage />} />
           {/* <Route path='/GettingStarted' element={<GettingStarted />} /> */}
-          <Route exact path='/about' element={<About />} />
-          <Route path='/javascript' element={<JavascriptMainPage />} />
+          <Route exact path="/about" element={<About />} />
+          <Route path="/javascript" element={<JavascriptMainPage />} />
           <Route
             path='/javascriptPrincipals/PracticeProblems'
             element={<PracticeProblems />}
           />
           <Route
             path='/javascriptPrincipals/DeclaringVariables'
+
             element={<DeclaringVariables />}
           />
           <Route path='/javascriptPrincipals/StandardFunctions' element={<StandardFunctions />} />
           {/*<Route path='/contact' element={<Contact />} />
         <Route path='*' element={<NotFound />} /> */}
+          <Route path="/code_practice" element={<CodePractice />} />
         </Routes>
       </div>
     </DarkModeProvider>
