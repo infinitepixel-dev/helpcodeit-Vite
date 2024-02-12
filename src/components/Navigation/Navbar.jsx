@@ -152,9 +152,9 @@ it does work when manually refreshing the page, but is not related to state chan
             >
               About
             </NavLink>
-            <a href='' className='p-2 hover:bg-slate-500 rounded'>
-              Services
-            </a>
+            <NavLink to='/javascript' className={({isActive}) => getClassName({isActive}, {currentPath: "/javascript"})}>
+              JavaScript
+            </NavLink>
             <a href='' className='p-2 hover:bg-slate-500 rounded'>
               Contact
             </a>
