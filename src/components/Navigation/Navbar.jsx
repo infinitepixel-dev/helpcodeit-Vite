@@ -16,7 +16,7 @@ it does work when manually refreshing the page, but is not related to state chan
   // Function to get the class name for the active link and the current path
   const getClassName = ({ isActive }, currentPath) => {
     if (isActive) {
-      console.clear();
+      // console.clear();
       console.log("Current Path:", currentPath, "isActive: ", isActive);
     }
 
