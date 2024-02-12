@@ -1,5 +1,5 @@
 import "./App.css";
-import { useEffect} from "react";
+import { useEffect } from "react";
 import { DarkModeProvider } from "./components/Context/DarkModeProvider";
 import Navbar from "./components/Navigation/Navbar";
 import hljs from "highlight.js";
@@ -13,21 +13,15 @@ import DeclaringVariables from "./components/Pages/javascriptPrincipals/Declarin
 import CodePractice from "./components/Sub_Components/Code_Practice";
 import StandardFunctions from "./components/Pages/javascriptPrincipals/StandardFunctions";
 
-
 export default function App() {
-
-
-useEffect(() => {
-  hljs.highlightAll();
-
-}, []);
-
-
+  useEffect(() => {
+    hljs.highlightAll();
+  }, []);
 
   return (
     <DarkModeProvider>
       <div>
-        <div className='w-full m-0 p-0'>
+        <div className="w-full m-0 p-0">
           <Navbar />
         </div>
 
@@ -37,15 +31,17 @@ useEffect(() => {
           <Route exact path="/about" element={<About />} />
           <Route path="/javascript" element={<JavascriptMainPage />} />
           <Route
-            path='/javascriptPrincipals/PracticeProblems'
+            path="/javascriptPrincipals/PracticeProblems"
             element={<PracticeProblems />}
           />
           <Route
-            path='/javascriptPrincipals/DeclaringVariables'
-
+            path="/javascriptPrincipals/DeclaringVariables"
             element={<DeclaringVariables />}
           />
-          <Route path='/javascriptPrincipals/StandardFunctions' element={<StandardFunctions />} />
+          <Route
+            path="/javascriptPrincipals/StandardFunctions"
+            element={<StandardFunctions />}
+          />
           {/*<Route path='/contact' element={<Contact />} />
         <Route path='*' element={<NotFound />} /> */}
           <Route path="/code_practice" element={<CodePractice />} />
