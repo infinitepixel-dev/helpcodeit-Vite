@@ -55,7 +55,7 @@ function JavascriptMainPage() {
                 </Link>
               </li>
               <li className='py-2'>
-                <Link to='/javascript/jsfunctions' className='text-blue-500'>
+                <Link to='/javascriptPrincipals/StandardFunctions' className='text-blue-500'>
                   Standard Functions
                 </Link>
               </li>

@@ -3,6 +3,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&family=Roboto+Slab:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 * {
   margin: 0;
@@ -14,7 +18,9 @@ code {
  border-radius: 10px;
  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.58);
  margin-bottom: 1rem;
+ max-width: fit-content;
 }
+
 
 
 .arrayMethodLinks {

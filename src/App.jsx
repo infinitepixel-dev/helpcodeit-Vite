@@ -1,5 +1,5 @@
 import "./App.css";
-import { useEffect } from "react";
+import { useEffect} from "react";
 import { DarkModeProvider } from "./components/Context/DarkModeProvider";
 import Navbar from "./components/Navigation/Navbar";
 import hljs from "highlight.js";
@@ -14,9 +14,15 @@ import StandardFunctions from "./components/Pages/javascriptPrincipals/StandardF
 
 
 export default function App() {
+
+
 useEffect(() => {
   hljs.highlightAll();
+
 }, []);
+
+
+
   return (
     <DarkModeProvider>
       <div>

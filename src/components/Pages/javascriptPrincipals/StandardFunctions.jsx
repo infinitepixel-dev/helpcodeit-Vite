@@ -1,10 +1,24 @@
+import { useRef } from "react";
+
 function StandardFunctions() {
+  const codeRef = useRef(null);
+
+  const sayHelloString = `function sayHello() {
+    alert("Hello, World!");
+  };`;
+
+  const callHelloString = `sayHello();`;
+
+  const addNumbersString = `function addNumbers(num1, num2) {
+    alert(num1 + num2);
+  };`;
+
   return (
     <div>
-      <div className='container mukataFont p-sm-2'>
-        <div className='row'>
-          <h1 className='display-5 text-center p-5'>
-            Learning About JavaScript Functions: A Beginner&apos;s Guide
+      <div className='container mx-auto mukataFont p-2 sm:p-8'>
+        <div className='flex flex-col'>
+          <h1 className='text-center text-5xl my-20'>
+            Learning About JavaScript Functions: A Beginner's Guide
           </h1>
           <p>
             A function in JavaScript is like a little recipe that tells the
@@ -14,45 +28,50 @@ function StandardFunctions() {
             cookies, they make code do something special!
           </p>
 
-          <h2 className='p-1'>What Is a Function?</h2>
+          <h2 className='text-3xl py-2 mt-10'>What Is a Function?</h2>
           <p>
             A function is a set of instructions that performs a specific task.
-            It&apos;s like a tiny computer program inside your main program.
-            Let&apos;s learn how to create one!
+            It's like a tiny computer program inside your main program. Let's
+            learn how to create one!
           </p>
-
-          <h2 className='p-1'>How to Create a Function</h2>
+          <div className='md:grid grid-cols-2 '>
+            <div className=" mt-2 items-start">
+              <h2 className='text-3xl'>How to Create a Function</h2>
+              <p>
+                Creating a function is like writing down a recipe. Here's an
+                example of a simple function that says "Hello, World!" when it's
+                called:
+              </p>
+            </div>
+            <div>
+              <pre className='my-5'>
+                <code ref={codeRef} className='language-javascript'>
+                  {sayHelloString}
+                </code>
+              </pre>
+              <p>
+                This code says, "Create a function named 'sayHello' and make it
+                show a pop-up with the words 'Hello, World!' when it's used."
+              </p>
+            </div>
+          </div>
+          <h2 className='text-3xl py-2 mt-10'>How to Use a Function</h2>
           <p>
-            Creating a function is like writing down a recipe. Here&apos;s an
-            example of a simple function that says &quot;Hello, World!&quot;
-            when it&apos;s called:
+            Once you have created a function, you can use it by calling its name
+            followed by parentheses. Here's how you call the 'sayHello'
+            function:
           </p>
-          <pre>
-            <code className='javascript'>
-              function sayHello() {alert("Hello, World!")}
+          <pre className='my-5'>
+            <code ref={codeRef} className='language-javascript'>
+              {callHelloString}
             </code>
           </pre>
           <p>
-            This code says, &quot;Create a function named &squot;sayHello&squot;
-            and make it show a pop-up with the words &squot;Hello, World!&squot;
-            when it&squot;s used.&quot;
-          </p>
-
-          <h2 className='p-1'>How to Use a Function</h2>
-          <p>
-            Once you have created a function, you can use it by calling its name
-            followed by parentheses. Here&squot;s how you call the
-            &squot;sayHello&squot; function:
-          </p>
-          <pre>
-            <code className='language-javascript'>sayHello();</code>
-          </pre>
-          <p>
             When this line of code is run, it will make a pop-up appear that
-            says &squot;Hello, World!&squot;
+            says 'Hello, World!'
           </p>
 
-          <h2 className='p-1'>Why Should You Use Functions?</h2>
+          <h2 className='text-3xl py-2 mt-10'>Why Should You Use Functions?</h2>
           <p>
             Functions make your code neater and easier to read. They also let
             you reuse the same code many times without having to write it again
@@ -61,39 +80,38 @@ function StandardFunctions() {
             work!
           </p>
 
-          <h2 className='p-1'>
+          <h2 className='text-3xl py-2 mt-10'>
             Functions with Parameters: Giving Information to Functions
           </h2>
           <p>
             Sometimes, you want your function to do something specific with
             certain pieces of information. These pieces of information are
-            called parameters. Here&squot;s how you can create a function that
-            takes two numbers and adds them together:
+            called parameters. Here's how you can create a function that takes
+            two numbers and adds them together:
           </p>
 
-          <pre>
-            <code className='javascript'>
-              function addNumbers(num1, num2){alert(num1 + num2)}
-              addNumbers(5, 10); // Output: 15
+          <pre className='my-5'>
+            <code ref={codeRef} className='language-javascript'>
+              {addNumbersString}
             </code>
           </pre>
 
           <p>
-            This code says, &quot;Create a function named
-            &squot;addNumbers&squot; that takes two numbers, adds them together,
-            and then shows a pop-up with the result.&quot;
+            This code says, "Create a function named 'addNumbers' that takes two
+            numbers, adds them together, and then shows a pop-up with the
+            result."
           </p>
 
-          <h2 className='p-1'>Let&squot;s Practice!</h2>
+          <h2 className='text-3xl py-2 mt-10'>Let's Practice!</h2>
           <p>
             Now you know what functions are, how to create them, how to use
-            them, and why they&squot;re helpful. Try making your own functions
-            and see what you can do with them. Remember, coding is all about
+            them, and why they're helpful. Try making your own functions and see
+            what you can do with them. Remember, coding is all about
             experimenting and having fun!
           </p>
 
-          <h2 className='p-1'>
-            Where can you &squot;Call&squot; or Use Functions?
+          <h2 className='text-3xl py-2 mt-10'>
+            Where can you 'Call' or Use Functions?
           </h2>
           <p>
             Functions can be called anywhere in your code. You can call them in
@@ -107,20 +125,24 @@ function StandardFunctions() {
             easier to read.
           </p>
         </div>
-        <div className='row'>
-          <div className='col'></div>
-          <div className='col-sm-12 col-md-6'>
+        <div className='flex flex-row'>
+          <div className='flex-1'></div>
+          <div className='flex-1 sm:flex-none sm:w-1/2'>
+            <h2 className='text-4xl font-extrabold mt-20 text-center'>
+              Video from Web Dev Simplified
+            </h2>
             <iframe
               width='560'
               height='315'
               src='https://www.youtube.com/embed/FOD408a0EzU'
               title='YouTube video player'
               frameBorder='0'
+              className='youtube-video my-10 h-auto'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
               allowfullscreen
             ></iframe>
           </div>
-          <div className='col'></div>
+          <div className='flex-1'></div>
         </div>
       </div>
     </div>
