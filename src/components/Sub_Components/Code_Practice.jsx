@@ -3,6 +3,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 function CodePractice({ variables, expectedOutput, functionData }) {
+  console.clear();
   console.log("\nDeclared Variables:", variables);
   console.log("Expected Output:", expectedOutput);
   console.log("Function to Test:", functionData);

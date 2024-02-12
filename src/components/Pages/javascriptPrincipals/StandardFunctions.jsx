@@ -107,14 +107,14 @@ function StandardFunctions() {
           <h2 className="text-3xl py-2 mt-10">Let&apos;s Practice!</h2>
           <p>
             <i>
-              Time to say Hello, write a function that will return the expected
-              output. The function should be called <b>&apos;sayHello&apos;</b>{" "}
-              and should return: <b>&apos;Hello, World!&apos;</b>.
+              Time to say Hello, Call the function to return the expected
+              output. The function should return:{" "}
+              <b>&apos;Hello, World!&apos;</b>.
             </i>
           </p>
           <CodePractice
-            variables="sayHello"
-            expectedOutput="Hello, World!"
+            variables=""
+            expectedOutput="sayHello();"
             functionData={sayHelloString}
           />
           <p>
@@ -153,7 +153,7 @@ function StandardFunctions() {
               frameBorder="0"
               className="youtube-video my-10 h-auto"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
           <div className="flex-1"></div>
