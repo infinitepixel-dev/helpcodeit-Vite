@@ -210,9 +210,15 @@ code {
   font-family: "Press Start 2P", cursive;
 }
 
+.roboto-font {
+  font-family: "Roboto-Slab", sans-serif;
+  
+}
+
 .youtube-video {
   aspect-ratio: 16 / 9;
   width: 100%;
   border-radius: 10px;
   border: 1px solid black;
 }
+

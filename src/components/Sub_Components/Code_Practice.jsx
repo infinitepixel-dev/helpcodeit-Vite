@@ -1,5 +1,5 @@
 //Component meant to test code, it will take in some variables and expect the user to write a function that will return the expected output.
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import incorrectImg from "../../assets/no.png";
 import correctImg from "../../assets/yes.png";
@@ -15,6 +15,7 @@ function CodePractice({
   variables,
   expectedOutput,
   functionData,
+  
 }) {
   console.clear();
   console.log("\nDeclared Variables:", variables);
@@ -29,7 +30,7 @@ function CodePractice({
   const [problem, setProblem] = useState("");
 
   const [userInput, setUserInput] = useState(" ");
-  const codeRef = useRef(null);
+  const codeInput = useRef(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,10 +46,17 @@ function CodePractice({
   }, []);
 
   useEffect(() => {
-    // Update the content of the <code> block and reapply highlighting
-    if (codeRef.current) {
-      codeRef.current.innerText = userInput;
-      hljs.highlightElement(codeRef.current);
+    if (codeInput.current) {
+      // Set the text content of the code element to userInput
+      codeInput.current.textContent = userInput;
+
+      // Remove the highlighted attribute if it's set
+      if (codeInput.current.hasAttribute("data-highlighted")) {
+        delete codeInput.current.dataset.highlighted;
+      }
+
+      // Highlight with hljs
+      hljs.highlightElement(codeInput.current);
     }
   }, [userInput]);
 
@@ -81,13 +89,27 @@ function CodePractice({
               })}
           </ul>
         </p>
-
+        {/* TODO - Add a copy to clipboard button to the Code Output */}
+        <h3>
+          <b>Your Formatted Code Here:</b>
+        </h3>
         <pre>
-          <code ref={codeRef} className='language-javascript'></code>
+          <code
+            //  style of max width 100%
+            style={{ maxWidth: "100%" }}
+            id='codeInput'
+            ref={codeInput}
+            className='language-javascript'
+          >
+            {userInput}
+          </code>
         </pre>
 
         {/* input test - begin */}
         {/* If the input type is textarea output a text area element */}
+        <h3>
+          <b>Input Your Code Here:</b>
+        </h3>
         {Object.entries(inputs).map((input, index) => {
           console.log("Single Input:", input);
           input = input[1];
@@ -97,7 +119,7 @@ function CodePractice({
               <textarea
                 className='bg-white border border-black w-full h-20'
                 value={userInput}
-                onChange={(e) => setUserInput(e.target.value)}
+                onChange={(e) => setUserInput(`${e.target.value}`)}
               />
             );
           }
