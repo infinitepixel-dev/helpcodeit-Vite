@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import incorrectImg from "../../assets/no.png";
 import correctImg from "../../assets/yes.png";
 
-
 import hljs from "highlight.js";
 // import javascript from "highlight.js/lib/languages/javascript.js";
 
@@ -16,9 +15,7 @@ function CodePractice({
   variables,
   expectedOutput,
   functionData,
-  
 }) {
-
   console.clear();
   console.log("\nDeclared Variables:", variables);
   console.log("Expected Output:", expectedOutput);
@@ -68,10 +65,10 @@ function CodePractice({
 
       {/* tailwind css styling */}
       <form
-        className='bg-white shadow-xl rounded-lg border border-black p-5 dark:bg-gray-700'
+        className="bg-white shadow-xl rounded-lg border border-black p-5 dark:bg-gray-700"
         onSubmit={handleSubmit}
       >
-        <p className='font-semibold text-2xl'>{instructions}</p>
+        <p className="font-semibold text-2xl">{instructions}</p>
         <p>
           Variables:{" "}
           <ul>
@@ -99,9 +96,9 @@ function CodePractice({
           <code
             //  style of max width 100%
             style={{ maxWidth: "100%" }}
-            id='codeInput'
+            id="codeInput"
             ref={codeInput}
-            className='language-javascript'
+            className="language-javascript"
           >
             {userInput}
           </code>
@@ -119,7 +116,8 @@ function CodePractice({
           if (input === "textarea") {
             return (
               <textarea
-                className='bg-white border border-black w-full h-20 dark:bg-slate-600 text-white'
+                key={index}
+                className="bg-white border border-black w-full h-20 dark:bg-slate-600 text-white"
                 value={userInput}
                 onChange={(e) => setUserInput(`${e.target.value}`)}
               />
@@ -134,23 +132,23 @@ function CodePractice({
           onChange={(e) => setUserOutput(e.target.value)}
         /> */}
         <button
-          className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-          type='submit'
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          type="submit"
         >
           Submit
         </button>
         {isSubmitted && isCorrect ? (
-          <h3 className='text-2xl text-green-500'>
+          <h3 className="text-2xl text-green-500">
             Correct!
             <span>
-              <img src={correctImg} alt='correct_answer' />
+              <img src={correctImg} alt="correct_answer" />
             </span>
           </h3>
         ) : isSubmitted && !isCorrect ? (
-          <h3 className='text-2xl text-red-500'>
+          <h3 className="text-2xl text-red-500">
             Incorrect, Try again.
             <span>
-              <img src={incorrectImg} alt='incorrect_answer' />
+              <img src={incorrectImg} alt="incorrect_answer" />
             </span>
           </h3>
         ) : null}
