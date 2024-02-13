@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import CodePractice from "../../Sub_Components/Code_Practice";
 
 function StandardFunctions() {
   const codeRef = useRef(null);
@@ -35,7 +36,7 @@ function StandardFunctions() {
             learn how to create one!
           </p>
           <div className='md:grid grid-cols-2 '>
-            <div className=" mt-2 items-start">
+            <div className=' mt-2 p-2'>
               <h2 className='text-3xl'>How to Create a Function</h2>
               <p>
                 Creating a function is like writing down a recipe. Here's an
@@ -43,7 +44,7 @@ function StandardFunctions() {
                 called:
               </p>
             </div>
-            <div>
+            <div className="m-2 p-2">
               <pre className='my-5'>
                 <code ref={codeRef} className='language-javascript'>
                   {sayHelloString}
@@ -96,13 +97,22 @@ function StandardFunctions() {
             </code>
           </pre>
 
-          <p>
-            This code says, "Create a function named 'addNumbers' that takes two
-            numbers, adds them together, and then shows a pop-up with the
-            result."
-          </p>
-
           <h2 className='text-3xl py-2 mt-10'>Let's Practice!</h2>
+          <CodePractice
+            instructions={`"Create a function named 'addNumbers' that takes two
+          numbers, adds them together, and then shows a pop-up with the
+          result."`}
+            inputs={{
+              input1: "textarea",
+              input2: "singleLine",
+            }}
+            variables={{
+              variable1: "let num1 = 2;",
+              variable2: "let num2 = 3;",
+            }}
+            expectedOutput={"addNumbers();"}
+            // functionData={""}
+          />
           <p>
             Now you know what functions are, how to create them, how to use
             them, and why they're helpful. Try making your own functions and see
@@ -139,7 +149,7 @@ function StandardFunctions() {
               frameBorder='0'
               className='youtube-video my-10 h-auto'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
           <div className='flex-1'></div>
