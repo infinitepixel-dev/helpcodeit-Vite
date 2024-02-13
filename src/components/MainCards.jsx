@@ -69,7 +69,7 @@ export default function MainCards() {
         actionText="Let's Go"
         styles={styles}
       />
-      {/* !SECTION Card #4 END */}json-server --watch db.json
+      {/* !SECTION Card #4 END */}
     </div>
   );
 }
