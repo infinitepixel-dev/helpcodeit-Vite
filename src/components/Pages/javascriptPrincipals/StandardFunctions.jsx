@@ -18,16 +18,16 @@ function StandardFunctions() {
   };`;
 
   return (
-    <div>
-      <div className="container mx-auto roboto-font text-xl p-2 sm:p-8">
+    <div className="dark: bg-gray-600 text-white">
+      <div className="container mx-auto roboto-font text-xl p-2 sm:p-8 ">
         <div className="flex flex-col">
           <h1 className="text-center text-5xl my-20">
             Learning About JavaScript Functions: A Beginner's Guide
           </h1>
-          <hr className="border-black border-2 " />
-          <div className=" m-14 my-1">
-            <h2 className="text-3xl px-2 mt-10 ms-2 ">What Is a Function?</h2>
-            <p className="text-2xl roboto-font mb-10 ms-4">
+          <hr className='border-black border-2 dark:border-white' />
+          <div className='my-1'>
+            <h2 className='text-4xl mt-10 '>What Is a Function?</h2>
+            <p className='text-2xl roboto-font mb-10'>
               A function is a set of instructions that performs a specific task.
               It's like a tiny computer program inside your main program That
               you can easily reuse. Another way of thinking about it is the
@@ -40,10 +40,11 @@ function StandardFunctions() {
               when the function is done, it returns the result of the task.
               Which is equivalent to Bob giving you the result of his task. Cool
               right? <br />
-              Let's learn how to create one!
+              <br />
+              <span className="text-3xl">Let's learn how to create one!</span>
             </p>
           </div>
-          <hr className="border-black border-2 mb-10" />
+          <hr className="border-black border-2 mb-10 dark:border-white" />
 
           <div className="mb-10">
             <div className="">
@@ -81,7 +82,7 @@ function StandardFunctions() {
               </p>
             </div>
           </div>
-          <hr className="border-black border-2 mb-10" />
+          <hr className='border-black border-2 mb-10 dark:border-white' />
 
           <h2 className="text-3xl py-2">How to Use a Function</h2>
 
@@ -108,8 +109,8 @@ function StandardFunctions() {
               inside another function.{" "}
             </p>
           </div>
-          <hr className="border-black border-2 my-7" />
-          <h2 className="text-3xl py-2">Why Should You Use Functions?</h2>
+          <hr className='border-black border-2 my-7 dark:border-white' />
+          <h2 className='text-3xl py-2'>Why Should You Use Functions?</h2>
 
           <p>
             Functions make your code neater and easier to read. They also let
@@ -118,7 +119,7 @@ function StandardFunctions() {
             every time you wanted to make cookies. That would be a lot of extra
             work!
           </p>
-          <hr className="border-black border-2 my-7" />
+          <hr className='border-black border-2 my-7 dark:border-white' />
 
           <h2 className="text-3xl py-2">
             Functions with Parameters: Giving Information to Functions
@@ -154,7 +155,7 @@ function StandardFunctions() {
               powerful and easier to read.
             </p>
           </div>
-          <hr className="border-black border-2 my-7" />
+          <hr className='border-black border-2 my-7 dark:border-white' />
 
           <h2 className="text-3xl py-2 mt-10">Let's Practice!</h2>
           <CodePractice
@@ -180,13 +181,13 @@ function StandardFunctions() {
             experimenting and having fun!
           </p>
         </div>
-        <hr className="border-black border-2 mt-7" />
+        <hr className='border-black border-2 mt-7 mb-5 dark:border-white' />
 
-        <div className="flex flex-row">
-          <div className="flex-1"></div>
-          <div className="flex-1 sm:flex-none sm:w-1/2">
-            <h2 className="text-5xl font-extrabold  text-center">
-              Need deeper explaination?
+        <div className='flex flex-row'>
+          <div className='flex-1'></div>
+          <div className='flex-1 sm:flex-none sm:w-1/2'>
+            <h2 className='text-5xl font-extrabold  text-center'>
+              Need deeper explanation?
             </h2>
             <h2 className="text-4xl font-extrabold text-center">
               Here is a Video from Web Dev Simplified
@@ -205,8 +206,8 @@ function StandardFunctions() {
           <div className="flex-1"></div>
         </div>
       </div>
-      <div className="text-center text-2xl mb-10 text-red-600">
-        <Link to="/javascript">Back to JavaScript Main Page</Link>
+      <div className='text-center text-2xl pb-10 text-red-500 dark:text-white'>
+        <Link to='/javascript'>Back to JavaScript Main Page</Link>
       </div>
     </div>
   );
