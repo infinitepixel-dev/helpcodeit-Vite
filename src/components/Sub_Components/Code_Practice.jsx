@@ -139,22 +139,22 @@ function CodePractice({
         >
           Submit
         </button>
+        {isSubmitted && isCorrect ? (
+          <h3 className='text-2xl text-green-500'>
+            Correct!
+            <span>
+              <img src={correctImg} alt='correct_answer' />
+            </span>
+          </h3>
+        ) : isSubmitted && !isCorrect ? (
+          <h3 className='text-2xl text-red-500'>
+            Incorrect, Try again.
+            <span>
+              <img src={incorrectImg} alt='incorrect_answer' />
+            </span>
+          </h3>
+        ) : null}
       </form>
-      {isSubmitted && isCorrect ? (
-        <h3 className='text-2xl text-green-500'>
-          Correct!
-          <span>
-            <img src={correctImg} alt='correct_answer' />
-          </span>
-        </h3>
-      ) : isSubmitted && !isCorrect ? (
-        <h3 className='text-2xl text-red-500'>
-          Incorrect, Try again.
-          <span>
-            <img src={incorrectImg} alt='incorrect_answer' />
-          </span>
-        </h3>
-      ) : null}
     </div>
   );
 }
