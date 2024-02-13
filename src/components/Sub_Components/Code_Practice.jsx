@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import incorrectImg from "../../assets/no.png";
 import correctImg from "../../assets/yes.png";
 
+
 import hljs from "highlight.js";
 // import javascript from "highlight.js/lib/languages/javascript.js";
 
@@ -17,6 +18,7 @@ function CodePractice({
   functionData,
   
 }) {
+
   console.clear();
   console.log("\nDeclared Variables:", variables);
   console.log("Expected Output:", expectedOutput);

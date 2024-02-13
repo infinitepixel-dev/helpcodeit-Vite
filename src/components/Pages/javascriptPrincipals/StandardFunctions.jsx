@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
+
 import CodePractice from "../../Sub_Components/Code_Practice";
 
 function StandardFunctions() {
@@ -17,10 +18,12 @@ function StandardFunctions() {
 
   return (
     <div>
+
       <div className='container mx-auto roboto-font text-xl p-2 sm:p-8'>
         <div className='flex flex-col'>
           <h1 className='text-center text-5xl my-20'>
             Learning About JavaScript Functions: A Beginner's Guide
+
           </h1>
           <hr className='border-black border-2 ' />
           <div className=' m-14 my-1'>
@@ -43,6 +46,7 @@ function StandardFunctions() {
           </div>
           <hr className='border-black border-2 mb-10' />
 
+
           <div className='mb-10'>
             <div className=''>
               <h2 className='text-3xl'>How to Create a Function</h2>
@@ -62,6 +66,7 @@ function StandardFunctions() {
                   ref={codeRef}
                   className='language-javascript float-start me-10 p-2'
                 >
+
                   {sayHelloString}
                 </code>
               </pre>
@@ -82,11 +87,13 @@ function StandardFunctions() {
           <hr className='border-black border-2 mb-10' />
 
           <h2 className='text-3xl py-2'>How to Use a Function</h2>
+
           <p>
             Once you have created a function, you can use it by calling its name
-            followed by parentheses. Here's how you call the 'sayHello'
-            function:
+            followed by parentheses. Here&apos;s how you call the
+            &apos;sayHello&apos; function:
           </p>
+
           <div>
             <pre className='my-5'>
               <code
@@ -106,6 +113,7 @@ function StandardFunctions() {
           </div>
           <hr className='border-black border-2 my-7' />
           <h2 className='text-3xl py-2'>Why Should You Use Functions?</h2>
+
           <p>
             Functions make your code neater and easier to read. They also let
             you reuse the same code many times without having to write it again
@@ -116,14 +124,16 @@ function StandardFunctions() {
           <hr className='border-black border-2 my-7' />
 
           <h2 className='text-3xl py-2'>
+
             Functions with Parameters: Giving Information to Functions
           </h2>
           <p>
             Sometimes, you want your function to do something specific with
             certain pieces of information. These pieces of information are
-            called parameters. Here's how you can create a function that takes
-            two numbers and adds them together:
+            called parameters. Here&apos;s how you can create a function that
+            takes two numbers and adds them together:
           </p>
+
           <div>
             <pre className='my-5'>
               <code
@@ -168,11 +178,13 @@ function StandardFunctions() {
             // functionData={""}
           />
           <p className='mt-10'>
+
             Now you know what functions are, how to create them, how to use
-            them, and why they're helpful. Try making your own functions and see
-            what you can do with them. Remember, coding is all about
+            them, and why they&apos;re helpful. Try making your own functions
+            and see what you can do with them. Remember, coding is all about
             experimenting and having fun!
           </p>
+
         </div>
         <hr className='border-black border-2 mt-7' />
 
@@ -193,10 +205,11 @@ function StandardFunctions() {
               frameBorder='0'
               className='youtube-video mt-10 h-auto'
               allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+
               allowFullScreen
             ></iframe>
           </div>
-          <div className='flex-1'></div>
+          <div className="flex-1"></div>
         </div>
       </div>
       <div className='text-center text-2xl mb-10 text-red-600'>
