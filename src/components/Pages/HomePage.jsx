@@ -7,25 +7,22 @@ function HomePage() {
       {/* SECTION Jumbotron */}
       <div className='bg-neutral-800 text-white jumbo-background hero-text'>
         <div className='container mx-auto'>
-          <div className='flex flex-wrap pb-1 mb-3'>
-            <div className='w-full md:w-1/2 lg:w-1/3 pb-4'>
+          <div className='grid grid-cols-3'>
+            <div className='col-span-3 md:col-span-1'>
               <img
                 src={logo}
                 alt='Help Code It logo'
-                className='mt-5 p-1 hero-logo'
+                className='mt-5 p-1 hero-logo mx-auto'
               />
 
-              <p className='hero-text font-extrabold'>
+              <p className='hero-text font-extrabold mx-auto text-center'>
                 Resources for beginning developers
               </p>
             </div>
           </div>
-          <div className='w-full md:w-1/2 lg:w-2/3'>
-            {/* NOTE this is a spacer*/}
-          </div>
         </div>
-        {/* !SECTION end Jumbotron */}
       </div>
+      {/* !SECTION end Jumbotron */}
       <div className='w-full min-h-screen dark:bg-neutral-800 text-white'>
         <MainCards />
       </div>
