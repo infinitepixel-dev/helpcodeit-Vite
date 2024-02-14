@@ -1,6 +1,10 @@
 
 
+
 export default function DeclaringVariables() {
+//FIXME Needs useRef for the code snippets
+
+
   return (
     <div className='container mx-auto mukataFont'>
                 <div className='flex flex-wrap mt-20'>
@@ -35,6 +39,7 @@ export default function DeclaringVariables() {
                         var is global so it is usable inside and out of functions and
                         conditionals, which can create issues. Here&apos;s an example:
                     </p>
+                    {/* FIXME NEEDS USEREF */}
                     <pre>
                         <code className='javascript'>
                             var myName = &apos;Alice&apos;;

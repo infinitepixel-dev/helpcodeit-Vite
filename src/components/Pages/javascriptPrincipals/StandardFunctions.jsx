@@ -18,7 +18,7 @@ function StandardFunctions() {
 
   return (
     <div className='dark: bg-gray-600 text-white'>
-      <div className='container mx-auto roboto-font text-xl p-2 sm:p-8 '>
+      <div className='container mx-auto px-4 roboto-font text-xl p-2 sm:p-8 '>
         <div className='flex flex-col'>
           <h1 className='text-center text-5xl my-20'>
             Learning About JavaScript Functions: A Beginner's Guide
