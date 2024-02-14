@@ -8,7 +8,7 @@ function HomePage() {
       <div className='bg-neutral-800 text-white jumbo-background hero-text'>
         <div className='container mx-auto'>
           <div className='grid grid-cols-3'>
-            <div className='col-span-1'>
+            <div className='col-span-3 md:col-span-1'>
               <img
                 src={logo}
                 alt='Help Code It logo'
