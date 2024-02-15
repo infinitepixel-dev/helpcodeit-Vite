@@ -1,10 +1,6 @@
 import hljs from "highlight.js";
 import { useEffect, useRef } from "react";
-import {
-  HoverCard,
-  HoverCardContent,
-  HoverCardTrigger,
-} from "@/components/Sub_Components/ScopeHovercard";
+
 
 export default function DeclaringVariables() {
   const codeRef = useRef(null);
@@ -12,9 +8,6 @@ export default function DeclaringVariables() {
   const varExample = `var myName = "Bob";`;
   const letExample = `let myName = "Tom";`;
   const constExample = `const mySchool = "Cool School";`;
-
-  
-
 
   return (
     <div className='dark:bg-slate-600 '>
@@ -72,12 +65,12 @@ export default function DeclaringVariables() {
           <hr className='mt-10 border border-black dark:border-white' />
 
           <h2 className='text-4xl mt-10 mb-5'>Using 'let'</h2>
-          
+
           <p>
             In JavaScript, let is used to create a variable that you can change
             later. It's similar to var, but let is more specific about where the
-            variable can be used in your code. This is called {<HoverCard/>} This makes your code safer and
-            easier to understand.
+            variable can be used in your code. This is called Scope.
+            This makes your code safer and easier to understand.
             <br /> Here's an example:
           </p>
           <pre>
@@ -85,7 +78,6 @@ export default function DeclaringVariables() {
               {letExample}
             </code>
           </pre>
-          
         </section>
 
         <section>
