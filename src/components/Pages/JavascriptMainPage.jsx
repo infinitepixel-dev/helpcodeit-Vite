@@ -116,7 +116,7 @@ function JavascriptMainPage() {
               </li>
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
-                  to='/javascript/loops'
+                  to='/javascriptPrincipals/Loops'
                   className='text-blue-500 hover:text-blue-800 dark:text-white'
                 >
                   Loops
@@ -124,7 +124,7 @@ function JavascriptMainPage() {
               </li>
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
-                  to='/javascript/stringConcatenation'
+                  to='/javascriptPrincipals/StringConcatenation'
                   className='text-blue-500 hover:text-blue-800 dark:text-white'
                 >
                   String Concatenation
