@@ -59,6 +59,7 @@ export default function DeclaringVariables() {
                 className='bg-slate-200  m-5 border border-black font-extrabold text-lg shadow-lg px-10'
                 customClass=' bg-slate-200  dark:bg-gray-700'
               >
+                {" "}
                 Scope in programming is like a set of boundaries that determines
                 where variables and functions are accessible within your code.
                 Think of it as an imaginary fence that encloses variables and
@@ -141,8 +142,10 @@ export default function DeclaringVariables() {
 
           <h2 className='text-4xl mt-10 mb-5'>Summary</h2>
           <p>
-            Use 'var' if you see old code, 'let' if you want to change the
-            variable, and 'const' if you never want it to change. Happy coding!
+            In summary, as a beginner, it's generally good practice to use let
+            for variables that will change over time, const for variables that
+            should remain constant, and only use var if you're maintaining or
+            understanding older JavaScript code. Happy coding!
           </p>
         </section>
       </div>
