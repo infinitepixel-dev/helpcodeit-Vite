@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import hljs from "highlight.js";
@@ -7,13 +8,13 @@ import CodePractice from "../../Sub_Components/Code_Practice";
 function StandardFunctions() {
   const codeRef = useRef(null);
 
-useEffect(() => {
-  // Apply syntax highlighting to all code elements
-  document.querySelectorAll("pre code").forEach((block) => {
-    hljs.highlightBlock(block);
-  });
-}, []);
-  
+  useEffect(() => {
+    // Apply syntax highlighting to all code elements
+    document.querySelectorAll("pre code").forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  }, []);
+
   const sayHelloString = `function sayHello() {
     alert("Hello, World!");
   };`;
@@ -25,16 +26,16 @@ useEffect(() => {
   };`;
 
   return (
-    <div className='dark:bg-gray-600'>
-      <div className='container mx-auto px-4 roboto-font text-xl p-2 sm:p-8 '>
-        <div className='flex flex-col'>
-          <h1 className='text-center text-5xl my-20'>
+    <div className="dark:bg-gray-600">
+      <div className="container mx-auto px-4 roboto-font text-xl p-2 sm:p-8 ">
+        <div className="flex flex-col">
+          <h1 className="text-center text-5xl my-20">
             Learning About JavaScript Functions: A Beginner's Guide
           </h1>
-          <hr className='border-black border-2 dark:border-white' />
-          <div className='my-1'>
-            <h2 className='text-4xl mt-10 '>What Is a Function?</h2>
-            <p className='text-2xl roboto-font mb-10'>
+          <hr className="border-black border-2 dark:border-white" />
+          <div className="my-1">
+            <h2 className="text-4xl mt-10 ">What Is a Function?</h2>
+            <p className="text-2xl roboto-font mb-10">
               A function is a set of instructions that performs a specific task.
               It's like a tiny computer program inside your main program That
               you can easily reuse. Another way of thinking about it is the
@@ -48,14 +49,14 @@ useEffect(() => {
               Which is equivalent to Bob giving you the result of his task. Cool
               right? <br />
               <br />
-              <span className='text-3xl'>Let's learn how to create one!</span>
+              <span className="text-3xl">Let's learn how to create one!</span>
             </p>
           </div>
-          <hr className='border-black border-2 mb-10 dark:border-white' />
+          <hr className="border-black border-2 mb-10 dark:border-white" />
 
-          <div className='mb-10'>
-            <div className=''>
-              <h2 className='text-3xl'>How to Create a Function</h2>
+          <div className="mb-10">
+            <div className="">
+              <h2 className="text-3xl">How to Create a Function</h2>
               <p>
                 When you create a function you are defining a set of
                 instructions that will be performed when the function is called.
@@ -66,11 +67,11 @@ useEffect(() => {
                 function to perform. Here's an example of a simple function:
               </p>
             </div>
-            <div className='m-2 '>
-              <pre className='my-5'>
+            <div className="m-2 ">
+              <pre className="my-5">
                 <code
                   ref={codeRef}
-                  className='language-javascript float-start me-10 p-2'
+                  className="language-javascript float-start me-10 p-2"
                 >
                   {sayHelloString}
                 </code>
@@ -89,21 +90,21 @@ useEffect(() => {
               </p>
             </div>
           </div>
-          <hr className='border-black border-2 mb-10 dark:border-white' />
+          <hr className="border-black border-2 mb-10 dark:border-white" />
 
-          <h2 className='text-3xl py-2'>How to Use a Function</h2>
+          <h2 className="text-3xl py-2">How to Use a Function</h2>
 
           <p>
             Once you have created a function, you can use it by calling its name
-            followed by parentheses. Here&apos;s how you call the
-            &apos;sayHello&apos; function:
+            followed by parentheses. Here's how you call the 'sayHello'
+            function:
           </p>
 
           <div>
-            <pre className='my-5'>
+            <pre className="my-5">
               <code
                 ref={codeRef}
-                className='language-javascript float-start me-5 p-2'
+                className="language-javascript float-start me-5 p-2"
               >
                 {callHelloString}
               </code>
@@ -116,8 +117,8 @@ useEffect(() => {
               inside another function.{" "}
             </p>
           </div>
-          <hr className='border-black border-2 my-7 dark:border-white' />
-          <h2 className='text-3xl py-2'>Why Should You Use Functions?</h2>
+          <hr className="border-black border-2 my-7 dark:border-white" />
+          <h2 className="text-3xl py-2">Why Should You Use Functions?</h2>
 
           <p>
             Functions make your code neater and easier to read. They also let
@@ -126,23 +127,23 @@ useEffect(() => {
             every time you wanted to make cookies. That would be a lot of extra
             work!
           </p>
-          <hr className='border-black border-2 my-7 dark:border-white' />
+          <hr className="border-black border-2 my-7 dark:border-white" />
 
-          <h2 className='text-3xl py-2'>
+          <h2 className="text-3xl py-2">
             Functions with Parameters: Giving Information to Functions
           </h2>
           <p>
             Sometimes, you want your function to do something specific with
             certain pieces of information. These pieces of information are
-            called parameters. Here&apos;s how you can create a function that
-            takes two numbers and adds them together:
+            called parameters. Here's how you can create a function that takes
+            two numbers and adds them together:
           </p>
 
           <div>
-            <pre className='my-5'>
+            <pre className="my-5">
               <code
                 ref={codeRef}
-                className='language-javascript float-start me-5'
+                className="language-javascript float-start me-5"
               >
                 {addNumbersString}
               </code>
@@ -162,9 +163,9 @@ useEffect(() => {
               powerful and easier to read.
             </p>
           </div>
-          <hr className='border-black border-2 my-7 dark:border-white' />
+          <hr className="border-black border-2 my-7 dark:border-white" />
 
-          <h2 className='text-3xl py-2 mt-10'>Let's Practice!</h2>
+          <h2 className="text-3xl py-2 mt-10">Let's Practice!</h2>
           <CodePractice
             codeRef={codeRef}
             instructions={`"Create a function named 'addNumbers' that takes two
@@ -181,40 +182,40 @@ useEffect(() => {
             expectedOutput={"addNumbers();"}
             // functionData={""}
           />
-          <p className='mt-10'>
+          <p className="mt-10">
             Now you know what functions are, how to create them, how to use
-            them, and why they&apos;re helpful. Try making your own functions
-            and see what you can do with them. Remember, coding is all about
+            them, and why they're helpful. Try making your own functions and see
+            what you can do with them. Remember, coding is all about
             experimenting and having fun!
           </p>
         </div>
-        <hr className='border-black border-2 mt-7 mb-5 dark:border-white' />
+        <hr className="border-black border-2 mt-7 mb-5 dark:border-white" />
 
-        <div className='flex flex-row'>
-          <div className='flex-1'></div>
-          <div className='flex-1 sm:flex-none sm:w-1/2'>
-            <h2 className='text-5xl font-extrabold  text-center'>
+        <div className="flex flex-row">
+          <div className="flex-1"></div>
+          <div className="flex-1 sm:flex-none sm:w-1/2">
+            <h2 className="text-5xl font-extrabold  text-center">
               Need deeper explanation?
             </h2>
-            <h2 className='text-4xl font-extrabold text-center'>
+            <h2 className="text-4xl font-extrabold text-center">
               Here is a Video from Web Dev Simplified
             </h2>
             <iframe
-              width='560'
-              height='315'
-              src='https://www.youtube.com/embed/FOD408a0EzU'
-              title='YouTube video player'
-              frameBorder='0'
-              className='youtube-video mt-10 h-auto'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/FOD408a0EzU"
+              title="YouTube video player"
+              frameBorder="0"
+              className="youtube-video mt-10 h-auto"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowFullScreen
             ></iframe>
           </div>
-          <div className='flex-1'></div>
+          <div className="flex-1"></div>
         </div>
       </div>
-      <div className='text-center text-2xl pb-10 text-red-500 dark:text-white'>
-        <Link to='/javascript'>Back to JavaScript Main Page</Link>
+      <div className="text-center text-2xl pb-10 text-red-500 dark:text-white">
+        <Link to="/javascript">Back to JavaScript Main Page</Link>
       </div>
     </div>
   );
