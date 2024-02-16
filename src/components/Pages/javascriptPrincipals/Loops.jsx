@@ -52,15 +52,15 @@ do {
           and over again. This way we don&apos;t have to!{" "}
         </p>
         <p className="text-xl">
-          So now that we have established that loops are a good thing, let's
-          learn about the different types of loops in JavaScript.
+          So now that we have established that loops are a good thing,
+          let&apos;s learn about the different types of loops in JavaScript.
         </p>
         <hr className="border-black my-5 dark:border-white" />
         <h2 className="text-4xl py-2">For Loop </h2>
         <p className="text-xl">
           The for loop is the most commonly used loop in JavaScript. It repeats
-          a block of code a specified number of times. <br /> Here's an example
-          of a for loop:
+          a block of code a specified number of times. <br /> Here&apos;s an
+          example of a for loop:
         </p>
         <pre>
           <code ref={codeRef} className="language-javascript p-2">
@@ -91,9 +91,9 @@ do {
         <h2 className="text-4xl py-2">While Loop</h2>
         <p className="text-xl">
           The while loop repeats a block of code as long as a specified
-          condition is true. This is useful when you don't know how many times
-          you need to run the loop. It is one you will use less, but it is still
-          good to know. <br /> Here's an example of a while loop:
+          condition is true. This is useful when you don&apos;t know how many
+          times you need to run the loop. It is one you will use less, but it is
+          still good to know. <br /> Here&apos;s an example of a while loop:
         </p>
         <pre>
           <code ref={codeRef} className="language-javascript p-2 my-4">
@@ -119,8 +119,8 @@ do {
         <p className="text-xl">
           The do...while loop repeats a block of code as long as a specified
           condition is true. This is useful when you want to run the loop at
-          least once, even if the condition is false. <br /> Here's an example
-          of a do...while loop:
+          least once, even if the condition is false. <br /> Here&apos;s an
+          example of a do...while loop:
         </p>
         <pre>
           <code ref={codeRef} className="language-javascript p-2">
@@ -153,9 +153,9 @@ do {
             array.
           </li>
           <li className="list-disc">
-            The while loop is useful when you don't know how many times you want
-            to run the loop. So you might use it for something like waiting for
-            a user to input a specific value.
+            The while loop is useful when you don&apos;t know how many times you
+            want to run the loop. So you might use it for something like waiting
+            for a user to input a specific value.
           </li>
           <li className="list-disc">
             The do...while loop is useful when you want to run the loop at least
