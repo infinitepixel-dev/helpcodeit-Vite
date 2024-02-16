@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import hljs from "highlight.js";
