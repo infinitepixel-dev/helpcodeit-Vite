@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "es2020",
+        "target": "esnext",
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"],
+            "shadcn": ["node_modules/shadcn/dist/index.js"]
+        }
+    },
+    "include": ["src/**/*.js"],
+    "exclude": ["node_modules"]
+}

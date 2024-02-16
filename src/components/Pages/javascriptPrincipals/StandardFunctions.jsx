@@ -1,11 +1,19 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import hljs from "highlight.js";
 
 import CodePractice from "../../Sub_Components/Code_Practice";
 
 function StandardFunctions() {
   const codeRef = useRef(null);
 
+useEffect(() => {
+  // Apply syntax highlighting to all code elements
+  document.querySelectorAll("pre code").forEach((block) => {
+    hljs.highlightBlock(block);
+  });
+}, []);
+  
   const sayHelloString = `function sayHello() {
     alert("Hello, World!");
   };`;
@@ -17,8 +25,8 @@ function StandardFunctions() {
   };`;
 
   return (
-    <div className='dark: bg-gray-600 text-white'>
-      <div className='container mx-auto roboto-font text-xl p-2 sm:p-8 '>
+    <div className='dark:bg-gray-600'>
+      <div className='container mx-auto px-4 roboto-font text-xl p-2 sm:p-8 '>
         <div className='flex flex-col'>
           <h1 className='text-center text-5xl my-20'>
             Learning About JavaScript Functions: A Beginner's Guide
