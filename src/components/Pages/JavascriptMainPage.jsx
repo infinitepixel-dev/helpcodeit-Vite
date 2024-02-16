@@ -3,8 +3,8 @@ import javascriptlogo from "../../assets/jswithburstlogo.svg";
 
 function JavascriptMainPage() {
   return (
-    <div className='min-h-screen dark:bg-slate-600'>
-      <div className='container mx-auto px-4 p-2 pb-100 sm:p-8 dark:text-white'>
+    <div className='min-h-screen'>
+      <div className='container mx-auto px-4 p-2 pb-100 sm:p-8 '>
         <div className='flex flex-wrap items-center mt-5 '>
           <div className='w-full md:w-2/3 lg:w-2/3 '>
             <h1 className='text-center text-3xl font-bold '>JavaScript</h1>
@@ -41,7 +41,7 @@ function JavascriptMainPage() {
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
                   to='/javascriptPrincipals/PracticeProblems'
-                  className='text-blue-500 hover:text-blue-800 dark:text-white'
+                  className='jsMainPageLink'
                 >
                   Free Practice Problems
                 </Link>
@@ -49,7 +49,7 @@ function JavascriptMainPage() {
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
                   to='/javascriptPrincipals/DeclaringVariables'
-                  className='text-blue-500 hover:text-blue-800 dark:text-white'
+                  className='jsMainPageLink'
                 >
                   Declaring Variables
                 </Link>
@@ -57,7 +57,7 @@ function JavascriptMainPage() {
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
                   to='/javascriptPrincipals/StandardFunctions'
-                  className='text-blue-500 hover:text-blue-800 dark:text-white'
+                  className='jsMainPageLink'
                 >
                   Standard Functions
                 </Link>
@@ -65,7 +65,7 @@ function JavascriptMainPage() {
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
                   to='/javascript/arrowfunctions'
-                  className='text-blue-500 hover:text-blue-800 dark:text-white'
+                  className='jsMainPageLink'
                 >
                   Arrow Functions
                 </Link>
@@ -73,7 +73,7 @@ function JavascriptMainPage() {
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
                   to='/javascript/arraymethods'
-                  className='text-blue-500 hover:text-blue-800 dark:text-white'
+                  className='jsMainPageLink'
                 >
                   Array Methods
                 </Link>
@@ -81,7 +81,7 @@ function JavascriptMainPage() {
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
                   to='/javascript/stringmethods'
-                  className='text-blue-500 hover:text-blue-800 dark:text-white'
+                  className='jsMainPageLink'
                 >
                   String Methods
                 </Link>
@@ -89,7 +89,7 @@ function JavascriptMainPage() {
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
                   to='/javascript/jquerytroubleshooting'
-                  className='text-blue-500 hover:text-blue-800 dark:text-white'
+                  className='jsMainPageLink'
                 >
                   Troubleshooting jQuery
                 </Link>
@@ -97,7 +97,7 @@ function JavascriptMainPage() {
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
                   to='/javascript/packagejsonfile'
-                  className='text-blue-500 hover:text-blue-800 dark:text-white'
+                  className='jsMainPageLink'
                 >
                   &apos;npm init&apos; and Making a &apos;package.json&apos;
                   File
@@ -108,8 +108,8 @@ function JavascriptMainPage() {
 
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
-                  to='/javascript/objects'
-                  className='text-blue-500 hover:text-blue-800 dark:text-white'
+                  to='/javascriptPrincipals/Objects'
+                  className='jsMainPageLink'
                 >
                   Objects
                 </Link>
@@ -117,7 +117,7 @@ function JavascriptMainPage() {
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
                   to='/javascriptPrincipals/Loops'
-                  className='text-blue-500 hover:text-blue-800 dark:text-white'
+                  className='jsMainPageLink'
                 >
                   Loops
                 </Link>
@@ -125,7 +125,7 @@ function JavascriptMainPage() {
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
                   to='/javascriptPrincipals/StringConcatenation'
-                  className='text-blue-500 hover:text-blue-800 dark:text-white'
+                  className='jsMainPageLink'
                 >
                   String Concatenation
                 </Link>
@@ -133,7 +133,7 @@ function JavascriptMainPage() {
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
                   to='/javascript/asynchronousfunctions'
-                  className='text-blue-500 hover:text-blue-800 dark:text-white'
+                  className='jsMainPageLink'
                 >
                   Asynchronous Functions
                 </Link>
@@ -141,7 +141,7 @@ function JavascriptMainPage() {
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
                   to='/javascript/unittestingmocha&chai'
-                  className='text-blue-500 hover:text-blue-800 dark:text-white'
+                  className='jsMainPageLink'
                 >
                   Unit Testing with Mocha & Chai
                 </Link>
@@ -149,7 +149,7 @@ function JavascriptMainPage() {
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
                   to='/javascript/CRUD'
-                  className='text-blue-500 hover:text-blue-800 dark:text-white'
+                  className='jsMainPageLink'
                 >
                   C.R.U.D. Operations with API&apos;s (Fetch)
                 </Link>

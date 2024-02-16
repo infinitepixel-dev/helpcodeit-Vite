@@ -1,33 +1,47 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import hljs from "highlight.js";
+import "highlight.js/styles/atom-one-dark.css";
+import reloadImg from '../../../assets/Feather refresh icon.svg';
 
 export default function Loops() {
 const codeRef = useRef(null);
 
+useEffect(() => {
+  // Apply syntax highlighting to all code elements
+  document.querySelectorAll("pre code").forEach((block) => {
+    hljs.highlightBlock(block);
+  });
+}, []);
+
 const forLoop = `for (let i = 0; i < 5; i++) {
     console.log(i);
-    }`;
+    };
+    //Output: 0, 1, 2, 3, 4`;
 const whileLoop = `let i = 0;
 while (i < 5) {
     console.log(i);
     i++;
-    }`;
+    }
+    //Output: 0, 1, 2, 3, 4`;
 const doWhileLoop = `let i = 0;
 do {
     console.log(i);
     i++;
-    } while (i < 5);`;
+    } while (i < 5);
+    //Output: 0, 1, 2, 3, 4`;
     
 
 
 
   return (
-    <div className='container min-h-full pb-40 dark:bg-gray-700'>
+    <div className='min-h-full min-w-full pb-40 '>
+    <div className='container'>
       <h1 className='text-8xl font-bold text-center py-10'>
-        Loops...<span className='text-5xl'> in JavaScript</span>
+        Loops...<span className='text-5xl'> in JavaScript</span> <img src={reloadImg} alt="Reload Image" className="inline ms-3 animate-spin-slow" />
       </h1>
       <hr className='border-black mb-10 dark:border-white' />
-      <h2 className='text-5xl py-2 mt-10'>What are Loops?</h2>
+      <h2 className='text-5xl py-2 mt-10'>What are Loops? </h2>
       <p className='text-xl'>
         Loops are a way to repeat a block of code multiple times. They are
         useful when you want to perform the same task multiple times, or when
@@ -156,5 +170,6 @@ do {
         </Link>
       </div>
     </div>
+  </div>
   );
 }

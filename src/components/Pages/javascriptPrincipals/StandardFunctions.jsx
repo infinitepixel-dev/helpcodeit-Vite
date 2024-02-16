@@ -1,11 +1,19 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
+import hljs from "highlight.js";
 
 import CodePractice from "../../Sub_Components/Code_Practice";
 
 function StandardFunctions() {
   const codeRef = useRef(null);
 
+useEffect(() => {
+  // Apply syntax highlighting to all code elements
+  document.querySelectorAll("pre code").forEach((block) => {
+    hljs.highlightBlock(block);
+  });
+}, []);
+  
   const sayHelloString = `function sayHello() {
     alert("Hello, World!");
   };`;

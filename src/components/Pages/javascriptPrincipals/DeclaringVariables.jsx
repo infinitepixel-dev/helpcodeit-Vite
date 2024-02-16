@@ -1,14 +1,23 @@
-import hljs from "highlight.js";
 import { useEffect, useRef } from "react";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
 } from "../../ui/hover-card";
+import hljs from "highlight.js";
+import "highlight.js/styles/atom-one-dark.css";
 
 export default function DeclaringVariables() {
   const codeRef = useRef(null);
 
+  useEffect(() => {
+    // Apply syntax highlighting to all code elements
+    document.querySelectorAll("pre code").forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  }, []);
+
+  
   const varExample = `var myName = "Bob";`;
   const letExample = `let myName = "Tom";`;
   const constExample = `const mySchool = "Cool School";`;

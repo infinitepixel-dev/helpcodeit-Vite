@@ -1,6 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=Press+Start+2P&family=Roboto+Slab:wght@300&family=Roboto:ital,wght@1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&family=Roboto+Slab:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
 @layer base {
   :root {
@@ -110,6 +118,11 @@ code {
 .fullyCentered {
   align-items: center;
   text-align: center;
+}
+
+/* NOTE - You can add custom classes that apply other classes */
+.jsMainPageLink {
+  @apply text-blue-500 hover:text-blue-800 dark:text-white
 }
 
 .gitLogo {
@@ -242,6 +255,10 @@ code {
   
 }
 
+.satisfyFont {
+  font-family: "Satisfy", cursive;
+}
+
 .youtube-video {
   aspect-ratio: 16 / 9;
   width: 100%;
@@ -250,7 +267,7 @@ code {
 }
 
   .dark {
-    --background: 224 71.4% 4.1%;
+    --background: 220, 30%, 18%;
     --foreground: 210 20% 98%;
 
     --card: 224 71.4% 4.1%;
