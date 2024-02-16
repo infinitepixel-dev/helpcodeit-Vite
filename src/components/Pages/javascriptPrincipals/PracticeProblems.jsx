@@ -1,13 +1,26 @@
+import React, { useEffect } from "react";
+import hljs from "highlight.js";
+import "highlight.js/styles/atom-one-dark.css";
+
+
 const PracticeProblems = () => {
+
+  useEffect(() => {
+    // Apply syntax highlighting to all code elements
+    document.querySelectorAll("pre code").forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  }, []);
+
   return (
-    <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8'>
-      <div className='flex flex-wrap'>
-        <div className='md:w-1/4 w-full pt-20 mt-20'>
-          <div className='flex flex-col items-center border-2 pb-5 me-20 border-black rounded-t-2xl'>
-            <h2 className='w-full text-center text-xl font-bold bg-blue-500 text-white rounded-t-xl p-2'>
+    <div className='mx-auto  min-h-screen px-4 sm:px-6 lg:px-8 dark:bg-slate-700'>
+      <div className='container flex flex-wrap'>
+        <div className='md:w-1/4 pt-20 mt-20 '>
+          <div className='flex flex-col min-w-fit items-center center border-2 pb-5 me-20 border-black rounded-t-2xl dark:bg-slate-500'>
+            <h2 className='text-center text-xl font-bold bg-blue-500 text-white rounded-t-xl p-2 dark:bg-blue-800'>
               Links to Practice Problems
             </h2>
-            <div className='pt-2 w-full text-2xl text-center '>
+            <div className='pt-2 w-full text-2xl text-center'>
               <a
                 href='https://github.com/movarnell/JavaScript-Data-Types-and-Problems.git'
                 target='_blank'
@@ -50,6 +63,7 @@ const PracticeProblems = () => {
           <h1 className='text-center text-6xl mb-6'>
             JavaScript Practice Problems
           </h1>
+          <hr className='my-5 border-2 dark:border-white' />
           <h2 className='text-center text-4xl mb-4'>How to Clone in GitHub</h2>
           <p>
             Cloning a repository is a way to download the code from a repository
@@ -63,6 +77,8 @@ const PracticeProblems = () => {
             command line. The second is to use the VS Code GUI. I will show you
             both ways.
           </p>
+          <hr className='my-5 border-2 dark:border-white' />
+
           <h3 className='text-center text-3xl mt-6'>
             Cloning a Repository Using the Command Line
           </h3>
@@ -85,12 +101,16 @@ const PracticeProblems = () => {
             should look something like this:
           </p>
           <pre>
-            <code className='language-bash'>git clone [repository-link]</code>
+            <code className='language-bash p-2 m-2'>
+              git clone [repository-link]
+            </code>
           </pre>
           <p>
             Once you have typed this, you will hit enter and the repository will
             be cloned to your local machine.
           </p>
+          <hr className='my-5 border-2 dark:border-white' />
+
           <h3 className='text-center text-3xl mt-6'>
             Cloning a Repository Using the VS Code GUI
           </h3>
