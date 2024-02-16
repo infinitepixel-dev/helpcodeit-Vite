@@ -23,7 +23,7 @@ function HomePage() {
         </div>
       </div>
       {/* !SECTION end Jumbotron */}
-      <div className='w-full min-h-screen dark:bg-neutral-800 text-white'>
+      <div className='w-full min-h-screen dark:bg-neutral-900 text-white'>
         <MainCards />
       </div>
     </div>
