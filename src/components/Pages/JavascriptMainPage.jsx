@@ -72,7 +72,7 @@ function JavascriptMainPage() {
               </li>
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
-                  to='/javascript/arraymethods'
+                  to='/javascriptPrincipals/ArrayMethods'
                   className='jsMainPageLink'
                 >
                   Array Methods
@@ -96,7 +96,7 @@ function JavascriptMainPage() {
               </li>
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
-                  to='/javascriptPrincipals/npmInitPackageJson'
+                  to='/javascriptPrincipals/PackagesAndPackageJson'
                   className='jsMainPageLink'
                 >
                   &apos;npm init&apos; and Making a &apos;package.json&apos;

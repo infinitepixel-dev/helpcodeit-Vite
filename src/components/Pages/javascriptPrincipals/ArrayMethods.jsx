@@ -256,27 +256,282 @@ function ArrayMethods() {
               </li>
             </ul>
           </div>
-          <div>
-            <h4 className='text-2xl mt-10' id='atMethod'>
+        </div>
+        <div>
+          <hr className='border-2 my-10 border-black dark:border-white' />
+          <div className='p-5 border rounded-lg border-black dark:border-white'>
+            <h4 className='text-4xl mt-10 mb-5 text-center' id='atMethod'>
               at()
             </h4>
+            <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
             <p>
               The at() method returns the element at the specified index in an
               array. You can use negative numbers to count from the end of the
-              array.
+              array. If the index is out of range, at() returns undefined.
+              Here's some examples:
             </p>
             <div className='grid grid-col-1 md:grid-cols-2'>
-              <div>
-                <pre>
-                  <code ref={codeRef} className='language-javascript my-3 p-2'>
+              <div className='flex justify-center align-middle'>
+                <pre className='mt-4'>
+                  <code ref={codeRef} className='language-javascript my-3 p-2 '>
                     {atMethod}
                   </code>
                 </pre>
               </div>
-              <p>Below is a graphical representation of the at() method.</p>
-              <div>🍏🍏🍊🍏.at(2) =&gt; 🍊</div>
+              <div className='text-center my-auto'>
+                <p>Below is a graphical representation of the at() method.</p>
+                <div className='text-4xl text-center'>
+                  🍏🍏🍊🍏.at(2) =&gt; 🍊
+                </div>
+              </div>
             </div>
           </div>
+          <div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+            <h4 className='text-4xl mt-10 mb-5 text-center' id='concatMethod'>
+              concat()
+            </h4>
+            <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+            <p>
+              The concat() method is used to merge two or more arrays. This
+              method does not change the existing arrays, but instead returns a
+              new array. Here's some examples:
+            </p>
+            <div className='grid grid-col-1 md:grid-cols-3'>
+              <div className=' flex justify-center align-middle md:col-span-2'>
+                <pre className='mt-4'>
+                  <code ref={codeRef} className='language-javascript my-3 p-2 '>
+                    {concatMethod}
+                  </code>
+                </pre>
+              </div>
+              <div className='text-center my-auto'>
+                <p className='text-center'>
+                  Below is a graphical representation of the concat() method.
+                </p>
+                <div className='text-2xl text-center'>
+                  ["🍏", "🍏", "🍊"].concat(["🍏"]) =&gt; ["🍏", "🍏", "🍊",
+                  "🍏"]
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+            <h4
+              className='text-4xl mt-10 mb-5 text-center'
+              id='copyWithinMethod'
+            >
+              copyWithin()
+            </h4>
+            <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+            <p>
+              The copyWithin() method shallow copies part of an array to another
+              location in the same array and returns it without modifying its
+              length. Here's some examples:
+            </p>
+            <div className='grid grid-col-1 md:grid-cols-2'>
+              <div className='flex justify-center align-middle '>
+                <pre className='mt-4'>
+                  <code ref={codeRef} className='language-javascript my-3 p-2 '>
+                    {copyWithinMethod}
+                  </code>
+                </pre>
+              </div>
+              <div className='text-center my-auto'>
+                <p className='text-center'>
+                  Below is a graphical representation of the copyWithin()
+                  method.
+                </p>
+                <div className='text-2xl text-center'>
+                  ["🍏", "🍏", "🍊", "🍏"].copyWithin(0, 2, 3) =&gt; ["🍊",
+                  "🍏", "🍊", "🍏"]
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+            <h4 className='text-4xl mt-10 mb-5 text-center' id='entriesMethod'>
+              entries()
+            </h4>
+            <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+            <p>
+              The entries() method returns a new Array Iterator object that
+              contains the key/value pairs for each index in the array. Here's
+              some examples:
+            </p>
+            <div className='grid grid-col-1 xlg:grid-cols-2'>
+              <div className='flex justify-center align-middle '>
+                <pre className='mt-4'>
+                  <code ref={codeRef} className='language-javascript my-3 p-2 '>
+                    {entriesMethod}
+                  </code>
+                </pre>
+              </div>
+              <div className='text-center my-auto'>
+                <p className='text-center'>
+                  Below is a graphical representation of the entries() method.
+                </p>
+                <div className='text-2xl text-center'>
+                  let array1 = ["🍏", "🍏", "🍊", "🍏"]; let iterator1 =
+                  array1.entries(); console.log(iterator1.next().value); //
+                  expected output: [0, "🍏"]
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+            <h4 className='text-4xl mt-10 mb-5 text-center' id='everyMethod'>
+              every()
+            </h4>
+            <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+            <p>
+              The every() method tests whether all elements in the array pass
+              the test implemented by the provided function. It returns a
+              Boolean value. Here's an example:
+            </p>
+            <div className=''>
+              <div className='flex justify-center align-middle '>
+                <pre className='mt-4'>
+                  <code ref={codeRef} className='language-javascript my-3 p-2 '>
+                    {everyMethod}
+                  </code>
+                </pre>
+              </div>
+            </div>
+          </div>
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+    <h4 className='text-4xl mt-10 mb-5 text-center' id='fillMethod'>
+        fill()
+    </h4>
+    <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+    <p>
+        The fill() method changes all elements in an array to a static value, from a start index (default 0) to an end index (default array.length). It returns the modified array. Here's some examples:
+    </p>
+    <div className='grid grid-col-1 md:grid-cols-2'>
+        <div className='flex justify-center align-middle '>
+            <pre className='mt-4'>
+                <code ref={codeRef} className='language-javascript my-3 p-2 '>
+                    {fillMethod}
+                </code>
+            </pre>
+        </div>
+        <div className='text-center my-auto'>
+            <p className='text-center'>
+                Below is a graphical representation of the fill() method.
+            </p>
+            <div className='text-2xl text-center'>
+                ["🍏", "🍏", "🍊", "🍏"].fill("🍊", 1, 3) =&gt; ["🍏", "🍊", "🍊", "🍏"]
+            </div>
+        </div>
+    </div>
+</div>
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+    <h4 className='text-4xl mt-10 mb-5 text-center' id='filterMethod'>
+        filter()
+    </h4>
+    <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+    <p>
+        The filter() method creates a new array with all elements that pass the test implemented by the provided function. Here's an example:
+    </p>
+    
+        <div className='flex justify-center align-middle '>
+            <pre className='mt-4'>
+                <code ref={codeRef} className='language-javascript my-3 p-2 '>
+                    {filterMethod}
+                </code>
+            </pre>
+        
+        
+    </div>
+</div>
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+    <h4 className='text-4xl mt-10 mb-5 text-center' id='findMethod'>
+        find()
+    </h4>
+    <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+    <p>
+        The find() method returns the value of the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned. Here's an example:
+    </p>
+   
+        <div className='flex justify-center align-middle '>
+            <pre className='mt-4'>
+                <code ref={codeRef} className='language-javascript my-3 p-2 '>
+                    {findMethod}
+                </code>
+            </pre>
+        </div>
+       
+    </div>
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+    <h4 className='text-4xl mt-10 mb-5 text-center' id='findIndexMethod'>
+        findIndex()
+    </h4>
+    <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+    <p>
+        The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test. Here's an example:
+    </p>
+        <div className='flex justify-center align-middle '>
+            <pre className='mt-4'>
+                <code ref={codeRef} className='language-javascript my-3 p-2 '>
+                    {findIndexMethod}
+                </code>
+            </pre>
+        </div>
+        
+</div>
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+    <h4 className='text-4xl mt-10 mb-5 text-center' id='forEachMethod'>
+        forEach()
+    </h4>
+    <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+    <p>
+        The forEach() method executes a provided function once for each array element. Here's an example:
+    </p>
+        <div className='flex justify-center align-middle '>
+            <pre className='mt-4'>
+                <code ref={codeRef} className='language-javascript my-3 p-2 '>
+                    {forEachMethod}
+                </code>
+            </pre>
+        </div>
+        
+    </div>
+</div>
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+    <h4 className='text-4xl mt-10 mb-5 text-center' id='includesMethod'>
+        includes()
+    </h4>
+    <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+    <p>
+        The includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate. Here's an example:
+    </p>
+        <div className='flex justify-center align-middle '>
+            <pre className='mt-4'>
+                <code ref={codeRef} className='language-javascript my-3 p-2 '>
+                    {includesMethod}
+                </code>
+            </pre>
+        </div>
+        
+   
+
+
+
+
+
+
+
+
+
+
         </div>
       </div>
     </div>
