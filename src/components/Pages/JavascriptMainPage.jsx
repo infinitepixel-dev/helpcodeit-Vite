@@ -64,7 +64,7 @@ function JavascriptMainPage() {
               </li>
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
-                  to='/javascript/arrowfunctions'
+                  to='/javascriptPrincipals/ArrowFunctions'
                   className='jsMainPageLink'
                 >
                   Arrow Functions
@@ -96,7 +96,7 @@ function JavascriptMainPage() {
               </li>
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
-                  to='/javascript/packagejsonfile'
+                  to='/javascriptPrincipals/npmInitPackageJson'
                   className='jsMainPageLink'
                 >
                   &apos;npm init&apos; and Making a &apos;package.json&apos;
