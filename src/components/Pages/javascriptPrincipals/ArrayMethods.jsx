@@ -329,7 +329,7 @@ function ArrayMethods() {
               location in the same array and returns it without modifying its
               length. Here's some examples:
             </p>
-            <div className='grid grid-col-1 md:grid-cols-2'>
+            <div className='grid grid-col-1 lg:grid-cols-2'>
               <div className='flex justify-center align-middle '>
                 <pre className='mt-4'>
                   <code ref={codeRef} className='language-javascript my-3 p-2 '>
@@ -520,13 +520,502 @@ function ArrayMethods() {
                 </code>
             </pre>
         </div>
-        
+        </div>
    
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='indexOfMethod'>
+    indexOf()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present. Here's an example:
+  </p>
+  <div className='grid grid-col-1 md:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {indexOfMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the indexOf() method.
+      </p>
+      <div className='text-2xl text-center'>
+        ["🍏", "🍊", "🍊", "🍏"].indexOf("🍊") =&gt; 1
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='joinMethod'>
+    join()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The join() method creates and returns a new string by concatenating all of the elements in an array, separated by commas or a specified separator string. Here's an example:
+  </p>
+  <div className='grid grid-col-1 xl:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {joinMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the join() method.
+      </p>
+      <div className='text-2xl text-center'>
+        ["🍏", "🍊", "🍊", "🍏"].join(", ") =&gt; "🍏, 🍊, 🍊, 🍏"
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='keysMethod'>
+    keys()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The keys() method returns a new Array Iterator object that contains the keys for each index in the array. Here's an example:
+  </p>
+  <div className='grid grid-col-1 lg:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {keysMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the keys() method.
+      </p>
+      <div className='text-2xl text-center'>
+        Array keys of ["🍏", "🍊", "🍊", "🍏"] =&gt; 0, 1, 2, 3
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='lastIndexOfMethod'>
+    lastIndexOf()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The lastIndexOf() method returns the last index at which a given element can be found in the array, or -1 if it is not present. The array is searched backwards, starting at fromIndex. Here's an example:
+  </p>
+  <div className='grid grid-col-1 lg:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {lastIndexOfMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the lastIndexOf() method.
+      </p>
+      <div className='text-2xl text-center'>
+        ["🍏", "🍊", "🍊", "🍏"].lastIndexOf("🍊") =&gt; 2
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='mapMethod'>
+    map()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The map() method creates a new array populated with the results of calling a provided function on every element in the calling array. Here's an example:
+  </p>
+  <div className='grid grid-col-1 lg:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {mapMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the map() method.
+      </p>
+      <div className='text-2xl text-center'>
+        ["🍏", "🍊", "🍊", "🍏"].map(fruit =&gt; fruit + " juice") =&gt; ["🍏 juice", "🍊 juice", "🍊 juice", "🍏 juice"]
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='popMethod'>
+    pop()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The pop() method removes the last element from an array and returns that element. This method changes the length of the array. Here's an example:
+  </p>
+  <div className='grid grid-col-1 lg:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {popMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the pop() method.
+      </p>
+      <div className='text-2xl text-center'>
+        let fruits = ["🍏", "🍊", "🍊", "🍏"]; fruits.pop() =&gt; "🍏"; fruits =&gt; ["🍏", "🍊", "🍊"]
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='pushMethod'>
+    push()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The push() method adds one or more elements to the end of an array and returns the new length of the array. Here's an example:
+  </p>
+  <div className='grid grid-col-1 lg:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {pushMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the push() method.
+      </p>
+      <div className='text-2xl text-center'>
+        let fruits = ["🍏", "🍊", "🍊"]; fruits.push("🍏") =&gt; 4; fruits =&gt; ["🍏", "🍊", "🍊", "🍏"]
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='reduceMethod'>
+    reduce()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in a single output value. Here's an example:
+  </p>
+  <div className='grid grid-col-1 lg:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {reduceMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a another example of the reduce() method.
+      </p>
+      <div className='text-2xl text-center'>
+        [1, 2, 3, 4].reduce((accumulator, currentValue) =&gt; accumulator + currentValue, 0) =&gt; 10
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='reduceRightMethod'>
+    reduceRight()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The reduceRight() method applies a function against an accumulator and each value of the array (from right-to-left) to reduce it to a single value. Here's an example:
+  </p>
+  <div className='grid'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {reduceRightMethod}
+        </code>
+      </pre>
+    </div>
+  
+  </div>
+</div>
+
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='reverseMethod'>
+    reverse()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The reverse() method reverses an array in place. The first array element becomes the last, and the last array element becomes the first. Here's an example:
+  </p>
+  <div className='grid grid-col-1 lg:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {reverseMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the reverse() method.
+      </p>
+      <div className='text-2xl text-center'>
+        let fruits = ["🍏", "🍊", "🍊", "🍏"]; fruits.reverse() =&gt; ["🍏", "🍊", "🍊", "🍏"]; fruits =&gt; ["🍏", "🍊", "🍊", "🍏"]
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='shiftMethod'>
+    shift()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The shift() method removes the first element from an array and returns that removed element. This method changes the length of the array. Here's an example:
+  </p>
+  <div className='grid grid-col-1 lg:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {shiftMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the shift() method.
+      </p>
+      <div className='text-2xl text-center'>
+        let fruits = ["🍏", "🍊", "🍊", "🍏"]; fruits.shift() =&gt; "🍏"; fruits =&gt; ["🍊", "🍊", "🍏"]
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='sliceMethod'>
+    slice()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end (end not included). The original array will not be modified. Here's an example:
+  </p>
+  <div className='grid grid-col-1 lg:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {sliceMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the slice() method.
+      </p>
+      <div className='text-2xl text-center'>
+        let fruits = ["🍏", "🍊", "🍊", "🍏"]; fruits.slice(1, 3) =&gt; ["🍊", "🍊"]; fruits =&gt; ["🍏", "🍊", "🍊", "🍏"]
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='someMethod'>
+    some()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The some() method tests whether at least one element in the array passes the test implemented by the provided function. It returns a Boolean value. Here's an example:
+  </p>
+  <div className='grid grid-col-1 lg:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {someMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the some() method.
+      </p>
+      <div className='text-2xl text-center'>
+        [1, 2, 3, 4].some(num =&gt; num &gt; 3) =&gt; true
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='sortMethod'>
+    sort()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The sort() method sorts the elements of an array in place and returns the array. The default sort order is built upon converting the elements into strings, then comparing their sequences of UTF-16 code unit values. Here's an example:
+  </p>
+  <div className='grid grid-col-1 lg:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {sortMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the sort() method.
+      </p>
+      <div className='text-2xl text-center'>
+        let fruits = ["🍏", "🍊", "🍊", "🍏"]; fruits.sort() =&gt; ["🍏", "🍏", "🍊", "🍊"]; fruits =&gt; ["🍏", "🍏", "🍊", "🍊"]
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='spliceMethod'>
+    splice()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place. Here's an example:
+  </p>
+  <div className='grid grid-col-1 lg:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {spliceMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the splice() method.
+      </p>
+      <div className='text-2xl text-center'>
+        let fruits = ["🍏", "🍊", "🍊", "🍏"]; fruits.splice(1, 2, "🍇", "🍓") =&gt; ["🍊", "🍊"]; fruits =&gt; ["🍏", "🍇", "🍓", "🍏"]
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='toLocaleStringMethod'>
+    toLocaleString()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The toLocaleString() method returns a string representing the elements of the array. The elements are converted to Strings using their toLocaleString methods and these Strings are separated by a locale-specific String (such as a comma “,”). Here's an example:
+  </p>
+  <div className='grid grid-col-1 xl:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {toLocaleStringMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the toLocaleString() method.
+      </p>
+      <div className='text-2xl text-center'>
+        let number = [1337, 42]; number.toLocaleString() =&gt; "1,337,42"
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='toStringMethod'>
+    toString()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The toString() method returns a string representing the specified array and its elements. Here's an example:
+  </p>
+  <div className='grid grid-col-1 xl:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {toStringMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the toString() method.
+      </p>
+      <div className='text-2xl text-center'>
+        let fruits = ["🍏", "🍊", "🍊", "🍏"]; fruits.toString() =&gt; "🍏,🍊,🍊,🍏"
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className='mt-5 p-5 rounded-lg border border-black dark:border-white'>
+  <h4 className='text-4xl mt-10 mb-5 text-center' id='unshiftMethod'>
+    unshift()
+  </h4>
+  <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+  <p>
+    The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array. Here's an example:
+  </p>
+  <div className='grid grid-col-1 xl:grid-cols-2'>
+    <div className='flex justify-center align-middle '>
+      <pre className='mt-4'>
+        <code ref={codeRef} className='language-javascript my-3 p-2 '>
+          {unshiftMethod}
+        </code>
+      </pre>
+    </div>
+    <div className='text-center my-auto'>
+      <p className='text-center'>
+        Below is a graphical representation of the unshift() method.
+      </p>
+      <div className='text-2xl text-center'>
+        let fruits = ["🍏", "🍊", "🍊", "🍏"]; fruits.unshift("🍇", "🍓") =&gt; 6; fruits =&gt; ["🍇", "🍓", "🍏", "🍊", "🍊", "🍏"]
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -534,7 +1023,7 @@ function ArrayMethods() {
 
         </div>
       </div>
-    </div>
+    
   );
 }
 export default ArrayMethods;
