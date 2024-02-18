@@ -148,10 +148,10 @@ function JavascriptMainPage() {
               </li>
               <li className='py-2 text-xl font-bold mx-auto'>
                 <Link
-                  to='/javascript/CRUD'
+                  to='/javascriptPrincipals/CRUD-Main'
                   className='jsMainPageLink'
                 >
-                  C.R.U.D. Operations with API&apos;s (Fetch)
+                  C.R.U.D. Operations with API&apos;s
                 </Link>
               </li>
             </ul>
