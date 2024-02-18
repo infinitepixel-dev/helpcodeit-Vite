@@ -642,7 +642,7 @@ function ArrayMethods() {
   <p>
     The map() method creates a new array populated with the results of calling a provided function on every element in the calling array. Here's an example:
   </p>
-  <div className='grid grid-col-1 lg:grid-cols-2'>
+  <div className='grid grid-col-1 xl:grid-cols-2'>
     <div className='flex justify-center align-middle '>
       <pre className='mt-4'>
         <code ref={codeRef} className='language-javascript my-3 p-2 '>
@@ -726,7 +726,7 @@ function ArrayMethods() {
   <p>
     The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in a single output value. Here's an example:
   </p>
-  <div className='grid grid-col-1 lg:grid-cols-2'>
+  <div className='grid grid-col-1 xl:grid-cols-2'>
     <div className='flex justify-center align-middle '>
       <pre className='mt-4'>
         <code ref={codeRef} className='language-javascript my-3 p-2 '>
