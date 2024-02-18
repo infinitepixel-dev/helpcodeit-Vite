@@ -17,6 +17,8 @@ import JSObjects from "./components/Pages/javascriptPrincipals/JSObjects";
 import ArrowFunctions from "./components/Pages/javascriptPrincipals/ArrowFunctions";
 import ArrayMethods from "./components/Pages/javascriptPrincipals/ArrayMethods";
 import PackagesAndPackageJson from "./components/Pages/javascriptPrincipals/PackagesAndPackageJson";
+import Bootstrap from "./components/Pages/fundamentals/Bootstrap";
+
 
 export default function App() {
   useEffect(() => {
@@ -55,6 +57,7 @@ export default function App() {
           <Route path="/javascriptPrincipals/ArrowFunctions" element={<ArrowFunctions />} />
           <Route path="/javascriptPrincipals/ArrayMethods" element={<ArrayMethods />} />
           <Route path="/javascriptPrincipals/PackagesAndPackageJson" element={<PackagesAndPackageJson />} />
+          <Route path="/fundamentals/Bootstrap" element={<Bootstrap/>} />
         </Routes>
       </div>
     </DarkModeProvider>
