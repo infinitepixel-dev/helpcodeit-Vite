@@ -17,7 +17,6 @@ export default function Loops() {
 
   let isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   console.log("Dark Mode: ", isDark);
-  // if the theme changes then the isDark variable will be updated
 
   const forLoop = `for (let i = 0; i < 5; i++) {
     console.log(i);
