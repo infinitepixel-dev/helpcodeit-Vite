@@ -18,6 +18,8 @@ import ArrowFunctions from "./components/Pages/javascriptPrincipals/ArrowFunctio
 import ArrayMethods from "./components/Pages/javascriptPrincipals/ArrayMethods";
 import PackagesAndPackageJson from "./components/Pages/javascriptPrincipals/PackagesAndPackageJson";
 import Bootstrap from "./components/Pages/fundamentals/Bootstrap";
+import JSCRUDMain from "./components/Pages/javascriptPrincipals/JSCRUDMain";
+import AJAX from "./components/Pages/javascriptPrincipals/CRUD/AJAX";
 
 export default function App() {
   useEffect(() => {
@@ -53,19 +55,14 @@ export default function App() {
         <Route path='*' element={<NotFound />} /> */}
           <Route path="/code_practice" element={<CodePractice />} />
           <Route path="/javascriptPrincipals/Objects" element={<JSObjects />} />
-          <Route
-            path="/javascriptPrincipals/ArrowFunctions"
-            element={<ArrowFunctions />}
-          />
-          <Route
-            path="/javascriptPrincipals/ArrayMethods"
-            element={<ArrayMethods />}
-          />
-          <Route
-            path="/javascriptPrincipals/PackagesAndPackageJson"
-            element={<PackagesAndPackageJson />}
-          />
-          <Route path="/fundamentals/Bootstrap" element={<Bootstrap />} />
+
+          <Route path="/javascriptPrincipals/ArrowFunctions" element={<ArrowFunctions />} />
+          <Route path="/javascriptPrincipals/ArrayMethods" element={<ArrayMethods />} />
+          <Route path="/javascriptPrincipals/PackagesAndPackageJson" element={<PackagesAndPackageJson />} />
+          <Route path="/fundamentals/Bootstrap" element={<Bootstrap/>} />
+          <Route path="/javascriptPrincipals/CRUD-Main" element={<JSCRUDMain />} />
+          <Route path="/javascriptPrincipals/CRUD-AJAX" element={<AJAX />} />
+
         </Routes>
       </div>
     </DarkModeProvider>

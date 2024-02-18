@@ -23,8 +23,8 @@ export default function DeclaringVariables() {
   const constExample = `const mySchool = "Cool School";`;
 
   return (
-    <div className='dark:bg-slate-600 '>
-      <div className='container mx-auto mukataFont min-h-screen text-lg dark:text-white'>
+    <div>
+      <div className='container mx-auto mukataFont min-h-screen text-lg'>
         <div className='flex flex-wrap pt-20'>
           <h1 className='text-6xl font-bold text-center w-full mb-10'>
             Understanding Variables in JavaScript
