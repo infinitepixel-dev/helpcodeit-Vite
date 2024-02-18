@@ -36,7 +36,7 @@ export default function MainCards() {
         }}
         title="Need to see the available options?"
         description="This page contains a table with all the array methods, with explanations and examples."
-        actionHref="./javascriptPrincipals/arraymethods.html"
+        actionHref="./javascriptPrincipals/ArrayMethods"
         actionText="See the Table"
         styles={styles}
       />
