@@ -193,10 +193,16 @@ code {
   font-family: "Lato", sans-serif;
 }
 
+.link-custom {
+  @apply text-blue-500 hover:text-blue-800 text-xl font-bold
+}
+
 .logoBackground {
   background-color: black;
   width: 200px;
 }
+
+
 
 .macSetupAppleLogo {
   max-width: 35px;
