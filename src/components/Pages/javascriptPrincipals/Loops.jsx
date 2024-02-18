@@ -57,8 +57,8 @@ do {
           and over again. This way we don&apos;t have to!{" "}
         </p>
         <p className="text-xl">
-          So now that we have established that loops are a good thing, let's
-          learn about the different types of loops in JavaScript.
+          So now that we have established that loops are a good thing,
+          let&apos;s learn about the different types of loops in JavaScript.
         </p>
         <hr className="border-black my-5 dark:border-white" />
         <h2 className="text-4xl py-2">For Loop </h2>
@@ -158,9 +158,9 @@ do {
             array.
           </li>
           <li className="list-disc">
-            The while loop is useful when you don't know how many times you want
-            to run the loop. So you might use it for something like waiting for
-            a user to input a specific value.
+            The while loop is useful when you don&apos;t know how many times you
+            want to run the loop. So you might use it for something like waiting
+            for a user to input a specific value.
           </li>
           <li className="list-disc">
             The do...while loop is useful when you want to run the loop at least
