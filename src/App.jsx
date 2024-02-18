@@ -14,6 +14,7 @@ import CodePractice from "./components/Sub_Components/Code_Practice";
 import StandardFunctions from "./components/Pages/javascriptPrincipals/StandardFunctions";
 import Loops from "./components/Pages/javascriptPrincipals/loops";
 import JSObjects from "./components/Pages/javascriptPrincipals/JSObjects";
+import ArrowFunctions from "./components/Pages/javascriptPrincipals/ArrowFunctions";
 
 export default function App() {
   useEffect(() => {
@@ -49,6 +50,7 @@ export default function App() {
         <Route path='*' element={<NotFound />} /> */}
           <Route path="/code_practice" element={<CodePractice />} />
           <Route path="/javascriptPrincipals/Objects" element={<JSObjects />} />
+          <Route path="/javascriptPrincipals/ArrowFunctions" element={<ArrowFunctions />} />
         </Routes>
       </div>
     </DarkModeProvider>

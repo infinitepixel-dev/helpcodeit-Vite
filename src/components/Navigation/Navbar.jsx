@@ -39,7 +39,7 @@ it does work when manually refreshing the page, but is not related to state chan
   }, []);
 
   return (
-    <div className='w-full mx-auto px-2 dark:bg-neutral-800 bg-white'>
+    <div className='w-full mx-auto px-2 shadow-sm border-b border-black dark:bg-neutral-800 bg-white '>
       <nav
         className={
           isSmallScreen && navbarCollapse
@@ -152,7 +152,12 @@ it does work when manually refreshing the page, but is not related to state chan
             >
               About
             </NavLink>
-            <NavLink to='/javascript' className={({isActive}) => getClassName({isActive}, {currentPath: "/javascript"})}>
+            <NavLink
+              to='/javascript'
+              className={({ isActive }) =>
+                getClassName({ isActive }, { currentPath: "/javascript" })
+              }
+            >
               JavaScript
             </NavLink>
             <a href='' className='p-2 hover:bg-slate-500 rounded'>

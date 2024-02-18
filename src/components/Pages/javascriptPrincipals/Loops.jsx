@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
 import reloadImg from "../../../assets/Feather refresh icon.svg";
+import reloadingDark from "../../../assets/refreshdark.svg";
 
 export default function Loops() {
   const codeRef = useRef(null);
@@ -13,6 +14,10 @@ export default function Loops() {
       hljs.highlightBlock(block);
     });
   }, []);
+
+  let isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  console.log("Dark Mode: ", isDark);
+  // if the theme changes then the isDark variable will be updated
 
   const forLoop = `for (let i = 0; i < 5; i++) {
     console.log(i);
@@ -37,7 +42,7 @@ do {
         <h1 className="text-8xl font-bold text-center py-10">
           Loops...<span className="text-5xl"> in JavaScript</span>{" "}
           <img
-            src={reloadImg}
+            src={isDark ? reloadImg : reloadingDark}
             alt="Reload Image"
             className="inline ms-3 animate-spin-slow"
           />
@@ -52,8 +57,8 @@ do {
           and over again. This way we don&apos;t have to!{" "}
         </p>
         <p className="text-xl">
-          So now that we have established that loops are a good thing,
-          let&apos;s learn about the different types of loops in JavaScript.
+          So now that we have established that loops are a good thing, let's
+          learn about the different types of loops in JavaScript.
         </p>
         <hr className="border-black my-5 dark:border-white" />
         <h2 className="text-4xl py-2">For Loop </h2>
@@ -153,9 +158,9 @@ do {
             array.
           </li>
           <li className="list-disc">
-            The while loop is useful when you don&apos;t know how many times you
-            want to run the loop. So you might use it for something like waiting
-            for a user to input a specific value.
+            The while loop is useful when you don't know how many times you want
+            to run the loop. So you might use it for something like waiting for
+            a user to input a specific value.
           </li>
           <li className="list-disc">
             The do...while loop is useful when you want to run the loop at least
