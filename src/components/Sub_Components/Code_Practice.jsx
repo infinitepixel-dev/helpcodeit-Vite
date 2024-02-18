@@ -4,10 +4,7 @@ import PropTypes from "prop-types";
 import incorrectImg from "../../assets/no.png";
 import correctImg from "../../assets/yes.png";
 
-import hljs from "highlight.js";
-// import javascript from "highlight.js/lib/languages/javascript.js";
-
-import "highlight.js/styles/atom-one-dark.css";
+import AutoExpandingTextarea from "./AutoExpandingTextArea";
 
 function CodePractice({
   instructions,
@@ -15,6 +12,7 @@ function CodePractice({
   variables,
   expectedOutput,
   functionData,
+  hljs,
 }) {
   console.clear();
   console.log("\nDeclared Variables:", variables);
@@ -33,8 +31,14 @@ function CodePractice({
   const [isSubmitted, setIsSubmitted] = useState(false);
   // const [problem, setProblem] = useState("");
 
-  const [userInput, setUserInput] = useState(" ");
+  const [userInput, setUserInput] = useState(`function addNumbers(num1, num2) {
+    return num1 + num2;
+  }`);
   const codeInput = useRef(null);
+
+  const handleInputChange = (e) => {
+    setUserInput(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -67,20 +71,14 @@ function CodePractice({
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    // Apply highlighting when the component mounts
-    hljs.highlightAll();
-  }, []);
-
+  // This useEffect runs on userInput changes, after the initial mount
   useEffect(() => {
     if (codeInput.current) {
       // Set the text content of the code element to userInput
-      codeInput.current.textContent = userInput;
+      // codeInput.current.innerText = userInput;
 
-      // Remove the highlighted attribute if it's set
-      if (codeInput.current.hasAttribute("data-highlighted")) {
-        delete codeInput.current.dataset.highlighted;
-      }
+      // Ensure the element is marked as not highlighted to allow re-highlighting
+      codeInput.current.removeAttribute("data-highlighted");
 
       // Highlight with hljs
       hljs.highlightElement(codeInput.current);
@@ -144,11 +142,10 @@ function CodePractice({
 
             if (input === "textarea") {
               return (
-                <textarea
+                <AutoExpandingTextarea
                   key={index}
-                  className="bg-white border border-black w-full h-20 dark:bg-slate-600 text-white"
                   value={userInput}
-                  onChange={(e) => setUserInput(`${e.target.value}`)}
+                  onChange={handleInputChange}
                 />
               );
             }
@@ -193,6 +190,7 @@ CodePractice.propTypes = {
   variables: PropTypes.any,
   functionData: PropTypes.func,
   expectedOutput: PropTypes.string,
+  hljs: PropTypes.object,
 };
 
 export default CodePractice;

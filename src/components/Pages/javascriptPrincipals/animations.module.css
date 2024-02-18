@@ -1,3 +1,15 @@
+.container {
+  /* This acts as the scroll container */
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh; /* Adjust based on your layout */
+}
+
+.observeMe {
+  /* Each section will be a snap point */
+  scroll-snap-align: start;
+}
+
 /* Coding_Practice.module.css */
 @keyframes fadeInCustom {
   0% {
