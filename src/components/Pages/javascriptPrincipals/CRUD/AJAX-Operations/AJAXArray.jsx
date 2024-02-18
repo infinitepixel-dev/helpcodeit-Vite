@@ -1,4 +1,4 @@
-
+// REVIEW Array of objects for AJAX and AXIOS operations
 
 const AJAXArray = [
   {
