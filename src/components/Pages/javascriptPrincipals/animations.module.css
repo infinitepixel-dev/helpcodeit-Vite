@@ -1,0 +1,15 @@
+/* Coding_Practice.module.css */
+@keyframes fadeInCustom {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeInCustom {
+  animation-name: fadeInCustom;
+  animation-duration: 2s;
+  animation-fill-mode: forwards; /* Keeps the element visible after the animation */
+}

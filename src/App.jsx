@@ -12,7 +12,7 @@ import PracticeProblems from "./components/Pages/javascriptPrincipals/PracticePr
 import DeclaringVariables from "./components/Pages/javascriptPrincipals/DeclaringVariables";
 import CodePractice from "./components/Sub_Components/Code_Practice";
 import StandardFunctions from "./components/Pages/javascriptPrincipals/StandardFunctions";
-import Loops from "./components/Pages/javascriptPrincipals/loops";
+import Loops from "./components/Pages/javascriptPrincipals/Loops";
 import JSObjects from "./components/Pages/javascriptPrincipals/JSObjects";
 import ArrowFunctions from "./components/Pages/javascriptPrincipals/ArrowFunctions";
 import ArrayMethods from "./components/Pages/javascriptPrincipals/ArrayMethods";
@@ -20,7 +20,6 @@ import PackagesAndPackageJson from "./components/Pages/javascriptPrincipals/Pack
 import Bootstrap from "./components/Pages/fundamentals/Bootstrap";
 import JSCRUDMain from "./components/Pages/javascriptPrincipals/JSCRUDMain";
 import AJAX from "./components/Pages/javascriptPrincipals/CRUD/AJAX";
-
 
 export default function App() {
   useEffect(() => {
@@ -56,12 +55,14 @@ export default function App() {
         <Route path='*' element={<NotFound />} /> */}
           <Route path="/code_practice" element={<CodePractice />} />
           <Route path="/javascriptPrincipals/Objects" element={<JSObjects />} />
+
           <Route path="/javascriptPrincipals/ArrowFunctions" element={<ArrowFunctions />} />
           <Route path="/javascriptPrincipals/ArrayMethods" element={<ArrayMethods />} />
           <Route path="/javascriptPrincipals/PackagesAndPackageJson" element={<PackagesAndPackageJson />} />
           <Route path="/fundamentals/Bootstrap" element={<Bootstrap/>} />
           <Route path="/javascriptPrincipals/CRUD-Main" element={<JSCRUDMain />} />
           <Route path="/javascriptPrincipals/CRUD-AJAX" element={<AJAX />} />
+
         </Routes>
       </div>
     </DarkModeProvider>
