@@ -134,11 +134,16 @@ it does work when manually refreshing the page, but is not related to state chan
                 </li>
                 <hr />
                 <li>
+                 <NavLink to="/fundamentals/Bootstrap" className='hover:bg-slate-500 rounded rounded-b dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap'>
+                    Bootstrap
+                  </NavLink>
+                </li>
+                <li>
                   <a
                     href='#'
                     className='hover:bg-slate-500 rounded rounded-b dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap'
                   >
-                    Three is the magic number
+                    GitHub
                   </a>
                 </li>
               </ul>
