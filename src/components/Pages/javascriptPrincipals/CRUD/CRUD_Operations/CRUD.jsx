@@ -1,7 +1,7 @@
 
 import React, { useEffect, useRef } from "react";
 
-function CRUD({ AJAXitem, hljs}) {
+function CRUD({ Object, hljs}) {
 console.log("accordion");
 
   const codeRef = useRef(null);
@@ -12,7 +12,7 @@ console.log("accordion");
         hljs.highlightBlock(block);
       });
     }, []);
-  
+  console.log(Object)
   return (
     <div className='text-lg'>
       <p>
@@ -22,18 +22,17 @@ console.log("accordion");
       <div className='border border-1 p-3 my-5 rounded-lg  border-black dark:border-white'>
         <ul className='list-inside'>
            
-          {AJAXitem.content.map((item, index) => {
+          {Object.content.map((item, index) => {
             return (
               <li key={index} className='list-disc my-2'>
                 {item.description}
-                
               </li>
             );
           })}
         </ul>
         <pre>
           <code ref={codeRef} className='language-javascript mx-auto mt-10'>
-            {AJAXitem.code}
+            {Object.code}
           </code>
         </pre>
       </div>
