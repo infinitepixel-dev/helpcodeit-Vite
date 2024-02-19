@@ -19,7 +19,7 @@ function AutoExpandingTextarea({ value, onChange }) {
         height: "150px",
         overflowY: "hidden", // Hide the scrollbar
       }}
-      className="bg-white border border-black w-full h-20 dark:bg-slate-600 text-white p-2 rounded-md"
+      className="bg-white border border-black w-full h-20 dark:bg-slate-600 p-2 rounded-md"
     />
   );
 }
