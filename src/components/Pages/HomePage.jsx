@@ -1,5 +1,5 @@
 import logo from "../../assets/helpcodeitlogo.svg";
-import MainCards from "../MainCards";
+import MainCards from "../Sub_Components/MainCards";
 
 function HomePage() {
   return (
