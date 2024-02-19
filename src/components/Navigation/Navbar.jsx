@@ -127,12 +127,12 @@ it does work when manually refreshing the page, but is not related to state chan
                 }
               >
                 <li>
-                  <a
-                    href='#'
+                  <NavLink
+                    to='/fundamentals/Installs'
                     className='rounded-t hover:bg-slate-500 rounded dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap'
                   >
                     Installs
-                  </a>
+                  </NavLink>
                 </li>
                 <li>
                   <a

@@ -22,6 +22,7 @@ import JSCRUDMain from "./components/Pages/javascriptPrincipals/JSCRUDMain";
 import AJAX from "./components/Pages/javascriptPrincipals/CRUD/AJAX";
 import Fetch from "./components/Pages/javascriptPrincipals/CRUD/CRUD_Operations/Fetch";
 import GitHub from "./components/Pages/fundamentals/GitHub";
+import Installs from "./components/Pages/fundamentals/Installs";
 
 export default function App() {
   useEffect(() => {
@@ -40,6 +41,8 @@ export default function App() {
           {/* <Route path='/GettingStarted' element={<GettingStarted />} /> */}
           <Route exact path='/about' element={<About />} />
           <Route path='/fundamentals/GitHub' element={<GitHub />} />
+          <Route path='/fundamentals/Bootstrap' element={<Bootstrap />} />
+<Route path='/fundamentals/Installs' element={<Installs />}/>
           <Route path='/javascript' element={<JavascriptMainPage />} />
           <Route
             path='/javascriptPrincipals/PracticeProblems'
@@ -71,7 +74,6 @@ export default function App() {
             path='/javascriptPrincipals/PackagesAndPackageJson'
             element={<PackagesAndPackageJson />}
           />
-          <Route path='/fundamentals/Bootstrap' element={<Bootstrap />} />
           <Route
             path='/javascriptPrincipals/CRUD-Main'
             element={<JSCRUDMain />}
