@@ -21,6 +21,7 @@ import Bootstrap from "./components/Pages/fundamentals/Bootstrap";
 import JSCRUDMain from "./components/Pages/javascriptPrincipals/JSCRUDMain";
 import AJAX from "./components/Pages/javascriptPrincipals/CRUD/AJAX";
 import Fetch from "./components/Pages/javascriptPrincipals/CRUD/CRUD_Operations/Fetch";
+import GitHub from "./components/Pages/fundamentals/GitHub";
 
 export default function App() {
   useEffect(() => {
@@ -38,6 +39,7 @@ export default function App() {
           <Route exact path='/' element={<HomePage />} />
           {/* <Route path='/GettingStarted' element={<GettingStarted />} /> */}
           <Route exact path='/about' element={<About />} />
+          <Route path='/fundamentals/GitHub' element={<GitHub />} />
           <Route path='/javascript' element={<JavascriptMainPage />} />
           <Route
             path='/javascriptPrincipals/PracticeProblems'
