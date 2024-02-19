@@ -96,7 +96,7 @@ it does work when manually refreshing the page, but is not related to state chan
             className={`flex ${
               isSmallScreen
                 ? "flex-col text-right w-full dark:bg-neutral-800 bg-white dark:text-white text-black"
-                : "space-x-4"
+                : "space-x-1 md:space-x-3 md:text-2xl lg:space-x-5"
             } ${
               !navbarCollapse && isSmallScreen ? "hidden" : ""
             } font-bold dark:text-white text-black`}
@@ -135,12 +135,12 @@ it does work when manually refreshing the page, but is not related to state chan
                   </NavLink>
                 </li>
                 <li>
-                  <a
-                    href='#'
+                  <NavLink
+                    to='/fundamentals/SettingUpPracticeEnvironment'
                     className='hover:bg-slate-500 rounded dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap'
                   >
                     Setting up a Practice Environment
-                  </a>
+                  </NavLink>
                 </li>
                 <hr />
                 <li>
@@ -161,7 +161,7 @@ it does work when manually refreshing the page, but is not related to state chan
                 </li>
               </ul>
             </div>
-            <NavLink
+            {/* <NavLink
               to='/about'
               className={({ isActive }) =>
                 getClassName({ isActive }, { currentPath: "/about" })
@@ -169,7 +169,7 @@ it does work when manually refreshing the page, but is not related to state chan
               end
             >
               About
-            </NavLink>
+            </NavLink> */}
             <NavLink
               to='/javascript'
               className={({ isActive }) =>
@@ -178,9 +178,6 @@ it does work when manually refreshing the page, but is not related to state chan
             >
               JavaScript
             </NavLink>
-            <a href='' className='p-2 hover:bg-slate-500 rounded'>
-              Contact
-            </a>
           </div>
         </div>
       </nav>

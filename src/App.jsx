@@ -23,6 +23,7 @@ import AJAX from "./components/Pages/javascriptPrincipals/CRUD/AJAX";
 import Fetch from "./components/Pages/javascriptPrincipals/CRUD/CRUD_Operations/Fetch";
 import GitHub from "./components/Pages/fundamentals/GitHub";
 import Installs from "./components/Pages/fundamentals/Installs";
+import PracticeEnvironment from "./components/Pages/fundamentals/PracticeEnvironment";
 
 export default function App() {
   useEffect(() => {
@@ -42,6 +43,8 @@ export default function App() {
           <Route exact path='/about' element={<About />} />
           <Route path='/fundamentals/GitHub' element={<GitHub />} />
           <Route path='/fundamentals/Bootstrap' element={<Bootstrap />} />
+          <Route path='/fundamentals/Installs' element={<Installs />} />
+          <Route path='/fundamentals/SettingUpPracticeEnvironment' element={<PracticeEnvironment />}/>
 <Route path='/fundamentals/Installs' element={<Installs />}/>
           <Route path='/javascript' element={<JavascriptMainPage />} />
           <Route
