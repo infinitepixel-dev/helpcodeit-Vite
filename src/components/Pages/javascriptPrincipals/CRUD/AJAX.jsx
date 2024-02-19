@@ -1,13 +1,13 @@
 import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
-import { AJAXArray, AXIOSArray } from "./AJAX-Operations/AJAXArray";
+import { AJAXArray, AXIOSArray } from "./CRUD_Operations/AJAXArray";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "../../../ui/accordion";
-import CRUD from "./AJAX-Operations/CRUD";
+import CRUD from "./CRUD_Operations/CRUD";
 
 function AJAX() {
   

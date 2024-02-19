@@ -20,6 +20,8 @@ import PackagesAndPackageJson from "./components/Pages/javascriptPrincipals/Pack
 import Bootstrap from "./components/Pages/fundamentals/Bootstrap";
 import JSCRUDMain from "./components/Pages/javascriptPrincipals/JSCRUDMain";
 import AJAX from "./components/Pages/javascriptPrincipals/CRUD/AJAX";
+import Fetch from "./components/Pages/javascriptPrincipals/CRUD/CRUD_Operations/Fetch";
+import GitHub from "./components/Pages/fundamentals/GitHub";
 
 export default function App() {
   useEffect(() => {
@@ -29,40 +31,53 @@ export default function App() {
   return (
     <DarkModeProvider>
       <div>
-        <div className="w-full m-0 p-0">
+        <div className='w-full m-0 p-0'>
           <Navbar />
         </div>
 
         <Routes>
-          <Route exact path="/" element={<HomePage />} />
+          <Route exact path='/' element={<HomePage />} />
           {/* <Route path='/GettingStarted' element={<GettingStarted />} /> */}
-          <Route exact path="/about" element={<About />} />
-          <Route path="/javascript" element={<JavascriptMainPage />} />
+          <Route exact path='/about' element={<About />} />
+          <Route path='/fundamentals/GitHub' element={<GitHub />} />
+          <Route path='/javascript' element={<JavascriptMainPage />} />
           <Route
-            path="/javascriptPrincipals/PracticeProblems"
+            path='/javascriptPrincipals/PracticeProblems'
             element={<PracticeProblems />}
           />
           <Route
-            path="/javascriptPrincipals/DeclaringVariables"
+            path='/javascriptPrincipals/DeclaringVariables'
             element={<DeclaringVariables />}
           />
           <Route
-            path="/javascriptPrincipals/StandardFunctions"
+            path='/javascriptPrincipals/StandardFunctions'
             element={<StandardFunctions />}
           />
-          <Route path="/javascriptPrincipals/Loops" element={<Loops />} />
+          <Route path='/javascriptPrincipals/Loops' element={<Loops />} />
           {/*<Route path='/contact' element={<Contact />} />
         <Route path='*' element={<NotFound />} /> */}
-          <Route path="/code_practice" element={<CodePractice />} />
-          <Route path="/javascriptPrincipals/Objects" element={<JSObjects />} />
+          <Route path='/code_practice' element={<CodePractice />} />
+          <Route path='/javascriptPrincipals/Objects' element={<JSObjects />} />
 
-          <Route path="/javascriptPrincipals/ArrowFunctions" element={<ArrowFunctions />} />
-          <Route path="/javascriptPrincipals/ArrayMethods" element={<ArrayMethods />} />
-          <Route path="/javascriptPrincipals/PackagesAndPackageJson" element={<PackagesAndPackageJson />} />
-          <Route path="/fundamentals/Bootstrap" element={<Bootstrap/>} />
-          <Route path="/javascriptPrincipals/CRUD-Main" element={<JSCRUDMain />} />
-          <Route path="/javascriptPrincipals/CRUD-AJAX" element={<AJAX />} />
-
+          <Route
+            path='/javascriptPrincipals/ArrowFunctions'
+            element={<ArrowFunctions />}
+          />
+          <Route
+            path='/javascriptPrincipals/ArrayMethods'
+            element={<ArrayMethods />}
+          />
+          <Route
+            path='/javascriptPrincipals/PackagesAndPackageJson'
+            element={<PackagesAndPackageJson />}
+          />
+          <Route path='/fundamentals/Bootstrap' element={<Bootstrap />} />
+          <Route
+            path='/javascriptPrincipals/CRUD-Main'
+            element={<JSCRUDMain />}
+          />
+          <Route path='/javascriptPrincipals/CRUD-AJAX' element={<AJAX />} />
+          <Route path='/javascriptPrincipals/CRUD-Fetch' element={<Fetch />} />
         </Routes>
       </div>
     </DarkModeProvider>

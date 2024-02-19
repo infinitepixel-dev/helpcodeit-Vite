@@ -38,6 +38,15 @@ it does work when manually refreshing the page, but is not related to state chan
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  //NOTE Close the dropdown when clicking outside of it
+  document.addEventListener("click", function (event) {
+    var myElement = document.getElementById("dropdown-button");
+
+    if (event.target !== myElement) {
+      setDropdown(false);
+    }
+  });
+
   return (
     <div className='w-full mx-auto px-2 shadow-sm border-b border-black dark:bg-neutral-800 bg-white '>
       <nav
@@ -106,6 +115,7 @@ it does work when manually refreshing the page, but is not related to state chan
               <button
                 className='p-2 hover:bg-slate-500 rounded'
                 onClick={() => setDropdown(!dropdown)}
+                id="dropdown-button"
               >
                 Getting Started
               </button>
@@ -134,17 +144,20 @@ it does work when manually refreshing the page, but is not related to state chan
                 </li>
                 <hr />
                 <li>
-                 <NavLink to="/fundamentals/Bootstrap" className='hover:bg-slate-500 rounded rounded-b dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap'>
+                  <NavLink
+                    to='/fundamentals/Bootstrap'
+                    className='hover:bg-slate-500 rounded rounded-b dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap'
+                  >
                     Bootstrap
                   </NavLink>
                 </li>
                 <li>
-                  <a
-                    href='#'
+                  <NavLink
+                    to='/fundamentals/GitHub'
                     className='hover:bg-slate-500 rounded rounded-b dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap'
                   >
                     GitHub
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
