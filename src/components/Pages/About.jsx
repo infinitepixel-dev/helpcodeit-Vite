@@ -4,13 +4,13 @@ import michael from "../../assets/michael.jpeg";
 function About() {
   return (
     <div>
-      <div className='container'>
-        <h1 className='text-center text-6xl my-5'>About</h1>
-        <p className='my-1'>
+      <div className="container">
+        <h1 className="text-center text-6xl my-5">About</h1>
+        <p className="my-1">
           This is a website for learning JavaScript and other web development
           technologies. It is a work in progress, and will be updated regularly.
         </p>
-        <p className='my-1'>
+        <p className="my-1">
           The site is built with React and managed by Michael Varnell and
           Matthew Cox. The content is intended to help beginning coders with
           some of the tasks that are often more difficult to understand due to
@@ -19,16 +19,16 @@ function About() {
           basic coding education by providing a resource that is easy to
           understand and use.
         </p>
-        <div className='pt-8 pb-14 grid grid-cols-1 md:grid-cols-2'>
-          <div className='mx-auto'>
-            <h2 className='text-center text-3xl my-4'>Michael Varnell</h2>
+        <div className="pt-8  grid grid-cols-1 pb-14 md:grid-cols-2">
+          <div className="mx-auto">
+            <h2 className="text-center text-3xl my-4">Michael Varnell</h2>
             <img
               src={michael}
-              alt='Michael Varnell'
-              width='300px'
-              className='rounded mx-auto'
+              alt="Michael Varnell"
+              width="300px"
+              className="rounded mx-auto"
             />
-            <p className='text-pretty pt-5 px-4'>
+            <p className="text-pretty pt-5 px-4">
               Michael Varnell is a skilled Software Developer with expertise in
               modern Front End technologies, including React.js, JavaScript,
               TypeScript, and Responsive Web Design. He holds a Management
@@ -47,15 +47,15 @@ function About() {
               promoting growth and creativity in software development.
             </p>
           </div>
-          <div className='mx-auto my-auto'>
-            <h2 className='text-center text-3xl my-4'>Matthew Cox</h2>
+          <div className="mx-auto my-auto">
+            <h2 className="text-center text-3xl my-4">Matthew Cox</h2>
             <img
               src={matthew}
-              alt='Matthew Cox'
-              width='300px'
-              className='rounded mx-auto'
+              alt="Matthew Cox"
+              width="300px"
+              className="rounded mx-auto"
             />
-            <p className='text-balance pt-5 px-4'>
+            <p className="text-balance pt-5 px-4">
               Matthew is a Full Stack Developer with a deep expertise in a broad
               range of front-end and back-end technologies. Leveraging a
               comprehensive skill set that encompasses Node.js, HTML, CSS,

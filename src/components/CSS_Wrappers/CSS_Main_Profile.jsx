@@ -1,7 +1,7 @@
 function TW_CSS() {
   // Determine if the device prefers dark mode or not
   let prefersDarkMode = window.matchMedia(
-    "(prefers-color-scheme: dark)"
+    "(prefers-color-scheme: dark)",
   ).matches;
 
   //ANCHOR Can enable this to test light/dark mode forcibly

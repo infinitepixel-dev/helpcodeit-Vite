@@ -2,22 +2,22 @@ import { Link } from "react-router-dom";
 
 function JSCRUDMain() {
   return (
-    <div className='text-xl container'>
-      <h1 className='text-center text-6xl my-10'>CRUD Operations with API's</h1>
-      <div className='grid grid-cols-2 justify-center'>
-        <Link to='/javascriptPrincipals/CRUD-AJAX' className='text-3xl mx-auto'>
+    <div className="text-xl container">
+      <h1 className="text-center text-6xl my-10">CRUD Operations with API's</h1>
+      <div className="grid grid-cols-2 justify-center">
+        <Link to="/javascriptPrincipals/CRUD-AJAX" className="text-3xl mx-auto">
           <p>AJAX/Axios</p>
         </Link>
         <Link
-          to='/javascriptPrincipals/CRUD-Fetch'
-          className='text-3xl mx-auto'
+          to="/javascriptPrincipals/CRUD-Fetch"
+          className="text-3xl mx-auto"
         >
           <p>Fetch</p>
         </Link>
       </div>
-      <hr className='border border-black dark:border-white my-5' />
+      <hr className="border border-black dark:border-white my-5" />
       <p>
-        <span className='font-bold text-2xl'>
+        <span className="font-bold text-2xl">
           CRUD stands for Create, Read, Update, and Delete.
         </span>{" "}
         These are the four basic operations that are used to manage data. In
@@ -44,59 +44,59 @@ function JSCRUDMain() {
         free to look through these sites and find an API that you would like to
         use to practice your CRUD operations.
       </p>
-      <div className='border-4 bg-slate-300 border-black rounded-3xl p-5 pt-0 mt-4 shadow-lg mb-5 dark:border-white dark:bg-slate-600'>
-        <h2 className='text-center mt-5 font-semibold mb-5 text-4xl'>
+      <div className="border-4 bg-slate-300 border-black rounded-3xl p-5 pt-0 mt-4 shadow-lg mb-5 dark:border-white dark:bg-slate-600">
+        <h2 className="text-center mt-5 font-semibold mb-5 text-4xl">
           Example Repositories and Useful Links
         </h2>
-        <ul className='pb-4'>
-          <li className='list-none my-3'>
+        <ul className="pb-4">
+          <li className="list-none my-3">
             <a
-              href='https://github.com/movarnell/Fetch-Example-with-delete--get--post.git'
-              target='_blank'
-              className='no-underline font-bold hover:underline'
+              href="https://github.com/movarnell/Fetch-Example-with-delete--get--post.git"
+              target="_blank"
+              className="no-underline font-bold hover:underline"
               style={{ fontSize: "1.4rem" }}
             >
               GitHub Repository: Fetch Example with delete, get, post
             </a>
           </li>
-          <li className='list-none my-3'>
+          <li className="list-none my-3">
             <a
-              href='https://github.com/movarnell/apiplay'
-              target='_blank'
-              className='no-underline font-bold hover:underline'
+              href="https://github.com/movarnell/apiplay"
+              target="_blank"
+              className="no-underline font-bold hover:underline"
               style={{ fontSize: "1.4rem" }}
             >
               GitHub Repository: API Play
             </a>{" "}
             This one uses a weather API to pull weather data and display it.
           </li>
-          <li className='list-none my-3'>
+          <li className="list-none my-3">
             <a
-              href='https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch'
-              target='_blank'
-              className='no-underline font-bold hover:underline'
+              href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
+              target="_blank"
+              className="no-underline font-bold hover:underline"
               style={{ fontSize: "1.4rem" }}
             >
               MDN: Using Fetch
             </a>{" "}
             This is the Mozilla Documentation on the using fetch
           </li>
-          <li className='list-none my-3'>
+          <li className="list-none my-3">
             <a
-              href='https://www.rapidapi.com'
-              target='_blank'
-              className='no-underline font-bold hover:underline'
+              href="https://www.rapidapi.com"
+              target="_blank"
+              className="no-underline font-bold hover:underline"
               style={{ fontSize: "1.4rem" }}
             >
               Rapid API
             </a>{" "}
             This is a great place to find APIs to use in your projects.
           </li>
-          <li className='list-none my-3'>
+          <li className="list-none my-3">
             <a
-              href='https://www.mockapi.io'
-              target='_blank'
-              className='no-underline font-bold hover:underline'
+              href="https://www.mockapi.io"
+              target="_blank"
+              className="no-underline font-bold hover:underline"
               style={{ fontSize: "1.4rem" }}
             >
               MockAPI.io
@@ -104,11 +104,11 @@ function JSCRUDMain() {
             Free API to use to build out projects. Cheap yearly price for
             advanced features.
           </li>
-          <li className='list-none my-3'>
+          <li className="list-none my-3">
             <a
-              href='https://github.com/public-apis-dev/public-apis'
-              target='_blank'
-              className='no-underline font-bold hover:underline'
+              href="https://github.com/public-apis-dev/public-apis"
+              target="_blank"
+              className="no-underline font-bold hover:underline"
               style={{ fontSize: "1.4rem" }}
             >
               GitHub: Public API's Dev

@@ -14,25 +14,28 @@ function MethodComponent({ item }) {
 
   const { title, description, example, graphical } = item;
   return (
-    <div className='my-5 p-5 border rounded-lg border-black dark:border-white'>
-      <h4 className='text-4xl mt-10 mb-5 text-center' id={title}>
+    <div className="my-5 p-5 border rounded-lg border-black dark:border-white">
+      <h4 className="text-4xl mt-10 mb-5 text-center" id={title}>
         {title}
       </h4>
-      <hr className='w-11/12 mx-auto mb-5 border-1 border-black dark:border-white' />
+      <hr className="w-11/12 mx-auto mb-5 border-1 border-black dark:border-white" />
       <p>{description} Here's some examples:</p>
-      <div className='flex flex-wrap justify-center'>
-        <div className='container  mx-4 justify-center align-middle'>
-          <pre className='mt-4'>
-            <code ref={codeRef} className='language-javascript my-3 p-2 max-w-full'>
+      <div className="flex flex-wrap justify-center">
+        <div className="container  mx-4 justify-center align-middle">
+          <pre className="mt-4">
+            <code
+              ref={codeRef}
+              className="language-javascript my-3 p-2 max-w-full"
+            >
               {example}
             </code>
           </pre>
         </div>
 
         {graphical && (
-          <div className='text-center my-auto'>
+          <div className="text-center my-auto">
             <p>Below is a graphical representation of the {title} method.</p>
-            <div className='text-3xl text-center'>{graphical}</div>
+            <div className="text-3xl text-center">{graphical}</div>
           </div>
         )}
       </div>

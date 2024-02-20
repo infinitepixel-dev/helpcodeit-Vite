@@ -22,29 +22,29 @@ export default function JSObjects() {
 
   return (
     <div>
-      <div className='container pb-14 text-xl'>
-        <div className='grid grid-cols-1 pt-28 md:grid-cols-2'>
+      <div className="container pb-14 text-xl">
+        <div className="grid grid-cols-1 pt-28 md:grid-cols-2">
           <div>
-            <h1 className='satisfyFont text-center text-6xl pb-7'>
+            <h1 className="satisfyFont text-center text-6xl pb-7">
               JavaScript Objects
             </h1>
-            <hr className='border-1 border-black w-10/12 mx-auto dark:border-white' />
-            <p className='p-4'>
+            <hr className="border-1 border-black w-10/12 mx-auto dark:border-white" />
+            <p className="p-4">
               Objects are variables too. But objects can contain many values.
             </p>
-            <p className='p-4'>
+            <p className="p-4">
               Think of an object as a list of values that are written as
               name:value pairs, with the names and the values separated by
               colons.
             </p>
-            <p className='p-4'>
+            <p className="p-4">
               JavaScript objects are containers for named values called
               properties or methods.
             </p>
-            <p className='p-4'>
+            <p className="p-4">
               JavaScript objects are written with curly braces {}.
             </p>
-            <p className='p-4'>
+            <p className="p-4">
               Object properties are written as name:value pairs, separated by
               commas.
             </p>
@@ -52,42 +52,42 @@ export default function JSObjects() {
           <div>
             <img
               src={objectImg}
-              alt='Image of Curly Brackets'
-              className='h-full w-auto'
+              alt="Image of Curly Brackets"
+              className="h-full w-auto"
             />
           </div>
         </div>
 
-        <div className='grid grid-cols-1 pt-28 lg:grid-cols-2'>
+        <div className="grid grid-cols-1 pt-28 lg:grid-cols-2">
           <div>
-            <h2 className='text-4xl text-center'>Example of an Object</h2>
+            <h2 className="text-4xl text-center">Example of an Object</h2>
             <pre>
-              <code ref={codeRef} className='language-javascript mx-auto py-5'>
+              <code ref={codeRef} className="language-javascript mx-auto py-5">
                 {objectExample}
               </code>
             </pre>
           </div>
-          <div className='m-4 bg-slate-200 shadow-xl border border-black rounded-2xl dark:bg-slate-600 dark:border-white'>
-            <p className='p-4   font-bold'>
+          <div className="m-4 bg-slate-200 shadow-xl border border-black rounded-2xl dark:bg-slate-600 dark:border-white">
+            <p className="p-4   font-bold">
               Bonus: Did you know that you can use all the normal JavaScript
               datatypes within an Object?
             </p>
           </div>
           <div>
-            <h2 className='text-4xl mb-4 mt-12 text-center'>
+            <h2 className="text-4xl mb-4 mt-12 text-center">
               Accessing Object Properties
             </h2>
-            <p className='p-4 underline text-2xl'>
+            <p className="p-4 underline text-2xl">
               You can access object properties in two ways:
             </p>
-            <p className='p-4'>
+            <p className="p-4">
               objectName.propertyName -- This is known as dot notation and can
               be applied in other circumstances as well. You might use it when
               working with arrays, for example. We use it commonly when working
               with objects.
             </p>
-            <p className='p-4 text-4xl text-center'>or</p>
-            <p className='p-4'>
+            <p className="p-4 text-4xl text-center">or</p>
+            <p className="p-4">
               objectName["propertyName"] -- This is known as bracket notation.
               It's useful when you need to access a property that has a space in
               the name or when you need to use a variable to access the

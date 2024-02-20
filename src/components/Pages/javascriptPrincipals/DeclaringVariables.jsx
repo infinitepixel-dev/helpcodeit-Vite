@@ -17,22 +17,21 @@ export default function DeclaringVariables() {
     });
   }, []);
 
-  
   const varExample = `var myName = "Bob";`;
   const letExample = `let myName = "Tom";`;
   const constExample = `const mySchool = "Cool School";`;
 
   return (
     <div>
-      <div className='container mx-auto mukataFont min-h-screen text-lg'>
-        <div className='flex flex-wrap pt-20'>
-          <h1 className='text-6xl font-bold text-center w-full mb-10'>
+      <div className="container mx-auto mukataFont min-h-screen text-lg">
+        <div className="flex flex-wrap pt-20">
+          <h1 className="text-6xl font-bold text-center w-full mb-10">
             Understanding Variables in JavaScript
           </h1>
 
           <section>
-            <h2 className='text-5xl mt-12 mb-6'>What is a Variable?</h2>
-            <p className='text-lg font-bold'>
+            <h2 className="text-5xl mt-12 mb-6">What is a Variable?</h2>
+            <p className="text-lg font-bold">
               A variable is like a box where we can keep things. In programming,
               we use variables to store information like numbers, words, or more
               complex stuff. We can change the information in the box, and we
@@ -42,31 +41,31 @@ export default function DeclaringVariables() {
           </section>
 
           <iframe
-            className='youtube-video my-10'
-            src='https://www.youtube.com/embed/BNETE_JL0cw?si=NgSGO9PYtzWBQTWF'
-            title='YouTube video player'
-            frameBorder='0'
-            allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+            className="youtube-video my-10"
+            src="https://www.youtube.com/embed/BNETE_JL0cw?si=NgSGO9PYtzWBQTWF"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
         </div>
 
         <section>
-          <hr className='border border-black dark:border-white' />
-          <h2 className='text-4xl mt-10 mb-5'>Using 'var'</h2>
-          <p className='text-lg'>
+          <hr className="border border-black dark:border-white" />
+          <h2 className="text-4xl mt-10 mb-5">Using 'var'</h2>
+          <p className="text-lg">
             In JavaScript, var is a keyword used to declare a variable. When you
             declare a variable using var, it is function-scoped, meaning it is
             available anywhere in the function where it was declared.{" "}
             <HoverCard>
               <HoverCardTrigger>
-                <span className='text-blue-800  underline font-extrabold dark:text-blue-400'>
+                <span className="text-blue-800  underline font-extrabold dark:text-blue-400">
                   Confused about Scope?
                 </span>
               </HoverCardTrigger>
               <HoverCardContent
-                className='bg-slate-200  m-5 border border-black font-extrabold text-lg shadow-lg px-10'
-                customClass=' bg-slate-200  dark:bg-gray-700'
+                className="bg-slate-200  m-5 border border-black font-extrabold text-lg shadow-lg px-10"
+                customClass=" bg-slate-200  dark:bg-gray-700"
               >
                 {" "}
                 Scope in programming is like a set of boundaries that determines
@@ -91,23 +90,23 @@ export default function DeclaringVariables() {
             reassigned) are often preferred over var. <br />
             Here's an example:
           </p>
-          <div className='hover-container'>
+          <div className="hover-container">
             Hover over me
-            <div className='hover-card'>
+            <div className="hover-card">
               This is the content of the hover card.
             </div>
           </div>
           <pre>
-            <code ref={codeRef} className='language-javascript my-3 p-2'>
+            <code ref={codeRef} className="language-javascript my-3 p-2">
               {varExample}
             </code>
           </pre>
         </section>
 
         <section>
-          <hr className='mt-10 border border-black dark:border-white' />
+          <hr className="mt-10 border border-black dark:border-white" />
 
-          <h2 className='text-4xl mt-10 mb-5'>Using 'let'</h2>
+          <h2 className="text-4xl mt-10 mb-5">Using 'let'</h2>
 
           <p>
             In JavaScript, let is used to create a variable that you can change
@@ -117,16 +116,16 @@ export default function DeclaringVariables() {
             <br /> Here's an example:
           </p>
           <pre>
-            <code ref={codeRef} className='language-javascript my-3 p-2'>
+            <code ref={codeRef} className="language-javascript my-3 p-2">
               {letExample}
             </code>
           </pre>
         </section>
 
         <section>
-          <hr className='mt-10 border border-black dark:border-white ' />
+          <hr className="mt-10 border border-black dark:border-white " />
 
-          <h2 className='text-4xl mt-10 mb-5'>Using 'const'</h2>
+          <h2 className="text-4xl mt-10 mb-5">Using 'const'</h2>
           <p>
             In JavaScript, const is a keyword used to declare a variable.
             However, unlike variables declared with let or var, a const variable
@@ -140,16 +139,16 @@ export default function DeclaringVariables() {
             Here's how:
           </p>
           <pre>
-            <code ref={codeRef} className='language-javascript my-3 p-2'>
+            <code ref={codeRef} className="language-javascript my-3 p-2">
               {constExample}
             </code>
           </pre>
         </section>
 
-        <section className='pb-32'>
-          <hr className='mt-10 border border-black dark:border-white ' />
+        <section className="pb-32">
+          <hr className="mt-10 border border-black dark:border-white " />
 
-          <h2 className='text-4xl mt-10 mb-5'>Summary</h2>
+          <h2 className="text-4xl mt-10 mb-5">Summary</h2>
           <p>
             In summary, as a beginner, it's generally good practice to use let
             for variables that will change over time, const for variables that

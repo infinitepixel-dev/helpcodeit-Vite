@@ -8,8 +8,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -43,234 +41,229 @@
     --radius: 0.5rem;
   }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-code {
- border-radius: 10px;
- box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.58);
- margin-bottom: 1rem;
- max-width: fit-content;
-}
-
-
-
-.arrayMethodLinks {
-  font-size: 1.4rem;
-  text-align: start;
-  text-decoration: solid;
-  font-weight: bold;
-}
-
-.arrayMethodLinks:hover {
-  text-decoration: underline;
-}
-
-.arrayMethodLinks:visited {
-  font-weight: 400;
-}
-
-.arrayMethodTableofContents {
-  font-size: 1rem;
-  text-decoration: solid;
-  margin: 0%;
-  padding: 0%;
-}
-
-.article-image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  border: 1px solid black;
-}
-
-.card-max {
-  width: auto;
-  height: 350px;
-}
-
-.cardImageFormat {
-  max-height: 200px;
-}
-
-.centeredTogether {
-  text-align: center;
-  justify-content: center;
-  align-content: center;
-}
-
-.code-height {
-  height: 100%;
-}
-
-.communityText {
-  font-size: 1.1rem;
-  text-align: start;
-}
-
-.customBoxShadow {
-  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.58);
-}
-
-.fullyCentered {
-  align-items: center;
-  text-align: center;
-}
-
-/* NOTE - You can add custom classes that apply other classes */
-.jsMainPageLink {
-  @apply text-blue-500 hover:text-blue-800 dark:text-white
-}
-
-.gitLogo {
-  max-width: 300px;
-  max-height: 300px;
-}
-
-.gitignoreLogoSize {
-  max-width: 300px;
-  max-height: 300px;
-}
-
-.graphicsMethods {
-  text-align: center;
-  font-size: 3rem;
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
   }
 
-.hero-logo {
-  border-radius: 55px;
-  background-color: black;
-  max-width: 300px;
-}
+  code {
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.58);
+    margin-bottom: 1rem;
+    max-width: fit-content;
+  }
 
-.hero-text {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-family: "Mukta", sans-serif;
-  font-size: 2rem;
-}
+  .arrayMethodLinks {
+    font-size: 1.4rem;
+    text-align: start;
+    text-decoration: solid;
+    font-weight: bold;
+  }
 
-.homebrewLogo {
-  max-width: 100px;
-  max-height: 100px;
-}
+  .arrayMethodLinks:hover {
+    text-decoration: underline;
+  }
 
-.html {
-  scroll-behavior: smooth;
-}
+  .arrayMethodLinks:visited {
+    font-weight: 400;
+  }
 
-.indieFlower {
-  font-family: "Indie Flower", cursive;
-}
+  .arrayMethodTableofContents {
+    font-size: 1rem;
+    text-decoration: solid;
+    margin: 0%;
+    padding: 0%;
+  }
 
-.instructionsFont {
-  font-family: "Roboto Slab", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 800;
-}
+  .article-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
 
-.is-setup-list-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
+  .card-max {
+    width: auto;
+    height: 350px;
+  }
 
-.jumbo-background {
-  background-image: url("./assets/pexels-lukas-574069.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  max-height: 500px;
-  min-height: 300px;
-  width: 100%;
-  position: relative;
-  z-index: -1;
-}
+  .cardImageFormat {
+    max-height: 200px;
+  }
 
-.lato-font {
-  font-family: "Lato", sans-serif;
-}
+  .centeredTogether {
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+  }
 
-.link-custom {
-  @apply text-blue-500 hover:text-blue-800 text-xl font-bold
-}
+  .code-height {
+    height: 100%;
+  }
 
-.logoBackground {
-  background-color: black;
-  width: 200px;
-}
+  .communityText {
+    font-size: 1.1rem;
+    text-align: start;
+  }
 
+  .customBoxShadow {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.58);
+  }
 
+  .fullyCentered {
+    align-items: center;
+    text-align: center;
+  }
 
-.macSetupAppleLogo {
-  max-width: 35px;
-  max-height: 35px;
-}
+  /* NOTE - You can add custom classes that apply other classes */
+  .jsMainPageLink {
+    @apply text-blue-500 hover:text-blue-800 dark:text-white;
+  }
 
-.macSetupHeader {
-  font-family: "Roboto", sans-serif;
-  font-weight: bold;
-  font-size: 5rem;
-}
+  .gitLogo {
+    max-width: 300px;
+    max-height: 300px;
+  }
 
-.maxWidth {
-  max-width: 250px;
-  max-height: 250px;
-}
+  .gitignoreLogoSize {
+    max-width: 300px;
+    max-height: 300px;
+  }
 
-.maxWidthRowInitial {
-  max-width: 600px;
-}
+  .graphicsMethods {
+    text-align: center;
+    font-size: 3rem;
+  }
 
-.morpheus {
-  width: 300px;
-  height: auto;
-  border-radius: 40px;
-}
+  .hero-logo {
+    border-radius: 55px;
+    background-color: black;
+    max-width: 300px;
+  }
 
-.mukataFont {
-  font-family: "Mukta", sans-serif;
-}
+  .hero-text {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-family: "Mukta", sans-serif;
+    font-size: 2rem;
+  }
 
-.objectPageLeadText {
-  font-size: 1.5rem;
-  text-align: start;
-}
+  .homebrewLogo {
+    max-width: 100px;
+    max-height: 100px;
+  }
 
-.PJ-terms {
-  border: 1px solid black;
-  border-radius: 10px;
-  padding: 1rem;
-  margin: 1rem;
-  font-size: 0.9rem;
-}
+  .html {
+    scroll-behavior: smooth;
+  }
 
-.PJ-terms dt {
-  font-weight: bold;
-  font-size: 1.25rem;
-}
+  .indieFlower {
+    font-family: "Indie Flower", cursive;
+  }
 
-.pressStartFont {
-  font-family: "Press Start 2P", cursive;
-}
+  .instructionsFont {
+    font-family: "Roboto Slab", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
 
-.roboto-font {
-  font-family: "Roboto-Slab", sans-serif;
-  
-}
+  .is-setup-list-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 
-.satisfyFont {
-  font-family: "Satisfy", cursive;
-}
+  .jumbo-background {
+    background-image: url("./assets/pexels-lukas-574069.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-height: 500px;
+    min-height: 300px;
+    width: 100%;
+    position: relative;
+    z-index: -1;
+  }
 
-.youtube-video {
-  aspect-ratio: 16 / 9;
-  width: 100%;
-  border-radius: 10px;
-  border: 1px solid black;
-}
+  .lato-font {
+    font-family: "Lato", sans-serif;
+  }
+
+  .link-custom {
+    @apply text-blue-500 hover:text-blue-800 text-xl font-bold;
+  }
+
+  .logoBackground {
+    background-color: black;
+    width: 200px;
+  }
+
+  .macSetupAppleLogo {
+    max-width: 35px;
+    max-height: 35px;
+  }
+
+  .macSetupHeader {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 5rem;
+  }
+
+  .maxWidth {
+    max-width: 250px;
+    max-height: 250px;
+  }
+
+  .maxWidthRowInitial {
+    max-width: 600px;
+  }
+
+  .morpheus {
+    width: 300px;
+    height: auto;
+    border-radius: 40px;
+  }
+
+  .mukataFont {
+    font-family: "Mukta", sans-serif;
+  }
+
+  .objectPageLeadText {
+    font-size: 1.5rem;
+    text-align: start;
+  }
+
+  .PJ-terms {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .PJ-terms dt {
+    font-weight: bold;
+    font-size: 1.25rem;
+  }
+
+  .pressStartFont {
+    font-family: "Press Start 2P", cursive;
+  }
+
+  .roboto-font {
+    font-family: "Roboto-Slab", sans-serif;
+  }
+
+  .satisfyFont {
+    font-family: "Satisfy", cursive;
+  }
+
+  .youtube-video {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
 
   .dark {
     --background: 220, 30%, 18%;
@@ -311,5 +304,3 @@ code {
     @apply bg-background text-foreground;
   }
 }
-
-

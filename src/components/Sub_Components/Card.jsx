@@ -37,9 +37,7 @@ function Card({
           />
 
           {/* Grid Row 2: Card Title */}
-          <h5 className={`row-span-1  ${styles.mainCardTitle}`}>
-            {title}
-          </h5>
+          <h5 className={`row-span-1  ${styles.mainCardTitle}`}>{title}</h5>
 
           {/* Grid Row 3: Card Description */}
           <p className={`row-span-1 m-5 ${styles.mainCardDescription}`}>
@@ -47,7 +45,7 @@ function Card({
           </p>
 
           {/* Grid Row 4: Card Action - Button */}
-          <div className='row-span-1  w-2/3 flex justify-center items-center'>
+          <div className="row-span-1  w-2/3 flex justify-center items-center">
             <a
               href={actionHref}
               className={`w-full h-auto text-3xl text-center text-white p-2  my-5 rounded-xl border border-black font-bold hover:opacity-50 transition duration-300 ease-in-out ${

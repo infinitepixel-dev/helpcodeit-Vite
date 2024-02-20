@@ -32,9 +32,9 @@ function Bootstrap() {
 </html>`;
 
   return (
-    <div className='mb-28'>
-      <div className='container'>
-        <h1 className='text-center text-6xl my-8'>Linking Up Bootstrap</h1>
+    <div className="mb-28">
+      <div className="container">
+        <h1 className="text-center text-6xl my-8">Linking Up Bootstrap</h1>
 
         <div>
           <p>
@@ -43,52 +43,52 @@ function Bootstrap() {
             and JavaScript-based design templates for typography, forms,
             buttons, navigation, and other interface components.
           </p>
-          <div className='grid grid-cols-1 gap-4 lg:grid-cols-3'>
-            <div className='pt-3 md:col-span-2'>
+          <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
+            <div className="pt-3 md:col-span-2">
               <iframe
-                class='youtube-video'
-                src='https://www.youtube.com/embed/BIwXINKz7iI?si=bWl2F9i5w2nbX_3m'
-                title='YouTube video player'
-                frameborder='0'
-                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                class="youtube-video"
+                src="https://www.youtube.com/embed/BIwXINKz7iI?si=bWl2F9i5w2nbX_3m"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen
               ></iframe>
             </div>
-            <div className='grid grid-cols-1 p-3 m-4 mx-auto my-auto text-center bg-white rounded-xl text-black'>
-              <div className='flex items-center mx-auto mb-2'>
+            <div className="grid p-3 m-4 mx-auto my-auto text-center bg-white rounded-xl grid-cols-1 text-black">
+              <div className="flex items-center mx-auto mb-2">
                 <img
                   src={bootstrapLogo}
-                  alt='Bootstrap logo'
-                  width='40px'
-                  className='block my-auto me-1'
+                  alt="Bootstrap logo"
+                  width="40px"
+                  className="block my-auto me-1"
                 />
-                <h3 className='text-2xl font-bold'>Useful Bootstrap Links</h3>
+                <h3 className="text-2xl font-bold">Useful Bootstrap Links</h3>
               </div>
-              <hr className='mb-2' />
+              <hr className="mb-2" />
               <ul>
-                <li className='m-3'>
+                <li className="m-3">
                   <a
-                    href='https://getbootstrap.com/'
-                    target='_blank'
-                    className='bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded'
+                    href="https://getbootstrap.com/"
+                    target="_blank"
+                    className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
                   >
                     Bootstrap Official Website
                   </a>
                 </li>
-                <li className='m-3'>
+                <li className="m-3">
                   <a
-                    href='https://www.w3schools.com/bootstrap5/index.php'
-                    target='_blank'
-                    className='bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded'
+                    href="https://www.w3schools.com/bootstrap5/index.php"
+                    target="_blank"
+                    className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
                   >
                     W3Schools Bootstrap Tutorial
                   </a>
                 </li>
-                <li className='m-3'>
+                <li className="m-3">
                   <a
-                    href='https://www.bootswatch.com'
-                    target='_blank'
-                    className='bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded'
+                    href="https://www.bootswatch.com"
+                    target="_blank"
+                    className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
                   >
                     Bootswatch
                   </a>
@@ -98,19 +98,19 @@ function Bootstrap() {
           </div>
           <div>
             <div>
-              <p className='my-2'>
+              <p className="my-2">
                 With Bootstrap you have to setup your project more than you
                 would in a basic HTML site. You need to link the Bootstrap
                 stylesheet, and the javascript file in order to use the pre-made
                 components.
               </p>
-              <p className='my-2'>
+              <p className="my-2">
                 Step 1: You will need to run 'npm init -y' in your folder to get
                 your package.json file. If you would like to read more about
                 this file and what it does check out this page:{" "}
                 <Link
-                  to='/javascriptPrincipals/PackagesAndPackageJson'
-                  className='text-blue-400 underline hover:text-blue-700'
+                  to="/javascriptPrincipals/PackagesAndPackageJson"
+                  className="text-blue-400 underline hover:text-blue-700"
                 >
                   package.json and npm init
                 </Link>
@@ -120,28 +120,28 @@ function Bootstrap() {
                 Step 2: You will need to run 'npm install bootstrap' in your
                 terminal to install the bootstrap package.
               </p>
-              <p className='my-2'>
+              <p className="my-2">
                 Step 3: Link the bootstrap stylesheet and javascript file in
                 your html file. Below is an example of how to do that.
               </p>
             </div>
-            <h2 className='text-3xl pt-10'>
+            <h2 className="text-3xl pt-10">
               Example of setting up the links in the HTML document:
             </h2>
-            <div className='flex'>
+            <div className="flex">
               <pre>
-                <code ref={codeRef} className='language-html'>
+                <code ref={codeRef} className="language-html">
                   {bootstrapLinking}
                 </code>
               </pre>
             </div>
             <div>
-              <p className='mt-5'>
+              <p className="mt-5">
                 Now that everything is linked up you can go to the{" "}
                 <a
-                  href='http://www.getbootstrap.com'
-                  target='_blank'
-                  className='text-blue-400 underline hover:text-blue-700'
+                  href="http://www.getbootstrap.com"
+                  target="_blank"
+                  className="text-blue-400 underline hover:text-blue-700"
                 >
                   Bootstrap documentation
                 </a>{" "}
@@ -149,7 +149,7 @@ function Bootstrap() {
                 and if you have questions about the class names you can apply
                 search in the documentation.
               </p>
-              <p className='mt-3'>
+              <p className="mt-3">
                 TIP: You can link your CSS Stylesheet just after the bootstrap
                 link to override any styles that you want to change. This makes
                 everything customizable.
