@@ -16,7 +16,6 @@
     "clsx": "^2.1.0",
     "highlight.js": "^11.9.0",
     "lucide-react": "^0.331.0",
-    "prettier-plugin-tailwindcss": "^0.5.11",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-animate-on-scroll": "^2.1.7",
@@ -35,6 +34,8 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "prettier-plugin-tailwind": "^2.2.12",
+    "prettier-plugin-tailwindcss": "^0.5.11",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
     "vite": "^5.0.8"
