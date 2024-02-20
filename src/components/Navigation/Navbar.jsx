@@ -161,7 +161,7 @@ it does work when manually refreshing the page, but is not related to state chan
                 </li>
               </ul>
             </div>
-            {/* <NavLink
+            <NavLink
               to='/about'
               className={({ isActive }) =>
                 getClassName({ isActive }, { currentPath: "/about" })
@@ -169,7 +169,7 @@ it does work when manually refreshing the page, but is not related to state chan
               end
             >
               About
-            </NavLink> */}
+            </NavLink>
             <NavLink
               to='/javascript'
               className={({ isActive }) =>
