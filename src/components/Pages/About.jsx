@@ -4,7 +4,7 @@ import michael from '../../assets/michael.jpeg'
 function About() {
     return (
         <div>
-            <div className="container">
+            <div className="container text-lg font-semibold">
                 <h1 className="my-5 text-center text-6xl">About</h1>
                 <p className="my-1">
                     This is a website for learning JavaScript and other web
@@ -20,6 +20,7 @@ function About() {
                     those gaps you run into in the basic coding education by
                     providing a resource that is easy to understand and use.
                 </p>
+                
                 <div className="grid  grid-cols-1 pb-14 pt-8 md:grid-cols-2">
                     <div className="mx-auto">
                         <h2 className="my-4 text-center text-3xl">

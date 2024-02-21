@@ -1,7 +1,7 @@
 import logo from '../../assets/helpcodeitlogo.svg'
 import MainCards from '../Sub_Components/MainCards'
 
-function HomePage() {
+function HomePage({theme}) {
     return (
         <div>
             {/* SECTION Jumbotron */}

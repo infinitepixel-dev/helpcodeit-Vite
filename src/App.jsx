@@ -1,5 +1,5 @@
 import './App.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { DarkModeProvider } from './components/Context/DarkModeProvider'
 import Navbar from './components/Navigation/Navbar'
 import hljs from 'highlight.js'
@@ -27,19 +27,34 @@ import Installs from './components/Pages/fundamentals/Installs'
 import PracticeEnvironment from './components/Pages/fundamentals/PracticeEnvironment'
 
 export default function App() {
+    const [theme, setTheme] = useState(
+        window.matchMedia('(prefers-color-scheme: light)').matches
+    )
+
     useEffect(() => {
         hljs.highlightAll()
     }, [])
 
+useEffect(() => {
+    const themeQuery = window.matchMedia('(prefers-color-scheme: light)')
+    const themeChangeHandler = () => setTheme(themeQuery.matches)
+
+    themeQuery.addEventListener('change', themeChangeHandler)
+
+    return () => {
+        themeQuery.removeEventListener('change', themeChangeHandler)
+    }
+}, [])
+
     return (
-        <DarkModeProvider>
+        <DarkModeProvider >
             <div>
                 <div className="m-0 w-full p-0">
-                    <Navbar />
+                    <Navbar theme={theme} />
                 </div>
 
                 <Routes>
-                    <Route exact path="/" element={<HomePage />} />
+                    <Route exact path="/" element={<HomePage theme={theme}/>} />
                     {/* <Route path='/GettingStarted' element={<GettingStarted />} /> */}
                     <Route exact path="/about" element={<About />} />
                     <Route path="/fundamentals/GitHub" element={<GitHub />} />

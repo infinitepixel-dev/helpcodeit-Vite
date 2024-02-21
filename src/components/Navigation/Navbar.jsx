@@ -5,13 +5,13 @@ import './Navbar.module.css'
 
 import gsap from 'gsap'
 
-function Navbar() {
+function Navbar({ theme }) {
     const [navbarCollapse, setNavbarCollapse] = useState(false)
     const [dropdown, setDropdown] = useState(false)
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 550)
-    const [theme, setTheme] = useState(
-        window.matchMedia('(prefers-color-scheme: light)').matches
-    )
+    // const [theme, setTheme] = useState(
+    //     window.matchMedia('(prefers-color-scheme: light)').matches
+    // )
     const logoRef = useRef(null)
     // Adjusted to use state for dynamic speed control, with a sensible default value
     // eslint-disable-next-line no-unused-vars
@@ -54,18 +54,18 @@ function Navbar() {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
-        useEffect(() => {
-            const themeQuery = window.matchMedia(
-                '(prefers-color-scheme: light)'
-            )
-            const themeChangeHandler = () => setTheme(themeQuery.matches)
+    // useEffect(() => {
+    //     const themeQuery = window.matchMedia(
+    //         '(prefers-color-scheme: light)'
+    //     )
+    //     const themeChangeHandler = () => setTheme(themeQuery.matches)
 
-            themeQuery.addEventListener('change', themeChangeHandler)
+    //     themeQuery.addEventListener('change', themeChangeHandler)
 
-            return () => {
-                themeQuery.removeEventListener('change', themeChangeHandler)
-            }
-        }, [])
+    //     return () => {
+    //         themeQuery.removeEventListener('change', themeChangeHandler)
+    //     }
+    // }, [])
 
     //NOTE Close the dropdown when clicking outside of it
     document.addEventListener('click', function (event) {
@@ -75,8 +75,6 @@ function Navbar() {
             setDropdown(false)
         }
     })
-
-    
 
     return (
         <div className="mx-auto w-full border-b border-black bg-white px-2 shadow-sm dark:bg-neutral-800 ">
@@ -129,7 +127,7 @@ function Navbar() {
                         className={`flex ${
                             isSmallScreen
                                 ? 'w-full flex-col bg-white text-right text-black dark:bg-neutral-800 dark:text-white'
-                                : 'space-x-4'
+                                : 'space-x-1 md:space-x-4 lg:space-x-6 lg:text-2xl xl:space-x-8'
                         } ${
                             !navbarCollapse && isSmallScreen ? 'hidden' : ''
                         } font-bold text-black dark:text-white`}
@@ -160,20 +158,20 @@ function Navbar() {
                                 }
                             >
                                 <li>
-                                    <a
-                                        href="#"
+                                    <NavLink
+                                        to={'/fundamentals/Installs'}
                                         className="whitespace-no-wrap  block rounded rounded-t bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
                                     >
                                         Installs
-                                    </a>
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <a
-                                        href="#"
+                                    <NavLink
+                                        to={'/fundamentals/SettingUpPracticeEnvironment'}
                                         className="whitespace-no-wrap block rounded bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
                                     >
                                         Setting up a Practice Environment
-                                    </a>
+                                    </NavLink>
                                 </li>
                                 <hr />
                                 <li>
@@ -217,9 +215,6 @@ function Navbar() {
                         >
                             JavaScript
                         </NavLink>
-                        <a href="" className="rounded p-2 hover:bg-slate-500">
-                            Contact
-                        </a>
                     </div>
                 </div>
             </nav>
