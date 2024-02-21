@@ -9,6 +9,9 @@ function Navbar() {
     const [navbarCollapse, setNavbarCollapse] = useState(false)
     const [dropdown, setDropdown] = useState(false)
     const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 550)
+    const [theme, setTheme] = useState(
+        window.matchMedia('(prefers-color-scheme: light)').matches
+    )
     const logoRef = useRef(null)
     // Adjusted to use state for dynamic speed control, with a sensible default value
     // eslint-disable-next-line no-unused-vars
@@ -51,6 +54,19 @@ function Navbar() {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
+        useEffect(() => {
+            const themeQuery = window.matchMedia(
+                '(prefers-color-scheme: light)'
+            )
+            const themeChangeHandler = () => setTheme(themeQuery.matches)
+
+            themeQuery.addEventListener('change', themeChangeHandler)
+
+            return () => {
+                themeQuery.removeEventListener('change', themeChangeHandler)
+            }
+        }, [])
+
     //NOTE Close the dropdown when clicking outside of it
     document.addEventListener('click', function (event) {
         var myElement = document.getElementById('dropdown-button')
@@ -59,6 +75,8 @@ function Navbar() {
             setDropdown(false)
         }
     })
+
+    
 
     return (
         <div className="mx-auto w-full border-b border-black bg-white px-2 shadow-sm dark:bg-neutral-800 ">
@@ -94,7 +112,7 @@ function Navbar() {
                         <svg
                             className="h-6 w-6"
                             fill="none"
-                            stroke="white"
+                            stroke={theme ? 'black' : 'white'}
                             viewBox="0 0 24 24"
                             xmlns="http://www.w3.org/2000/svg"
                         >

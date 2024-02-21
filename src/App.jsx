@@ -16,6 +16,7 @@ import Loops from './components/Pages/javascriptPrincipals/Loops'
 import JSObjects from './components/Pages/javascriptPrincipals/JSObjects'
 import ArrowFunctions from './components/Pages/javascriptPrincipals/ArrowFunctions'
 import ArrayMethods from './components/Pages/javascriptPrincipals/ArrayMethods'
+import StringMethods from './components/Pages/javascriptPrincipals/StringMethods'
 import PackagesAndPackageJson from './components/Pages/javascriptPrincipals/PackagesAndPackageJson'
 import Bootstrap from './components/Pages/fundamentals/Bootstrap'
 import JSCRUDMain from './components/Pages/javascriptPrincipals/JSCRUDMain'
@@ -94,6 +95,9 @@ export default function App() {
                         path="/javascriptPrincipals/ArrayMethods"
                         element={<ArrayMethods />}
                     />
+                    <Route
+                        path="/javascriptPrincipals/StringMethods"
+                        element={<StringMethods />} />
                     <Route
                         path="/javascriptPrincipals/PackagesAndPackageJson"
                         element={<PackagesAndPackageJson />}

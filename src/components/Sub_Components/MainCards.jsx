@@ -12,12 +12,12 @@ export default function MainCards() {
     // console.log("Styles: ", styles);
 
     return (
-        <div className="mx-5 grid place-items-center gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4  ">
+        <div className="mx-16 grid place-items-center gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4  ">
             {/* SECTION Card #1 */}
             <Card
                 imageSrc={initialSetup}
                 customCSS={{
-                    image: 'border-black dark:bg-green-500',
+                    image: 'border-black bg-green-200 dark:bg-green-500',
                     letsGoBtn: 'bg-orange-800',
                 }}
                 title="Initial Setup"
@@ -31,7 +31,7 @@ export default function MainCards() {
             <Card
                 imageSrc={arrayMethods}
                 customCSS={{
-                    image: 'border-black dark:bg-blue-950',
+                    image: 'border-black bg-blue-700 dark:bg-blue-950',
                     letsGoBtn: 'bg-pink-800',
                 }}
                 title="Need to see the available options?"
@@ -45,7 +45,7 @@ export default function MainCards() {
             <Card
                 imageSrc={practiceEnv}
                 customCSS={{
-                    image: 'border-black dark:bg-yellow-600',
+                    image: 'border-black bg-yellow-500 dark:bg-yellow-600',
                     letsGoBtn: 'bg-yellow-800',
                 }}
                 title="Want a place to code?"
@@ -59,7 +59,7 @@ export default function MainCards() {
             <Card
                 imageSrc={unitTesting}
                 customCSS={{
-                    image: 'border-black dark:bg-stone-500',
+                    image: 'border-black bg-stone-400 dark:bg-stone-500',
                     letsGoBtn: 'bg-yellow-950',
                 }}
                 title="Mocha and Chai"

@@ -83,7 +83,7 @@ function JavascriptMainPage() {
                             </li>
                             <li className="mx-auto py-2 text-xl font-bold">
                                 <Link
-                                    to="/javascript/stringmethods"
+                                    to="/javascriptPrincipals/StringMethods"
                                     className="jsMainPageLink"
                                 >
                                     String Methods

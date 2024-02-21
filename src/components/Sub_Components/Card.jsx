@@ -23,33 +23,33 @@ function Card({
     return (
         <>
             {/* Grid Start */}
-            <div className={`${styles.mainCardBody}`}>
+            <div className={`${styles.mainCardBody} h-fit`}>
                 <div
-                    className={`grid grid-rows-4 place-items-center pb-5 ${styles.mainCardBorder}  gap-y-4`}
+                    className={`grid grid-rows-4 place-items-center ${styles.mainCardBorder}  gap-y-4`}
                 >
                     {/* Grid Row 1: Card Image */}
                     <img
                         src={imageSrc}
                         alt={title}
-                        className={`row-span-1 h-auto w-full object-cover ${
+                        className={` row-auto w-full h-full lg:object-fit ${
                             customCSS.image ? customCSS.image : ''
                         }`}
                     />
 
                     {/* Grid Row 2: Card Title */}
-                    <h5 className={`row-span-1  ${styles.mainCardTitle}`}>
+                    <h5 className={`row-auto  ${styles.mainCardTitle}`}>
                         {title}
                     </h5>
 
                     {/* Grid Row 3: Card Description */}
                     <p
-                        className={`row-span-1 m-5 ${styles.mainCardDescription}`}
+                        className={`row-auto p-5 ${styles.mainCardDescription}`}
                     >
                         {description}
                     </p>
 
                     {/* Grid Row 4: Card Action - Button */}
-                    <div className="row-span-1  flex w-2/3 items-center justify-center">
+                    <div className="row-auto  flex w-2/3 items-center justify-center">
                         <a
                             href={actionHref}
                             className={`my-5 h-auto w-full rounded-xl border border-black  p-2 text-center text-3xl font-bold text-white transition duration-300 ease-in-out hover:opacity-50 ${
