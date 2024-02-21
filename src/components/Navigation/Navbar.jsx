@@ -1,23 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "../../assets/helpcodeitlogo.svg";
 import { NavLink } from "react-router-dom";
-// import "./Navbar.css";
+import "./Navbar.module.css";
+
+import gsap from "gsap";
 
 function Navbar() {
   const [navbarCollapse, setNavbarCollapse] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 550);
-
-  /*FIXME bg-red-500 not showing on mobile:
-need to determine why the bg-red-500 does not show in the mobile view when going between links.
-it does work when manually refreshing the page, but is not related to state changes.
-*/
+  const logoRef = useRef(null);
+  // Adjusted to use state for dynamic speed control, with a sensible default value
+  // eslint-disable-next-line no-unused-vars
+  const [logoSpeed, setLogoSpeed] = useState(1.5); // Duration in seconds for a more noticeable effect
 
   // Function to get the class name for the active link and the current path
+  // eslint-disable-next-line no-unused-vars
   const getClassName = ({ isActive }, currentPath) => {
     if (isActive) {
       // console.clear();
-      console.log("Current Path:", currentPath, "isActive: ", isActive);
+      // console.log("Current Path:", currentPath, "isActive: ", isActive);
     }
 
     return `p-2 hover:bg-slate-500 rounded ${
@@ -26,6 +28,20 @@ it does work when manually refreshing the page, but is not related to state chan
       isSmallScreen ? "text-right w-full" : "space-x-4"
     } font-bold dark:text-white text-black`;
   };
+
+  // NOTE UseEffect to handle GSAP logo animation
+  useEffect(() => {
+    const tl = gsap.timeline({ repeat: -1, yoyo: true });
+    tl.to(logoRef.current, {
+      rotation: 15,
+      duration: logoSpeed - 1,
+      transformOrigin: "center",
+    }).to(logoRef.current, {
+      rotation: -15,
+      duration: logoSpeed,
+      transformOrigin: "center",
+    });
+  }, [logoSpeed]); // Reacts to changes in logoSpeed
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,7 +64,7 @@ it does work when manually refreshing the page, but is not related to state chan
   });
 
   return (
-    <div className='w-full mx-auto px-2 shadow-sm border-b border-black dark:bg-neutral-800 bg-white '>
+    <div className="w-full mx-auto px-2 shadow-sm border-b border-black dark:bg-neutral-800 bg-white ">
       <nav
         className={
           isSmallScreen && navbarCollapse
@@ -56,15 +72,17 @@ it does work when manually refreshing the page, but is not related to state chan
             : "flex justify-between py-5 content-center"
         }
       >
-        <p>
-          <img
-            src={logo}
-            alt='help code it logo'
-            className='rounded-lg ms-2'
-            height='50px'
-            width='50px'
-          ></img>
-        </p>
+        <NavLink to="/">
+          <p ref={logoRef}>
+            <img
+              src={logo}
+              alt="help code it logo"
+              className="rounded-lg ms-2" //REVIEW Animation
+              height="50px"
+              width="50px"
+            ></img>
+          </p>
+        </NavLink>
         {/* Will return a non-boolean attribute error */}
         {/* <div className={isSmallScreen && "justify-end py-2"}> */}
         <div className={isSmallScreen ? "justify-end py-2" : undefined}>
@@ -77,17 +95,17 @@ it does work when manually refreshing the page, but is not related to state chan
             }
           >
             <svg
-              className='w-6 h-6'
-              fill='none'
-              stroke='white'
-              viewBox='0 0 24 24'
-              xmlns='http://www.w3.org/2000/svg'
+              className="w-6 h-6"
+              fill="none"
+              stroke="white"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                strokeLinecap='round'
-                strokeLinejoin='round'
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 strokeWidth={2}
-                d='M4 6h16M4 12h16M4 18h16'
+                d="M4 6h16M4 12h16M4 18h16"
               />
             </svg>
           </button>
@@ -102,7 +120,7 @@ it does work when manually refreshing the page, but is not related to state chan
             } font-bold dark:text-white text-black`}
           >
             <NavLink
-              to='/'
+              to="/"
               className={({ isActive }) =>
                 getClassName({ isActive }, { currentPath: "/" })
               }
@@ -111,9 +129,9 @@ it does work when manually refreshing the page, but is not related to state chan
               Home
             </NavLink>
             {/* Dropdown for links */}
-            <div className='dropdown inline-block relative  '>
+            <div className="dropdown inline-block relative  ">
               <button
-                className='p-2 hover:bg-slate-500 rounded'
+                className="p-2 hover:bg-slate-500 rounded"
                 onClick={() => setDropdown(!dropdown)}
                 id="dropdown-button"
               >
@@ -128,16 +146,16 @@ it does work when manually refreshing the page, but is not related to state chan
               >
                 <li>
                   <a
-                    href='#'
-                    className='rounded-t hover:bg-slate-500 rounded dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap'
+                    href="#"
+                    className="rounded-t hover:bg-slate-500 rounded dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap"
                   >
                     Installs
                   </a>
                 </li>
                 <li>
                   <a
-                    href='#'
-                    className='hover:bg-slate-500 rounded dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap'
+                    href="#"
+                    className="hover:bg-slate-500 rounded dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap"
                   >
                     Setting up a Practice Environment
                   </a>
@@ -145,16 +163,16 @@ it does work when manually refreshing the page, but is not related to state chan
                 <hr />
                 <li>
                   <NavLink
-                    to='/fundamentals/Bootstrap'
-                    className='hover:bg-slate-500 rounded rounded-b dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap'
+                    to="/fundamentals/Bootstrap"
+                    className="hover:bg-slate-500 rounded rounded-b dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap"
                   >
                     Bootstrap
                   </NavLink>
                 </li>
                 <li>
                   <NavLink
-                    to='/fundamentals/GitHub'
-                    className='hover:bg-slate-500 rounded rounded-b dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap'
+                    to="/fundamentals/GitHub"
+                    className="hover:bg-slate-500 rounded rounded-b dark:bg-black bg-white py-2 px-4 block whitespace-no-wrap"
                   >
                     GitHub
                   </NavLink>
@@ -162,7 +180,7 @@ it does work when manually refreshing the page, but is not related to state chan
               </ul>
             </div>
             <NavLink
-              to='/about'
+              to="/about"
               className={({ isActive }) =>
                 getClassName({ isActive }, { currentPath: "/about" })
               }
@@ -171,14 +189,14 @@ it does work when manually refreshing the page, but is not related to state chan
               About
             </NavLink>
             <NavLink
-              to='/javascript'
+              to="/javascript"
               className={({ isActive }) =>
                 getClassName({ isActive }, { currentPath: "/javascript" })
               }
             >
               JavaScript
             </NavLink>
-            <a href='' className='p-2 hover:bg-slate-500 rounded'>
+            <a href="" className="p-2 hover:bg-slate-500 rounded">
               Contact
             </a>
           </div>
