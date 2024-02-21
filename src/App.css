@@ -1,306 +1,306 @@
-@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=Press+Start+2P&family=Roboto+Slab:wght@300&family=Roboto:ital,wght@1,300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&family=Roboto+Slab:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300&family=Press+Start+2P&family=Roboto+Slab:wght@300&family=Roboto:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 224 71.4% 4.1%;
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 224 71.4% 4.1%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 224 71.4% 4.1%;
+        --card: 0 0% 100%;
+        --card-foreground: 224 71.4% 4.1%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71.4% 4.1%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 224 71.4% 4.1%;
 
-    --primary: 220.9 39.3% 11%;
-    --primary-foreground: 210 20% 98%;
+        --primary: 220.9 39.3% 11%;
+        --primary-foreground: 210 20% 98%;
 
-    --secondary: 220 14.3% 95.9%;
-    --secondary-foreground: 220.9 39.3% 11%;
+        --secondary: 220 14.3% 95.9%;
+        --secondary-foreground: 220.9 39.3% 11%;
 
-    --muted: 220 14.3% 95.9%;
-    --muted-foreground: 220 8.9% 46.1%;
+        --muted: 220 14.3% 95.9%;
+        --muted-foreground: 220 8.9% 46.1%;
 
-    --accent: 220 14.3% 95.9%;
-    --accent-foreground: 220.9 39.3% 11%;
+        --accent: 220 14.3% 95.9%;
+        --accent-foreground: 220.9 39.3% 11%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 20% 98%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 20% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 224 71.4% 4.1%;
+        --border: 220 13% 91%;
+        --input: 220 13% 91%;
+        --ring: 224 71.4% 4.1%;
 
-    --radius: 0.5rem;
-  }
+        --radius: 0.5rem;
+    }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-  code {
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.58);
-    margin-bottom: 1rem;
-    max-width: fit-content;
-  }
+    code {
+        border-radius: 10px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.58);
+        margin-bottom: 1rem;
+        max-width: fit-content;
+    }
 
-  .arrayMethodLinks {
-    font-size: 1.4rem;
-    text-align: start;
-    text-decoration: solid;
-    font-weight: bold;
-  }
+    .arrayMethodLinks {
+        font-size: 1.4rem;
+        text-align: start;
+        text-decoration: solid;
+        font-weight: bold;
+    }
 
-  .arrayMethodLinks:hover {
-    text-decoration: underline;
-  }
+    .arrayMethodLinks:hover {
+        text-decoration: underline;
+    }
 
-  .arrayMethodLinks:visited {
-    font-weight: 400;
-  }
+    .arrayMethodLinks:visited {
+        font-weight: 400;
+    }
 
-  .arrayMethodTableofContents {
-    font-size: 1rem;
-    text-decoration: solid;
-    margin: 0%;
-    padding: 0%;
-  }
+    .arrayMethodTableofContents {
+        font-size: 1rem;
+        text-decoration: solid;
+        margin: 0%;
+        padding: 0%;
+    }
 
-  .article-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    border: 1px solid black;
-  }
+    .article-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        border: 1px solid black;
+    }
 
-  .card-max {
-    width: auto;
-    height: 350px;
-  }
+    .card-max {
+        width: auto;
+        height: 350px;
+    }
 
-  .cardImageFormat {
-    max-height: 200px;
-  }
+    .cardImageFormat {
+        max-height: 200px;
+    }
 
-  .centeredTogether {
-    text-align: center;
-    justify-content: center;
-    align-content: center;
-  }
+    .centeredTogether {
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+    }
 
-  .code-height {
-    height: 100%;
-  }
+    .code-height {
+        height: 100%;
+    }
 
-  .communityText {
-    font-size: 1.1rem;
-    text-align: start;
-  }
+    .communityText {
+        font-size: 1.1rem;
+        text-align: start;
+    }
 
-  .customBoxShadow {
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.58);
-  }
+    .customBoxShadow {
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.58);
+    }
 
-  .fullyCentered {
-    align-items: center;
-    text-align: center;
-  }
+    .fullyCentered {
+        align-items: center;
+        text-align: center;
+    }
 
-  /* NOTE - You can add custom classes that apply other classes */
-  .jsMainPageLink {
-    @apply text-blue-500 hover:text-blue-800 dark:text-white;
-  }
+    /* NOTE - You can add custom classes that apply other classes */
+    .jsMainPageLink {
+        @apply text-blue-500 hover:text-blue-800 dark:text-white;
+    }
 
-  .gitLogo {
-    max-width: 300px;
-    max-height: 300px;
-  }
+    .gitLogo {
+        max-width: 300px;
+        max-height: 300px;
+    }
 
-  .gitignoreLogoSize {
-    max-width: 300px;
-    max-height: 300px;
-  }
+    .gitignoreLogoSize {
+        max-width: 300px;
+        max-height: 300px;
+    }
 
-  .graphicsMethods {
-    text-align: center;
-    font-size: 3rem;
-  }
+    .graphicsMethods {
+        text-align: center;
+        font-size: 3rem;
+    }
 
-  .hero-logo {
-    border-radius: 55px;
-    background-color: black;
-    max-width: 300px;
-  }
+    .hero-logo {
+        border-radius: 55px;
+        background-color: black;
+        max-width: 300px;
+    }
 
-  .hero-text {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    font-family: "Mukta", sans-serif;
-    font-size: 2rem;
-  }
+    .hero-text {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-family: 'Mukta', sans-serif;
+        font-size: 2rem;
+    }
 
-  .homebrewLogo {
-    max-width: 100px;
-    max-height: 100px;
-  }
+    .homebrewLogo {
+        max-width: 100px;
+        max-height: 100px;
+    }
 
-  .html {
-    scroll-behavior: smooth;
-  }
+    .html {
+        scroll-behavior: smooth;
+    }
 
-  .indieFlower {
-    font-family: "Indie Flower", cursive;
-  }
+    .indieFlower {
+        font-family: 'Indie Flower', cursive;
+    }
 
-  .instructionsFont {
-    font-family: "Roboto Slab", sans-serif;
-    font-size: 1.5rem;
-    font-weight: 800;
-  }
+    .instructionsFont {
+        font-family: 'Roboto Slab', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+    }
 
-  .is-setup-list-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
+    .is-setup-list-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
 
-  .jumbo-background {
-    background-image: url("./assets/pexels-lukas-574069.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    max-height: 500px;
-    min-height: 300px;
-    width: 100%;
-    position: relative;
-    z-index: -1;
-  }
+    .jumbo-background {
+        background-image: url('./assets/pexels-lukas-574069.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        max-height: 500px;
+        min-height: 300px;
+        width: 100%;
+        position: relative;
+        z-index: -1;
+    }
 
-  .lato-font {
-    font-family: "Lato", sans-serif;
-  }
+    .lato-font {
+        font-family: 'Lato', sans-serif;
+    }
 
-  .link-custom {
-    @apply text-blue-500 hover:text-blue-800 text-xl font-bold;
-  }
+    .link-custom {
+        @apply text-xl font-bold text-blue-500 hover:text-blue-800;
+    }
 
-  .logoBackground {
-    background-color: black;
-    width: 200px;
-  }
+    .logoBackground {
+        background-color: black;
+        width: 200px;
+    }
 
-  .macSetupAppleLogo {
-    max-width: 35px;
-    max-height: 35px;
-  }
+    .macSetupAppleLogo {
+        max-width: 35px;
+        max-height: 35px;
+    }
 
-  .macSetupHeader {
-    font-family: "Roboto", sans-serif;
-    font-weight: bold;
-    font-size: 5rem;
-  }
+    .macSetupHeader {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 5rem;
+    }
 
-  .maxWidth {
-    max-width: 250px;
-    max-height: 250px;
-  }
+    .maxWidth {
+        max-width: 250px;
+        max-height: 250px;
+    }
 
-  .maxWidthRowInitial {
-    max-width: 600px;
-  }
+    .maxWidthRowInitial {
+        max-width: 600px;
+    }
 
-  .morpheus {
-    width: 300px;
-    height: auto;
-    border-radius: 40px;
-  }
+    .morpheus {
+        width: 300px;
+        height: auto;
+        border-radius: 40px;
+    }
 
-  .mukataFont {
-    font-family: "Mukta", sans-serif;
-  }
+    .mukataFont {
+        font-family: 'Mukta', sans-serif;
+    }
 
-  .objectPageLeadText {
-    font-size: 1.5rem;
-    text-align: start;
-  }
+    .objectPageLeadText {
+        font-size: 1.5rem;
+        text-align: start;
+    }
 
-  .PJ-terms {
-    border: 1px solid black;
-    border-radius: 10px;
-    padding: 1rem;
-    margin: 1rem;
-    font-size: 0.9rem;
-  }
+    .PJ-terms {
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 1rem;
+        margin: 1rem;
+        font-size: 0.9rem;
+    }
 
-  .PJ-terms dt {
-    font-weight: bold;
-    font-size: 1.25rem;
-  }
+    .PJ-terms dt {
+        font-weight: bold;
+        font-size: 1.25rem;
+    }
 
-  .pressStartFont {
-    font-family: "Press Start 2P", cursive;
-  }
+    .pressStartFont {
+        font-family: 'Press Start 2P', cursive;
+    }
 
-  .roboto-font {
-    font-family: "Roboto-Slab", sans-serif;
-  }
+    .roboto-font {
+        font-family: 'Roboto-Slab', sans-serif;
+    }
 
-  .satisfyFont {
-    font-family: "Satisfy", cursive;
-  }
+    .satisfyFont {
+        font-family: 'Satisfy', cursive;
+    }
 
-  .youtube-video {
-    aspect-ratio: 16 / 9;
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid black;
-  }
+    .youtube-video {
+        aspect-ratio: 16 / 9;
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid black;
+    }
 
-  .dark {
-    --background: 220, 30%, 18%;
-    --foreground: 210 20% 98%;
+    .dark {
+        --background: 220, 30%, 18%;
+        --foreground: 210 20% 98%;
 
-    --card: 224 71.4% 4.1%;
-    --card-foreground: 210 20% 98%;
+        --card: 224 71.4% 4.1%;
+        --card-foreground: 210 20% 98%;
 
-    --popover: 224 71.4% 4.1%;
-    --popover-foreground: 210 20% 98%;
+        --popover: 224 71.4% 4.1%;
+        --popover-foreground: 210 20% 98%;
 
-    --primary: 210 20% 98%;
-    --primary-foreground: 220.9 39.3% 11%;
+        --primary: 210 20% 98%;
+        --primary-foreground: 220.9 39.3% 11%;
 
-    --secondary: 215 27.9% 16.9%;
-    --secondary-foreground: 210 20% 98%;
+        --secondary: 215 27.9% 16.9%;
+        --secondary-foreground: 210 20% 98%;
 
-    --muted: 215 27.9% 16.9%;
-    --muted-foreground: 217.9 10.6% 64.9%;
+        --muted: 215 27.9% 16.9%;
+        --muted-foreground: 217.9 10.6% 64.9%;
 
-    --accent: 215 27.9% 16.9%;
-    --accent-foreground: 210 20% 98%;
+        --accent: 215 27.9% 16.9%;
+        --accent-foreground: 210 20% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 20% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 20% 98%;
 
-    --border: 215 27.9% 16.9%;
-    --input: 215 27.9% 16.9%;
-    --ring: 216 12.2% 83.9%;
-  }
+        --border: 215 27.9% 16.9%;
+        --input: 215 27.9% 16.9%;
+        --ring: 216 12.2% 83.9%;
+    }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
 }
