@@ -1,0 +1,14 @@
+.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure the navbar is above other content */
+}
+
+.back-to-top-btn {
+  position: fixed;
+  bottom: 20px; /* Adjust as necessary */
+  right: 20px; /* Adjust as necessary */
+  /* Additional styling */
+  z-index: 9999;
+}

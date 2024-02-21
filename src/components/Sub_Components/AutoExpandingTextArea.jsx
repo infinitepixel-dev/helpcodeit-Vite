@@ -22,6 +22,18 @@ function AutoExpandingTextarea({ value, onChange }) {
             className="h-20 w-full rounded-md border border-black bg-white p-2 text-white dark:bg-slate-600"
         />
     )
+  return (
+    <textarea
+      ref={textareaRef}
+      value={value}
+      onChange={handleInput}
+      style={{
+        height: "150px",
+        overflowY: "hidden", // Hide the scrollbar
+      }}
+      className="bg-white border border-black w-full h-20 dark:bg-slate-600 p-2 rounded-md"
+    />
+  );
 }
 
 AutoExpandingTextarea.propTypes = {
