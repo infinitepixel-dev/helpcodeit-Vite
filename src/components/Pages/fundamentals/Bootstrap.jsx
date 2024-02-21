@@ -1,4 +1,4 @@
-import bootstrapLogo from '../../../assets/bootstrap logo.svg'
+import bootstrapLogo from '../../../assets/Bootstrap logo.svg'
 import { useEffect, useRef } from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
