@@ -84,12 +84,8 @@ function CodePractice({
             // Highlight with hljs
             hljs.highlightElement(codeInput.current)
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userInput])
-      // Highlight with hljs
-      hljs.highlightElement(codeInput.current);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userInput]);
 
     return (
         <div ref={containerRef}>
