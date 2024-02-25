@@ -26,6 +26,7 @@ import GitHub from './components/Pages/fundamentals/GitHub';
 import Installs from './components/Pages/fundamentals/Installs';
 import PracticeEnvironment from './components/Pages/fundamentals/PracticeEnvironment';
 import StringConcatenation from './components/Pages/javascriptPrincipals/StringConcatenation';
+import UnitTestingMochaChai from './components/Pages/javascriptPrincipals/UnitTestingMochaChai';
 
 export default function App() {
     const [theme, setTheme] = useState(
@@ -92,6 +93,8 @@ useEffect(() => {
                         path="/javascriptPrincipals/StandardFunctions"
                         element={<StandardFunctions />}
                     />
+                    <Route path="/javascriptPrincipals/UnitTestingMochaChai" element={<UnitTestingMochaChai />} />
+
                     <Route
                         path="/javascriptPrincipals/Loops"
                         element={<Loops />}

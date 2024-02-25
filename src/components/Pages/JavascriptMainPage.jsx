@@ -136,7 +136,7 @@ function JavascriptMainPage() {
                             </li>
                             <li className="mx-auto py-2 text-xl font-bold">
                                 <Link
-                                    to="/javascript/unittestingmocha&chai"
+                                    to="/javascriptPrincipals/UnitTestingMochaChai"
                                     className="jsMainPageLink"
                                 >
                                     Unit Testing with Mocha & Chai

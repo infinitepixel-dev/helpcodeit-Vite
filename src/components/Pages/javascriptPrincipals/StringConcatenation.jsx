@@ -1,5 +1,4 @@
-import { useEffect } from 'react'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
 
@@ -19,11 +18,23 @@ let fullName = firstName + ' ' + lastName;
 console.log(fullName); // John Doe
 `
 
+const codeString2 = `let firstName = 'John';
+let lastName = 'Doe';
+let fullName = firstName + ' ' + lastName;
+console.log(fullName); // John Doe
+`
+
     const templateLiteral = `let firstName = 'John';
 let lastName = 'Doe';
 let fullName = \` First Name: \${firstName}, Last Name: \${lastName}\`;
-console.log(fullName); // First Name: John Last Name: Doe
+console.log(fullName); // First Name: John, Last Name: Doe
 `
+
+const teplateLiteral2 = `let firstName = 'John';
+let lastName = 'Doe';
+console.log(\`Hello, my name is \${firstName} \${lastName}\`); // Hello, my name is John Doe
+`
+
 
     return (
         <div className="container text-lg">
@@ -50,6 +61,14 @@ console.log(fullName); // First Name: John Last Name: Doe
                     {codeString}
                 </code>
             </pre>
+            <p>You can declare a variable and then concatenate the strings, but you also can use this when logging a string directly.</p>
+            <pre>
+                <code ref={codeRef} className="javascript text-base mt-4">
+                    {codeString2}
+                </code>
+            </pre>
+
+
             <h3 className="my-5 text-2xl">Template Literal</h3>
             <p>
                 The other method of concatenating strings is by using template
@@ -70,6 +89,15 @@ console.log(fullName); // First Name: John Last Name: Doe
             <pre>
                 <code ref={codeRef} className="javascript text-base mt-4">
                     {templateLiteral}
+                </code>
+            </pre>
+            <p>
+                You can also use template literals to directly log a string
+                without having to store it in a variable first.
+            </p>
+            <pre>
+                <code ref={codeRef} className="javascript text-base mt-4">
+                    {teplateLiteral2}
                 </code>
             </pre>
         </div>
