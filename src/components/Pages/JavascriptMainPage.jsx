@@ -89,14 +89,7 @@ function JavascriptMainPage() {
                                     String Methods
                                 </Link>
                             </li>
-                            <li className="mx-auto py-2 text-xl font-bold">
-                                <Link
-                                    to="/javascript/jquerytroubleshooting"
-                                    className="jsMainPageLink"
-                                >
-                                    Troubleshooting jQuery
-                                </Link>
-                            </li>
+                        
                             <li className="mx-auto py-2 text-xl font-bold">
                                 <Link
                                     to="/javascriptPrincipals/PackagesAndPackageJson"

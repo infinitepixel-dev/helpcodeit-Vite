@@ -1,7 +1,7 @@
 function PracticeEnvironment() {
     return (
         <div className="container">
-            <h1 className="text-center text-5xl">
+            <h1 className="text-center text-5xl mt-10">
                 How to Setup a Practice Environment in VS Code{' '}
             </h1>
             <p class="text-pretty pb-12 text-center text-xl">

@@ -52,6 +52,7 @@
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.58);
         margin-bottom: 1rem;
         max-width: fit-content;
+        @apply p-0 text-base dark:border dark:border-white;
     }
 
     .arrayMethodLinks {
@@ -266,7 +267,7 @@
     }
 
     .dark {
-        /* --background: 220, 30%, 18%; This is a blue background */
+        /* --background: 220, 30%, 18%; */
         --background: 0, 0%, 18%;
         --foreground: 210 20% 98%;
 
