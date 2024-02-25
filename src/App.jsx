@@ -6,6 +6,7 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/github-dark.css';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './components/Pages/HomePage';
+import Footer from './components/Sub_Components/Footer';
 import About from './components/Pages/About';
 import JavascriptMainPage from './components/Pages/JavascriptMainPage';
 import PracticeProblems from './components/Pages/javascriptPrincipals/PracticeProblems';
@@ -49,14 +50,18 @@ useEffect(() => {
 }, [])
 
     return (
-        <DarkModeProvider >
+        <DarkModeProvider>
             <div>
                 <div className="m-0 w-full p-0">
                     <Navbar theme={theme} />
                 </div>
 
                 <Routes>
-                    <Route exact path="/" element={<HomePage theme={theme}/>} />
+                    <Route
+                        exact
+                        path="/"
+                        element={<HomePage theme={theme} />}
+                    />
                     {/* <Route path='/GettingStarted' element={<GettingStarted />} /> */}
                     <Route path="/about" element={<About />} />
                     <Route path="/fundamentals/GitHub" element={<GitHub />} />
@@ -88,12 +93,18 @@ useEffect(() => {
                         path="/javascriptPrincipals/DeclaringVariables"
                         element={<DeclaringVariables />}
                     />
-                    <Route path="/javascriptPrincipals/StringConcatenation" element={<StringConcatenation />} />
+                    <Route
+                        path="/javascriptPrincipals/StringConcatenation"
+                        element={<StringConcatenation />}
+                    />
                     <Route
                         path="/javascriptPrincipals/StandardFunctions"
                         element={<StandardFunctions />}
                     />
-                    <Route path="/javascriptPrincipals/UnitTestingMochaChai" element={<UnitTestingMochaChai />} />
+                    <Route
+                        path="/javascriptPrincipals/UnitTestingMochaChai"
+                        element={<UnitTestingMochaChai />}
+                    />
 
                     <Route
                         path="/javascriptPrincipals/Loops"
@@ -117,7 +128,8 @@ useEffect(() => {
                     />
                     <Route
                         path="/javascriptPrincipals/StringMethods"
-                        element={<StringMethods />} />
+                        element={<StringMethods />}
+                    />
                     <Route
                         path="/javascriptPrincipals/PackagesAndPackageJson"
                         element={<PackagesAndPackageJson />}
@@ -136,6 +148,9 @@ useEffect(() => {
                     />
                     <Route path="*" element={<HomePage />} />
                 </Routes>
+                <div className="m-0 w-full p-0">
+                    <Footer />
+                </div>
             </div>
         </DarkModeProvider>
     )
