@@ -75,7 +75,7 @@ describe('Array', function() {
                 provide an expressive language & readable style, while the TDD
                 assert style provides a more classical feel.
             </p>
-            <div className="my-5 grid grid-cols-2 gap-2">
+            <div className="my-5 grid grid-cols-1 gap-2 md:grid-cols-2">
                 <div className="m-2 rounded-2xl border-2 border-black bg-slate-300 p-3 shadow-md  shadow-black dark:border-white dark:bg-gray-600">
                     <img
                         src="https://cdn.svgporn.com/logos/mocha.svg"

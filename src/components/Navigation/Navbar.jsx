@@ -8,7 +8,9 @@ import gsap from 'gsap'
 function Navbar({ theme }) {
     const [navbarCollapse, setNavbarCollapse] = useState(false)
     const [dropdown, setDropdown] = useState(false)
-    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 550)
+    const [dropdown2, setDropdown2] = useState(false)
+    const [isSmallScreen, setIsSmallScreen] = useState(window.innerWidth <= 600)
+
     // const [theme, setTheme] = useState(
     //     window.matchMedia('(prefers-color-scheme: light)').matches
     // )
@@ -45,7 +47,7 @@ function Navbar({ theme }) {
 
     useEffect(() => {
         const handleResize = () => {
-            setIsSmallScreen(window.innerWidth <= 550)
+            setIsSmallScreen(window.innerWidth <= 700)
         }
 
         window.addEventListener('resize', handleResize)
@@ -54,25 +56,20 @@ function Navbar({ theme }) {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
-    // useEffect(() => {
-    //     const themeQuery = window.matchMedia(
-    //         '(prefers-color-scheme: light)'
-    //     )
-    //     const themeChangeHandler = () => setTheme(themeQuery.matches)
-
-    //     themeQuery.addEventListener('change', themeChangeHandler)
-
-    //     return () => {
-    //         themeQuery.removeEventListener('change', themeChangeHandler)
-    //     }
-    // }, [])
 
     //NOTE Close the dropdown when clicking outside of it
     document.addEventListener('click', function (event) {
-        var myElement = document.getElementById('dropdown-button')
+        let myElement = document.getElementById('dropdown-button')
+
+        if (event.target !== myElement ) {
+            setDropdown(false)
+        }
+    })
+    document.addEventListener('click', function (event) {
+        let myElement = document.getElementById('dropdown-button2')
 
         if (event.target !== myElement) {
-            setDropdown(false)
+            setDropdown2(false)
         }
     })
 
@@ -126,7 +123,7 @@ function Navbar({ theme }) {
                     <div
                         className={`flex ${
                             isSmallScreen
-                                ? 'w-full flex-col bg-white text-right text-black dark:bg-neutral-800 dark:text-white'
+                                ? 'w-full flex-col bg-white pt-5 text-right text-black dark:bg-neutral-800 dark:text-white'
                                 : 'space-x-1 md:space-x-4 lg:space-x-6 lg:text-2xl xl:space-x-8'
                         } ${
                             !navbarCollapse && isSmallScreen ? 'hidden' : ''
@@ -167,7 +164,9 @@ function Navbar({ theme }) {
                                 </li>
                                 <li>
                                     <NavLink
-                                        to={'/fundamentals/SettingUpPracticeEnvironment'}
+                                        to={
+                                            '/fundamentals/SettingUpPracticeEnvironment'
+                                        }
                                         className="whitespace-no-wrap block rounded bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
                                     >
                                         Setting up a Practice Environment
@@ -192,6 +191,70 @@ function Navbar({ theme }) {
                                 </li>
                             </ul>
                         </div>
+                        {/* Dropdown for links */}
+                        <div className="dropdown relative inline-block  ">
+                            <button
+                                className="rounded p-2 hover:bg-slate-500"
+                                onClick={() => setDropdown2(!dropdown2)}
+                                id="dropdown-button2"
+                            >
+                                Topics
+                            </button>
+                            <ul
+                                className={
+                                    dropdown2
+                                        ? 'dropdown-menu absolute bg-white pt-1 text-black dark:bg-gray-800 dark:text-white'
+                                        : 'dropdown-menu absolute hidden bg-white pt-1 text-black dark:bg-gray-800 dark:text-white'
+                                }
+                            >
+                                <li>
+                                    <NavLink
+                                        to={'/javascript'}
+                                        className="whitespace-no-wrap  block rounded rounded-t bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                    >
+                                        JavaScript
+                                    </NavLink>
+                                </li>
+                                {/* <li>
+                                    <NavLink
+                                        to={
+                                            '/fundamentals/SettingUpPracticeEnvironment'
+                                        }
+                                        className="whitespace-no-wrap block rounded bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                    >
+                                        Setting up a Practice Environment
+                                    </NavLink>
+                                </li>
+                                <hr />
+                                <li>
+                                    <NavLink
+                                        to="/fundamentals/Bootstrap"
+                                        className="whitespace-no-wrap block rounded rounded-b bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                    >
+                                        Bootstrap
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink
+                                        to="/fundamentals/GitHub"
+                                        className="whitespace-no-wrap block rounded rounded-b bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                    >
+                                        GitHub
+                                    </NavLink>
+                                </li> */}
+                            </ul>
+                        </div>
+                        {/* <NavLink
+                            to="/javascript"
+                            className={({ isActive }) =>
+                                getClassName(
+                                    { isActive },
+                                    { currentPath: '/javascript' }
+                                )
+                            }
+                        >
+                            JavaScript
+                        </NavLink> */}
                         <NavLink
                             to="/about"
                             className={({ isActive }) =>
@@ -204,17 +267,14 @@ function Navbar({ theme }) {
                         >
                             About
                         </NavLink>
-                        <NavLink
-                            to="/javascript"
-                            className={({ isActive }) =>
-                                getClassName(
-                                    { isActive },
-                                    { currentPath: '/javascript' }
-                                )
-                            }
-                        >
-                            JavaScript
-                        </NavLink>
+                        <div className="ms-auto p-1">
+                            <a href="https://www.buymeacoffee.com/michaelvarnell">
+                                <img
+                                    src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=michaelvarnell&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff"
+                                    className="h-auto w-40"
+                                />
+                            </a>
+                        </div>
                     </div>
                 </div>
             </nav>

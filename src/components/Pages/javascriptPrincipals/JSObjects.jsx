@@ -23,8 +23,8 @@ export default function JSObjects() {
     return (
         <div>
             <div className="container pb-14 text-xl">
-                <div className="grid grid-cols-1 pt-28 md:grid-cols-2">
-                    <div>
+                <div className="grid grid-cols-1 pt-28 md:grid-cols-3">
+                    <div className='md:col-span-2'>
                         <h1 className="satisfyFont pb-7 text-center text-6xl">
                             JavaScript Objects
                         </h1>
@@ -43,7 +43,7 @@ export default function JSObjects() {
                             called properties or methods.
                         </p>
                         <p className="p-4">
-                            JavaScript objects are written with curly braces {}.
+                            JavaScript objects are written with curly braces.
                         </p>
                         <p className="p-4">
                             Object properties are written as name:value pairs,
@@ -61,7 +61,7 @@ export default function JSObjects() {
 
                 <div className="grid grid-cols-1 pt-28 lg:grid-cols-2">
                     <div>
-                        <h2 className="text-center text-4xl">
+                        <h2 className="text-center text-4xl mb-5">
                             Example of an Object
                         </h2>
                         <pre>
@@ -73,12 +73,13 @@ export default function JSObjects() {
                             </code>
                         </pre>
                     </div>
-                    <div className="m-4 rounded-2xl border border-black bg-slate-200 shadow-xl dark:border-white dark:bg-slate-600">
+                    <div className="m-4 h-fit rounded-2xl border border-black bg-slate-200 shadow-xl dark:border-white dark:bg-slate-600">
                         <p className="p-4   font-bold">
                             Bonus: Did you know that you can use all the normal
                             JavaScript datatypes within an Object?
                         </p>
                     </div>
+                </div>
                     <div>
                         <h2 className="mb-4 mt-12 text-center text-4xl">
                             Accessing Object Properties
@@ -106,6 +107,6 @@ export default function JSObjects() {
                     </div>
                 </div>
             </div>
-        </div>
+        
     )
 }
