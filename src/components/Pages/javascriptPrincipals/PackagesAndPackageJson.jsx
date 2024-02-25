@@ -3,16 +3,16 @@ import hljs from "highlight.js";
 import "highlight.js/styles/atom-one-dark.css";
 
 function PackagesAndPackageJson() {
-  const codeRef = useRef(null);
+    const codeRef = useRef(null)
 
-  useEffect(() => {
-    // Apply syntax highlighting to all code elements
-    document.querySelectorAll("pre code").forEach((block) => {
-      hljs.highlightBlock(block);
-    });
-  }, []);
+    useEffect(() => {
+        // Apply syntax highlighting to all code elements
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block)
+        })
+    }, [])
 
-  const packageJson = `{
+    const packageJson = `{
     "name": "my-project",
     "version": "1.0.0",
     "description": "My project description",
@@ -26,7 +26,7 @@ function PackagesAndPackageJson() {
     "dependencies": {
       "bootstrap": "^5.1.0",
     }
-    }`;
+    }`
 
   return (
     <div>
@@ -124,4 +124,4 @@ function PackagesAndPackageJson() {
     </div>
   );
 }
-export default PackagesAndPackageJson;
+export default PackagesAndPackageJson

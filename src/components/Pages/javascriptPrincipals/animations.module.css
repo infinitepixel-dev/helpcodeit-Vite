@@ -1,27 +1,27 @@
 .container {
-  /* This acts as the scroll container */
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh; /* Adjust based on your layout */
+    /* This acts as the scroll container */
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh; /* Adjust based on your layout */
 }
 
 .observeMe {
-  /* Each section will be a snap point */
-  scroll-snap-align: start;
+    /* Each section will be a snap point */
+    scroll-snap-align: start;
 }
 
 /* Coding_Practice.module.css */
 @keyframes fadeInCustom {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .fadeInCustom {
-  animation-name: fadeInCustom;
-  animation-duration: 2s;
-  animation-fill-mode: forwards; /* Keeps the element visible after the animation */
+    animation-name: fadeInCustom;
+    animation-duration: 2s;
+    animation-fill-mode: forwards; /* Keeps the element visible after the animation */
 }
