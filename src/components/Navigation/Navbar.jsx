@@ -150,7 +150,7 @@ function Navbar({ theme }) {
                             <ul
                                 className={
                                     dropdown
-                                        ? 'dropdown-menu absolute bg-white pt-1 text-black dark:bg-gray-800 dark:text-white'
+                                        ? 'dropdown-menu absolute z-50 bg-white pt-1 text-black dark:bg-gray-800 dark:text-white'
                                         : 'dropdown-menu absolute hidden bg-white pt-1 text-black dark:bg-gray-800 dark:text-white'
                                 }
                             >
@@ -203,8 +203,8 @@ function Navbar({ theme }) {
                             <ul
                                 className={
                                     dropdown2
-                                        ? 'dropdown-menu absolute bg-white pt-1 text-black dark:bg-gray-800 dark:text-white'
-                                        : 'dropdown-menu absolute hidden bg-white pt-1 text-black dark:bg-gray-800 dark:text-white'
+                                        ? 'dropdown-menu absolute w-fit z-50 bg-white mt-1 text-black dark:bg-gray-800 dark:text-white'
+                                        : 'dropdown-menu absolute  hidden bg-white mt-1 text-black dark:bg-gray-800 dark:text-white'
                                 }
                             >
                                 <li>
