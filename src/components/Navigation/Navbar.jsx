@@ -56,12 +56,11 @@ function Navbar({ theme }) {
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
-
     //NOTE Close the dropdown when clicking outside of it
     document.addEventListener('click', function (event) {
         let myElement = document.getElementById('dropdown-button')
 
-        if (event.target !== myElement ) {
+        if (event.target !== myElement) {
             setDropdown(false)
         }
     })
@@ -203,8 +202,8 @@ function Navbar({ theme }) {
                             <ul
                                 className={
                                     dropdown2
-                                        ? 'dropdown-menu absolute w-fit z-50 bg-white mt-1 text-black dark:bg-gray-800 dark:text-white'
-                                        : 'dropdown-menu absolute  hidden bg-white mt-1 text-black dark:bg-gray-800 dark:text-white'
+                                        ? 'dropdown-menu absolute z-50 self-center bg-white pt-1 text-black dark:bg-gray-800 dark:text-white'
+                                        : 'dropdown-menu absolute hidden self-center bg-white pt-1 text-black dark:bg-gray-800 dark:text-white'
                                 }
                             >
                                 <li>
