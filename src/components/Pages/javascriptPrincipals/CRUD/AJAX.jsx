@@ -47,18 +47,18 @@ function AJAX() {
 
                 <div className="container">
                     <Accordion type="single" collapsible>
-                        {AJAXArray.map((AJAXitem, index) => (
+                        {AJAXArray.map((Object, index) => (
                             <AccordionItem
                                 key={index}
                                 value={`item-${index + 1}`}
                             >
                                 <AccordionTrigger>
                                     <h4 className="mb-4 mt-10 text-2xl font-bold">
-                                        {AJAXitem.title}
+                                        {Object.title}
                                     </h4>
                                 </AccordionTrigger>
                                 <AccordionContent>
-                                    <CRUD AJAXitem={AJAXitem} hljs={hljs} />
+                                    <CRUD Object={Object} hljs={hljs} />
                                 </AccordionContent>
                                 <hr className="border-1 my-2 border-black dark:border-white" />
                             </AccordionItem>
@@ -68,18 +68,18 @@ function AJAX() {
 
                 <div className="container">
                     <Accordion type="single" collapsible>
-                        {AXIOSArray.map((AXIOSitem, index) => (
+                        {AXIOSArray.map((Object, index) => (
                             <AccordionItem
                                 key={index}
                                 value={`item-${index + 1}`}
                             >
                                 <AccordionTrigger>
                                     <h4 className="mb-4 mt-10 text-2xl font-bold">
-                                        {AXIOSitem.title}
+                                        {Object.title}
                                     </h4>
                                 </AccordionTrigger>
                                 <AccordionContent>
-                                    <CRUD AJAXitem={AXIOSitem} hljs={hljs} />
+                                    <CRUD Object={Object} hljs={hljs} />
                                 </AccordionContent>
                                 <hr className="border-1 my-2 border-black dark:border-white" />
                             </AccordionItem>

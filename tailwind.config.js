@@ -78,6 +78,7 @@ module.exports = {
     // eslint-disable-next-line no-undef
     require("tailwindcss-animate"), // Ensure this is the correct package name
     "prettier-plugin-tailwindcss",
+    "daisyui",
   ],
 };
 

@@ -1,30 +1,33 @@
 import './App.css'
-import { useEffect, useState } from 'react'
-import { DarkModeProvider } from './components/Context/DarkModeProvider'
-import Navbar from './components/Navigation/Navbar'
-import hljs from 'highlight.js'
-import 'highlight.js/styles/github-dark.css'
-import { Routes, Route } from 'react-router-dom'
-import HomePage from './components/Pages/HomePage'
-import About from './components/Pages/About'
-import JavascriptMainPage from './components/Pages/JavascriptMainPage'
-import PracticeProblems from './components/Pages/javascriptPrincipals/PracticeProblems'
-import DeclaringVariables from './components/Pages/javascriptPrincipals/DeclaringVariables'
-import CodePractice from './components/Sub_Components/Code_Practice'
-import StandardFunctions from './components/Pages/javascriptPrincipals/StandardFunctions'
-import Loops from './components/Pages/javascriptPrincipals/Loops'
-import JSObjects from './components/Pages/javascriptPrincipals/JSObjects'
-import ArrowFunctions from './components/Pages/javascriptPrincipals/ArrowFunctions'
-import ArrayMethods from './components/Pages/javascriptPrincipals/ArrayMethods'
-import StringMethods from './components/Pages/javascriptPrincipals/StringMethods'
-import PackagesAndPackageJson from './components/Pages/javascriptPrincipals/PackagesAndPackageJson'
-import Bootstrap from './components/Pages/fundamentals/Bootstrap'
-import JSCRUDMain from './components/Pages/javascriptPrincipals/JSCRUDMain'
-import AJAX from './components/Pages/javascriptPrincipals/CRUD/AJAX'
-import Fetch from './components/Pages/javascriptPrincipals/CRUD/CRUD_Operations/Fetch'
-import GitHub from './components/Pages/fundamentals/GitHub'
-import Installs from './components/Pages/fundamentals/Installs'
-import PracticeEnvironment from './components/Pages/fundamentals/PracticeEnvironment'
+import { useEffect, useState } from 'react';
+import { DarkModeProvider } from './components/Context/DarkModeProvider';
+import Navbar from './components/Navigation/Navbar';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github-dark.css';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './components/Pages/HomePage';
+import Footer from './components/Sub_Components/Footer';
+import About from './components/Pages/About';
+import JavascriptMainPage from './components/Pages/JavascriptMainPage';
+import PracticeProblems from './components/Pages/javascriptPrincipals/PracticeProblems';
+import DeclaringVariables from './components/Pages/javascriptPrincipals/DeclaringVariables';
+import CodePractice from './components/Sub_Components/Code_Practice';
+import StandardFunctions from './components/Pages/javascriptPrincipals/StandardFunctions';
+import Loops from './components/Pages/javascriptPrincipals/Loops';
+import JSObjects from './components/Pages/javascriptPrincipals/JSObjects';
+import ArrowFunctions from './components/Pages/javascriptPrincipals/ArrowFunctions';
+import ArrayMethods from './components/Pages/javascriptPrincipals/ArrayMethods';
+import StringMethods from './components/Pages/javascriptPrincipals/StringMethods';
+import PackagesAndPackageJson from './components/Pages/javascriptPrincipals/PackagesAndPackageJson';
+import Bootstrap from './components/Pages/fundamentals/Bootstrap';
+import JSCRUDMain from './components/Pages/javascriptPrincipals/JSCRUDMain';
+import AJAX from './components/Pages/javascriptPrincipals/CRUD/AJAX';
+import Fetch from './components/Pages/javascriptPrincipals/CRUD/CRUD_Operations/Fetch';
+import GitHub from './components/Pages/fundamentals/GitHub';
+import Installs from './components/Pages/fundamentals/Installs';
+import PracticeEnvironment from './components/Pages/fundamentals/PracticeEnvironment';
+import StringConcatenation from './components/Pages/javascriptPrincipals/StringConcatenation';
+import UnitTestingMochaChai from './components/Pages/javascriptPrincipals/UnitTestingMochaChai';
 
 export default function App() {
     const [theme, setTheme] = useState(
@@ -47,16 +50,20 @@ useEffect(() => {
 }, [])
 
     return (
-        <DarkModeProvider >
+        <DarkModeProvider>
             <div>
                 <div className="m-0 w-full p-0">
                     <Navbar theme={theme} />
                 </div>
 
                 <Routes>
-                    <Route exact path="/" element={<HomePage theme={theme}/>} />
+                    <Route
+                        exact
+                        path="/"
+                        element={<HomePage theme={theme} />}
+                    />
                     {/* <Route path='/GettingStarted' element={<GettingStarted />} /> */}
-                    <Route exact path="/about" element={<About />} />
+                    <Route path="/about" element={<About />} />
                     <Route path="/fundamentals/GitHub" element={<GitHub />} />
                     <Route
                         path="/fundamentals/Bootstrap"
@@ -87,9 +94,18 @@ useEffect(() => {
                         element={<DeclaringVariables />}
                     />
                     <Route
+                        path="/javascriptPrincipals/StringConcatenation"
+                        element={<StringConcatenation />}
+                    />
+                    <Route
                         path="/javascriptPrincipals/StandardFunctions"
                         element={<StandardFunctions />}
                     />
+                    <Route
+                        path="/javascriptPrincipals/UnitTestingMochaChai"
+                        element={<UnitTestingMochaChai />}
+                    />
+
                     <Route
                         path="/javascriptPrincipals/Loops"
                         element={<Loops />}
@@ -112,7 +128,8 @@ useEffect(() => {
                     />
                     <Route
                         path="/javascriptPrincipals/StringMethods"
-                        element={<StringMethods />} />
+                        element={<StringMethods />}
+                    />
                     <Route
                         path="/javascriptPrincipals/PackagesAndPackageJson"
                         element={<PackagesAndPackageJson />}
@@ -129,7 +146,11 @@ useEffect(() => {
                         path="/javascriptPrincipals/CRUD-Fetch"
                         element={<Fetch />}
                     />
+                    <Route path="*" element={<HomePage />} />
                 </Routes>
+                <div className="m-0 w-full p-0">
+                    <Footer />
+                </div>
             </div>
         </DarkModeProvider>
     )

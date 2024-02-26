@@ -11,7 +11,7 @@ const PracticeProblems = () => {
     }, [])
 
     return (
-        <div className="mx-auto  min-h-screen px-4 dark:bg-slate-700 sm:px-6 lg:px-8">
+        <div className="mx-auto  min-h-screen px-4 sm:px-6 lg:px-8">
             <div className="container flex flex-wrap">
                 <div className="mt-20 pt-20 md:w-1/4 ">
                     <div className="center me-20 flex min-w-fit flex-col items-center rounded-t-2xl border-2 border-black pb-5 dark:bg-slate-500">
@@ -104,8 +104,8 @@ const PracticeProblems = () => {
                         like this:
                     </p>
                     <pre>
-                        <code className="language-bash m-2 p-2">
-                            git clone [repository-link]
+                        <code className="language-bash text-sm">
+                            git clone "repository-link"
                         </code>
                     </pre>
                     <p>

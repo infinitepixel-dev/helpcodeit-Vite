@@ -57,13 +57,13 @@ function Bootstrap() {
                                 allowfullscreen
                             ></iframe>
                         </div>
-                        <div className=" m-4 mx-auto my-auto grid grid-cols-1 rounded-xl bg-white p-3 text-center text-black">
+                        <div className=" m-4 mx-auto my-auto grid grid-cols-1 rounded-xl bg-white p-3 text-center dark:bg-purple-600">
                             <div className="mx-auto mb-2 flex items-center">
                                 <img
                                     src={bootstrapLogo}
                                     alt="Bootstrap logo"
                                     width="40px"
-                                    className="my-auto me-1 block"
+                                    className="me-1 block rounded bg-white px-0.5 py-0.5"
                                 />
                                 <h3 className="text-2xl font-bold">
                                     Useful Bootstrap Links
@@ -71,29 +71,29 @@ function Bootstrap() {
                             </div>
                             <hr className="mb-2" />
                             <ul>
-                                <li className="m-3">
+                                <li className="m-3 my-4">
                                     <a
                                         href="https://getbootstrap.com/"
                                         target="_blank"
-                                        className="rounded bg-purple-500 px-4 py-2 font-bold text-white hover:bg-purple-700"
+                                        className="rounded border border-white bg-purple-500 px-4 py-2 font-bold text-white hover:bg-purple-700"
                                     >
                                         Bootstrap Official Website
                                     </a>
                                 </li>
-                                <li className="m-3">
+                                <li className="m-3 my-5">
                                     <a
                                         href="https://www.w3schools.com/bootstrap5/index.php"
                                         target="_blank"
-                                        className="rounded bg-purple-500 px-4 py-2 font-bold text-white hover:bg-purple-700"
+                                        className="rounded border border-white bg-purple-500 px-4 py-2 font-bold text-white hover:bg-purple-700"
                                     >
                                         W3Schools Bootstrap Tutorial
                                     </a>
                                 </li>
-                                <li className="m-3">
+                                <li className=" mb-1 mt-4">
                                     <a
                                         href="https://www.bootswatch.com"
                                         target="_blank"
-                                        className="rounded bg-purple-500 px-4 py-2 font-bold text-white hover:bg-purple-700"
+                                        className="rounded border border-white bg-purple-500 px-4 py-2 font-bold text-white hover:bg-purple-700"
                                     >
                                         Bootswatch
                                     </a>
@@ -103,7 +103,7 @@ function Bootstrap() {
                     </div>
                     <div>
                         <div>
-                            <p className="my-2">
+                            <p className="mb-2 mt-10">
                                 With Bootstrap you have to setup your project
                                 more than you would in a basic HTML site. You
                                 need to link the Bootstrap stylesheet, and the

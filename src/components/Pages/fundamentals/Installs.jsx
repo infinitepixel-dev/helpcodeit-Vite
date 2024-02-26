@@ -99,8 +99,11 @@ function Installs() {
                             To install Homebrew, open your terminal and run the
                             following command:
                         </p>
-                        <pre>
-                            <code ref={codeRef} className="language-bash">
+                        <pre className="">
+                            <code
+                                ref={codeRef}
+                                className="language-bash"
+                            >
                                 {homebrew}
                             </code>
                         </pre>
@@ -153,7 +156,10 @@ function Installs() {
                             run the following command:
                         </p>
                         <pre>
-                            <code ref={codeRef} className="language-bash">
+                            <code
+                                ref={codeRef}
+                                className="language-bash"
+                            >
                                 {nodeUsingHomebrew}
                             </code>
                         </pre>
