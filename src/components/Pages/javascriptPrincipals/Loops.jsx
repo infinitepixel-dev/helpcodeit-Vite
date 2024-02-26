@@ -5,11 +5,13 @@ import 'highlight.js/styles/atom-one-dark.css'
 import reloadImg from '../../../assets/Feather refresh icon.svg'
 import reloadingDark from '../../../assets/refreshdark.svg'
 
+import CopyButton from '../../Sub_Components/CopyButton' //REVIEW Import the CopyButton
+
 import { gsap } from 'gsap'
 
-export default function Loops() {
-    const codeRef = useRef(null)
+import codeContainerStyles from '../../CSS_Wrappers/Code_container.module.css'
 
+export default function Loops() {
     // SECTION[Logo Animation]
     const logoRef = useRef(null) // Add this line to create a ref for your logo
     useEffect(() => {
@@ -22,6 +24,8 @@ export default function Loops() {
     }, [])
     // !SECTION[Logo Animation]
 
+    //NOTE UseEffect to apply syntax highlighting to all code elements
+    const codeRef = useRef(null) // Used to reference the code in the syntax highlighting
     useEffect(() => {
         // Apply syntax highlighting to all code elements
         document.querySelectorAll('pre code').forEach((block) => {
@@ -83,11 +87,20 @@ do {
                     It repeats a block of code a specified number of times.{' '}
                     <br /> Here&apos;s an example of a for loop:
                 </p>
-                <pre>
-                    <code ref={codeRef} className="language-javascript p-2">
-                        {forLoop}
-                    </code>
-                </pre>
+
+                {/* REVIEW bring in a code container, with the copy button and pre/code */}
+                <div className={codeContainerStyles['code-container']}>
+                    <CopyButton
+                        textToCopy={forLoop}
+                        className="absolute left-0 top-0"
+                    />
+                    <pre>
+                        <code ref={codeRef} className="language-javascript p-2">
+                            {forLoop}
+                        </code>
+                    </pre>
+                </div>
+
                 <p className="mb-1 text-xl">
                     <i>
                         This particular for loop will log the numbers 0 through
@@ -118,14 +131,21 @@ do {
                     is one you will use less, but it is still good to know.{' '}
                     <br /> Here&apos;s an example of a while loop:
                 </p>
-                <pre>
-                    <code
-                        ref={codeRef}
-                        className="language-javascript my-4 p-2"
-                    >
-                        {whileLoop}
-                    </code>
-                </pre>
+
+                <div className={codeContainerStyles['code-container']}>
+                    <CopyButton
+                        textToCopy={whileLoop}
+                        className="absolute left-0 top-0"
+                    />
+                    <pre>
+                        <code
+                            ref={codeRef}
+                            className="language-javascript my-4 p-2"
+                        >
+                            {whileLoop}
+                        </code>
+                    </pre>
+                </div>
                 <p className="mb-1 text-xl">
                     <i>
                         This particular while loop will log the numbers 0
@@ -149,11 +169,17 @@ do {
                     run the loop at least once, even if the condition is false.{' '}
                     <br /> Here&apos;s an example of a do...while loop:
                 </p>
-                <pre>
-                    <code ref={codeRef} className="language-javascript p-2">
-                        {doWhileLoop}
-                    </code>
-                </pre>
+                <div className={codeContainerStyles['code-container']}>
+                    <CopyButton
+                        textToCopy={doWhileLoop}
+                        className="absolute left-0 top-0"
+                    />
+                    <pre>
+                        <code ref={codeRef} className="language-javascript p-2">
+                            {doWhileLoop}
+                        </code>
+                    </pre>
+                </div>
                 <p className="mb-1 text-xl">
                     <i>
                         This particular do...while loop will log the numbers 0
