@@ -5,8 +5,22 @@ import 'highlight.js/styles/atom-one-dark.css'
 import reloadImg from '../../../assets/Feather refresh icon.svg'
 import reloadingDark from '../../../assets/refreshdark.svg'
 
+import { gsap } from 'gsap'
+
 export default function Loops() {
     const codeRef = useRef(null)
+
+    // SECTION[Logo Animation]
+    const logoRef = useRef(null) // Add this line to create a ref for your logo
+    useEffect(() => {
+        gsap.to(logoRef.current, {
+            rotation: 360, // Rotate the logo 360 degrees
+            duration: 4, // Animation duration of 2 seconds
+            repeat: -1, // Repeat the animation indefinitely
+            ease: 'linear', // Use a linear ease for a smooth, constant rotation
+        })
+    }, [])
+    // !SECTION[Logo Animation]
 
     useEffect(() => {
         // Apply syntax highlighting to all code elements
@@ -43,7 +57,8 @@ do {
                     <img
                         src={isDark ? reloadImg : reloadingDark}
                         alt="Reload Image"
-                        className="ms-3 inline animate-spin-slow"
+                        ref={logoRef} // Used to reference the logo in the animation
+                        className="animate-spin-slow ms-3 inline"
                     />
                 </h1>
                 <hr className="mb-10 border-black dark:border-white" />
