@@ -131,14 +131,21 @@ do {
                     is one you will use less, but it is still good to know.{' '}
                     <br /> Here&apos;s an example of a while loop:
                 </p>
-                <pre>
-                    <code
-                        ref={codeRef}
-                        className="language-javascript my-4 p-2"
-                    >
-                        {whileLoop}
-                    </code>
-                </pre>
+
+                <div className={codeContainerStyles['code-container']}>
+                    <CopyButton
+                        textToCopy={whileLoop}
+                        className="absolute left-0 top-0"
+                    />
+                    <pre>
+                        <code
+                            ref={codeRef}
+                            className="language-javascript my-4 p-2"
+                        >
+                            {whileLoop}
+                        </code>
+                    </pre>
+                </div>
                 <p className="mb-1 text-xl">
                     <i>
                         This particular while loop will log the numbers 0
@@ -162,11 +169,17 @@ do {
                     run the loop at least once, even if the condition is false.{' '}
                     <br /> Here&apos;s an example of a do...while loop:
                 </p>
-                <pre>
-                    <code ref={codeRef} className="language-javascript p-2">
-                        {doWhileLoop}
-                    </code>
-                </pre>
+                <div className={codeContainerStyles['code-container']}>
+                    <CopyButton
+                        textToCopy={doWhileLoop}
+                        className="absolute left-0 top-0"
+                    />
+                    <pre>
+                        <code ref={codeRef} className="language-javascript p-2">
+                            {doWhileLoop}
+                        </code>
+                    </pre>
+                </div>
                 <p className="mb-1 text-xl">
                     <i>
                         This particular do...while loop will log the numbers 0

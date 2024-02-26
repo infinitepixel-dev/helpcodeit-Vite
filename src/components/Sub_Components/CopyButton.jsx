@@ -79,7 +79,7 @@ const CopyButton = ({ textToCopy }) => {
             {copied ? (
                 <img
                     src={ClipboardCopyCheckedIcon}
-                    id={styles['copy-btn-checked']}
+                    className={styles['copy-btn-checked']}
                     ref={iconRef}
                 />
             ) : (
