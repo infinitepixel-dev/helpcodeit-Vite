@@ -22,7 +22,7 @@ function VSCodeExtensions() {
             <div>
                 <div className="mt-10 grid grid-cols-1 items-center justify-center rounded-3xl border border-black bg-slate-200 p-5 text-lg shadow-md shadow-black dark:border-white dark:bg-slate-800 md:grid-cols-2 lg:p-0">
                     <a
-                        href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag"
+                        href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"
                         target="_blank"
                     >
                         <div className="my-auto lg:my-5 hover:text-blue-800 dark:hover:text-blue-300">
