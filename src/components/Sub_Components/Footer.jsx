@@ -30,7 +30,7 @@ function Footer() {
             </footer>
         </div>
     </div>
-            
+        </div>    
     )
 }
 export default Footer
