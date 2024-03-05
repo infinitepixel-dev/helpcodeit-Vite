@@ -2,7 +2,7 @@ function Footer() {
     return (
         <div className="fixed bottom-0 w-full flex items-end">
         <div className="fixed bottom-0 mt-5 w-full">
-        <div className="fixed bottom-0 w-full flex items-end">
+
             <footer className="bg-gray-200 p-5 dark:bg-gray-800">
                 <div className="flex justify-center space-x-4">
                     {/* copywrite Michael Varnell statement */}
@@ -30,7 +30,7 @@ function Footer() {
             </footer>
         </div>
     </div>
-        </div>    
+           
     )
 }
 export default Footer
