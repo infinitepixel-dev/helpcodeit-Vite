@@ -1,0 +1,34 @@
+name: Build and Deploy Vite App
+
+on:
+  pull_request:
+    branches: [ main ]
+    types: [ closed ]  # Trigger only when the PR is closed
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == true }}  # Run only if the PR was merged
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Or your desired Node version
+
+      - name: Install dependencies
+        run: npm install  
+
+      - name: Build Vite app
+        run: npm run build
+
+      - name: Deploy to FTP server
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: dist/  # Assuming Vite outputs the build files to a 'dist' folder
+
