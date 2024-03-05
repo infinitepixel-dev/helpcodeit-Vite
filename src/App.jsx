@@ -28,6 +28,7 @@ import Installs from './components/Pages/fundamentals/Installs';
 import PracticeEnvironment from './components/Pages/fundamentals/PracticeEnvironment';
 import StringConcatenation from './components/Pages/javascriptPrincipals/StringConcatenation';
 import UnitTestingMochaChai from './components/Pages/javascriptPrincipals/UnitTestingMochaChai';
+import VSCodeExtensions from './components/Pages/fundamentals/VSCodeExtensions';
 
 export default function App() {
     const [theme, setTheme] = useState(
@@ -73,6 +74,7 @@ useEffect(() => {
                         path="/fundamentals/Installs"
                         element={<Installs />}
                     />
+                    <Route path='/fundamentals/VSCodeExtensions' element={<VSCodeExtensions />} />
                     <Route
                         path="/fundamentals/SettingUpPracticeEnvironment"
                         element={<PracticeEnvironment />}

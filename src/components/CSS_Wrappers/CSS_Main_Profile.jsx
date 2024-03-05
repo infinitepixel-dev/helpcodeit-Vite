@@ -33,16 +33,16 @@ function TW_CSS() {
     //NOTE Main Card Title
     let mainCardTitle = {
         default:
-            'text-4xl pb-8 font-bold text-black mt-10 px-5 text-center md:text-4xl',
-        light: 'text-4xl pb-8 font-bold text-black mt-10 px-5 text-center md:text-3xl',
-        dark: 'text-4xl pb-8 font-bold dark:text-white mt-10 px-5 text-center md:text-3xl',
+            'text-4xl pb-8 font-bold text-black text-balance mt-10 px-5 text-center md:text-4xl',
+        light: 'text-4xl pb-8 font-bold text-black text-balance mt-10 px-5 text-center md:text-4xl',
+        dark: 'text-4xl pb-8 font-bold text-balance dark:text-white mt-10 px-5 text-center md:text-4xl',
     }
 
     //NOTE Main Card Description
     let mainCardDesc = {
-        default: 'text-black text-xl md:text-lg',
-        light: 'text-black text-xl md:text-xl',
-        dark: 'dark:text-white text-xl  md:text-xl',
+        default: 'text-black text-xl md:text-2xl',
+        light: 'text-black text-xl md:text-2xl',
+        dark: 'dark:text-white text-xl  md:text-2xl',
     }
     //!SECTION[MainCards.jsx] - MainCards Component
 

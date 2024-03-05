@@ -64,11 +64,12 @@ function StandardFunctions() {
     return (
         <div
             className="roboto-font container mx-auto p-2 px-4 text-xl sm:p-8"
-            style={{
-                scrollSnapType: 'y mandatory',
-                overflowY: 'scroll',
-                height: '100vh',
-            }}
+            //NOTE This was commented out because it was adding a second scroll bar
+            // style={{
+            //     scrollSnapType: 'y mandatory',
+            //     overflowY: 'scroll',
+            //     height: '100vh',
+            // }}
         >
             <div className="flex flex-col">
                 <div className="observeMe">
@@ -240,8 +241,8 @@ function StandardFunctions() {
                     </div>
                     <hr className="my-7 border-2 border-black dark:border-white" />
                 </div>
-
-                <div className="observeMe">
+                {/* FIXME This is commented out because it is not working */}
+                {/* <div className="observeMe">
                     <h2 className="mt-10 py-2 text-3xl">
                         Let&apos;s Practice!
                     </h2>
@@ -264,7 +265,7 @@ function StandardFunctions() {
                             hljs={hljs}
                         />
                     </Suspense>
-                </div>
+                </div> */}
             </div>
 
             <div className="observeMe">

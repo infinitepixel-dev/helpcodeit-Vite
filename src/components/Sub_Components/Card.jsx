@@ -23,15 +23,15 @@ function Card({
     return (
         <>
             {/* Grid Start */}
-            <div className={`${styles.mainCardBody} h-fit`}>
+            <div className={`${styles.mainCardBody} md:h-full`}>
                 <div
-                    className={`grid grid-rows-4 place-items-center ${styles.mainCardBorder}  gap-y-4`}
+                    className={`grid grid-rows-4 place-items-center ${styles.mainCardBorder} h-fit `}
                 >
                     {/* Grid Row 1: Card Image */}
                     <img
                         src={imageSrc}
                         alt={title}
-                        className={` row-auto w-full h-full lg:object-fit ${
+                        className={` lg:object-fit row-auto h-full w-full ${
                             customCSS.image ? customCSS.image : ''
                         }`}
                     />
@@ -43,7 +43,7 @@ function Card({
 
                     {/* Grid Row 3: Card Description */}
                     <p
-                        className={`row-auto p-5 ${styles.mainCardDescription}`}
+                        className={`row-auto px-5 ${styles.mainCardDescription}`}
                     >
                         {description}
                     </p>
@@ -52,7 +52,7 @@ function Card({
                     <div className="row-auto  flex w-2/3 items-center justify-center">
                         <a
                             href={actionHref}
-                            className={`my-5 h-auto w-full rounded-xl border border-black  p-2 text-center text-3xl font-bold text-white transition duration-300 ease-in-out hover:opacity-50 ${
+                            className={`my-y h-auto w-full rounded-xl border border-black  p-2 text-center text-3xl font-bold text-white transition duration-300 ease-in-out hover:opacity-50 ${
                                 customCSS.letsGoBtn
                                     ? customCSS.letsGoBtn
                                     : 'bg-blue-500'

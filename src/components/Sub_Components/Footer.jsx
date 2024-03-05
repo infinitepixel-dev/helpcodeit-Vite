@@ -1,6 +1,8 @@
 function Footer() {
     return (
+
         <div className="fixed bottom-0 w-full mt-5">
+
             <footer className="bg-gray-200 p-5 dark:bg-gray-800">
                 <div className="flex justify-center space-x-4">
                     {/* copywrite Michael Varnell statement */}

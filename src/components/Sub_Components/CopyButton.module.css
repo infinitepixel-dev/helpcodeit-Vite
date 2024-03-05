@@ -1,0 +1,9 @@
+img.copy-btn {
+    filter: brightness(0) invert(1);
+    z-index: 9999;
+}
+
+img.copy-btn-checked {
+    z-index: 9999;
+    filter: brightness(0) invert(0.6) sepia(1) saturate(5) hue-rotate(80deg);
+}
