@@ -1,5 +1,6 @@
 function Footer() {
     return (
+        <div className="fixed bottom-0 mt-5 w-full">
         <div className="fixed bottom-0 w-full flex items-end">
             <footer className="bg-gray-200 p-5 dark:bg-gray-800">
                 <div className="flex justify-center space-x-4">
@@ -10,10 +11,19 @@ function Footer() {
                             href="https://michaelvarnell.com"
                             target="_blank"
                             className="underline hover:text-blue-500"
+                            rel="noreferrer"
                         >
                             Michael Varnell
                         </a>{' '}
-                        & Matthew Cox
+                        &
+                        <a
+                            href="https://www.linkedin.com/in/matthewthomascox/"
+                            target="_blank"
+                            className="underline hover:text-blue-500"
+                            rel="noreferrer"
+                        >
+                            Matthew Cox
+                        </a>
                     </p>
                 </div>
             </footer>
