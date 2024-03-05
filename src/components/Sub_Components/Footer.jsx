@@ -1,5 +1,6 @@
 function Footer() {
     return (
+        <div className="fixed bottom-0 w-full flex items-end">
         <div className="fixed bottom-0 mt-5 w-full">
         <div className="fixed bottom-0 w-full flex items-end">
             <footer className="bg-gray-200 p-5 dark:bg-gray-800">
@@ -28,6 +29,8 @@ function Footer() {
                 </div>
             </footer>
         </div>
+    </div>
+            
     )
 }
 export default Footer
