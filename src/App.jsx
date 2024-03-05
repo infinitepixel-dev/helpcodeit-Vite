@@ -150,7 +150,7 @@ useEffect(() => {
                     />
                     <Route path="*" element={<HomePage />} />
                 </Routes>
-                <div className="m-0 w-full p-0">
+                <div className="m-0 w-full p-0 mt-5">
                     <Footer />
                 </div>
             </div>
