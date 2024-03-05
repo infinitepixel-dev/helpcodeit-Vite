@@ -20,7 +20,7 @@ function About() {
                     those gaps you run into in the basic coding education by
                     providing a resource that is easy to understand and use.
                 </p>
-                
+
                 <div className="grid  grid-cols-1 pb-14 pt-8 md:grid-cols-2">
                     <div className="mx-auto">
                         <h2 className="my-4 text-center text-3xl">
@@ -50,10 +50,10 @@ function About() {
                             intricacies of front-end development. His passion
                             for teaching extends beyond simply sharing technical
                             knowledge; he aims to inspire others to discover
-                            innovative solutions in their projects. Michael's
-                            career is a testament to his robust technical skills
-                            and his dedication to promoting growth and
-                            creativity in software development.
+                            innovative solutions in their projects.
+                            Michael&apos;s career is a testament to his robust
+                            technical skills and his dedication to promoting
+                            growth and creativity in software development.
                         </p>
                     </div>
                     <div className="mx-auto my-auto">
