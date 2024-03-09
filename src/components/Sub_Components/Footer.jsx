@@ -17,6 +17,7 @@ function Footer() {
                             Michael Varnell
                         </a>{' '}
                         &
+                        {' '}
                         <a
                             href="https://www.linkedin.com/in/matthewthomascox/"
                             target="_blank"
