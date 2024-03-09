@@ -124,12 +124,12 @@ const FetchArray = [
         title: 'Fetch PUT Request using Async/Await',
         code: `const fetchPut = async () => {
     try {
-        let response = await fetch(URL_ENDPOINT, {
+        let response = await fetch(URL_ENDPOINT + "/" + id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ key: 'value' })
+            body: JSON.stringify({ key: 'value' }) // Your item can go here instead of making the object inline.
         });
         let data = await response.json();
         console.log(data); // Do something with the data here! 
@@ -168,7 +168,7 @@ const FetchArray = [
         title: 'Fetch DELETE Request using Async/Await',
         code: `const fetchDelete = async () => {
     try {
-        let response = await fetch(URL_ENDPOINT, {
+        let response = await fetch(URL_ENDPOINT + "/" + id, {
             method: 'DELETE'
         });
         let data = await response.json();
