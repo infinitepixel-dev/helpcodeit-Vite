@@ -1,8 +1,7 @@
-import initialSetup from '../../assets/Getting Started.svg';
-import arrayMethods from '../../assets/Array Methods.svg';
-import practiceEnv from '../../assets/Practice Environment Title.svg';
-import unitTesting from '../../assets/Unit Testing Title Only.svg';
-
+import initialSetup from '../../assets/Getting Started.svg'
+import arrayMethods from '../../assets/Array Methods.svg'
+import practiceEnv from '../../assets/Practice Environment Title.svg'
+import unitTesting from '../../assets/Unit Testing Title Only.svg'
 
 import Card from './Card'
 
@@ -14,7 +13,7 @@ export default function MainCards() {
     // console.log("Styles: ", styles);
 
     return (
-        <div className="mx-16 grid place-items-center gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4  ">
+        <div className="mx-16 pb-44 grid h-full items-stretch gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4">
             {/* SECTION Card #1 */}
             <Link to="/fundamentals/Installs">
                 <Card

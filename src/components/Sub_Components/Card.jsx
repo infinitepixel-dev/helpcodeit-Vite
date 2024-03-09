@@ -23,9 +23,9 @@ function Card({
     return (
         <>
             {/* Grid Start */}
-            <div className={`${styles.mainCardBody} md:h-full`}>
+            <div className={`${styles.mainCardBody}`}>
                 <div
-                    className={`grid grid-rows-4 place-items-center ${styles.mainCardBorder} h-fit `}
+                    className={`grid grid-rows-4 place-items-center ${styles.mainCardBorder} `}
                 >
                     {/* Grid Row 1: Card Image */}
                     <img
