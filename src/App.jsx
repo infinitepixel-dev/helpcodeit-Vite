@@ -1,34 +1,36 @@
 import './App.css'
-import { useEffect, useState } from 'react';
-import { DarkModeProvider } from './components/Context/DarkModeProvider';
-import Navbar from './components/Navigation/Navbar';
-import hljs from 'highlight.js';
-import 'highlight.js/styles/github-dark.css';
-import { Routes, Route } from 'react-router-dom';
-import HomePage from './components/Pages/HomePage';
-import Footer from './components/Sub_Components/Footer';
-import About from './components/Pages/About';
-import JavascriptMainPage from './components/Pages/JavascriptMainPage';
-import PracticeProblems from './components/Pages/javascriptPrincipals/PracticeProblems';
-import DeclaringVariables from './components/Pages/javascriptPrincipals/DeclaringVariables';
-import CodePractice from './components/Sub_Components/Code_Practice';
-import StandardFunctions from './components/Pages/javascriptPrincipals/StandardFunctions';
-import Loops from './components/Pages/javascriptPrincipals/Loops';
-import JSObjects from './components/Pages/javascriptPrincipals/JSObjects';
-import ArrowFunctions from './components/Pages/javascriptPrincipals/ArrowFunctions';
-import ArrayMethods from './components/Pages/javascriptPrincipals/ArrayMethods';
-import StringMethods from './components/Pages/javascriptPrincipals/StringMethods';
-import PackagesAndPackageJson from './components/Pages/javascriptPrincipals/PackagesAndPackageJson';
-import Bootstrap from './components/Pages/fundamentals/Bootstrap';
-import JSCRUDMain from './components/Pages/javascriptPrincipals/JSCRUDMain';
-import AJAX from './components/Pages/javascriptPrincipals/CRUD/AJAX';
-import Fetch from './components/Pages/javascriptPrincipals/CRUD/CRUD_Operations/Fetch';
-import GitHub from './components/Pages/fundamentals/GitHub';
-import Installs from './components/Pages/fundamentals/Installs';
-import PracticeEnvironment from './components/Pages/fundamentals/PracticeEnvironment';
-import StringConcatenation from './components/Pages/javascriptPrincipals/StringConcatenation';
-import UnitTestingMochaChai from './components/Pages/javascriptPrincipals/UnitTestingMochaChai';
-import VSCodeExtensions from './components/Pages/fundamentals/VSCodeExtensions';
+import { useEffect, useState } from 'react'
+import { DarkModeProvider } from './components/Context/DarkModeProvider'
+import Navbar from './components/Navigation/Navbar'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/github-dark.css'
+import { Routes, Route } from 'react-router-dom'
+import HomePage from './components/Pages/HomePage'
+import Footer from './components/Sub_Components/Footer'
+import About from './components/Pages/About'
+import JavascriptMainPage from './components/Pages/JavascriptMainPage'
+import PracticeProblems from './components/Pages/javascriptPrincipals/PracticeProblems'
+import DeclaringVariables from './components/Pages/javascriptPrincipals/DeclaringVariables'
+import CodePractice from './components/Sub_Components/Code_Practice'
+import StandardFunctions from './components/Pages/javascriptPrincipals/StandardFunctions'
+import Loops from './components/Pages/javascriptPrincipals/Loops'
+import JSObjects from './components/Pages/javascriptPrincipals/JSObjects'
+import ArrowFunctions from './components/Pages/javascriptPrincipals/ArrowFunctions'
+import ArrayMethods from './components/Pages/javascriptPrincipals/ArrayMethods'
+import StringMethods from './components/Pages/javascriptPrincipals/StringMethods'
+import PackagesAndPackageJson from './components/Pages/javascriptPrincipals/PackagesAndPackageJson'
+import Bootstrap from './components/Pages/fundamentals/Bootstrap'
+import JSCRUDMain from './components/Pages/javascriptPrincipals/JSCRUDMain'
+import AJAX from './components/Pages/javascriptPrincipals/CRUD/AJAX'
+import Fetch from './components/Pages/javascriptPrincipals/CRUD/CRUD_Operations/Fetch'
+import GitHub from './components/Pages/fundamentals/GitHub'
+import Installs from './components/Pages/fundamentals/Installs'
+import PracticeEnvironment from './components/Pages/fundamentals/PracticeEnvironment'
+import StringConcatenation from './components/Pages/javascriptPrincipals/StringConcatenation'
+import UnitTestingMochaChai from './components/Pages/javascriptPrincipals/UnitTestingMochaChai'
+import VSCodeExtensions from './components/Pages/fundamentals/VSCodeExtensions'
+import ReactMain from './components/Pages/react/ReactMain'
+import ReactComponents from './components/Pages/react/ReactComponents'
 
 export default function App() {
     const [theme, setTheme] = useState(
@@ -39,20 +41,20 @@ export default function App() {
         hljs.highlightAll()
     }, [])
 
-useEffect(() => {
-    const themeQuery = window.matchMedia('(prefers-color-scheme: light)')
-    const themeChangeHandler = () => setTheme(themeQuery.matches)
+    useEffect(() => {
+        const themeQuery = window.matchMedia('(prefers-color-scheme: light)')
+        const themeChangeHandler = () => setTheme(themeQuery.matches)
 
-    themeQuery.addEventListener('change', themeChangeHandler)
+        themeQuery.addEventListener('change', themeChangeHandler)
 
-    return () => {
-        themeQuery.removeEventListener('change', themeChangeHandler)
-    }
-}, [])
+        return () => {
+            themeQuery.removeEventListener('change', themeChangeHandler)
+        }
+    }, [])
 
     return (
         <DarkModeProvider>
-            <div className='mb-10'>
+            <div className="mb-10">
                 <div className="m-0 w-full p-0">
                     <Navbar theme={theme} />
                 </div>
@@ -74,7 +76,10 @@ useEffect(() => {
                         path="/fundamentals/Installs"
                         element={<Installs />}
                     />
-                    <Route path='/fundamentals/VSCodeExtensions' element={<VSCodeExtensions />} />
+                    <Route
+                        path="/fundamentals/VSCodeExtensions"
+                        element={<VSCodeExtensions />}
+                    />
                     <Route
                         path="/fundamentals/SettingUpPracticeEnvironment"
                         element={<PracticeEnvironment />}
@@ -148,9 +153,14 @@ useEffect(() => {
                         path="/javascriptPrincipals/CRUD-Fetch"
                         element={<Fetch />}
                     />
+                    <Route path="/ReactMain" element={<ReactMain />} />
+                    <Route
+                        path="/ReactComponents"
+                        element={<ReactComponents />}
+                    />
                     <Route path="*" element={<HomePage />} />
                 </Routes>
-                <div className="m-0 w-full p-0 mt-5">
+                <div className="m-0 mt-5 w-full p-0">
                     <Footer />
                 </div>
             </div>
