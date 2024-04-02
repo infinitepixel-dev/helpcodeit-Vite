@@ -34,7 +34,7 @@ function Heading() {
 export default Heading;`
 
     return (
-        <div className="mb-24">
+        <div className="mb-40">
             <h1 className="satisfyFont my-4 text-center text-6xl">
                 React Components
             </h1>
@@ -58,7 +58,7 @@ export default Heading;`
                 <pre className="mb-2">
                     <code
                         ref={codeRef}
-                        className="javascript float-start me-5 mt-4 p-2 text-base"
+                        className="javascript me-5 mt-4 p-2 text-base md:float-start "
                     >
                         {codeString}
                     </code>
@@ -83,9 +83,9 @@ export default Heading;`
                     over and over again. In other words D.R.Y - Don't Repeat
                     Yourself.
                 </p>
-                <hr className="my-2 border-1 border-black dark:border-white" />
-                <h2 className="mb-5 mt-5 text-center text-2xl">
-                    Imporant Information About Your Returns
+                <hr className="border-1 my-2 border-black dark:border-white" />
+                <h2 className="mb-5 mt-5 text-center text-3xl">
+                    Important Information About Your Returns
                 </h2>
                 <p>
                     When returning JSX in a component, you can only return one
