@@ -1,10 +1,9 @@
-import initialSetup from '../../assets/Getting Started.svg'
-import arrayMethods from '../../assets/Array Methods.svg'
-import practiceEnv from '../../assets/Practice Environment Title.svg'
-import unitTesting from '../../assets/Unit Testing Title Only.svg'
 
+import initialSetup from '../../assets/Getting Started.svg';
+import arrayMethods from '../../assets/Array Methods.svg';
+import practiceEnv from '../../assets/Practice Environment Title.svg';
+import unitTesting from '../../assets/Unit Testing Title Only.svg';
 import Card from './Card'
-
 import TW_CSS from '../CSS_Wrappers/CSS_Main_Profile'
 import { Link } from 'react-router-dom'
 
