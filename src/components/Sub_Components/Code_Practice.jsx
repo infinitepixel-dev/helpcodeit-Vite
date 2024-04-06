@@ -6,6 +6,9 @@ import correctImg from '../../assets/yes.png'
 
 import AutoExpandingTextarea from './AutoExpandingTextArea'
 
+import CopyButton from './CopyButton'
+import codeContainerStyles from '../CSS_Wrappers/Code_container.module.css'
+
 function CodePractice({
     instructions,
     inputs,
@@ -120,24 +123,32 @@ function CodePractice({
                         </ul>
                     </div>
                     {/* TODO - Add a copy to clipboard button to the Code Output */}
-                    <h3>
+                    <h3 className="mb-5">
                         <b>Your Formatted Code Here:</b>
                     </h3>
-                    <pre>
-                        <code
-                            //  style of max width 100%
-                            style={{ maxWidth: '100%' }}
-                            id="codeInput"
-                            ref={codeInput}
-                            className="language-javascript"
+
+                    <div className="relative">
+                        <div
+                            className={`${codeContainerStyles['code-container']} flex-none`}
                         >
-                            {userInput}
-                        </code>
-                    </pre>
+                            <CopyButton
+                                textToCopy={userInput}
+                                className="absolute bottom-0 right-0" // This positions the copy button inside the relative container
+                            />
+                            <pre>
+                                <code
+                                    ref={codeInput}
+                                    className="language-javascript p-2"
+                                >
+                                    {userInput}
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
 
                     {/* input test - begin */}
                     {/* If the input type is textarea output a text area element */}
-                    <h3>
+                    <h3 className="mb-5">
                         <b>Input Your Code Here:</b>
                     </h3>
                     {Object.entries(inputs).map((input, index) => {

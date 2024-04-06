@@ -82,7 +82,7 @@ do {
                 </p>
                 <hr className="my-5 border-black dark:border-white" />
                 <h2 className="py-2 text-4xl">For Loop </h2>
-                <p className="text-xl">
+                <p className="mb-5 text-xl">
                     The for loop is the most commonly used loop in JavaScript.
                     It repeats a block of code a specified number of times.{' '}
                     <br /> Here&apos;s an example of a for loop:
@@ -124,7 +124,7 @@ do {
                 <hr className="my-5 border-black dark:border-white" />
 
                 <h2 className="py-2 text-4xl">While Loop</h2>
-                <p className="text-xl">
+                <p className="mb-5 text-xl">
                     The while loop repeats a block of code as long as a
                     specified condition is true. This is useful when you
                     don&apos;t know how many times you need to run the loop. It
@@ -163,7 +163,7 @@ do {
                 <hr className="my-5 border-black dark:border-white" />
 
                 <h2 className="my-4 py-2 text-4xl">Do...While Loop</h2>
-                <p className="text-xl">
+                <p className="mb-5 text-xl">
                     The do...while loop repeats a block of code as long as a
                     specified condition is true. This is useful when you want to
                     run the loop at least once, even if the condition is false.{' '}
