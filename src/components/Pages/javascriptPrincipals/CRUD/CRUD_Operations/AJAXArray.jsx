@@ -82,7 +82,7 @@ const AJAXArray = [
     {
         title: 'AJAX PUT:',
         code: `$.ajax({
-    url: "Your API URL Here",
+    url: "Your API URL Here" + "/" + id,
     method: "PUT",
     data: {
       name: "John Doe",
@@ -121,7 +121,7 @@ const AJAXArray = [
     {
         title: 'AJAX DELETE:',
         code: `$.ajax({
-    url: "Your API URL Here",
+    url: "Your API URL Here" + "/" + id,
     method: "DELETE",
     success: function (data) {
       console.log(data);
@@ -156,7 +156,7 @@ const AJAXArray = [
     {
         title: 'AJAX GET ONE:',
         code: `$.ajax({
-        url: "Your API URL Here",
+        url: "Your API URL Here" + "/" + id,
         method: "GET",
         data: {
         id: 1,
@@ -259,7 +259,7 @@ const AXIOSArray = [
     },
     {
         title: 'AXIOS PUT:',
-        code: `axios.put('Your API URL Here', {
+        code: `axios.put('Your API URL Here' + "/" + id, {
           name: 'John Doe',
           age: 25,
         })
@@ -295,7 +295,7 @@ const AXIOSArray = [
 
     {
         title: 'AXIOS DELETE:',
-        code: `axios.delete('Your API URL Here')
+        code: `axios.delete('Your API URL Here' + "/" + id)
         .then((response) => {
           console.log(response);
         })
@@ -323,7 +323,7 @@ const AXIOSArray = [
     },
     {
         title: 'AXIOS GET ONE:',
-        code: `axios.get('Your API URL Here', {
+        code: `axios.get('Your API URL Here' + "/" + id, {
           params: {
             id: 1,
           },

@@ -52,7 +52,7 @@ useEffect(() => {
 
     return (
         <DarkModeProvider>
-            <div>
+            <div className='mb-10'>
                 <div className="m-0 w-full p-0">
                     <Navbar theme={theme} />
                 </div>
