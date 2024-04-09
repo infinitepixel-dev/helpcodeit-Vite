@@ -217,33 +217,16 @@ function Navbar({ theme }) {
                                         JavaScript
                                     </NavLink>
                                 </li>
-                                {/* <li>
+                                 <li>
                                     <NavLink
                                         to={
-                                            '/fundamentals/SettingUpPracticeEnvironment'
+                                            '/ReactMain'
                                         }
                                         className="whitespace-no-wrap block rounded bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
                                     >
-                                        Setting up a Practice Environment
+                                        React.js
                                     </NavLink>
                                 </li>
-                                <hr />
-                                <li>
-                                    <NavLink
-                                        to="/fundamentals/Bootstrap"
-                                        className="whitespace-no-wrap block rounded rounded-b bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
-                                    >
-                                        Bootstrap
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink
-                                        to="/fundamentals/GitHub"
-                                        className="whitespace-no-wrap block rounded rounded-b bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
-                                    >
-                                        GitHub
-                                    </NavLink>
-                                </li> */}
                             </ul>
                         </div>
                         {/* <NavLink
