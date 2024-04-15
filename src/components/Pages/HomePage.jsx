@@ -1,21 +1,22 @@
 import logo from '../../assets/helpcodeitlogo.svg'
 import MainCards from '../Sub_Components/MainCards'
 
-function HomePage({theme}) {
+// eslint-disable-next-line react/prop-types, no-unused-vars
+function HomePage({ theme }) {
     return (
         <div>
             {/* SECTION Jumbotron */}
-            <div className="jumbo-background hero-text bg-neutral-800 text-white">
+            <div className="text-white jumbo-background hero-text bg-neutral-800">
                 <div className="container mx-auto">
                     <div className="grid grid-cols-3">
                         <div className="col-span-3 md:col-span-1">
                             <img
                                 src={logo}
                                 alt="Help Code It logo"
-                                className="hero-logo mx-auto mt-5 p-1"
+                                className="p-1 mx-auto mt-5 hero-logo"
                             />
 
-                            <p className="hero-text mx-auto text-center font-extrabold">
+                            <p className="mx-auto font-extrabold text-center hero-text">
                                 Resources for beginning developers
                             </p>
                         </div>
@@ -23,7 +24,7 @@ function HomePage({theme}) {
                 </div>
             </div>
             {/* !SECTION end Jumbotron */}
-            <div className=" text-white dark:bg-neutral-900">
+            <div className="text-white dark:bg-neutral-900">
                 <MainCards />
             </div>
         </div>
