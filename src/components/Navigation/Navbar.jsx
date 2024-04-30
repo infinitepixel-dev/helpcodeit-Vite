@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import logo from '../../assets/helpcodeitlogo.svg'
 import { NavLink } from 'react-router-dom'
 import './Navbar.module.css'
+import PropTypes from 'prop-types'
 
 import gsap from 'gsap'
 
@@ -73,7 +74,7 @@ function Navbar({ theme }) {
     })
 
     return (
-        <div className="mx-auto w-full border-b border-black bg-white px-2 shadow-sm dark:bg-neutral-800 ">
+        <div className="w-full px-2 mx-auto bg-white border-b border-black shadow-sm dark:bg-neutral-800 ">
             <nav
                 className={
                     isSmallScreen && navbarCollapse
@@ -86,7 +87,7 @@ function Navbar({ theme }) {
                         <img
                             src={logo}
                             alt="help code it logo"
-                            className="ms-2 rounded-lg" //REVIEW Animation
+                            className="rounded-lg ms-2" //REVIEW Animation
                             height="50px"
                             width="50px"
                         ></img>
@@ -104,7 +105,7 @@ function Navbar({ theme }) {
                         }
                     >
                         <svg
-                            className="h-6 w-6"
+                            className="w-6 h-6"
                             fill="none"
                             stroke={theme ? 'black' : 'white'}
                             viewBox="0 0 24 24"
@@ -138,9 +139,9 @@ function Navbar({ theme }) {
                             Home
                         </NavLink>
                         {/* Dropdown for links */}
-                        <div className="dropdown relative inline-block  ">
+                        <div className="relative inline-block dropdown ">
                             <button
-                                className="rounded p-2 hover:bg-slate-500"
+                                className="p-2 rounded hover:bg-slate-500"
                                 onClick={() => setDropdown(!dropdown)}
                                 id="dropdown-button"
                             >
@@ -156,20 +157,25 @@ function Navbar({ theme }) {
                                 <li>
                                     <NavLink
                                         to={'/fundamentals/Installs'}
-                                        className="whitespace-no-wrap  block rounded rounded-t bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                        className="block px-4 py-2 whitespace-no-wrap bg-white rounded rounded-t hover:bg-slate-500 dark:bg-black"
                                     >
                                         Installs
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to={'/fundamentals/VSCodeExtensions'} className="whitespace-no-wrap  block rounded rounded-t bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black">VS Code Extensions</NavLink>
+                                    <NavLink
+                                        to={'/fundamentals/VSCodeExtensions'}
+                                        className="block px-4 py-2 whitespace-no-wrap bg-white rounded rounded-t hover:bg-slate-500 dark:bg-black"
+                                    >
+                                        VS Code Extensions
+                                    </NavLink>
                                 </li>
                                 <li>
                                     <NavLink
                                         to={
                                             '/fundamentals/SettingUpPracticeEnvironment'
                                         }
-                                        className="whitespace-no-wrap block rounded bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                        className="block px-4 py-2 whitespace-no-wrap bg-white rounded hover:bg-slate-500 dark:bg-black"
                                     >
                                         Setting up a Practice Environment
                                     </NavLink>
@@ -178,7 +184,7 @@ function Navbar({ theme }) {
                                 <li>
                                     <NavLink
                                         to="/fundamentals/Bootstrap"
-                                        className="whitespace-no-wrap block rounded rounded-b bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                        className="block px-4 py-2 whitespace-no-wrap bg-white rounded rounded-b hover:bg-slate-500 dark:bg-black"
                                     >
                                         Bootstrap
                                     </NavLink>
@@ -186,7 +192,7 @@ function Navbar({ theme }) {
                                 <li>
                                     <NavLink
                                         to="/fundamentals/GitHub"
-                                        className="whitespace-no-wrap block rounded rounded-b bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                        className="block px-4 py-2 whitespace-no-wrap bg-white rounded rounded-b hover:bg-slate-500 dark:bg-black"
                                     >
                                         GitHub
                                     </NavLink>
@@ -194,9 +200,9 @@ function Navbar({ theme }) {
                             </ul>
                         </div>
                         {/* Dropdown for links */}
-                        <div className="dropdown relative inline-block  ">
+                        <div className="relative inline-block dropdown ">
                             <button
-                                className="rounded p-2 hover:bg-slate-500"
+                                className="p-2 rounded hover:bg-slate-500"
                                 onClick={() => setDropdown2(!dropdown2)}
                                 id="dropdown-button2"
                             >
@@ -212,7 +218,7 @@ function Navbar({ theme }) {
                                 <li>
                                     <NavLink
                                         to={'/javascript'}
-                                        className="whitespace-no-wrap  block rounded rounded-t bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                        className="block px-4 py-2 whitespace-no-wrap bg-white rounded rounded-t hover:bg-slate-500 dark:bg-black"
                                     >
                                         JavaScript
                                     </NavLink>
@@ -222,7 +228,7 @@ function Navbar({ theme }) {
                                         to={
                                             '/fundamentals/SettingUpPracticeEnvironment'
                                         }
-                                        className="whitespace-no-wrap block rounded bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                        className="block px-4 py-2 whitespace-no-wrap bg-white rounded hover:bg-slate-500 dark:bg-black"
                                     >
                                         Setting up a Practice Environment
                                     </NavLink>
@@ -231,7 +237,7 @@ function Navbar({ theme }) {
                                 <li>
                                     <NavLink
                                         to="/fundamentals/Bootstrap"
-                                        className="whitespace-no-wrap block rounded rounded-b bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                        className="block px-4 py-2 whitespace-no-wrap bg-white rounded rounded-b hover:bg-slate-500 dark:bg-black"
                                     >
                                         Bootstrap
                                     </NavLink>
@@ -239,7 +245,7 @@ function Navbar({ theme }) {
                                 <li>
                                     <NavLink
                                         to="/fundamentals/GitHub"
-                                        className="whitespace-no-wrap block rounded rounded-b bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                        className="block px-4 py-2 whitespace-no-wrap bg-white rounded rounded-b hover:bg-slate-500 dark:bg-black"
                                     >
                                         GitHub
                                     </NavLink>
@@ -269,11 +275,11 @@ function Navbar({ theme }) {
                         >
                             About
                         </NavLink>
-                        <div className="ms-auto p-1">
+                        <div className="p-1 ms-auto">
                             <a href="https://www.buymeacoffee.com/michaelvarnell">
                                 <img
                                     src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=michaelvarnell&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff"
-                                    className="h-auto w-40"
+                                    className="w-40 h-auto"
                                 />
                             </a>
                         </div>
@@ -282,6 +288,10 @@ function Navbar({ theme }) {
             </nav>
         </div>
     )
+}
+
+Navbar.propTypes = {
+    theme: PropTypes.bool,
 }
 
 export default Navbar
