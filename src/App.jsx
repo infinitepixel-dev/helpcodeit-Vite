@@ -32,6 +32,7 @@ import VSCodeExtensions from './components/Pages/fundamentals/VSCodeExtensions'
 import ReactMain from './components/Pages/react/ReactMain'
 import ReactComponents from './components/Pages/react/ReactComponents'
 import ReactRouter6 from './components/Pages/react/ReactRouter6'
+import VSCodeHotkeysTable from './components/Pages/fundamentals/VSCodeHotkeysTable'
 
 export default function App() {
     const [theme, setTheme] = useState(
@@ -69,6 +70,10 @@ export default function App() {
                     {/* <Route path='/GettingStarted' element={<GettingStarted />} /> */}
                     <Route path="/about" element={<About />} />
                     <Route path="/fundamentals/GitHub" element={<GitHub />} />
+                    <Route
+                        path='/fundamentals/VSCodeHotkeysTable'
+                        element={<VSCodeHotkeysTable />}
+                    />
                     <Route
                         path="/fundamentals/Bootstrap"
                         element={<Bootstrap />}
