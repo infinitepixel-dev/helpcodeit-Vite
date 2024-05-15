@@ -139,11 +139,11 @@ function VSCodeHotkeysTable() {
 
     return (
         <div className="container">
-            <h1 className="text-4xl  text-center mt-10 mb-5 ">
-               Useful VSCode Hotkeys
+            <h1 className="mb-5  mt-10 text-center text-4xl ">
+                Useful VSCode Hotkeys
             </h1>
             <div className="container mb-44 overflow-x-auto">
-                <table className="min-w-full divide-y divide-gray-200 border border-x-black">
+                <table className="min-w-full divide-y divide-gray-200  border border-x-black dark:border-white">
                     <thead className="bg-gray-50 dark:bg-slate-700">
                         <tr>
                             <th
