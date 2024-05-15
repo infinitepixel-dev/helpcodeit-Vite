@@ -28,6 +28,13 @@ export default function reactmain() {
                     >
                         React Component Basics
                     </Link>
+                    <br />
+                    <Link
+                    className='text-xl hover:text-blue-600'
+                    to="/ReactRouter6"
+                    >
+                        React Router 6+
+                    </Link>
                 </div>
                 <div className="col"></div>
             </div>

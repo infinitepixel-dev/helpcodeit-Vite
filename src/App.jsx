@@ -31,6 +31,7 @@ import UnitTestingMochaChai from './components/Pages/javascriptPrincipals/UnitTe
 import VSCodeExtensions from './components/Pages/fundamentals/VSCodeExtensions'
 import ReactMain from './components/Pages/react/ReactMain'
 import ReactComponents from './components/Pages/react/ReactComponents'
+import ReactRouter6 from './components/Pages/react/ReactRouter6'
 
 export default function App() {
     const [theme, setTheme] = useState(
@@ -158,6 +159,7 @@ export default function App() {
                         path="/ReactComponents"
                         element={<ReactComponents />}
                     />
+                    <Route path="/ReactRouter6" element={<ReactRouter6 />} />
                     <Route path="*" element={<HomePage />} />
                 </Routes>
                 <div className="m-0 mt-5 w-full p-0">
