@@ -27,7 +27,7 @@ function VSCodeHotkeysTable() {
             action: 'Insert cursor at end of lines',
             mac: 'Option + Shift + I',
             pc: 'Alt + Shift + I',
-            description: 'Insert cursor at the end of each selected line',
+            description: 'Insert cursor at the end of each selected line.',
         },
         {
             action: 'Expand/shrink selection',
@@ -60,7 +60,7 @@ function VSCodeHotkeysTable() {
             action: 'Select to bracket',
             mac: 'Cmd + Shift + \\',
             pc: 'Ctrl + Shift + \\',
-            description: 'Select all content between matching brackets',
+            description: 'Select all content between matching brackets.',
         },
         {
             action: 'Scroll line up/down',
@@ -144,47 +144,50 @@ function VSCodeHotkeysTable() {
             </h1>
             <div className="container mb-44 overflow-x-auto">
                 <table className="min-w-full divide-y divide-gray-200  border border-x-black dark:border-white">
-                    <thead className="bg-gray-50 dark:bg-slate-700">
+                    <thead className="bg-gray-300 dark:bg-gray-700">
                         <tr>
                             <th
                                 scope="col"
-                                className="font-bolder px-6 py-3 text-left text-xs uppercase tracking-wider "
+                                className="font-bolder px-6 py-3 text-center text-xl uppercase tracking-wider "
                             >
                                 Action
                             </th>
                             <th
                                 scope="col"
-                                className="font-bolder px-6 py-3 text-left text-xs uppercase tracking-wider "
+                                className="font-bolder px-6 py-3 text-center text-xl uppercase tracking-wider "
                             >
                                 Mac
                             </th>
                             <th
                                 scope="col"
-                                className="font-bolder px-6 py-3 text-left text-xs uppercase tracking-wider "
+                                className="font-bolder px-6 py-3 text-center text-xl uppercase tracking-wider "
                             >
                                 PC
                             </th>
                             <th
                                 scope="col"
-                                className="font-bolder px-6 py-3 text-left text-xs uppercase tracking-wider "
+                                className="font-bolder px-6 py-3 text-center text-xl uppercase tracking-wider "
                             >
                                 Description
                             </th>
                         </tr>
                     </thead>
-                    <tbody className="divide-y divide-gray-200">
+                    <tbody className="divide-y divide-gray-200 ">
                         {hotkeys.map((hotkey, index) => (
-                            <tr key={index}>
+                            <tr
+                                key={index}
+                                className="odd:bg-gray-300 even:bg-gray-200 odd:dark:bg-slate-700 even:dark:bg-slate-800"
+                            >
                                 <td className="whitespace-nowrap px-6 py-4 font-extrabold">
                                     {hotkey.action}
                                 </td>
                                 <td className="whitespace-nowrap px-6 py-4">
-                                    <kbd className="rounded-md bg-blue-200 px-2 py-1 text-xs font-semibold dark:bg-gray-800 ">
+                                    <kbd className="rounded-md bg-slate-400 px-2 py-1 text-xs font-semibold dark:bg-gray-800 ">
                                         {hotkey.mac}
                                     </kbd>
                                 </td>
                                 <td className="whitespace-nowrap px-6 py-4">
-                                    <kbd className="rounded-md bg-blue-200 px-2 py-1 text-xs font-semibold dark:bg-gray-800 ">
+                                    <kbd className="rounded-md bg-slate-400 px-2 py-1 text-xs font-semibold dark:bg-gray-800 ">
                                         {hotkey.pc}
                                     </kbd>
                                 </td>
