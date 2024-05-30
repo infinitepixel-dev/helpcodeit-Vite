@@ -50,7 +50,7 @@ function Card({
 
                     {/* Grid Row 4: Card Action - Button */}
                     <div className="row-auto  flex w-2/3 items-center justify-center">
-                        <a
+                        <div
                             href={actionHref}
                             className={`my-y h-auto w-full rounded-xl border border-black  p-2 text-center text-3xl font-bold text-white transition duration-300 ease-in-out hover:opacity-50 ${
                                 customCSS.letsGoBtn
@@ -59,7 +59,7 @@ function Card({
                             }`}
                         >
                             {actionText}
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -2,7 +2,7 @@
 import initialSetup from '../../assets/Getting Started.svg';
 import arrayMethods from '../../assets/Array Methods.svg';
 import practiceEnv from '../../assets/Practice Environment Title.svg';
-import unitTesting from '../../assets/Unit Testing Title Only.svg';
+import codeproblems from '../../assets/codeproblemscardtitle.png';
 import Card from './Card'
 import TW_CSS from '../CSS_Wrappers/CSS_Main_Profile'
 import { Link } from 'react-router-dom'
@@ -59,20 +59,19 @@ export default function MainCards() {
             </Link>
             {/* !SECTION Card #3 END */}
             {/* SECTION Card #4 BEGIN */}
-            <Link to="/javascriptPrincipals/UnitTestingMochaChai">
+            <a href="https://codeproblems.michaelvarnell.com" target="_blank" >
                 <Card
-                    imageSrc={unitTesting}
+                    imageSrc={codeproblems}
                     customCSS={{
                         image: 'border-black bg-stone-400 dark:bg-stone-500',
-                        letsGoBtn: 'bg-yellow-950',
+                        letsGoBtn: 'bg-red-900',
                     }}
-                    title="Mocha and Chai"
-                    description="Unit testing is an important part of programming. This page will
-              help you get started with Mocha and Chai."
+                    title="Code Problems"
+                    description="Free coding problems to help level up your skills, and practice those fundamentals."
                     actionText="Let's Go"
                     styles={styles}
                 />
-            </Link>
+            </a>
             {/* !SECTION Card #4 END */}
         </div>
     )
