@@ -1,7 +1,10 @@
 import logo from '../../assets/helpcodeitlogo.svg'
 import MainCards from '../Sub_Components/MainCards'
 
+
 function HomePage({theme}) {
+
+
     return (
         <div>
             {/* SECTION Jumbotron */}
@@ -25,6 +28,7 @@ function HomePage({theme}) {
             {/* !SECTION end Jumbotron */}
             <div className=" text-white dark:bg-neutral-900">
                 <MainCards />
+
             </div>
         </div>
     )

@@ -43,6 +43,7 @@ function CodePractice({
 
     const handleSubmit = (e) => {
         e.preventDefault()
+
         if (userOutput === expectedOutput.includes(userOutput)) {
             setIsCorrect(true)
         }
