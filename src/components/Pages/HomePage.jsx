@@ -1,17 +1,9 @@
 import logo from '../../assets/helpcodeitlogo.svg'
 import MainCards from '../Sub_Components/MainCards'
-import {Code_Practice_GPT} from '../Sub_Components/Code_Practice_GPT'
-import {useState} from 'react'
-import { useEffect } from 'react'
+
 
 function HomePage({theme}) {
-    
-    const [result, setResult] = useState("")
 
-    useEffect(() => {
-    const test = Code_Practice_GPT("","")
-    setResult(test)
-    }, [])
 
     return (
         <div>
@@ -36,9 +28,7 @@ function HomePage({theme}) {
             {/* !SECTION end Jumbotron */}
             <div className=" text-white dark:bg-neutral-900">
                 <MainCards />
-                <div className="container mx-auto pb-64">
-                    TEST {result} Test
-                    </div>
+
             </div>
         </div>
     )

@@ -3,7 +3,6 @@ import { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import incorrectImg from '../../assets/no.png'
 import correctImg from '../../assets/yes.png'
-import {Code_Practice_GPT} from './Code_Practice_GPT'
 
 import AutoExpandingTextarea from './AutoExpandingTextArea'
 
