@@ -89,7 +89,7 @@ function JavascriptMainPage() {
                                     String Methods
                                 </Link>
                             </li>
-                        
+
                             <li className="mx-auto py-2 text-xl font-bold">
                                 <Link
                                     to="/javascriptPrincipals/PackagesAndPackageJson"
@@ -124,14 +124,6 @@ function JavascriptMainPage() {
                                     className="jsMainPageLink"
                                 >
                                     String Concatenation
-                                </Link>
-                            </li>
-                            <li className="mx-auto py-2 text-xl font-bold">
-                                <Link
-                                    to="/javascript/asynchronousfunctions"
-                                    className="jsMainPageLink"
-                                >
-                                    Asynchronous Functions
                                 </Link>
                             </li>
                             <li className="mx-auto py-2 text-xl font-bold">
