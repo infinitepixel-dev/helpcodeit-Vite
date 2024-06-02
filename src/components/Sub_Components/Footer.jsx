@@ -1,12 +1,12 @@
 function Footer() {
     return (
-        <div className="fixed bottom-0 w-full flex items-end">
-        <div className="fixed bottom-0 mt-5 w-full">
+        <div className="fixed bottom-0 w-full flex items-end mt-5 h-5">
+        <div className="fixed bottom-0 w-full">
 
-            <footer className="bg-gray-200 p-5 dark:bg-gray-800">
+            <footer className="bg-gray-200 p-1  dark:bg-gray-800">
                 <div className="flex justify-center space-x-4">
                     {/* copywrite Michael Varnell statement */}
-                    <p className="text-lg font-bold">
+                    <p className="text-base font-bold">
                         &copy; 2024{' '}
                         <a
                             href="https://michaelvarnell.com"
@@ -31,7 +31,7 @@ function Footer() {
             </footer>
         </div>
     </div>
-           
+
     )
 }
 export default Footer
