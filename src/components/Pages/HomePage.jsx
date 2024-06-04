@@ -1,12 +1,8 @@
 import logo from '../../assets/helpcodeitlogo.svg'
 import MainCards from '../Sub_Components/MainCards'
 
-
 // eslint-disable-next-line react/prop-types, no-unused-vars
 function HomePage({ theme }) {
-function HomePage({theme}) {
-
-
     return (
         <div>
             {/* SECTION Jumbotron */}
@@ -30,7 +26,6 @@ function HomePage({theme}) {
             {/* !SECTION end Jumbotron */}
             <div className="text-white dark:bg-neutral-900">
                 <MainCards />
-
             </div>
         </div>
     )
