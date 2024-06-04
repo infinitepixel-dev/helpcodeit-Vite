@@ -1,34 +1,86 @@
 import './App.css'
-import { useEffect, useState } from 'react';
-import { DarkModeProvider } from './components/Context/DarkModeProvider';
-import Navbar from './components/Navigation/Navbar';
-import hljs from 'highlight.js';
-import 'highlight.js/styles/github-dark.css';
-import { Routes, Route } from 'react-router-dom';
-import HomePage from './components/Pages/HomePage';
-import Footer from './components/Sub_Components/Footer';
-import About from './components/Pages/About';
-import JavascriptMainPage from './components/Pages/JavascriptMainPage';
-import PracticeProblems from './components/Pages/javascriptPrincipals/PracticeProblems';
-import DeclaringVariables from './components/Pages/javascriptPrincipals/DeclaringVariables';
-import CodePractice from './components/Sub_Components/Code_Practice';
-import StandardFunctions from './components/Pages/javascriptPrincipals/StandardFunctions';
-import Loops from './components/Pages/javascriptPrincipals/Loops';
-import JSObjects from './components/Pages/javascriptPrincipals/JSObjects';
-import ArrowFunctions from './components/Pages/javascriptPrincipals/ArrowFunctions';
-import ArrayMethods from './components/Pages/javascriptPrincipals/ArrayMethods';
-import StringMethods from './components/Pages/javascriptPrincipals/StringMethods';
-import PackagesAndPackageJson from './components/Pages/javascriptPrincipals/PackagesAndPackageJson';
-import Bootstrap from './components/Pages/fundamentals/Bootstrap';
-import JSCRUDMain from './components/Pages/javascriptPrincipals/JSCRUDMain';
-import AJAX from './components/Pages/javascriptPrincipals/CRUD/AJAX';
-import Fetch from './components/Pages/javascriptPrincipals/CRUD/CRUD_Operations/Fetch';
-import GitHub from './components/Pages/fundamentals/GitHub';
-import Installs from './components/Pages/fundamentals/Installs';
-import PracticeEnvironment from './components/Pages/fundamentals/PracticeEnvironment';
-import StringConcatenation from './components/Pages/javascriptPrincipals/StringConcatenation';
-import UnitTestingMochaChai from './components/Pages/javascriptPrincipals/UnitTestingMochaChai';
-import VSCodeExtensions from './components/Pages/fundamentals/VSCodeExtensions';
+import { useEffect, useState, lazy, Suspense } from 'react'
+import { DarkModeProvider } from './components/Context/DarkModeProvider'
+import Navbar from './components/Navigation/Navbar'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/github-dark.css'
+import { Routes, Route } from 'react-router-dom'
+import Footer from './components/Sub_Components/Footer'
+
+// Lazy loading components
+const HomePage = lazy(() => import('./components/Pages/HomePage'))
+const About = lazy(() => import('./components/Pages/About'))
+const JavascriptMainPage = lazy(
+    () => import('./components/Pages/JavascriptMainPage')
+)
+const PracticeProblems = lazy(
+    () => import('./components/Pages/javascriptPrincipals/PracticeProblems')
+)
+const DeclaringVariables = lazy(
+    () => import('./components/Pages/javascriptPrincipals/DeclaringVariables')
+)
+const CodePractice = lazy(
+    () => import('./components/Sub_Components/Code_Practice')
+)
+const StandardFunctions = lazy(
+    () => import('./components/Pages/javascriptPrincipals/StandardFunctions')
+)
+const Loops = lazy(
+    () => import('./components/Pages/javascriptPrincipals/Loops')
+)
+const JSObjects = lazy(
+    () => import('./components/Pages/javascriptPrincipals/JSObjects')
+)
+const ArrowFunctions = lazy(
+    () => import('./components/Pages/javascriptPrincipals/ArrowFunctions')
+)
+const ArrayMethods = lazy(
+    () => import('./components/Pages/javascriptPrincipals/ArrayMethods')
+)
+const StringMethods = lazy(
+    () => import('./components/Pages/javascriptPrincipals/StringMethods')
+)
+const PackagesAndPackageJson = lazy(
+    () =>
+        import('./components/Pages/javascriptPrincipals/PackagesAndPackageJson')
+)
+const Bootstrap = lazy(
+    () => import('./components/Pages/fundamentals/Bootstrap')
+)
+const JSCRUDMain = lazy(
+    () => import('./components/Pages/javascriptPrincipals/JSCRUDMain')
+)
+const AJAX = lazy(
+    () => import('./components/Pages/javascriptPrincipals/CRUD/AJAX')
+)
+const Fetch = lazy(
+    () =>
+        import(
+            './components/Pages/javascriptPrincipals/CRUD/CRUD_Operations/Fetch'
+        )
+)
+const GitHub = lazy(() => import('./components/Pages/fundamentals/GitHub'))
+const Installs = lazy(() => import('./components/Pages/fundamentals/Installs'))
+const PracticeEnvironment = lazy(
+    () => import('./components/Pages/fundamentals/PracticeEnvironment')
+)
+const StringConcatenation = lazy(
+    () => import('./components/Pages/javascriptPrincipals/StringConcatenation')
+)
+const UnitTestingMochaChai = lazy(
+    () => import('./components/Pages/javascriptPrincipals/UnitTestingMochaChai')
+)
+const VSCodeExtensions = lazy(
+    () => import('./components/Pages/fundamentals/VSCodeExtensions')
+)
+const ReactMain = lazy(() => import('./components/Pages/react/ReactMain'))
+const ReactComponents = lazy(
+    () => import('./components/Pages/react/ReactComponents')
+)
+const ReactRouter6 = lazy(() => import('./components/Pages/react/ReactRouter6'))
+const VSCodeHotkeysTable = lazy(
+    () => import('./components/Pages/fundamentals/VSCodeHotkeysTable')
+)
 
 export default function App() {
     const [theme, setTheme] = useState(
@@ -39,118 +91,73 @@ export default function App() {
         hljs.highlightAll()
     }, [])
 
-useEffect(() => {
-    const themeQuery = window.matchMedia('(prefers-color-scheme: light)')
-    const themeChangeHandler = () => setTheme(themeQuery.matches)
+    useEffect(() => {
+        const themeQuery = window.matchMedia('(prefers-color-scheme: light)')
+        const themeChangeHandler = () => setTheme(themeQuery.matches)
 
-    themeQuery.addEventListener('change', themeChangeHandler)
+        themeQuery.addEventListener('change', themeChangeHandler)
 
-    return () => {
-        themeQuery.removeEventListener('change', themeChangeHandler)
-    }
-}, [])
+        return () => {
+            themeQuery.removeEventListener('change', themeChangeHandler)
+        }
+    }, [])
+
+    const routes = [
+    // Home
+    { path: '/', component: <HomePage theme={theme} /> },
+    { path: '/about', component: <About /> },
+
+    // Fundamentals
+    { path: '/fundamentals/GitHub', component: <GitHub /> },
+    { path: '/fundamentals/VSCodeHotkeysTable', component: <VSCodeHotkeysTable /> },
+    { path: '/fundamentals/Bootstrap', component: <Bootstrap /> },
+    { path: '/fundamentals/Installs', component: <Installs /> },
+    { path: '/fundamentals/VSCodeExtensions', component: <VSCodeExtensions /> },
+    { path: '/fundamentals/SettingUpPracticeEnvironment', component: <PracticeEnvironment /> },
+
+    // Javascript
+    { path: '/javascript', component: <JavascriptMainPage /> },
+    { path: '/javascriptPrincipals/PracticeProblems', component: <PracticeProblems /> },
+    { path: '/javascriptPrincipals/DeclaringVariables', component: <DeclaringVariables /> },
+    { path: '/javascriptPrincipals/StringConcatenation', component: <StringConcatenation /> },
+    { path: '/javascriptPrincipals/StandardFunctions', component: <StandardFunctions /> },
+    { path: '/javascriptPrincipals/UnitTestingMochaChai', component: <UnitTestingMochaChai /> },
+    { path: '/javascriptPrincipals/Loops', component: <Loops /> },
+    { path: '/code_practice', component: <CodePractice /> },
+    { path: '/javascriptPrincipals/Objects', component: <JSObjects /> },
+    { path: '/javascriptPrincipals/ArrowFunctions', component: <ArrowFunctions /> },
+    { path: '/javascriptPrincipals/ArrayMethods', component: <ArrayMethods /> },
+    { path: '/javascriptPrincipals/StringMethods', component: <StringMethods /> },
+    { path: '/javascriptPrincipals/PackagesAndPackageJson', component: <PackagesAndPackageJson /> },
+    { path: '/javascriptPrincipals/CRUD-Main', component: <JSCRUDMain /> },
+    { path: '/javascriptPrincipals/CRUD-AJAX', component: <AJAX /> },
+    { path: '/javascriptPrincipals/CRUD-Fetch', component: <Fetch /> },
+
+    // React
+    { path: '/ReactMain', component: <ReactMain /> },
+    { path: '/ReactComponents', component: <ReactComponents /> },
+    { path: '/ReactRouter6', component: <ReactRouter6 /> },
+
+    // Default
+    { path: '*', component: <HomePage /> },
+]
 
     return (
         <DarkModeProvider>
-            <div className='mb-10'>
+            <div>
                 <div className="m-0 w-full p-0">
                     <Navbar theme={theme} />
                 </div>
 
-                <Routes>
-                    <Route
-                        exact
-                        path="/"
-                        element={<HomePage theme={theme} />}
-                    />
-                    {/* <Route path='/GettingStarted' element={<GettingStarted />} /> */}
-                    <Route path="/about" element={<About />} />
-                    <Route path="/fundamentals/GitHub" element={<GitHub />} />
-                    <Route
-                        path="/fundamentals/Bootstrap"
-                        element={<Bootstrap />}
-                    />
-                    <Route
-                        path="/fundamentals/Installs"
-                        element={<Installs />}
-                    />
-                    <Route path='/fundamentals/VSCodeExtensions' element={<VSCodeExtensions />} />
-                    <Route
-                        path="/fundamentals/SettingUpPracticeEnvironment"
-                        element={<PracticeEnvironment />}
-                    />
-                    <Route
-                        path="/fundamentals/Installs"
-                        element={<Installs />}
-                    />
-                    <Route
-                        path="/javascript"
-                        element={<JavascriptMainPage />}
-                    />
-                    <Route
-                        path="/javascriptPrincipals/PracticeProblems"
-                        element={<PracticeProblems />}
-                    />
-                    <Route
-                        path="/javascriptPrincipals/DeclaringVariables"
-                        element={<DeclaringVariables />}
-                    />
-                    <Route
-                        path="/javascriptPrincipals/StringConcatenation"
-                        element={<StringConcatenation />}
-                    />
-                    <Route
-                        path="/javascriptPrincipals/StandardFunctions"
-                        element={<StandardFunctions />}
-                    />
-                    <Route
-                        path="/javascriptPrincipals/UnitTestingMochaChai"
-                        element={<UnitTestingMochaChai />}
-                    />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Routes>
+                        {routes.map(({ path, component }) => (
+                            <Route key={path} path={path} element={component} />
+                        ))}
+                    </Routes>
+                </Suspense>
 
-                    <Route
-                        path="/javascriptPrincipals/Loops"
-                        element={<Loops />}
-                    />
-                    {/*<Route path='/contact' element={<Contact />} />
-        <Route path='*' element={<NotFound />} /> */}
-                    <Route path="/code_practice" element={<CodePractice />} />
-                    <Route
-                        path="/javascriptPrincipals/Objects"
-                        element={<JSObjects />}
-                    />
-
-                    <Route
-                        path="/javascriptPrincipals/ArrowFunctions"
-                        element={<ArrowFunctions />}
-                    />
-                    <Route
-                        path="/javascriptPrincipals/ArrayMethods"
-                        element={<ArrayMethods />}
-                    />
-                    <Route
-                        path="/javascriptPrincipals/StringMethods"
-                        element={<StringMethods />}
-                    />
-                    <Route
-                        path="/javascriptPrincipals/PackagesAndPackageJson"
-                        element={<PackagesAndPackageJson />}
-                    />
-                    <Route
-                        path="/javascriptPrincipals/CRUD-Main"
-                        element={<JSCRUDMain />}
-                    />
-                    <Route
-                        path="/javascriptPrincipals/CRUD-AJAX"
-                        element={<AJAX />}
-                    />
-                    <Route
-                        path="/javascriptPrincipals/CRUD-Fetch"
-                        element={<Fetch />}
-                    />
-                    <Route path="*" element={<HomePage />} />
-                </Routes>
-                <div className="m-0 w-full p-0 mt-5">
+                <div className="m-0 mt-5 w-full p-0">
                     <Footer />
                 </div>
             </div>
