@@ -13,6 +13,21 @@ export default function MainCards() {
 
     return (
         <div className="mx-16 pb-44 grid h-full items-stretch gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4">
+                    {/* SECTION Card #4 BEGIN */}
+                    <a href="https://codeproblems.michaelvarnell.com" target="_blank" >
+                        <Card
+                            imageSrc={codeproblems}
+                            customCSS={{
+                                image: 'border-black bg-stone-400 dark:bg-stone-500',
+                                letsGoBtn: 'bg-red-900',
+                            }}
+                            title="Code Problems"
+                            description="Free coding problems to help level up your skills, and practice those fundamentals."
+                            actionText="Let's Go"
+                            styles={styles}
+                        />
+                    </a>
+                    {/* !SECTION Card #4 END */}
             {/* SECTION Card #1 */}
             <Link to="/fundamentals/Installs">
                 <Card
@@ -58,21 +73,6 @@ export default function MainCards() {
                 />
             </Link>
             {/* !SECTION Card #3 END */}
-            {/* SECTION Card #4 BEGIN */}
-            <a href="https://codeproblems.michaelvarnell.com" target="_blank" >
-                <Card
-                    imageSrc={codeproblems}
-                    customCSS={{
-                        image: 'border-black bg-stone-400 dark:bg-stone-500',
-                        letsGoBtn: 'bg-red-900',
-                    }}
-                    title="Code Problems"
-                    description="Free coding problems to help level up your skills, and practice those fundamentals."
-                    actionText="Let's Go"
-                    styles={styles}
-                />
-            </a>
-            {/* !SECTION Card #4 END */}
         </div>
     )
 }

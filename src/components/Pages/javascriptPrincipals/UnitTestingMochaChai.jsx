@@ -95,9 +95,9 @@ describe('Array', function() {
                         cases.
                     </p>
                     <div className="mx-auto my-5 h-fit w-fit rounded-2xl bg-amber-700 px-3 py-1 text-center font-bold text-white shadow-sm shadow-black">
-                        <button href="https://mochajs.org/">
-                            Mocha Documentation
-                        </button>
+                        <a href="https://mochajs.org/" target="_blank">
+                            <button>Mocha Documentation</button>
+                        </a>
                     </div>
                 </div>
                 <div className="m-2 rounded-2xl border-2 border-black bg-slate-300 p-3 shadow-md shadow-black dark:border-white dark:bg-gray-600">
@@ -120,9 +120,12 @@ describe('Array', function() {
                         provides a more classical feel.
                     </p>
                     <div className="mx-auto my-5 h-fit w-fit rounded-2xl bg-amber-700 px-3 py-1 text-center font-bold text-white shadow-lg shadow-sm shadow-black">
-                        <button href="https://www.chaijs.com/">
-                            Chai Documentation
-                        </button>
+                        <a
+                            href="https://www.chaijs.com/api/bdd/"
+                            target="_blank"
+                        >
+                            <button>Chai Documentation</button>
+                        </a>
                     </div>
                 </div>
             </div>

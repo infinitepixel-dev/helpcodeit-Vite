@@ -11,16 +11,21 @@ function JSCRUDMain() {
                     to="/javascriptPrincipals/CRUD-AJAX"
                     className="mx-auto text-3xl"
                 >
-                    <p>AJAX/Axios</p>
+                    <button className="rounded-xl bg-blue-700 p-2 text-white hover:bg-blue-500">
+                        AJAX/Axios
+                    </button>
                 </Link>
                 <Link
                     to="/javascriptPrincipals/CRUD-Fetch"
                     className="mx-auto text-3xl"
                 >
-                    <p>Fetch</p>
+                    <button className="rounded-xl bg-blue-700 p-2 text-white hover:bg-blue-500">
+                        Fetch
+                    </button>
                 </Link>
             </div>
             <hr className="my-5 border border-black dark:border-white" />
+            <p className='text-center mb-4 font-semibold'>Above are links to see examples that you can use as templates.</p>
             <p>
                 <span className="text-2xl font-bold">
                     CRUD stands for Create, Read, Update, and Delete.

@@ -5,7 +5,7 @@ const FetchArray = [
     try {
         let response = await fetch(URL_ENDPOINT);
         let data = await response.json();
-        console.log(data); // Do something with the data here! 
+        console.log(data); // Do something with the data here!
     } catch (error) {
         console.error('Error:', error);
     }
@@ -43,7 +43,7 @@ const FetchArray = [
     try {
         let response = await fetch(URL_ENDPOINT + '/' + id);
         let data = await response.json();
-        console.log(data); // Do something with the data here! 
+        console.log(data); // Do something with the data here!
     } catch (error) {
         console.error('Error:', error);
     }
@@ -84,10 +84,10 @@ const FetchArray = [
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ key: 'value' })
+            body: JSON.stringify('object you are posting')
         });
         let data = await response.json();
-        console.log(data); // Do something with the data here! 
+        console.log(data); // Do something with the data here!
     } catch (error) {
         console.error('Error:', error);
     }
@@ -129,10 +129,10 @@ const FetchArray = [
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ key: 'value' }) // Your item can go here instead of making the object inline.
+            body: JSON.stringify('Object you are updating') // Your item can go here instead of making the object inline.
         });
         let data = await response.json();
-        console.log(data); // Do something with the data here! 
+        console.log(data); // Do something with the data here!
     } catch (error) {
         console.error('Error:', error);
     }
@@ -172,7 +172,7 @@ const FetchArray = [
             method: 'DELETE'
         });
         let data = await response.json();
-        console.log(data); // Do something with the data here! 
+        console.log(data); // Do something with the data here!
     } catch (error) {
         console.error('Error:', error);
     }
