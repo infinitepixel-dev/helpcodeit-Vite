@@ -63,6 +63,26 @@ const PracticeProblems = () => {
                     </h1>
                     <hr className="my-5 border-2 dark:border-white" />
                     <h2 className="mb-4 text-center text-4xl">
+                        Code Problems Site
+                    </h2>
+                    <p>
+                        The following site is a great resource for practicing
+                        coding problems. It has a wide variety of problems that
+                        you can work on to improve your coding skills.
+                    </p>
+                    <div className="w-fit p-2 shadow-lg mx-auto mt-auto rounded-3xl border text-center border-black border-2 dark:border-white">
+                        <p>Click the link below to go to the site:</p>
+                        <a
+                            href="https://codeproblems.michaelvarnell.com"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="text-2xl underline hover:text-blue-800"
+                        >
+                            Code Problems Site
+                        </a>
+                    </div>
+                    <hr className="my-5 border-2 dark:border-white" />
+                    <h2 className="mb-4 text-center text-4xl">
                         How to Clone in GitHub
                     </h2>
                     <p>
