@@ -46,7 +46,7 @@ function ReactRouter6() {
             </Routes>
         );
     }
-    
+
     export default App;
     `
 
@@ -112,7 +112,7 @@ function ReactRouter6() {
                         </div>
                     </div>
                     <div className="col-span-1">
-                        <div className="m-5 rounded-lg border bg-slate-700 p-5 dark:border-white">
+                        <div className="m-5 rounded-lg border-2 border-black p-5 dark:border-white dark:bg-slate-700">
                             <div className="my-5 flex justify-center align-baseline">
                                 <h1 className="pb-3 text-center text-3xl">
                                     React Router 6+
@@ -132,39 +132,44 @@ function ReactRouter6() {
                                 application's navigation rules.
                             </p>
 
-                            <button className="mt-5 rounded-lg bg-blue-700 p-2 hover:bg-blue-900">
-                                <a
-                                    href="https://reactrouter.com/"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="text-white"
-                                >
-                                    React Router Documentation
-                                </a>
-                            </button>
+                            <div className="flex flex-col">
+                                <button className="mt-5 rounded-lg bg-blue-700 p-2 hover:bg-blue-900">
+                                    <a
+                                        href="https://reactrouter.com/"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="text-white"
+                                    >
+                                        React Router Documentation
+                                    </a>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div className="row">
+                <hr className='my-10 border-2 border-black dark:border-white' />
+                <div className="row ">
                     <h3 className="mb-3 mt-5 text-center text-2xl">
                         First lets look at how to install React Router
                     </h3>
-                    <p>
-                        To install React Router, you can run the following
-                        command in your terminal:
-                    </p>
-                    <pre>
-                        <code
-                            ref={codeRef}
-                            className="javascript me-5 mt-4 p-2 text-base"
-                        >
-                            npm install react-router-dom
-                        </code>
-                    </pre>
-                    <p>
-                        This will install the react-router-dom package in your
-                        project.
-                    </p>
+                    <div className="text-center">
+                        <p>
+                            To install React Router, you can run the following
+                            command in your terminal:
+                        </p>
+                        <pre>
+                            <code
+                                ref={codeRef}
+                                className="javascript mx-auto mt-4 p-2 text-base"
+                            >
+                                npm install react-router-dom
+                            </code>
+                        </pre>
+                        <p>
+                            This will install the react-router-dom package in
+                            your project.
+                        </p>
+                    </div>
 
                     <h3 className="mb-3 mt-5 text-center text-2xl">
                         Now Lets Look At A Basic Example of the index.js File
