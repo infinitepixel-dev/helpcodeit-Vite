@@ -19,24 +19,21 @@ export default function reactmain() {
                     </h1>
                 </div>
             </div>
-            <hr className="mx-auto w-10/12 border-2 border-black dark:border-white" />
-            <div className="row col-span-1 md:col-span-2">
-                <div className="col my-4">
-                    <Link
-                        className="text-xl hover:text-blue-600"
-                        to="/ReactComponents"
-                    >
-                        React Component Basics
-                    </Link>
-                    <br />
-                    <Link
-                    className='text-xl hover:text-blue-600'
+            <hr className=" border-1 mb-4 border-black dark:border-white" />
+            <div className="flex flex-col items-center">
+                <Link
+                    className="text-2xl font-bold hover:text-blue-600"
+                    to="/ReactComponents"
+                >
+                    React Component Basics
+                </Link>
+                <br />
+                <Link
+                    className="text-2xl font-bold hover:text-blue-600"
                     to="/ReactRouter6"
-                    >
-                        React Router 6+
-                    </Link>
-                </div>
-                <div className="col"></div>
+                >
+                    React Router 6+
+                </Link>
             </div>
         </div>
     )
