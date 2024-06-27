@@ -142,6 +142,14 @@ function JavascriptMainPage() {
                                     C.R.U.D. Operations with API&apos;s
                                 </Link>
                             </li>
+                            <li className="mx-auto py-2 text-xl font-bold">
+                                <Link
+                                    to="/javascriptPrincipals/MenuApp"
+                                    className="jsMainPageLink"
+                                >
+                                    Menu App OOP diagram
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </div>

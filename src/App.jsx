@@ -81,6 +81,9 @@ const ReactRouter6 = lazy(() => import('./components/Pages/react/ReactRouter6'))
 const VSCodeHotkeysTable = lazy(
     () => import('./components/Pages/fundamentals/VSCodeHotkeysTable')
 )
+const MenuApp = lazy(
+    () => import('./components/Pages/javascriptPrincipals/MenuApp')
+)
 
 export default function App() {
     const [theme, setTheme] = useState(
@@ -132,6 +135,7 @@ export default function App() {
     { path: '/javascriptPrincipals/CRUD-Main', component: <JSCRUDMain /> },
     { path: '/javascriptPrincipals/CRUD-AJAX', component: <AJAX /> },
     { path: '/javascriptPrincipals/CRUD-Fetch', component: <Fetch /> },
+    { path: '/javascriptPrincipals/MenuApp', component: <MenuApp />},
 
     // React
     { path: '/ReactMain', component: <ReactMain /> },

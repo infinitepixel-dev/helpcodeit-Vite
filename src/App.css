@@ -306,3 +306,10 @@
         @apply bg-background text-foreground;
     }
 }
+
+.custom-code-menuapp{
+    font-family:monospace;
+    border: none;
+    font-style: italic;
+    font-weight: 500;
+}
