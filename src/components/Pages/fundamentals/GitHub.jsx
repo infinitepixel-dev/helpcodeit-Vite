@@ -7,6 +7,7 @@ import githubInitialInstructions from '../../../assets/githubsetupcommandsfromsi
 import githubFlow from '../../../assets/CleanShot 2023-12-05 at 12.18.20.png'
 import redPill from '../../../assets/1__URX2jndILBo7mMkgs-SWQ Background Removed.png'
 import bluePill from '../../../assets/Bluepill Background Removed.png'
+import DetailedGitWorkflow from '../../Sub_Components/DetailedGitWorkflow'
 
 function GitHub() {
     const codeRef = useRef(null)
@@ -88,6 +89,7 @@ git config --global user.email "Your Email"`
                 </p>
                 <hr className="border-1 my-2 border-black dark:border-white" />
                 <div className="mt-10">
+                        <DetailedGitWorkflow />
                     <h1 className="text-3xl">Lets Get Started</h1>
                     <h2 className="text-2xl">
                         Step 1. Create a GitHub account
