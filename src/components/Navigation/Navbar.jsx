@@ -137,6 +137,7 @@ function Navbar({ theme }) {
                         >
                             Home
                         </NavLink>
+                        
                         {/* Dropdown for links */}
                         <div className="dropdown relative inline-block ">
                             <button
