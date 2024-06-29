@@ -28,7 +28,7 @@ function HomePage({ theme }) {
                     Want a 30 minute meeting?
                 </h2>
                 <p className="text-center">
-                    I offer 30 minute meetings to help you with your coding
+                    Michael offers 30 minute meetings to help you with your coding
                     journey. The cost is just $15.
                 </p>
                 <div className="my-5 animate-bounce text-center hover:animate-none">
