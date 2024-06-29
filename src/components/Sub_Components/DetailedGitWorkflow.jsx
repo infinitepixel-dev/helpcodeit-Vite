@@ -4,7 +4,7 @@ import { Plus, GitCommit, Upload, ArrowRight, Moon, Sun } from 'lucide-react'
 const DetailedGitWorkflow = () => {
     const [expandedStep, setExpandedStep] = useState(null)
     const [animationProgress, setAnimationProgress] = useState(0)
-    const [isDarkMode, setIsDarkMode] = useState(false)
+    const [isDarkMode, setIsDarkMode] = useState(true)
 
     useEffect(() => {
         const animationDuration = 3000 // 3 seconds for a full cycle
