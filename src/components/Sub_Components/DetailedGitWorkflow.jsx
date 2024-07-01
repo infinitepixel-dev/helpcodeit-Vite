@@ -35,7 +35,7 @@ const DetailedGitWorkflow = () => {
                 <div>
                     <p className="mb-2">
                         The{' '}
-                        <code className="rounded bg-gray-200 px-1 dark:bg-gray-700">
+                        <code className="rounded bg-gray-200 p-1 px-1 text-black dark:bg-gray-700 dark:text-white">
                             git add
                         </code>{' '}
                         command adds new or changed files in your working
@@ -44,13 +44,13 @@ const DetailedGitWorkflow = () => {
                     <p className="mb-2">Common usage:</p>
                     <ul className="mb-2 list-inside list-disc">
                         <li>
-                            <code className="rounded bg-gray-200 px-1 dark:bg-gray-700">
+                            <code className="rounded bg-gray-200 p-1 px-1 text-black dark:bg-gray-700 dark:text-white">
                                 git add &lt;file&gt;
                             </code>{' '}
                             - Stage a specific file
                         </li>
                         <li>
-                            <code className="rounded bg-gray-200 px-1 dark:bg-gray-700">
+                            <code className="rounded bg-gray-200 p-1 px-1 text-black dark:bg-gray-700 dark:text-white">
                                 git add .
                             </code>{' '}
                             - Stage all new and modified files
@@ -58,7 +58,7 @@ const DetailedGitWorkflow = () => {
                     </ul>
                     <p>
                         Use{' '}
-                        <code className="rounded bg-gray-200 px-1 dark:bg-gray-700">
+                        <code className="rounded bg-gray-200 p-1 px-1 text-black dark:bg-gray-700 dark:text-white">
                             git status
                         </code>{' '}
                         to see which files are staged.
@@ -74,7 +74,7 @@ const DetailedGitWorkflow = () => {
                 <div>
                     <p className="mb-2">
                         The{' '}
-                        <code className="rounded bg-gray-200 px-1 dark:bg-gray-700">
+                        <code className="rounded bg-gray-200 px-1 text-black dark:bg-gray-700 dark:text-white">
                             git commit
                         </code>{' '}
                         command captures a snapshot of the project&apos;s
@@ -83,14 +83,13 @@ const DetailedGitWorkflow = () => {
                     <p className="mb-2">Common usage:</p>
                     <ul className="mb-2 list-inside list-disc">
                         <li>
-                            <code className="rounded bg-gray-200 px-1 dark:bg-gray-700">
-                                git commit -m &ldquo;Your message
-                                here&ldquo;
+                            <code className="rounded bg-gray-200 px-1 text-black dark:bg-gray-700 dark:text-white">
+                                git commit -m &ldquo;Your message here&ldquo;
                             </code>{' '}
                             - Commit with a message
                         </li>
                         <li>
-                            <code className="rounded bg-gray-200 px-1 dark:bg-gray-700">
+                            <code className="rounded bg-gray-200 px-1 text-black dark:bg-gray-700 dark:text-white">
                                 git commit -am &ldquo;Your message here&ldquo;
                             </code>{' '}
                             - Add all changes and commit
@@ -111,7 +110,7 @@ const DetailedGitWorkflow = () => {
                 <div>
                     <p className="mb-2">
                         The{' '}
-                        <code className="rounded bg-gray-200 px-1 dark:bg-gray-700">
+                        <code className="rounded bg-gray-200 p-1 px-1 text-black dark:bg-gray-700 dark:text-white">
                             git push
                         </code>{' '}
                         command uploads your local repository content to a
@@ -120,13 +119,13 @@ const DetailedGitWorkflow = () => {
                     <p className="mb-2">Common usage:</p>
                     <ul className="mb-2 list-inside list-disc">
                         <li>
-                            <code className="rounded bg-gray-200 px-1 dark:bg-gray-700">
+                            <code className="rounded bg-gray-200 p-1 px-1 text-black dark:bg-gray-700 dark:text-white">
                                 git push origin main
                             </code>{' '}
                             - Push to the main branch
                         </li>
                         <li>
-                            <code className="rounded bg-gray-200 px-1 dark:bg-gray-700">
+                            <code className="rounded bg-gray-200 p-1 px-1 text-black dark:bg-gray-700 dark:text-white">
                                 git push -u origin &lt;branch&gt;
                             </code>{' '}
                             - Push a new branch for the first time
@@ -134,7 +133,7 @@ const DetailedGitWorkflow = () => {
                     </ul>
                     <p>
                         Ensure you have the latest changes with{' '}
-                        <code className="rounded bg-gray-200 px-1 dark:bg-gray-700">
+                        <code className="rounded bg-gray-200 p-1 px-1 text-black dark:bg-gray-700 dark:text-white">
                             git pull
                         </code>{' '}
                         before pushing.
@@ -218,18 +217,18 @@ const DetailedGitWorkflow = () => {
             </div>
 
             <div
-                className={`mt-8 rounded border-l-4 border-blue-400 p-4 ${isDarkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-50 text-blue-700'}`}
+                className={`mt-8 rounded border-l-4  border-blue-400 p-4 ${isDarkMode ? 'bg-blue-900 text-blue-200' : 'bg-blue-50 text-blue-700'}`}
             >
                 <p>
                     <strong>Pro Tip:</strong> Use{' '}
                     <code
-                        className={`rounded px-1 ${isDarkMode ? 'bg-blue-800' : 'bg-blue-100'}`}
+                        className={`rounded p-1 px-1 ${isDarkMode ? 'bg-black' : 'bg-blue-300 text-black'}`}
                     >
                         git log
                     </code>{' '}
                     to review your commit history and{' '}
                     <code
-                        className={`rounded px-1 ${isDarkMode ? 'bg-blue-800' : 'bg-blue-100'}`}
+                        className={`rounded p-1 px-1 ${isDarkMode ? 'bg-black' : 'bg-blue-300 text-black'}`}
                     >
                         git diff
                     </code>{' '}
