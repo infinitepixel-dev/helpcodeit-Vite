@@ -55,6 +55,17 @@ function About() {
                             technical skills and his dedication to promoting
                             growth and creativity in software development.
                         </p>
+                        <div className="my-5  text-center ">
+                            <a
+                                href="https://calendly.com/michaelvarnell/30min"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <button className="animate-bounce rounded-full bg-blue-700 px-4 py-2 font-bold text-white hover:animate-none hover:bg-green-500 ">
+                                    Book a meeting
+                                </button>
+                            </a>
+                        </div>
                     </div>
                     <div className="mx-auto my-auto">
                         <h2 className="my-4 text-center text-3xl">
