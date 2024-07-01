@@ -60,6 +60,9 @@ const Fetch = lazy(
         )
 )
 const GitHub = lazy(() => import('./components/Pages/fundamentals/GitHub'))
+const GitHubCheatsheet = lazy(
+    () => import('./components/Pages/fundamentals/GitHubCheatsheet')
+)
 const Installs = lazy(() => import('./components/Pages/fundamentals/Installs'))
 const PracticeEnvironment = lazy(
     () => import('./components/Pages/fundamentals/PracticeEnvironment')
@@ -106,45 +109,85 @@ export default function App() {
     }, [])
 
     const routes = [
-    // Home
-    { path: '/', component: <HomePage theme={theme} /> },
-    { path: '/about', component: <About /> },
+        // Home
+        { path: '/', component: <HomePage theme={theme} /> },
+        { path: '/about', component: <About /> },
 
-    // Fundamentals
-    { path: '/fundamentals/GitHub', component: <GitHub /> },
-    { path: '/fundamentals/VSCodeHotkeysTable', component: <VSCodeHotkeysTable /> },
-    { path: '/fundamentals/Bootstrap', component: <Bootstrap /> },
-    { path: '/fundamentals/Installs', component: <Installs /> },
-    { path: '/fundamentals/VSCodeExtensions', component: <VSCodeExtensions /> },
-    { path: '/fundamentals/SettingUpPracticeEnvironment', component: <PracticeEnvironment /> },
+        // Fundamentals
+        { path: '/fundamentals/GitHub', component: <GitHub /> },
+        {
+            path: '/fundamentals/VSCodeHotkeysTable',
+            component: <VSCodeHotkeysTable />,
+        },
+        { path: '/fundamentals/Bootstrap', component: <Bootstrap /> },
+        { path: '/fundamentals/Installs', component: <Installs /> },
+        {
+            path: '/fundamentals/VSCodeExtensions',
+            component: <VSCodeExtensions />,
+        },
+        {
+            path: '/fundamentals/SettingUpPracticeEnvironment',
+            component: <PracticeEnvironment />,
+        },
+        {
+            path: '/fundamentals/GitHubCheatsheet',
+            component: <GitHubCheatsheet />,
+        },
 
-    // Javascript
-    { path: '/javascript', component: <JavascriptMainPage /> },
-    { path: '/javascriptPrincipals/PracticeProblems', component: <PracticeProblems /> },
-    { path: '/javascriptPrincipals/DeclaringVariables', component: <DeclaringVariables /> },
-    { path: '/javascriptPrincipals/StringConcatenation', component: <StringConcatenation /> },
-    { path: '/javascriptPrincipals/StandardFunctions', component: <StandardFunctions /> },
-    { path: '/javascriptPrincipals/UnitTestingMochaChai', component: <UnitTestingMochaChai /> },
-    { path: '/javascriptPrincipals/Loops', component: <Loops /> },
-    { path: '/code_practice', component: <CodePractice /> },
-    { path: '/javascriptPrincipals/Objects', component: <JSObjects /> },
-    { path: '/javascriptPrincipals/ArrowFunctions', component: <ArrowFunctions /> },
-    { path: '/javascriptPrincipals/ArrayMethods', component: <ArrayMethods /> },
-    { path: '/javascriptPrincipals/StringMethods', component: <StringMethods /> },
-    { path: '/javascriptPrincipals/PackagesAndPackageJson', component: <PackagesAndPackageJson /> },
-    { path: '/javascriptPrincipals/CRUD-Main', component: <JSCRUDMain /> },
-    { path: '/javascriptPrincipals/CRUD-AJAX', component: <AJAX /> },
-    { path: '/javascriptPrincipals/CRUD-Fetch', component: <Fetch /> },
-    { path: '/javascriptPrincipals/MenuApp', component: <MenuApp />},
+        // Javascript
+        { path: '/javascript', component: <JavascriptMainPage /> },
+        {
+            path: '/javascriptPrincipals/PracticeProblems',
+            component: <PracticeProblems />,
+        },
+        {
+            path: '/javascriptPrincipals/DeclaringVariables',
+            component: <DeclaringVariables />,
+        },
+        {
+            path: '/javascriptPrincipals/StringConcatenation',
+            component: <StringConcatenation />,
+        },
+        {
+            path: '/javascriptPrincipals/StandardFunctions',
+            component: <StandardFunctions />,
+        },
+        {
+            path: '/javascriptPrincipals/UnitTestingMochaChai',
+            component: <UnitTestingMochaChai />,
+        },
+        { path: '/javascriptPrincipals/Loops', component: <Loops /> },
+        { path: '/code_practice', component: <CodePractice /> },
+        { path: '/javascriptPrincipals/Objects', component: <JSObjects /> },
+        {
+            path: '/javascriptPrincipals/ArrowFunctions',
+            component: <ArrowFunctions />,
+        },
+        {
+            path: '/javascriptPrincipals/ArrayMethods',
+            component: <ArrayMethods />,
+        },
+        {
+            path: '/javascriptPrincipals/StringMethods',
+            component: <StringMethods />,
+        },
+        {
+            path: '/javascriptPrincipals/PackagesAndPackageJson',
+            component: <PackagesAndPackageJson />,
+        },
+        { path: '/javascriptPrincipals/CRUD-Main', component: <JSCRUDMain /> },
+        { path: '/javascriptPrincipals/CRUD-AJAX', component: <AJAX /> },
+        { path: '/javascriptPrincipals/CRUD-Fetch', component: <Fetch /> },
+        { path: '/javascriptPrincipals/MenuApp', component: <MenuApp /> },
 
-    // React
-    { path: '/ReactMain', component: <ReactMain /> },
-    { path: '/ReactComponents', component: <ReactComponents /> },
-    { path: '/ReactRouter6', component: <ReactRouter6 /> },
+        // React
+        { path: '/ReactMain', component: <ReactMain /> },
+        { path: '/ReactComponents', component: <ReactComponents /> },
+        { path: '/ReactRouter6', component: <ReactRouter6 /> },
 
-    // Default
-    { path: '*', component: <HomePage /> },
-]
+        // Default
+        { path: '*', component: <HomePage /> },
+    ]
 
     return (
         <DarkModeProvider>

@@ -28,16 +28,16 @@ function HomePage({ theme }) {
                     Want a 30 minute meeting?
                 </h2>
                 <p className="text-center">
-                    Michael offers 30 minute meetings to help you with your coding
-                    journey. The cost is just $15.
+                    Michael offers 30 minute meetings to help you with your
+                    coding journey. The cost is just $15.
                 </p>
-                <div className="my-5 animate-bounce text-center hover:animate-none">
+                <div className="my-5  text-center ">
                     <a
                         href="https://calendly.com/michaelvarnell/30min"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <button className="rounded-full bg-blue-700 px-4 py-2 font-bold text-white hover:bg-green-500 ">
+                        <button className="animate-bounce rounded-full bg-blue-700 px-4 py-2 font-bold text-white hover:animate-none hover:bg-green-500 ">
                             Book a meeting
                         </button>
                     </a>
