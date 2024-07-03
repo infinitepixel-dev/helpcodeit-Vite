@@ -149,6 +149,8 @@ function JavascriptMainPage() {
                                 >
                                     Menu App OOP diagram
                                 </Link>
+                            </li>
+                            <li className="mx-auto py-2 text-xl font-bold">
                                 <Link
                                     to="/javascriptPrincipals/WarGameTutorial"
                                     className="jsMainPageLink"
