@@ -25,11 +25,12 @@ function HomePage({ theme }) {
             {/* !SECTION end Jumbotron */}
             <div className="justify-center">
                 <h2 className="mt-5 text-center text-5xl font-bold">
-                    Want a 30 minute meeting?
+                    Get expert coding help and tutoring - Book a session now!
                 </h2>
                 <p className="text-center">
-                    Michael offers 30 minute meetings to help you with your
-                    coding journey. The cost is just $15.
+                    Michael provides meetings to help you with your coding.
+                    <br /> 30 Minute
+                    sessions are $15 <br /> 1 Hour Sessions are $25
                 </p>
                 <div className="my-5  text-center ">
                     <a
@@ -37,8 +38,17 @@ function HomePage({ theme }) {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <button className="animate-bounce rounded-full bg-blue-700 px-4 py-2 font-bold text-white hover:animate-none hover:bg-green-500 ">
-                            Book a meeting
+                        <button className="rounded-s-full bg-blue-700 px-4 py-2 font-bold text-white hover:animate-none hover:bg-blue-400 ">
+                            30 Minute Session
+                        </button>
+                    </a>
+                    <a
+                        href="https://calendly.com/michaelvarnell/1-hour-session"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <button className="rounded-e-full bg-green-700 px-4 py-2 font-bold text-white hover:animate-none hover:bg-green-500 ">
+                            1 Hour Session
                         </button>
                     </a>
                 </div>
