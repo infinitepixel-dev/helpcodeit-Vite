@@ -6,7 +6,7 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/github-dark.css'
 import { Routes, Route } from 'react-router-dom'
 import Footer from './components/Sub_Components/Footer'
-import WarGameTutorial from './components/Pages/javascriptPrincipals/WarGameTutorial'
+import War from './components/Pages/javascriptPrincipals/War'
 
 // Lazy loading components
 const HomePage = lazy(() => import('./components/Pages/HomePage'))
@@ -88,9 +88,7 @@ const VSCodeHotkeysTable = lazy(
 const MenuApp = lazy(
     () => import('./components/Pages/javascriptPrincipals/MenuApp')
 )
-const WarGame = lazy(
-    () => import('./components/Pages/javascriptPrincipals/WarGameTutorial')
-)
+
 
 export default function App() {
     const [theme, setTheme] = useState(
@@ -183,7 +181,7 @@ export default function App() {
         { path: '/javascriptPrincipals/CRUD-AJAX', component: <AJAX /> },
         { path: '/javascriptPrincipals/CRUD-Fetch', component: <Fetch /> },
         { path: '/javascriptPrincipals/MenuApp', component: <MenuApp /> },
-        {path: '/javascriptPrincipals/WarGameTutorial', component: <WarGameTutorial />},
+        {path: '/javascriptPrincipals/WarGameTutorial', component: <War />},
 
         // React
         { path: '/ReactMain', component: <ReactMain /> },
