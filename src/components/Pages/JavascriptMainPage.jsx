@@ -3,7 +3,7 @@ import javascriptlogo from '../../assets/jswithburstlogo.svg'
 
 function JavascriptMainPage() {
     return (
-        <div className="min-h-screen mb-10">
+        <div className="mb-10 min-h-screen">
             <div className="pb-100 container mx-auto p-2 px-4 sm:p-8 ">
                 <div className="mt-5 flex flex-wrap items-center ">
                     <div className="w-full md:w-2/3 lg:w-2/3 ">
@@ -148,6 +148,14 @@ function JavascriptMainPage() {
                                     className="jsMainPageLink"
                                 >
                                     Menu App OOP diagram
+                                </Link>
+                            </li>
+                            <li className="mx-auto py-2 text-xl font-bold">
+                                <Link
+                                    to="/javascriptPrincipals/WarGameTutorial"
+                                    className="jsMainPageLink"
+                                >
+                                    War Game
                                 </Link>
                             </li>
                         </ul>
