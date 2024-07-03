@@ -6,7 +6,7 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/github-dark.css'
 import { Routes, Route } from 'react-router-dom'
 import Footer from './components/Sub_Components/Footer'
-import War from './components/Pages/javascriptPrincipals/War'
+import War from './components/Pages/javascriptPrincipals/War.jsx'
 
 // Lazy loading components
 const HomePage = lazy(() => import('./components/Pages/HomePage'))
