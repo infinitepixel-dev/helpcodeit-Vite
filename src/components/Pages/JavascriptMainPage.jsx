@@ -4,6 +4,22 @@ import javascriptlogo from '../../assets/jswithburstlogo.svg'
 function JavascriptMainPage() {
     return (
         <div className="mb-10 min-h-screen">
+            <Helmet>
+                <title>Learn JavaScript | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Explore a comprehensive guide to JavaScript, including free practice problems, declaring variables, functions, array methods, string methods, and more. Enhance your web development skills with Help Code It."
+                />
+                <link
+                    rel="canonical"
+                    href="https://helpcodeit.com/javascript"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="JavaScript, JavaScript tutorial, JavaScript practice problems, declaring variables, standard functions, arrow functions, array methods, string methods, npm init, package.json, objects, loops, string concatenation, unit testing, Mocha, Chai, CRUD operations, API, OOP, War Game"
+                />
+            </Helmet>
             <div className="pb-100 container mx-auto p-2 px-4 sm:p-8 ">
                 <div className="mt-5 flex flex-wrap items-center ">
                     <div className="w-full md:w-2/3 lg:w-2/3 ">

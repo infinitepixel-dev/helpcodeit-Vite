@@ -77,6 +77,22 @@ function ReactRouter6() {
 
     return (
         <div className="mb-32">
+            <Helmet>
+                <title>React Router 6+ | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn how to use React Router 6+ to manage navigation in your React applications. Understand the basics of routing, setting up routes, and using links with practical examples."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/ReactRouter6"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="React Router, React Router 6, routing in React, navigation, React tutorial, web development, JavaScript, single-page applications"
+                />
+            </Helmet>
             <h1 className="mukataFont mt-5 text-center text-6xl">
                 React Router 6+
             </h1>
@@ -147,7 +163,7 @@ function ReactRouter6() {
                         </div>
                     </div>
                 </div>
-                <hr className='my-10 border-2 border-black dark:border-white' />
+                <hr className="my-10 border-2 border-black dark:border-white" />
                 <div className="row ">
                     <h3 className="mb-3 mt-5 text-center text-2xl">
                         First lets look at how to install React Router

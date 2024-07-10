@@ -3,6 +3,22 @@ import { Link } from 'react-router-dom'
 function JSCRUDMain() {
     return (
         <div className="container text-xl">
+            <Helmet>
+                <title>CRUD Operations with APIs | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn how to perform CRUD (Create, Read, Update, Delete) operations with APIs using different methods like AJAX, Axios, and Fetch. Find useful resources and example repositories."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/javascriptPrincipals/CRUD-Main"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="CRUD operations, APIs, JavaScript CRUD, AJAX, Axios, Fetch API, coding tutorial, web development, API examples"
+                />
+            </Helmet>
             <h1 className="my-10 text-center text-6xl">
                 CRUD Operations with API's
             </h1>
@@ -25,7 +41,9 @@ function JSCRUDMain() {
                 </Link>
             </div>
             <hr className="my-5 border border-black dark:border-white" />
-            <p className='text-center mb-4 font-semibold'>Above are links to see examples that you can use as templates.</p>
+            <p className="mb-4 text-center font-semibold">
+                Above are links to see examples that you can use as templates.
+            </p>
             <p>
                 <span className="text-2xl font-bold">
                     CRUD stands for Create, Read, Update, and Delete.

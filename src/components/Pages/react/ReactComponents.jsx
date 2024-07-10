@@ -35,6 +35,22 @@ export default Heading;`
 
     return (
         <div className="mb-40">
+            <Helmet>
+                <title>Understanding React Components | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn about React components, their importance, and how to use them to build complex user interfaces. Understand the basics of creating and returning components with practical examples."
+                />
+                <link
+                    rel="canonical"
+                    href="https://helpcodeit.com/ReactComponents"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="React components, JavaScript, front-end development, UI development, React tutorial, web development, reusable components"
+                />
+            </Helmet>
             <h1 className="satisfyFont my-4 text-center text-6xl">
                 React Components
             </h1>

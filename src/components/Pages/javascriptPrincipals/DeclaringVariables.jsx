@@ -23,6 +23,22 @@ export default function DeclaringVariables() {
 
     return (
         <div>
+            <Helmet>
+                <title>Declaring Variables in JavaScript | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Understand how to declare variables in JavaScript using var, let, and const. Learn their differences, scope, and usage with practical examples."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/javascriptPrincipals/DeclaringVariables"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="JavaScript variables, var, let, const, variable scope, coding tutorial, JavaScript tutorial, web development"
+                />
+            </Helmet>
             <div className="mukataFont container mx-auto min-h-screen text-lg">
                 <div className="flex flex-wrap pt-20">
                     <h1 className="mb-10 w-full text-center text-6xl font-bold">

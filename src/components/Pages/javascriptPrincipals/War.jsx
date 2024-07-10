@@ -131,6 +131,22 @@ game.play();
 
     return (
         <div className="container mb-28 text-lg">
+            <Helmet>
+                <title>Build a War Card Game | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn how to build a War card game step-by-step. This tutorial guides you through planning, creating classes, and implementing game logic for a fun coding experience."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/javascriptPrincipals/WarGameTutorial"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="War card game, JavaScript tutorial, coding game, game development, card game tutorial, coding project, beginner coding, JavaScript classes"
+                />
+            </Helmet>
             <h1 className="satisfyFont my-4 text-center text-6xl">
                 Building a War Card Game
             </h1>
