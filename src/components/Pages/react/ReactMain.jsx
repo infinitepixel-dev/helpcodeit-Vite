@@ -4,6 +4,22 @@ import { Link } from 'react-router-dom'
 export default function reactmain() {
     return (
         <div className="container">
+            <Helmet>
+                <title>React Topics | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Explore essential React topics including React component basics and React Router 6+. Learn how to build and navigate React applications efficiently."
+                />
+                <link
+                    rel="canonical"
+                    href="https://helpcodeit.com/ReactMain"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="React, React components, React Router, front-end development, JavaScript, web development, React tutorial"
+                />
+            </Helmet>
             <div className="flex items-center justify-center">
                 <div>
                     <img

@@ -71,6 +71,24 @@ function StandardFunctions() {
             //     height: '100vh',
             // }}
         >
+            <Helmet>
+                <title>
+                    JavaScript Functions: A Beginner's Guide | Help Code It
+                </title>
+                <meta
+                    name="description"
+                    content="Learn about JavaScript functions with this beginner's guide. Understand what functions are, how to create and use them, and why they are important for coding. Includes examples and explanations."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/javascriptPrincipals/StandardFunctions"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="JavaScript functions, beginner guide, coding tutorial, create functions, use functions, coding examples, web development"
+                />
+            </Helmet>
             <div className="flex flex-col">
                 <div className="observeMe">
                     <h1 className="my-20 text-center text-5xl">

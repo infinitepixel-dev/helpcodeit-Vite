@@ -12,6 +12,22 @@ const PracticeProblems = () => {
 
     return (
         <div className="mx-auto  min-h-screen px-4 sm:px-6 lg:px-8">
+            <Helmet>
+                <title>JavaScript Practice Problems | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Explore a collection of JavaScript practice problems to improve your coding skills. Learn how to clone repositories and solve various coding challenges."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/javascriptPrincipals/PracticeProblems"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="JavaScript practice problems, coding challenges, GitHub clone, coding exercises, JavaScript tutorial, coding practice, web development"
+                />
+            </Helmet>
             <div className="container flex flex-wrap">
                 <div className="mt-20 pt-20 md:w-1/4 ">
                     <div className="center me-20 flex min-w-fit flex-col items-center rounded-t-2xl border-2 border-black pb-5 dark:bg-slate-500">
@@ -70,7 +86,7 @@ const PracticeProblems = () => {
                         coding problems. It has a wide variety of problems that
                         you can work on to improve your coding skills.
                     </p>
-                    <div className="w-fit p-2 shadow-lg mx-auto mt-auto rounded-3xl border text-center border-black border-2 dark:border-white">
+                    <div className="mx-auto mt-auto w-fit rounded-3xl border border-2 border-black p-2 text-center shadow-lg dark:border-white">
                         <p>Click the link below to go to the site:</p>
                         <a
                             href="https://codeproblems.michaelvarnell.com"

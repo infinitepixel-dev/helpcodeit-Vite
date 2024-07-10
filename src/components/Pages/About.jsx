@@ -4,6 +4,19 @@ import michael from '../../assets/michael.jpeg'
 function About() {
     return (
         <div>
+            <Helmet>
+                <title>About Us | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn about Help Code It, a website dedicated to teaching JavaScript and web development. Meet the team: Michael Varnell and Matthew Cox, experienced developers committed to education and mentorship."
+                />
+                <link rel="canonical" href="https://www.helpcodeit.com/about" />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="Help Code It, about us, JavaScript, web development, Michael Varnell, Matthew Cox, coding education, coding mentorship, React, Node.js, software development"
+                />
+            </Helmet>
             <div className="container text-lg font-semibold">
                 <h1 className="my-5 text-center text-6xl">About</h1>
                 <p className="my-1">

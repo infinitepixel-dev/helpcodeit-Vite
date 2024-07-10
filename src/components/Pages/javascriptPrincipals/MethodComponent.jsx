@@ -15,6 +15,7 @@ function MethodComponent({ item }) {
     const { title, description, example, graphical } = item
     return (
         <div className="my-5 rounded-lg border border-black p-5 dark:border-white">
+           
             <h4 className="mb-5 mt-10 text-center text-4xl" id={title}>
                 {title}
             </h4>

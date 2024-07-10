@@ -2,6 +2,7 @@ import React from 'react'
 //import { Link } from 'react-router-dom'
 import michael from '../../assets/michael.jpeg'
 import EventAlert from '../Sub_Components/EventAlert'
+import { Helmet } from 'react-helmet-async'
 
 const ScheduleMeeting = () => {
     let event = {
@@ -12,6 +13,24 @@ const ScheduleMeeting = () => {
     }
     return (
         <div className="mb-10 min-h-screen">
+            <Helmet>
+                <title>
+                    Book a Meeting with Michael Varnell | Help Code It
+                </title>
+                <meta
+                    name="description"
+                    content="Book a meeting with Michael Varnell to elevate your software development skills. Choose from various meeting options for personalized guidance in front-end development, Git, GitHub, and more."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/schedule-meeting"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="schedule meeting, coding help, coding tutoring, Michael Varnell, Git workshop, GitHub workshop, front-end development, coding sessions"
+                />
+            </Helmet>
             <EventAlert event={event} />
             <div className="pb-100 container mx-auto p-2 px-4 sm:p-8">
                 <div className="mt-5 flex flex-wrap items-center">

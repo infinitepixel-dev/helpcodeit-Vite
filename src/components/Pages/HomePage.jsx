@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import logo from '../../assets/helpcodeitlogo.svg'
 import MainCards from '../Sub_Components/MainCards'
 import EventAlert from '../Sub_Components/EventAlert'
+import { Helmet } from 'react-helmet-async'
 
 function HomePage({ theme }) {
     let event = {
@@ -12,6 +13,25 @@ function HomePage({ theme }) {
     }
     return (
         <div>
+            <Helmet>
+                <title>Help Code It | Resources for Beginning Developers</title>
+                <meta
+                    name="description"
+                    content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
+                />
+                <meta
+                    property="og:title"
+                    content="Help Code It | Resources for Beginning Developers"
+                />
+                <meta
+                    property="og:description"
+                    content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Book a session now!"
+                />
+                <meta property="og:image" content={logo} />
+                <meta property="og:url" content="https://helpcodeit.com" />
+
+                <link rel="canonical" href="https://helpcodeit.com" />
+            </Helmet>
             <EventAlert event={event} />
             {/* SECTION Jumbotron */}
             <div className="jumbo-background hero-text bg-neutral-800 text-white">
@@ -37,7 +57,7 @@ function HomePage({ theme }) {
                     Get expert coding help and tutoring - Book a session now!
                 </h2>
                 <Link to="/schedule-meeting">
-                    <div className="mx-auto text-lg my-4 w-fit rounded-full bg-blue-700 px-4 py-2 font-bold text-white hover:bg-red-700 ">
+                    <div className="mx-auto my-4 w-fit rounded-full bg-blue-700 px-4 py-2 text-lg font-bold text-white hover:bg-red-700 ">
                         Explore Meeting Options
                     </div>
                 </Link>
