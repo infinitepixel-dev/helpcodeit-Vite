@@ -7,6 +7,7 @@ import 'highlight.js/styles/github-dark.css'
 import { Routes, Route } from 'react-router-dom'
 import Footer from './components/Sub_Components/Footer'
 import War from './components/Pages/javascriptPrincipals/War.jsx'
+import ScheduleMeeting from './components/Pages/ScheduleMeeting.jsx'
 
 // Lazy loading components
 const HomePage = lazy(() => import('./components/Pages/HomePage'))
@@ -114,6 +115,7 @@ export default function App() {
         // Home
         { path: '/', component: <HomePage theme={theme} /> },
         { path: '/about', component: <About /> },
+        { path: '/schedule-meeting', component: <ScheduleMeeting />},
 
         // Fundamentals
         { path: '/fundamentals/GitHub', component: <GitHub /> },
