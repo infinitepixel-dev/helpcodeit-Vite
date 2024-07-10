@@ -3,6 +3,24 @@ import diagram from '../../../assets/Helpful Diagram.png'
 function MenuApp() {
     return (
         <div className="mb-7">
+            <Helmet>
+                <title>
+                    Menu App OOP Diagram and Explanation | Help Code It
+                </title>
+                <meta
+                    name="description"
+                    content="Explore the object-oriented design and implementation of a Menu App. Understand the classes and their interactions with a detailed diagram and explanations."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/javascriptPrincipals/MenuApp"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="Menu App, OOP diagram, object-oriented programming, JavaScript classes, team management system, coding tutorial, web development"
+                />
+            </Helmet>
             <div>
                 <div className="container">
                     <h1 className="my-5 text-center text-6xl">Menu App</h1>

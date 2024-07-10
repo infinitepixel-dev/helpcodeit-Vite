@@ -49,6 +49,22 @@ describe('Array', function() {
 
     return (
         <div className="container text-lg">
+            <Helmet>
+                <title>Unit Testing with Mocha and Chai | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn how to set up and use Mocha and Chai for unit testing in JavaScript. This tutorial provides step-by-step instructions, code examples, and tips for effective testing."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/javascriptPrincipals/UnitTestingMochaChai"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="Mocha, Chai, unit testing, JavaScript testing, BDD, TDD, test framework, JavaScript tutorial, testing tutorial, coding tests"
+                />
+            </Helmet>
             <h1 className="my-5 text-center text-6xl">
                 Unit Testing with Mocha and Chai
             </h1>
