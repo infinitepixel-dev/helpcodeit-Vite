@@ -1,4 +1,6 @@
 import diagram from '../../../assets/Helpful Diagram.png'
+import { Helmet } from 'react-helmet-async'
+
 
 function MenuApp() {
     return (

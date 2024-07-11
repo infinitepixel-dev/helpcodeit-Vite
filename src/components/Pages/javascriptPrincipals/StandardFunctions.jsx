@@ -1,6 +1,8 @@
 import { useRef, useEffect, Suspense, lazy } from 'react'
 import { Link } from 'react-router-dom'
 import hljs from 'highlight.js'
+import { Helmet } from 'react-helmet-async'
+
 
 const CodePractice = lazy(() => import('../../Sub_Components/Code_Practice'))
 
