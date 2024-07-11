@@ -2,6 +2,8 @@ import objectImg from '../../../assets/objectpagegraphic.svg'
 import { useEffect, useRef } from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
+import { Helmet } from 'react-helmet-async'
+
 
 export default function JSObjects() {
     const codeRef = useRef(null)

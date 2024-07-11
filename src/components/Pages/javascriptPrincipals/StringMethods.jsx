@@ -1,6 +1,8 @@
 import StringMethodsArray from "./MethodArrays/StringMethodsArray"
 import MethodComponent from "./MethodComponent"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../../ui/accordion"
+import { Helmet } from 'react-helmet-async'
+
 
 function StringMethods() {
     return (

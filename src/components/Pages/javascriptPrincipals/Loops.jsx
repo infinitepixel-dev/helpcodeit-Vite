@@ -4,6 +4,8 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
 import reloadImg from '../../../assets/Feather refresh icon.svg'
 import reloadingDark from '../../../assets/refreshdark.svg'
+import { Helmet } from 'react-helmet-async'
+
 
 import CopyButton from '../../Sub_Components/CopyButton' //REVIEW Import the CopyButton
 
