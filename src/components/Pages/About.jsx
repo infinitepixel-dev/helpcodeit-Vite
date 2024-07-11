@@ -1,5 +1,7 @@
 import matthew from '../../assets/Matthew.png'
 import michael from '../../assets/michael.jpeg'
+import { Helmet } from 'react-helmet-async'
+
 
 function About() {
     return (
