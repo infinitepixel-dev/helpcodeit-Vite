@@ -3,6 +3,7 @@ import logo from '../../assets/helpcodeitlogo.svg'
 import MainCards from '../Sub_Components/MainCards'
 import EventAlert from '../Sub_Components/EventAlert'
 import { Helmet } from 'react-helmet-async'
+import DataGenerator from '../Sub_Components/DataGenerator'
 
 function HomePage({ theme }) {
     let event = {
@@ -13,6 +14,7 @@ function HomePage({ theme }) {
     }
     return (
         <div>
+            <DataGenerator />
             <Helmet>
                 <title>Help Code It | Resources for Beginning Developers</title>
                 <meta
