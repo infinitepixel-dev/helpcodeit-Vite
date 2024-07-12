@@ -1,9 +1,24 @@
 import matthew from '../../assets/Matthew.png'
 import michael from '../../assets/michael.jpeg'
+import { Helmet } from 'react-helmet-async'
+
 
 function About() {
     return (
         <div>
+            <Helmet>
+                <title>About Us | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn about Help Code It, a website dedicated to teaching JavaScript and web development. Meet the team: Michael Varnell and Matthew Cox, experienced developers committed to education and mentorship."
+                />
+                <link rel="canonical" href="https://www.helpcodeit.com/about" />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="Help Code It, about us, JavaScript, web development, Michael Varnell, Matthew Cox, coding education, coding mentorship, React, Node.js, software development"
+                />
+            </Helmet>
             <div className="container text-lg font-semibold">
                 <h1 className="my-5 text-center text-6xl">About</h1>
                 <p className="my-1">
@@ -55,6 +70,17 @@ function About() {
                             technical skills and his dedication to promoting
                             growth and creativity in software development.
                         </p>
+                        <div className="my-5  text-center ">
+                            <a
+                                href="https://calendly.com/michaelvarnell/30min"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <button className="animate-bounce rounded-full bg-blue-700 px-4 py-2 font-bold text-white hover:animate-none hover:bg-green-500 ">
+                                    Book a meeting
+                                </button>
+                            </a>
+                        </div>
                     </div>
                     <div className="mx-auto my-auto">
                         <h2 className="my-4 text-center text-3xl">

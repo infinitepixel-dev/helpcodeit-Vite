@@ -1,9 +1,27 @@
 import { Link } from 'react-router-dom'
 import javascriptlogo from '../../assets/jswithburstlogo.svg'
+import { Helmet } from 'react-helmet-async'
+
 
 function JavascriptMainPage() {
     return (
-        <div className="min-h-screen mb-10">
+        <div className="mb-10 min-h-screen">
+            <Helmet>
+                <title>Learn JavaScript | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Explore a comprehensive guide to JavaScript, including free practice problems, declaring variables, functions, array methods, string methods, and more. Enhance your web development skills with Help Code It."
+                />
+                <link
+                    rel="canonical"
+                    href="https://helpcodeit.com/javascript"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="JavaScript, JavaScript tutorial, JavaScript practice problems, declaring variables, standard functions, arrow functions, array methods, string methods, npm init, package.json, objects, loops, string concatenation, unit testing, Mocha, Chai, CRUD operations, API, OOP, War Game"
+                />
+            </Helmet>
             <div className="pb-100 container mx-auto p-2 px-4 sm:p-8 ">
                 <div className="mt-5 flex flex-wrap items-center ">
                     <div className="w-full md:w-2/3 lg:w-2/3 ">
@@ -140,6 +158,22 @@ function JavascriptMainPage() {
                                     className="jsMainPageLink"
                                 >
                                     C.R.U.D. Operations with API&apos;s
+                                </Link>
+                            </li>
+                            <li className="mx-auto py-2 text-xl font-bold">
+                                <Link
+                                    to="/javascriptPrincipals/MenuApp"
+                                    className="jsMainPageLink"
+                                >
+                                    Menu App OOP diagram
+                                </Link>
+                            </li>
+                            <li className="mx-auto py-2 text-xl font-bold">
+                                <Link
+                                    to="/javascriptPrincipals/WarGameTutorial"
+                                    className="jsMainPageLink"
+                                >
+                                    War Game
                                 </Link>
                             </li>
                         </ul>

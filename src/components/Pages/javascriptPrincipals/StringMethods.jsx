@@ -1,12 +1,30 @@
 import StringMethodsArray from "./MethodArrays/StringMethodsArray"
 import MethodComponent from "./MethodComponent"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "../../ui/accordion"
+import { Helmet } from 'react-helmet-async'
+
 
 function StringMethods() {
     return (
         <div>
+            <Helmet>
+                <title>JavaScript String Methods | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn about commonly used JavaScript string methods with detailed examples. Improve your coding skills with these essential string manipulation techniques."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/javascriptPrincipals/StringMethods"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="JavaScript, string methods, JavaScript tutorial, coding string manipulation, string functions, programming, web development"
+                />
+            </Helmet>
             <div className="container">
-                <h1 className="pb-2 pt-8 text-center text-6xl robotoSlab">
+                <h1 className="robotoSlab pb-2 pt-8 text-center text-6xl">
                     String Methods
                 </h1>
                 <h2 className="pb-5 text-center text-3xl">

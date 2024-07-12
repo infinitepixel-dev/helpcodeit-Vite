@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
+import { Helmet } from 'react-helmet-async'
+
 
 function StringConcatenation() {
     const codeRef = useRef(null)
@@ -38,6 +40,22 @@ console.log(\`Hello, my name is \${firstName} \${lastName}\`); // Hello, my name
 
     return (
         <div className="container text-lg">
+            <Helmet>
+                <title>JavaScript String Concatenation | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn how to join two or more strings together using JavaScript. Explore standard concatenation and template literals with detailed examples and explanations."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/javascriptPrincipals/StringConcatenation"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="JavaScript, string concatenation, JavaScript tutorial, coding strings, template literals, programming, web development"
+                />
+            </Helmet>
             <h1 className="satisfyFont my-4 text-center text-6xl">
                 String Concatenation
             </h1>
@@ -57,17 +75,19 @@ console.log(\`Hello, my name is \${firstName} \${lastName}\`); // Hello, my name
                 operator:
             </>
             <pre>
-                <code ref={codeRef} className="javascript text-base mt-4">
+                <code ref={codeRef} className="javascript mt-4 text-base">
                     {codeString}
                 </code>
             </pre>
-            <p>You can declare a variable and then concatenate the strings, but you also can use this when logging a string directly.</p>
+            <p>
+                You can declare a variable and then concatenate the strings, but
+                you also can use this when logging a string directly.
+            </p>
             <pre>
-                <code ref={codeRef} className="javascript text-base mt-4">
+                <code ref={codeRef} className="javascript mt-4 text-base">
                     {codeString2}
                 </code>
             </pre>
-
 
             <h3 className="my-5 text-2xl">Template Literal</h3>
             <p>
@@ -87,7 +107,7 @@ console.log(\`Hello, my name is \${firstName} \${lastName}\`); // Hello, my name
                 literals:
             </p>
             <pre>
-                <code ref={codeRef} className="javascript text-base mt-4">
+                <code ref={codeRef} className="javascript mt-4 text-base">
                     {templateLiteral}
                 </code>
             </pre>
@@ -96,7 +116,7 @@ console.log(\`Hello, my name is \${firstName} \${lastName}\`); // Hello, my name
                 without having to store it in a variable first.
             </p>
             <pre>
-                <code ref={codeRef} className="javascript text-base mt-4">
+                <code ref={codeRef} className="javascript mt-4 text-base">
                     {teplateLiteral2}
                 </code>
             </pre>

@@ -3,13 +3,9 @@
 const AJAXArray = [
     {
         title: 'AJAX GET:',
-        code: `$.ajax({
+   code: `$.ajax({
     url: "Your API URL Here",
-    method: "POST",
-    data: {
-      name: "John Doe",
-      age: 25,
-    },
+    method: "GET",
     success: function (data) {
       console.log(data);
     },

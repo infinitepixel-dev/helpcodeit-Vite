@@ -3,6 +3,8 @@ import { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import incorrectImg from '../../assets/no.png'
 import correctImg from '../../assets/yes.png'
+import { Helmet } from 'react-helmet-async'
+
 
 import AutoExpandingTextarea from './AutoExpandingTextArea'
 

@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import hljs from 'highlight.js'
+import { Helmet } from 'react-helmet-async'
+
 import 'highlight.js/styles/atom-one-dark.css'
 
 function UnitTestingMochaChai() {
@@ -49,6 +51,22 @@ describe('Array', function() {
 
     return (
         <div className="container text-lg">
+            <Helmet>
+                <title>Unit Testing with Mocha and Chai | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn how to set up and use Mocha and Chai for unit testing in JavaScript. This tutorial provides step-by-step instructions, code examples, and tips for effective testing."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/javascriptPrincipals/UnitTestingMochaChai"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="Mocha, Chai, unit testing, JavaScript testing, BDD, TDD, test framework, JavaScript tutorial, testing tutorial, coding tests"
+                />
+            </Helmet>
             <h1 className="my-5 text-center text-6xl">
                 Unit Testing with Mocha and Chai
             </h1>
@@ -95,9 +113,9 @@ describe('Array', function() {
                         cases.
                     </p>
                     <div className="mx-auto my-5 h-fit w-fit rounded-2xl bg-amber-700 px-3 py-1 text-center font-bold text-white shadow-sm shadow-black">
-                        <button href="https://mochajs.org/">
-                            Mocha Documentation
-                        </button>
+                        <a href="https://mochajs.org/" target="_blank">
+                            <button>Mocha Documentation</button>
+                        </a>
                     </div>
                 </div>
                 <div className="m-2 rounded-2xl border-2 border-black bg-slate-300 p-3 shadow-md shadow-black dark:border-white dark:bg-gray-600">
@@ -120,9 +138,12 @@ describe('Array', function() {
                         provides a more classical feel.
                     </p>
                     <div className="mx-auto my-5 h-fit w-fit rounded-2xl bg-amber-700 px-3 py-1 text-center font-bold text-white shadow-lg shadow-sm shadow-black">
-                        <button href="https://www.chaijs.com/">
-                            Chai Documentation
-                        </button>
+                        <a
+                            href="https://www.chaijs.com/api/bdd/"
+                            target="_blank"
+                        >
+                            <button>Chai Documentation</button>
+                        </a>
                     </div>
                 </div>
             </div>

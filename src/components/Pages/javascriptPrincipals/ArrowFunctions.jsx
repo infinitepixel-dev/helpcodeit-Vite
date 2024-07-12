@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
+import { Helmet } from 'react-helmet-async'
+
 
 export default function ArrowFunctions() {
     const codeRef = useRef(null)
@@ -36,6 +38,22 @@ export default function ArrowFunctions() {
 
     return (
         <div className="pb-16">
+            <Helmet>
+                <title>Arrow Functions in JavaScript | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn about arrow functions in JavaScript. Understand their syntax, benefits, and use cases through practical examples."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/javascriptPrincipals/ArrowFunctions"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="JavaScript, arrow functions, ES6, fat arrow functions, JavaScript functions, JavaScript tutorial, web development"
+                />
+            </Helmet>
             <div className="container">
                 <h1 className="satisfyFont py-10 text-center text-8xl font-bold">
                     Arrow Functions🏹

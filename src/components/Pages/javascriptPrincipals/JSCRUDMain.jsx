@@ -1,8 +1,26 @@
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
+
 
 function JSCRUDMain() {
     return (
         <div className="container text-xl">
+            <Helmet>
+                <title>CRUD Operations with APIs | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn how to perform CRUD (Create, Read, Update, Delete) operations with APIs using different methods like AJAX, Axios, and Fetch. Find useful resources and example repositories."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/javascriptPrincipals/CRUD-Main"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="CRUD operations, APIs, JavaScript CRUD, AJAX, Axios, Fetch API, coding tutorial, web development, API examples"
+                />
+            </Helmet>
             <h1 className="my-10 text-center text-6xl">
                 CRUD Operations with API's
             </h1>
@@ -11,16 +29,23 @@ function JSCRUDMain() {
                     to="/javascriptPrincipals/CRUD-AJAX"
                     className="mx-auto text-3xl"
                 >
-                    <p>AJAX/Axios</p>
+                    <button className="rounded-xl bg-blue-700 p-2 text-white hover:bg-blue-500">
+                        AJAX/Axios
+                    </button>
                 </Link>
                 <Link
                     to="/javascriptPrincipals/CRUD-Fetch"
                     className="mx-auto text-3xl"
                 >
-                    <p>Fetch</p>
+                    <button className="rounded-xl bg-blue-700 p-2 text-white hover:bg-blue-500">
+                        Fetch
+                    </button>
                 </Link>
             </div>
             <hr className="my-5 border border-black dark:border-white" />
+            <p className="mb-4 text-center font-semibold">
+                Above are links to see examples that you can use as templates.
+            </p>
             <p>
                 <span className="text-2xl font-bold">
                     CRUD stands for Create, Read, Update, and Delete.

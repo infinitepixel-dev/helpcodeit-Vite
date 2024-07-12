@@ -1,8 +1,8 @@
 import { useRef, useEffect, Suspense, lazy } from 'react'
 import { Link } from 'react-router-dom'
 import hljs from 'highlight.js'
-import CopyButton from '../../Sub_Components/CopyButton'
-import codeContainerStyles from '../../CSS_Wrappers/Code_container.module.css'
+import { Helmet } from 'react-helmet-async'
+
 
 const CodePractice = lazy(() => import('../../Sub_Components/Code_Practice'))
 
@@ -73,6 +73,24 @@ function StandardFunctions() {
             //     height: '100vh',
             // }}
         >
+            <Helmet>
+                <title>
+                    JavaScript Functions: A Beginner's Guide | Help Code It
+                </title>
+                <meta
+                    name="description"
+                    content="Learn about JavaScript functions with this beginner's guide. Understand what functions are, how to create and use them, and why they are important for coding. Includes examples and explanations."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/javascriptPrincipals/StandardFunctions"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="JavaScript functions, beginner guide, coding tutorial, create functions, use functions, coding examples, web development"
+                />
+            </Helmet>
             <div className="flex flex-col">
                 <div className="observeMe">
                     <h1 className="my-20 text-center text-5xl">

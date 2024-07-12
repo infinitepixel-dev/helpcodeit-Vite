@@ -4,6 +4,8 @@ import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
 import reloadImg from '../../../assets/Feather refresh icon.svg'
 import reloadingDark from '../../../assets/refreshdark.svg'
+import { Helmet } from 'react-helmet-async'
+
 
 import CopyButton from '../../Sub_Components/CopyButton' //REVIEW Import the CopyButton
 
@@ -55,6 +57,22 @@ do {
 
     return (
         <div className="min-h-full min-w-full pb-40 ">
+            <Helmet>
+                <title>JavaScript Loops | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn about different types of loops in JavaScript including for loops, while loops, and do...while loops. Understand their use cases with practical examples."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/javascriptPrincipals/Loops"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="JavaScript loops, for loop, while loop, do...while loop, coding tutorial, JavaScript tutorial, web development"
+                />
+            </Helmet>
             <div className="container">
                 <h1 className="py-10 text-center text-8xl font-bold">
                     Loops...<span className="text-5xl"> in JavaScript</span>{' '}
