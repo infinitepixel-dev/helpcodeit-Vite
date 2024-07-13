@@ -5,7 +5,7 @@ import ClipboardCopyCheckedIcon from '../../assets/clipboard-copy-checked.svg'
 import styles from './CopyButton.module.css'
 import { gsap } from 'gsap'
 
-const CopyButton = ({ textToCopy }) => {
+const CopyButton = ({ textToCopy, position }) => {
     const [copied, setCopied] = useState(false)
     const iconRef = useRef(null)
 
@@ -74,7 +74,8 @@ const CopyButton = ({ textToCopy }) => {
     return (
         <button
             onClick={() => copyToClipboard(textToCopy)}
-            className="copy-btn absolute bottom-0 left-0 m-1"
+            className={`copy-btn absolute m-1 ${position}`}
+
         >
             {copied ? (
                 <img

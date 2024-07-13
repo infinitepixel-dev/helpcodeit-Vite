@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import './Navbar.module.css'
 
 import gsap from 'gsap'
+import { Nav } from 'react-bootstrap'
 
 function Navbar({ theme }) {
     const [navbarCollapse, setNavbarCollapse] = useState(false)
@@ -137,7 +138,7 @@ function Navbar({ theme }) {
                         >
                             Home
                         </NavLink>
-                        
+
                         {/* Dropdown for links */}
                         <div className="dropdown relative inline-block ">
                             <button
@@ -238,6 +239,12 @@ function Navbar({ theme }) {
                                     >
                                         React.js
                                     </NavLink>
+                                    <NavLink
+                                    to={'/data-generator'}
+                                    className="whitespace-no-wrap text-base block rounded bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                >
+                                    Data Generator
+                                </NavLink>
                                 </li>
                             </ul>
                         </div>
