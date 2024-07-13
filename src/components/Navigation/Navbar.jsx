@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 import './Navbar.module.css'
 
 import gsap from 'gsap'
-import { Nav } from 'react-bootstrap'
+// import { Nav } from 'react-bootstrap'
 
 function Navbar({ theme }) {
     const [navbarCollapse, setNavbarCollapse] = useState(false)
