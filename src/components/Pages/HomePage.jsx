@@ -13,6 +13,7 @@ function HomePage({ theme }) {
     }
     return (
         <div>
+
             <Helmet>
                 <title>Help Code It | Resources for Beginning Developers</title>
                 <meta

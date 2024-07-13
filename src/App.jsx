@@ -12,6 +12,7 @@ import ScheduleMeeting from './components/Pages/ScheduleMeeting.jsx'
 // Lazy loading components
 const HomePage = lazy(() => import('./components/Pages/HomePage'))
 const About = lazy(() => import('./components/Pages/About'))
+const DataGenerator = lazy(() => import('./components/Sub_Components/DataGenerator'))
 const JavascriptMainPage = lazy(
     () => import('./components/Pages/JavascriptMainPage')
 )
@@ -116,6 +117,7 @@ export default function App() {
         { path: '/', component: <HomePage theme={theme} /> },
         { path: '/about', component: <About /> },
         { path: '/schedule-meeting', component: <ScheduleMeeting />},
+        { path: '/data-generator', component: <DataGenerator /> },
 
         // Fundamentals
         { path: '/fundamentals/GitHub', component: <GitHub /> },
