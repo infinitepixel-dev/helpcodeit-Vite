@@ -90,6 +90,12 @@ const VSCodeHotkeysTable = lazy(
 const MenuApp = lazy(
     () => import('./components/Pages/javascriptPrincipals/MenuApp')
 )
+const PropsAndState = lazy(
+    () => import('./components/Pages/react/PropsAndState')
+)
+const PlanningReactApps = lazy(
+    () => import('./components/Pages/react/PlanningReactApps')
+)
 
 
 export default function App() {
@@ -191,6 +197,8 @@ export default function App() {
         { path: '/ReactMain', component: <ReactMain /> },
         { path: '/ReactComponents', component: <ReactComponents /> },
         { path: '/ReactRouter6', component: <ReactRouter6 /> },
+        {path: '/PropsAndState', component: <PropsAndState />},
+        {path: '/PlanningReactApps', component: <PlanningReactApps />},
 
         // Default
         { path: '*', component: <HomePage /> },
