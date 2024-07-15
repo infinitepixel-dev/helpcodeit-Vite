@@ -82,17 +82,21 @@ function Navbar({ theme }) {
                         : 'flex content-center justify-between py-5'
                 }
             >
-                <NavLink to="/">
-                    <p ref={logoRef}>
-                        <img
-                            src={logo}
-                            alt="help code it logo"
-                            className="ms-2 rounded-lg" //REVIEW Animation
-                            height="50px"
-                            width="50px"
-                        ></img>
-                    </p>
-                </NavLink>
+                <div className="grid">
+                    <NavLink to="/">
+                        <p ref={logoRef}>
+                            <img
+                                src={logo}
+                                alt="help code it logo"
+                                className="ms-2 rounded-lg" //REVIEW Animation
+                                height="50px"
+                                width="50px"
+                            ></img>
+
+                        </p>
+                    </NavLink>
+                </div>
+                
                 {/* Will return a non-boolean attribute error */}
                 {/* <div className={isSmallScreen && "justify-end py-2"}> */}
                 <div className={isSmallScreen ? 'justify-end py-2' : undefined}>
