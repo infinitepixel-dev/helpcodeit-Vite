@@ -58,6 +58,14 @@ export default function reactmain() {
                 >
                    Understanding Props and State
                 </Link>
+                <br />
+                <Link
+                    className="text-2xl font-bold hover:text-blue-600"
+                    to="/PlanningReactApps"
+                >
+                    Planning and Organizing React Apps
+                </Link>
+
             </div>
         </div>
     )
