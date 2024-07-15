@@ -85,7 +85,7 @@ const ScheduleMeeting = () => {
                                 duration: '1 hour',
                                 price: '$49.99',
                                 description:
-                                    'Comprehensive evening sessions for in-depth problem-solving and guidance.',
+                                    'Comprehensive evening sessions for urgent matters or busy schedules. 1 hour of in-depth problem-solving and guidance.',
                                 link: 'https://calendly.com/michaelvarnell/1-hour-session-after-hours',
                                 isAfterHours: true,
                             },
@@ -148,11 +148,10 @@ const ScheduleMeeting = () => {
                                 web experiences.
                             </p>
                             <p className="text-gray-700">
-                                As an educator at Promineo Tech, Michael is
-                                deeply committed to guiding students through the
-                                intricacies of front-end development, inspiring
-                                them to discover innovative solutions in their
-                                projects.
+                                As an educator, Michael is deeply committed to
+                                guiding students through the intricacies of
+                                front-end development, inspiring them to
+                                discover innovative solutions in their projects.
                             </p>
                         </div>
                         <div>
