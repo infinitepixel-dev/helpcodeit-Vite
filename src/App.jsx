@@ -8,13 +8,13 @@ import { Routes, Route } from 'react-router-dom'
 import Footer from './components/Sub_Components/Footer'
 import War from './components/Pages/javascriptPrincipals/War.jsx'
 import ScheduleMeeting from './components/Pages/ScheduleMeeting.jsx'
-import PropsAndState from './components/Pages/react/PropsAndState.jsx'
-import PlanningReactApps from './components/Pages/react/PlanningReactApps.jsx'
 
 // Lazy loading components
 const HomePage = lazy(() => import('./components/Pages/HomePage'))
 const About = lazy(() => import('./components/Pages/About'))
-const DataGenerator = lazy(() => import('./components/Sub_Components/DataGenerator'))
+const DataGenerator = lazy(
+    () => import('./components/Sub_Components/DataGenerator')
+)
 const JavascriptMainPage = lazy(
     () => import('./components/Pages/JavascriptMainPage')
 )
@@ -92,8 +92,12 @@ const VSCodeHotkeysTable = lazy(
 const MenuApp = lazy(
     () => import('./components/Pages/javascriptPrincipals/MenuApp')
 )
-
-
+const PropsAndState = lazy(
+    () => import('./components/Pages/react/PropsAndState')
+)
+const PlanningReactApps = lazy(
+    () => import('./components/Pages/react/PlanningReactApps')
+)
 
 export default function App() {
     const [theme, setTheme] = useState(
@@ -119,7 +123,7 @@ export default function App() {
         // Home
         { path: '/', component: <HomePage theme={theme} /> },
         { path: '/about', component: <About /> },
-        { path: '/schedule-meeting', component: <ScheduleMeeting />},
+        { path: '/schedule-meeting', component: <ScheduleMeeting /> },
         { path: '/data-generator', component: <DataGenerator /> },
 
         // Fundamentals
@@ -188,14 +192,14 @@ export default function App() {
         { path: '/javascriptPrincipals/CRUD-AJAX', component: <AJAX /> },
         { path: '/javascriptPrincipals/CRUD-Fetch', component: <Fetch /> },
         { path: '/javascriptPrincipals/MenuApp', component: <MenuApp /> },
-        {path: '/javascriptPrincipals/WarGameTutorial', component: <War />},
+        { path: '/javascriptPrincipals/WarGameTutorial', component: <War /> },
 
         // React
         { path: '/ReactMain', component: <ReactMain /> },
         { path: '/ReactComponents', component: <ReactComponents /> },
         { path: '/ReactRouter6', component: <ReactRouter6 /> },
-        {path: '/PropsAndState', component: <PropsAndState />},
-        {path: '/PlanningReactApps', component: <PlanningReactApps />},
+        { path: '/PropsAndState', component: <PropsAndState /> },
+        { path: '/PlanningReactApps', component: <PlanningReactApps /> },
 
         // Default
         { path: '*', component: <HomePage /> },
