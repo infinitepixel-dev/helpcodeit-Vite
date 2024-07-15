@@ -8,6 +8,8 @@ import { Routes, Route } from 'react-router-dom'
 import Footer from './components/Sub_Components/Footer'
 import War from './components/Pages/javascriptPrincipals/War.jsx'
 import ScheduleMeeting from './components/Pages/ScheduleMeeting.jsx'
+import PropsAndState from './components/Pages/react/PropsAndState.jsx'
+import PlanningReactApps from './components/Pages/react/PlanningReactApps.jsx'
 
 // Lazy loading components
 const HomePage = lazy(() => import('./components/Pages/HomePage'))
@@ -90,12 +92,7 @@ const VSCodeHotkeysTable = lazy(
 const MenuApp = lazy(
     () => import('./components/Pages/javascriptPrincipals/MenuApp')
 )
-const PropsAndState = lazy(
-    () => import('./components/Pages/react/PropsAndState')
-)
-const PlanningReactApps = lazy(
-    () => import('./components/Pages/react/PlanningReactApps')
-)
+
 
 
 export default function App() {
