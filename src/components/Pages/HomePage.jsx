@@ -54,11 +54,11 @@ function HomePage({ theme }) {
             </div>
             {/* !SECTION end Jumbotron */}
             <div className="justify-center">
-                <h2 className="mt-5 text-center text-5xl font-bold">
+                <h2 className="mt-5 text-center text-3xl font-bold">
                     Get expert coding help and tutoring - Book a session now!
                 </h2>
                 <Link to="/schedule-meeting">
-                    <div className="mx-auto my-4 w-fit rounded-full bg-blue-700 px-4 py-2 text-lg font-bold text-white hover:bg-red-700 ">
+                    <div className="mx-auto my-3 w-fit rounded-full bg-blue-700 px-4 py-1 text-lg font-bold text-white hover:bg-red-700 ">
                         Explore Meeting Options
                     </div>
                 </Link>
