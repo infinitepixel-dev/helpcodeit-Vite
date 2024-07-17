@@ -86,7 +86,8 @@
 
     .card-max {
         width: auto;
-        height: 350px;
+        max-height: 350px;
+        min-height: fit-content;
     }
 
     .cardImageFormat {
@@ -101,6 +102,12 @@
 
     .code-height {
         height: 100%;
+    }
+
+    .code-prob-card-img {
+        max-height: 131.19px;
+        min-height: 90px;
+
     }
 
     .communityText {

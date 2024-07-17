@@ -53,7 +53,7 @@ function HomePage({ theme }) {
                 </div>
             </div>
             {/* !SECTION end Jumbotron */}
-            <div className="justify-center">
+            <div className="justify-center ">
                 <h2 className="mt-5 text-center text-3xl font-bold">
                     Get expert coding help and tutoring - Book a session now!
                 </h2>
@@ -63,7 +63,8 @@ function HomePage({ theme }) {
                     </div>
                 </Link>
             </div>
-            <div className=" text-white dark:bg-neutral-900">
+
+            <div className=" text-white  pb-10">
                 <MainCards />
             </div>
         </div>
