@@ -12,21 +12,23 @@ export default function MainCards() {
     // console.log("Styles: ", styles);
 
     return (
-        <div className="mx-16 pb-44 grid h-full items-stretch gap-10 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-4">
+        <div className="mx-auto pt-10 grid items-stretch gap-5 rounded-b sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-2 container">
                     {/* SECTION Card #4 BEGIN */}
-                    <a href="https://codeproblems.michaelvarnell.com" target="_blank" >
-                        <Card
-                            imageSrc={codeproblems}
-                            customCSS={{
-                                image: 'border-black bg-stone-400 dark:bg-stone-500',
-                                letsGoBtn: 'bg-red-900',
-                            }}
-                            title="Code Problems"
-                            description="Free coding problems to help level up your skills, and practice those fundamentals."
-                            actionText="Let's Go"
-                            styles={styles}
-                        />
-                    </a>
+                    <div>
+                        <a href="https://codeproblems.michaelvarnell.com" target="_blank" >
+                            <Card
+                                imageSrc={codeproblems}
+                                customCSS={{
+                                    image: 'border-black bg-stone-400 dark:bg-stone-500',
+                                    letsGoBtn: 'bg-red-900',
+                                }}
+                                title="Code Problems"
+                                description="Free coding problems to help level up your skills, and practice those fundamentals."
+                                actionText="Let's Go"
+                                styles={styles}
+                            />
+                        </a>
+                    </div>
                     {/* !SECTION Card #4 END */}
             {/* SECTION Card #1 */}
             <Link to="/fundamentals/Installs">
