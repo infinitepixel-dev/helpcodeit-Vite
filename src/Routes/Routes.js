@@ -1,10 +1,10 @@
 
-import React, { lazy } from 'react';
-import War from '../components/Pages/javascriptPrincipals/War.jsx'
-import ScheduleMeeting from '../components/Pages/ScheduleMeeting.jsx'
+import { lazy } from 'react';
+
 
 // Lazy loading components
 const HomePage = lazy(() => import('../components/Pages/HomePage'))
+const ScheduleMeeting = lazy(() => import('../components/Pages/ScheduleMeeting'))
 const About = lazy(() => import('../components/Pages/About'))
 const DataGenerator = lazy(
     () => import('../components/Sub_Components/DataGenerator')
@@ -57,19 +57,21 @@ const Fetch = lazy(
         import(
             '../components/Pages/javascriptPrincipals/CRUD/CRUD_Operations/Fetch'
         )
-)
-const GitHub = lazy(() => import('../components/Pages/fundamentals/GitHub'))
-const GitHubCheatsheet = lazy(
-    () => import('../components/Pages/fundamentals/GitHubCheatsheet')
-)
-const Installs = lazy(() => import('../components/Pages/fundamentals/Installs'))
-const PracticeEnvironment = lazy(
-    () => import('../components/Pages/fundamentals/PracticeEnvironment')
-)
-const StringConcatenation = lazy(
-    () => import('../components/Pages/javascriptPrincipals/StringConcatenation')
-)
-const UnitTestingMochaChai = lazy(
+    )
+    const GitHub = lazy(() => import('../components/Pages/fundamentals/GitHub'))
+    const GitHubCheatsheet = lazy(
+        () => import('../components/Pages/fundamentals/GitHubCheatsheet')
+    )
+    const Installs = lazy(() => import('../components/Pages/fundamentals/Installs'))
+    const PracticeEnvironment = lazy(
+        () => import('../components/Pages/fundamentals/PracticeEnvironment')
+    )
+
+    const War = lazy(() => import('../components/Pages/javascriptPrincipals/War'))
+    const StringConcatenation = lazy(
+        () => import('../components/Pages/javascriptPrincipals/StringConcatenation')
+    )
+    const UnitTestingMochaChai = lazy(
     () => import('../components/Pages/javascriptPrincipals/UnitTestingMochaChai')
 )
 const VSCodeExtensions = lazy(
@@ -95,49 +97,49 @@ const PlanningReactApps = lazy(
 
 const routes = {
     // Home
-    home: { path: '/', component: HomePage, props: { theme: theme } },
-    about: { path: '/about', component: About, props: {} },
-    scheduleMeeting: { path: '/schedule-meeting', component: ScheduleMeeting, props: {} },
-    dataGenerator: { path: '/data-generator', component: DataGenerator, props: {} },
+    home: { path: '/', component: HomePage },
+    about: { path: '/about', component: About },
+    scheduleMeeting: { path: '/schedule-meeting', component: ScheduleMeeting },
+    dataGenerator: { path: '/data-generator', component: DataGenerator },
 
     // Fundamentals
-    gitHub: { path: '/fundamentals/GitHub', component: GitHub, props: {} },
-    vsCodeHotkeysTable: { path: '/fundamentals/VSCodeHotkeysTable', component: VSCodeHotkeysTable, props: {} },
-    bootstrap: { path: '/fundamentals/Bootstrap', component: Bootstrap, props: {} },
-    installs: { path: '/fundamentals/Installs', component: Installs, props: {} },
-    vsCodeExtensions: { path: '/fundamentals/VSCodeExtensions', component: VSCodeExtensions, props: {} },
-    settingUpPracticeEnvironment: { path: '/fundamentals/SettingUpPracticeEnvironment', component: PracticeEnvironment, props: {} },
-    gitHubCheatsheet: { path: '/fundamentals/GitHubCheatsheet', component: GitHubCheatsheet, props: {} },
+    gitHub: { path: '/fundamentals/GitHub', component: GitHub },
+    vsCodeHotkeysTable: { path: '/fundamentals/VSCodeHotkeysTable', component: VSCodeHotkeysTable },
+    bootstrap: { path: '/fundamentals/Bootstrap', component: Bootstrap },
+    installs: { path: '/fundamentals/Installs', component: Installs },
+    vsCodeExtensions: { path: '/fundamentals/VSCodeExtensions', component: VSCodeExtensions },
+    settingUpPracticeEnvironment: { path: '/fundamentals/SettingUpPracticeEnvironment', component: PracticeEnvironment },
+    gitHubCheatsheet: { path: '/fundamentals/GitHubCheatsheet', component: GitHubCheatsheet },
 
     // JavaScript
-    javascriptMain: { path: '/javascript', component: JavascriptMainPage, props: {} },
-    practiceProblems: { path: '/javascriptPrincipals/PracticeProblems', component: PracticeProblems, props: {} },
-    declaringVariables: { path: '/javascriptPrincipals/DeclaringVariables', component: DeclaringVariables, props: {} },
-    stringConcatenation: { path: '/javascriptPrincipals/StringConcatenation', component: StringConcatenation, props: {} },
-    standardFunctions: { path: '/javascriptPrincipals/StandardFunctions', component: StandardFunctions, props: {} },
-    unitTestingMochaChai: { path: '/javascriptPrincipals/UnitTestingMochaChai', component: UnitTestingMochaChai, props: {} },
-    loops: { path: '/javascriptPrincipals/Loops', component: Loops, props: {} },
-    codePractice: { path: '/code_practice', component: CodePractice, props: {} },
-    objects: { path: '/javascriptPrincipals/Objects', component: JSObjects, props: {} },
-    arrowFunctions: { path: '/javascriptPrincipals/ArrowFunctions', component: ArrowFunctions, props: {} },
-    arrayMethods: { path: '/javascriptPrincipals/ArrayMethods', component: ArrayMethods, props: {} },
-    stringMethods: { path: '/javascriptPrincipals/StringMethods', component: StringMethods, props: {} },
-    packagesAndPackageJson: { path: '/javascriptPrincipals/PackagesAndPackageJson', component: PackagesAndPackageJson, props: {} },
-    crudMain: { path: '/javascriptPrincipals/CRUD-Main', component: JSCRUDMain, props: {} },
-    crudAjax: { path: '/javascriptPrincipals/CRUD-AJAX', component: AJAX, props: {} },
-    crudFetch: { path: '/javascriptPrincipals/CRUD-Fetch', component: Fetch, props: {} },
-    menuApp: { path: '/javascriptPrincipals/MenuApp', component: MenuApp, props: {} },
-    warGameTutorial: { path: '/javascriptPrincipals/WarGameTutorial', component: War, props: {} },
+    javascriptMain: { path: '/javascript', component: JavascriptMainPage },
+    practiceProblems: { path: '/javascriptPrincipals/PracticeProblems', component: PracticeProblems },
+    declaringVariables: { path: '/javascriptPrincipals/DeclaringVariables', component: DeclaringVariables },
+    stringConcatenation: { path: '/javascriptPrincipals/StringConcatenation', component: StringConcatenation },
+    standardFunctions: { path: '/javascriptPrincipals/StandardFunctions', component: StandardFunctions },
+    unitTestingMochaChai: { path: '/javascriptPrincipals/UnitTestingMochaChai', component: UnitTestingMochaChai },
+    loops: { path: '/javascriptPrincipals/Loops', component: Loops },
+    codePractice: { path: '/code_practice', component: CodePractice },
+    objects: { path: '/javascriptPrincipals/Objects', component: JSObjects },
+    arrowFunctions: { path: '/javascriptPrincipals/ArrowFunctions', component: ArrowFunctions },
+    arrayMethods: { path: '/javascriptPrincipals/ArrayMethods', component: ArrayMethods },
+    stringMethods: { path: '/javascriptPrincipals/StringMethods', component: StringMethods },
+    packagesAndPackageJson: { path: '/javascriptPrincipals/PackagesAndPackageJson', component: PackagesAndPackageJson },
+    crudMain: { path: '/javascriptPrincipals/CRUD-Main', component: JSCRUDMain },
+    crudAjax: { path: '/javascriptPrincipals/CRUD-AJAX', component: AJAX },
+    crudFetch: { path: '/javascriptPrincipals/CRUD-Fetch', component: Fetch },
+    menuApp: { path: '/javascriptPrincipals/MenuApp', component: MenuApp },
+    warGameTutorial: { path: '/javascriptPrincipals/WarGameTutorial', component: War },
 
     // React
-    reactMain: { path: '/ReactMain', component: ReactMain, props: {} },
-    reactComponents: { path: '/ReactComponents', component: ReactComponents, props: {} },
-    reactRouter: { path: '/ReactRouter6', component: ReactRouter6, props: {} },
-    propsAndState: { path: '/PropsAndState', component: PropsAndState, props: {} },
-    planningApps: { path: '/PlanningReactApps', component: PlanningReactApps, props: {} },
+    reactMain: { path: '/ReactMain', component: ReactMain },
+    reactComponents: { path: '/ReactComponents', component: ReactComponents },
+    reactRouter: { path: '/ReactRouter6', component: ReactRouter6 },
+    propsAndState: { path: '/PropsAndState', component: PropsAndState },
+    planningApps: { path: '/PlanningReactApps', component: PlanningReactApps },
 
     // Default
-    default: { path: '*', component: HomePage, props: { theme: theme } },
+    default: { path: '*', component: HomePage },
 };
 
 export default routes;

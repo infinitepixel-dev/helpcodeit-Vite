@@ -40,9 +40,13 @@ export default function App() {
 
                 <Suspense fallback={<div>Loading...</div>}>
                     <Routes>
-                        {Object.values(routes).map(({ path, component }) => (
-                            <Route key={path} path={path} element={component} />
-                        ))}
+                        {Object.values(routes).map(({ path, component}) => {
+                            return (
+                                <Route key={path} path={path} element={component} />
+                            )
+                        }
+                        )}
+
                     </Routes>
                 </Suspense>
 
