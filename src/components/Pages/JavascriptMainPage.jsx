@@ -176,6 +176,14 @@ function JavascriptMainPage() {
                                     War Game
                                 </Link>
                             </li>
+                            <li className="mx-auto py-2 text-xl font-bold">
+                                <Link
+                                    to="/javascriptPrincipals/JSONServer"
+                                    className="jsMainPageLink"
+                                >
+                                    JSON Server
+                                </Link>
+                            </li>
                         </ul>
                     </div>
                 </div>
