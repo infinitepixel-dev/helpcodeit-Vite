@@ -98,6 +98,9 @@ const PropsAndState = lazy(
 const PlanningReactApps = lazy(
     () => import('./components/Pages/react/PlanningReactApps')
 )
+const JSONServer = lazy(
+    () => import('./components/Pages/javascriptPrincipals/JSONServer')
+)
 
 export default function App() {
     const [theme, setTheme] = useState(
@@ -193,6 +196,7 @@ export default function App() {
         { path: '/javascriptPrincipals/CRUD-Fetch', component: <Fetch /> },
         { path: '/javascriptPrincipals/MenuApp', component: <MenuApp /> },
         { path: '/javascriptPrincipals/WarGameTutorial', component: <War /> },
+        { path: '/javascriptPrincipals/JSONServer', component: <JSONServer /> },
 
         // React
         { path: '/ReactMain', component: <ReactMain /> },
