@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-// import { propTypes } from 'prop-types'
+ import  propTypes  from 'prop-types'
 import logo from '../../assets/helpcodeitlogo.svg'
 import { NavLink } from 'react-router-dom'
 import './Navbar.module.css'
@@ -291,8 +291,8 @@ function Navbar({ theme }) {
     )
 }
 
-export default Navbar
+Navbar.propTypes = {
+    theme: propTypes.bool,
+}
 
-// Navbar.propTypes = {
-//     theme: propTypes.bool,
-// }
+export default Navbar
