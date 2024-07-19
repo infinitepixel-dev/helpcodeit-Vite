@@ -8,7 +8,7 @@ import { Routes, Route } from 'react-router-dom'
 import routes from './Routes/Routes'
 import Footer from './components/Sub_Components/Footer'
 
-
+// console.log(routes);
 export default function App() {
     const [theme, setTheme] = useState(
         window.matchMedia('(prefers-color-scheme: light)').matches
@@ -29,6 +29,18 @@ export default function App() {
         }
     }, [])
 
+    const routeElements = Object.entries(routes).map(([key, route]) => {
+        const { path, component: Component, props } = route;
+        // console.log('Routes:', routes); // Debug log
+        // console.log('Key:', key, 'Component:', Component, 'Path:', path); // Debug log
+        return (
+            <Route
+                key={key}
+                path={path}
+                element={<Component {...(props || {})}/>}
+            />
+        );
+    });
 
 
     return (
@@ -39,15 +51,7 @@ export default function App() {
                 </div>
 
                 <Suspense fallback={<div>Loading...</div>}>
-                    <Routes>
-                        {Object.values(routes).map(({ path, component}) => {
-                            return (
-                                <Route key={path} path={path} element={component} />
-                            )
-                        }
-                        )}
-
-                    </Routes>
+            <Routes>{routeElements}</Routes>
                 </Suspense>
 
                 <div className="m-0 mt-5 w-full p-0">
