@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 
-const routeDefinitions = [
+const routes = [
   //INFO: MISC Pages
   { path: '*', componentPath: '../components/Pages/HomePage', key: 'default' },
   { path: '/', componentPath: '../components/Pages/HomePage', key: 'home' },
@@ -26,6 +26,7 @@ const routeDefinitions = [
   { path: '/javascriptPrincipals/CRUD-Fetch', componentPath: '../components/Pages/javascriptPrincipals/CRUD/CRUD_Operations/Fetch', key: 'crudFetch' },
   { path: '/javascriptPrincipals/MenuApp', componentPath: '../components/Pages/javascriptPrincipals/MenuApp', key: 'menuApp' },
   { path: '/javascriptPrincipals/WarGameTutorial', componentPath: '../components/Pages/javascriptPrincipals/War', key: 'warGameTutorial' },
+  { path: '/javascriptPrincipals/JSONServer', componentPath: '../components/Pages/javascriptPrincipals/JSONServer', key: 'JSONServer'},
  //INFO: FUNDAMENTALS Pages
   { path: '/fundamentals/GitHub', componentPath: '../components/Pages/fundamentals/GitHub', key: 'gitHub' },
   { path: '/fundamentals/VSCodeHotkeysTable', componentPath: '../components/Pages/fundamentals/VSCodeHotkeysTable', key: 'vsCodeHotkeysTable' },
@@ -42,15 +43,25 @@ const routeDefinitions = [
   { path: '/PlanningReactApps', componentPath: '../components/Pages/react/PlanningReactApps', key: 'planningApps' },
 ];
 
-const components = {};
-const routes = {};
+// const components = {};
+// const routes = {};
 
-routeDefinitions.forEach(route => {
-  components[route.key] = lazy(() => import(
-    /* @vite-ignore */
-    `${route.componentPath}`
-));
-  routes[route.key] = { path: route.path, component: components[route.key] };
+// routeDefinitions.forEach(route => {
+//   components[route.key] = lazy(() => import(
+//     /* @vite-ignore */
+//     `${route.componentPath}`
+// ));
+//   routes[route.key] = { path: route.path, component: components[route.key] };
+// });
+
+const components = {};
+routes.forEach(route => {
+  components[route.key] = lazy(() => import(/* @vite-ignore */ route.componentPath));
 });
 
-export default routes;
+const routesWithComponents = routes.map(route => ({
+  ...route,
+  component: components[route.key],
+}));
+
+export default routesWithComponents;

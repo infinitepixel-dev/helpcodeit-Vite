@@ -26,13 +26,29 @@ export default function App() {
         }
     }, [])
 
-    const routeElements = Object.entries(routes).map(([key, route]) => {
-        const { path, component: Component, props } = route;
+    // const routeElements = Object.entries(routes).map(([key, route]) => {
+    //     const { path, component: Component, props } = route;
+    //     return (
+    //         <Route
+    //             key={key}
+    //             path={path}
+    //             element={<Component {...(props || {})} />}
+    //         />
+    //     );
+    // });
+
+
+    const routeElements = routes.map(({ key, path, component: Component, props }) => {
+        // console.log('Key:', key, 'Component:', Component, 'Path:', path); // Debug log
         return (
             <Route
                 key={key}
                 path={path}
-                element={<Component {...(props || {})} />}
+                element={
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <Component {...(props || {})} theme={theme} />
+                    </Suspense>
+                }
             />
         );
     });
