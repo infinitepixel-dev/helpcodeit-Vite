@@ -73,11 +73,24 @@ function JSONServer() {
             <p>
                 1. Create a `db.json` file with some data:
             </p>
+
             <pre>
                 <code ref={codeRef} className="json mt-4 text-base">
                     {sampleDbJson}
                 </code>
             </pre>
+            
+            <div className="border mb-5 border-black rounded-2xl px-5 py-3 w-fit bg-slate-300 dark:bg-slate-600">
+                <h2 className="text-2xl">Endpoints</h2>
+                <p>The 'posts', 'comments' and 'profile' in the example above all count as endpoints. <br />
+                This means your address would be
+                <ul className='list-disc ml-5'>
+                    <li className='font-semibold list'>http://localhost:3000/posts</li>
+                    <li className='font-semibold'> http://localhost:3000/comments</li>
+                    <li className='font-semibold'> http://localhost:3000/profile</li>
+                </ul>
+                </p>
+            </div>
             <p>
                 2. Start JSON-Server:
             </p>
@@ -116,24 +129,24 @@ function JSONServer() {
                 </thead>
                 <tbody>
                     <tr>
-                        <td className="border border-gray-300 dark:border-gray-700 p-2"><pre><code ref={codeRef} className="json mt-4 text-base">json-server --watch db.json</code></pre></td>
-                        <td className="border border-gray-300 dark:border-gray-700 p-2">Start JSON-Server and watch db.json for changes</td>
+                        <td className="border dark:bg-gray-600 border-gray-300 dark:border-gray-700 p-2"><pre><code ref={codeRef} className="json mt-4 text-base">json-server --watch db.json</code></pre></td>
+                        <td className="border dark:bg-gray-600 border-gray-300 dark:border-gray-700 p-2">Start JSON-Server and watch db.json for changes</td>
                     </tr>
                     <tr>
-                        <td className="border border-gray-300 dark:border-gray-700 p-2"><pre><code ref={codeRef} className="json mt-4 text-base">json-server --watch db.json --port 3004</code></pre></td>
-                        <td className="border border-gray-300 dark:border-gray-700 p-2">Start JSON-Server on a custom port</td>
+                        <td className="border dark:bg-gray-600 border-gray-300 dark:border-gray-700 p-2"><pre><code ref={codeRef} className="json mt-4 text-base">json-server --watch db.json --port 3004</code></pre></td>
+                        <td className="border dark:bg-gray-600 border-gray-300 dark:border-gray-700 p-2">Start JSON-Server on a custom port</td>
                     </tr>
                     <tr>
-                        <td className="border border-gray-300 dark:border-gray-700 p-2"><pre><code ref={codeRef} className="json mt-4 text-base">json-server --watch db.json --routes routes.json</code></pre></td>
-                        <td className="border border-gray-300 dark:border-gray-700 p-2">Use a custom routes file</td>
+                        <td className="border dark:bg-gray-600 border-gray-300 dark:border-gray-700 p-2"><pre><code ref={codeRef} className="json mt-4 text-base">json-server --watch db.json --routes routes.json</code></pre></td>
+                        <td className="border dark:bg-gray-600 border-gray-300 dark:border-gray-700 p-2">Use a custom routes file</td>
                     </tr>
                     <tr>
-                        <td className="border border-gray-300 dark:border-gray-700 p-2"><pre><code ref={codeRef} className="json mt-4 text-base">json-server db.json --id _id</code></pre></td>
-                        <td className="border border-gray-300 dark:border-gray-700 p-2">Set a custom ID field</td>
+                        <td className="border dark:bg-gray-600 border-gray-300 dark:border-gray-700 p-2"><pre><code ref={codeRef} className="json mt-4 text-base">json-server db.json --id _id</code></pre></td>
+                        <td className="border dark:bg-gray-600 border-gray-300 dark:border-gray-700 p-2">Set a custom ID field</td>
                     </tr>
                     <tr>
-                        <td className="border border-gray-300 dark:border-gray-700 p-2"><pre><code ref={codeRef} className="json mt-4 text-base">json-server --watch db.json --delay 2000</code></pre></td>
-                        <td className="border border-gray-300 dark:border-gray-700 p-2">Add a delay to responses (ms)</td>
+                        <td className="border dark:bg-gray-600 border-gray-300 dark:border-gray-700 p-2"><pre><code ref={codeRef} className="json mt-4 text-base">json-server --watch db.json --delay 2000</code></pre></td>
+                        <td className="border dark:bg-gray-600 border-gray-300 dark:border-gray-700 p-2">Add a delay to responses (ms)</td>
                     </tr>
                 </tbody>
             </table>
