@@ -9,6 +9,7 @@ import {
 } from '@ngneat/falso'
 import React, { useState, useRef } from 'react'
 import CopyButton from './CopyButton'
+import { Link } from 'react-router-dom'
 
 import AceEditor from 'react-ace'
 
@@ -74,6 +75,11 @@ function DataGenerator() {
                     <li>- Then run json-server db.json </li>
                     <li>- Then you can access your data at http://localhost:3000/your-endpoint</li>
                 </ul>
+                    <Link to="/javascriptPrincipals/JSONServer">
+                <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg mt-5" >
+                    Learn More About json-server
+                </button>
+                    </Link>
             </div>
             <form className=" mt-8 max-w-md rounded-lg p-6 shadow-md">
                 <div className="mb-4">
