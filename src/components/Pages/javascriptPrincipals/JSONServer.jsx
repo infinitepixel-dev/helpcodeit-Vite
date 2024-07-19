@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
 import { Helmet } from 'react-helmet-async';
@@ -56,7 +56,7 @@ function JSONServer() {
 
             <h3 className="my-5 text-2xl">What is JSON-Server?</h3>
             <p>
-                JSON-Server is a Node module that allows you to create a full fake REST API with zero coding in less than 30 seconds. It's perfect for prototyping and mocking, and it's very easy to set up and use.
+                JSON-Server is a Node module that allows you to create a full fake REST API with zero coding in less than 30 seconds. It&apos;s perfect for prototyping and mocking, and it&apos;s very easy to set up and use.
             </p>
 
             <h3 className="my-5 text-2xl">Installation</h3>
@@ -87,7 +87,7 @@ function JSONServer() {
                 </code>
             </pre>
             <p>
-                Now if you go to http://localhost:3000/posts/1, you'll get:
+                Now if you go to http://localhost:3000/posts/1, you&apos;ll get:
             </p>
             <pre>
                 <code ref={codeRef} className="json mt-4 text-base">
@@ -106,6 +106,7 @@ function JSONServer() {
             </pre>
 
             <h3 className="my-5 text-2xl">Common Commands</h3>
+            <p className='text-base mb-2'>**It is of note that the --watch flag is not necessary in the current version of JSON-Server. The server will automatically watch the db.json file for changes.</p>
             <table className="w-full border-collapse border border-gray-300 dark:border-gray-700">
                 <thead>
                     <tr className="bg-gray-100 dark:bg-gray-800">
@@ -138,7 +139,7 @@ function JSONServer() {
             </table>
 
             <p className="mt-5 mb-24">
-                These are just a few examples of what you can do with JSON-Server. For more advanced usage and options, refer to the <a className='text-blue-600 font-bold hover:text-blue-800' href='https://github.com/typicode/json-server' target='_blank'>Official JSON-Server Documentation</a> .
+                These are just a few examples of what you can do with JSON-Server. For more advanced usage and options, refer to the <a className='text-blue-600 font-bold hover:text-blue-800' href='https://github.com/typicode/json-server' target='_blank' rel='noreferrer'>Official JSON-Server Documentation</a> .
             </p>
         </div>
     );
