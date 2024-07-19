@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
-import { propTypes } from 'react-bootstrap/esm/Image'
+import { propTypes } from 'prop-types'
 import logo from '../../assets/helpcodeitlogo.svg'
 import { NavLink } from 'react-router-dom'
 import './Navbar.module.css'
