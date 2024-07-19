@@ -1,9 +1,9 @@
 //Component meant to test code, it will take in some variables and expect the user to write a function that will return the expected output.
 import { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
-import incorrectImg from '../../assets/no.png'
-import correctImg from '../../assets/yes.png'
-import { Helmet } from 'react-helmet-async'
+// import incorrectImg from '../../assets/no.png'
+// import correctImg from '../../assets/yes.png'
+//import { Helmet } from 'react-helmet-async'
 
 
 import AutoExpandingTextarea from './AutoExpandingTextArea'
