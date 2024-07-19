@@ -4,7 +4,8 @@ import MainCards from '../Sub_Components/MainCards'
 import EventAlert from '../Sub_Components/EventAlert'
 import { Helmet } from 'react-helmet-async'
 
-function HomePage({ theme }) {
+function HomePage() {
+
     let event = {
         title: 'Git and GitHub Workshop',
         date: 'Saturday, July 20th',
