@@ -11,6 +11,7 @@ function HomePage() {
         date: 'Saturday, July 20th',
         time: '12:00 PM pst | 1:00 PM mst | 2:00 PM cst | 3:00 PM est',
         link: 'https://calendly.com/michaelvarnell/git-and-github-basics',
+        ISOdate: '2022-07-20T18:30:00.000Z',
     }
     return (
         <div>
@@ -34,7 +35,8 @@ function HomePage() {
 
                 <link rel="canonical" href="https://helpcodeit.com" />
             </Helmet>
-            <EventAlert event={event} />
+            {event.ISOdate < new Date().toISOString() && <EventAlert event={event} />}
+
             {/* SECTION Jumbotron */}
             <div className="jumbo-background hero-text bg-neutral-800 text-white">
                 <div className="container mx-auto">
