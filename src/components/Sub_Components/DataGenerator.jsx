@@ -8,9 +8,9 @@ import {
     randProduct,
 } from '@ngneat/falso'
 import React, { useState, useRef } from 'react'
-import CopyButton from './CopyButton'
 import { Link } from 'react-router-dom'
 
+import CopyButton from './CopyButton'
 import AceEditor from 'react-ace'
 
 import 'ace-builds/src-noconflict/theme-one_dark'

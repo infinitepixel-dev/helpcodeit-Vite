@@ -3,6 +3,7 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
 import { Helmet } from 'react-helmet-async';
 
+
 function JSONServer() {
     const codeRef = useRef(null);
 
@@ -79,7 +80,7 @@ function JSONServer() {
                     {sampleDbJson}
                 </code>
             </pre>
-            
+
             <div className="border mb-5 border-black rounded-2xl px-5 py-3 w-fit bg-slate-300 dark:bg-slate-600">
                 <h2 className="text-2xl">Endpoints</h2>
                 <p>The 'posts', 'comments' and 'profile' in the example above all count as endpoints. <br />
