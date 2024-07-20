@@ -35,7 +35,7 @@ function HomePage() {
 
                 <link rel="canonical" href="https://helpcodeit.com" />
             </Helmet>
-            {event.ISOdate < new Date().toISOString() && <EventAlert event={event} />}
+            {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />}
 
             {/* SECTION Jumbotron */}
             <div className="jumbo-background hero-text bg-neutral-800 text-white">
