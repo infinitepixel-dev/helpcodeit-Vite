@@ -3,6 +3,7 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
 import reactlogo from '../../../assets/React.svg';
 import exclaim from '../../../assets/exclaim.svg';
+import { Helmet } from 'react-helmet-async';
 
 function ReactEvolution() {
     const codeRef = useRef(null);
@@ -16,6 +17,11 @@ function ReactEvolution() {
 
     return (
         <div className="pb-14 pt-10 px-10">
+            <Helmet>
+                <title>The Evolution of React: From Class-Based to Function-Based Programming</title>
+                <meta name="description" content="Explore the evolution of React from class-based to function-based programming, including the introduction of React Hooks and their impact on the development community." />
+                <meta name="keywords" content="React, React Hooks, function components, class components, React development, front-end development" />
+            </Helmet>
             <div className="container mx-auto px-4">
                 <div className="row grid md:grid-cols-2 sm:grid-cols-1 pb-5">
                     <h1 className="my-auto text-center text-5xl">The Evolution of React: From Class-Based to Function-Based Programming</h1>

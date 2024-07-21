@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
+import { Helmet } from 'react-helmet-async';
 
 function GitHubBranching() {
     const codeRef = useRef(null);
@@ -14,6 +15,11 @@ function GitHubBranching() {
 
     return (
         <div className="pb-14">
+            <Helmet>
+                <title>Understanding GitHub Branching for Development</title>
+                <meta name="description" content="Learn how to use GitHub branching effectively for development, including creating branches, merging changes, and collaborating with other developers." />
+                <meta name="keywords" content="GitHub, branching, development, version control, collaboration, feature development" />
+            </Helmet>
             <div className="container mx-auto px-4">
                 <h1 className="my-5 text-center text-6xl">Understanding GitHub Branching for Development</h1>
                 <hr className="my-4"/>

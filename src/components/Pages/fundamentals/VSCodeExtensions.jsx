@@ -1,8 +1,25 @@
+import { Helmet } from 'react-helmet-async'
 import vscodelogo from '../../../assets/visual-studio-code.svg'
 
 function VSCodeExtensions() {
     return (
         <div className="container mb-24">
+            <Helmet>
+                <title>VS Code Extensions | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Explore our recommended Visual Studio Code extensions for web development. Prettier, Live Server, and Comment Anchors are essential for efficient coding."
+                />
+                <link
+                    rel="canonical"
+                    href="https://helpcodeit.com/VSCodeExtensions"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="Visual Studio Code, VS Code extensions, Prettier, Live Server, Comment Anchors, web development, front-end development"
+                />
+            </Helmet>
             <div className="mt-5 flex items-center justify-center">
                 {' '}
                 {/* Add flex and items-center justify-center classes */}
