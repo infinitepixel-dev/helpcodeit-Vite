@@ -252,6 +252,15 @@ git config --global user.email "Your Email"`
                     />
                 </div>
                 <hr className="border-1 my-2 border-black dark:border-white" />
+                <h2 className="mt-10 text-center text-4xl">Branching to Develop New Features</h2>
+                <p>Branching is an extrememly useful tool in Git that allows you to work on new features or parts of an application without affecting the main codebase. This is especially helpful when you want to experiment with new ideas or develop new features without disrupting the existing code.</p>
+                <Link to="/fundamentals/GitHubBranching" className="text-center text-2xl text-blue-500 mx-auto hover:text-blue-700">
+                    Click Here for a Detailed Page on GitHub Branching
+                </Link>
+
+
+                <hr className="border-1 my-2 border-black dark:border-white" />
+
                 <h2 className="mt-10 text-center text-4xl">
                     Want to see a Walkthrough Video?
                 </h2>
