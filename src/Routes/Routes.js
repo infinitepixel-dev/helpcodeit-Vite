@@ -35,12 +35,14 @@ const routes = [
   { path: '/fundamentals/VSCodeExtensions', componentPath: '../components/Pages/fundamentals/VSCodeExtensions', key: 'vsCodeExtensions' },
   { path: '/fundamentals/SettingUpPracticeEnvironment', componentPath: '../components/Pages/fundamentals/PracticeEnvironment', key: 'settingUpPracticeEnvironment' },
   { path: '/fundamentals/GitHubCheatsheet', componentPath: '../components/Pages/fundamentals/GitHubCheatsheet', key: 'gitHubCheatsheet' },
+  { path: '/fundamentals/GitHubBranching', componentPath: '../components/Pages/fundamentals/GitHubBranching', key: 'gitHubBranching' },
   //INFO:  REACT Pages
   { path: '/ReactMain', componentPath: '../components/Pages/react/ReactMain', key: 'reactMain' },
   { path: '/ReactComponents', componentPath: '../components/Pages/react/ReactComponents', key: 'reactComponents' },
   { path: '/ReactRouter6', componentPath: '../components/Pages/react/ReactRouter6', key: 'reactRouter' },
   { path: '/PropsAndState', componentPath: '../components/Pages/react/PropsAndState', key: 'propsAndState' },
   { path: '/PlanningReactApps', componentPath: '../components/Pages/react/PlanningReactApps', key: 'planningApps' },
+  { path: '/ReactHooks', componentPath: '../components/Pages/react/ReactHooks', key: 'reactHooks' },
 ];
 
 // const components = {};

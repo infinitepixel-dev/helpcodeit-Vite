@@ -65,6 +65,8 @@ const Fetch = lazy(
         )
 )
 const GitHub = lazy(() => import('./components/Pages/fundamentals/GitHub'))
+const GitHubBranching = lazy( () => import('./components/Pages/fundamentals/GitHubBranching'))
+
 const GitHubCheatsheet = lazy(
     () => import('./components/Pages/fundamentals/GitHubCheatsheet')
 )
@@ -86,6 +88,8 @@ const ReactComponents = lazy(
     () => import('./components/Pages/react/ReactComponents')
 )
 const ReactRouter6 = lazy(() => import('./components/Pages/react/ReactRouter6'))
+const ReactHooks = lazy(() => import('./components/Pages/react/ReactHooks'))
+const Destructuring = lazy(() => import('./components/Pages/react/Destructuring'))
 const VSCodeHotkeysTable = lazy(
     () => import('./components/Pages/fundamentals/VSCodeHotkeysTable')
 )
@@ -98,6 +102,7 @@ const PropsAndState = lazy(
 const PlanningReactApps = lazy(
     () => import('./components/Pages/react/PlanningReactApps')
 )
+const ReactEvolution = lazy( () => import('./components/Pages/react/ReactEvolution'))
 const JSONServer = lazy(
     () => import('./components/Pages/javascriptPrincipals/JSONServer')
 )
@@ -149,6 +154,7 @@ export default function App() {
             path: '/fundamentals/GitHubCheatsheet',
             component: <GitHubCheatsheet />,
         },
+        {   path: '/fundamentals/GitHubBranching', component: <GitHubBranching /> },
 
         // Javascript
         { path: '/javascript', component: <JavascriptMainPage /> },
@@ -204,6 +210,9 @@ export default function App() {
         { path: '/ReactRouter6', component: <ReactRouter6 /> },
         { path: '/PropsAndState', component: <PropsAndState /> },
         { path: '/PlanningReactApps', component: <PlanningReactApps /> },
+        { path: '/ReactHooks', component: <ReactHooks /> },
+        {path: '/ReactEvolution', component: <ReactEvolution />},
+        { path: '/Destructuring', component: <Destructuring /> },
 
         // Default
         { path: '*', component: <HomePage /> },
