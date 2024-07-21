@@ -89,6 +89,7 @@ const ReactComponents = lazy(
 )
 const ReactRouter6 = lazy(() => import('./components/Pages/react/ReactRouter6'))
 const ReactHooks = lazy(() => import('./components/Pages/react/ReactHooks'))
+const Destructuring = lazy(() => import('./components/Pages/react/Destructuring'))
 const VSCodeHotkeysTable = lazy(
     () => import('./components/Pages/fundamentals/VSCodeHotkeysTable')
 )
@@ -211,6 +212,7 @@ export default function App() {
         { path: '/PlanningReactApps', component: <PlanningReactApps /> },
         { path: '/ReactHooks', component: <ReactHooks /> },
         {path: '/ReactEvolution', component: <ReactEvolution />},
+        { path: '/Destructuring', component: <Destructuring /> },
 
         // Default
         { path: '*', component: <HomePage /> },

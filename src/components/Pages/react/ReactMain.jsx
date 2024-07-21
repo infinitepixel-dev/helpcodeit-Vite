@@ -68,6 +68,13 @@ export default function reactmain() {
                 <br />
                 <Link
                     className="text-2xl font-bold hover:text-blue-600"
+                    to="/Destructuring"
+                >
+                    Destructuring Props in React
+                </Link>
+                <br />
+                <Link
+                    className="text-2xl font-bold hover:text-blue-600"
                     to="/PlanningReactApps"
                 >
                     Planning and Organizing React Apps
