@@ -40,6 +40,13 @@ export default function reactmain() {
             <div className="flex flex-col items-center">
                 <Link
                     className="text-2xl font-bold hover:text-blue-600"
+                    to="/ReactEvolution"
+                >
+                    The Evolution of React: From Class-Based to Function-Based Programming
+                </Link>
+                <br />
+                <Link
+                    className="text-2xl font-bold hover:text-blue-600"
                     to="/ReactComponents"
                 >
                     React Component Basics
@@ -65,7 +72,13 @@ export default function reactmain() {
                 >
                     Planning and Organizing React Apps
                 </Link>
-
+                <br />
+                <Link
+                    className="text-2xl font-bold hover:text-blue-600"
+                    to="/ReactHooks"
+                >
+                    React Hooks
+                </Link>
             </div>
         </div>
     )

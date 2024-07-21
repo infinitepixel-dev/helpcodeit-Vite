@@ -117,63 +117,30 @@ function VSCodeExtensions() {
                     </div>
                 </div>
 
-                <div className="mt-10 grid grid-cols-1 items-center justify-center rounded-3xl border border-black bg-slate-200 p-5 text-lg shadow-md shadow-black dark:border-white dark:bg-slate-800 md:grid-cols-2 lg:p-0">
-                    <a
-                        href="https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag"
-                        target="_blank"
-                    >
-                        <div className="my-auto hover:text-blue-800 dark:hover:text-blue-300">
-                            <h2 className="text-center text-4xl">
-                                Auto Rename Tag
-                            </h2>
-                            <p className="text-balance text-center text-2xl">
-                                By Jun Han
-                            </p>
-                            <p className="text-balance text-center lg:px-2">
-                                This extension allows you to rename the opening
-                                or closing tag and it will automatically rename
-                                the other tag for you. This is a must-have for
-                                any developer.
-                            </p>
-                        </div>
-                    </a>
-                    <div>
-                        <img
-                            src="https://formulahendry.gallerycdn.vsassets.io/extensions/formulahendry/auto-rename-tag/0.1.10/1644319230173/Microsoft.VisualStudio.Services.Icons.Default"
-                            alt="Auto Rename Tag Icon"
-                            className="mx-auto w-64"
-                        />
-                    </div>
-                </div>
+
             </div>
 
-            <div className="mt-10 grid grid-cols-1 items-center justify-center rounded-3xl border border-black bg-slate-200 p-5 text-lg shadow-md shadow-black dark:border-white dark:bg-slate-800 md:grid-cols-2 lg:p-0">
-                <a
-                    href="https://marketplace.visualstudio.com/items?itemName=vincaslt.highlight-matching-tag"
-                    target="_blank"
-                >
-                    <div className="my-auto hover:text-blue-800 dark:hover:text-blue-300">
-                        <h2 className="text-center text-4xl">
-                            Highlight Matching Tag
-                        </h2>
-                        <p className="text-balance text-center text-2xl">
-                            By vincaslt
-                        </p>
-                        <p className="text-balance text-center lg:px-2">
-                            This extension highlights the matching tag when you
-                            select one. This is great for finding the matching
-                            tag easily in larger documents.
-                        </p>
-                    </div>
-                </a>
-                <div>
-                    <img
-                        src="https://vincaslt.gallerycdn.vsassets.io/extensions/vincaslt/highlight-matching-tag/0.11.0/1678358667427/Microsoft.VisualStudio.Services.Icons.Default"
-                        alt="Highlight Matching Tag Icon"
-                        className="mx-auto w-64"
-                    />
-                </div>
+            <div className="mt-10 px-10 items-center justify-center rounded-3xl border border-black bg-slate-200 text-lg shadow-md shadow-black dark:border-white dark:bg-slate-800 md:grid-cols-2 lg:px-10 pb-5">
+                <h2 className="text-balance text-center text-5xl mt-10">New Settings that took the place of extensions we used to recommend </h2>
+                <br />
+                <p className="text-base">VS Code has made some updates to their settings that have made some extensions obsolete. </p>
+                <p className="text-lg mt-5 mb-2">We previously recommended the following extensions, but with the new settings in VS Code, they are no longer needed. </p>
+                <ul className="list-disc list-inside text-lg">
+                    <li className='font-semibold'>Auto Close Tag search for "auto close tags" in settings</li>
+                    <p>This setting will automatically close tags for you when coding in HTML</p>
+                    <br />
+                    <li className='font-semibold'>Auto Rename Tag search for "auto rename tags" in settings</li>
+                    <p>This setting will automatically rename tags for you when coding in HTML</p>
+                    <br />
+                    <li className='font-semibold'>Bracket Pair Colorizer search for "bracket pair colorizer" in settings</li>
+                    <p>This setting will colorize your brackets to help you see where they start and end</p>
+                    <br />
+                    <li className='font-semibold'>Indent Rainbow search for "indent rainbow" in settings</li>
+                    <p>This setting will colorize your indents to help you see where they start and end</p>
+                    </ul>
             </div>
+
+
         </div>
     )
 }
