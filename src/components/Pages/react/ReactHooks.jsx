@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
+import { Helmet } from 'react-helmet-async';
 
 function ReactHooks() {
     const codeRef = useRef(null);
@@ -14,6 +15,20 @@ function ReactHooks() {
 
     return (
         <div className="pb-14 mx-4">
+            <Helmet
+                title="React Hooks"
+                meta={[
+                    {
+                        name: 'description',
+                        content: 'Learn how to use React Hooks to add state and other React features to functional components.',
+                    },
+                    {
+                        name: 'keywords',
+                        content: 'React, React Hooks, useState, useEffect, useContext, useReducer, useCallback, useMemo, useRef, custom hooks',
+                    },
+                ]}
+            />
+
             <div className="container">
                 <h1 className="my-5 text-center text-6xl">React Hooks</h1>
                 <p className="text-center">Learn how to use React Hooks to add state and other React features to functional components.</p>
