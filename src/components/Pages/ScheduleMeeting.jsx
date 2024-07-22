@@ -93,6 +93,7 @@ const ScheduleMeeting = () => {
                             <div
                                 key={index}
                                 className="flex flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105"
+                                aria-label={`${meeting.title}, ${meeting.duration}, ${meeting.price}, ${meeting.description}`}
                             >
                                 <div
                                     className={`p-6 ${meeting.isAfterHours ? 'bg-indigo-800' : 'bg-blue-600'} flex-grow text-white`}
@@ -116,6 +117,7 @@ const ScheduleMeeting = () => {
                                     <a
                                         href={meeting.link}
                                         className="mt-4 block w-full rounded bg-blue-600 px-4 py-2 text-center font-bold text-white transition duration-300 hover:bg-blue-700"
+                                        aria-label={`Book now for ${meeting.title}`}
                                     >
                                         Book Now
                                     </a>
@@ -130,7 +132,7 @@ const ScheduleMeeting = () => {
                         About Michael Varnell
                     </h2>
                     <div className="grid grid-cols-3">
-                        <div className="col-span-3 text-xl md:col-span-2 ">
+                        <div className="col-span-3 text-xl md:col-span-2">
                             <p className="mb-4 text-gray-700">
                                 Michael Varnell is a skilled Software Developer
                                 with expertise in modern Front End technologies,
@@ -157,9 +159,10 @@ const ScheduleMeeting = () => {
                         <div>
                             <img
                                 src={michael}
-                                alt="Michael"
+                                alt="Michael Varnell"
                                 width={300}
-                                className="mx-auto rounded-lg shadow-2xl  sm:hidden md:block"
+                                className="mx-auto rounded-lg shadow-2xl sm:hidden md:block"
+                                aria-label="Photo of Michael Varnell"
                             />
                         </div>
                     </div>

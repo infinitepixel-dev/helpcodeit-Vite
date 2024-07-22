@@ -108,6 +108,7 @@ function Navbar({ theme }) {
                                 ? 'hidden'
                                 : 'float-right focus:outline-none lg:hidden'
                         }
+                        aria-label='Toggle Menu Button'
                     >
                         <svg
                             className="h-6 w-6"
@@ -150,6 +151,7 @@ function Navbar({ theme }) {
                                 className="rounded-full p-2 hover:bg-slate-500"
                                 onClick={() => setDropdown(!dropdown)}
                                 id="dropdown-button"
+                                aria-label='Toggle Dropdown Fundamentals button'
                             >
                                 Getting Started
                             </button>
@@ -219,6 +221,7 @@ function Navbar({ theme }) {
                                 className="rounded-full p-2 hover:bg-slate-500"
                                 onClick={() => setDropdown2(!dropdown2)}
                                 id="dropdown-button2"
+                                aria-label='Toggle Dropdown Topics'
                             >
                                 Topics
                             </button>

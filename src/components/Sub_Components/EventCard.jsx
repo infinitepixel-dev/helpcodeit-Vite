@@ -23,7 +23,8 @@ const EventCard = ({ event }) => (
 
         <span className="font-semibold text-green-600">${event.cost} registration fee</span>
       </div>
-      <button className="w-fit bg-blue-700 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition duration-300" >
+      <button className="w-fit bg-blue-700 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition duration-300"
+      aria-label='Register Now button' >
       <a
         href={event.link}
         target="_blank"

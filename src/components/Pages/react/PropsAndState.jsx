@@ -393,6 +393,7 @@ function UserForm() {
                                 setCount((prevCount) => prevCount + 1)
                             }
                             className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+                            aria-label='Increment count by 1'
                         >
                             Increment
                         </button>
