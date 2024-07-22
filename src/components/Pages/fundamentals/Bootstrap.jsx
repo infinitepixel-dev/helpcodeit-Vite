@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 function Bootstrap() {
     const codeRef = useRef(null)
@@ -24,7 +25,7 @@ function Bootstrap() {
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-    
+
 
 <!-- NOTE - below is the link that makes any animations or movement happen -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
@@ -33,6 +34,23 @@ function Bootstrap() {
 
     return (
         <div className="mb-28">
+            <Helmet>
+                <title>Linking Up Bootstrap | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn how to link up Bootstrap to your project. Get started with the official Bootstrap website and tutorials. Explore Bootswatch for custom themes and more."
+                />
+                <link
+
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/fundamentals/Bootstrap"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="Bootstrap, Bootstrap linking, Bootstrap tutorial, web development, front-end development, CSS framework, Bootswatch"
+                />
+            </Helmet>
             <div className="container">
                 <h1 className="my-8 text-center text-6xl">
                     Linking Up Bootstrap

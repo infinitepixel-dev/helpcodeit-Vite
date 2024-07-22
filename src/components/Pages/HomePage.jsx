@@ -27,9 +27,9 @@ function HomePage() {
                 />
 
                 <meta property="og:image" content={LogoImage} />
-                <meta property="og:url" content="https://helpcodeit.com" />
+                <meta property="og:url" content="https://www.helpcodeit.com" />
 
-                <link rel="canonical" href="https://helpcodeit.com" />
+                <link rel="canonical" href="https://www.helpcodeit.com" />
             </Helmet>
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
