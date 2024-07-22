@@ -40,6 +40,13 @@ export default function reactmain() {
             <div className="flex flex-col items-center">
                 <Link
                     className="text-2xl font-bold hover:text-blue-600"
+                    to="/ReactEvolution"
+                >
+                    The Evolution of React: From Class-Based to Function-Based Programming
+                </Link>
+                <br />
+                <Link
+                    className="text-2xl font-bold hover:text-blue-600"
                     to="/ReactComponents"
                 >
                     React Component Basics
@@ -50,6 +57,34 @@ export default function reactmain() {
                     to="/ReactRouter6"
                 >
                     React Router 6+
+                </Link>
+                <br />
+                <Link
+                    className="text-2xl font-bold hover:text-blue-600"
+                    to="/PropsAndState"
+                >
+                   Understanding Props and State
+                </Link>
+                <br />
+                <Link
+                    className="text-2xl font-bold hover:text-blue-600"
+                    to="/Destructuring"
+                >
+                    Destructuring Props in React
+                </Link>
+                <br />
+                <Link
+                    className="text-2xl font-bold hover:text-blue-600"
+                    to="/PlanningReactApps"
+                >
+                    Planning and Organizing React Apps
+                </Link>
+                <br />
+                <Link
+                    className="text-2xl font-bold hover:text-blue-600"
+                    to="/ReactHooks"
+                >
+                    React Hooks
                 </Link>
             </div>
         </div>

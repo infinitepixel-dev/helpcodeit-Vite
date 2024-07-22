@@ -12,6 +12,9 @@ import ScheduleMeeting from './components/Pages/ScheduleMeeting.jsx'
 // Lazy loading components
 const HomePage = lazy(() => import('./components/Pages/HomePage'))
 const About = lazy(() => import('./components/Pages/About'))
+const DataGenerator = lazy(
+    () => import('./components/Sub_Components/DataGenerator')
+)
 const JavascriptMainPage = lazy(
     () => import('./components/Pages/JavascriptMainPage')
 )
@@ -62,6 +65,8 @@ const Fetch = lazy(
         )
 )
 const GitHub = lazy(() => import('./components/Pages/fundamentals/GitHub'))
+const GitHubBranching = lazy( () => import('./components/Pages/fundamentals/GitHubBranching'))
+
 const GitHubCheatsheet = lazy(
     () => import('./components/Pages/fundamentals/GitHubCheatsheet')
 )
@@ -83,13 +88,24 @@ const ReactComponents = lazy(
     () => import('./components/Pages/react/ReactComponents')
 )
 const ReactRouter6 = lazy(() => import('./components/Pages/react/ReactRouter6'))
+const ReactHooks = lazy(() => import('./components/Pages/react/ReactHooks'))
+const Destructuring = lazy(() => import('./components/Pages/react/Destructuring'))
 const VSCodeHotkeysTable = lazy(
     () => import('./components/Pages/fundamentals/VSCodeHotkeysTable')
 )
 const MenuApp = lazy(
     () => import('./components/Pages/javascriptPrincipals/MenuApp')
 )
-
+const PropsAndState = lazy(
+    () => import('./components/Pages/react/PropsAndState')
+)
+const PlanningReactApps = lazy(
+    () => import('./components/Pages/react/PlanningReactApps')
+)
+const ReactEvolution = lazy( () => import('./components/Pages/react/ReactEvolution'))
+const JSONServer = lazy(
+    () => import('./components/Pages/javascriptPrincipals/JSONServer')
+)
 
 export default function App() {
     const [theme, setTheme] = useState(
@@ -115,7 +131,8 @@ export default function App() {
         // Home
         { path: '/', component: <HomePage theme={theme} /> },
         { path: '/about', component: <About /> },
-        { path: '/schedule-meeting', component: <ScheduleMeeting />},
+        { path: '/schedule-meeting', component: <ScheduleMeeting /> },
+        { path: '/data-generator', component: <DataGenerator /> },
 
         // Fundamentals
         { path: '/fundamentals/GitHub', component: <GitHub /> },
@@ -137,6 +154,7 @@ export default function App() {
             path: '/fundamentals/GitHubCheatsheet',
             component: <GitHubCheatsheet />,
         },
+        {   path: '/fundamentals/GitHubBranching', component: <GitHubBranching /> },
 
         // Javascript
         { path: '/javascript', component: <JavascriptMainPage /> },
@@ -183,12 +201,18 @@ export default function App() {
         { path: '/javascriptPrincipals/CRUD-AJAX', component: <AJAX /> },
         { path: '/javascriptPrincipals/CRUD-Fetch', component: <Fetch /> },
         { path: '/javascriptPrincipals/MenuApp', component: <MenuApp /> },
-        {path: '/javascriptPrincipals/WarGameTutorial', component: <War />},
+        { path: '/javascriptPrincipals/WarGameTutorial', component: <War /> },
+        { path: '/javascriptPrincipals/JSONServer', component: <JSONServer /> },
 
         // React
         { path: '/ReactMain', component: <ReactMain /> },
         { path: '/ReactComponents', component: <ReactComponents /> },
         { path: '/ReactRouter6', component: <ReactRouter6 /> },
+        { path: '/PropsAndState', component: <PropsAndState /> },
+        { path: '/PlanningReactApps', component: <PlanningReactApps /> },
+        { path: '/ReactHooks', component: <ReactHooks /> },
+        {path: '/ReactEvolution', component: <ReactEvolution />},
+        { path: '/Destructuring', component: <Destructuring /> },
 
         // Default
         { path: '*', component: <HomePage /> },

@@ -86,7 +86,8 @@
 
     .card-max {
         width: auto;
-        height: 350px;
+        max-height: 350px;
+        min-height: fit-content;
     }
 
     .cardImageFormat {
@@ -101,6 +102,11 @@
 
     .code-height {
         height: 100%;
+    }
+
+    .code-prob-card-img {
+        max-height: 131.19px;
+        min-height: 90px;
     }
 
     .communityText {
@@ -172,18 +178,6 @@
     .is-setup-list-title {
         font-size: 1.5rem;
         font-weight: bold;
-    }
-
-    .jumbo-background {
-        background-image: url('./assets/pexels-lukas-574069.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        max-height: 500px;
-        min-height: 300px;
-        width: 100%;
-        position: relative;
-        z-index: -1;
     }
 
     .lato-font {
@@ -307,8 +301,8 @@
     }
 }
 
-.custom-code-menuapp{
-    font-family:monospace;
+.custom-code-menuapp {
+    font-family: monospace;
     border: none;
     font-style: italic;
     font-weight: 500;

@@ -1,10 +1,12 @@
 import { useState, useEffect, useRef } from 'react'
+import propTypes from 'prop-types'
 import logo from '../../assets/helpcodeitlogo.svg'
 import { NavLink } from 'react-router-dom'
 import './Navbar.module.css'
 import PropTypes from 'prop-types'
 
 import gsap from 'gsap'
+// import { Nav } from 'react-bootstrap'
 
 function Navbar({ theme }) {
     const [navbarCollapse, setNavbarCollapse] = useState(false)
@@ -28,11 +30,11 @@ function Navbar({ theme }) {
             // console.log("Current Path:", currentPath, "isActive: ", isActive);
         }
 
-        return `p-2 hover:bg-slate-500 rounded ${
-            isActive ? 'bg-red-500' : 'bg-transparent'
+        return `px-2  hover:bg-slate-500 rounded-full ${
+            isActive ? '' : 'bg-transparent'
         } ${
-            isSmallScreen ? 'text-right w-full' : 'space-x-4'
-        } font-bold dark:text-white text-black`
+            isSmallScreen ? 'text-right w-full ' : 'space-x-4 py-2'
+        } font-bold  dark:text-white text-black`
     }
 
     // NOTE UseEffect to handle GSAP logo animation
@@ -74,28 +76,31 @@ function Navbar({ theme }) {
     })
 
     return (
-        <div className="mx-auto w-full border-b border-black bg-white px-2 shadow-sm dark:bg-neutral-800 ">
+        <div className="mx-auto mb-1 w-full border-b border-black bg-white px-2 pt-2 shadow-sm dark:bg-neutral-800 ">
             <nav
                 className={
                     isSmallScreen && navbarCollapse
-                        ? 'flex content-start justify-between py-4'
-                        : 'flex content-center justify-between py-5'
+                        ? 'flex content-start justify-between'
+                        : 'flex content-center justify-between'
                 }
             >
-                <NavLink to="/">
-                    <p ref={logoRef}>
-                        <img
-                            src={logo}
-                            alt="help code it logo"
-                            className="ms-2 rounded-lg" //REVIEW Animation
-                            height="50px"
-                            width="50px"
-                        ></img>
-                    </p>
-                </NavLink>
+                <div className="grid">
+                    <NavLink to="/">
+                        <p ref={logoRef}>
+                            <img
+                                src={logo}
+                                alt="help code it logo"
+                                className="my-1 ms-2 rounded-lg" //REVIEW Animation
+                                height="40"
+                                width="40"
+                            ></img>
+                        </p>
+                    </NavLink>
+                </div>
+
                 {/* Will return a non-boolean attribute error */}
                 {/* <div className={isSmallScreen && "justify-end py-2"}> */}
-                <div className={isSmallScreen ? 'justify-end py-2' : undefined}>
+                <div className={isSmallScreen ? 'justify-end' : undefined}>
                     <button
                         onClick={() => setNavbarCollapse(!navbarCollapse)}
                         className={
@@ -103,6 +108,7 @@ function Navbar({ theme }) {
                                 ? 'hidden'
                                 : 'float-right focus:outline-none lg:hidden'
                         }
+                        aria-label="Toggle Menu Button"
                     >
                         <svg
                             className="h-6 w-6"
@@ -124,7 +130,7 @@ function Navbar({ theme }) {
                         className={`flex ${
                             isSmallScreen
                                 ? 'w-full flex-col bg-white pt-5 text-right text-black dark:bg-neutral-800 dark:text-white'
-                                : 'space-x-1 md:space-x-4 lg:space-x-6 lg:text-2xl xl:space-x-8'
+                                : 'space-x-1 md:space-x-4 lg:space-x-6 xl:space-x-8'
                         } ${
                             !navbarCollapse && isSmallScreen ? 'hidden' : ''
                         } font-bold text-black dark:text-white`}
@@ -138,13 +144,14 @@ function Navbar({ theme }) {
                         >
                             Home
                         </NavLink>
-                        
+
                         {/* Dropdown for links */}
                         <div className="dropdown relative inline-block ">
                             <button
-                                className="rounded p-2 hover:bg-slate-500"
+                                className="rounded-full p-2 hover:bg-slate-500"
                                 onClick={() => setDropdown(!dropdown)}
                                 id="dropdown-button"
+                                aria-label="Toggle Dropdown Fundamentals button"
                             >
                                 Getting Started
                             </button>
@@ -211,9 +218,10 @@ function Navbar({ theme }) {
                         {/* Dropdown for links */}
                         <div className="dropdown relative inline-block ">
                             <button
-                                className="rounded p-2 hover:bg-slate-500"
+                                className="rounded-full p-2 hover:bg-slate-500"
                                 onClick={() => setDropdown2(!dropdown2)}
                                 id="dropdown-button2"
+                                aria-label="Toggle Dropdown Topics"
                             >
                                 Topics
                             </button>
@@ -238,6 +246,12 @@ function Navbar({ theme }) {
                                         className="whitespace-no-wrap block rounded bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
                                     >
                                         React.js
+                                    </NavLink>
+                                    <NavLink
+                                        to={'/data-generator'}
+                                        className="whitespace-no-wrap block rounded bg-white px-4 py-2 text-base hover:bg-slate-500 dark:bg-black"
+                                    >
+                                        Data Generator
                                     </NavLink>
                                 </li>
                             </ul>
@@ -281,7 +295,7 @@ function Navbar({ theme }) {
 }
 
 Navbar.propTypes = {
-    theme: PropTypes.bool,
+    theme: propTypes.bool,
 }
 
 export default Navbar

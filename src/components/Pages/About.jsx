@@ -2,7 +2,6 @@ import matthew from '../../assets/Matthew.png'
 import michael from '../../assets/michael.jpeg'
 import { Helmet } from 'react-helmet-async'
 
-
 function About() {
     return (
         <div>
@@ -46,6 +45,7 @@ function About() {
                             alt="Michael Varnell"
                             width="300px"
                             className="mx-auto rounded"
+                            aria-label="Photo of Michael Varnell"
                         />
                         <p className="text-pretty px-4 pt-5">
                             Michael Varnell is a skilled Software Developer with
@@ -76,7 +76,10 @@ function About() {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <button className="animate-bounce rounded-full bg-blue-700 px-4 py-2 font-bold text-white hover:animate-none hover:bg-green-500 ">
+                                <button
+                                    aria-label="Book a meeting with Michael button"
+                                    className="animate-bounce rounded-full bg-blue-700 px-4 py-2 font-bold text-white hover:animate-none hover:bg-green-500"
+                                >
                                     Book a meeting
                                 </button>
                             </a>
@@ -91,6 +94,7 @@ function About() {
                             alt="Matthew Cox"
                             width="300px"
                             className="mx-auto rounded"
+                            aria-label="Photo of Matthew Cox"
                         />
                         <p className="text-balance px-4 pt-5">
                             Matthew is a Full Stack Developer with a deep
@@ -132,4 +136,4 @@ function About() {
     )
 }
 
-export default About
+export default About;

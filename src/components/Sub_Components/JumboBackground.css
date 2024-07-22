@@ -1,0 +1,12 @@
+.jumbo-background {
+    /* background-image: url('./assets/pexels-lukas-574069.jpg'); */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    max-height: 600px;
+    min-height: 300px;
+    width: 100%;
+    height: 600px;
+    position: relative;
+    z-index: 0;
+}

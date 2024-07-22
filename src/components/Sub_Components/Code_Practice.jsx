@@ -1,9 +1,9 @@
 //Component meant to test code, it will take in some variables and expect the user to write a function that will return the expected output.
 import { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
-import incorrectImg from '../../assets/no.png'
-import correctImg from '../../assets/yes.png'
-import { Helmet } from 'react-helmet-async'
+// import incorrectImg from '../../assets/no.png'
+// import correctImg from '../../assets/yes.png'
+//import { Helmet } from 'react-helmet-async'
 
 
 import AutoExpandingTextarea from './AutoExpandingTextArea'
@@ -178,6 +178,7 @@ function CodePractice({
                     <button
                         className="rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
                         type="submit"
+                        aria-label='submit button'
                     >
                         Submit
                     </button>

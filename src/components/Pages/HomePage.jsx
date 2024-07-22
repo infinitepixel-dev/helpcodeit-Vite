@@ -1,20 +1,16 @@
 import { Link } from 'react-router-dom'
-import logo from '../../assets/helpcodeitlogo.svg'
+import LogoImage from '../Sub_Components/LogoImage'
 import MainCards from '../Sub_Components/MainCards'
-import EventAlert from '../Sub_Components/EventAlert'
+// import EventAlert from '../Sub_Components/EventAlert'
 import { Helmet } from 'react-helmet-async'
-import DataGenerator from '../Sub_Components/DataGenerator'
+import EventCard from '../Sub_Components/EventCard'
+import { CalendarSearch } from 'lucide-react'
+import JumboBackground from '../Sub_Components/JumboBackground'
+import './HomePage.css'
 
-function HomePage({ theme }) {
-    let event = {
-        title: 'Git and GitHub Workshop',
-        date: 'Saturday, July 20th',
-        time: '12:00 PM pst | 1:00 PM mst | 2:00 PM cst | 3:00 PM est',
-        link: 'https://calendly.com/michaelvarnell/git-and-github-basics',
-    }
+function HomePage() {
     return (
         <div>
-            <DataGenerator />
             <Helmet>
                 <title>Help Code It | Resources for Beginning Developers</title>
                 <meta
@@ -29,42 +25,67 @@ function HomePage({ theme }) {
                     property="og:description"
                     content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Book a session now!"
                 />
-                <meta property="og:image" content={logo} />
+
+                <meta property="og:image" content={LogoImage} />
                 <meta property="og:url" content="https://helpcodeit.com" />
 
                 <link rel="canonical" href="https://helpcodeit.com" />
             </Helmet>
-            <EventAlert event={event} />
+            {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
-            <div className="jumbo-background hero-text bg-neutral-800 text-white">
-                <div className="container mx-auto">
-                    <div className="grid grid-cols-3">
-                        <div className="col-span-3 md:col-span-1">
-                            <img
-                                src={logo}
-                                alt="Help Code It logo"
-                                className="hero-logo mx-auto mt-5 p-1"
-                            />
 
-                            <p className="hero-text mx-auto text-center font-extrabold">
+            <div className="hero-text bg-neutral-800 text-white">
+                <div className="relative">
+                    <JumboBackground />
+                    <div className="absolute inset-0 flex items-center">
+                        <div className="logo-container text-center text-white">
+                            <LogoImage />
+                            <h1 className="hero-text mx-auto mb-2 text-center font-extrabold">
                                 Resources for beginning developers
-                            </p>
+                            </h1>
                         </div>
                     </div>
                 </div>
             </div>
             {/* !SECTION end Jumbotron */}
-            <div className="justify-center">
-                <h2 className="mt-5 text-center text-5xl font-bold">
-                    Get expert coding help and tutoring - Book a session now!
-                </h2>
-                <Link to="/schedule-meeting">
-                    <div className="mx-auto my-4 w-fit rounded-full bg-blue-700 px-4 py-2 text-lg font-bold text-white hover:bg-red-700 ">
-                        Explore Meeting Options
+            <div className="container">
+                <div className="md:grid-cols-auto grid lg:grid-cols-2">
+                    <div className="mx-5">
+                        <EventCard />
                     </div>
-                </Link>
+                    <div className="mx-5 my-auto">
+                        <h2 className="mb-6 text-center text-3xl font-bold ">
+                            Get expert coding help and tutoring
+                        </h2>
+                        <div className="mx-auto my-8 max-w-2xl rounded-lg bg-white p-8 text-black shadow-lg">
+                            <h2 className="mb-6 text-center text-3xl font-bold">
+                                Book a session now!
+                            </h2>
+                            <p className="mb-6 text-center">
+                                Elevate your software development skills with
+                                personalized guidance from an experienced
+                                professional. Choose the meeting option that
+                                best fits your needs and schedule.
+                            </p>
+                            <Link to="/schedule-meeting" className="block">
+                                <button
+                                    aria-label="explore meeting options button"
+                                    className="mx-auto flex w-fit rounded-full bg-blue-700 px-6 py-3 font-bold text-white transition duration-300 hover:bg-red-700"
+                                >
+                                    Explore Meeting Options
+                                    <CalendarSearch
+                                        size={24}
+                                        className="my-auto ml-2"
+                                        aria-label="calendar search icon"
+                                    />
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className=" text-white dark:bg-neutral-900">
+
+            <div className="pb-10 text-white">
                 <MainCards />
             </div>
         </div>

@@ -25,34 +25,35 @@ function Card({
             {/* Grid Start */}
             <div className={`${styles.mainCardBody}`}>
                 <div
-                    className={`grid grid-rows-4 place-items-center ${styles.mainCardBorder} `}
+                    className={`grid grid-rows-4  place-items-center ${styles.mainCardBorder} `}
                 >
                     {/* Grid Row 1: Card Image */}
                     <img
                         src={imageSrc}
                         alt={title}
-                        className={` lg:object-fit row-auto h-full w-full ${
+                        className={` lg:object-fit w-full row-full code-prob-card-img border-2 border-e-0 border-s-0 border-black rounded-t-2xl ${
                             customCSS.image ? customCSS.image : ''
                         }`}
                     />
 
                     {/* Grid Row 2: Card Title */}
-                    <h5 className={`row-auto  ${styles.mainCardTitle}`}>
+                    <h5 className={`  ${styles.mainCardTitle}`}>
                         {title}
                     </h5>
 
                     {/* Grid Row 3: Card Description */}
                     <p
-                        className={`row-auto px-5 ${styles.mainCardDescription}`}
+                        className={` px-5 ${styles.mainCardDescription}`}
                     >
                         {description}
                     </p>
 
                     {/* Grid Row 4: Card Action - Button */}
-                    <div className="row-auto  flex w-2/3 items-center justify-center">
+                    <div className="  flex w-2/3 items-center justify-center">
                         <div
                             href={actionHref}
-                            className={`my-y h-auto w-full rounded-xl border border-black  p-2 text-center text-3xl font-bold text-white transition duration-300 ease-in-out hover:opacity-50 ${
+                            aria-label={actionText}
+                            className={`my-2 h-auto w-2/3 rounded-xl border border-black  p-2 text-center text-3xl font-bold text-white transition duration-300 ease-in-out hover:opacity-50 ${
                                 customCSS.letsGoBtn
                                     ? customCSS.letsGoBtn
                                     : 'bg-blue-500'
