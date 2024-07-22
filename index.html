@@ -1,25 +1,36 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link
+            rel="icon"
+            type="image/svg+xml"
+            href="./src/assets/helpcodeitlogo.svg"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Preload critical images - perf test -->
+        <link rel="preload" href="/assets/helpcodeitlogo_opt.webp" as="image" />
+        <link rel="preload" href="/assets/helpcodeitlogo_opt.avif" as="image" />
+        <link rel="preload" href="/assets/helpcodeitlogo_opt.jpg" as="image" />
+        <!-- Google tag (gtag.js) -->
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-Z490EPWZW9"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || []
+            function gtag() {
+                dataLayer.push(arguments)
+            }
+            gtag('js', new Date())
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="./src/assets/helpcodeitlogo.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z490EPWZW9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() { dataLayer.push(arguments); }
-  gtag('js', new Date());
+            gtag('config', 'G-Z490EPWZW9')
+        </script>
+        <title>Help Code It</title>
+    </head>
 
-  gtag('config', 'G-Z490EPWZW9');
-</script>
-  <title>Help Code It</title>
-</head>
-
-<body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
-</body>
-
+    <body>
+        <div id="root"></div>
+        <script type="module" src="/src/main.jsx"></script>
+    </body>
 </html>
