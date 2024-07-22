@@ -1,10 +1,13 @@
 import { useEffect, useRef } from 'react'
+import propTypes from 'prop-types'
 
 import bgImg1 from '../../assets/helpcodeitlogo_opt.webp'
 import bgImg2 from '../../assets/helpcodeitlogo_opt.avif'
 import bgImg3 from '../../assets/helpcodeitlogo_opt.jpg'
 
-const LogoImage = () => {
+const LogoImage = ({ classNameValue, altValue }) => {
+    console.log('ClassNameValue: ', classNameValue)
+    console.log('AltValue: ', altValue)
     const backgroundRef = useRef(null)
 
     useEffect(() => {
@@ -37,7 +40,7 @@ const LogoImage = () => {
     // console.log('bg ref: ', backgroundRef)
     return (
         <div
-            className="mx-auto h-64 w-64"
+            className={classNameValue}
             style={{
                 objectFit: 'contain',
                 backgroundSize: 'contain',
@@ -45,9 +48,14 @@ const LogoImage = () => {
                 backgroundPosition: 'center',
             }}
             ref={backgroundRef}
-            alt="Help Code It logo"
+            alt={altValue}
         ></div>
     )
+}
+
+LogoImage.propTypes = {
+    classNameValue: propTypes.string,
+    altValue: propTypes.string,
 }
 
 export default LogoImage

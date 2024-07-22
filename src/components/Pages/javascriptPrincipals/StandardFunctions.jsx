@@ -131,7 +131,7 @@ function StandardFunctions() {
                             <h2 className="text-3xl">
                                 How to Create a Function
                             </h2>
-                            <p>
+                            <p className="mb-5">
                                 When you create a function you are defining a
                                 set of instructions that will be performed when
                                 the function is called. First you use the
@@ -144,16 +144,31 @@ function StandardFunctions() {
                                 Here&apos;s an example of a simple function:
                             </p>
                         </div>
-                        <div className="m-2 ">
-                            <pre className="my-5">
-                                <code
-                                    ref={codeRef}
-                                    className="language-javascript float-start me-10 p-2"
+
+                        {/* REVIEW bring in a code container, with the copy button and pre/code */}
+
+                        {/*REVIEW -  Code Container - BEGIN */}
+                        <div className="m-2 flex items-start gap-5">
+                            <div className="relative">
+                                <div
+                                    className={`${codeContainerStyles['code-container']} flex-none`}
                                 >
-                                    {sayHelloString}
-                                </code>
-                            </pre>
-                            <p>
+                                    <CopyButton
+                                        textToCopy={sayHelloString}
+                                        className="absolute left-0 top-0" // This positions the copy button inside the relative container
+                                    />
+                                    <pre>
+                                        <code
+                                            ref={codeRef}
+                                            className="language-javascript p-2"
+                                        >
+                                            {sayHelloString}
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+
+                            <p className="flex-auto">
                                 <i>
                                     This code says, &quot;Create a function
                                     named &apos;sayHello&apos; and make it show
@@ -169,6 +184,7 @@ function StandardFunctions() {
                                 endless!
                             </p>
                         </div>
+                        {/* Code Container - End */}
                     </div>
                     <hr className="mb-10 border-2 border-black dark:border-white" />
                 </div>
@@ -176,7 +192,7 @@ function StandardFunctions() {
                 <div className="observeMe">
                     <h2 className="py-2 text-3xl">How to Use a Function</h2>
 
-                    <p>
+                    <p className="mb-5">
                         Once you have created a function, you can use it by
                         calling its name followed by parentheses. Here&apos;s
                         how you call the &apos;sayHello&apos; function:
@@ -225,7 +241,7 @@ function StandardFunctions() {
                         Functions with Parameters: Giving Information to
                         Functions
                     </h2>
-                    <p>
+                    <p className="mb-5">
                         Sometimes, you want your function to do something
                         specific with certain pieces of information. These
                         pieces of information are called parameters. Here&apos;s
@@ -233,45 +249,56 @@ function StandardFunctions() {
                         adds them together:
                     </p>
 
-                    <div>
-                        <pre className="my-5">
-                            <code
-                                ref={codeRef}
-                                className="language-javascript float-start me-5"
+                    {/*REVIEW -  Code Container - BEGIN */}
+                    <div className="m-2 flex items-start gap-5">
+                        <div className="relative">
+                            <div
+                                className={`${codeContainerStyles['code-container']} flex-none`}
                             >
-                                {addNumbersString}
-                            </code>
-                        </pre>
-                        <p>
-                            {' '}
+                                <CopyButton
+                                    textToCopy={addNumbersString}
+                                    className="absolute left-0 top-0" // This positions the copy button inside the relative container
+                                />
+                                <pre>
+                                    <code
+                                        ref={codeRef}
+                                        className="language-javascript p-2"
+                                    >
+                                        {addNumbersString}
+                                    </code>
+                                </pre>
+                            </div>
+                        </div>
+                        <p className="flex-auto">
                             If you wanted to have this function return the
                             result return the answer instead of showing a
                             pop-up, you would use the &apos;return&apos;
                             keyword. You can have it do almost anything though.
                             This is where the use case of the function comes
                             into play. Once declared you have total control over
-                            what the function does.{' '}
-                        </p>{' '}
-                        <p>
-                            {' '}
-                            The flexibility of functions is one of their best
-                            features. You can use them in many different ways to
-                            make your code more powerful and easier to read.
+                            what the function does.
                         </p>
                     </div>
+                    <p className="flex-auto">
+                        The flexibility of functions is one of their best
+                        features. You can use them in many different ways to
+                        make your code more powerful and easier to read.
+                    </p>
+                    {/* Code Container - End */}
+
                     <hr className="my-7 border-2 border-black dark:border-white" />
                 </div>
                 {/* FIXME This is commented out because it is not working */}
-                {/* <div className="observeMe">
+                <div className="observeMe">
                     <h2 className="mt-10 py-2 text-3xl">
                         Let&apos;s Practice!
                     </h2>
                     <Suspense fallback={<div>Loading...</div>}>
                         <CodePractice
                             codeRef={codeRef}
-                            instructions={`"Create a function named &apos;addNumbers&apos; that takes two
-          numbers, adds them together, and then shows a pop-up with the
-          result."`}
+                            instructions={`Create a function named "addNumbers" that takes two
+          parameters, adds them together, and then shows a pop-up with the
+          result.`}
                             inputs={{
                                 input1: 'textarea',
                                 input2: 'singleLine',
@@ -280,12 +307,12 @@ function StandardFunctions() {
                                 variable1: 'let num1 = 2;',
                                 variable2: 'let num2 = 3;',
                             }}
-                            expectedOutput={'addNumbers();'}
+                            expectedOutput={'5'}
                             // functionData={""}
                             hljs={hljs}
                         />
                     </Suspense>
-                </div> */}
+                </div>
             </div>
 
             <div className="observeMe">
