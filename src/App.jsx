@@ -65,8 +65,9 @@ const Fetch = lazy(
         )
 )
 const GitHub = lazy(() => import('./components/Pages/fundamentals/GitHub'))
-const GitHubBranching = lazy( () => import('./components/Pages/fundamentals/GitHubBranching'))
-
+const GitHubBranching = lazy(
+    () => import('./components/Pages/fundamentals/GitHubBranching')
+)
 const GitHubCheatsheet = lazy(
     () => import('./components/Pages/fundamentals/GitHubCheatsheet')
 )
@@ -89,7 +90,9 @@ const ReactComponents = lazy(
 )
 const ReactRouter6 = lazy(() => import('./components/Pages/react/ReactRouter6'))
 const ReactHooks = lazy(() => import('./components/Pages/react/ReactHooks'))
-const Destructuring = lazy(() => import('./components/Pages/react/Destructuring'))
+const Destructuring = lazy(
+    () => import('./components/Pages/react/Destructuring')
+)
 const VSCodeHotkeysTable = lazy(
     () => import('./components/Pages/fundamentals/VSCodeHotkeysTable')
 )
@@ -102,19 +105,18 @@ const PropsAndState = lazy(
 const PlanningReactApps = lazy(
     () => import('./components/Pages/react/PlanningReactApps')
 )
-const ReactEvolution = lazy( () => import('./components/Pages/react/ReactEvolution'))
+const ReactEvolution = lazy(
+    () => import('./components/Pages/react/ReactEvolution')
+)
 const JSONServer = lazy(
     () => import('./components/Pages/javascriptPrincipals/JSONServer')
 )
 
-export default function App() {
+// Define theme outside of App component
+const useTheme = () => {
     const [theme, setTheme] = useState(
         window.matchMedia('(prefers-color-scheme: light)').matches
     )
-
-    useEffect(() => {
-        hljs.highlightAll()
-    }, [])
 
     useEffect(() => {
         const themeQuery = window.matchMedia('(prefers-color-scheme: light)')
@@ -127,96 +129,109 @@ export default function App() {
         }
     }, [])
 
-    const routes = [
-        // Home
-        { path: '/', component: <HomePage theme={theme} /> },
-        { path: '/about', component: <About /> },
-        { path: '/schedule-meeting', component: <ScheduleMeeting /> },
-        { path: '/data-generator', component: <DataGenerator /> },
+    return theme
+}
 
-        // Fundamentals
-        { path: '/fundamentals/GitHub', component: <GitHub /> },
-        {
-            path: '/fundamentals/VSCodeHotkeysTable',
-            component: <VSCodeHotkeysTable />,
-        },
-        { path: '/fundamentals/Bootstrap', component: <Bootstrap /> },
-        { path: '/fundamentals/Installs', component: <Installs /> },
-        {
-            path: '/fundamentals/VSCodeExtensions',
-            component: <VSCodeExtensions />,
-        },
-        {
-            path: '/fundamentals/SettingUpPracticeEnvironment',
-            component: <PracticeEnvironment />,
-        },
-        {
-            path: '/fundamentals/GitHubCheatsheet',
-            component: <GitHubCheatsheet />,
-        },
-        {   path: '/fundamentals/GitHubBranching', component: <GitHubBranching /> },
+const routes = (theme) => [
+    // Home
+    { path: '/', component: <HomePage theme={theme} /> },
+    { path: '/about', component: <About /> },
+    { path: '/schedule-meeting', component: <ScheduleMeeting /> },
+    { path: '/data-generator', component: <DataGenerator /> },
 
-        // Javascript
-        { path: '/javascript', component: <JavascriptMainPage /> },
-        {
-            path: '/javascriptPrincipals/PracticeProblems',
-            component: <PracticeProblems />,
-        },
-        {
-            path: '/javascriptPrincipals/DeclaringVariables',
-            component: <DeclaringVariables />,
-        },
-        {
-            path: '/javascriptPrincipals/StringConcatenation',
-            component: <StringConcatenation />,
-        },
-        {
-            path: '/javascriptPrincipals/StandardFunctions',
-            component: <StandardFunctions />,
-        },
-        {
-            path: '/javascriptPrincipals/UnitTestingMochaChai',
-            component: <UnitTestingMochaChai />,
-        },
-        { path: '/javascriptPrincipals/Loops', component: <Loops /> },
-        { path: '/code_practice', component: <CodePractice /> },
-        { path: '/javascriptPrincipals/Objects', component: <JSObjects /> },
-        {
-            path: '/javascriptPrincipals/ArrowFunctions',
-            component: <ArrowFunctions />,
-        },
-        {
-            path: '/javascriptPrincipals/ArrayMethods',
-            component: <ArrayMethods />,
-        },
-        {
-            path: '/javascriptPrincipals/StringMethods',
-            component: <StringMethods />,
-        },
-        {
-            path: '/javascriptPrincipals/PackagesAndPackageJson',
-            component: <PackagesAndPackageJson />,
-        },
-        { path: '/javascriptPrincipals/CRUD-Main', component: <JSCRUDMain /> },
-        { path: '/javascriptPrincipals/CRUD-AJAX', component: <AJAX /> },
-        { path: '/javascriptPrincipals/CRUD-Fetch', component: <Fetch /> },
-        { path: '/javascriptPrincipals/MenuApp', component: <MenuApp /> },
-        { path: '/javascriptPrincipals/WarGameTutorial', component: <War /> },
-        { path: '/javascriptPrincipals/JSONServer', component: <JSONServer /> },
+    // Fundamentals
+    { path: '/fundamentals/GitHub', component: <GitHub /> },
+    {
+        path: '/fundamentals/VSCodeHotkeysTable',
+        component: <VSCodeHotkeysTable />,
+    },
+    { path: '/fundamentals/Bootstrap', component: <Bootstrap /> },
+    { path: '/fundamentals/Installs', component: <Installs /> },
+    {
+        path: '/fundamentals/VSCodeExtensions',
+        component: <VSCodeExtensions />,
+    },
+    {
+        path: '/fundamentals/SettingUpPracticeEnvironment',
+        component: <PracticeEnvironment />,
+    },
+    {
+        path: '/fundamentals/GitHubCheatsheet',
+        component: <GitHubCheatsheet />,
+    },
+    {
+        path: '/fundamentals/GitHubBranching',
+        component: <GitHubBranching />,
+    },
 
-        // React
-        { path: '/ReactMain', component: <ReactMain /> },
-        { path: '/ReactComponents', component: <ReactComponents /> },
-        { path: '/ReactRouter6', component: <ReactRouter6 /> },
-        { path: '/PropsAndState', component: <PropsAndState /> },
-        { path: '/PlanningReactApps', component: <PlanningReactApps /> },
-        { path: '/ReactHooks', component: <ReactHooks /> },
-        {path: '/ReactEvolution', component: <ReactEvolution />},
-        { path: '/Destructuring', component: <Destructuring /> },
+    // Javascript
+    { path: '/javascript', component: <JavascriptMainPage /> },
+    {
+        path: '/javascriptPrincipals/PracticeProblems',
+        component: <PracticeProblems />,
+    },
+    {
+        path: '/javascriptPrincipals/DeclaringVariables',
+        component: <DeclaringVariables />,
+    },
+    {
+        path: '/javascriptPrincipals/StringConcatenation',
+        component: <StringConcatenation />,
+    },
+    {
+        path: '/javascriptPrincipals/StandardFunctions',
+        component: <StandardFunctions />,
+    },
+    {
+        path: '/javascriptPrincipals/UnitTestingMochaChai',
+        component: <UnitTestingMochaChai />,
+    },
+    { path: '/javascriptPrincipals/Loops', component: <Loops /> },
+    { path: '/code_practice', component: <CodePractice /> },
+    { path: '/javascriptPrincipals/Objects', component: <JSObjects /> },
+    {
+        path: '/javascriptPrincipals/ArrowFunctions',
+        component: <ArrowFunctions />,
+    },
+    {
+        path: '/javascriptPrincipals/ArrayMethods',
+        component: <ArrayMethods />,
+    },
+    {
+        path: '/javascriptPrincipals/StringMethods',
+        component: <StringMethods />,
+    },
+    {
+        path: '/javascriptPrincipals/PackagesAndPackageJson',
+        component: <PackagesAndPackageJson />,
+    },
+    { path: '/javascriptPrincipals/CRUD-Main', component: <JSCRUDMain /> },
+    { path: '/javascriptPrincipals/CRUD-AJAX', component: <AJAX /> },
+    { path: '/javascriptPrincipals/CRUD-Fetch', component: <Fetch /> },
+    { path: '/javascriptPrincipals/MenuApp', component: <MenuApp /> },
+    { path: '/javascriptPrincipals/WarGameTutorial', component: <War /> },
+    { path: '/javascriptPrincipals/JSONServer', component: <JSONServer /> },
 
-        // Default
-        { path: '*', component: <HomePage /> },
-    ]
+    // React
+    { path: '/ReactMain', component: <ReactMain /> },
+    { path: '/ReactComponents', component: <ReactComponents /> },
+    { path: '/ReactRouter6', component: <ReactRouter6 /> },
+    { path: '/PropsAndState', component: <PropsAndState /> },
+    { path: '/PlanningReactApps', component: <PlanningReactApps /> },
+    { path: '/ReactHooks', component: <ReactHooks /> },
+    { path: '/ReactEvolution', component: <ReactEvolution /> },
+    { path: '/Destructuring', component: <Destructuring /> },
+
+    // Default
+    { path: '*', component: <HomePage theme={theme} /> },
+]
+
+function App() {
+    const theme = useTheme()
+
+    useEffect(() => {
+        hljs.highlightAll()
+    }, [])
 
     return (
         <DarkModeProvider>
@@ -227,7 +242,7 @@ export default function App() {
 
                 <Suspense fallback={<div>Loading...</div>}>
                     <Routes>
-                        {routes.map(({ path, component }) => (
+                        {routes(theme).map(({ path, component }) => (
                             <Route key={path} path={path} element={component} />
                         ))}
                     </Routes>
@@ -240,3 +255,7 @@ export default function App() {
         </DarkModeProvider>
     )
 }
+
+// Export App but also allow routes to be exported
+export { routes }
+export default App
