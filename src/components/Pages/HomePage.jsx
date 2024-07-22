@@ -69,13 +69,14 @@ function HomePage() {
                             </p>
                             <Link to="/schedule-meeting" className="block">
                                 <button
-                                aria-label='explore meeting options button'
-                                className="mx-auto flex w-fit rounded-full bg-blue-700 px-6 py-3 font-bold text-white transition duration-300 hover:bg-red-700">
+                                    aria-label="explore meeting options button"
+                                    className="mx-auto flex w-fit rounded-full bg-blue-700 px-6 py-3 font-bold text-white transition duration-300 hover:bg-red-700"
+                                >
                                     Explore Meeting Options
                                     <CalendarSearch
                                         size={24}
                                         className="my-auto ml-2"
-                                        aria-label='calendar search icon'
+                                        aria-label="calendar search icon"
                                     />
                                 </button>
                             </Link>
@@ -84,7 +85,7 @@ function HomePage() {
                 </div>
             </div>
 
-            <div className=" pb-10  text-white">
+            <div className="pb-10 text-white">
                 <MainCards />
             </div>
         </div>
