@@ -111,6 +111,7 @@ do {
                     <CopyButton
                         textToCopy={forLoop}
                         className="absolute left-0 top-0"
+                        aria-label="Copy code"
                     />
                     <pre>
                         <code ref={codeRef} className="language-javascript p-2">
@@ -154,6 +155,7 @@ do {
                     <CopyButton
                         textToCopy={whileLoop}
                         className="absolute left-0 top-0"
+                        aria-label="Copy code"
                     />
                     <pre>
                         <code
@@ -191,6 +193,7 @@ do {
                     <CopyButton
                         textToCopy={doWhileLoop}
                         className="absolute left-0 top-0"
+                        aria-label="Copy code"
                     />
                     <pre>
                         <code ref={codeRef} className="language-javascript p-2">

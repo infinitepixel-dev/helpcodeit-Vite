@@ -76,7 +76,8 @@ function About() {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <button className="animate-bounce rounded-full bg-blue-700 px-4 py-2 font-bold text-white hover:animate-none hover:bg-green-500 ">
+                                <button aria-label='Book a meeting with Michael button'
+                                className="animate-bounce rounded-full bg-blue-700 px-4 py-2 font-bold text-white hover:animate-none hover:bg-green-500 ">
                                     Book a meeting
                                 </button>
                             </a>

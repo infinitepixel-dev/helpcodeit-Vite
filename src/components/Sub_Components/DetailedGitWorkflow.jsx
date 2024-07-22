@@ -151,6 +151,7 @@ const DetailedGitWorkflow = () => {
                 <h2 className="text-3xl font-bold">Git Update Workflow</h2>
                 <button
                     onClick={toggleDarkMode}
+                    aria-label='toggle dark mode'
                     className="rounded-full p-2 transition-colors duration-200 hover:bg-gray-200 dark:hover:bg-gray-700"
                 >
                     {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}

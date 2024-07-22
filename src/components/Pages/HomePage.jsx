@@ -71,11 +71,14 @@ function HomePage() {
                                 best fits your needs and schedule.
                             </p>
                             <Link to="/schedule-meeting" className="block">
-                                <button className="mx-auto flex w-fit rounded-full bg-blue-700 px-6 py-3 font-bold text-white transition duration-300 hover:bg-red-700">
+                                <button
+                                aria-label='explore meeting options button'
+                                className="mx-auto flex w-fit rounded-full bg-blue-700 px-6 py-3 font-bold text-white transition duration-300 hover:bg-red-700">
                                     Explore Meeting Options
                                     <CalendarSearch
                                         size={24}
                                         className="my-auto ml-2"
+                                        aria-label='calendar search icon'
                                     />
                                 </button>
                             </Link>

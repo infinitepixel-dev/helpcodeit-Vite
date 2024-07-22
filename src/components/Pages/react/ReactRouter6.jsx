@@ -151,12 +151,15 @@ function ReactRouter6() {
                             </p>
 
                             <div className="flex flex-col">
-                                <button className="mt-5 rounded-lg bg-blue-700 p-2 hover:bg-blue-900">
+                                <button className="mt-5 rounded-lg bg-blue-700 p-2 hover:bg-blue-900"
+                                aria-label='React Router Documentation'>
+                                
                                     <a
                                         href="https://reactrouter.com/"
                                         target="_blank"
                                         rel="noreferrer"
                                         className="text-white"
+                                        aria-label='React Router Documentation'
                                     >
                                         React Router Documentation
                                     </a>

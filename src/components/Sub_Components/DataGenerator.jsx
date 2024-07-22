@@ -76,7 +76,8 @@ function DataGenerator() {
                     <li>- Then you can access your data at http://localhost:3000/your-endpoint</li>
                 </ul>
                     <Link to="/javascriptPrincipals/JSONServer">
-                <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg mt-5" >
+                <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg mt-5"
+                aria-label='Learn More About json-server'>
                     Learn More About json-server
                 </button>
                     </Link>
@@ -123,6 +124,7 @@ function DataGenerator() {
                     onClick={handleGeneration}
                     className="focus:shadow-outline w-full rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none"
                     type="button"
+                    aria-label='generate data button'
                 >
                     Generate Data
                 </button>
