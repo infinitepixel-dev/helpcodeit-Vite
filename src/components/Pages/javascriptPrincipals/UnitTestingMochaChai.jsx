@@ -114,7 +114,9 @@ describe('Array', function() {
                     </p>
                     <div className="mx-auto my-5 h-fit w-fit rounded-2xl bg-amber-700 px-3 py-1 text-center font-bold text-white shadow-sm shadow-black">
                         <a href="https://mochajs.org/" target="_blank">
-                            <button>Mocha Documentation</button>
+                            <button
+                            aria-label='Mocha Documentation'
+                            >Mocha Documentation</button>
                         </a>
                     </div>
                 </div>
@@ -142,7 +144,7 @@ describe('Array', function() {
                             href="https://www.chaijs.com/api/bdd/"
                             target="_blank"
                         >
-                            <button>Chai Documentation</button>
+                            <button aria-label='Chai Documentation Button'>Chai Documentation</button>
                         </a>
                     </div>
                 </div>
