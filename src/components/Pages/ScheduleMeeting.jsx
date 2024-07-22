@@ -31,7 +31,7 @@ const ScheduleMeeting = () => {
                     content="schedule meeting, coding help, coding tutoring, Michael Varnell, Git workshop, GitHub workshop, front-end development, coding sessions"
                 />
             </Helmet>
-            {event.ISOdate < new Date().toISOString() && <EventAlert event={event} />}
+            {/* {event.ISOdate < new Date().toISOString() && <EventAlert event={event} />} */}
             <div className="pb-100 container mx-auto p-2 px-4 sm:p-8">
                 <div className="mt-5 flex flex-wrap items-center">
                     <div className="w-full">
