@@ -278,10 +278,14 @@ function Navbar({ theme }) {
                             About
                         </NavLink>
                         <div className="ms-auto p-1">
-                            <a href="https://www.buymeacoffee.com/michaelvarnell">
+                            <a href="https://www.buymeacoffee.com/michaelvarnell"
+                                aria-label='Buy me a coffee button'
+                            >
                                 <img
                                     src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=michaelvarnell&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff"
                                     className="h-auto w-40"
+                                    alt="Buy me a coffee"
+                                    aria-label='Buy me a coffee button'
                                 />
                             </a>
                         </div>

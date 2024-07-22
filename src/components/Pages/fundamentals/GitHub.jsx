@@ -9,6 +9,7 @@ import redPill from '../../../assets/1__URX2jndILBo7mMkgs-SWQ Background Removed
 import bluePill from '../../../assets/Bluepill Background Removed.png'
 import DetailedGitWorkflow from '../../Sub_Components/DetailedGitWorkflow'
 import {Link} from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 function GitHub() {
     const codeRef = useRef(null)
@@ -31,6 +32,23 @@ git config --global user.email "Your Email"`
 
     return (
         <div className="container mb-14 text-xl" id="#top">
+            <Helmet>
+                <title>GitHub | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn the basics of GitHub, a version control system that allows you to store and manage your code. Discover how to create a repository, add files, commit changes, and push your code to GitHub."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/fundamentals/GitHub"
+
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="GitHub, version control, GitHub tutorial, coding collaboration, Git, software development, web development"
+                />
+            </Helmet>
             <div className="mt-10 grid grid-cols-1 place-items-center justify-center md:grid-cols-2 ">
                 <div className=" my-auto md:ms-auto ">
                     <h1 className="mx-auto my-auto text-center text-2xl md:text-7xl  ">
