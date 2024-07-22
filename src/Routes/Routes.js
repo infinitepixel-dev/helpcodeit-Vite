@@ -1,6 +1,6 @@
 import { lazy } from 'react';
 
-const componentRoutes = [
+export const componentRoutes = [
   //INFO: MISC Pages
   { path: '*', componentPath: '../components/Pages/HomePage.jsx', key: 'default' },
   { path: '/', componentPath: '../components/Pages/HomePage.jsx', key: 'home' },
@@ -46,30 +46,34 @@ const componentRoutes = [
 ];
 
 
-// Use import.meta.glob to dynamically import components, including Sub_Components
-const componentMap = import.meta.glob([
-  '../components/Pages/**/*.{jsx,js}',
-  '../components/Sub_Components/**/*.{jsx,js}'
-]);
-console.log('Component Map:', componentMap);
+let RoutesWithComponents = componentRoutes;
 
-// Initialize the components object
-const components = {};
+if (typeof window !== 'undefined') {
+  // Vite-specific logic for dynamic imports
+  const componentMap = import.meta.glob('../components/Pages/**/*.{jsx,js}');
+  const subComponentMap = import.meta.glob('../components/Sub_Components/**/*.{jsx,js}');
+  console.log('Component Map:', { ...componentMap, ...subComponentMap });
 
-// Adjust componentPath if necessary to match the keys in componentMap
-componentRoutes.forEach(route => {
-  const importPath = route.componentPath;
-  if (componentMap[importPath]) {
-    components[route.key] = lazy(componentMap[importPath]);
-  } else {
-    console.warn(`Component for path ${importPath} not found.`);
-  }
-});
+  // Initialize the components object
+  const components = {};
 
-// Create RoutesWithComponents array
-const RoutesWithComponents = componentRoutes.map(route => ({
-  ...route,
-  component: components[route.key],
-}));
+  // Adjust componentPath if necessary to match the keys in componentMap
+  componentRoutes.forEach(route => {
+    const importPath = route.componentPath;
+    if (componentMap[importPath]) {
+      components[route.key] = lazy(componentMap[importPath]);
+    } else if (subComponentMap[importPath]) {
+      components[route.key] = lazy(subComponentMap[importPath]);
+    } else {
+      console.warn(`Component for path ${importPath} not found.`);
+    }
+  });
+
+  // Create RoutesWithComponents array
+  RoutesWithComponents = componentRoutes.map(route => ({
+    ...route,
+    component: components[route.key],
+  }));
+}
 
 export default RoutesWithComponents;
