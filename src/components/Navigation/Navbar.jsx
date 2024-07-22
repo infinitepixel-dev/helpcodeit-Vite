@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
- import  propTypes  from 'prop-types'
-import logo from '../../assets/helpcodeitlogo.svg'
+import propTypes from 'prop-types'
+// import logo from '../../assets/helpcodeitlogo.svg'
+import LogoImage from '../Sub_Components/LogoImage'
 import { NavLink } from 'react-router-dom'
+
 import './Navbar.module.css'
 
 import gsap from 'gsap'
@@ -75,7 +77,7 @@ function Navbar({ theme }) {
     })
 
     return (
-        <div className="mx-auto w-full border-b border-black bg-white px-2 mb-1 pt-2 shadow-sm dark:bg-neutral-800 ">
+        <div className="mx-auto mb-1 w-full border-b border-black bg-white px-2 pt-2 shadow-sm dark:bg-neutral-800 ">
             <nav
                 className={
                     isSmallScreen && navbarCollapse
@@ -85,16 +87,12 @@ function Navbar({ theme }) {
             >
                 <div className="grid">
                     <NavLink to="/">
-                        <p ref={logoRef}>
-                            <img
-                                src={logo}
-                                alt="help code it logo"
-                                className="ms-2 my-1 rounded-lg" //REVIEW Animation
-                                height="40"
-                                width="40"
-                            ></img>
-
-                        </p>
+                        <div ref={logoRef}>
+                            <LogoImage
+                                classNameValue="mx-auto h-10 w-10 my-1 ms-2 rounded-lg"
+                                altValue="Help code it logo"
+                            />
+                        </div>
                     </NavLink>
                 </div>
 
@@ -108,7 +106,7 @@ function Navbar({ theme }) {
                                 ? 'hidden'
                                 : 'float-right focus:outline-none lg:hidden'
                         }
-                        aria-label='Toggle Menu Button'
+                        aria-label="Toggle Menu Button"
                     >
                         <svg
                             className="h-6 w-6"
@@ -151,7 +149,7 @@ function Navbar({ theme }) {
                                 className="rounded-full p-2 hover:bg-slate-500"
                                 onClick={() => setDropdown(!dropdown)}
                                 id="dropdown-button"
-                                aria-label='Toggle Dropdown Fundamentals button'
+                                aria-label="Toggle Dropdown Fundamentals button"
                             >
                                 Getting Started
                             </button>
@@ -221,7 +219,7 @@ function Navbar({ theme }) {
                                 className="rounded-full p-2 hover:bg-slate-500"
                                 onClick={() => setDropdown2(!dropdown2)}
                                 id="dropdown-button2"
-                                aria-label='Toggle Dropdown Topics'
+                                aria-label="Toggle Dropdown Topics"
                             >
                                 Topics
                             </button>
@@ -248,11 +246,11 @@ function Navbar({ theme }) {
                                         React.js
                                     </NavLink>
                                     <NavLink
-                                    to={'/data-generator'}
-                                    className="whitespace-no-wrap text-base block rounded bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
-                                >
-                                    Data Generator
-                                </NavLink>
+                                        to={'/data-generator'}
+                                        className="whitespace-no-wrap block rounded bg-white px-4 py-2 text-base hover:bg-slate-500 dark:bg-black"
+                                    >
+                                        Data Generator
+                                    </NavLink>
                                 </li>
                             </ul>
                         </div>
