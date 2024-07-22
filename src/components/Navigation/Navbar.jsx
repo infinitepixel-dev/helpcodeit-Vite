@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
 import propTypes from 'prop-types'
-import logo from '../../assets/helpcodeitlogo.svg'
+// import logo from '../../assets/helpcodeitlogo.svg'
+import LogoImage from '../Sub_Components/LogoImage'
 import { NavLink } from 'react-router-dom'
+
 import './Navbar.module.css'
-import PropTypes from 'prop-types'
 
 import gsap from 'gsap'
 // import { Nav } from 'react-bootstrap'
@@ -86,15 +87,12 @@ function Navbar({ theme }) {
             >
                 <div className="grid">
                     <NavLink to="/">
-                        <p ref={logoRef}>
-                            <img
-                                src={logo}
-                                alt="help code it logo"
-                                className="my-1 ms-2 rounded-lg" //REVIEW Animation
-                                height="40"
-                                width="40"
-                            ></img>
-                        </p>
+                        <div ref={logoRef}>
+                            <LogoImage
+                                classNameValue="mx-auto h-10 w-10 my-1 ms-2 rounded-lg"
+                                altValue="Help code it logo"
+                            />
+                        </div>
                     </NavLink>
                 </div>
 
