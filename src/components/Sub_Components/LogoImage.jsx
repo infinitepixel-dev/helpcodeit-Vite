@@ -6,17 +6,10 @@ import bgImg2 from '../../assets/helpcodeitlogo_opt.avif'
 import bgImg3 from '../../assets/helpcodeitlogo_opt.jpg'
 
 const LogoImage = ({ classNameValue, altValue }) => {
-    console.log('ClassNameValue: ', classNameValue)
-    console.log('AltValue: ', altValue)
     const backgroundRef = useRef(null)
 
     useEffect(() => {
         const backgroundElement = backgroundRef.current
-        const sources = [
-            { type: 'image/webp', srcset: bgImg1 },
-            { type: 'image/avif', srcset: bgImg2 },
-        ]
-        let fallbackImage = bgImg3
 
         const setImage = (src) => {
             if (backgroundElement) {
@@ -24,20 +17,47 @@ const LogoImage = ({ classNameValue, altValue }) => {
             }
         }
 
-        sources.forEach((source) => {
+        const handleImageLoad = (src) => {
             const testImage = new Image()
-            testImage.src = source.srcset
+            testImage.src = src
             testImage.onload = function () {
                 if (testImage.complete && testImage.naturalWidth !== 0) {
-                    setImage(source.srcset)
+                    setImage(src)
                 }
             }
-        })
+        }
+
+        const sources = [
+            { type: 'image/webp', srcset: bgImg1 },
+            { type: 'image/avif', srcset: bgImg2 },
+        ]
+
+        sources.forEach((source) => handleImageLoad(source.srcset))
 
         // Fallback to jpg if none of the sources load
-        setImage(fallbackImage)
+        setImage(bgImg3)
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        sources.forEach((source) =>
+                            handleImageLoad(source.srcset)
+                        )
+                        observer.unobserve(backgroundElement)
+                    }
+                })
+            },
+            { threshold: 0.1 }
+        )
+
+        observer.observe(backgroundElement)
+
+        return () => {
+            if (backgroundElement) observer.unobserve(backgroundElement)
+        }
     }, [])
-    // console.log('bg ref: ', backgroundRef)
+
     return (
         <div
             className={classNameValue}
@@ -48,7 +68,7 @@ const LogoImage = ({ classNameValue, altValue }) => {
                 backgroundPosition: 'center',
             }}
             ref={backgroundRef}
-            alt={altValue}
+            aria-label={altValue}
         ></div>
     )
 }
