@@ -52,6 +52,7 @@ function Card({
                     <div className="  flex w-2/3 items-center justify-center">
                         <div
                             href={actionHref}
+                            aria-label={actionText}
                             className={`my-2 h-auto w-2/3 rounded-xl border border-black  p-2 text-center text-3xl font-bold text-white transition duration-300 ease-in-out hover:opacity-50 ${
                                 customCSS.letsGoBtn
                                     ? customCSS.letsGoBtn

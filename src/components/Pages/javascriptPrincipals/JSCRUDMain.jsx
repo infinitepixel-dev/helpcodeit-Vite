@@ -29,7 +29,9 @@ function JSCRUDMain() {
                     to="/javascriptPrincipals/CRUD-AJAX"
                     className="mx-auto text-3xl"
                 >
-                    <button className="rounded-xl bg-blue-700 p-2 text-white hover:bg-blue-500">
+                    <button
+                    aria-label='AJAX/Axios CRUD Operations Examples'
+                    className="rounded-xl bg-blue-700 p-2 text-white hover:bg-blue-500">
                         AJAX/Axios
                     </button>
                 </Link>
@@ -37,7 +39,9 @@ function JSCRUDMain() {
                     to="/javascriptPrincipals/CRUD-Fetch"
                     className="mx-auto text-3xl"
                 >
-                    <button className="rounded-xl bg-blue-700 p-2 text-white hover:bg-blue-500">
+                    <button
+                    aria-label='Fetch API CRUD Operations Examples'
+                    className="rounded-xl bg-blue-700 p-2 text-white hover:bg-blue-500">
                         Fetch
                     </button>
                 </Link>
