@@ -4,14 +4,13 @@ import MainCards from '../Sub_Components/MainCards'
 // import EventAlert from '../Sub_Components/EventAlert'
 import { Helmet } from 'react-helmet-async'
 import EventCard from '../Sub_Components/EventCard'
-import { CalendarSearch } from 'lucide-react';
+import { CalendarSearch } from 'lucide-react'
+import JumboBackground from '../Sub_Components/JumboBackground'
+import './HomePage.css'
 
 function HomePage() {
-
-
     return (
         <div>
-
             <Helmet>
                 <title>Help Code It | Resources for Beginning Developers</title>
                 <meta
@@ -33,52 +32,59 @@ function HomePage() {
             </Helmet>
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
-            <div className="jumbo-background hero-text bg-neutral-800 text-white">
-                <div className="container mx-auto">
-                    <div className="grid grid-cols-3">
-                        <div className="col-span-3 md:col-span-1">
+
+            <div className="hero-text bg-neutral-800 text-white">
+                <div className="relative">
+                    <JumboBackground />
+                    <div className="absolute inset-0 flex items-center">
+                        <div className="logo-container text-center text-white">
                             <img
                                 src={logo}
                                 alt="Help Code It logo"
-                                className="hero-logo mx-auto mt-5 p-1"
+                                className="mx-auto w-64"
                             />
-
-                            <p className="hero-text mx-auto text-center font-extrabold">
+                            <h1 className="hero-text mx-auto mb-2 text-center font-extrabold">
                                 Resources for beginning developers
-                            </p>
+                            </h1>
                         </div>
                     </div>
                 </div>
             </div>
             {/* !SECTION end Jumbotron */}
             <div className="container">
-                <div className="grid lg:grid-cols-2 md:grid-cols-auto">
+                <div className="md:grid-cols-auto grid lg:grid-cols-2">
                     <div className="mx-5">
                         <EventCard />
                     </div>
-                  <div className='my-auto mx-5'>
-                      <h2 className="text-3xl font-bold text-center mb-6 ">
-                        Get expert coding help and tutoring
+                    <div className="mx-5 my-auto">
+                        <h2 className="mb-6 text-center text-3xl font-bold ">
+                            Get expert coding help and tutoring
                         </h2>
-                        <div className="bg-white text-black shadow-lg rounded-lg p-8 max-w-2xl mx-auto my-8">
-                        <h2 className="text-3xl font-bold text-center mb-6">
-                        Book a session now!
-                      </h2>
-                      <p className="text-center mb-6">
-                        Elevate your software development skills with personalized guidance from an experienced professional. Choose the meeting option that best fits your needs and schedule.
-                        </p>
-                      <Link to="/schedule-meeting" className="block">
-                        <button className="w-fit mx-auto flex bg-blue-700 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">
-                          Explore Meeting Options
-                          <CalendarSearch size={24} className="ml-2 my-auto"  />
-                        </button>
-                      </Link>
-                      </div>
-                  </div>
+                        <div className="mx-auto my-8 max-w-2xl rounded-lg bg-white p-8 text-black shadow-lg">
+                            <h2 className="mb-6 text-center text-3xl font-bold">
+                                Book a session now!
+                            </h2>
+                            <p className="mb-6 text-center">
+                                Elevate your software development skills with
+                                personalized guidance from an experienced
+                                professional. Choose the meeting option that
+                                best fits your needs and schedule.
+                            </p>
+                            <Link to="/schedule-meeting" className="block">
+                                <button className="mx-auto flex w-fit rounded-full bg-blue-700 px-6 py-3 font-bold text-white transition duration-300 hover:bg-red-700">
+                                    Explore Meeting Options
+                                    <CalendarSearch
+                                        size={24}
+                                        className="my-auto ml-2"
+                                    />
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div className=" text-white  pb-10">
+            <div className=" pb-10  text-white">
                 <MainCards />
             </div>
         </div>
