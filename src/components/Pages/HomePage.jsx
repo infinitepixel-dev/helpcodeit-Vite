@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logo from '../../assets/helpcodeitlogo.svg'
+import LogoImage from '../Sub_Components/LogoImage'
 import MainCards from '../Sub_Components/MainCards'
 // import EventAlert from '../Sub_Components/EventAlert'
 import { Helmet } from 'react-helmet-async'
@@ -25,7 +25,8 @@ function HomePage() {
                     property="og:description"
                     content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Book a session now!"
                 />
-                <meta property="og:image" content={logo} />
+
+                <meta property="og:image" content={LogoImage} />
                 <meta property="og:url" content="https://helpcodeit.com" />
 
                 <link rel="canonical" href="https://helpcodeit.com" />
@@ -38,11 +39,7 @@ function HomePage() {
                     <JumboBackground />
                     <div className="absolute inset-0 flex items-center">
                         <div className="logo-container text-center text-white">
-                            <img
-                                src={logo}
-                                alt="Help Code It logo"
-                                className="mx-auto w-64"
-                            />
+                            <LogoImage />
                             <h1 className="hero-text mx-auto mb-2 text-center font-extrabold">
                                 Resources for beginning developers
                             </h1>
