@@ -1,11 +1,10 @@
-// generateSitemap.mjs
-
+// generateSitemap.js
 import { createWriteStream, promises as fs } from 'fs';
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { createGzip } from 'zlib';
 import { fileURLToPath } from 'url';
 import { dirname, resolve } from 'path';
-import routes from './src/Routes/Routes.js'; // Import your routes from the routes.js file
+import { componentRoutes } from './src/Routes/Routes.js'; // Import your routes from the routes.js file
 
 // Workaround to get __dirname in ES module scope
 const __filename = fileURLToPath(import.meta.url);
@@ -15,7 +14,7 @@ const __dirname = dirname(__filename);
 const baseUrl = 'https://www.helpcodeit.com';
 
 // Extract URLs from routes
-const urls = routes.map(route => ({
+const urls = componentRoutes.map(route => ({
   url: route.path,
   changefreq: 'monthly',
   priority: 0.8
