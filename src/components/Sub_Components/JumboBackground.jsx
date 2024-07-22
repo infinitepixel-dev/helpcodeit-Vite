@@ -1,6 +1,8 @@
 import { useEffect, useRef } from 'react'
-import bgImg1 from '../../assets/header_bg.webp'
-import bgImg2 from '../../assets/header_bg.avif'
+
+import bgImg1 from '../../assets/cropped_header_bg_opt.webp'
+import bgImg2 from '../../assets/cropped_header_bg_opt.avif'
+import bgImg3 from '../../assets/cropped_header_bg_opt.jpg'
 import './JumboBackground.css'
 
 const JumboBackground = () => {
@@ -12,7 +14,7 @@ const JumboBackground = () => {
             { type: 'image/webp', srcset: bgImg1 },
             { type: 'image/avif', srcset: bgImg2 },
         ]
-        let fallbackImage = './assets/pexels-lukas-574069.jpg'
+        let fallbackImage = bgImg3
 
         const setImage = (src) => {
             if (backgroundElement) {
