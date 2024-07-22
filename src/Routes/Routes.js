@@ -1,69 +1,75 @@
 import { lazy } from 'react';
 
-const routes = [
+const componentRoutes = [
   //INFO: MISC Pages
-  { path: '*', componentPath: '../components/Pages/HomePage', key: 'default' },
-  { path: '/', componentPath: '../components/Pages/HomePage', key: 'home' },
-  { path: '/about', componentPath: '../components/Pages/About', key: 'about' },
-  { path: '/schedule-meeting', componentPath: '../components/Pages/ScheduleMeeting', key: 'scheduleMeeting' },
+  { path: '*', componentPath: '../components/Pages/HomePage.jsx', key: 'default' },
+  { path: '/', componentPath: '../components/Pages/HomePage.jsx', key: 'home' },
+  { path: '/about', componentPath: '../components/Pages/About.jsx', key: 'about' },
+  { path: '/schedule-meeting', componentPath: '../components/Pages/ScheduleMeeting.jsx', key: 'scheduleMeeting' },
   //INFO: JAVASCRIPT Pages
-  { path: '/data-generator', componentPath: '../components/Sub_Components/DataGenerator', key: 'dataGenerator' },
-  { path: '/javascript', componentPath: '../components/Pages/JavascriptMainPage', key: 'javascriptMain' },
-  { path: '/javascriptPrincipals/PracticeProblems', componentPath: '../components/Pages/javascriptPrincipals/PracticeProblems', key: 'practiceProblems' },
-  { path: '/javascriptPrincipals/DeclaringVariables', componentPath: '../components/Pages/javascriptPrincipals/DeclaringVariables', key: 'declaringVariables' },
-  { path: '/javascriptPrincipals/StringConcatenation', componentPath: '../components/Pages/javascriptPrincipals/StringConcatenation', key: 'stringConcatenation' },
-  { path: '/javascriptPrincipals/StandardFunctions', componentPath: '../components/Pages/javascriptPrincipals/StandardFunctions', key: 'standardFunctions' },
-  { path: '/javascriptPrincipals/UnitTestingMochaChai', componentPath: '../components/Pages/javascriptPrincipals/UnitTestingMochaChai', key: 'unitTestingMochaChai' },
-  { path: '/javascriptPrincipals/Loops', componentPath: '../components/Pages/javascriptPrincipals/Loops', key: 'loops' },
-  { path: '/code_practice', componentPath: '../components/Sub_Components/Code_Practice', key: 'codePractice' },
-  { path: '/javascriptPrincipals/Objects', componentPath: '../components/Pages/javascriptPrincipals/JSObjects', key: 'objects' },
-  { path: '/javascriptPrincipals/ArrowFunctions', componentPath: '../components/Pages/javascriptPrincipals/ArrowFunctions', key: 'arrowFunctions' },
-  { path: '/javascriptPrincipals/ArrayMethods', componentPath: '../components/Pages/javascriptPrincipals/ArrayMethods', key: 'arrayMethods' },
-  { path: '/javascriptPrincipals/StringMethods', componentPath: '../components/Pages/javascriptPrincipals/StringMethods', key: 'stringMethods' },
-  { path: '/javascriptPrincipals/PackagesAndPackageJson', componentPath: '../components/Pages/javascriptPrincipals/PackagesAndPackageJson', key: 'packagesAndPackageJson' },
-  { path: '/javascriptPrincipals/CRUD-Main', componentPath: '../components/Pages/javascriptPrincipals/JSCRUDMain', key: 'crudMain' },
-  { path: '/javascriptPrincipals/CRUD-AJAX', componentPath: '../components/Pages/javascriptPrincipals/CRUD/AJAX', key: 'crudAjax' },
-  { path: '/javascriptPrincipals/CRUD-Fetch', componentPath: '../components/Pages/javascriptPrincipals/CRUD/CRUD_Operations/Fetch', key: 'crudFetch' },
-  { path: '/javascriptPrincipals/MenuApp', componentPath: '../components/Pages/javascriptPrincipals/MenuApp', key: 'menuApp' },
-  { path: '/javascriptPrincipals/WarGameTutorial', componentPath: '../components/Pages/javascriptPrincipals/War', key: 'warGameTutorial' },
-  { path: '/javascriptPrincipals/JSONServer', componentPath: '../components/Pages/javascriptPrincipals/JSONServer', key: 'JSONServer'},
+  { path: '/data-generator', componentPath: '../components/Sub_Components/DataGenerator.jsx', key: 'dataGenerator' },
+  { path: '/javascript', componentPath: '../components/Pages/JavascriptMainPage.jsx', key: 'javascriptMain' },
+  { path: '/javascriptPrincipals/PracticeProblems', componentPath: '../components/Pages/javascriptPrincipals/PracticeProblems.jsx', key: 'practiceProblems' },
+  { path: '/javascriptPrincipals/DeclaringVariables', componentPath: '../components/Pages/javascriptPrincipals/DeclaringVariables.jsx', key: 'declaringVariables' },
+  { path: '/javascriptPrincipals/StringConcatenation', componentPath: '../components/Pages/javascriptPrincipals/StringConcatenation.jsx', key: 'stringConcatenation' },
+  { path: '/javascriptPrincipals/StandardFunctions', componentPath: '../components/Pages/javascriptPrincipals/StandardFunctions.jsx', key: 'standardFunctions' },
+  { path: '/javascriptPrincipals/UnitTestingMochaChai', componentPath: '../components/Pages/javascriptPrincipals/UnitTestingMochaChai.jsx', key: 'unitTestingMochaChai' },
+  { path: '/javascriptPrincipals/Loops', componentPath: '../components/Pages/javascriptPrincipals/Loops.jsx', key: 'loops' },
+  { path: '/code_practice', componentPath: '../components/Sub_Components/Code_Practice.jsx', key: 'codePractice' },
+  { path: '/javascriptPrincipals/Objects', componentPath: '../components/Pages/javascriptPrincipals/JSObjects.jsx', key: 'objects' },
+  { path: '/javascriptPrincipals/ArrowFunctions', componentPath: '../components/Pages/javascriptPrincipals/ArrowFunctions.jsx', key: 'arrowFunctions' },
+  { path: '/javascriptPrincipals/ArrayMethods', componentPath: '../components/Pages/javascriptPrincipals/ArrayMethods.jsx', key: 'arrayMethods' },
+  { path: '/javascriptPrincipals/StringMethods', componentPath: '../components/Pages/javascriptPrincipals/StringMethods.jsx', key: 'stringMethods' },
+  { path: '/javascriptPrincipals/PackagesAndPackageJson', componentPath: '../components/Pages/javascriptPrincipals/PackagesAndPackageJson.jsx', key: 'packagesAndPackageJson' },
+  { path: '/javascriptPrincipals/CRUD-Main', componentPath: '../components/Pages/javascriptPrincipals/JSCRUDMain.jsx', key: 'crudMain' },
+  { path: '/javascriptPrincipals/CRUD-AJAX', componentPath: '../components/Pages/javascriptPrincipals/CRUD/AJAX.jsx', key: 'crudAjax' },
+  { path: '/javascriptPrincipals/CRUD-Fetch', componentPath: '../components/Pages/javascriptPrincipals/CRUD/CRUD_Operations/Fetch.jsx', key: 'crudFetch' },
+  { path: '/javascriptPrincipals/MenuApp', componentPath: '../components/Pages/javascriptPrincipals/MenuApp.jsx', key: 'menuApp' },
+  { path: '/javascriptPrincipals/WarGameTutorial', componentPath: '../components/Pages/javascriptPrincipals/War.jsx', key: 'warGameTutorial' },
+  { path: '/javascriptPrincipals/JSONServer', componentPath: '../components/Pages/javascriptPrincipals/JSONServer.jsx', key: 'JSONServer'},
  //INFO: FUNDAMENTALS Pages
-  { path: '/fundamentals/GitHub', componentPath: '../components/Pages/fundamentals/GitHub', key: 'gitHub' },
-  { path: '/fundamentals/VSCodeHotkeysTable', componentPath: '../components/Pages/fundamentals/VSCodeHotkeysTable', key: 'vsCodeHotkeysTable' },
-  { path: '/fundamentals/Bootstrap', componentPath: '../components/Pages/fundamentals/Bootstrap', key: 'bootstrap' },
-  { path: '/fundamentals/Installs', componentPath: '../components/Pages/fundamentals/Installs', key: 'installs' },
-  { path: '/fundamentals/VSCodeExtensions', componentPath: '../components/Pages/fundamentals/VSCodeExtensions', key: 'vsCodeExtensions' },
-  { path: '/fundamentals/SettingUpPracticeEnvironment', componentPath: '../components/Pages/fundamentals/PracticeEnvironment', key: 'settingUpPracticeEnvironment' },
-  { path: '/fundamentals/GitHubCheatsheet', componentPath: '../components/Pages/fundamentals/GitHubCheatsheet', key: 'gitHubCheatsheet' },
-  { path: '/fundamentals/GitHubBranching', componentPath: '../components/Pages/fundamentals/GitHubBranching', key: 'gitHubBranching' },
+  { path: '/fundamentals/GitHub', componentPath: '../components/Pages/fundamentals/GitHub.jsx', key: 'gitHub' },
+  { path: '/fundamentals/VSCodeHotkeysTable', componentPath: '../components/Pages/fundamentals/VSCodeHotkeysTable.jsx', key: 'vsCodeHotkeysTable' },
+  { path: '/fundamentals/Bootstrap', componentPath: '../components/Pages/fundamentals/Bootstrap.jsx', key: 'bootstrap' },
+  { path: '/fundamentals/Installs', componentPath: '../components/Pages/fundamentals/Installs.jsx', key: 'installs' },
+  { path: '/fundamentals/VSCodeExtensions', componentPath: '../components/Pages/fundamentals/VSCodeExtensions.jsx', key: 'vsCodeExtensions' },
+  { path: '/fundamentals/SettingUpPracticeEnvironment', componentPath: '../components/Pages/fundamentals/PracticeEnvironment.jsx', key: 'settingUpPracticeEnvironment' },
+  { path: '/fundamentals/GitHubCheatsheet', componentPath: '../components/Pages/fundamentals/GitHubCheatsheet.jsx', key: 'gitHubCheatsheet' },
+  { path: '/fundamentals/GitHubBranching', componentPath: '../components/Pages/fundamentals/GitHubBranching.jsx', key: 'gitHubBranching' },
   //INFO:  REACT Pages
-  { path: '/ReactMain', componentPath: '../components/Pages/react/ReactMain', key: 'reactMain' },
-  { path: '/ReactComponents', componentPath: '../components/Pages/react/ReactComponents', key: 'reactComponents' },
-  { path: '/ReactRouter6', componentPath: '../components/Pages/react/ReactRouter6', key: 'reactRouter' },
-  { path: '/PropsAndState', componentPath: '../components/Pages/react/PropsAndState', key: 'propsAndState' },
-  { path: '/PlanningReactApps', componentPath: '../components/Pages/react/PlanningReactApps', key: 'planningApps' },
-  { path: '/ReactHooks', componentPath: '../components/Pages/react/ReactHooks', key: 'reactHooks' },
+  { path: '/ReactMain', componentPath: '../components/Pages/react/ReactMain.jsx', key: 'reactMain' },
+  { path: '/ReactComponents', componentPath: '../components/Pages/react/ReactComponents.jsx', key: 'reactComponents' },
+  { path: '/ReactRouter6', componentPath: '../components/Pages/react/ReactRouter6.jsx', key: 'reactRouter' },
+  { path: '/PropsAndState', componentPath: '../components/Pages/react/PropsAndState.jsx', key: 'propsAndState' },
+  { path: '/PlanningReactApps', componentPath: '../components/Pages/react/PlanningReactApps.jsx', key: 'planningApps' },
+  { path: '/ReactHooks', componentPath: '../components/Pages/react/ReactHooks.jsx', key: 'reactHooks' },
 ];
 
-// const components = {};
-// const routes = {};
 
-// routeDefinitions.forEach(route => {
-//   components[route.key] = lazy(() => import(
-//     /* @vite-ignore */
-//     `${route.componentPath}`
-// ));
-//   routes[route.key] = { path: route.path, component: components[route.key] };
-// });
+// Use import.meta.glob to dynamically import components, including Sub_Components
+const componentMap = import.meta.glob([
+  '../components/Pages/**/*.{jsx,js}',
+  '../components/Sub_Components/**/*.{jsx,js}'
+]);
+console.log('Component Map:', componentMap);
 
+// Initialize the components object
 const components = {};
-routes.forEach(route => {
-  components[route.key] = lazy(() => import(/* @vite-ignore */ route.componentPath));
+
+// Adjust componentPath if necessary to match the keys in componentMap
+componentRoutes.forEach(route => {
+  const importPath = route.componentPath;
+  if (componentMap[importPath]) {
+    components[route.key] = lazy(componentMap[importPath]);
+  } else {
+    console.warn(`Component for path ${importPath} not found.`);
+  }
 });
 
-const routesWithComponents = routes.map(route => ({
+// Create RoutesWithComponents array
+const RoutesWithComponents = componentRoutes.map(route => ({
   ...route,
   component: components[route.key],
 }));
 
-export default routesWithComponents;
+export default RoutesWithComponents;
