@@ -1,18 +1,14 @@
 import { Link } from 'react-router-dom'
 import logo from '../../assets/helpcodeitlogo.svg'
 import MainCards from '../Sub_Components/MainCards'
-import EventAlert from '../Sub_Components/EventAlert'
+// import EventAlert from '../Sub_Components/EventAlert'
 import { Helmet } from 'react-helmet-async'
+import EventCard from '../Sub_Components/EventCard'
+import { CalendarSearch } from 'lucide-react';
 
 function HomePage() {
 
-    let event = {
-        title: 'Git and GitHub Workshop',
-        date: 'Saturday, July 20th',
-        time: '12:00 PM pst | 1:00 PM mst | 2:00 PM cst | 3:00 PM est',
-        link: 'https://calendly.com/michaelvarnell/git-and-github-basics',
-        ISOdate: '2022-07-20T18:30:00.000Z',
-    }
+
     return (
         <div>
 
@@ -35,8 +31,7 @@ function HomePage() {
 
                 <link rel="canonical" href="https://helpcodeit.com" />
             </Helmet>
-            {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />}
-
+            {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
             <div className="jumbo-background hero-text bg-neutral-800 text-white">
                 <div className="container mx-auto">
@@ -56,15 +51,31 @@ function HomePage() {
                 </div>
             </div>
             {/* !SECTION end Jumbotron */}
-            <div className="justify-center ">
-                <h2 className="mt-5 text-center text-3xl font-bold">
-                    Get expert coding help and tutoring - Book a session now!
-                </h2>
-                <Link to="/schedule-meeting">
-                    <div className="mx-auto my-3 w-fit rounded-full bg-blue-700 px-4 py-1 text-lg font-bold text-white hover:bg-red-700 ">
-                        Explore Meeting Options
+            <div className="container">
+                <div className="grid lg:grid-cols-2 md:grid-cols-auto">
+                    <div className="mx-5">
+                        <EventCard />
                     </div>
-                </Link>
+                  <div className='my-auto mx-5'>
+                      <h2 className="text-3xl font-bold text-center mb-6 ">
+                        Get expert coding help and tutoring
+                        </h2>
+                        <div className="bg-white text-black shadow-lg rounded-lg p-8 max-w-2xl mx-auto my-8">
+                        <h2 className="text-3xl font-bold text-center mb-6">
+                        Book a session now!
+                      </h2>
+                      <p className="text-center mb-6">
+                        Elevate your software development skills with personalized guidance from an experienced professional. Choose the meeting option that best fits your needs and schedule.
+                        </p>
+                      <Link to="/schedule-meeting" className="block">
+                        <button className="w-fit mx-auto flex bg-blue-700 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                          Explore Meeting Options
+                          <CalendarSearch size={24} className="ml-2 my-auto"  />
+                        </button>
+                      </Link>
+                      </div>
+                  </div>
+                </div>
             </div>
 
             <div className=" text-white  pb-10">
