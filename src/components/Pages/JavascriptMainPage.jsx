@@ -13,7 +13,7 @@ function JavascriptMainPage() {
                 />
                 <link
                     rel="canonical"
-                    href="https://helpcodeit.com/javascript"
+                    href="https://www.helpcodeit.com/javascript"
                 />
                 <meta name="robots" content="index, follow" />
                 <meta

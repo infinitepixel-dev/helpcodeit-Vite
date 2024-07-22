@@ -12,7 +12,7 @@ function VSCodeExtensions() {
                 />
                 <link
                     rel="canonical"
-                    href="https://helpcodeit.com/VSCodeExtensions"
+                    href="https://www.helpcodeit.com/VSCodeExtensions"
                 />
                 <meta name="robots" content="index, follow" />
                 <meta

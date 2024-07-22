@@ -4,6 +4,7 @@ import 'highlight.js/styles/atom-one-dark.css'
 import homebrewlogo from '../../../assets/homebrew.svg'
 import nodeLogo from '../../../assets/nodejs.svg'
 import vsCodeLogo from '../../../assets/visual-studio-code.svg'
+import { Helmet } from 'react-helmet-async'
 
 function Installs() {
     const codeRef = useRef(null)
@@ -21,6 +22,22 @@ function Installs() {
 
     return (
         <div className="pb-14">
+            <Helmet>
+                <title>Installations Needed for Front End Developers</title>
+                <meta
+                    name="description"
+                    content="Learn about the installations needed for front end developers, including Homebrew, Node.js, and Visual Studio Code. Get started with the essentials for front end development."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/fundamentals/Installs"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="front end development, installations, Homebrew, Node.js, Visual Studio Code, Git, GitHub, web development"
+                />
+            </Helmet>
             <div className="container">
                 <h1 className="my-5 text-center text-6xl">
                     Installations Needed for Front End Developers

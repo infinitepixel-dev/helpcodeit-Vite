@@ -1,4 +1,5 @@
 import React from 'react'
+import { Helmet } from 'react-helmet-async'
 
 function VSCodeHotkeysTable() {
     const hotkeys = [
@@ -139,6 +140,23 @@ function VSCodeHotkeysTable() {
 
     return (
         <div className="container">
+            <Helmet>
+                <title>VSCode Hotkeys | Help Code It</title>
+                <meta
+
+                    name="description"
+                    content="Learn useful VSCode hotkeys to improve your coding efficiency. Discover shortcuts for navigation, editing, and more in Visual Studio Code."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/fundamentals/VSCodeHotkeys"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="VSCode hotkeys, Visual Studio Code, coding shortcuts, coding efficiency, keyboard shortcuts, coding productivity"
+                />
+            </Helmet>
             <h1 className="mb-5  mt-10 text-center text-4xl ">
                 Useful VSCode Hotkeys
             </h1>
