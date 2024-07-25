@@ -54,7 +54,7 @@ function HomePage() {
             <div className="container">
                 <div className="md:grid-cols-auto grid lg:grid-cols-2">
                     <div className="mx-5">
-                        <EventCard />
+                        <EventCard limit={1}/>
                     </div>
                     <div className="mx-5 my-auto">
                         <h2 className="mb-6 text-center text-3xl font-bold ">
