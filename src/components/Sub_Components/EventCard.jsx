@@ -39,7 +39,8 @@ const EventCard = ({ event }) => (
 
 const UpcomingEvents = ({ limit = Infinity, title = "Upcoming Events" }) => {
   // Sort events by date
-  const sortedEvents = [...eventsData].sort((a, b) => new Date(a.ISOdate) - new Date(b.ISOdate));
+  let sortedEvents = [...eventsData].sort((a, b) => new Date(a.ISOdate) - new Date(b.ISOdate));
+  sortedEvents = sortedEvents.filter((event) => event.show);
 
   // Limit the number of events
   const limitedEvents = sortedEvents.slice(0, limit);
