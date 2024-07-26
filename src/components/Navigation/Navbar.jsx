@@ -245,11 +245,22 @@ function Navbar({ theme }) {
                                     >
                                         React.js
                                     </NavLink>
+                                </li>
+                                <li>
                                     <NavLink
                                         to={'/data-generator'}
                                         className="whitespace-no-wrap block rounded bg-white px-4 py-2 text-base hover:bg-slate-500 dark:bg-black"
                                     >
                                         Data Generator
+                                    </NavLink>
+
+                                </li>
+                                <li>
+                                    <NavLink
+                                        to={'/JavascriptPrincipals/APIResources'}
+                                        className="whitespace-no-wrap block rounded bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                    >
+                                        API Resources
                                     </NavLink>
                                 </li>
                             </ul>
