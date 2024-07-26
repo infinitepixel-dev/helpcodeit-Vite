@@ -4,12 +4,14 @@
 
 function APICard({data}) {
   console.log(data)
-
+ if(data === undefined) {
+  data = [];
+  }
 
 console.log("data in card", data);
   return (
     <div>
-      {data.length === 0 || data.length === undefined ? <h1 className="text-4xl text-center my-10 animate-pulse">No results found</h1>:""}
+      {data.length === 0  && <h1 className="text-4xl text-center my-10 animate-pulse">No results found</h1>}
       {data && data.map((data, index) => {
         return (
         <div key={index} className="border border-gray-200 p-4 m-4 bg-slate-800 rounded-lg">

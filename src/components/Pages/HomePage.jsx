@@ -35,7 +35,7 @@ function HomePage() {
             </Helmet>
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
-            <APICard />
+            
             <div className="hero-text bg-neutral-800 text-white">
                 <div className="relative">
                     <JumboBackground />
