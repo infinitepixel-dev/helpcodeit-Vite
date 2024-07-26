@@ -1,0 +1,39 @@
+
+
+
+
+function APICard({data}) {
+
+console.log("data in card", data);
+  return (
+    <div>
+      {data && data.data.map((data, index) => {
+        return (
+        <div key={index} className="border border-gray-200 p-4 m-4 bg-slate-800 rounded-lg">
+          <div className="flex">
+          {data.API && <h2 className="text-4xl">{data.API}</h2>}
+          {data.Category && <p className="ms-auto text-xl">Category: {data.Category}</p>}
+          </div>
+                   {data.Description && <p className="text-xl font-semibold">Description: {data.Description}</p>}
+            <a
+                href={data.URL}
+                target="_blank"
+                rel="noreferrer"
+                className="text-blue-500 hover:underline"
+            >
+                {data.URL}
+            </a>
+            <div className="flex justify-evenly">
+                <p>API Key Required: {data["API Key Required"]}</p>
+                <p>HTTPS Support: {data["HTTPS Support"]}</p>
+                <p>CORS Support: {data["CORS Support"].replace(/\|/g, '')}</p>
+            </div>
+        </div>
+        )
+        }
+        )}
+    </div>
+    );
+}
+
+export default APICard;

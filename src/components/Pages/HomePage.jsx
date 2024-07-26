@@ -7,10 +7,12 @@ import EventCard from '../Sub_Components/EventCard'
 import { CalendarSearch } from 'lucide-react'
 import JumboBackground from '../Sub_Components/JumboBackground'
 import './HomePage.css'
+import APICard from './javascriptPrincipals/APICard'
 
 function HomePage() {
     return (
         <div>
+
             <Helmet>
                 <title>Help Code It | Resources for Beginning Developers</title>
                 <meta
@@ -33,7 +35,7 @@ function HomePage() {
             </Helmet>
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
-
+            <APICard />
             <div className="hero-text bg-neutral-800 text-white">
                 <div className="relative">
                     <JumboBackground />

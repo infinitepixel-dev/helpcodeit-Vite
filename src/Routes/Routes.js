@@ -6,6 +6,7 @@ const componentRoutes = [
   { path: '/', componentPath: '../components/Pages/HomePage.jsx', key: 'home' },
   { path: '/about', componentPath: '../components/Pages/About.jsx', key: 'about' },
   { path: '/schedule-meeting', componentPath: '../components/Pages/ScheduleMeeting.jsx', key: 'scheduleMeeting' },
+  { path: './APITable', componentPath: '../components/Pages/javascriptPrincipals/APITable.jsx', key: 'APITable'},
   //INFO: JAVASCRIPT Pages
   { path: '/data-generator', componentPath: '../components/Sub_Components/DataGenerator.jsx', key: 'dataGenerator' },
   { path: '/javascript', componentPath: '../components/Pages/JavascriptMainPage.jsx', key: 'javascriptMain' },
@@ -27,6 +28,7 @@ const componentRoutes = [
   { path: '/javascriptPrincipals/MenuApp', componentPath: '../components/Pages/javascriptPrincipals/MenuApp.jsx', key: 'menuApp' },
   { path: '/javascriptPrincipals/WarGameTutorial', componentPath: '../components/Pages/javascriptPrincipals/War.jsx', key: 'warGameTutorial' },
   { path: '/javascriptPrincipals/JSONServer', componentPath: '../components/Pages/javascriptPrincipals/JSONServer.jsx', key: 'JSONServer'},
+  { path: '/javascriptPrincipals/APIResources', componentPath: '../components/Pages/javascriptPrincipals/APIResources.jsx', key: 'APIResources' },
  //INFO: FUNDAMENTALS Pages
   { path: '/fundamentals/GitHub', componentPath: '../components/Pages/fundamentals/GitHub.jsx', key: 'gitHub' },
   { path: '/fundamentals/VSCodeHotkeysTable', componentPath: '../components/Pages/fundamentals/VSCodeHotkeysTable.jsx', key: 'vsCodeHotkeysTable' },
