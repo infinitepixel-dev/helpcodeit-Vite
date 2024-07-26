@@ -14,7 +14,7 @@ console.log("data in card", data);
       {data.length === 0  && <h1 className="text-4xl text-center my-10 animate-pulse">No results found</h1>}
       {data && data.map((data, index) => {
         return (
-        <div key={index} className="border border-gray-200 p-4 m-4 dark:bg-slate-800 rounded-lg">
+        <div key={index} className="border border-gray-200 bg-gray-200 drop-shadow-xl p-4 m-4 dark:bg-slate-800 rounded-lg">
           <div className="flex">
           {data.API && <h2 className="text-4xl">{data.API}</h2>}
           {data.Category && <p className="ms-auto text-xl">Category: {data.Category}</p>}
