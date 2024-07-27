@@ -38,6 +38,7 @@ const componentRoutes = [
   { path: '/fundamentals/SettingUpPracticeEnvironment', componentPath: '../components/Pages/fundamentals/PracticeEnvironment.jsx', key: 'settingUpPracticeEnvironment' },
   { path: '/fundamentals/GitHubCheatsheet', componentPath: '../components/Pages/fundamentals/GitHubCheatsheet.jsx', key: 'gitHubCheatsheet' },
   { path: '/fundamentals/GitHubBranching', componentPath: '../components/Pages/fundamentals/GitHubBranching.jsx', key: 'gitHubBranching' },
+  { path: '/fundamentals/ChangingGitHubCredentials', componentPath: '../components/Pages/fundamentals/ChangingGitHubCredentials.jsx', key: 'changingGitHubCredentials' },
   //INFO:  REACT Pages
   { path: '/ReactMain', componentPath: '../components/Pages/react/ReactMain.jsx', key: 'reactMain' },
   { path: '/ReactComponents', componentPath: '../components/Pages/react/ReactComponents.jsx', key: 'reactComponents' },
