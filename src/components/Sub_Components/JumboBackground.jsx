@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react'
 
-import bgImg1 from '../../assets/cropped_header_bg_opt.webp'
-import bgImg2 from '../../assets/cropped_header_bg_opt.avif'
-import bgImg3 from '../../assets/cropped_header_bg_opt.jpg'
-import './JumboBackground.css'
+import bgImg1 from '@assets/cropped_header_bg_opt.webp'
+import bgImg2 from '@assets/cropped_header_bg_opt.avif'
+import bgImg3 from '@assets/cropped_header_bg_opt.jpg'
+import '@components/Sub_Components/JumboBackground.css'
+import LogoImage from './LogoImage'
 
 const JumboBackground = () => {
     const backgroundRef = useRef(null)
@@ -36,7 +37,21 @@ const JumboBackground = () => {
         setImage(fallbackImage)
     }, [])
 
-    return <div className="jumbo-background" ref={backgroundRef}></div>
+    return (
+    <div className="jumbo-background grid grid-cols-2" ref={backgroundRef}>
+
+    <div className="logo-container text-center text-white md:col-span-1 sm:col-span-2 col-span-2 place-content-center">
+                            <LogoImage
+                                classNameValue="mx-auto place-content-center h-64 w-64 rounded-xl"
+                                altValue="Help code it logo"
+                            />
+                            <h1 className="hero-text mx-auto mb-2 text-pretty font-extrabold">
+                                Resources for <br /> beginning developers
+                            </h1>
+                        </div>
+<div className=''></div>
+    </div>
+    )
 }
 
 export default JumboBackground

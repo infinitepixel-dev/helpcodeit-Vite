@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async'
-import vscodelogo from '../../../assets/visual-studio-code.svg'
+import vscodelogo from '@assets/visual-studio-code.svg'
 
 function VSCodeExtensions() {
     return (

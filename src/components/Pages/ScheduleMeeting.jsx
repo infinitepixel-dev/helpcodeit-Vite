@@ -1,9 +1,9 @@
 import React from 'react'
 //import { Link } from 'react-router-dom'
-import michael from '../../assets/michael.jpeg'
+import michael from '@assets/michael.jpeg'
 // import EventAlert from '../Sub_Components/EventAlert'
 import { Helmet } from 'react-helmet-async'
-import EventCard from '../Sub_Components/EventCard'
+import EventCard from '@subComponents/EventCard'
 
 const ScheduleMeeting = () => {
     let event = {

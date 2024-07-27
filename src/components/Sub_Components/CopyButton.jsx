@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import propTypes from 'prop-types'
-import ClipboardCopyIcon from '../../assets/clipboard-copy.svg'
-import ClipboardCopyCheckedIcon from '../../assets/clipboard-copy-checked.svg'
+import ClipboardCopyIcon from '@assets/clipboard-copy.svg'
+import ClipboardCopyCheckedIcon from '@assets/clipboard-copy-checked.svg'
 import styles from './CopyButton.module.css'
 import { gsap } from 'gsap'
 

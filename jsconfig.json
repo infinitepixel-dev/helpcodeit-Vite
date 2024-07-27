@@ -6,9 +6,15 @@
         "baseUrl": ".",
         "paths": {
             "@/*": ["src/*"],
-            "shadcn": ["node_modules/shadcn/dist/index.js"]
+            "@JSP/*": ["src/components/Pages/javascriptPrincipals/*"],
+            "@assets/*": ["src/assets/*"],
+            "@components/*": ["src/components/*"],
+            "@subComponents/*": ["src/components/Sub_Components/*"],
+            "shadcn": ["node_modules/shadcn/dist/index.js"],
+            "@react/*": ["src/components/Pages/react/*"],
+            "@fundamentals/*" : ["src/components/Pages/fundamentals/*"],
         }
     },
-    "include": ["src/**/*.js"],
+    "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*"],
     "exclude": ["node_modules"]
 }

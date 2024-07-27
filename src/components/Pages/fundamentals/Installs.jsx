@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
-import homebrewlogo from '../../../assets/homebrew.svg'
-import nodeLogo from '../../../assets/nodejs.svg'
-import vsCodeLogo from '../../../assets/visual-studio-code.svg'
+import homebrewlogo from '@assets/homebrew.svg'
+import nodeLogo from '@assets/nodejs.svg'
+import vsCodeLogo from '@assets/visual-studio-code.svg'
 import { Helmet } from 'react-helmet-async'
 
 function Installs() {

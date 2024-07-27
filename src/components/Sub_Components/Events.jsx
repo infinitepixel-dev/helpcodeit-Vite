@@ -21,7 +21,19 @@ const events = [
         description: "This class will cover the basics of using JavaScript libraries. This will have an overview of how to setup and use JavaScript libraries, and will also cover common libraries, how to use them, and how to find and use new libraries. The highlight of this class will be the hands-on practice of using a few different libraries in a example project.",
         cost: '10',
         show: false,
+    },
+    {
+
+        title: 'Getting Started with Tailwind CSS Workshop',
+        date: 'Sunday July 27th, 2024',
+        time: "9:00 AM pst | 10:00 AM mst | 11:00 AM cst | 12:00 PM est",
+        link: 'https://calendly.com/michaelvarnell/react-basics',
+        ISOdate: '2024-07-28T18:00:00.000Z',
+        description: "Join us for a comprehensive introduction to Tailwind CSS! We’ll guide you through the essentials of setting up and mastering Tailwind, from understanding core classes to discovering new ones. Learn how to leverage free components effectively, navigate common pitfalls, and enhance your web design skills. Don’t miss this opportunity to boost your frontend development expertise with Tailwind CSS! ",
+        cost: '10',
+        show: true,
     }
+
 
 
 ]
