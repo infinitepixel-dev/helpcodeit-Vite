@@ -104,12 +104,12 @@ function Navbar({ theme }) {
                         className={
                             !isSmallScreen
                                 ? 'hidden'
-                                : 'float-right focus:outline-none lg:hidden'
+                                : 'float-right focus:outline-none lg:hidden p-5 ps-10'
                         }
                         aria-label="Toggle Menu Button"
                     >
                         <svg
-                            className="h-6 w-6"
+                            className="h-10 w-10"
                             fill="none"
                             stroke={theme ? 'black' : 'white'}
                             viewBox="0 0 24 24"

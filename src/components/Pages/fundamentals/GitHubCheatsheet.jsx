@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Copy } from 'lucide-react'
-import gitLogoDark from '../../../assets/github-icon-white.svg'
-import gitLogoLight from '../../../assets/github-icon.svg'
+import gitLogoDark from '@assets/github-icon-white.svg'
+import gitLogoLight from '@assets/github-icon.svg'
 import { Helmet } from 'react-helmet-async'
 
 const commands = [

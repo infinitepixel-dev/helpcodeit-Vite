@@ -2,8 +2,8 @@ import { useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
-import reloadImg from '../../../assets/Feather refresh icon.svg'
-import reloadingDark from '../../../assets/refreshdark.svg'
+import reloadImg from '@assets/Feather refresh icon.svg'
+import reloadingDark from '@assets/refreshdark.svg'
 import { Helmet } from 'react-helmet-async'
 
 

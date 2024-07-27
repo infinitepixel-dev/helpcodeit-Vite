@@ -1,7 +1,21 @@
 /** @type {import('tailwindcss').Config} */
+import { defineConfig } from 'vite'
+import path from 'path'
+
 // eslint-disable-next-line no-undef
 module.exports = {
     darkMode: ['class'],
+    resolve: {
+        alias: {
+          '@': path.resolve(__dirname, 'src'),
+          '@JSP': path.resolve(__dirname, 'src/components/Pages/javascriptPrincipals'),
+          '@assets': path.resolve(__dirname, 'src/assets'),
+          '@components': path.resolve(__dirname, 'src/components'),
+          '@subComponents': path.resolve(__dirname, 'src/components/Sub_Components'),
+            '@react': path.resolve(__dirname, 'src/components/Pages/react'),
+            '@fundamentals': path.resolve(__dirname, 'src/components/Pages/fundamentals'),
+        },
+      },
     content: [
         './pages/**/*.{js,jsx}',
         './components/**/*.{js,jsx}',
