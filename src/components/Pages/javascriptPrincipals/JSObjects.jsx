@@ -1,4 +1,4 @@
-import objectImg from '../../../assets/objectpagegraphic.svg'
+import objectImg from '@assets/objectpagegraphic.svg'
 import { useEffect, useRef } from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'

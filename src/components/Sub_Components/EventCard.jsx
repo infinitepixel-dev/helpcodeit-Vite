@@ -1,7 +1,7 @@
 import React from 'react';
 import { CalendarDays, Calendar, Clock, CalendarCheck2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import events from '../Sub_Components/Events';
+import events from '@subComponents/Events';
 
 const eventsData = events;
 

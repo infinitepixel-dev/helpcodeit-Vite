@@ -6,7 +6,7 @@ import Navbar from './components/Navigation/Navbar'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github-dark.css'
 import { Routes, Route } from 'react-router-dom'
-import Footer from './components/Sub_Components/Footer'
+import Footer from '@subComponents/Footer'
 import RoutesWithComponents from './Routes/Routes.js'
 
 console.log('RoutesWithComponents: ', RoutesWithComponents)

@@ -4,7 +4,7 @@ import hljs from 'highlight.js'
 import { Helmet } from 'react-helmet-async'
 
 
-const CodePractice = lazy(() => import('../../Sub_Components/Code_Practice'))
+const CodePractice = lazy(() => import('@subComponents/Code_Practice'))
 
 import 'highlight.js/styles/atom-one-dark.css'
 import styles from './animations.module.css'
