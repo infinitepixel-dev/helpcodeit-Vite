@@ -114,7 +114,7 @@ function APIResources() {
                                 type="text"
                                 placeholder={page}
                                 onChange={(e) => setSkip(e.target.value)}
-                                className="text-black ms-2"
+                                className="text-black ms-2 border border-gray-300 rounded-md w-14"
                             />
                             <button onClick={(e) => skipToPage(e) } className="px-3 py-1 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600 ms-2">Go</button>
                         </label>
