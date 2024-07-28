@@ -29,6 +29,7 @@ const componentRoutes = [
   { path: '/javascriptPrincipals/WarGameTutorial', componentPath: '../components/Pages/javascriptPrincipals/War.jsx', key: 'warGameTutorial' },
   { path: '/javascriptPrincipals/JSONServer', componentPath: '../components/Pages/javascriptPrincipals/JSONServer.jsx', key: 'JSONServer'},
   { path: '/javascriptPrincipals/APIResources', componentPath: '../components/Pages/javascriptPrincipals/APIResources.jsx', key: 'APIResources' },
+  { path: '/MiscPages/RubberDucky', componentPath: '../components/Pages/MiscPages/RubberDucky.jsx', key: 'RubberDucky' },
  //INFO: FUNDAMENTALS Pages
   { path: '/fundamentals/GitHub', componentPath: '../components/Pages/fundamentals/GitHub.jsx', key: 'gitHub' },
   { path: '/fundamentals/VSCodeHotkeysTable', componentPath: '../components/Pages/fundamentals/VSCodeHotkeysTable.jsx', key: 'vsCodeHotkeysTable' },
