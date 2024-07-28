@@ -69,7 +69,7 @@ const RubberDucky = () => {
       <hr className="border-t-2 ms-10 border-gray-800 dark:border-gray-300 w-full my-8" />
       <h2 className='text-4xl' >Where to get a duck...</h2>
       <ul>
-        <li className='text-2xl'><a href='https://ducksinthewindow.com/'>Duck's in the Window</a></li>
+        <li className='text-2xl'><a href='https://ducksinthewindow.com/'>Duck's in the Window</a> - This is the coolest site to get a duck at!</li>
         <li className='text-2xl'><a href='https://www.walmart.com/search/?query=rubber%20duck'>Walmart</a></li>
         <li className='text-2xl'><a href='https://www.amazon.com/s?k=rubber+duck&ref=nb_sb_noss_2'>Amazon</a></li>
       </ul>
