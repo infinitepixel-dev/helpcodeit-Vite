@@ -77,7 +77,7 @@ function Navbar({ theme }) {
     })
 
     return (
-        <div className="mx-auto mb-1 w-full border-b border-black bg-white px-2 pt-2 shadow-sm dark:bg-neutral-800 ">
+        <div className="mx-auto w-full border-b border-black bg-gray-100 px-2 pt-2 shadow-sm dark:bg-neutral-800 ">
             <nav
                 className={
                     isSmallScreen && navbarCollapse
@@ -89,7 +89,7 @@ function Navbar({ theme }) {
                     <NavLink to="/">
                         <div ref={logoRef}>
                             <LogoImage
-                                classNameValue="mx-auto h-10 w-10 my-1 ms-2 rounded-lg"
+                                classNameValue="mx-auto h-10 w-10 mb-3 ms-2 rounded-lg"
                                 altValue="Help code it logo"
                             />
                         </div>
@@ -127,8 +127,8 @@ function Navbar({ theme }) {
                     <div
                         className={`flex ${
                             isSmallScreen
-                                ? 'w-full flex-col bg-white pt-5 text-right text-black dark:bg-neutral-800 dark:text-white'
-                                : 'space-x-1 md:space-x-4 lg:space-x-6 xl:space-x-8'
+                                ? 'w-full flex-col  pt-5 text-right text-black text-2xl my-3 bg-gray-100 dark:bg-neutral-800 dark:text-white'
+                                : 'space-x-1 md:space-x-4 lg:space-x-6 xl:space-x-8 text-lg'
                         } ${
                             !navbarCollapse && isSmallScreen ? 'hidden' : ''
                         } font-bold text-black dark:text-white`}
@@ -266,7 +266,7 @@ function Navbar({ theme }) {
                                 <li>
                                     <NavLink
                                         to={'/JavascriptPrincipals/APIResources'}
-                                        className="whitespace-no-wrap block rounded bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                        className="whitespace-no-wrap block rounded bg-white text-base px-4 py-2 hover:bg-slate-500 dark:bg-black"
                                     >
                                         API Resources
                                     </NavLink>
