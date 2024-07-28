@@ -73,6 +73,7 @@ function APIResources() {
                 <h2 className="text-xl font-semibold text-center mb-10">A list of APIs to help you build your next project</h2>
                     <p>These are compiled from serveral lists we have found around the internet. The information in some cases might be out of date. If you find one that is offline, or no longer accurate feel free to inform us with this simple google form: <a href="https://forms.gle/CAFh21NCgeADNRsZ9" className="text-blue-500 hover:underline hover:text-blue-700 hover:font-semibold" target="_blank" referrerPolicy="no-referrer">API FORM</a> </p> <br />
                     <p className="italic">Note: Some APIs may require an API key, or have usage limits. Please check the API documentation for more information. If the API's don't show up, you can email us at michaelvarnell@icloud.com to let us know, and I will restart the server.</p>
+                    <p>If you are a developer and have a list of API's that you want to add to the database, feel free to also email me with a CSV of the API's and we will compile them into the database!</p>
                 <hr className="border border-gray-200 mb-10" />
                 <div className="flex items-center justify-center space-x-2 my-4">
                     <form className="flex items-center justify-center space-x-2">

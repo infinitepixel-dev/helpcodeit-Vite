@@ -1,5 +1,6 @@
 import React from 'react';
 import rubberDucky from '@assets/RubberDucky.webp';
+import devDuck from '@assets/rubberduckdeveloper.webp';
 
 
 const RubberDucky = () => {
@@ -23,25 +24,31 @@ const RubberDucky = () => {
           <p className='text-lg'>The method's full origins may never be known, but the book 'The Pragmatic Programmer' by Andrew Hunt and David Thomas is where most of us learned about it. The book is an excellent read, that goes beyond just the coding parts of software engineering. Last we saw it was in its 20th edition, with the first one printed in 1999.</p>
         </section>
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-3">How it Works</h2>
-          <ol className="list-decimal list-inside space-y-2">
-            <li>Get a rubber duck (or any object)</li>
-            <li>Place it next to your computer</li>
-            <li>Explain your code to the duck, line by line</li>
-            <li>As you explain, you'll often realize the solution to your problem!</li>
-          </ol>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-3">Why it's Effective</h2>
-          <ul className="list-disc list-inside space-y-2">
-            <li>Forces you to articulate your thought process</li>
-            <li>Helps identify logical errors or gaps in your reasoning</li>
-            <li>Encourages thorough understanding of your own code</li>
-            <li>Can reveal overlooked assumptions or edge cases</li>
-          </ul>
-        </section>
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className='md:col-span-1 col-span-2'>
+            <section>
+              <h2 className="text-2xl font-semibold mb-3">How it Works</h2>
+              <ol className="list-decimal list-inside space-y-2">
+                <li>Get a rubber duck (or any object)</li>
+                <li>Place it next to your computer</li>
+                <li>Explain your code to the duck, line by line</li>
+                <li>As you explain, you'll often realize the solution to your problem!</li>
+              </ol>
+            </section>
+            <section>
+              <h2 className="text-2xl font-semibold mb-3">Why it's Effective</h2>
+              <ul className="list-disc list-inside space-y-2">
+                <li>Forces you to articulate your thought process</li>
+                <li>Helps identify logical errors or gaps in your reasoning</li>
+                <li>Encourages thorough understanding of your own code</li>
+                <li>Can reveal overlooked assumptions or edge cases</li>
+              </ul>
+            </section>
+          </div>
+          <div>
+            <img src={devDuck} alt="developer holding a rubber duck" className="rounded-lg md:block hidden " />
+          </div>
+        </div>
 
         <section>
           <h2 className="text-2xl font-semibold mb-3">Tips for Success</h2>
