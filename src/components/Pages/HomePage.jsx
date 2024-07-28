@@ -7,7 +7,7 @@ import EventCard from '../Sub_Components/EventCard'
 import { CalendarSearch } from 'lucide-react'
 import JumboBackground from '../Sub_Components/JumboBackground'
 import './HomePage.css'
-import APICard from './javascriptPrincipals/APICard'
+import AlertMessage from '@subComponents/AlertMessage'
 
 function HomePage() {
     return (
@@ -33,24 +33,13 @@ function HomePage() {
 
                 <link rel="canonical" href="https://www.helpcodeit.com" />
             </Helmet>
+            <AlertMessage message="JUST ADDED UPCOMING EVENT: Getting Started with Tailwind CSS Workshop on Saturday August 3rd! Sign ups are live!" type="success" duration={20000} onClose={() => console.log('closed')} />
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
 
             <div className="hero-text bg-neutral-800 text-white">
                 <div className="relative grid-cols-2">
                     <JumboBackground />
-                    {/* <div className="absolute inset-0 flex items-center">
-                        <div className="logo-container text-center text-white">
-                            <LogoImage
-                                classNameValue="mx-auto h-64 w-64 rounded-xl"
-                                altValue="Help code it logo"
-                            />
-                            <h1 className="hero-text mx-auto mb-2 text-center font-extrabold">
-                                Resources for beginning developers
-                            </h1>
-                        </div>
-                    </div> */}
-                        {/* <div className='col-span-1'></div> */}
                 </div>
             </div>
             {/* !SECTION end Jumbotron */}

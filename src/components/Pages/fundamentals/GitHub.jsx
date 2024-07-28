@@ -115,6 +115,16 @@ git config --global user.email "Your Email"`
                     >
                             Click Here for a GitHub Cheatsheet
                     </Link>
+
+                        </h3>
+                        <h3 className="my-5 text-2xl text-center bg-blue-700 rounded-3xl w-fit mx-auto">
+                    <Link
+                        to="/fundamentals/ChangingGitHubCredentials"
+                        className="text-center text-white p-4"
+                    >
+                            Need to Change Your GitHub Credentials?
+                    </Link>
+
                         </h3>
                     <DetailedGitWorkflow />
                     <h1 className="text-3xl">Lets Get Started</h1>
