@@ -170,6 +170,14 @@ function Navbar({ theme }) {
                                 </li>
                                 <li>
                                     <NavLink
+                                        to={'/MiscPages/RubberDucky'}
+                                        className="whitespace-no-wrap block rounded bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
+                                    >
+                                        Rubber Ducky Method
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink
                                         to={'/fundamentals/VSCodeExtensions'}
                                         className="whitespace-no-wrap block rounded rounded-t bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
                                     >
