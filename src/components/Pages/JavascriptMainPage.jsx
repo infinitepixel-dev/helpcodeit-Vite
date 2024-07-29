@@ -194,6 +194,16 @@ function JavascriptMainPage() {
                                 >
                                     JSON Server
                                 </Link>
+
+                            </li>
+                            <li className="mx-auto py-2 text-xl font-bold">
+                                <Link
+                                    to="/javascriptPrincipals/CallbacksAndPromises"
+                                    className="jsMainPageLink"
+                                    aria-label="Callbacks and Promises"
+                                >
+                                    Callbacks and Promises
+                                </Link>
                             </li>
                         </ul>
                     </div>
