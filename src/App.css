@@ -46,6 +46,7 @@
         padding: 0;
         box-sizing: border-box;
     }
+    
 
     code {
         border-radius: 10px;
@@ -63,7 +64,7 @@
         color: white;
 
         max-width: fit-content;
-        
+
         @apply p-1.5 text-base ;
     }
 
