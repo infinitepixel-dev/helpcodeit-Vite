@@ -10,6 +10,7 @@ import bluePill from '@assets/Bluepill Background Removed.png'
 import DetailedGitWorkflow from '@subComponents/DetailedGitWorkflow'
 import {Link} from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import GitHubMenu from '@subComponents/GitHubMenu'
 
 function GitHub() {
     const codeRef = useRef(null)
@@ -40,7 +41,7 @@ git config --global user.email "Your Email"`
                 />
                 <link
                     rel="canonical"
-                    href="https://www.helpcodeit.com/fundamentals/GitHub"
+                    href="https://www.helpcodeit.com/gitHubPages/GitHub"
 
                 />
                 <meta name="robots" content="index, follow" />
@@ -107,10 +108,13 @@ git config --global user.email "Your Email"`
                     into the main recipe.
                 </p>
                 <hr className="border-1 my-2 border-black dark:border-white" />
+                {/* <!--SECTION - GitHub Mainpage Redesign --> */}
+                <GitHubMenu />
+
                 <div className="mt-10">
                         <h3 className="my-5 text-2xl text-center bg-blue-700 rounded-3xl w-fit mx-auto animate-bounce hover:animate-none">
                     <Link
-                        to="/fundamentals/GitHubCheatsheet"
+                        to="/gitHubPages/GitHubCheatsheet"
                         className="text-center text-white p-4"
                     >
                             Click Here for a GitHub Cheatsheet
@@ -119,7 +123,7 @@ git config --global user.email "Your Email"`
                         </h3>
                         <h3 className="my-5 text-2xl text-center bg-blue-700 rounded-3xl w-fit mx-auto">
                     <Link
-                        to="/fundamentals/ChangingGitHubCredentials"
+                        to="/gitHubPages/ChangingGitHubCredentials"
                         className="text-center text-white p-4"
                     >
                             Need to Change Your GitHub Credentials?

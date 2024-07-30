@@ -31,16 +31,17 @@ export const componentRoutes = [
   { path: '/javascriptPrincipals/APIResources', componentPath: '../components/Pages/javascriptPrincipals/APIResources.jsx', key: 'APIResources' },
   { path: '/javascriptPrincipals/CallbacksAndPromises', componentPath: '../components/Pages/javascriptPrincipals/CallbacksAndPromises.jsx', key: 'callbacksAndPromises' },
   { path: '/MiscPages/RubberDucky', componentPath: '../components/Pages/MiscPages/RubberDucky.jsx', key: 'RubberDucky' },
+  //INFO GitHub Pages
+  { path: '/githubPages/GitHub', componentPath: '../components/Pages/githubPages/GitHub.jsx', key: 'gitHub' },
+  { path: '/githubPages/GitHubCheatsheet', componentPath: '../components/Pages/githubPages/GitHubCheatsheet.jsx', key: 'gitHubCheatsheet' },
+  { path: '/githubPages/GitHubBranching', componentPath: '../components/Pages/githubPages/GitHubBranching.jsx', key: 'gitHubBranching' },
+  { path: '/githubPages/ChangingGitHubCredentials', componentPath: '../components/Pages/githubPages/ChangingGitHubCredentials.jsx', key: 'changingGitHubCredentials' },
  //INFO: FUNDAMENTALS Pages
-  { path: '/fundamentals/GitHub', componentPath: '../components/Pages/fundamentals/GitHub.jsx', key: 'gitHub' },
   { path: '/fundamentals/VSCodeHotkeysTable', componentPath: '../components/Pages/fundamentals/VSCodeHotkeysTable.jsx', key: 'vsCodeHotkeysTable' },
   { path: '/fundamentals/Bootstrap', componentPath: '../components/Pages/fundamentals/Bootstrap.jsx', key: 'bootstrap' },
   { path: '/fundamentals/Installs', componentPath: '../components/Pages/fundamentals/Installs.jsx', key: 'installs' },
   { path: '/fundamentals/VSCodeExtensions', componentPath: '../components/Pages/fundamentals/VSCodeExtensions.jsx', key: 'vsCodeExtensions' },
   { path: '/fundamentals/SettingUpPracticeEnvironment', componentPath: '../components/Pages/fundamentals/PracticeEnvironment.jsx', key: 'settingUpPracticeEnvironment' },
-  { path: '/fundamentals/GitHubCheatsheet', componentPath: '../components/Pages/fundamentals/GitHubCheatsheet.jsx', key: 'gitHubCheatsheet' },
-  { path: '/fundamentals/GitHubBranching', componentPath: '../components/Pages/fundamentals/GitHubBranching.jsx', key: 'gitHubBranching' },
-  { path: '/fundamentals/ChangingGitHubCredentials', componentPath: '../components/Pages/fundamentals/ChangingGitHubCredentials.jsx', key: 'changingGitHubCredentials' },
   //INFO:  REACT Pages
   { path: '/ReactMain', componentPath: '../components/Pages/react/ReactMain.jsx', key: 'reactMain' },
   { path: '/ReactComponents', componentPath: '../components/Pages/react/ReactComponents.jsx', key: 'reactComponents' },
