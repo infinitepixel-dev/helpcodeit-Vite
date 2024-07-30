@@ -19,6 +19,10 @@ function GitHubBranching() {
                 <title>Understanding GitHub Branching for Development</title>
                 <meta name="description" content="Learn how to use GitHub branching effectively for development, including creating branches, merging changes, and collaborating with other developers." />
                 <meta name="keywords" content="GitHub, branching, development, version control, collaboration, feature development" />
+                <link rel="canonical" href="https://www.helpcodeit.com/fundamentals/GitHubBranching" />
+                <meta name="robots" content="index, follow" />
+
+                
             </Helmet>
             <div className="container mx-auto px-4">
                 <h1 className="my-5 text-center text-6xl">Understanding GitHub Branching for Development</h1>

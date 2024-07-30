@@ -46,6 +46,7 @@
         padding: 0;
         box-sizing: border-box;
     }
+    
 
     code {
         border-radius: 10px;
@@ -54,6 +55,19 @@
         max-width: fit-content;
         @apply p-0 text-base dark:border dark:border-white;
     }
+
+    .overridecode {
+        border-radius: 5px;
+        box-shadow: none;
+        font-family: monospace;
+        background-color: rgb(78, 74, 74);
+        color: white;
+
+        max-width: fit-content;
+
+        @apply p-1.5 text-base ;
+    }
+
 
     .arrayMethodLinks {
         font-size: 1.4rem;

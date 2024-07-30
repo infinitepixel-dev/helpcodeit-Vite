@@ -6,6 +6,7 @@ export const componentRoutes = [
   { path: '/', componentPath: '../components/Pages/HomePage.jsx', key: 'home' },
   { path: '/about', componentPath: '../components/Pages/About.jsx', key: 'about' },
   { path: '/schedule-meeting', componentPath: '../components/Pages/ScheduleMeeting.jsx', key: 'scheduleMeeting' },
+  { path: './APITable', componentPath: '../components/Pages/javascriptPrincipals/APITable.jsx', key: 'APITable'},
   //INFO: JAVASCRIPT Pages
   { path: '/data-generator', componentPath: '../components/Sub_Components/DataGenerator.jsx', key: 'dataGenerator' },
   { path: '/javascript', componentPath: '../components/Pages/JavascriptMainPage.jsx', key: 'javascriptMain' },
@@ -27,6 +28,9 @@ export const componentRoutes = [
   { path: '/javascriptPrincipals/MenuApp', componentPath: '../components/Pages/javascriptPrincipals/MenuApp.jsx', key: 'menuApp' },
   { path: '/javascriptPrincipals/WarGameTutorial', componentPath: '../components/Pages/javascriptPrincipals/War.jsx', key: 'warGameTutorial' },
   { path: '/javascriptPrincipals/JSONServer', componentPath: '../components/Pages/javascriptPrincipals/JSONServer.jsx', key: 'JSONServer'},
+  { path: '/javascriptPrincipals/APIResources', componentPath: '../components/Pages/javascriptPrincipals/APIResources.jsx', key: 'APIResources' },
+  { path: '/javascriptPrincipals/CallbacksAndPromises', componentPath: '../components/Pages/javascriptPrincipals/CallbacksAndPromises.jsx', key: 'callbacksAndPromises' },
+  { path: '/MiscPages/RubberDucky', componentPath: '../components/Pages/MiscPages/RubberDucky.jsx', key: 'RubberDucky' },
  //INFO: FUNDAMENTALS Pages
   { path: '/fundamentals/GitHub', componentPath: '../components/Pages/fundamentals/GitHub.jsx', key: 'gitHub' },
   { path: '/fundamentals/VSCodeHotkeysTable', componentPath: '../components/Pages/fundamentals/VSCodeHotkeysTable.jsx', key: 'vsCodeHotkeysTable' },
@@ -36,6 +40,7 @@ export const componentRoutes = [
   { path: '/fundamentals/SettingUpPracticeEnvironment', componentPath: '../components/Pages/fundamentals/PracticeEnvironment.jsx', key: 'settingUpPracticeEnvironment' },
   { path: '/fundamentals/GitHubCheatsheet', componentPath: '../components/Pages/fundamentals/GitHubCheatsheet.jsx', key: 'gitHubCheatsheet' },
   { path: '/fundamentals/GitHubBranching', componentPath: '../components/Pages/fundamentals/GitHubBranching.jsx', key: 'gitHubBranching' },
+  { path: '/fundamentals/ChangingGitHubCredentials', componentPath: '../components/Pages/fundamentals/ChangingGitHubCredentials.jsx', key: 'changingGitHubCredentials' },
   //INFO:  REACT Pages
   { path: '/ReactMain', componentPath: '../components/Pages/react/ReactMain.jsx', key: 'reactMain' },
   { path: '/ReactComponents', componentPath: '../components/Pages/react/ReactComponents.jsx', key: 'reactComponents' },

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Copy } from 'lucide-react'
-import gitLogoDark from '../../../assets/github-icon-white.svg'
-import gitLogoLight from '../../../assets/github-icon.svg'
+import gitLogoDark from '@assets/github-icon-white.svg'
+import gitLogoLight from '@assets/github-icon.svg'
 import { Helmet } from 'react-helmet-async'
 
 const commands = [
@@ -169,6 +169,10 @@ const CommandItem = ({ command, explanation }) => {
                 <meta
                     name="keywords"
                     content="Git, GitHub, version control, commands, cheatsheet, beginners, development, collaboration"
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/fundamentals/GitHubCheatsheet"
                 />
             </Helmet>
             <div className="m-px flex items-center justify-between rounded-lg border-2  bg-slate-400  p-3 dark:border-white dark:bg-zinc-600 dark:text-white">

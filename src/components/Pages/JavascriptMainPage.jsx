@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import javascriptlogo from '../../assets/jswithburstlogo.svg'
+import javascriptlogo from '@assets/jswithburstlogo.svg'
 import { Helmet } from 'react-helmet-async'
 
 function JavascriptMainPage() {
@@ -13,7 +13,7 @@ function JavascriptMainPage() {
                 />
                 <link
                     rel="canonical"
-                    href="https://helpcodeit.com/javascript"
+                    href="https://www.helpcodeit.com/javascript"
                 />
                 <meta name="robots" content="index, follow" />
                 <meta
@@ -193,6 +193,16 @@ function JavascriptMainPage() {
                                     aria-label="JSON Server"
                                 >
                                     JSON Server
+                                </Link>
+
+                            </li>
+                            <li className="mx-auto py-2 text-xl font-bold">
+                                <Link
+                                    to="/javascriptPrincipals/CallbacksAndPromises"
+                                    className="jsMainPageLink"
+                                    aria-label="Callbacks and Promises"
+                                >
+                                    Callbacks and Promises
                                 </Link>
                             </li>
                         </ul>

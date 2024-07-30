@@ -7,10 +7,12 @@ import EventCard from '../Sub_Components/EventCard'
 import { CalendarSearch } from 'lucide-react'
 import JumboBackground from '../Sub_Components/JumboBackground'
 import './HomePage.css'
+import AlertMessage from '@subComponents/AlertMessage'
 
 function HomePage() {
     return (
         <div>
+
             <Helmet>
                 <title>Help Code It | Resources for Beginning Developers</title>
                 <meta
@@ -27,34 +29,24 @@ function HomePage() {
                 />
 
                 <meta property="og:image" content={LogoImage} />
-                <meta property="og:url" content="https://helpcodeit.com" />
+                <meta property="og:url" content="https://www.helpcodeit.com" />
 
-                <link rel="canonical" href="https://helpcodeit.com" />
+                <link rel="canonical" href="https://www.helpcodeit.com" />
             </Helmet>
+            <AlertMessage message="JUST ADDED UPCOMING EVENT: Getting Started with Tailwind CSS Workshop on Saturday August 3rd! Sign ups are live!" type="success" duration={20000} onClose={() => console.log('closed')} />
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
 
             <div className="hero-text bg-neutral-800 text-white">
-                <div className="relative">
+                <div className="relative grid-cols-2">
                     <JumboBackground />
-                    <div className="absolute inset-0 flex items-center">
-                        <div className="logo-container text-center text-white">
-                            <LogoImage
-                                classNameValue="mx-auto h-64 w-64 rounded-xl"
-                                altValue="Help code it logo"
-                            />
-                            <h1 className="hero-text mx-auto mb-2 text-center font-extrabold">
-                                Resources for beginning developers
-                            </h1>
-                        </div>
-                    </div>
                 </div>
             </div>
             {/* !SECTION end Jumbotron */}
             <div className="container">
                 <div className="md:grid-cols-auto grid lg:grid-cols-2">
                     <div className="mx-5">
-                        <EventCard />
+                        <EventCard limit={1}/>
                     </div>
                     <div className="mx-5 my-auto">
                         <h2 className="mb-6 text-center text-3xl font-bold ">

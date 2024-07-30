@@ -1,6 +1,25 @@
+import {Helmet} from 'react-helmet-async'
+
 function PracticeEnvironment() {
     return (
         <div className="container min-h-screen">
+            <Helmet>
+                <title>Practice Environment Setup | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn how to set up a practice environment in VS Code. Follow this step-by-step tutorial to get your site set up and start coding to play around with all the new things you're learning!"
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/fundamentals/PracticeEnvironment"
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="VS Code, practice environment, coding environment, coding tutorial, web development, coding setup, coding practice"
+                />
+            </Helmet>
+
             <h1 className="text-center text-5xl mt-10">
                 How to Setup a Practice Environment in VS Code{' '}
             </h1>

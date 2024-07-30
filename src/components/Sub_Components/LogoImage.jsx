@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
 import propTypes from 'prop-types'
 
-import bgImg1 from '../../assets/helpcodeitlogo_opt.webp'
-import bgImg2 from '../../assets/helpcodeitlogo_opt.avif'
-import bgImg3 from '../../assets/helpcodeitlogo_opt.jpg'
+import bgImg1 from '@assets/helpcodeitlogo_opt.webp'
+import bgImg2 from '@assets/helpcodeitlogo_opt.avif'
+import bgImg3 from '@assets/helpcodeitlogo_opt.jpg'
 
 const LogoImage = ({ classNameValue, altValue }) => {
     const backgroundRef = useRef(null)

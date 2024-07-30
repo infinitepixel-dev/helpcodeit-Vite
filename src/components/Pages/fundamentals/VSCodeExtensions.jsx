@@ -1,5 +1,5 @@
 import { Helmet } from 'react-helmet-async'
-import vscodelogo from '../../../assets/visual-studio-code.svg'
+import vscodelogo from '@assets/visual-studio-code.svg'
 
 function VSCodeExtensions() {
     return (
@@ -12,7 +12,7 @@ function VSCodeExtensions() {
                 />
                 <link
                     rel="canonical"
-                    href="https://helpcodeit.com/VSCodeExtensions"
+                    href="https://www.helpcodeit.com/VSCodeExtensions"
                 />
                 <meta name="robots" content="index, follow" />
                 <meta

@@ -1,8 +1,9 @@
 import React from 'react'
 //import { Link } from 'react-router-dom'
-import michael from '../../assets/michael.jpeg'
-import EventAlert from '../Sub_Components/EventAlert'
+import michael from '@assets/michael.jpeg'
+// import EventAlert from '../Sub_Components/EventAlert'
 import { Helmet } from 'react-helmet-async'
+import EventCard from '@subComponents/EventCard'
 
 const ScheduleMeeting = () => {
     let event = {
@@ -127,6 +128,7 @@ const ScheduleMeeting = () => {
                     </div>
                 </div>
 
+                    <EventCard />
                 <div className="mt-16 rounded-lg bg-gray-100 p-8">
                     <h2 className="mb-4 text-2xl font-bold text-gray-700">
                         About Michael Varnell

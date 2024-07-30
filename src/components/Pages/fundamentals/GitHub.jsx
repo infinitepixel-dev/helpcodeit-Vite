@@ -1,14 +1,15 @@
-import githubLogo from '../../../assets/github-icon.svg'
-import githublogolight from '../../../assets/github-icon-white.svg'
+import githubLogo from '@assets/github-icon.svg'
+import githublogolight from '@assets/github-icon-white.svg'
 import { useEffect, useRef } from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github-dark.css'
-import githubInitialInstructions from '../../../assets/githubsetupcommandsfromsite.png'
-import githubFlow from '../../../assets/CleanShot 2023-12-05 at 12.18.20.png'
-import redPill from '../../../assets/1__URX2jndILBo7mMkgs-SWQ Background Removed.png'
-import bluePill from '../../../assets/Bluepill Background Removed.png'
-import DetailedGitWorkflow from '../../Sub_Components/DetailedGitWorkflow'
+import githubInitialInstructions from '@assets/githubsetupcommandsfromsite.png'
+import githubFlow from '@assets/CleanShot 2023-12-05 at 12.18.20.png'
+import redPill from '@assets/1__URX2jndILBo7mMkgs-SWQ Background Removed.png'
+import bluePill from '@assets/Bluepill Background Removed.png'
+import DetailedGitWorkflow from '@subComponents/DetailedGitWorkflow'
 import {Link} from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 function GitHub() {
     const codeRef = useRef(null)
@@ -31,6 +32,23 @@ git config --global user.email "Your Email"`
 
     return (
         <div className="container mb-14 text-xl" id="#top">
+            <Helmet>
+                <title>GitHub | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn the basics of GitHub, a version control system that allows you to store and manage your code. Discover how to create a repository, add files, commit changes, and push your code to GitHub."
+                />
+                <link
+                    rel="canonical"
+                    href="https://www.helpcodeit.com/fundamentals/GitHub"
+
+                />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="GitHub, version control, GitHub tutorial, coding collaboration, Git, software development, web development"
+                />
+            </Helmet>
             <div className="mt-10 grid grid-cols-1 place-items-center justify-center md:grid-cols-2 ">
                 <div className=" my-auto md:ms-auto ">
                     <h1 className="mx-auto my-auto text-center text-2xl md:text-7xl  ">
@@ -97,6 +115,16 @@ git config --global user.email "Your Email"`
                     >
                             Click Here for a GitHub Cheatsheet
                     </Link>
+
+                        </h3>
+                        <h3 className="my-5 text-2xl text-center bg-blue-700 rounded-3xl w-fit mx-auto">
+                    <Link
+                        to="/fundamentals/ChangingGitHubCredentials"
+                        className="text-center text-white p-4"
+                    >
+                            Need to Change Your GitHub Credentials?
+                    </Link>
+
                         </h3>
                     <DetailedGitWorkflow />
                     <h1 className="text-3xl">Lets Get Started</h1>

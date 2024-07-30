@@ -1,6 +1,5 @@
-.logo-container {
-    display: flex;
-    flex-direction: column;
+logo-container {
+  display: flex;
     justify-content: center;
-    padding: 150px;
+    align-items: center;
 }
