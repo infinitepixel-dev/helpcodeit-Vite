@@ -46,8 +46,8 @@ git commit -m "Add all project files"
 git push`;
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-5xl font-bold mb-4">How to Create a <br /> GitHub Repository <br />and Add Files</h1>
+    <div className="container grid justify-center">
+      <h1 className="text-5xl font-bold my-8">How to Create a <br /> GitHub Repository <br />and Add Files</h1>
       <ol className="list-inside">
         <li className="mb-4">
           <h2 className="text-xl font-semibold">Create a New Repository on GitHub</h2>
@@ -113,6 +113,7 @@ git push`;
         </li>
       </ol>
       <h2 className="text-xl font-semibold mt-6">Summary of Commands</h2>
+      <p className="mb-4">These are the command listed in the box with the copy button just under the box containing the address of the repository. Feel free to copy the ones on the GitHub page and paste them in your terminal.</p>
       <pre>
         <code className="language-sh">{commands}</code>
       </pre>
@@ -124,11 +125,11 @@ git push`;
         <li>Check the status of your repository with <span className='italic'>git status</span> to see which files are staged for commit.</li>
       </ul>
       <div className="grid grid-cols-2 my-10">
-          <div className='grid justify-center '>
+          <div className='grid justify-center col-span-2 lg:col-span-1 min-w-fit'>
           <h2 className="text-xl font-semibold mt-6 text-center">Terminal Video Tutorial</h2>
           <iframe width="560" height="315" src="https://www.youtube.com/embed/sIUTpwiRXfs?si=QrheJgtJerUkgWsW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
-          <div className="grid justify-center">
+          <div className="grid justify-center col-span-2 lg:col-span-1 min-w-fit">
               <h2 className="text-xl font-semibold mt-6 text-center">VS Code Source Control Video Tutorial</h2>
               <iframe width="560" height="315" src="https://www.youtube.com/embed/5Cvq9zM5qVE?si=dAqPFfhcK-s1uHM2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>

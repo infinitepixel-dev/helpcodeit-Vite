@@ -5,13 +5,13 @@ import gitHubLogo from '@assets/github-icon-white.svg';
 
 const GitHubMenu = () => {
   const menuItems = [
-    { title: 'Setting up a Repo', path: '/githubPages/AddARepository' },
-    { title: 'Pushing Updates', path: '/githubPages/push' },
-    { title: 'Authentication', path: '/gitHubPages/auth' },
-    { title: 'Troubleshooting', path: '/githubPages/troubleshoot' },
-    { title: 'Cheatsheet', path: '/githubPages/GitHubCheatsheet' },
+      { title: 'Setting Up Authentication', path: '/githubPages/GitHubAuthentication' },
+    { title: 'Making a New Repository and Linking It', path: '/githubPages/AddARepository' },
+    { title: 'Pushing Updates to an Exisiting Repository', path: '/githubPages/push' },
+    // { title: 'Troubleshooting', path: '/githubPages/troubleshoot' },
+    { title: 'Cheatsheet of Git Commands for CLI', path: '/githubPages/GitHubCheatsheet' },
     { title: 'Changing Your Credentials', path: '/githubPages/ChangingGitHubCredentials' },
-    { title: 'Branching', path: '/githubPages/GitHubBranching' },
+    { title: 'Branching Guide', path: '/githubPages/GitHubBranching' },
   ];
 
   return (

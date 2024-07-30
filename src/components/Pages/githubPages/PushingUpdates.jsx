@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
 import githubFlow from '@assets/CleanShot 2023-12-05 at 12.18.20.png'
+import DetailedGitWorkflow from '@subComponents/DetailedGitWorkflow';
 
 
 const PushingUpdates = () => {
@@ -19,7 +20,8 @@ const PushingUpdates = () => {
   }, []);
 
   const workflowCode = `
-  # If working with others and you're not sure if your local repository is up-to-date
+  # If working with others and you're not sure
+  # if your local repository is up-to-date
   git pull
 
   # Add all changes to staging
@@ -56,7 +58,8 @@ const PushingUpdates = () => {
   </div>
 
       <div className=" p-6 rounded-lg shadow-sm grid justify-center">
-        <h2 className="text-2xl font-semibold mb-4 text-center">Basic Git Commands</h2>
+        <h2 className="text-2xl font-semibold text-center">Basic Git Commands</h2>
+        <p className="text-center mb-4 text-lg">Use these commands to push updates to your repository</p>
         <pre className="rounded-md overflow-hidden">
           <code className="language-bash">{workflowCode}</code>
         </pre>
@@ -71,6 +74,7 @@ const PushingUpdates = () => {
 </div>
 
       <div className="mt-8  p-6 rounded-lg shadow-sm">
+      <DetailedGitWorkflow />
         <h2 className="text-2xl font-semibold mb-4 ">Tips</h2>
         <ul className="list-disc list-inside ">
           <li>Always check your changes with <code className=" px-1 rounded border-none shadow-none">git status</code> before committing</li>
