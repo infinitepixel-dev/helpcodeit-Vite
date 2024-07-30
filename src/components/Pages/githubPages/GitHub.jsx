@@ -2,7 +2,7 @@ import githubLogo from '@assets/github-icon.svg'
 import githublogolight from '@assets/github-icon-white.svg'
 import { useEffect, useRef } from 'react'
 import hljs from 'highlight.js'
-import 'highlight.js/styles/github-dark.css'
+import 'highlight.js/styles/atom-one-dark.css'
 import githubInitialInstructions from '@assets/githubsetupcommandsfromsite.png'
 import githubFlow from '@assets/CleanShot 2023-12-05 at 12.18.20.png'
 import redPill from '@assets/1__URX2jndILBo7mMkgs-SWQ Background Removed.png'
@@ -112,24 +112,7 @@ git config --global user.email "Your Email"`
                 <GitHubMenu />
 
                 <div className="mt-10">
-                        <h3 className="my-5 text-2xl text-center bg-blue-700 rounded-3xl w-fit mx-auto animate-bounce hover:animate-none">
-                    <Link
-                        to="/gitHubPages/GitHubCheatsheet"
-                        className="text-center text-white p-4"
-                    >
-                            Click Here for a GitHub Cheatsheet
-                    </Link>
 
-                        </h3>
-                        <h3 className="my-5 text-2xl text-center bg-blue-700 rounded-3xl w-fit mx-auto">
-                    <Link
-                        to="/gitHubPages/ChangingGitHubCredentials"
-                        className="text-center text-white p-4"
-                    >
-                            Need to Change Your GitHub Credentials?
-                    </Link>
-
-                        </h3>
                     <DetailedGitWorkflow />
                     <h1 className="text-3xl">Lets Get Started</h1>
                     <h2 className="text-2xl">

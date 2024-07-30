@@ -36,6 +36,8 @@ export const componentRoutes = [
   { path: '/githubPages/GitHubCheatsheet', componentPath: '../components/Pages/githubPages/GitHubCheatsheet.jsx', key: 'gitHubCheatsheet' },
   { path: '/githubPages/GitHubBranching', componentPath: '../components/Pages/githubPages/GitHubBranching.jsx', key: 'gitHubBranching' },
   { path: '/githubPages/ChangingGitHubCredentials', componentPath: '../components/Pages/githubPages/ChangingGitHubCredentials.jsx', key: 'changingGitHubCredentials' },
+  { path: '/githubPages/AddARepository', componentPath: '../components/Pages/githubPages/AddARepository.jsx', key: 'addARepository' },
+  { path: '/githubPages/push', componentPath: '../components/Pages/githubPages/PushingUpdates.jsx', key: 'pushingUpdates' },
  //INFO: FUNDAMENTALS Pages
   { path: '/fundamentals/VSCodeHotkeysTable', componentPath: '../components/Pages/fundamentals/VSCodeHotkeysTable.jsx', key: 'vsCodeHotkeysTable' },
   { path: '/fundamentals/Bootstrap', componentPath: '../components/Pages/fundamentals/Bootstrap.jsx', key: 'bootstrap' },

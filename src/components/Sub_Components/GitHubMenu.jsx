@@ -5,12 +5,12 @@ import gitHubLogo from '@assets/github-icon-white.svg';
 
 const GitHubMenu = () => {
   const menuItems = [
-    { title: 'Setting up a Repo', path: '/githubPages/setup' },
+    { title: 'Setting up a Repo', path: '/githubPages/AddARepository' },
     { title: 'Pushing Updates', path: '/githubPages/push' },
     { title: 'Authentication', path: '/gitHubPages/auth' },
     { title: 'Troubleshooting', path: '/githubPages/troubleshoot' },
     { title: 'Cheatsheet', path: '/githubPages/GitHubCheatsheet' },
-    { title: 'Changing Credentials', path: '/githubPages/ChangingGitHubCredentials' },
+    { title: 'Changing Your Credentials', path: '/githubPages/ChangingGitHubCredentials' },
     { title: 'Branching', path: '/githubPages/GitHubBranching' },
   ];
 
