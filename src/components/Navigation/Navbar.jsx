@@ -70,6 +70,8 @@ const Navbar = ({ theme }) => {
                   { to: '/fundamentals/Installs', label: 'Installs' },
                   { to: '/MiscPages/RubberDucky', label: 'Rubber Ducky Method' },
                   { to: '/fundamentals/VSCodeExtensions', label: 'VS Code Extensions' },
+                  { to: '/fundamentals/VSCodeHotkeysTable', label: 'VS Code Hotkeys' },
+                  { to: '/fundamentals/SettingUpPracticeEnvironment', label: 'Setting Up a Practice Environment' },
                 ]}
               />
               <Dropdown
@@ -85,6 +87,8 @@ const Navbar = ({ theme }) => {
                 items={[
                     // {to: '/html' , label: 'HTML'},
                     // {to: '/css' , label: 'CSS'},
+                    {to: '/fundamentals/Bootstrap', label: 'Bootstrap'},
+                    {to: '/githubPages/GitHub', label: 'GitHub'},
                   { to: '/javascript', label: 'JavaScript' },
                   { to: '/ReactMain', label: 'React.js' },
                 ]}
