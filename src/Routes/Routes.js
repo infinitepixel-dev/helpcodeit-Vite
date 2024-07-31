@@ -7,6 +7,7 @@ export const componentRoutes = [
   { path: '/about', componentPath: '../components/Pages/About.jsx', key: 'about' },
   { path: '/schedule-meeting', componentPath: '../components/Pages/ScheduleMeeting.jsx', key: 'scheduleMeeting' },
   { path: './APITable', componentPath: '../components/Pages/javascriptPrincipals/APITable.jsx', key: 'APITable'},
+  { path: '/useful-links', componentPath: '../components/Pages/fundamentals/UsefulLinks.jsx', key: 'usefulLinks' },
   //INFO: JAVASCRIPT Pages
   { path: '/data-generator', componentPath: '../components/Sub_Components/DataGenerator.jsx', key: 'dataGenerator' },
   { path: '/javascript', componentPath: '../components/Pages/JavascriptMainPage.jsx', key: 'javascriptMain' },

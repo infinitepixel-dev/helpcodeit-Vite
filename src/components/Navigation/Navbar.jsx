@@ -79,7 +79,7 @@ const Navbar = ({ theme }) => {
                 items={[
                   { to: '/data-generator', label: 'Data Generator' },
                   { to: '/JavascriptPrincipals/APIResources', label: 'API Resources' },
-                //   { to: '/useful-links', label: 'Useful Links' },
+                  { to: '/useful-links', label: 'Useful Links' },
                 ]}
               />
               <Dropdown
