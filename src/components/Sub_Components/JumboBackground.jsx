@@ -38,14 +38,14 @@ const JumboBackground = () => {
     }, [])
 
     return (
-    <div className="jumbo-background grid grid-cols-2" ref={backgroundRef}>
+    <div className=" jumbo-background grid grid-cols-2" ref={backgroundRef}>
 
-    <div className="logo-container text-center text-white md:col-span-1 sm:col-span-2 col-span-2 place-content-center">
+    <div className=" text-center text-white md:col-span-1 sm:col-span-2 col-span-2 place-content-center">
                             <LogoImage
-                                classNameValue="mx-auto place-content-center h-64 w-64 rounded-xl"
+                                classNameValue="mx-auto  place-content-center h-64 w-64 rounded-xl"
                                 altValue="Help code it logo"
                             />
-                            <h1 className="hero-text mx-auto mb-2 text-pretty font-extrabold">
+                            <h1 className="hero-text mx-auto mb-0 text-pretty font-extrabold">
                                 Resources for <br /> beginning developers
                             </h1>
                         </div>
