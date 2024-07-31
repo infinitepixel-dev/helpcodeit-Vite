@@ -33,7 +33,7 @@ function HomePage() {
 
                 <link rel="canonical" href="https://www.helpcodeit.com" />
             </Helmet>
-            <AlertMessage message="JUST ADDED UPCOMING EVENT: Getting Started with Tailwind CSS Workshop on Saturday August 3rd! Sign ups are live!" type="success" duration={20000} onClose={() => console.log('closed')} />
+            <AlertMessage message="UPCOMING EVENT: Getting Started with Tailwind CSS Workshop on Saturday August 3rd! Sign ups are live!" type="error" duration={20000} onClose={() => console.log('closed')} />
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
 
@@ -48,11 +48,11 @@ function HomePage() {
                     <div className="mx-5">
                         <EventCard limit={1}/>
                     </div>
-                    <div className="mx-5 my-auto">
+                    <div className="mx-5 my-auto ">
                         <h2 className="mb-6 text-center text-3xl font-bold ">
                             Get expert coding help and tutoring
                         </h2>
-                        <div className="mx-auto my-8 max-w-2xl rounded-lg bg-white p-8 text-black shadow-lg">
+                        <div className="mx-auto my-8 max-w-2xl rounded-lg bg-white p-8 text-black shadow-lg dark:border-none border border-1 border-gray-300">
                             <h2 className="mb-6 text-center text-3xl font-bold">
                                 Book a session now!
                             </h2>

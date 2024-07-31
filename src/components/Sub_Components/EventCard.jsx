@@ -6,7 +6,7 @@ import events from '@subComponents/Events';
 const eventsData = events;
 
 const EventCard = ({ event }) => (
-  <div className="bg-white dark:text-black shadow-md rounded-lg p-6 mb-4 mx-4">
+  <div className="bg-white dark:text-black shadow-md rounded-lg p-6 mb-4 mx-4 dark:border-none border border-1 border-gray-300">
     <h2 className="text-xl font-semibold mb-2">{event.title}</h2>
     <div className="flex items-center mb-2">
       <CalendarDays className="w-5 h-5 mr-2 text-gray-600" />
@@ -56,9 +56,9 @@ const UpcomingEvents = ({ limit = Infinity, title = "Upcoming Events" }) => {
       {limitedEvents.length === 1 &&     <div className='flex justify-center items-center'>
     <Link
       to="/schedule-meeting"
-      className="inline-flex items-center px-6 py-3 text-base font-medium  shadow-md hover:text-blue-700"
+      className="inline-flex items-center px-6 py-3 text-base font-medium  shadow-md hover:text-blue-700 dark:border-none border border-1 border-gray-300 rounded-3xl"
     >
-      <Calendar className="w-5 h-5 mr-2" />
+      <Calendar className="w-5 h-5 mr-2 " />
       More Events...
     </Link>
   </div>}

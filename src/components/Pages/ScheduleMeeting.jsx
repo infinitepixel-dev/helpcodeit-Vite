@@ -131,12 +131,12 @@ const ScheduleMeeting = () => {
                     <EventCard />
                 <div className="mt-16 rounded-lg bg-gray-100 p-8">
                     <h2 className="mb-4 text-2xl font-bold text-gray-700">
-                        About Michael Varnell
+                        About <br /> <span className="text-3xl">Michael Varnell</span>
                     </h2>
                     <div className="grid grid-cols-3">
                         <div className="col-span-3 text-xl md:col-span-2">
                             <p className="mb-4 text-gray-700">
-                                Michael Varnell is a skilled Software Developer
+                                Michael is a skilled Software Developer
                                 with expertise in modern Front End technologies,
                                 including React.js, JavaScript, TypeScript, and
                                 Responsive Web Design. He holds a Management
