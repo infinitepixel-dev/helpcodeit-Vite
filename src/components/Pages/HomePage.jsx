@@ -38,7 +38,7 @@ function HomePage() {
             {/* SECTION Jumbotron */}
 
             <div className="hero-text bg-neutral-800 text-white">
-                <div className="relative grid-cols-2">
+                <div className=" relative grid-cols-2">
                     <JumboBackground />
                 </div>
             </div>
