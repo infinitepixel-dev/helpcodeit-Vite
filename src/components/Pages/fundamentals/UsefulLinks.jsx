@@ -1,5 +1,6 @@
 import UsefulLinksTable from "@subComponents/UsefulLinksTable";
 import { ArrowBigUp } from 'lucide-react';
+import { Helmet } from "react-helmet-async";
 
 
 function UsefulLinks() {
@@ -447,6 +448,22 @@ function UsefulLinks() {
 
     return (
     <div className="mb-14">
+        <Helmet>
+            <title>Useful Developer Links | Help Code It</title>
+            <meta
+                name="description"
+                content="A collection of useful resources for web developers. Find cheatsheets, coding games, Git and GitHub resources, design resources, and more."
+            />
+            <meta
+                property="og:title"
+                content="Useful Links | Help Code IT"
+            />
+            <meta
+                property="og:description"
+                content="A collection of useful resources for web developers. Find cheatsheets, coding games, Git and GitHub resources, design resources, and more."
+            />
+            <link rel="canonical" href="https://www.helpcodeit.com/useful-links" />
+        </Helmet>
         <h1 className="text-3xl font-bold text-center my-8">Useful Links</h1>
         <p className="text-center text-lg mb-8">A collection of useful resources for web developers</p>
         <div className=" bg-white shadow-md">
