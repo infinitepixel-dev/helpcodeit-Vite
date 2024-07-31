@@ -1,164 +1,108 @@
-import { Helmet } from 'react-helmet-async'
-import vscodelogo from '@assets/visual-studio-code.svg'
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import vscodelogo from '@assets/visual-studio-code.svg';
+
+const ExtensionCard = ({ title, author, description, iconUrl, link, languages }) => (
+  <div className="bg-white dark:bg-gray-800 dark:border-none border border-1 border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+    <a href={link} target="_blank" rel="noopener noreferrer" className="block h-full">
+      <div className="p-6">
+        <img src={iconUrl} alt={`${title} Icon`} className="w-24 h-24 mx-auto mb-4" />
+        <h3 className="text-2xl font-semibold text-center mb-2">{title}</h3>
+        <p className="text-gray-600 dark:text-gray-400 text-center mb-4">By {author}</p>
+        <p className="text-gray-700 dark:text-gray-300 text-center mb-4">{description}</p>
+        {languages && (
+          <p className="text-sm text-gray-600 dark:text-gray-400 text-center font-medium">
+            Works for: {languages}
+          </p>
+        )}
+      </div>
+    </a>
+  </div>
+);
+
+const SettingItem = ({ title, description }) => (
+  <li className="mb-4">
+    <h4 className="font-semibold text-lg mb-1">{title}</h4>
+    <p className="text-gray-700 dark:text-gray-300">{description}</p>
+  </li>
+);
 
 function VSCodeExtensions() {
-    return (
-        <div className="container mb-24">
-            <Helmet>
-                <title>VS Code Extensions | Help Code It</title>
-                <meta
-                    name="description"
-                    content="Explore our recommended Visual Studio Code extensions for web development. Prettier, Live Server, and Comment Anchors are essential for efficient coding."
-                />
-                <link
-                    rel="canonical"
-                    href="https://www.helpcodeit.com/VSCodeExtensions"
-                />
-                <meta name="robots" content="index, follow" />
-                <meta
-                    name="keywords"
-                    content="Visual Studio Code, VS Code extensions, Prettier, Live Server, Comment Anchors, web development, front-end development"
-                />
-            </Helmet>
-            <div className="mt-5 flex items-center justify-center">
-                {' '}
-                {/* Add flex and items-center justify-center classes */}
-                <img
-                    src={vscodelogo}
-                    alt="VS Code Logo"
-                    width="100px"
-                    className="my-auto me-5"
-                />
-                <div>
-                    <h1 className="text-5xl">VS Code Extensions</h1>
-                    <h2 className="text-2xl text-balance">
-                        Below is a collection of our Recommended Extensions
-                    </h2>
-                </div>
-            </div>
-            <div>
-                <div className="mt-10 grid grid-cols-1 items-center justify-center rounded-3xl border border-black bg-slate-200 p-5 text-lg shadow-md shadow-black dark:border-white dark:bg-slate-800 md:grid-cols-2 lg:p-0">
-                    <a
-                        href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"
-                        target="_blank"
-                    >
-                        <div className="my-auto lg:my-5 hover:text-blue-800 dark:hover:text-blue-300">
-                            <h2 className="text-center text-4xl">Prettier</h2>
-                            <p className="text-balance text-center text-2xl">
-                                By Prettier
-                            </p>
-                            <p className="text-balance text-center lg:px-2">
-                                This extension allows you to format your code
-                                with the click of a button. It is highly
-                                customizable and can be set to format your code
-                                on save. You can also get extensions that will
-                                enable this to work for more than just the
-                                typical standard languages.
-                            </p>
-                            <p className="text-balance pt-3 text-center font-semibold lg:px-2">
-                                Works for: <br /> JavaScript · TypeScript · Flow
-                                · JSX · JSON CSS · SCSS · Less HTML · Vue ·
-                                Angular HANDLEBARS · Ember · Glimmer GraphQL ·
-                                Markdown · YAML
-                            </p>
-                        </div>
-                    </a>
-                    <div>
-                        <img
-                            src="https://esbenp.gallerycdn.vsassets.io/extensions/esbenp/prettier-vscode/10.1.0/1690819498575/Microsoft.VisualStudio.Services.Icons.Default"
-                            alt="Prettier Icon"
-                            className="mx-auto w-64"
-                        />
-                    </div>
-                </div>
+  const extensions = [
+    {
+      title: "Prettier",
+      author: "Prettier",
+      description: "Format your code with a click. Highly customizable and can format on save. Works with various languages and frameworks.",
+      iconUrl: "https://esbenp.gallerycdn.vsassets.io/extensions/esbenp/prettier-vscode/10.1.0/1690819498575/Microsoft.VisualStudio.Services.Icons.Default",
+      link: "https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode",
+      languages: "JavaScript · TypeScript · Flow · JSX · JSON · CSS · SCSS · Less · HTML · Vue · Angular · HANDLEBARS · Ember · Glimmer · GraphQL · Markdown · YAML"
+    },
+    {
+      title: "Live Server",
+      author: "Ritwick Dey",
+      description: "See your changes in real-time without refreshing. Essential for immediate feedback during development.",
+      iconUrl: "https://ritwickdey.github.io/vscode-live-server/images/icon.png",
+      link: "https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
+    },
+    {
+      title: "Comment Anchors",
+      author: "Exodius Studios",
+      description: "Create anchors in your comments for easy navigation, especially useful in large files.",
+      iconUrl: "https://exodiusstudios.gallerycdn.vsassets.io/extensions/exodiusstudios/comment-anchors/1.10.4/1705659936841/Microsoft.VisualStudio.Services.Icons.Default",
+      link: "https://marketplace.visualstudio.com/items?itemName=ExodiusStudios.comment-anchors"
+    }
+  ];
 
-                <div className="mt-10 grid grid-cols-1 items-center justify-center rounded-3xl border border-black bg-slate-200 p-5 text-lg shadow-md shadow-black dark:border-white dark:bg-slate-800 md:grid-cols-2 lg:p-0">
-                    <a
-                        href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
-                        target="_blank"
-                    >
-                        <div className="my-auto hover:text-blue-800 dark:hover:text-blue-300">
-                            <h2 className="text-center text-4xl">
-                                Live Server
-                            </h2>
-                            <p className="text-balance text-center text-2xl">
-                                By Ritwick Dey
-                            </p>
-                            <p className="text-balance text-center">
-                                With over 5 million installs, Live Server is a
-                                must-have and takes the place of other live
-                                server extensions. It allows you to see your
-                                changes in real-time without having to refresh
-                                the page. This is essential to see your changes
-                                as you make them. This one will even let you see
-                                a list of all the comments you have made, and
-                                navigate to them.
-                            </p>
-                        </div>
-                    </a>
-                    <div>
-                        <img
-                            src="https://ritwickdey.github.io/vscode-live-server/images/icon.png"
-                            alt="Live Server Icon"
-                            className="mx-auto w-80"
-                        />
-                    </div>
-                </div>
-                <div className="mt-10 grid grid-cols-1 items-center justify-center rounded-3xl border border-black bg-slate-200 p-5 text-lg shadow-md shadow-black dark:border-white dark:bg-slate-800 md:grid-cols-2 lg:p-0">
-                    <a
-                        href="https://marketplace.visualstudio.com/items?itemName=ExodiusStudios.comment-anchors"
-                        target="_blank"
-                    >
-                        <div className="my-auto hover:text-blue-800 dark:hover:text-blue-300">
-                            <h2 className="text-center text-4xl">
-                                Comment Anchors
-                            </h2>
-                            <p className="text-balance text-center text-2xl">
-                                By Exodius Studios
-                            </p>
-                            <p className="text-balance text-center">
-                                This extension allows you to create anchors in
-                                your comments to help you navigate your code.
-                                This is especially useful when you have a large
-                                file and need to find a specific section. This
-                                is a must-have for any developer.
-                            </p>
-                        </div>
-                    </a>
-                    <div>
-                        <img
-                            src="https://exodiusstudios.gallerycdn.vsassets.io/extensions/exodiusstudios/comment-anchors/1.10.4/1705659936841/Microsoft.VisualStudio.Services.Icons.Default"
-                            alt="Comment Anchors Icon"
-                            className="mx-auto w-64"
-                        />
-                    </div>
-                </div>
+  const obsoleteExtensions = [
+    { title: "- Auto Close Tag", description: "Search for 'auto close tags' in settings. Automatically closes tags in HTML." },
+    { title: "- Auto Rename Tag", description: "Search for 'auto rename tags' in settings. Automatically renames tags in HTML." },
+    { title: "- Bracket Pair Colorizer", description: "Search for 'bracket pair colorizer' in settings. Colorizes brackets for better visibility." },
+    { title: "- Indent Rainbow", description: "Search for 'indent rainbow' in settings. Colorizes indents for clearer code structure." }
+  ];
 
+  return (
+    <div className="container mx-auto px-4 py-12 max-w-6xl">
+      <Helmet>
+        <title>VS Code Extensions | Help Code It</title>
+        <meta
+          name="description"
+          content="Explore our recommended Visual Studio Code extensions for web development. Prettier, Live Server, and Comment Anchors are essential for efficient coding."
+        />
+        <link rel="canonical" href="https://www.helpcodeit.com/VSCodeExtensions" />
+        <meta name="robots" content="index, follow" />
+        <meta
+          name="keywords"
+          content="Visual Studio Code, VS Code extensions, Prettier, Live Server, Comment Anchors, web development, front-end development"
+        />
+      </Helmet>
 
-            </div>
-
-            <div className="mt-10 px-10 items-center justify-center rounded-3xl border border-black bg-slate-200 text-lg shadow-md shadow-black dark:border-white dark:bg-slate-800 md:grid-cols-2 lg:px-10 pb-5">
-                <h2 className="text-balance text-center text-5xl mt-10">New Settings that took the place of extensions we used to recommend </h2>
-                <br />
-                <p className="text-base">VS Code has made some updates to their settings that have made some extensions obsolete. </p>
-                <p className="text-lg mt-5 mb-2">We previously recommended the following extensions, but with the new settings in VS Code, they are no longer needed. </p>
-                <ul className="list-disc list-inside text-lg">
-                    <li className='font-semibold'>Auto Close Tag search for "auto close tags" in settings</li>
-                    <p>This setting will automatically close tags for you when coding in HTML</p>
-                    <br />
-                    <li className='font-semibold'>Auto Rename Tag search for "auto rename tags" in settings</li>
-                    <p>This setting will automatically rename tags for you when coding in HTML</p>
-                    <br />
-                    <li className='font-semibold'>Bracket Pair Colorizer search for "bracket pair colorizer" in settings</li>
-                    <p>This setting will colorize your brackets to help you see where they start and end</p>
-                    <br />
-                    <li className='font-semibold'>Indent Rainbow search for "indent rainbow" in settings</li>
-                    <p>This setting will colorize your indents to help you see where they start and end</p>
-                    </ul>
-            </div>
-
-
+      <header className="flex items-center justify-center mb-12">
+        <img src={vscodelogo} alt="VS Code Logo" className="w-20 h-20 mr-6" />
+        <div>
+          <h1 className="text-4xl font-bold mb-2">VS Code Extensions</h1>
+          <h2 className="text-xl text-gray-600 dark:text-gray-400">Our Recommended Extensions</h2>
         </div>
-    )
+      </header>
+
+      <section className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-16">
+        {extensions.map((ext, index) => (
+          <ExtensionCard key={index} {...ext} />
+        ))}
+      </section>
+
+      <section className="bg-gray-100 dark:bg-gray-900 rounded-lg p-8 mb-16">
+        <h2 className="text-3xl font-semibold text-center mb-6">New VS Code Settings</h2>
+        <p className="text-gray-700 dark:text-gray-300 mb-4">
+          VS Code has updated its settings, making some extensions obsolete. Here are the settings that replace previously recommended extensions:
+        </p>
+        <ul className="list-none">
+          {obsoleteExtensions.map((item, index) => (
+            <SettingItem key={index} {...item} />
+          ))}
+        </ul>
+      </section>
+    </div>
+  );
 }
-export default VSCodeExtensions
+
+export default VSCodeExtensions;
