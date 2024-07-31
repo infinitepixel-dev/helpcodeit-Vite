@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '@assets/helpcodeitlogo.svg';
+import LogoImage from '../Sub_Components/LogoImage';
 
 const Navbar = ({ theme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,12 +53,12 @@ const Navbar = ({ theme }) => {
   };
 
   return (
-    <nav className="bg-gray-800 relative z-40">
+    <nav className="bg-neutral-900 relative z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <img className="h-8 w-8" src="/logo.svg" alt="Logo" />
+              <img className="h-10 w-10 rounded-lg" src={logo} alt="Logo"  />
             </div>
           </div>
           <div className="hidden md:block">
@@ -75,11 +77,14 @@ const Navbar = ({ theme }) => {
                 items={[
                   { to: '/data-generator', label: 'Data Generator' },
                   { to: '/JavascriptPrincipals/APIResources', label: 'API Resources' },
+                //   { to: '/useful-links', label: 'Useful Links' },
                 ]}
               />
               <Dropdown
                 title="Topics"
                 items={[
+                    // {to: '/html' , label: 'HTML'},
+                    // {to: '/css' , label: 'CSS'},
                   { to: '/javascript', label: 'JavaScript' },
                   { to: '/ReactMain', label: 'React.js' },
                 ]}
