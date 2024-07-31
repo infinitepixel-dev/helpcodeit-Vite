@@ -40,7 +40,7 @@ const PushingUpdates = () => {
   <div className="mt-8  p-6 rounded-lg shadow-sm">
     <div className="flex items-center justify-center space-x-4 h-16 text-2xl">
       <div className={`transition-all duration-200 transform ${animationStep >= 1 ? 'scale-110 text-green-500' : 'dark:text-gray-100 light:text-gray-700'}`}>
-        git add .
+        git add <strong>.</strong>
       </div>
       <div className={`transition-all duration-200 transform ${animationStep >= 2 ? 'scale-110 text-blue-500' : 'dark:text-gray-100 light:text-gray-700'}`}>
         →
