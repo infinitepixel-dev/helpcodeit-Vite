@@ -3,14 +3,15 @@ import githublogolight from '@assets/github-icon-white.svg'
 import { useEffect, useRef } from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
-import githubInitialInstructions from '@assets/githubsetupcommandsfromsite.png'
-import githubFlow from '@assets/CleanShot 2023-12-05 at 12.18.20.png'
-import redPill from '@assets/1__URX2jndILBo7mMkgs-SWQ Background Removed.png'
-import bluePill from '@assets/Bluepill Background Removed.png'
-import DetailedGitWorkflow from '@subComponents/DetailedGitWorkflow'
-import {Link} from 'react-router-dom'
+// import githubInitialInstructions from '@assets/githubsetupcommandsfromsite.png'
+// import githubFlow from '@assets/CleanShot 2023-12-05 at 12.18.20.png'
+// import redPill from '@assets/1__URX2jndILBo7mMkgs-SWQ Background Removed.png'
+// import bluePill from '@assets/Bluepill Background Removed.png'
+// import DetailedGitWorkflow from '@subComponents/DetailedGitWorkflow'
+// import {Link} from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import GitHubMenu from '@subComponents/GitHubMenu'
+import library from '@assets/LibraryofCookbooks.webp'
 
 function GitHub() {
     const codeRef = useRef(null)
@@ -34,7 +35,7 @@ git config --global user.email "Your Email"`
     return (
         <div className="container mb-14 text-xl" id="#top">
             <Helmet>
-                <title>GitHub | Help Code It</title>
+                <title>GitHub - A Beginners Guide | Help Code It</title>
                 <meta
                     name="description"
                     content="Learn the basics of GitHub, a version control system that allows you to store and manage your code. Discover how to create a repository, add files, commit changes, and push your code to GitHub."
@@ -69,9 +70,12 @@ git config --global user.email "Your Email"`
             </div>
             <hr className="border-1 my-2 border-black dark:border-white" />
             <div className="">
-                <h2 className="mt-14 text-center text-2xl md:text-4xl">
+                <h2 className="mt-14 text-pretty text-center text-2xl md:text-4xl ">
                     📔The Library of Cookbooks👨‍🍳
                 </h2>
+                <img src={library} alt="Library of cookbooks" className="mx-auto my-5 w-72 md:w-96" />
+            </div>
+
                 <p className="mt-4">
                     Imagine a library full of cookbooks (repositories). Each
                     cookbook has its own unique recipes (code). Chefs
@@ -113,7 +117,6 @@ git config --global user.email "Your Email"`
 
 
 
-            </div>
         </div>
     )
 }
