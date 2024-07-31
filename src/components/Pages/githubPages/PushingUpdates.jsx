@@ -39,19 +39,19 @@ const PushingUpdates = () => {
       <h1 className="text-4xl font-bold mb-6 text-center">GitHub Workflow</h1>
   <div className="mt-8  p-6 rounded-lg shadow-sm">
     <div className="flex items-center justify-center space-x-4 h-16 text-2xl">
-      <div className={`transition-all duration-200 transform ${animationStep >= 1 ? 'scale-110 text-green-500' : 'text-gray-100'}`}>
+      <div className={`transition-all duration-200 transform ${animationStep >= 1 ? 'scale-110 text-green-500' : 'dark:text-gray-100 light:text-gray-700'}`}>
         git add .
       </div>
-      <div className={`transition-all duration-200 transform ${animationStep >= 2 ? 'scale-110 text-blue-500' : 'text-gray-100'}`}>
+      <div className={`transition-all duration-200 transform ${animationStep >= 2 ? 'scale-110 text-blue-500' : 'dark:text-gray-100 light:text-gray-700'}`}>
         →
       </div>
-      <div className={`transition-all duration-200 transform ${animationStep >= 2 ? 'scale-105 text-blue-500' : 'text-gray-100'}`}>
+      <div className={`transition-all duration-200 transform ${animationStep >= 2 ? 'scale-105 text-blue-500' : 'dark:text-gray-100 light:text-gray-700'}`}>
         git commit -m "Your commit message"
       </div>
-      <div className={`transition-all duration-200 transform ${animationStep >= 3 ? 'scale-110 text-purple-500' : 'text-gray-100'}`}>
+      <div className={`transition-all duration-200 transform ${animationStep >= 3 ? 'scale-110 text-purple-500' : 'dark:text-gray-100 light:text-gray-700'}`}>
         →
       </div>
-      <div className={`transition-all duration-200 transform ${animationStep >= 3 ? 'scale-110 text-purple-500' : 'text-gray-100'}`}>
+      <div className={`transition-all duration-200 transform ${animationStep >= 3 ? 'scale-110 text-purple-500' : 'dark:text-gray-100 light:text-gray-700'}`}>
         git push
       </div>
     </div>
