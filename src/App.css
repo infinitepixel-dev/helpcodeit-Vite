@@ -46,7 +46,7 @@
         padding: 0;
         box-sizing: border-box;
     }
-    
+
 
     code {
         border-radius: 10px;
@@ -161,11 +161,12 @@
         border-radius: 55px;
         background-color: black;
         max-width: 300px;
+        
     }
 
     .hero-text {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        /* padding-top: 1rem;
+        padding-bottom: 1rem; */
         font-family: 'Mukta', sans-serif;
         font-size: 2rem;
     }

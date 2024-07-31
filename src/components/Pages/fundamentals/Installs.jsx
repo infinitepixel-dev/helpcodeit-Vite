@@ -21,7 +21,7 @@ function Installs() {
     const nodeUsingHomebrew = `brew install node`
 
     return (
-        <div className="pb-14">
+        <div className="pb-14 container">
             <Helmet>
                 <title>Installations Needed for Front End Developers</title>
                 <meta

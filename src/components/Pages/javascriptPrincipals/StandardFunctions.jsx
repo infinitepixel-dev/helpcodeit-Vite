@@ -2,16 +2,23 @@ import { useRef, useEffect, Suspense, lazy } from 'react'
 import { Link } from 'react-router-dom'
 import hljs from 'highlight.js'
 import { Helmet } from 'react-helmet-async'
+import CopyButton from '@subComponents/CopyButton'
+import 'highlight.js/styles/atom-one-dark.css'
+import styles from './animations.module.css'
+
 
 
 const CodePractice = lazy(() => import('@subComponents/Code_Practice'))
 
-import 'highlight.js/styles/atom-one-dark.css'
-import styles from './animations.module.css'
-
 function StandardFunctions() {
     const codeRef = useRef(null)
 
+
+    const codeContainerStyles = {
+        backgroundColor: 'lightgray',
+        padding: '10px',
+        borderRadius: '5px',
+      };
     //Used to handle the fade in animation
     useEffect(() => {
         let delayIncrement = 6 // Increment the delay by 200ms for each element
@@ -286,10 +293,10 @@ function StandardFunctions() {
                     </p>
                     {/* Code Container - End */}
 
-                    <hr className="my-7 border-2 border-black dark:border-white" />
+                    {/* <hr className="my-7 border-2 border-black dark:border-white" /> */}
                 </div>
                 {/* FIXME This is commented out because it is not working */}
-                <div className="observeMe">
+                {/* <div className="observeMe">
                     <h2 className="mt-10 py-2 text-3xl">
                         Let&apos;s Practice!
                     </h2>
@@ -311,9 +318,9 @@ function StandardFunctions() {
                             // functionData={""}
                             hljs={hljs}
                         />
-                    </Suspense>
-                </div>
-            </div>
+                    </Suspense> */}
+                {/* </div>
+            </div> */}
 
             <div className="observeMe">
                 <p className="mt-10">
@@ -354,7 +361,8 @@ function StandardFunctions() {
                 <Link to="/javascript">Back to JavaScript Main Page</Link>
             </div>
         </div>
+    </div>
     )
 }
 
-export default StandardFunctions
+export default StandardFunctions;
