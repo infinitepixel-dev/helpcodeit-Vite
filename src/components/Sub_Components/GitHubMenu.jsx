@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Key, GitBranch, GitPullRequest, FileText, UserCheck, GitCommit, GitFork } from 'lucide-react';
+
 
 import gitHubLogo from '@assets/github-icon-white.svg';
 
 const GitHubMenu = () => {
   const menuItems = [
-      { title: 'Setting Up Authentication', path: '/githubPages/GitHubAuthentication' },
-    { title: 'Making a New Repository and Linking It', path: '/githubPages/AddARepository' },
-    { title: 'Pushing Updates to an Exisiting Repository', path: '/githubPages/push' },
-    // { title: 'Troubleshooting', path: '/githubPages/troubleshoot' },
-    { title: 'Cheatsheet of Git Commands for CLI', path: '/githubPages/GitHubCheatsheet' },
-    { title: 'Changing Your Credentials', path: '/githubPages/ChangingGitHubCredentials' },
-    { title: 'Branching Guide', path: '/githubPages/GitHubBranching' },
+    { title: 'Setting Up Authentication', path: '/githubPages/GitHubAuthentication', icon: Key },
+    { title: 'Making a New Repository and Linking It', path: '/githubPages/AddARepository', icon: GitBranch },
+    { title: 'Pushing Updates to an Existing Repository', path: '/githubPages/push', icon: GitPullRequest },
+    { title: 'Changing Your Credentials', path: '/githubPages/ChangingGitHubCredentials', icon: UserCheck },
+    { title: 'Branching Guide', path: '/githubPages/GitHubBranching', icon: GitFork },
+    { title: 'Cheatsheet of Git Commands for CLI', path: '/githubPages/GitHubCheatsheet', icon: FileText },
   ];
 
   return (
@@ -28,11 +29,13 @@ const GitHubMenu = () => {
         <ul className="space-y-2">
           {menuItems.map((item, index) => (
             <li key={index}>
+
               <Link
                 to={item.path}
-                className="block py-2 px-4 text-gray-300 hover:bg-blue-500 hover:text-white rounded transition duration-150 ease-in-out"
+                className="flex py-2 px-4 text-gray-300 hover:bg-blue-800 hover:text-white rounded transition duration-500 ease-in-out"
               >
-                {item.title}
+                <item.icon className="w-6 h-6 mr-3 text-blue-600 dark:text-blue-400" />
+                 {item.title}
               </Link>
             </li>
           ))}

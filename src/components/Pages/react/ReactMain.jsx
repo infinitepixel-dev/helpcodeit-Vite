@@ -1,6 +1,7 @@
 import reactlogo from '../../../assets/React.svg'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import ReactNavigation from './ReactNavigation'
 
 export default function reactmain() {
     return (
@@ -32,61 +33,12 @@ export default function reactmain() {
                 </div>
                 <div>
                     <h1 className="mukataFont my-5 text-center text-7xl">
-                        React Topics
+                        React.js
                     </h1>
                 </div>
             </div>
             <hr className=" border-1 mb-4 border-black dark:border-white" />
-            <div className="flex flex-col items-center">
-                <Link
-                    className="text-2xl font-bold hover:text-blue-600"
-                    to="/ReactEvolution"
-                >
-                    The Evolution of React: From Class-Based to Function-Based Programming
-                </Link>
-                <br />
-                <Link
-                    className="text-2xl font-bold hover:text-blue-600"
-                    to="/ReactComponents"
-                >
-                    React Component Basics
-                </Link>
-                <br />
-                <Link
-                    className="text-2xl font-bold hover:text-blue-600"
-                    to="/ReactRouter6"
-                >
-                    React Router 6+
-                </Link>
-                <br />
-                <Link
-                    className="text-2xl font-bold hover:text-blue-600"
-                    to="/PropsAndState"
-                >
-                   Understanding Props and State
-                </Link>
-                <br />
-                <Link
-                    className="text-2xl font-bold hover:text-blue-600"
-                    to="/Destructuring"
-                >
-                    Destructuring Props in React
-                </Link>
-                <br />
-                <Link
-                    className="text-2xl font-bold hover:text-blue-600"
-                    to="/PlanningReactApps"
-                >
-                    Planning and Organizing React Apps
-                </Link>
-                <br />
-                <Link
-                    className="text-2xl font-bold hover:text-blue-600"
-                    to="/ReactHooks"
-                >
-                    React Hooks
-                </Link>
-            </div>
+           <ReactNavigation />
         </div>
     )
 }
