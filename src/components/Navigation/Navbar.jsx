@@ -213,7 +213,7 @@ function Navbar({ theme }) {
                                 </li>
                                 <li>
                                     <NavLink
-                                        to="/fundamentals/GitHub"
+                                        to="/gitHubPages/GitHub"
                                         className="whitespace-no-wrap block rounded rounded-b bg-white px-4 py-2 hover:bg-slate-500 dark:bg-black"
                                     >
                                         GitHub
