@@ -14,7 +14,7 @@ export default function reactmain() {
                 />
                 <link
                     rel="canonical"
-                    href="https://helpcodeit.com/ReactMain"
+                    href="https://www.helpcodeit.com/ReactMain"
                 />
                 <meta name="robots" content="index, follow" />
                 <meta
