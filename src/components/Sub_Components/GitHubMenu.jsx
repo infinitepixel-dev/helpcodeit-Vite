@@ -13,6 +13,7 @@ const GitHubMenu = () => {
     { title: 'Changing Your Credentials', path: '/githubPages/ChangingGitHubCredentials', icon: UserCheck },
     { title: 'Branching Guide', path: '/githubPages/GitHubBranching', icon: GitFork },
     { title: 'Cheatsheet of Git Commands for CLI', path: '/githubPages/GitHubCheatsheet', icon: FileText },
+    { title: 'Comprehensive Guide to Hosting a Project on GitHub Pages', path: '/githubPages/GitHubPagesGuide', icon: GitCommit },
   ];
 
   return (
