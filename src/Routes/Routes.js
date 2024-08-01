@@ -7,6 +7,7 @@ export const componentRoutes = [
   { path: '/about', componentPath: '../components/Pages/About.jsx', key: 'about' },
   { path: '/schedule-meeting', componentPath: '../components/Pages/ScheduleMeeting.jsx', key: 'scheduleMeeting' },
   { path: './APITable', componentPath: '../components/Pages/javascriptPrincipals/APITable.jsx', key: 'APITable'},
+  { path: '/useful-links', componentPath: '../components/Pages/fundamentals/UsefulLinks.jsx', key: 'usefulLinks' },
   //INFO: JAVASCRIPT Pages
   { path: '/data-generator', componentPath: '../components/Sub_Components/DataGenerator.jsx', key: 'dataGenerator' },
   { path: '/javascript', componentPath: '../components/Pages/JavascriptMainPage.jsx', key: 'javascriptMain' },
@@ -39,6 +40,7 @@ export const componentRoutes = [
   { path: '/githubPages/AddARepository', componentPath: '../components/Pages/githubPages/AddARepository.jsx', key: 'addARepository' },
   { path: '/githubPages/push', componentPath: '../components/Pages/githubPages/PushingUpdates.jsx', key: 'pushingUpdates' },
   { path: '/githubPages/GitHubAuthentication', componentPath: '../components/Pages/githubPages/GitHubAuthentication.jsx', key: 'gitHubAuthentication' },
+  {path: '/githubPages/GitHubPagesGuide' , componentPath: '../components/Pages/githubPages/GitHubPagesGuide.jsx', key: 'gitHubPagesGuide'},
  //INFO: FUNDAMENTALS Pages
   { path: '/fundamentals/VSCodeHotkeysTable', componentPath: '../components/Pages/fundamentals/VSCodeHotkeysTable.jsx', key: 'vsCodeHotkeysTable' },
   { path: '/fundamentals/Bootstrap', componentPath: '../components/Pages/fundamentals/Bootstrap.jsx', key: 'bootstrap' },
