@@ -1,5 +1,40 @@
 import { lazy } from 'react';
 
+export const navItems = [
+  { type: 'link', to: '/', label: 'Home' },
+  {
+    type: 'dropdown',
+    label: 'Getting Started',
+    items: [
+      { to: '/fundamentals/Installs', label: 'Installs' },
+      { to: '/MiscPages/RubberDucky', label: 'Rubber Ducky Method' },
+      { to: '/fundamentals/VSCodeExtensions', label: 'VS Code Extensions' },
+      { to: '/fundamentals/VSCodeHotkeysTable', label: 'VS Code Hotkeys' },
+      { to: '/fundamentals/SettingUpPracticeEnvironment', label: 'Setting Up a Practice Environment' },
+    ]
+  },
+  {
+    type: 'dropdown',
+    label: 'Tools',
+    items: [
+      { to: '/data-generator', label: 'Data Generator' },
+      { to: '/JavascriptPrincipals/APIResources', label: 'API Resources' },
+      { to: '/useful-links', label: 'Useful Links' },
+    ]
+  },
+  {
+    type: 'dropdown',
+    label: 'Topics',
+    items: [
+      { to: '/fundamentals/Bootstrap', label: 'Bootstrap' },
+      { to: '/githubPages/GitHub', label: 'GitHub' },
+      { to: '/javascript', label: 'JavaScript' },
+      { to: '/ReactMain', label: 'React.js' },
+    ]
+  },
+  { type: 'link', to: '/about', label: 'About' },
+];
+
 export const componentRoutes = [
   //INFO: MISC Pages
   { path: '*', componentPath: '../components/Pages/HomePage.jsx', key: 'default' },
