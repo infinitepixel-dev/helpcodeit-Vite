@@ -87,8 +87,8 @@ const Navbar = ({ theme }) => {
                 items={[
                     // {to: '/html' , label: 'HTML'},
                     // {to: '/css' , label: 'CSS'},
-                    {to: '/fundamentals/Bootstrap', label: 'Bootstrap'},
-                    {to: '/githubPages/GitHub', label: 'GitHub'},
+                  {to: '/fundamentals/Bootstrap', label: 'Bootstrap'},
+                  {to: '/githubPages/GitHub', label: 'GitHub'},
                   { to: '/javascript', label: 'JavaScript' },
                   { to: '/ReactMain', label: 'React.js' },
                 ]}
@@ -140,6 +140,8 @@ const Navbar = ({ theme }) => {
                   <NavLink to="/fundamentals/Installs" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Installs</NavLink>
                   <NavLink to="/MiscPages/RubberDucky" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Rubber Ducky Method</NavLink>
                   <NavLink to="/fundamentals/VSCodeExtensions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">VS Code Extensions</NavLink>
+                  <NavLink to="/fundamentals/VSCodeHotkeysTable" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">VS Code Hotkeys</NavLink>
+                  <NavLink to="/fundamentals/SettingUpPracticeEnvironment" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Setting Up a Practice Environment</NavLink>
                 </div>
               </div>
             </div>
@@ -151,6 +153,7 @@ const Navbar = ({ theme }) => {
                 <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                   <NavLink to="/data-generator" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Data Generator</NavLink>
                   <NavLink to="/JavascriptPrincipals/APIResources" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">API Resources</NavLink>
+                  <NavLink to="/useful-links" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Useful Links</NavLink>
                 </div>
               </div>
             </div>
@@ -160,8 +163,13 @@ const Navbar = ({ theme }) => {
               </button>
               <div className="absolute right-0 w-48 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50 invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300">
                 <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+                  <NavLink to="/fundamentals/Bootstrap" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Bootstrap</NavLink>
+                  <NavLink to="/githubPages/GitHub" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">GitHub</NavLink>
                   <NavLink to="/javascript" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">JavaScript</NavLink>
                   <NavLink to="/ReactMain" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">React.js</NavLink>
+                  
+
+
                 </div>
               </div>
             </div>
