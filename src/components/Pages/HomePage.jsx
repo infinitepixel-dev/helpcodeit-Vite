@@ -33,7 +33,7 @@ function HomePage() {
 
                 <link rel="canonical" href="https://www.helpcodeit.com" />
             </Helmet>
-            {/* <AlertMessage message="Registration is now up for 'Getting Started with Tailwind CSS Workshop' this Saturday August 3rd! Sign ups are live!" type="error" duration={20000} onClose={() => console.log('closed')} /> */}
+            <AlertMessage message="'Getting Started with Tailwind CSS Workshop' was moved to Saturday Aug 10th from  this Saturday August 3rd. Sign ups are live for the new date!" type="error" duration={25000} onClose={() => console.log('closed')} />
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
 
