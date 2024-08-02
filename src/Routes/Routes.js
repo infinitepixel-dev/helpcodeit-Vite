@@ -26,8 +26,10 @@ export const navItems = [
     type: 'dropdown',
     label: 'Topics',
     items: [
+      { to: '/cssPages/cssBasics', label: 'CSS' },
       { to: '/fundamentals/Bootstrap', label: 'Bootstrap' },
       { to: '/githubPages/GitHub', label: 'GitHub' },
+      { to: '/markdown/MarkdownGuide', label: 'Markdown' },
       { to: '/javascript', label: 'JavaScript' },
       { to: '/ReactMain', label: 'React.js' },
     ]
@@ -36,6 +38,8 @@ export const navItems = [
 ];
 
 export const componentRoutes = [
+  //INFO: CSS Pages
+  { path: '/cssPages/cssBasics', componentPath: '../components/Pages/cssPages/cssBasics.jsx', key: 'cssBasics' },
   //INFO: MISC Pages
   { path: '*', componentPath: '../components/Pages/HomePage.jsx', key: 'default' },
   { path: '/', componentPath: '../components/Pages/HomePage.jsx', key: 'home' },
@@ -76,6 +80,8 @@ export const componentRoutes = [
   { path: '/githubPages/push', componentPath: '../components/Pages/githubPages/PushingUpdates.jsx', key: 'pushingUpdates' },
   { path: '/githubPages/GitHubAuthentication', componentPath: '../components/Pages/githubPages/GitHubAuthentication.jsx', key: 'gitHubAuthentication' },
   {path: '/githubPages/GitHubPagesGuide' , componentPath: '../components/Pages/githubPages/GitHubPagesGuide.jsx', key: 'gitHubPagesGuide'},
+ //INFO: Markdown Pages
+  {path: '/markdown/MarkdownGuide', componentPath: '../components/Pages/markdown/MarkdownGuide.jsx', key: 'markdownGuide'},
  //INFO: FUNDAMENTALS Pages
   { path: '/fundamentals/VSCodeHotkeysTable', componentPath: '../components/Pages/fundamentals/VSCodeHotkeysTable.jsx', key: 'vsCodeHotkeysTable' },
   { path: '/fundamentals/Bootstrap', componentPath: '../components/Pages/fundamentals/Bootstrap.jsx', key: 'bootstrap' },

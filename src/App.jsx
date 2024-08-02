@@ -63,6 +63,12 @@ function App() {
                     <Footer />
                 </div>
             </div>
+            <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="z-0 fixed bottom-12 right-5 bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold py-2 px-4 rounded-full"
+        >
+            Back to top ↑
+        </button>
         </DarkModeProvider>
     )
 }
