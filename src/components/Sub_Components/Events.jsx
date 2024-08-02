@@ -29,7 +29,7 @@ const events = [
         time: '3:00 PM pst | 4:00 PM mst | 5:00 PM cst | 6:00 PM est',
         link: 'https://calendly.com/michaelvarnell/beginner-tailwindcss',
         ISOdate: '2024-08-10T22:00:00.000Z',
-        description: "Join us for a comprehensive introduction to Tailwind CSS! We’ll guide you through the essentials of setting up and learning Tailwind, from understanding core classes to discovering new ones. Learn how to leverage free components effectively, navigate common pitfalls, and enhance your web design skills. Don’t miss this opportunity to boost your frontend development expertise with Tailwind CSS! ",
+        description: "Join us for a comprehensive introduction to Tailwind CSS! We’ll guide you through the essentials of setting up and learning Tailwind, from understanding core classes to discovering new ones. Learn how to leverage free components effectively, navigate common pitfalls, and enhance your web design skills. Don’t miss this opportunity to boost your frontend development expertise with Tailwind CSS! IF THERE ARE ANY ISSUES WITH SIGN UP PLEASE EMAIL US AT michaelvarnell@icloud.com!",
         cost: '10',
         show: true,
     }
