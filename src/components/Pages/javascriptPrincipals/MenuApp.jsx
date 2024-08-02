@@ -43,7 +43,7 @@ function MenuApp() {
                 <img
                     src={diagram}
                     alt="Diagram of Menu App"
-                    className="mb-10 h-full w-full rounded-3xl p-5"
+                    className="mb-10 w-2/3 rounded-3xl p-5 mx-auto"
                 />
             </div>
             <div className="row mx-16">

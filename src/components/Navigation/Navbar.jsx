@@ -13,7 +13,7 @@ const Navbar = ({ theme }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 768);
+      setIsSmallScreen(window.innerWidth <= 778);
     };
 
     window.addEventListener('resize', handleResize);
@@ -23,7 +23,7 @@ const Navbar = ({ theme }) => {
   }, []);
 
   const navLinkClasses = ({ isActive }) => `
-    px-3 py-2 rounded-md text-sm font-medium
+    px-3 py-2 rounded-md text-base font-medium
     ${isActive
       ? 'bg-gray-900 text-white'
       : 'text-gray-300 hover:bg-gray-700 hover:text-white'
@@ -45,11 +45,11 @@ const Navbar = ({ theme }) => {
       <div className="relative group">
         <button
           onClick={toggleDropdown}
-          className="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+          className="px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
         >
           {label}
         </button>
-        <div id='custom-drop' style={{top: "26px"}} className={`
+        <div id='custom-drop' style={{top: "30px"}} className={`
           absolute  w-48 mt-2 right-0 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50
           ${isSmallScreen
             ? (isDropdownOpen ? 'block' : 'hidden')
@@ -61,7 +61,7 @@ const Navbar = ({ theme }) => {
               <NavLink
                 key={index}
                 to={item.to}
-                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                className="block px-4 py-2 text-base font-bold text-gray-600 hover:bg-gray-50"
                 role="menuitem"
                 onClick={() => { setOpenDropdown(null); setIsOpen(false); }}
               >
@@ -103,7 +103,7 @@ const Navbar = ({ theme }) => {
               <img className="h-10 w-10 rounded-lg" src={logo} alt="Logo" />
             </div>
           </div>
-          <div className="hidden md:block">
+          <div className="hidden ms-auto me-5 md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {renderNavItems()}
             </div>
@@ -136,6 +136,7 @@ const Navbar = ({ theme }) => {
               </svg>
             </button>
           </div>
+        { !isSmallScreen && <div ><a href="https://www.buymeacoffee.com/michaelvarnell" ><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=michaelvarnell&button_colour=fa2e42&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" className='h-9'/></a></div>}
         </div>
       </div>
 
