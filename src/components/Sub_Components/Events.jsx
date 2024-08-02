@@ -25,7 +25,7 @@ const events = [
     {
 
         title: 'Getting Started with Tailwind CSS Workshop',
-        date: 'Saturday August 3rd, 2024',
+        date: 'Due to scheduling issues this event has been postponed. Please check back for updates.',
         time: '3:00 PM pst | 4:00 PM mst | 5:00 PM cst | 6:00 PM est',
         link: 'https://calendly.com/michaelvarnell/beginner-tailwindcss',
         ISOdate: '2024-08-10T22:00:00.000Z',
