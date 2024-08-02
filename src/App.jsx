@@ -43,13 +43,13 @@ function App() {
         <DarkModeProvider>
             <div>
             <Helmet >
-                <meta property="og:title" content="Help Code It" />
-  <meta property="og:description" content="Help Code It is a site for beginning developers that helps you learn how to code." />
-  <meta property="og:image" content="https://www.helpcodeit.com/assets/helpcodeitlogo-CsyqkzOG.svg" />
-  <meta property="og:url" content="https://www.helpcodeit.com" />
-  <meta property="og:type" content="website" />
+                <meta name="title" property="og:title" content="Help Code It" />
+  <meta name='description' property="og:description" content="Help Code It is a site for beginning developers that helps you learn how to code." />
+  <meta name="image" property="og:image" content="https://www.helpcodeit.com/assets/helpcodeitlogo-CsyqkzOG.svg" />
+  <meta name='url' property="og:url" content="https://www.helpcodeit.com" />
+  <meta name="type" property="og:type" content="website" />
 
-  
+
 
             </Helmet>
                 <div className="m-0 w-full p-0">
