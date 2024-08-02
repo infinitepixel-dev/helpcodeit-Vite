@@ -8,6 +8,7 @@ import 'highlight.js/styles/github-dark.css'
 import { Routes, Route } from 'react-router-dom'
 import Footer from '@subComponents/Footer'
 import RoutesWithComponents from './Routes/Routes.js'
+import { Helmet } from 'react-helmet-async'
 
 console.log('RoutesWithComponents: ', RoutesWithComponents)
 
@@ -41,6 +42,16 @@ function App() {
     return (
         <DarkModeProvider>
             <div>
+            <Helmet >
+                <meta property="og:title" content="Help Code It" />
+  <meta property="og:description" content="Help Code It is a site for beginning developers that helps you learn how to code." />
+  <meta property="og:image" content="https://www.helpcodeit.com/assets/helpcodeitlogo-CsyqkzOG.svg" />
+  <meta property="og:url" content="https://www.helpcodeit.com" />
+  <meta property="og:type" content="website" />
+
+  
+
+            </Helmet>
                 <div className="m-0 w-full p-0">
                     <Navbar theme={theme} />
                 </div>
