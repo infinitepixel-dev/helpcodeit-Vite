@@ -45,7 +45,7 @@ function HomePage() {
             {/* !SECTION end Jumbotron */}
             <div className="container">
                 <div className="md:grid-cols-auto grid lg:grid-cols-2">
-                    <div className="mx-5">
+                    <div className="mx-5 mb-3">
                         <EventCard limit={1}/>
                     </div>
                     <div className="mx-5 my-auto ">
