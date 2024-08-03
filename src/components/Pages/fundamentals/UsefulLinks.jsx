@@ -410,6 +410,16 @@ function UsefulLinks() {
     ];
 
     const uiTailwindResourcesLinks = [
+    {
+        title: "FullCalendar",
+        description: "JavaScript event calendar",
+        url: "https://fullcalendar.io/"
+    },
+ {
+        title: "Tostify",
+        description: "Toast notifications and alerts",
+        url: "https://www.npmjs.com/package/react-toastify"
+ },
         {
             title: "Awesome ShadCN UI",
             description: "Curated list of resources for ShadCN UI",
@@ -543,7 +553,7 @@ function UsefulLinks() {
     <ArrowBigUp className="ml-1" />
   </a>
 </div>
-        <h1 id="tailwind" className="text-3xl font-bold text-center my-8">Tailwind UI Resources</h1>
+        <h1 id="tailwind" className="text-3xl font-bold text-center my-8">UI Resources</h1>
         <UsefulLinksTable links={uiTailwindResourcesLinks} />
          <div className="grid justify-center">
   <a href="#top" className="flex items-center text-blue-500 hover:text-blue-700">
