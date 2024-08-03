@@ -47,6 +47,7 @@ export const componentRoutes = [
   { path: '/schedule-meeting', componentPath: '../components/Pages/ScheduleMeeting.jsx', key: 'scheduleMeeting' },
   { path: './APITable', componentPath: '../components/Pages/javascriptPrincipals/APITable.jsx', key: 'APITable'},
   { path: '/useful-links', componentPath: '../components/Pages/fundamentals/UsefulLinks.jsx', key: 'usefulLinks' },
+  { path: '/calendar', componentPath: '../components/Sub_Components/Calendar.jsx', key: 'calendar' },
   //INFO: JAVASCRIPT Pages
   { path: '/data-generator', componentPath: '../components/Sub_Components/DataGenerator.jsx', key: 'dataGenerator' },
   { path: '/javascript', componentPath: '../components/Pages/JavascriptMainPage.jsx', key: 'javascriptMain' },
@@ -70,6 +71,7 @@ export const componentRoutes = [
   { path: '/javascriptPrincipals/JSONServer', componentPath: '../components/Pages/javascriptPrincipals/JSONServer.jsx', key: 'JSONServer'},
   { path: '/javascriptPrincipals/APIResources', componentPath: '../components/Pages/javascriptPrincipals/APIResources.jsx', key: 'APIResources' },
   { path: '/javascriptPrincipals/CallbacksAndPromises', componentPath: '../components/Pages/javascriptPrincipals/CallbacksAndPromises.jsx', key: 'callbacksAndPromises' },
+  { path: '/javascriptPrincipals/UnitTestingGuide', componentPath: '../components/Pages/javascriptPrincipals/UnitTestingGuide.jsx', key: 'unitTestingGuide' },
   { path: '/MiscPages/RubberDucky', componentPath: '../components/Pages/MiscPages/RubberDucky.jsx', key: 'RubberDucky' },
   //INFO GitHub Pages
   { path: '/githubPages/GitHub', componentPath: '../components/Pages/githubPages/GitHub.jsx', key: 'gitHub' },

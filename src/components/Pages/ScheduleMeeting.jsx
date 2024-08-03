@@ -3,7 +3,8 @@ import React from 'react'
 import michael from '@assets/michael.jpeg'
 // import EventAlert from '../Sub_Components/EventAlert'
 import { Helmet } from 'react-helmet-async'
-import EventCard from '@subComponents/EventCard'
+
+import { Link } from 'react-router-dom'
 
 const ScheduleMeeting = () => {
     let event = {
@@ -32,6 +33,7 @@ const ScheduleMeeting = () => {
                     content="schedule meeting, coding help, coding tutoring, Michael Varnell, Git workshop, GitHub workshop, front-end development, coding sessions"
                 />
             </Helmet>
+
             {/* {event.ISOdate < new Date().toISOString() && <EventAlert event={event} />} */}
             <div className="pb-100 container mx-auto p-2 px-4 sm:p-8">
                 <div className="mt-5 flex flex-wrap items-center">
@@ -48,7 +50,13 @@ const ScheduleMeeting = () => {
                     </div>
                 </div>
 
-                <div className="mt-10">
+                            <div className="mt-10 grid justify-center">
+                                <Link to="/calendar" className="inline-flex items-center px-6 py-3 w-fit mx-auto text-base mb-5 shadow-md bg-blue-700 font-bold text-white dark:border-none border border-1 border-gray-300 rounded-3xl">
+
+                                    See the Event Calendar for Special Workshops!
+                                </Link>
+                            </div>
+                <div className="mt-2">
                     <h2 className="mb-8 border-b-2 border-black pb-4 text-center text-2xl font-bold dark:border-white">
                         Available Meeting Options
                     </h2>
@@ -127,8 +135,6 @@ const ScheduleMeeting = () => {
                         ))}
                     </div>
                 </div>
-
-                    <EventCard />
                 <div className="mt-16 rounded-lg bg-gray-100 p-8">
                     <h2 className="mb-4 text-2xl font-bold text-gray-700">
                         About <br /> <span className="text-3xl">Michael Varnell</span>
