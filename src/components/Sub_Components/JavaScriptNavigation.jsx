@@ -30,6 +30,7 @@ const JavaScriptNavigation = () => {
     { to: "/javascriptPrincipals/WarGameTutorial", icon: Zap, label: "War Game" },
     { to: "/javascriptPrincipals/JSONServer", icon: Database, label: "JSON Server" },
     { to: "/javascriptPrincipals/CallbacksAndPromises", icon: GitBranch, label: "Callbacks and Promises" },
+    { to: "/javascriptPrincipals/UnitTestingGuide", icon: Zap, label: "Unit Testing Guide" },
   ];
 
   return (
