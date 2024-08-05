@@ -20,6 +20,7 @@ export const navItems = [
       { to: '/data-generator', label: 'Data Generator' },
       { to: '/JavascriptPrincipals/APIResources', label: 'API Resources' },
       { to: '/useful-links', label: 'Useful Links' },
+      { to: '/MediaRecommendations', label: 'Our Podcast Recommendations' },
     ]
   },
   {
@@ -48,6 +49,7 @@ export const componentRoutes = [
   { path: './APITable', componentPath: '../components/Pages/javascriptPrincipals/APITable.jsx', key: 'APITable'},
   { path: '/useful-links', componentPath: '../components/Pages/fundamentals/UsefulLinks.jsx', key: 'usefulLinks' },
   { path: '/calendar', componentPath: '../components/Sub_Components/Calendar.jsx', key: 'calendar' },
+  { path: '/MediaRecommendations', componentPath: '../components/Pages/MiscPages/MediaRecommendations.jsx', key: 'mediaRecommendations' },
   //INFO: JAVASCRIPT Pages
   { path: '/data-generator', componentPath: '../components/Sub_Components/DataGenerator.jsx', key: 'dataGenerator' },
   { path: '/javascript', componentPath: '../components/Pages/JavascriptMainPage.jsx', key: 'javascriptMain' },
