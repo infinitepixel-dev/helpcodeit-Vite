@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const podcasts = [
     {
@@ -67,6 +68,24 @@ const podcasts = [
 
 const PodcastCard = ({ podcast }) => (
   <div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+    <Helmet>
+        <title>Media Recommendations | Help Code It</title>
+
+        <meta
+            name="description"
+            content="Check out our recommended software development and tech podcasts. These podcasts cover a wide range of topics and are great for developers of all levels."
+        />
+        <meta
+            property="og:title"
+            content="Media Recommendations | Help Code It"
+        />
+        <meta
+            name='keywords'
+            content='Podcasts, Software Development, Tech Podcasts, Coding Podcasts'
+        />
+        <meta
+        canonical="https://www.helpcodeit.com/media-recommendations" />
+    </Helmet>
     <img src={podcast.img} alt={podcast.title} className="w-full object-cover" />
     <div className="p-4">
       <h2 className="text-xl text-gray-600 font-semibold mb-2">{podcast.title}</h2>
