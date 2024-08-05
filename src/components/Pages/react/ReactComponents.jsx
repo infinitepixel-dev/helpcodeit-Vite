@@ -44,7 +44,7 @@ export default Heading;`
                 />
                 <link
                     rel="canonical"
-                    href="https://helpcodeit.com/ReactComponents"
+                    href="https://www.helpcodeit.com/ReactComponents"
                 />
                 <meta name="robots" content="index, follow" />
                 <meta

@@ -19,21 +19,14 @@ function HomePage() {
                     name="description"
                     content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
                 />
-                <meta
-                    property="og:title"
-                    content="Help Code It | Resources for Beginning Developers"
-                />
-                <meta
-                    property="og:description"
-                    content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Book a session now!"
-                />
-
-                <meta property="og:image" content={LogoImage} />
-                <meta property="og:url" content="https://www.helpcodeit.com" />
+              <meta property="og:title" content="Help Code It | Resources for Beginning Developers" />
+        <meta property="og:description" content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!" />
+        <meta property="og:image" content={LogoImage} />
+        <meta property="og:url" content="https://www.helpcodeit.com" />
 
                 <link rel="canonical" href="https://www.helpcodeit.com" />
             </Helmet>
-            <AlertMessage message="UPCOMING EVENT: Getting Started with Tailwind CSS Workshop on Saturday August 3rd! Sign ups are live!" type="error" duration={20000} onClose={() => console.log('closed')} />
+            <AlertMessage message="'Getting Started with Tailwind CSS Workshop' was moved to Saturday Aug 10th from Saturday August 3rd. Sign ups are live for the new date!" type="error" duration={25000} onClose={() => console.log('closed')} />
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
 
@@ -45,7 +38,8 @@ function HomePage() {
             {/* !SECTION end Jumbotron */}
             <div className="container">
                 <div className="md:grid-cols-auto grid lg:grid-cols-2">
-                    <div className="mx-5">
+                    <div className="mx-5 mb-3">
+                        <h2 className="mt-6 text-center text-3xl font-bold">Upcoming Event</h2>
                         <EventCard limit={1}/>
                     </div>
                     <div className="mx-5 my-auto ">

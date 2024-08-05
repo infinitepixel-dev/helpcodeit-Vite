@@ -53,7 +53,7 @@
         box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.58);
         margin-bottom: 1rem;
         max-width: fit-content;
-        @apply p-0 text-base dark:border dark:border-white;
+        @apply p-0 text-base dark:border dark:border-gray-500;
     }
 
     .overridecode {
@@ -161,7 +161,7 @@
         border-radius: 55px;
         background-color: black;
         max-width: 300px;
-        
+
     }
 
     .hero-text {

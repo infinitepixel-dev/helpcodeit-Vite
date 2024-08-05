@@ -51,7 +51,7 @@ const AlertMessage = ({ message, type = 'info', onClose, duration = 5000, speed 
   if (!isVisible) return null;
 
   return (
-    <div className={`fixed bottom-8 left-0 right-0 p-4 ${colors[type]} flex items-center justify-between`}>
+    <div className={`fixed z-50 bottom-8 left-0 right-0 p-4 ${colors[type]} flex items-center justify-between`}>
       <div ref={containerRef} className="flex-grow overflow-hidden relative h-6">
         <div
           ref={contentRef}
