@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import hljs from 'highlight.js/lib/core';
 import markdown from 'highlight.js/lib/languages/markdown';
 import 'highlight.js/styles/atom-one-dark.css'
+import { Helmet } from 'react-helmet-async';
 
 hljs.registerLanguage('markdown', markdown);
 
@@ -23,6 +24,24 @@ const MarkdownGuide = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
+      <Helmet>
+        <title>Markdown Guide | Help Code It</title>
+        <meta
+          name="description"
+          content="Learn how to use Markdown to format text in your documents. Markdown is a lightweight markup language that can be converted to HTML and other formats."
+        />
+        <meta
+          property="og:title"
+          content="Markdown Guide | Help Code It"
+        />
+        <meta
+          name='keywords'
+          content='Markdown, Markdown Guide, Markdown Examples, Markdown Syntax'
+        />
+        <meta
+        canonical="https://www.helpcodeit.com/markdown/MarkdownGuide" />
+      </Helmet>
+
       <h1 className="text-4xl font-bold mb-6">Introduction to Markdown</h1>
       <p className="mb-6 text-lg">
         Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
@@ -49,7 +68,7 @@ const MarkdownGuide = () => {
         Start using Markdown in your documents today to create well-formatted, easy-to-read content that can be easily converted to HTML or other formats!
       </p>
 
-       
+
     </div>
   );
 };

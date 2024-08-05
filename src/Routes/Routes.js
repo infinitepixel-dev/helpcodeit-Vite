@@ -42,7 +42,7 @@ export const componentRoutes = [
   //INFO: CSS Pages
   { path: '/cssPages/cssBasics', componentPath: '../components/Pages/cssPages/cssBasics.jsx', key: 'cssBasics' },
   //INFO: MISC Pages
-  { path: '*', componentPath: '../components/Pages/HomePage.jsx', key: 'default' },
+  { path: '*', componentPath: '../components/Pages/NotFound404.jsx', key: 'default' },
   { path: '/', componentPath: '../components/Pages/HomePage.jsx', key: 'home' },
   { path: '/about', componentPath: '../components/Pages/About.jsx', key: 'about' },
   { path: '/schedule-meeting', componentPath: '../components/Pages/ScheduleMeeting.jsx', key: 'scheduleMeeting' },
