@@ -46,7 +46,7 @@ function HomePage() {
                         <h2 className="mb-6 text-center text-3xl font-bold ">
                             Get expert coding help and tutoring
                         </h2>
-                        <div className="mx-auto my-8 max-w-2xl rounded-lg bg-white p-8 text-black shadow-lg dark:border-none border border-1 border-gray-300">
+                        <div className="mx-auto my-8 max-w-2xl rounded-lg p-8 ">
                             <h2 className="mb-6 text-center text-3xl font-bold">
                                 Book a session now!
                             </h2>
