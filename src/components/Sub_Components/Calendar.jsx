@@ -11,7 +11,7 @@ export default function Calendar() {
                 event.start = event.ISOdate;
                 event.title = event.title;
                 event.url = event.link;
-              
+
 
                 convertedEvents.push(event);
             }
@@ -22,7 +22,7 @@ export default function Calendar() {
     const convertedEvents = convertDates();
 
     return (
-        <div className="container mb-32">
+        <div className="container mb-32 z-30">
             <h1 className="text-5xl font-bold text-center mt-10">Upcoming Events</h1>
             <EventCard />
 

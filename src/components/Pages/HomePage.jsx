@@ -19,17 +19,10 @@ function HomePage() {
                     name="description"
                     content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
                 />
-                <meta
-                    property="og:title"
-                    content="Help Code It | Resources for Beginning Developers"
-                />
-                <meta
-                    property="og:description"
-                    content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Book a session now!"
-                />
-
-                <meta property="og:image" content={LogoImage} />
-                <meta property="og:url" content="https://www.helpcodeit.com" />
+              <meta property="og:title" content="Help Code It | Resources for Beginning Developers" />
+        <meta property="og:description" content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!" />
+        <meta property="og:image" content={LogoImage} />
+        <meta property="og:url" content="https://www.helpcodeit.com" />
 
                 <link rel="canonical" href="https://www.helpcodeit.com" />
             </Helmet>
