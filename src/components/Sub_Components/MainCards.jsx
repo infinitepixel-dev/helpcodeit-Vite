@@ -66,7 +66,7 @@ export default function MainCards() {
     return (
         <div className=" grid gap-14 justify-center rounded-2xl  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 2xl:grid-cols-2 container ">
             {cardData.map((card, index) => (
-                <div key={index} className='h-80 dark:bg-gray-800 rounded-3xl grid  align-middle shadow-xl'>
+                <div key={index} className='h-80 dark:bg-gray-800 rounded-3xl border border-gray-300 dark:border-gray-700 grid  align-middle shadow-xl'>
                     <img src={card.imageSrc} alt={card.title} className={` mx-auto w-full border-b dark:border-white rounded-b rounded-3xl ${card.customCSS.image}`} />
                     <h2 className="text-center text-black dark:text-white text-2xl font-bold">{card.title}</h2>
                     <p className="text-center text-black dark:text-white">{card.description}</p>
