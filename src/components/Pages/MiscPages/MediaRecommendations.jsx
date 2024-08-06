@@ -158,11 +158,11 @@ const PodcastCard = ({ podcast }) => (
 
 const MediaRecommendations = () => (
     <div className="container mx-auto mb-14 px-4 py-8">
-        <h1 className="mb-8 text-center text-3xl font-bold">
-            Our Recommended Youtube Developer Channels
+        <h1 className="mb-8 text-center text-6xl font-bold">
+          Our Media Recommendations
         </h1>
         <YoutubeChannelRecommendations />
-        <h1 className="mb-8 text-center text-3xl font-bold">
+        <h1 className="mb-8 text-center text-3xl font-bold mt-14">
             Our Recommended Software Development and Tech Podcasts
         </h1>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
