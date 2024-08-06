@@ -8,7 +8,7 @@ const ExtensionCard = ({ title, author, description, iconUrl, link, languages })
     <a href={link} target="_blank" rel="noopener noreferrer" className="block h-full">
       <div className="p-6">
 
-        {iconUrl && <img src={iconUrl} alt={`${title} Icon`} className="w-24 h-24 mx-auto mb-4" />}
+        {iconUrl && <img src={iconUrl} alt={`${title} Icon`} className="w-24 h-24 mx-auto mb-4 rounded-md" />}
         <h3 className="text-2xl font-semibold text-center mb-2">{title}</h3>
         <p className="text-gray-600 dark:text-gray-400 text-center mb-4">By {author}</p>
         <p className="text-gray-700 dark:text-gray-300 text-center mb-4">{description}</p>
