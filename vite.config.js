@@ -1,8 +1,12 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
+import { fileURLToPath } from 'url'
 
-// https://vitejs.dev/config/
+// Define __dirname
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
 export default defineConfig({
     plugins: [react()],
     resolve: {
@@ -22,6 +26,20 @@ export default defineConfig({
                 __dirname,
                 'src/components/Pages/fundamentals'
             ),
+            '@fullcalendar/react': path.resolve(
+                __dirname,
+                'node_modules/@fullcalendar/react'
+            ),
+            '@fullcalendar/daygrid': path.resolve(
+                __dirname,
+                'node_modules/@fullcalendar/daygrid'
+            ),
+        },
+    },
+    build: {
+        outDir: 'dist',
+        rollupOptions: {
+            external: ['@fullcalendar/react', '@fullcalendar/daygrid'],
         },
     },
 })
