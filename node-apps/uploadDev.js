@@ -2,6 +2,7 @@
 import { createRequire } from 'module'
 import { config } from 'dotenv'
 import path from 'path'
+import recursive from 'recursive-readdir'
 
 const require = createRequire(import.meta.url)
 const FTPClient = require('ftp')
@@ -12,26 +13,57 @@ const client = new FTPClient()
 
 const ftpConfig = {
     host: process.env.FTP_HOST,
+    port: process.env.FTP_PORT,
     user: process.env.FTP_USER,
     password: process.env.FTP_PASSWORD,
 }
 
-client.on('ready', () => {
-    const localFilePath = path.join(process.cwd(), 'test.txt')
-    const remoteFilePath = './test-server-dir/test.txt'
+console.log('FTP Configuration:', ftpConfig)
 
-    client.put(localFilePath, remoteFilePath, (err) => {
+client.on('ready', () => {
+    const localDir = path.join(process.cwd(), 'dist')
+    const remoteDir = '/dev'
+
+    recursive(localDir, (err, files) => {
         if (err) {
-            console.error('Error uploading file:', err)
-        } else {
-            console.log('File uploaded successfully.')
+            console.error('Error reading files:', err)
+            client.end()
+            return
         }
-        client.end()
+
+        uploadFiles(files, localDir, remoteDir)
     })
 })
 
 client.on('error', (err) => {
     console.error('FTP connection error:', err)
 })
+
+const uploadFiles = (files, localDir, remoteDir) => {
+    const uploadNext = () => {
+        if (files.length === 0) {
+            console.log('All files uploaded successfully.')
+            client.end()
+            return
+        }
+
+        const localFilePath = files.shift()
+        const relativePath = path.relative(localDir, localFilePath)
+        const remoteFilePath = path
+            .join(remoteDir, relativePath)
+            .replace(/\\/g, '/')
+
+        client.put(localFilePath, remoteFilePath, (err) => {
+            if (err) {
+                console.error('Error uploading file:', err)
+            } else {
+                console.log(`Uploaded: ${localFilePath} to ${remoteFilePath}`)
+            }
+            uploadNext()
+        })
+    }
+
+    uploadNext()
+}
 
 client.connect(ftpConfig)
