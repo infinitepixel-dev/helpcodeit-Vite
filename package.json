@@ -8,30 +8,15 @@
         "generate-sitemap": "node generateSitemap.js",
         "dev": "vite",
         "build": "vite build",
-        "postbuild": "babel dist --out-dir dist && react-snap",
-        "postbuild-babel": "babel dist --out-dir dist",
-        "postbuild-snap": "react-snap",
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
     },
-    "reactSnap": {
-        "inlineCss": true,
-        "puppeteerArgs": [
-            "--no-sandbox",
-            "--disable-setuid-sandbox"
-        ]
-    },
     "dependencies": {
-        "@babel/preset-env": "^7.25.3",
-        "@fullcalendar/core": "^6.1.15",
-        "@fullcalendar/daygrid": "^6.1.15",
-        "@fullcalendar/react": "^6.1.15",
         "@ngneat/falso": "^7.2.0",
         "@radix-ui/react-accordion": "^1.1.2",
         "@radix-ui/react-hover-card": "^1.0.7",
         "ace-builds": "^1.35.2",
         "axios": "^1.7.1",
-        "babel-plugin-module-resolver": "^5.0.2",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.0",
         "gsap": "^3.12.5",
@@ -44,7 +29,6 @@
         "react-helmet": "^6.1.0",
         "react-helmet-async": "^2.0.5",
         "react-router-dom": "^6.22.3",
-        "react-snap": "^1.23.0",
         "sitemap": "^8.0.0",
         "tailwind-merge": "^2.2.2",
         "tailwindcss-animate": "^1.0.7"
@@ -52,9 +36,6 @@
     "devDependencies": {
         "@babel/cli": "^7.24.8",
         "@babel/core": "^7.24.9",
-        "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
-        "@babel/plugin-proposal-optional-chaining": "^7.21.0",
-        "@babel/plugin-transform-modules-commonjs": "^7.24.8",
         "@babel/preset-react": "^7.24.7",
         "@babel/register": "^7.24.6",
         "@types/react": "^18.2.75",
