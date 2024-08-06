@@ -40,7 +40,7 @@ const JumboBackground = () => {
     return (
     <div className=" jumbo-background grid grid-cols-2" ref={backgroundRef}>
 
-    <div className=" text-center text-white md:col-span-1 sm:col-span-2 col-span-2 place-content-center">
+    <div className=" text-center my-9 text-white md:col-span-1 sm:col-span-2 col-span-2 place-content-center">
                             <LogoImage
                                 classNameValue="mx-auto  place-content-center h-64 w-64 rounded-xl"
                                 altValue="Help code it logo"
