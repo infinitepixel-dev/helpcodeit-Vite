@@ -5,8 +5,9 @@
     "type": "module",
     "scripts": {
         "build:jsx": "babel src --out-dir dist --extensions \".jsx,.js\"",
-        "generate-sitemap": "node generateSitemap.js",
+        "generate-sitemap": "node ./node-apps/generate-sitemap.js",
         "dev": "vite",
+        "testDev": "npm run generate-sitemap && npm run build && node ./node-apps/uploadDev.js",
         "build": "vite build",
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
@@ -19,6 +20,8 @@
         "axios": "^1.7.1",
         "class-variance-authority": "^0.7.0",
         "clsx": "^2.1.0",
+        "dotenv": "^16.4.5",
+        "ftp": "^0.3.10",
         "gsap": "^3.12.5",
         "highlight.js": "^11.9.0",
         "lucide-react": "^0.331.0",
@@ -29,6 +32,7 @@
         "react-helmet": "^6.1.0",
         "react-helmet-async": "^2.0.5",
         "react-router-dom": "^6.22.3",
+        "recursive-readdir": "^2.2.3",
         "sitemap": "^8.0.0",
         "tailwind-merge": "^2.2.2",
         "tailwindcss-animate": "^1.0.7"
