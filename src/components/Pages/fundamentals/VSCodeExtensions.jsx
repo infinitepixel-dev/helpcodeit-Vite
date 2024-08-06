@@ -1,12 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import vscodelogo from '@assets/visual-studio-code.svg';
+import imagePreview from '@assets/imagepreviewextension.jpeg';
 
 const ExtensionCard = ({ title, author, description, iconUrl, link, languages }) => (
   <div className="bg-white dark:bg-gray-800 dark:border-none border border-1 border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
     <a href={link} target="_blank" rel="noopener noreferrer" className="block h-full">
       <div className="p-6">
-        <img src={iconUrl} alt={`${title} Icon`} className="w-24 h-24 mx-auto mb-4" />
+
+        {iconUrl && <img src={iconUrl} alt={`${title} Icon`} className="w-24 h-24 mx-auto mb-4 rounded-md" />}
         <h3 className="text-2xl font-semibold text-center mb-2">{title}</h3>
         <p className="text-gray-600 dark:text-gray-400 text-center mb-4">By {author}</p>
         <p className="text-gray-700 dark:text-gray-300 text-center mb-4">{description}</p>
@@ -50,6 +52,27 @@ function VSCodeExtensions() {
       description: "Create anchors in your comments for easy navigation, especially useful in large files.",
       iconUrl: "https://exodiusstudios.gallerycdn.vsassets.io/extensions/exodiusstudios/comment-anchors/1.10.4/1705659936841/Microsoft.VisualStudio.Services.Icons.Default",
       link: "https://marketplace.visualstudio.com/items?itemName=ExodiusStudios.comment-anchors"
+    },
+    {
+      title: "Inline Fold",
+      author: "Mohammed Alamri",
+      description: "Fold code blocks inline, making it easier to read and navigate through your code. This really helps with CSS!",
+      iconUrl: "https://raw.githubusercontent.com/moalamri/vscode-inline-fold/master/res/icon.png",
+      link: "https://marketplace.visualstudio.com/items?itemName=moalamri.inline-fold"
+    },
+    {
+      title: "Template String Converter",
+      author: "meganrogge",
+      description: "Convert strings to template literals and vice versa. Saves time and makes your code cleaner.",
+      iconUrl: "https://meganrogge.gallerycdn.vsassets.io/extensions/meganrogge/template-string-converter/0.6.1/1681403288998/Microsoft.VisualStudio.Services.Icons.Default",
+      link: "https://marketplace.visualstudio.com/items?itemName=meganrogge.template-string-converter"
+    },
+    {
+      title: "Image Preview",
+      author: "Kiss Tamás",
+      description: "Preview images in your project without opening them. Great for quickly checking images.",
+      iconUrl: imagePreview,
+      link: "https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview"
     }
   ];
 

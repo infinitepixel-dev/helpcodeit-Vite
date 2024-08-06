@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import propTypes from 'prop-types'
+import YoutubeChannelRecommendations from '@subComponents/YoutubeChannelRecommendations'
 
 const podcasts = [
     {
@@ -157,6 +158,10 @@ const PodcastCard = ({ podcast }) => (
 
 const MediaRecommendations = () => (
     <div className="container mx-auto mb-14 px-4 py-8">
+        <h1 className="mb-8 text-center text-3xl font-bold">
+            Our Recommended Youtube Developer Channels
+        </h1>
+        <YoutubeChannelRecommendations />
         <h1 className="mb-8 text-center text-3xl font-bold">
             Our Recommended Software Development and Tech Podcasts
         </h1>

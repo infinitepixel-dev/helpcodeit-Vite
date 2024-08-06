@@ -39,7 +39,8 @@ export const navItems = [
 ];
 
 export const componentRoutes = [
-  //INFO: CSS Pages
+  //INFO: CSS Pages.
+  
   { path: '/cssPages/cssBasics', componentPath: '../components/Pages/cssPages/cssBasics.jsx', key: 'cssBasics' },
   //INFO: MISC Pages
   { path: '*', componentPath: '../components/Pages/NotFound404.jsx', key: 'default' },
