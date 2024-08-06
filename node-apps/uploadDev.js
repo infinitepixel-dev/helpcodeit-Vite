@@ -16,6 +16,9 @@ const ftpConfig = {
     port: process.env.FTP_PORT,
     user: process.env.FTP_USER,
     password: process.env.FTP_PASSWORD,
+    pasvTimeout: 10000, // Set a timeout for passive mode
+    keepalive: 10000, // Keep the connection alive
+    connTimeout: 10000 // Connection timeout
 }
 
 console.log('FTP Configuration:', ftpConfig)
