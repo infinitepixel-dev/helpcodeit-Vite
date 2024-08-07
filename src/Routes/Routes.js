@@ -27,6 +27,7 @@ export const navItems = [
     type: 'dropdown',
     label: 'Topics',
     items: [
+      { to: '/htmlPages/htmlMain', label: 'HTML' },
       { to: '/cssPages/cssBasics', label: 'CSS' },
       { to: '/fundamentals/Bootstrap', label: 'Bootstrap' },
       { to: '/githubPages/GitHub', label: 'GitHub' },
@@ -39,6 +40,9 @@ export const navItems = [
 ];
 
 export const componentRoutes = [
+  //INFO: HTML Pages
+  { path: '/htmlPages/HTMLMain', componentPath: '../components/Pages/htmlPages/HTMLMain.jsx', key: 'htmlMain' },
+  { path: '/htmlPages/HistoryofHTML', componentPath: '../components/Pages/htmlPages/HistoryofHTML.jsx', key: 'historyofHTML' },
   //INFO: CSS Pages.
 
   { path: '/cssPages/cssBasics', componentPath: '../components/Pages/cssPages/cssBasics.jsx', key: 'cssBasics' },

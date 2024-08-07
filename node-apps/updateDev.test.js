@@ -1,56 +1,62 @@
 /* eslint-disable no-undef */
-import { createRequire } from 'module'
-import { config } from 'dotenv'
-import path from 'path'
-import sinon from 'sinon'
+import { config } from 'dotenv';
+import path from 'path';
+import recursive from 'recursive-readdir';
+import * as ftp from 'basic-ftp';
 
-const require = createRequire(import.meta.url)
-const FTPClient = require('ftp')
+config();
 
-config()
-
-const client = new FTPClient()
+const client = new ftp.Client();
+client.ftp.verbose = true; // Enable verbose logging for debugging
 
 const ftpConfig = {
     host: process.env.FTP_HOST,
+    port: process.env.FTP_PORT,
     user: process.env.FTP_USER,
     password: process.env.FTP_PASSWORD,
+    secure: "implicit",
+};
+
+console.log('FTP Configuration:', ftpConfig);
+
+async function uploadFiles(files, localDir, remoteDir) {
+    for (const localFilePath of files) {
+        const relativePath = path.relative(localDir, localFilePath);
+        const remoteFilePath = path.join(remoteDir, relativePath).replace(/\\/g, '/');
+
+        try {
+            await client.uploadFrom(localFilePath, remoteFilePath);
+            console.log(`Uploaded: ${localFilePath} to ${remoteFilePath}`);
+        } catch (err) {
+            console.error('Error uploading file:', err);
+        }
+    }
+    console.log('All files uploaded successfully.');
+    client.close();
 }
 
-// Mock the FTP client methods inline
-sinon.stub(client, 'connect').callsFake((config) => {
-    console.log('Mock connect called with config:', config)
-    client.emit('ready')
-})
+(async () => {
+    try {
+        await client.access(ftpConfig);
+        console.log('FTP client ready');
 
-sinon
-    .stub(client, 'put')
-    .callsFake((localFilePath, remoteFilePath, callback) => {
-        console.log(
-            'Mock put called with localFilePath:',
-            localFilePath,
-            'and remoteFilePath:',
-            remoteFilePath
-        )
-        callback(null) // Simulate a successful upload
-    })
+        // Switch to active mode
+        client.ftp.useList = true;
 
-client.on('ready', () => {
-    const localFilePath = path.join(process.cwd(), 'test.txt')
-    const remoteFilePath = './test-server-dir/test.txt'
+        const localDir = path.join(process.cwd(), 'dist');
+        const remoteDir = '/dev';
 
-    client.put(localFilePath, remoteFilePath, (err) => {
-        if (err) {
-            console.error('Error uploading file:', err)
-        } else {
-            console.log('File uploaded successfully.')
-        }
-        client.end()
-    })
-})
+        recursive(localDir, async (err, files) => {
+            if (err) {
+                console.error('Error reading files:', err);
+                client.close();
+                return;
+            }
 
-client.on('error', (err) => {
-    console.error('FTP connection error:', err)
-})
-
-client.connect(ftpConfig)
+            await uploadFiles(files, localDir, remoteDir);
+        });
+    } catch (err) {
+        console.error('FTP connection error:', err);
+        if (client) client.close();
+    }
+})();
