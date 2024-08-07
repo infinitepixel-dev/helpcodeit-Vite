@@ -42,7 +42,8 @@ const MarkdownGuide = () => {
         canonical="https://www.helpcodeit.com/markdown/MarkdownGuide" />
       </Helmet>
 
-      <h1 className="text-4xl font-bold mb-6">Introduction to Markdown</h1>
+      <h1 className="text-6xl font-bold mb-6">Introduction to Markdown</h1>
+      <h2 className="text-2xl font-semibold mb-4">## A Versitile Markup Language Used Everywhere!</h2>
       <p className="mb-6 text-lg">
         Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
         Created by John Gruber in 2004, Markdown is now one of the world's most popular markup languages. We see if first as developers in README files on GitHub, but it's also used in forums, blogs, and other platforms. It is a simple way to format text that can be converted to HTML and other formats. There are tons of formatters that can convert it to HTML, PDF, and other formats.
@@ -55,15 +56,18 @@ const MarkdownGuide = () => {
         <li>It can display code with language syntax highlights.</li>
         <li>It can be converted to HTML and other formats</li>
       </ul>
-      <h2 className="text-2xl font-semibold mb-4">Markdown Examples</h2>
-      {examples.map((example, index) => (
-        <div key={index} className="mb-6">
-          <h3 className="text-xl font-semibold mb-2">{example.title}</h3>
-          <pre className=" p-4 rounded-lg">
-            <code className="language-markdown">{example.content}</code>
-          </pre>
-        </div>
-      ))}
+      <h2 className="text-3xl font-semibold text-center mb-4">Markdown Examples</h2>
+      <hr className="border-b-2 border-gray-300 mb-6" />
+      <div className="grid grid-cols-2">
+        {examples.map((example, index) => (
+          <div key={index} className="mb-6 mx-auto">
+            <h3 className="text-xl text-center font-semibold mb-2">{example.title}</h3>
+            <pre className=" p-4 rounded-lg">
+              <code className="language-markdown">{example.content}</code>
+            </pre>
+          </div>
+        ))}
+      </div>
       <p className="mt-8 text-xl mb-14">
         Start using Markdown in your documents today to create well-formatted, easy-to-read content that can be easily converted to HTML or other formats!
       </p>
