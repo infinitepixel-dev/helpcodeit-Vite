@@ -126,7 +126,7 @@ do {
 console.log("Password accepted!");`;
 
   return (
-    <div className="container mx-auto min-h-full min-w-full px-4 py-8 pb-40">
+    <div className="container mx-auto px-4 py-8 pb-40">
       <Helmet>
         <title>JavaScript Loops | Help Code It</title>
         <meta
