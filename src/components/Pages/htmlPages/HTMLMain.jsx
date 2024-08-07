@@ -17,7 +17,7 @@ const HTMLMain = () => {
   const navItems = [
     { to: "/htmlPages/HistoryofHTML", icon: Code, label: "HTML History" },
     // { to: "/htmlPages/TextFormatting", icon: FileText, label: "Text Formatting" },
-    // { to: "/htmlPages/PageStructure", icon: Layout, label: "Page Structure" },
+    { to: "/htmlPages/HTMLStructure", icon: Code, label: "Page Structure" },
     // { to: "/htmlPages/Lists", icon: List, label: "Lists" },
     // { to: "/htmlPages/Tables", icon: Table, label: "Tables" },
     // { to: "/htmlPages/Forms", icon: Form, label: "Forms" },

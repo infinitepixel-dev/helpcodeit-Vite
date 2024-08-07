@@ -43,6 +43,7 @@ export const componentRoutes = [
   //INFO: HTML Pages
   { path: '/htmlPages/HTMLMain', componentPath: '../components/Pages/htmlPages/HTMLMain.jsx', key: 'htmlMain' },
   { path: '/htmlPages/HistoryofHTML', componentPath: '../components/Pages/htmlPages/HistoryofHTML.jsx', key: 'historyofHTML' },
+  { path: '/htmlPages/HTMLStructure', componentPath: '../components/Pages/htmlPages/HTMLStructure.jsx', key: 'htmlStructure' },
   //INFO: CSS Pages.
 
   { path: '/cssPages/cssBasics', componentPath: '../components/Pages/cssPages/cssBasics.jsx', key: 'cssBasics' },
