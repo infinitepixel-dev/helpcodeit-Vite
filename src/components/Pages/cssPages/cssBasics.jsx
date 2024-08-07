@@ -56,8 +56,32 @@ const cssBasics = () => {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-6">CSS Basics Tutorial</h1>
+      <h1 className="text-3xl font-bold mb-6">Cascading Style Sheets (CSS)</h1>
+<section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4">What is CSS?</h2>
+              <p className="text-xl mb-4">
+          CSS (Cascading Style Sheets) is essential for defining the visual presentation of HTML documents, separating content from design for flexibility and maintainability. Proposed by Håkon Wium Lie in 1994 and released by W3C in 1996, CSS1 introduced basic styling capabilities.
+        </p>
+        <p className="text-xl mb-4">
+          Subsequent versions like CSS2 and CSS3 added advanced features such as layout controls, animations, and media queries. This separation of content and presentation allows for cleaner code and easier maintenance, enhancing accessibility.
+        </p>
+        <p className="text-xl mb-4">
+          CSS offers extensive styling options for typography, backgrounds, borders, and layout, supporting responsive design through media queries. This ensures a consistent user experience across devices.
+        </p>
+        <p className="text-xl mb-4">
+          CSS animations and transitions create engaging visual effects without JavaScript, adding interactivity and smooth style changes.
+        </p>
+        <p className="text-xl mb-4">
+          Frameworks like Bootstrap and preprocessors like Sass enhance CSS usability, providing pre-designed components and extended features like variables and nested rules.
+        </p>
+        <p className="text-xl mb-4">
+          Efficient CSS usage improves web performance by reducing page load times. Techniques like minification and critical CSS optimization streamline rendering for faster user experiences.
+        </p>
+        <p className="text-xl mb-4">
+          CSS continues to evolve with new features like CSS Grid, Flexbox, and CSS variables, offering powerful tools for responsive design and maintainable styles.
+        </p>
 
+      </section>
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-4">How to Link and Use CSS</h2>
         <p className="mb-4">There are three ways to include CSS in your HTML:</p>
@@ -81,7 +105,7 @@ const cssBasics = () => {
             />
           </li>
           <li className="mb-2">
-            <strong>Inline CSS:</strong> Apply styles directly to HTML elements.
+            <strong>Inline CSS:</strong> Apply styles directly to HTML elements.<span className="font-semibold italic">(This is not recommended as it reduces maintainability)</span>
             <CodeBlock
               language="html"
               code={`<p style="color: blue; font-size: 14px;">This is a paragraph.</p>`}
