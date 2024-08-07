@@ -1,278 +1,193 @@
-import { useEffect, useRef } from 'react'
-import reactRouterLogo from '../../../assets/React Router.svg'
-import hljs from 'highlight.js'
-import 'highlight.js/styles/atom-one-dark.css'
-import { Helmet } from 'react-helmet-async'
+import React, { useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/atom-one-dark.css';
+import reactRouterLogo from '@assets/React Router.svg';
 
+const ReactRouter6 = () => {
+  const codeRef = useRef(null);
 
-function ReactRouter6() {
-    const codeRef = useRef(null)
+  useEffect(() => {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+  }, []);
 
-    useEffect(() => {
-        // Apply syntax highlighting to all code elements
-        document.querySelectorAll('pre code').forEach((block) => {
-            hljs.highlightBlock(block)
-        })
-    }, [])
+  const CodeBlock = ({ code }) => (
+    <pre className="my-4 rounded-lg bg-gray-100 p-4 dark:bg-gray-800">
+      <code ref={codeRef} className="text-base">
+        {code}
+      </code>
+    </pre>
+  );
 
-    const basicExample = `
-    import React from 'react';
-    import {BrowserRouter} from 'react-router-dom';
+  return (
+    <div className="min-h-screen">
+      <Helmet>
+        <title>React Router 6+ | Help Code It</title>
+        <meta
+          name="description"
+          content="Learn how to use React Router 6+ to manage navigation in your React applications. Understand the basics of routing, setting up routes, and using links with practical examples."
+        />
+        <link rel="canonical" href="https://www.helpcodeit.com/ReactRouter6" />
+        <meta name="robots" content="index, follow" />
+        <meta
+          name="keywords"
+          content="React Router, React Router 6, routing in React, navigation, React tutorial, web development, JavaScript, single-page applications"
+        />
+      </Helmet>
 
-    function index() {
-        return (
-            <BrowserRouter>
-            <StrictMode>
-                <App />
-            </StrictMode>
-            </BrowserRouter>
-        );
-    }
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="mb-8 text-center text-6xl font-bold text-gray-800 dark:text-gray-100">
+          React Router 6+
+        </h1>
 
-    export default index;
-    `
+        <div className="grid gap-8 md:grid-cols-3">
+          <div className="md:col-span-2">
+            <section className="mb-8   p-6  ">
+              <h2 className="mb-4 text-4xl font-semibold text-gray-800 dark:text-gray-100">
+                Why React Router Exists
+              </h2>
+              <p className="mb-4 text-2xl text-gray-600 dark:text-gray-300">
+                React is a library for building user interfaces, not a framework. It doesn't come with built-in routing capabilities. React Router fills this gap by providing routing functionality to React applications.
+              </p>
+              <p className="text-gray-600 text-2xl dark:text-gray-300">
+                In essence, React Router watches the URL and renders the appropriate components based on the current path. It also provides a way to navigate between different URLs within your application.
+              </p>
+            </section>
+          </div>
 
-    const routesExample = `
-    import React from 'react';
-    import {Route, Routes} from 'react-router-dom';
-    import Home from './Home';
-    import About from './About';
-    import Contact from './Contact';
-
-    function App() {
-        return (
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} />
-            </Routes>
-        );
-    }
-
-    export default App;
-    `
-
-    const linkExample = `
-    import React from 'react';
-    import {Link} from 'react-router-dom';
-
-    function Navbar() {
-        return (
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                        <Link to="/contact">Contact</Link>
-                    </li>
-                </ul>
-            </nav>
-        );
-    }
-
-    export default Navbar;
-    `
-
-    return (
-        <div className="mb-32">
-            <Helmet>
-                <title>React Router 6+ | Help Code It</title>
-                <meta
-                    name="description"
-                    content="Learn how to use React Router 6+ to manage navigation in your React applications. Understand the basics of routing, setting up routes, and using links with practical examples."
-                />
-                <link
-                    rel="canonical"
-                    href="https://www.helpcodeit.com/ReactRouter6"
-                />
-                <meta name="robots" content="index, follow" />
-                <meta
-                    name="keywords"
-                    content="React Router, React Router 6, routing in React, navigation, React tutorial, web development, JavaScript, single-page applications"
-                />
-            </Helmet>
-            <h1 className="mukataFont mt-5 text-center text-6xl">
+          <div className="md:col-span-1">
+            <aside className="rounded-lg bg-gray-50  p-6 shadow-md border border-gray-400 dark:border-gray-300 dark:bg-gray-600">
+                <img src={reactRouterLogo} alt="React Router Logo" className=" mx-auto mb-4" />
+              <h2 className="mb-4 text-4xl font-semibold text-gray-800 dark:text-gray-100 text-center">
                 React Router 6+
-            </h1>
-            <div className="container">
-                <div className="grid grid-cols-3">
-                    <div className="col-span-2">
-                        <div>
-                            <h2 className="mb-3 mt-5 text-center text-3xl">
-                                Why React Router Exists
-                            </h2>
-                            <p>
-                                To answer this question we need to first
-                                consider the nature of react. The react library
-                                is a library for building user interfaces. It is
-                                not a framework. This means that react does not
-                                come with a built-in way to handle routing. By
-                                routing we mean navigating to other 'pages' or
-                                simulating this. This is where react router
-                                comes in. React router is a library that
-                                provides routing capabilities to react
-                                applications. It is a collection of navigational
-                                components that compose declaratively with your
-                                application and allow you to define your
-                                application's navigation rules.
-                            </p>
-                            <p>
-                                Simplified it has a component that surrounds
-                                your application watching the URL and rendering
-                                the correct components based on the URL. It also
-                                provides a way to navigate between different
-                                URLs in your application.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="col-span-1">
-                        <div className="m-5 rounded-lg border-2 border-black p-5 dark:border-white dark:bg-slate-700">
-                            <div className="my-5 flex justify-center align-baseline">
-                                <h1 className="pb-3 text-center text-3xl">
-                                    React Router 6+
-                                </h1>
-                                <img
-                                    src={reactRouterLogo}
-                                    alt="React Router Logo"
-                                    className="mb-4 ms-5 max-w-[50px]"
-                                />
-                            </div>
-                            <p>
-                                React Router 6+ is the latest version of React
-                                Router. It is a declarative routing library for
-                                React. It is a collection of navigational
-                                components that compose declaratively with your
-                                application and allow you to define your
-                                application's navigation rules.
-                            </p>
-
-                            <div className="flex flex-col">
-                                <button className="mt-5 rounded-lg bg-blue-700 p-2 hover:bg-blue-900"
-                                aria-label='React Router Documentation'>
-                                
-                                    <a
-                                        href="https://reactrouter.com/"
-                                        target="_blank"
-                                        rel="noreferrer"
-                                        className="text-white"
-                                        aria-label='React Router Documentation'
-                                    >
-                                        React Router Documentation
-                                    </a>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr className="my-10 border-2 border-black dark:border-white" />
-                <div className="row ">
-                    <h3 className="mb-3 mt-5 text-center text-2xl">
-                        First lets look at how to install React Router
-                    </h3>
-                    <div className="text-center">
-                        <p>
-                            To install React Router, you can run the following
-                            command in your terminal:
-                        </p>
-                        <pre>
-                            <code
-                                ref={codeRef}
-                                className="javascript mx-auto mt-4 p-2 text-base"
-                            >
-                                npm install react-router-dom
-                            </code>
-                        </pre>
-                        <p>
-                            This will install the react-router-dom package in
-                            your project.
-                        </p>
-                    </div>
-
-                    <h3 className="mb-3 mt-5 text-center text-2xl">
-                        Now Lets Look At A Basic Example of the index.js File
-                    </h3>
-                    <p>
-                        This is where we will use the BrowserRouter so it can
-                        watch the URL and render the correct components based on
-                        the URL everywhere in our application.
-                    </p>
-                    <pre>
-                        <code
-                            ref={codeRef}
-                            className="javascript mx-auto mt-4 p-2 text-base"
-                        >
-                            {basicExample}
-                        </code>
-                    </pre>
-
-                    <h3 className="mb-3 mt-5 text-center text-2xl">
-                        Now Lets Look At How To Define Routes
-                    </h3>
-                    <p>
-                        This is where we define the routes in our application.
-                        We use the Routes and Route components from react-router
-                        to define the routes.
-                    </p>
-                    <pre>
-                        <code
-                            ref={codeRef}
-                            className="javascript mx-auto mt-4 p-2 text-base"
-                        >
-                            {routesExample}
-                        </code>
-                    </pre>
-                    <p>A few things to note: </p>
-                    <ul className="list-disc marker:text-black dark:marker:text-slate-400 ">
-                        <li>
-                            The Routes component is used to wrap all the Route
-                            components.
-                        </li>
-                        <li>
-                            The Route component is used to define a route. It
-                            takes a path prop which is the URL path and an
-                            element prop which is the component to render when
-                            the URL matches the path.
-                        </li>
-                        <li>
-                            The element prop takes a JSX element. This is the
-                            component that will be rendered when the URL matches
-                            the path.
-                        </li>
-                    </ul>
-                    <h3 className="mb-3 mt-5  text-center text-2xl">
-                        Now What Changes with Links?
-                    </h3>
-                    <p>
-                        In React Router we use the Link component to navigate
-                        between different URLs in our application. The Link
-                        component is a component that renders an anchor tag and
-                        handles the navigation for us. One way to think about it
-                        is that the link you click only changes the URL and the
-                        BrowserRouter watches the URL and renders the correct
-                        components based on the URL. This is how we can navigate
-                        between different URLs in our application.
-                    </p>
-                    <pre>
-                        <code
-                            ref={codeRef}
-                            className="javascript mx-auto mt-4 p-2 text-base"
-                        >
-                            {linkExample}
-                        </code>
-                    </pre>
-                    <p>
-                        In the example above we have a Navbar component that
-                        renders a list of links. When a link is clicked the URL
-                        changes and the BrowserRouter watches the URL and
-                        renders the correct components based on the URL.
-                    </p>
-                </div>
-            </div>
+              </h2>
+              <p className="mb-4 text-lg text-gray-600 dark:text-gray-100  font-bold">
+                React Router 6+ is the latest version of this declarative routing library for React. It allows you to compose your application's navigation rules declaratively.
+              </p>
+              <div className="grid justify-center">
+                  <a
+                    href="https://reactrouter.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className=" rounded-lg text-lg font-semibold  bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
+                  >
+                    React Router Documentation
+                  </a>
+              </div>
+            </aside>
+          </div>
         </div>
-    )
+
+        <hr className="my-8 border-t border-gray-300" />
+
+        <section className="mb-8 rounded-lg bg-white border border-gray-200 p-6 shadow-md dark:bg-gray-800">
+          <h3 className="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-100">
+            Installing React Router
+          </h3>
+          <p className="mb-2 text-gray-600 dark:text-gray-300">
+            To install React Router, run the following command in your terminal:
+          </p>
+          <CodeBlock code="npm install react-router-dom" />
+        </section>
+
+        <section className="mb-8 rounded-lg bg-white p-6 shadow-md dark:bg-gray-800 border border-gray-200">
+          <h3 className="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-100">
+            Basic Example: index.js
+          </h3>
+          <p className="mb-2 text-gray-600 dark:text-gray-300">
+            Here's how to set up BrowserRouter in your index.js file:
+          </p>
+          <CodeBlock code={`
+import React from 'react';
+import {BrowserRouter} from 'react-router-dom';
+
+function index() {
+    return (
+        <BrowserRouter>
+        <StrictMode>
+            <App />
+        </StrictMode>
+        </BrowserRouter>
+    );
 }
-export default ReactRouter6
+
+export default index;
+          `} />
+        </section>
+
+        <section className="mb-8 rounded-lg border border-gray-200 bg-white p-6 shadow-md dark:bg-gray-800">
+          <h3 className="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-100">
+            Defining Routes
+          </h3>
+          <p className="mb-2 text-gray-600 dark:text-gray-300">
+            Here's how to define routes in your application:
+          </p>
+          <CodeBlock code={`
+import React from 'react';
+import {Route, Routes} from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+import Contact from './Contact';
+
+function App() {
+    return (
+        <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+        </Routes>
+    );
+}
+
+export default App;
+          `} />
+          <ul className="mt-4 list-inside list-disc text-gray-600 dark:text-gray-300">
+            <li>The Routes component wraps all Route components.</li>
+            <li>Each Route component defines a path and an element to render.</li>
+            <li>The element prop takes a JSX element to render when the path matches.</li>
+          </ul>
+        </section>
+
+        <section className="rounded-lg border border-gray-200 bg-white p-6 shadow-md dark:bg-gray-800">
+          <h3 className="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-100">
+            Using Links
+          </h3>
+          <p className="mb-2 text-gray-600 dark:text-gray-300">
+            In React Router, we use the Link component for navigation:
+          </p>
+          <CodeBlock code={`
+import React from 'react';
+import {Link} from 'react-router-dom';
+
+function Navbar() {
+    return (
+        <nav>
+            <ul>
+                <li>
+                    <Link to="/">Home</Link>
+                </li>
+                <li>
+                    <Link to="/about">About</Link>
+                </li>
+                <li>
+                    <Link to="/contact">Contact</Link>
+                </li>
+            </ul>
+        </nav>
+    );
+}
+
+export default Navbar;
+          `} />
+          <p className="mt-4 text-gray-600 dark:text-gray-300">
+            The Link component renders an anchor tag and handles navigation. When a link is clicked, it changes the URL, and BrowserRouter updates the rendered components accordingly.
+          </p>
+        </section>
+      </div>
+    </div>
+  );
+};
+
+export default ReactRouter6;
