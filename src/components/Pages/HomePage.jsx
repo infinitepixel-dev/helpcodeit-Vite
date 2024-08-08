@@ -37,12 +37,12 @@ function HomePage() {
             </div>
             {/* !SECTION end Jumbotron */}
             <div className="container">
-                <div className="md:grid-cols-auto grid xl:grid-cols-2">
-                    <div className="mx-5 mb-3">
+                <div className="grid md:grid-cols-1  lg:grid-cols-2">
+                    <div className="mb-3  mx-auto">
                         <h2 className="mt-6 text-center text-3xl font-bold">Upcoming Event</h2>
                         <EventCard limit={1}/>
                     </div>
-                    <div className="mx-5 my-auto ">
+                    <div className=" my-auto clearfix">
                         <h2 className="mb-6 text-center text-3xl font-bold ">
                             Get expert coding help and tutoring
                         </h2>
