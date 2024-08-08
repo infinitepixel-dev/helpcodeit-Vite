@@ -1,81 +1,87 @@
-import React from 'react';
-import { CalendarDays, Calendar, Clock, CalendarCheck2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import events from '@subComponents/Events';
+import React from 'react'
+import { CalendarDays, Calendar, Clock, CalendarCheck2 } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import events from '@subComponents/Events'
 
-const eventsData = events;
+const eventsData = events
 
 const EventCard = ({ event }) => (
-  <div className="bg-white dark:text-black shadow-md rounded-lg p-6 mb-4 mx-4 dark:border-none border border-1 border-gray-300">
-    <h2 className="text-xl font-semibold mb-2">{event.title}</h2>
-    {event.youtubeEmbed && (
-      <div className="mb-4 w-fit">
-        <div className="aspect-w-16 aspect-h-9">
-          <div
-            dangerouslySetInnerHTML={{
-              __html: event.youtubeEmbed,
-            }}
-          />
+    <div className="border-1 mb-4 rounded-lg border border-gray-300 bg-white mx-5 h-fit p-6 shadow-md dark:border-none dark:text-black">
+        <h2 className="mb-2 text-xl font-semibold">{event.title}</h2>
+
+        {event.youtubeEmbed && (
+            <div className="mb-4">
+                <div
+                    dangerouslySetInnerHTML={{
+                        __html: event.youtubeEmbed,
+                    }}
+                />
+            </div>
+        )}
+
+        <div className="mb-2 flex items-center">
+            <CalendarDays className="mr-2 h-5 w-5 text-gray-600" />
+            <span>{event.date}</span>
         </div>
-      </div>
+        <div className="mb-2 flex items-center">
+            <Clock className="mr-2 h-5 w-5 text-gray-600" />
+            <span>{event.time}</span>
+        </div>
+        <p className="mb-4 text-gray-700">{event.description}</p>
+        <div className="flex items-center justify-between">
+            <div className="flex items-center">
+                <span className="font-semibold text-green-600">
+                    ${event.cost} registration fee
+                </span>
+            </div>
+            <button
+                className="w-fit rounded-full bg-blue-700 px-6 py-3 font-bold text-white transition duration-300 hover:bg-red-700"
+                aria-label="Register Now button"
+            >
+                <a
+                    href={event.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                >
+                    Register
+                    <CalendarCheck2 size={24} className="ml-1" />
+                </a>
+            </button>
+        </div>
+    </div>
+)
+
+const UpcomingEvents = ({ limit = Infinity, title = 'Upcoming Events' }) => {
+    // Sort events by date
+    let sortedEvents = [...eventsData].sort(
+        (a, b) => new Date(a.ISOdate) - new Date(b.ISOdate)
     )
-            }
-    <div className="flex items-center mb-2">
-      <CalendarDays className="w-5 h-5 mr-2 text-gray-600" />
-      <span>{event.date}</span>
-    </div>
-    <div className="flex items-center mb-2">
-      <Clock className="w-5 h-5 mr-2 text-gray-600" />
-      <span>{event.time}</span>
-    </div>
-    <p className="mb-4 text-gray-700">{event.description}</p>
-    <div className="flex items-center justify-between">
-      <div className="flex items-center">
-        <span className="font-semibold text-green-600">${event.cost} registration fee</span>
-      </div>
-      <button className="w-fit bg-blue-700 hover:bg-red-700 text-white font-bold py-3 px-6 rounded-full transition duration-300"
-      aria-label='Register Now button'>
-        <a
-          href={event.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex items-center"
-        >
-          Register
-          <CalendarCheck2 size={24} className="ml-1" />
-        </a>
-      </button>
-    </div>
-  </div>
-);
+    sortedEvents = sortedEvents.filter((event) => event.show && event.ISOdate >= new Date().toISOString())
 
-const UpcomingEvents = ({ limit = Infinity, title = "Upcoming Events" }) => {
-  // Sort events by date
-  let sortedEvents = [...eventsData].sort((a, b) => new Date(a.ISOdate) - new Date(b.ISOdate));
-  sortedEvents = sortedEvents.filter((event) => event.show);
+    // Limit the number of events
+    const limitedEvents = sortedEvents.slice(0, limit)
 
-  // Limit the number of events
-  const limitedEvents = sortedEvents.slice(0, limit);
+    return (
+        <div className="mt-8">
+            <div className="flex justify-between">
+                {limitedEvents.map((event, index) => (
+                    <EventCard key={index} event={event} />
+                ))}
+            </div>
+            {limitedEvents.length === 1 && (
+                <div className="flex items-center justify-center">
+                    <Link
+                        to="/calendar"
+                        className="border-1 mb-5 inline-flex items-center rounded-3xl border border-gray-300 bg-blue-700 px-6 py-3 text-base font-bold text-white shadow-md dark:border-none"
+                    >
+                        <Calendar className="mr-2 h-5 w-5" />
+                        More Events...
+                    </Link>
+                </div>
+            )}
+        </div>
+    )
+}
 
-  return (
-    <div className=" mx-auto mt-8">
-      {/* <h1 className="text-3xl font-bold mb-6 text-center">{title}</h1> */}
-      <div className="flex justify-between">
-        {limitedEvents.map((event, index) => (
-          <EventCard key={index} event={event} />
-        ))}
-      </div>
-      {limitedEvents.length === 1 &&     <div className='flex justify-center items-center'>
-    <Link
-      to="/calendar"
-      className="inline-flex text-white items-center px-6 py-3 text-base mb-5 shadow-md bg-blue-700 font-bold dark:border-none border border-1 border-gray-300 rounded-3xl"
-    >
-      <Calendar className="w-5 h-5 mr-2" />
-      More Events...
-    </Link>
-  </div>}
-    </div>
-  );
-};
-
-export default UpcomingEvents;
+export default UpcomingEvents
