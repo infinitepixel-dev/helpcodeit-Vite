@@ -32,6 +32,7 @@ const events = [
         description: "Join us for a comprehensive introduction to Tailwind CSS! We’ll guide you through the essentials of setting up and learning Tailwind, from understanding core classes to discovering new ones. Learn how to leverage free components effectively, navigate common pitfalls, and enhance your web design skills. Don’t miss this opportunity to boost your frontend development expertise with Tailwind CSS! IF THERE ARE ANY ISSUES WITH SIGN UP PLEASE EMAIL US AT michaelvarnell@icloud.com!",
         cost: '10',
         show: true,
+        youtubeEmbed: `<iframe width="560" height="315" src="https://www.youtube.com/embed/huuKfJkmTDw?si=xdEt2FvIq3fP0yzH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
     }
 
 

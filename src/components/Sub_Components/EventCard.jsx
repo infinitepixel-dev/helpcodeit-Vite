@@ -8,6 +8,18 @@ const eventsData = events;
 const EventCard = ({ event }) => (
   <div className="bg-white dark:text-black shadow-md rounded-lg p-6 mb-4 mx-4 dark:border-none border border-1 border-gray-300">
     <h2 className="text-xl font-semibold mb-2">{event.title}</h2>
+    {event.youtubeEmbed && (
+      <div className="mb-4 round">
+        <div className="aspect-w-16 aspect-h-9">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: event.youtubeEmbed,
+            }}
+          />
+        </div>
+      </div>
+    )
+            }
     <div className="flex items-center mb-2">
       <CalendarDays className="w-5 h-5 mr-2 text-gray-600" />
       <span>{event.date}</span>
