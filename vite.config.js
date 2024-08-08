@@ -27,14 +27,9 @@ export default defineConfig({
                 __dirname,
                 'src/components/Pages/fundamentals'
             ),
-            '@fullcalendar/react': path.resolve(
-                __dirname,
-                'node_modules/@fullcalendar/react'
-            ),
-            '@fullcalendar/daygrid': path.resolve(
-                __dirname,
-                'node_modules/@fullcalendar/daygrid'
-            ),
+
+            '@fullcalendar/react': '@fullcalendar/react',
+            '@fullcalendar/daygrid': '@fullcalendar/daygrid',
         },
     },
     build: {

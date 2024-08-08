@@ -14,6 +14,7 @@ module.exports = {
           '@subComponents': path.resolve(__dirname, 'src/components/Sub_Components'),
             '@react': path.resolve(__dirname, 'src/components/Pages/react'),
             '@fundamentals': path.resolve(__dirname, 'src/components/Pages/fundamentals'),
+            
         },
       },
     content: [
