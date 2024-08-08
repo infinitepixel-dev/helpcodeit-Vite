@@ -3,7 +3,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import events from './Events'
 import EventCard from './EventCard'
 
-export default function Calendar() {
+function Calendar() {
     function convertDates() {
         let convertedEvents = [];
         events.forEach((event) => {
@@ -38,3 +38,5 @@ export default function Calendar() {
         </div>
     );
 }
+
+export default Calendar;
