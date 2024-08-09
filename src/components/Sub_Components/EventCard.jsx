@@ -1,4 +1,5 @@
-import React from 'react'
+import propTypes from 'prop-types'
+
 import { CalendarDays, Calendar, Clock, CalendarCheck2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import events from '@subComponents/Events'
@@ -6,7 +7,7 @@ import events from '@subComponents/Events'
 const eventsData = events
 
 const EventCard = ({ event }) => (
-    <div className="border-1 mb-4 rounded-lg border border-gray-300 bg-white mx-5 h-fit p-6 shadow-md dark:border-none dark:text-black">
+    <div className="border-1 mx-5 mb-4 h-fit rounded-lg border border-gray-300 bg-white p-6 shadow-md dark:border-none dark:text-black">
         <h2 className="mb-2 text-xl font-semibold">{event.title}</h2>
 
         {event.youtubeEmbed && (
@@ -53,11 +54,15 @@ const EventCard = ({ event }) => (
 )
 
 const UpcomingEvents = ({ limit = Infinity, title = 'Upcoming Events' }) => {
+    console.log('Title: ', title)
+
     // Sort events by date
     let sortedEvents = [...eventsData].sort(
         (a, b) => new Date(a.ISOdate) - new Date(b.ISOdate)
     )
-    sortedEvents = sortedEvents.filter((event) => event.show && event.ISOdate >= new Date().toISOString())
+    sortedEvents = sortedEvents.filter(
+        (event) => event.show && event.ISOdate >= new Date().toISOString()
+    )
 
     // Limit the number of events
     const limitedEvents = sortedEvents.slice(0, limit)
@@ -82,6 +87,15 @@ const UpcomingEvents = ({ limit = Infinity, title = 'Upcoming Events' }) => {
             )}
         </div>
     )
+}
+
+EventCard.propTypes = {
+    event: propTypes.object,
+}
+
+UpcomingEvents.propTypes = {
+    limit: propTypes.number,
+    title: propTypes.string,
 }
 
 export default UpcomingEvents

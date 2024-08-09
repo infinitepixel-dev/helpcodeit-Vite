@@ -34,8 +34,8 @@ export default defineConfig({
     },
     build: {
         outDir: 'dist',
-        rollupOptions: {
+        /*      rollupOptions: {
             external: ['@fullcalendar/react', '@fullcalendar/daygrid'],
-        },
+        }, */
     },
 })
