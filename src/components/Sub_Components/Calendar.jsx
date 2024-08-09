@@ -31,9 +31,10 @@ function Calendar() {
                 initialView="dayGridMonth"
                 events={convertedEvents}
                 // event click goes to schedule event link in the object
-                eventClick={(info) => {
-                    window.open(info.event.extendedProps.link, '_blank');
-                }}
+                // eventClick={(info) => {
+                //     window.open(info.event.extendedProps.link, '_blank');
+                // }
+            // }
             />
         </div>
     );
