@@ -14,9 +14,31 @@ const CodeBlock = ({ code, language }) => {
     const [editorWidths, setEditorWidths] = useState({})
 
     //INFO Calculate the height and width of the editor based on the content
-    const calculateEditorDimensions = (code, fontSize = 16, padding = 20) => {
-        const lineHeight = fontSize * 1.2 // Approximate line height in pixels, adjusted for readability
-        const charWidth = fontSize / 2 + 2 // Approximate character width in pixels for monospaced font
+    const calculateEditorDimensions = (code, fontSize = 16, padding = 30) => {
+        let lineHeight = fontSize * 1.3 // Approximate line height in pixels, adjusted for readability
+        let charWidth = fontSize / 2 + 3 // Approximate character width in pixels for monospaced font
+
+        //get device os
+        const userAgent = window.navigator.userAgentData.platform
+        console.log('userAgent:', window.navigator.userAgentData.platform)
+        // if the os is windows
+        console.log()
+        if (userAgent === 'Windows') {
+            console.log('windows')
+            padding = 20
+            lineHeight = fontSize * 1.2
+            charWidth = fontSize / 2 + 2
+        } else if (userAgent ==='macOS') {
+            console.log('mac')
+            padding = 30
+            lineHeight = fontSize * 1.3
+            charWidth = fontSize / 2 + 3
+        } else {
+            console.log('Other', userAgent)
+            padding = 30
+            lineHeight = fontSize * 1.3
+            charWidth = fontSize / 2 + 3
+        }
 
         const numLines = code.split('\n').length // Calculate number of lines
         const maxLineLength = Math.max(
