@@ -19,16 +19,25 @@ const CodeBlock = ({ code, language }) => {
         let charWidth = fontSize / 2 + 3 // Approximate character width in pixels for monospaced font
 
         //get device os
-        const userAgent = window.navigator.userAgent
-        console.log('userAgent:', userAgent)
+        const userAgent = window.navigator.userAgentData.platform
+        console.log('userAgent:', window.navigator.userAgentData.platform)
         // if the os is windows
-        if (userAgent.includes('windows') > -1) {
-            // console.log('windows')
+        console.log()
+        if (userAgent === 'Windows') {
+            console.log('windows')
             padding = 20
-            lineHeight = fontSize * 1.5
+            lineHeight = fontSize * 1.2
             charWidth = fontSize / 2 + 2
-        } else if (userAgent.includes('macintosh') > -1) {
-            // console.log('mac')
+        } else if (userAgent ==='macOS') {
+            console.log('mac')
+            padding = 30
+            lineHeight = fontSize * 1.3
+            charWidth = fontSize / 2 + 3
+        } else {
+            console.log('Other', userAgent)
+            padding = 30
+            lineHeight = fontSize * 1.3
+            charWidth = fontSize / 2 + 3
         }
 
         const numLines = code.split('\n').length // Calculate number of lines
