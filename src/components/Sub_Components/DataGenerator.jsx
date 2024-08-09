@@ -1,5 +1,4 @@
 import {
-    randJSON,
     randFlightDetails,
     randUser,
     randBook,
@@ -7,18 +6,14 @@ import {
     randCreditCard,
     randProduct,
 } from '@ngneat/falso'
-import React, { useState, useRef } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 import CopyButton from './CopyButton'
+
 import AceEditor from 'react-ace'
+import '@/Routes/aceEditorStyles'
 
-import 'ace-builds/src-noconflict/theme-one_dark'
-// Import Ace Editor's modes, themes, and other necessary components
-import 'ace-builds/src-noconflict/mode-json'
-
-import 'ace-builds/src-noconflict/ext-language_tools'
-import 'ace-builds/src-noconflict/ext-beautify'
 import { useEffect } from 'react'
 
 function DataGenerator() {
@@ -29,7 +24,7 @@ function DataGenerator() {
 
     useEffect(() => {
         const editor = editorRef.current.editor
-        const session = editor.getSession()
+        editor.getSession()
     }, [data])
     let response = ''
 
@@ -67,20 +62,36 @@ function DataGenerator() {
     return (
         <div className="container mx-auto">
             <div className="text-xl">
-                <h1 className='text-6xl text-center my-5'>Random Fake Data Generator</h1>
+                <h1 className="my-5 text-center text-6xl">
+                    Random Fake Data Generator
+                </h1>
                 <ul>
-                    <li>- To properly format for use with json-server you will need to copy the data and paste it into a .json file.</li>
-                    <li>- The whole thing is inside an object and is the property of the endpoint you created.</li>
-                    <li>- Make sure you have added your endpoint to the db.json file.</li>
+                    <li>
+                        - To properly format for use with json-server you will
+                        need to copy the data and paste it into a .json file.
+                    </li>
+                    <li>
+                        - The whole thing is inside an object and is the
+                        property of the endpoint you created.
+                    </li>
+                    <li>
+                        - Make sure you have added your endpoint to the db.json
+                        file.
+                    </li>
                     <li>- Then run json-server db.json </li>
-                    <li>- Then you can access your data at http://localhost:3000/your-endpoint</li>
+                    <li>
+                        - Then you can access your data at
+                        http://localhost:3000/your-endpoint
+                    </li>
                 </ul>
-                    <Link to="/javascriptPrincipals/JSONServer">
-                <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg mt-5"
-                aria-label='Learn More About json-server'>
-                    Learn More About json-server
-                </button>
-                    </Link>
+                <Link to="/javascriptPrincipals/JSONServer">
+                    <button
+                        className="mt-5 rounded-lg bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-700"
+                        aria-label="Learn More About json-server"
+                    >
+                        Learn More About json-server
+                    </button>
+                </Link>
             </div>
             <form className=" mt-8 max-w-md rounded-lg p-6 shadow-md">
                 <div className="mb-4">
@@ -124,17 +135,16 @@ function DataGenerator() {
                     onClick={handleGeneration}
                     className="focus:shadow-outline w-full rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none"
                     type="button"
-                    aria-label='generate data button'
+                    aria-label="generate data button"
                 >
                     Generate Data
                 </button>
             </form>
             <div
-                className="my-5 mb-32 flex justify-center border p-0.5 border-gray-500 rounded-lg"
+                className="my-5 mb-32 flex justify-center rounded-lg border border-gray-500 p-0.5"
                 style={{ position: 'relative', width: '100%', height: '50em' }}
             >
                 <AceEditor
-
                     ref={editorRef}
                     mode="json"
                     theme="one_dark"

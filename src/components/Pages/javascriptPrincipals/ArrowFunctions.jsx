@@ -1,19 +1,8 @@
-import React, { useEffect, useRef } from 'react'
-import hljs from 'highlight.js'
-import 'highlight.js/styles/atom-one-dark.css'
 import { Helmet } from 'react-helmet-async'
 
+import CodeBlock from '@/components/Sub_Components/CodeBlock'
 
 export default function ArrowFunctions() {
-    const codeRef = useRef(null)
-
-    useEffect(() => {
-        // Apply syntax highlighting to all code elements
-        document.querySelectorAll('pre code').forEach((block) => {
-            hljs.highlightBlock(block)
-        })
-    }, [])
-
     const arrowFunction = `const sayHello = () => {
     console.log("Hello, World!");
     };
@@ -31,10 +20,7 @@ export default function ArrowFunctions() {
       console.log("Button was clicked!");
     }
 
-
-    return (
-      <button onClick={(e) => handleClick(e)}>Click Me!</button>
-    )`
+return (<button onClick={(e) => handleClick(e)}>Click Me!</button>)`
 
     return (
         <div className="pb-16">
@@ -86,18 +72,15 @@ export default function ArrowFunctions() {
                         The basic syntax for an arrow function is as follows:
                     </p>
                     <div className="grid-cols-3 lg:grid">
-                        <pre className="col-span-1">
-                            <code ref={codeRef} className="javascript">
-                                {arrowFunction}
-                            </code>
-                        </pre>
-                        <p className="col-span-2 text-2xl">
-                            Here we show an arrow function that logs "Hello,
-                            World!" to the console. The arrow function is
-                            assigned to the variable sayHello. The arrow
-                            function is then called using the variable name
-                            followed by parentheses. The output of the arrow
-                            function is "Hello, World!"
+                        <CodeBlock code={arrowFunction} language="javascript" />
+
+                        <p className="col-span-2 mx-5 mb-16 text-2xl">
+                            Here we show an arrow function that logs
+                            &quot;Hello, World!&quot; to the console. The arrow
+                            function is assigned to the variable sayHello. The
+                            arrow function is then called using the variable
+                            name followed by parentheses. The output of the
+                            arrow function is &quot;Hello, World!&quot;
                         </p>
                     </div>
                     <h2 className="text-center text-6xl font-bold ">
@@ -109,12 +92,12 @@ export default function ArrowFunctions() {
                         Arrow functions can also take parameters. The syntax for
                         an arrow function with parameters is as follows:
                     </p>
-                    <pre>
-                        <code ref={codeRef} className="javascript">
-                            {arrowFunctionWithParams}
-                        </code>
-                    </pre>
-                    <p className="text-2xl">
+                    <CodeBlock
+                        code={arrowFunctionWithParams}
+                        language="javascript"
+                    />
+
+                    <p className="mb-16 text-2xl">
                         Here we show an arrow function that takes two
                         parameters, num1 and num2. The arrow function is
                         assigned to the variable addNumbers. The arrow function
@@ -137,16 +120,13 @@ export default function ArrowFunctions() {
                         immediately.
                     </p>
                     <p className="my-10 text-2xl">For example:</p>
-                    <pre>
-                        <code ref={codeRef} className="language-javascript">
-                            {arrowButton}
-                        </code>
-                    </pre>
+                    <CodeBlock code={arrowButton} language="javascript" />
+
                     <p className="my-10 text-2xl">
                         In this example, we have a button that when clicked will
-                        log "Button was clicked!" to the console. The arrow
-                        function is used to prevent the function from being
-                        called immediately.
+                        log &quot;Button was clicked!&quot; to the console. The
+                        arrow function is used to prevent the function from
+                        being called immediately.
                     </p>
                 </div>
             </div>
