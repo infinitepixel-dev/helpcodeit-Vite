@@ -30,11 +30,11 @@ function Calendar() {
                 plugins={[dayGridPlugin]}
                 initialView="dayGridMonth"
                 events={convertedEvents}
-                // event click goes to schedule event link in the object
-                // eventClick={(info) => {
-                //     window.open(info.event.extendedProps.link, '_blank');
-                // }
-            // }
+                //event click goes to schedule event link in the object
+                eventClick={(info) => {
+                    window.open(info.event.extendedProps.link, '_blank');
+                }
+            }
             />
         </div>
     );
