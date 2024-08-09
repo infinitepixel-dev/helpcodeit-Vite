@@ -1,70 +1,102 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { XCircle } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react'
+import { XCircle } from 'lucide-react'
+0
 
-const AlertMessage = ({ message, type = 'info', onClose, duration = 5000, speed = 10 }) => {
-  const [isVisible, setIsVisible] = useState(true);
-  const containerRef = useRef(null);
-  const contentRef = useRef(null);
+import propTypes from 'prop-types'
 
-  const colors = {
-    info: 'bg-blue-100 text-blue-800',
-    success: 'bg-green-100 text-green-800',
-    warning: 'bg-yellow-100 text-yellow-800',
-    error: 'bg-red-600 text-white',
-  };
+const AlertMessage = ({
+    message,
+    type = 'info',
+    onClose,
+    duration = 5000,
+    speed = 10,
+}) => {
+    const [isVisible, setIsVisible] = useState(true)
+    const containerRef = useRef(null)
+    const contentRef = useRef(null)
 
-  useEffect(() => {
-    if (duration > 0) {
-      const timer = setTimeout(() => setIsVisible(false), duration);
-      return () => clearTimeout(timer);
+    const colors = {
+        info: 'bg-blue-100 text-blue-800',
+        success: 'bg-green-100 text-green-800',
+        warning: 'bg-yellow-100 text-yellow-800',
+        error: 'bg-red-600 text-white',
     }
-  }, [duration]);
 
-  useEffect(() => {
-    const container = containerRef.current;
-    const content = contentRef.current;
-
-    if (container && content) {
-      // Set initial position
-      content.style.transform = `translateX(${container.offsetWidth}px)`;
-
-      const animateTicker = () => {
-        const containerWidth = container.offsetWidth;
-        const contentWidth = content.offsetWidth;
-        const currentPosition = parseFloat(content.style.transform.replace('translateX(', '').replace('px)', ''));
-
-        if (currentPosition < -contentWidth) {
-          // Reset position when the content is fully off-screen
-          content.style.transform = `translateX(${containerWidth}px)`;
-        } else {
-          // Move content to the left
-          content.style.transform = `translateX(${currentPosition - 1}px)`;
+    useEffect(() => {
+        if (duration > 0) {
+            const timer = setTimeout(() => setIsVisible(false), duration)
+            return () => clearTimeout(timer)
         }
-      };
+    }, [duration])
 
-      const intervalId = setInterval(animateTicker, speed);
+    useEffect(() => {
+        const container = containerRef.current
+        const content = contentRef.current
 
-      return () => clearInterval(intervalId);
-    }
-  }, [speed, message]);
+        if (container && content) {
+            // Set initial position
+            content.style.transform = `translateX(${container.offsetWidth}px)`
 
-  if (!isVisible) return null;
+            const animateTicker = () => {
+                const containerWidth = container.offsetWidth
+                const contentWidth = content.offsetWidth
+                const currentPosition = parseFloat(
+                    content.style.transform
+                        .replace('translateX(', '')
+                        .replace('px)', '')
+                )
 
-  return (
-    <div className={`fixed z-50 bottom-8 left-0 right-0 p-4 ${colors[type]} flex items-center justify-between`}>
-      <div ref={containerRef} className="flex-grow overflow-hidden relative h-6">
+                if (currentPosition < -contentWidth) {
+                    // Reset position when the content is fully off-screen
+                    content.style.transform = `translateX(${containerWidth}px)`
+                } else {
+                    // Move content to the left
+                    content.style.transform = `translateX(${currentPosition - 1}px)`
+                }
+            }
+
+            const intervalId = setInterval(animateTicker, speed)
+
+            return () => clearInterval(intervalId)
+        }
+    }, [speed, message])
+
+    if (!isVisible) return null
+
+    return (
         <div
-          ref={contentRef}
-          className="whitespace-nowrap absolute top-0 font-bold text-lg"
+            className={`fixed bottom-8 left-0 right-0 z-50 p-4 ${colors[type]} flex items-center justify-between`}
         >
-          {message}
+            <div
+                ref={containerRef}
+                className="relative h-6 flex-grow overflow-hidden"
+            >
+                <div
+                    ref={contentRef}
+                    className="absolute top-0 whitespace-nowrap text-lg font-bold"
+                >
+                    {message}
+                </div>
+            </div>
+            <button
+                onClick={() => {
+                    onClose()
+                    setIsVisible(false)
+                }}
+                className="ml-4 flex-shrink-0 focus:outline-none"
+            >
+                <XCircle className="h-5 w-5" />
+            </button>
         </div>
-      </div>
-      <button onClick={() => { onClose(); setIsVisible(false); }} className="flex-shrink-0 ml-4 focus:outline-none">
-        <XCircle className="w-5 h-5" />
-      </button>
-    </div>
-  );
-};
+    )
+}
 
-export default AlertMessage;
+AlertMessage.propTypes = {
+    message: propTypes.string.isRequired,
+    type: propTypes.oneOf(['info', 'success', 'warning', 'error']),
+    onClose: propTypes.func,
+    duration: propTypes.number,
+    speed: propTypes.number,
+}
+
+export default AlertMessage
