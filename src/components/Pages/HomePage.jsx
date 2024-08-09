@@ -7,22 +7,27 @@ import EventCard from '../Sub_Components/EventCard'
 import { CalendarSearch } from 'lucide-react'
 import JumboBackground from '../Sub_Components/JumboBackground'
 import './HomePage.css'
-import AlertMessage from '@subComponents/AlertMessage'
+// import AlertMessage from '@subComponents/AlertMessage'
 
 function HomePage() {
     return (
         <div>
-
             <Helmet>
                 <title>Help Code It | Resources for Beginning Developers</title>
                 <meta
                     name="description"
                     content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
                 />
-              <meta property="og:title" content="Help Code It | Resources for Beginning Developers" />
-        <meta property="og:description" content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!" />
-        <meta property="og:image" content={LogoImage} />
-        <meta property="og:url" content="https://www.helpcodeit.com" />
+                <meta
+                    property="og:title"
+                    content="Help Code It | Resources for Beginning Developers"
+                />
+                <meta
+                    property="og:description"
+                    content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
+                />
+                <meta property="og:image" content={LogoImage} />
+                <meta property="og:url" content="https://www.helpcodeit.com" />
 
                 <link rel="canonical" href="https://www.helpcodeit.com" />
             </Helmet>
@@ -38,11 +43,13 @@ function HomePage() {
             {/* !SECTION end Jumbotron */}
             <div className="container">
                 <div className="grid md:grid-cols-1  lg:grid-cols-2">
-                    <div className="mb-3  mx-auto">
-                        <h2 className="mt-6 text-center text-3xl font-bold">Upcoming Event</h2>
-                        <EventCard limit={1}/>
+                    <div className="mx-auto  mb-3">
+                        <h2 className="mt-6 text-center text-3xl font-bold">
+                            Upcoming Event
+                        </h2>
+                        <EventCard limit={1} />
                     </div>
-                    <div className=" my-auto clearfix">
+                    <div className=" clearfix my-auto">
                         <h2 className="mb-6 text-center text-3xl font-bold ">
                             Get expert coding help and tutoring
                         </h2>

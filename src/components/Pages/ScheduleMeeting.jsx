@@ -1,4 +1,3 @@
-import React from 'react'
 //import { Link } from 'react-router-dom'
 import michael from '@assets/michael.jpeg'
 // import EventAlert from '../Sub_Components/EventAlert'
@@ -7,12 +6,13 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 
 const ScheduleMeeting = () => {
-    let event = {
-        title: 'Git and GitHub Workshop',
-        date: 'Saturday, July 20th',
-        time: '12:00 PM pst | 1:00 PM mst | 2:00 PM cst | 3:00 PM est',
-        link: 'https://calendly.com/michaelvarnell/git-and-github-basics',
-    }
+    // let event = {
+    //     title: 'Git and GitHub Workshop',
+    //     date: 'Saturday, July 20th',
+    //     time: '12:00 PM pst | 1:00 PM mst | 2:00 PM cst | 3:00 PM est',
+    //     link: 'https://calendly.com/michaelvarnell/git-and-github-basics',
+    // }
+
     return (
         <div className="mb-10 min-h-screen">
             <Helmet>
@@ -50,12 +50,14 @@ const ScheduleMeeting = () => {
                     </div>
                 </div>
 
-                            <div className="mt-10 grid justify-center">
-                                <Link to="/calendar" className="inline-flex items-center px-6 py-3 w-fit mx-auto text-base mb-5 shadow-md bg-blue-700 font-bold text-white dark:border-none border border-1 border-gray-300 rounded-3xl">
-
-                                    See the Event Calendar for Special Workshops!
-                                </Link>
-                            </div>
+                <div className="mt-10 grid justify-center">
+                    <Link
+                        to="/calendar"
+                        className="border-1 mx-auto mb-5 inline-flex w-fit items-center rounded-3xl border border-gray-300 bg-blue-700 px-6 py-3 text-base font-bold text-white shadow-md dark:border-none"
+                    >
+                        See the Event Calendar for Special Workshops!
+                    </Link>
+                </div>
                 <div className="mt-2">
                     <h2 className="mb-8 border-b-2 border-black pb-4 text-center text-2xl font-bold dark:border-white">
                         Available Meeting Options
@@ -137,13 +139,14 @@ const ScheduleMeeting = () => {
                 </div>
                 <div className="mt-16 rounded-lg bg-gray-100 p-8">
                     <h2 className="mb-4 text-2xl font-bold text-gray-700">
-                        About <br /> <span className="text-3xl">Michael Varnell</span>
+                        About <br />{' '}
+                        <span className="text-3xl">Michael Varnell</span>
                     </h2>
                     <div className="grid grid-cols-3">
                         <div className="col-span-3 text-xl md:col-span-2">
                             <p className="mb-4 text-gray-700">
-                                Michael is a skilled Software Developer
-                                with expertise in modern Front End technologies,
+                                Michael is a skilled Software Developer with
+                                expertise in modern Front End technologies,
                                 including React.js, JavaScript, TypeScript, and
                                 Responsive Web Design. He holds a Management
                                 Information Systems degree from the University
@@ -152,7 +155,7 @@ const ScheduleMeeting = () => {
                             </p>
                             <p className="mb-4 text-gray-700">
                                 Currently enhancing his skills in backend
-                                technologies, Michael's capabilities also
+                                technologies, Michael&apos;s capabilities also
                                 encompass UI/UX design and API integration,
                                 enabling him to craft engaging and cutting-edge
                                 web experiences.
