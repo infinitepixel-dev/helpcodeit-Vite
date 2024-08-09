@@ -1,7 +1,6 @@
-import { Link } from 'react-router-dom'
 import javascriptlogo from '@assets/jswithburstlogo.svg'
 import { Helmet } from 'react-helmet-async'
-import JavaScriptNavigation from '../Sub_Components/JavaScriptNavigation';
+import JavaScriptNavigation from '../Sub_Components/JavaScriptNavigation'
 
 function JavascriptMainPage() {
     return (
@@ -54,11 +53,11 @@ function JavascriptMainPage() {
                 {/* SECTION End Hero Section */}
                 {/* SECTION Main Content Goes Below This Line */}
                 <div className="mt-10">
-                <JavaScriptNavigation />
+                    <JavaScriptNavigation />
                 </div>
-                </div>
+            </div>
         </div>
     )
 }
 
-export default JavascriptMainPage;
+export default JavascriptMainPage

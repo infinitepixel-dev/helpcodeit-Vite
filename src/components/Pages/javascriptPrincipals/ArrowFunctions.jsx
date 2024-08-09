@@ -1,11 +1,16 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import hljs from 'highlight.js'
-import 'highlight.js/styles/atom-one-dark.css'
+// import 'highlight.js/styles/atom-one-dark.css'
 import { Helmet } from 'react-helmet-async'
 
+import AceEditor from 'react-ace'
+import '@/Routes/aceEditorStyles'
+import CopyButton from '@/components/Sub_Components/CopyButton'
 
 export default function ArrowFunctions() {
     const codeRef = useRef(null)
+    const [editorHeights, setEditorHeights] = useState({})
+    const [editorWidths, setEditorWidths] = useState({})
 
     useEffect(() => {
         // Apply syntax highlighting to all code elements
@@ -31,10 +36,36 @@ export default function ArrowFunctions() {
       console.log("Button was clicked!");
     }
 
+return (<button onClick={(e) => handleClick(e)}>Click Me!</button>)`
 
-    return (
-      <button onClick={(e) => handleClick(e)}>Click Me!</button>
-    )`
+    //INFO Calculate the height and width of the editor based on the content
+    const calculateEditorDimensions = (code, fontSize = 16, padding = 20) => {
+        const lineHeight = fontSize * 1.5 // Approximate line height in pixels, adjusted for readability
+        const charWidth = fontSize / 2 + 2 // Approximate character width in pixels for monospaced font
+
+        const numLines = code.split('\n').length // Calculate number of lines
+        const maxLineLength = Math.max(
+            ...code.split('\n').map((line) => line.length)
+        )
+
+        const contentHeight = numLines * lineHeight + padding // Adjust height calculation
+        const contentWidth = maxLineLength * charWidth + padding // Adjust width calculation
+
+        console.log('contentHeight', contentHeight)
+        console.log('contentWidth', contentWidth, '\n')
+
+        return { height: `${contentHeight}px`, width: `${contentWidth}px` }
+    }
+
+    //INFO Loads the editor and calculates the height and width
+    const handleEditorLoad = (code, key) => {
+        console.log('code', code)
+        console.log('key', key)
+
+        const { height, width } = calculateEditorDimensions(code)
+        setEditorHeights((prev) => ({ ...prev, [key]: height }))
+        setEditorWidths((prev) => ({ ...prev, [key]: width }))
+    }
 
     return (
         <div className="pb-16">
@@ -86,18 +117,55 @@ export default function ArrowFunctions() {
                         The basic syntax for an arrow function is as follows:
                     </p>
                     <div className="grid-cols-3 lg:grid">
-                        <pre className="col-span-1">
-                            <code ref={codeRef} className="javascript">
-                                {arrowFunction}
-                            </code>
-                        </pre>
-                        <p className="col-span-2 text-2xl">
-                            Here we show an arrow function that logs "Hello,
-                            World!" to the console. The arrow function is
-                            assigned to the variable sayHello. The arrow
-                            function is then called using the variable name
-                            followed by parentheses. The output of the arrow
-                            function is "Hello, World!"
+                        <div
+                            className="my-5 mb-8 flex justify-center rounded-lg border border-gray-500 p-0.5"
+                            style={{
+                                position: 'relative',
+                                width: editorWidths.arrowFunction || '100%',
+                                height: editorHeights.arrowFunction || '50em',
+                            }}
+                        >
+                            <AceEditor
+                                ref={codeRef}
+                                mode="javascript"
+                                theme="vibrant_ink"
+                                name="code"
+                                fontSize={16}
+                                showPrintMargin={true}
+                                showGutter={true}
+                                highlightActiveLine={true}
+                                value={arrowFunction}
+                                setOptions={{
+                                    vScrollBarAlwaysVisible: false,
+                                    printMargin: false,
+                                    enableBasicAutocompletion: true,
+                                    enableLiveAutocompletion: false,
+                                    enableSnippets: false,
+                                    showLineNumbers: true,
+                                    tabSize: 2,
+                                    readOnly: true,
+                                }}
+                                style={{ width: '100%', height: '100%' }}
+                                onLoad={() =>
+                                    handleEditorLoad(
+                                        arrowFunction,
+                                        'arrowFunction'
+                                    )
+                                }
+                            />
+                            <CopyButton
+                                textToCopy={arrowFunction}
+                                position="absolute bottom-1 right-1" // Adjusted for top right-hand corner
+                            />
+                        </div>
+
+                        <p className="col-span-2 mx-5 mb-16 text-2xl">
+                            Here we show an arrow function that logs
+                            &quot;Hello, World!&quot; to the console. The arrow
+                            function is assigned to the variable sayHello. The
+                            arrow function is then called using the variable
+                            name followed by parentheses. The output of the
+                            arrow function is &quot;Hello, World!&quot;
                         </p>
                     </div>
                     <h2 className="text-center text-6xl font-bold ">
@@ -109,12 +177,50 @@ export default function ArrowFunctions() {
                         Arrow functions can also take parameters. The syntax for
                         an arrow function with parameters is as follows:
                     </p>
-                    <pre>
-                        <code ref={codeRef} className="javascript">
-                            {arrowFunctionWithParams}
-                        </code>
-                    </pre>
-                    <p className="text-2xl">
+                    <div
+                        className="my-5 mb-8 flex justify-center rounded-lg border border-gray-500 p-0.5"
+                        style={{
+                            position: 'relative',
+                            width:
+                                editorWidths.arrowFunctionWithParams || '50%',
+                            height:
+                                editorHeights.arrowFunctionWithParams || '50em',
+                        }}
+                    >
+                        <AceEditor
+                            ref={codeRef}
+                            mode="javascript"
+                            theme="vibrant_ink"
+                            name="code"
+                            fontSize={16}
+                            showPrintMargin={true}
+                            showGutter={true}
+                            highlightActiveLine={true}
+                            value={arrowFunctionWithParams}
+                            setOptions={{
+                                vScrollBarAlwaysVisible: false,
+                                printMargin: false,
+                                enableBasicAutocompletion: true,
+                                enableLiveAutocompletion: false,
+                                enableSnippets: false,
+                                showLineNumbers: true,
+                                tabSize: 2,
+                                readOnly: true,
+                            }}
+                            style={{ width: '100%', height: '100%' }}
+                            onLoad={() =>
+                                handleEditorLoad(
+                                    arrowFunctionWithParams,
+                                    'arrowFunctionWithParams'
+                                )
+                            }
+                        />
+                        <CopyButton
+                            textToCopy={arrowFunctionWithParams}
+                            position="absolute bottom-1 right-1" // Adjusted for top right-hand corner
+                        />
+                    </div>
+                    <p className="mb-16 text-2xl">
                         Here we show an arrow function that takes two
                         parameters, num1 and num2. The arrow function is
                         assigned to the variable addNumbers. The arrow function
@@ -137,16 +243,49 @@ export default function ArrowFunctions() {
                         immediately.
                     </p>
                     <p className="my-10 text-2xl">For example:</p>
-                    <pre>
-                        <code ref={codeRef} className="language-javascript">
-                            {arrowButton}
-                        </code>
-                    </pre>
+                    <div
+                        className="my-5 mb-8 flex justify-center rounded-lg border border-gray-500 p-0.5"
+                        style={{
+                            position: 'relative',
+                            width: editorWidths.arrowButton || '50%',
+                            height: editorHeights.arrowButton || '50em',
+                        }}
+                    >
+                        <AceEditor
+                            ref={codeRef}
+                            mode="javascript"
+                            theme="vibrant_ink"
+                            name="code"
+                            fontSize={16}
+                            showPrintMargin={true}
+                            showGutter={true}
+                            highlightActiveLine={true}
+                            value={arrowButton}
+                            setOptions={{
+                                vScrollBarAlwaysVisible: false,
+                                printMargin: false,
+                                enableBasicAutocompletion: true,
+                                enableLiveAutocompletion: false,
+                                enableSnippets: false,
+                                showLineNumbers: true,
+                                tabSize: 2,
+                                readOnly: true,
+                            }}
+                            style={{ width: '100%', height: '100%' }}
+                            onLoad={() =>
+                                handleEditorLoad(arrowButton, 'arrowButton')
+                            }
+                        />
+                        <CopyButton
+                            textToCopy={arrowButton}
+                            position="absolute bottom-1 right-1" // Adjusted for top right-hand corner
+                        />
+                    </div>
                     <p className="my-10 text-2xl">
                         In this example, we have a button that when clicked will
-                        log "Button was clicked!" to the console. The arrow
-                        function is used to prevent the function from being
-                        called immediately.
+                        log &quot;Button was clicked!&quot; to the console. The
+                        arrow function is used to prevent the function from
+                        being called immediately.
                     </p>
                 </div>
             </div>
