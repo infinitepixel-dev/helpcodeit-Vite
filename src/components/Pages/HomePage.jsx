@@ -7,9 +7,13 @@ import EventCard from '../Sub_Components/EventCard'
 import { CalendarSearch } from 'lucide-react'
 import JumboBackground from '../Sub_Components/JumboBackground'
 import './HomePage.css'
-// import AlertMessage from '@subComponents/AlertMessage'
+import AlertMessage from '@subComponents/AlertMessage'
 
 function HomePage() {
+
+    let AlertDate = new Date('2024-08-10T22:00:00')
+    let currentDate = new Date()
+
     return (
         <div>
             <Helmet>
@@ -31,7 +35,7 @@ function HomePage() {
 
                 <link rel="canonical" href="https://www.helpcodeit.com" />
             </Helmet>
-            {/* <AlertMessage message="'Getting Started with Tailwind CSS Workshop' was moved to Saturday Aug 10th from Saturday August 3rd. Sign ups are live for the new date!" type="error" duration={25000} onClose={() => console.log('closed')} /> */}
+            {AlertDate > currentDate ? <AlertMessage message="TODAY IS OUR: 'Getting Started with Tailwind CSS Workshop' Sign Up before it starts!!!" type="error" duration={25000} onClose={() => console.log('closed')} />: null}
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
 
