@@ -1,3 +1,4 @@
+
 import { lazy } from 'react'
 
 export const navItems = [
@@ -20,6 +21,14 @@ export const navItems = [
                 to: '/fundamentals/SettingUpPracticeEnvironment',
                 label: 'Setting Up a Practice Environment',
             },
+        ],
+    },
+    {
+        type : 'dropdown',
+        label: 'Meetings and Events',
+        items: [
+            { to: '/calendar', label: 'Event Calendar' },
+            { to: '/schedule-meeting', label: 'Schedule a Meeting' },
         ],
     },
     {
