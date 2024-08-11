@@ -16,8 +16,13 @@ function HomePage() {
 
     // Calculate the difference in days
     let timeDifference = AlertDate - currentDate;
-    let daysUntilEvent = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+    let daysUntilEvent = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
     let message = `Our next workshop API Basics is in ${daysUntilEvent} days. Saturday August 17th, 2024 at 4:00 PM pst | 5:00 PM mst | 6:00 PM cst | 7:00 PM est. Register now!`;
+
+    if (daysUntilEvent < 1) {
+        message = `Our next workshop API Basics is today! Saturday August 17th, 2024 at 4:00 PM pst | 5:00 PM mst | 6:00 PM cst | 7:00 PM est. Register now!`;
+    }
+
     console.log(`The event is in ${daysUntilEvent} days.`);
 
 
