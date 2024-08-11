@@ -22,6 +22,13 @@ const events = [
             'Unlock the full potential of AI in your learning journey! Join us for a 30-minute, power-packed session where you’ll discover the art of crafting effective prompts to get the most insightful and educational responses from AI. Whether you’re new to AI or looking to refine your skills, this short course will equip you with practical techniques to enhance your learning experience. Don’t miss this opportunity to learn how to ask the right questions and make AI your best study partner!',
         cost: '4.99',
         show: true,
+        youtubeEmbed: `<div class="relative pb-[56.25%] overflow-hidden"><iframe width="560" height="315" src="https://www.youtube.com/embed/j8JeKCCet00?si=lYzEsCYP4X31T5lp" ttitle="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+              class="top-0 left-0 absolute w-full h-full"
+            ></iframe></div>`
 
     },
     {
