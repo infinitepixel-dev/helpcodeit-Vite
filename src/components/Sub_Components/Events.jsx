@@ -13,15 +13,16 @@ const events = [
         show: true,
     },
     {
-        title: 'API Basics Workshop',
-        date: 'Saturday August 17th, 2024',
-        time: '4:00 PM pst | 5:00 PM mst | 6:00 PM cst | 7:00 PM est',
-        link: 'https://calendly.com/michaelvarnell/api-basics-workshop',
-        ISOdate: '2024-08-17T18:00:00.000Z',
+        title: 'Boost Learning with AI: 30-Minute Prompt Mastery',
+        date: 'Wednesday August 14th, 2024',
+        time: "6:00 PM pst | 7:00 PM mst | 8:00 PM cst | 9:00 PM est",
+        link: 'https://calendly.com/michaelvarnell/prompting-for-learning',
+        ISOdate: '2024-08-15T01:00:00.000Z',
         description:
-            'Unlock the power of APIs! Join our hands-on workshop where you’ll learn how to set up a mock API and master the fundamentals of JavaScript’s fetch function. Plus, we’ll dive into real API documentation and guide you step-by-step as we implement it live together. Don’t miss out on this practical, skill-building experience!',
-        cost: '10',
+            'Unlock the full potential of AI in your learning journey! Join us for a 30-minute, power-packed session where you’ll discover the art of crafting effective prompts to get the most insightful and educational responses from AI. Whether you’re new to AI or looking to refine your skills, this short course will equip you with practical techniques to enhance your learning experience. Don’t miss this opportunity to learn how to ask the right questions and make AI your best study partner!',
+        cost: '4.99',
         show: true,
+
     },
     {
         title: 'Getting Started with Tailwind CSS Workshop',
@@ -58,8 +59,9 @@ const events = [
         cost: '10',
         show: true,
     },
-
-
 ]
 
-export default events
+// Sort events by ISOdate
+events.sort((a, b) => new Date(a.ISOdate) - new Date(b.ISOdate));
+console.log('Events: ', events)
+export default events;
