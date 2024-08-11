@@ -1,10 +1,20 @@
 import propTypes from 'prop-types'
+import { parseISO, formatDistanceToNow, differenceInDays, isAfter } from 'date-fns';
 
 import { CalendarDays, Calendar, Clock, CalendarCheck2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import events from '@subComponents/Events'
 
 const eventsData = events
+
+function provideRelativeTime(date) {
+    const now = new Date()
+    const eventDate = parseISO(date)
+    const relativeTime = formatDistanceToNow(eventDate, { addSuffix: true })
+    const daysUntilEvent = differenceInDays(eventDate, now)
+    return { relativeTime, daysUntilEvent }
+}
+
 
 const EventCard = ({ event }) => (
     <div className="border-1 border-gray-300 bg-white shadow-md mx-5 mb-4 p-6 border dark:border-none rounded-lg h-fit dark:text-black">
@@ -22,7 +32,8 @@ const EventCard = ({ event }) => (
 
         <div className="flex items-center mb-2">
             <CalendarDays className="mr-2 w-5 h-5 text-gray-600" />
-            <span>{event.date}</span>
+            <span className={"mr-1"}><span className="font-semibold">Event is {provideRelativeTime(event.ISOdate).relativeTime}</span> on {event.date}</span>
+
         </div>
         <div className="flex items-center mb-2">
             <Clock className="mr-2 w-5 h-5 text-gray-600" />
@@ -66,7 +77,7 @@ const UpcomingEvents = ({ limit = Infinity, title = 'Upcoming Events' }) => {
 console.log('Sorted Events: ', sortedEvents)
     // Limit the number of events
     const limitedEvents = sortedEvents.slice(0, limit)
-    
+
    console.log('Limited Events: ', limitedEvents)
     return (
         <div className="mt-8">
