@@ -10,7 +10,7 @@ import JumboBackground from '../Sub_Components/JumboBackground'
 import './HomePage.css'
 import AlertMessage from '@subComponents/AlertMessage'
 import events from '@subComponents/Events'
-import { Alert } from 'bootstrap'
+
 
 function HomePage() {
     let filteredEvents = events.filter((event) => event.ISOdate > new Date().toISOString())
