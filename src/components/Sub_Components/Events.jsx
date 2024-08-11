@@ -66,6 +66,18 @@ const events = [
         cost: '10',
         show: true,
     },
+    {
+        title: 'Getting Started with Tailwind CSS Workshop',
+        date: 'Tuesday August 20th, 2024',
+        time: '6:00 PM pst | 7:00 PM mst | 8:00 PM cst | 9:00 PM est',
+        link: 'https://calendly.com/michaelvarnell/beginner-tailwindcss',
+        ISOdate: '2024-08-21T01:00:00Z',
+        description:
+            'WEEKDAY: Join us for a comprehensive introduction to Tailwind CSS! We’ll guide you through the essentials of setting up and learning Tailwind, from understanding core classes to discovering new ones. Learn how to leverage free components effectively, navigate common pitfalls, and enhance your web design skills. Don’t miss this opportunity to boost your frontend development expertise with Tailwind CSS!',
+        cost: '10',
+        show: true,
+
+    },
 ]
 
 // Sort events by ISOdate
