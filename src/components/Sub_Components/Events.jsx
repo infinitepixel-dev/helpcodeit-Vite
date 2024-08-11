@@ -47,6 +47,18 @@ const events = [
           </div>
         `,
     },
+    {
+        title: 'API Basics Workshop',
+        date: 'Saturday August 17th, 2024',
+        time: '4:00 PM pst | 5:00 PM mst | 6:00 PM cst | 7:00 PM est',
+        link: 'https://calendly.com/michaelvarnell/api-basics-workshop',
+        ISOdate: '2024-08-17T23:00:00.000Z',
+        description:
+            'Unlock the power of APIs! Join our hands-on workshop where you’ll learn how to set up a mock API and master the fundamentals of JavaScript’s fetch function. Plus, we’ll dive into real API documentation and guide you step-by-step as we implement it live together. Don’t miss out on this practical, skill-building experience!',
+        cost: '10',
+        show: true,
+    },
+
 
 ]
 
