@@ -34,7 +34,7 @@ const events = [
         cost: '10',
         show: true,
         youtubeEmbed: `
-          <div class="relative overflow-hidden pb-[56.25%]">
+          <div class="relative pb-[56.25%] overflow-hidden">
             <iframe
               src="https://www.youtube.com/embed/huuKfJkmTDw?si=xdEt2FvIq3fP0yzH"
               title="YouTube video player"
@@ -42,11 +42,23 @@ const events = [
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerpolicy="strict-origin-when-cross-origin"
               allowfullscreen
-              class="absolute top-0 left-0 w-full h-full"
+              class="top-0 left-0 absolute w-full h-full"
             ></iframe>
           </div>
         `,
     },
+    {
+        title: 'API Basics Workshop',
+        date: 'Saturday August 17th, 2024',
+        time: '4:00 PM pst | 5:00 PM mst | 6:00 PM cst | 7:00 PM est',
+        link: 'https://calendly.com/michaelvarnell/api-basics-workshop',
+        ISOdate: '2024-08-17T23:00:00.000Z',
+        description:
+            'Unlock the power of APIs! Join our hands-on workshop where you’ll learn how to set up a mock API and master the fundamentals of JavaScript’s fetch function. Plus, we’ll dive into real API documentation and guide you step-by-step as we implement it live together. Don’t miss out on this practical, skill-building experience!',
+        cost: '10',
+        show: true,
+    },
+
 ]
 
 export default events
