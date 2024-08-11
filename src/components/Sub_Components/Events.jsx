@@ -1,7 +1,5 @@
 // This is an array of events that will be upcoming.
 
-import { time } from "console"
-
 const events = [
     {
         title: 'Git and GitHub for Beginners Workshop',
