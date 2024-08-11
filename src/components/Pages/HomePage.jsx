@@ -21,7 +21,7 @@ function HomePage() {
     console.log(AlertDate)
     let daysUntilEvent = Math.floor((new Date(AlertDate) - new Date(currentDate)) / (1000 * 60 * 60 * 24))
     console.log(daysUntilEvent)
-    let message = `The next event is ${filteredEvents[0].title} in ${daysUntilEvent} days. the cost is $${filteredEvents[0].cost} and registration is open.`
+    let message = `Our next event is ${filteredEvents[0].title} in ${daysUntilEvent} days. the cost is $${filteredEvents[0].cost} and registration is open.`
 
 
     console.log(`The event is in ${daysUntilEvent} days.`);
