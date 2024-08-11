@@ -21,8 +21,8 @@ function Calendar() {
     const convertedEvents = convertDates()
 
     return (
-        <div className="container z-30 mb-32">
-            <h1 className="mt-10 text-center text-5xl font-bold">
+        <div className="z-30 mb-32 container">
+            <h1 className="mt-10 font-bold text-5xl text-center">
                 Upcoming Events
             </h1>
             <EventCard />
