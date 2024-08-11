@@ -3,7 +3,7 @@ import LogoImage from '../Sub_Components/LogoImage'
 import MainCards from '../Sub_Components/MainCards'
 // import EventAlert from '../Sub_Components/EventAlert'
 import { Helmet } from 'react-helmet-async'
-import { parseISO, formatRelative } from 'date-fns'
+import { parseISO, formatDistanceToNow, differenceInDays, isAfter } from 'date-fns';
 import EventCard from '../Sub_Components/EventCard'
 import { CalendarSearch } from 'lucide-react'
 import JumboBackground from '../Sub_Components/JumboBackground'
@@ -13,20 +13,27 @@ import events from '@subComponents/Events'
 
 
 function HomePage() {
-    let filteredEvents = events.filter((event) => event.ISOdate > new Date().toISOString())
-    let AlertDate = filteredEvents[0].ISOdate
-    console.log(filteredEvents[0])
-    let currentDate = new Date().toISOString()
-    console.log(AlertDate < currentDate)
-    console.log(AlertDate)
-    let daysUntilEvent = Math.floor((new Date(AlertDate) - new Date(currentDate)) / (1000 * 60 * 60 * 24))
-    console.log(daysUntilEvent)
-    let message = `Our next event is ${filteredEvents[0].title} in ${daysUntilEvent} days. the cost is $${filteredEvents[0].cost} and registration is open.`
+    let filteredEvents = events.filter((event) => isAfter(parseISO(event.ISOdate), new Date()));
+    console.log(filteredEvents);
+    let {message, AlertDate, daysUntilEvent, currentDate} = '';
+    if (filteredEvents.length > 0) {
+        AlertDate = parseISO(filteredEvents[0].ISOdate);
+        console.log(filteredEvents[0]);
 
+        currentDate = new Date();
+        console.log(isAfter(AlertDate, currentDate));
+        console.log(AlertDate);
 
-    console.log(`The event is in ${daysUntilEvent} days.`);
+        daysUntilEvent = differenceInDays(AlertDate, currentDate);
+        console.log(daysUntilEvent);
 
-
+        message = `Our next event is ${filteredEvents[0].title} in ${daysUntilEvent} days. The cost is $${filteredEvents[0].cost} and registration is open.`;
+        console.log(message);
+    } else {
+        console.log('No upcoming events.');
+    }
+    currentDate = new Date();
+    console.log(message)
     return (
         <div>
             <Helmet>
@@ -48,7 +55,7 @@ function HomePage() {
 
                 <link rel="canonical" href="https://www.helpcodeit.com" />
             </Helmet>
-            {AlertDate > currentDate ? <AlertMessage message={message} type={daysUntilEvent > 2 ? "info": daysUntilEvent > 1 ? "warning" : "error"} duration={25000} onClose={() => console.log('closed')} />: null}
+            {new Date(filteredEvents[0].ISOdate) > currentDate ? <AlertMessage message={message} type={daysUntilEvent > 2 ? "info": daysUntilEvent > 1 ? "warning" : "error"} duration={25000} onClose={() => console.log('closed')} />: null}
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
 
