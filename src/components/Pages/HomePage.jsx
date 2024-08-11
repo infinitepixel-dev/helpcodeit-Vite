@@ -9,15 +9,21 @@ import { CalendarSearch } from 'lucide-react'
 import JumboBackground from '../Sub_Components/JumboBackground'
 import './HomePage.css'
 import AlertMessage from '@subComponents/AlertMessage'
+import events from '@subComponents/Events'
+import { Alert } from 'bootstrap'
 
 function HomePage() {
-    let AlertDate = new Date("2024-08-17T18:00:00.000Z");
-    let currentDate = new Date();
+    let filteredEvents = events.filter((event) => event.ISOdate > new Date().toISOString())
+    let AlertDate = filteredEvents[0].ISOdate
+    console.log(filteredEvents[0])
+    let currentDate = new Date().toISOString()
+    console.log(AlertDate < currentDate)
+    console.log(AlertDate)
+    let daysUntilEvent = Math.floor((new Date(AlertDate) - new Date(currentDate)) / (1000 * 60 * 60 * 24))
+    console.log(daysUntilEvent)
+    let message = `The next event is ${filteredEvents[0].title} in ${daysUntilEvent} days. the cost is $${filteredEvents[0].cost} and registration is open.`
 
-    // Calculate the difference in days
-    let timeDifference = AlertDate - currentDate;
-    let daysUntilEvent = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
-    let message = `Our next workshop API Basics is in ${daysUntilEvent} days. Saturday August 17th, 2024 at 4:00 PM pst | 5:00 PM mst | 6:00 PM cst | 7:00 PM est. Register now!`;
+
     console.log(`The event is in ${daysUntilEvent} days.`);
 
 
@@ -42,7 +48,7 @@ function HomePage() {
 
                 <link rel="canonical" href="https://www.helpcodeit.com" />
             </Helmet>
-            {AlertDate > currentDate ? <AlertMessage message={message} type="success" duration={25000} onClose={() => console.log('closed')} />: null}
+            {AlertDate > currentDate ? <AlertMessage message={message} type={daysUntilEvent > 2 ? "info": daysUntilEvent > 1 ? "warning" : "error"} duration={25000} onClose={() => console.log('closed')} />: null}
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
 
