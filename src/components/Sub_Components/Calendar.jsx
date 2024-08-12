@@ -26,6 +26,7 @@ function Calendar() {
                 Upcoming Events
             </h1>
 
+            <EventCard />
             <FullCalendar
                 plugins={[dayGridPlugin]}
                 initialView="dayGridMonth"
@@ -35,7 +36,6 @@ function Calendar() {
                     window.open(info.event.extendedProps.link, '_blank')
                 }}
             />
-                <EventCard />
         </div>
     )
 }
