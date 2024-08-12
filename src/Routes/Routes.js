@@ -105,12 +105,7 @@ export const componentRoutes = [
         componentPath: '../components/Pages/ScheduleMeeting.jsx',
         key: 'scheduleMeeting',
     },
-    /*TODO: Add API Table Component
-         {
-        path: './APITable',
-        componentPath: '../components/Pages/javascriptPrincipals/APITable.jsx',
-        key: 'APITable',
-    },*/
+
     {
         path: '/useful-links',
         componentPath: '../components/Pages/fundamentals/UsefulLinks.jsx',
@@ -344,6 +339,11 @@ export const componentRoutes = [
         path: '/ReactMain',
         componentPath: '../components/Pages/react/ReactMain.jsx',
         key: 'reactMain',
+    },
+    {
+        path: '/OptimisticUpdatesExplainer',
+        componentPath: '../components/Pages/react/OptimisticUpdatesExplainer.jsx',
+        key: 'optimisticUpdates',
     },
     {
         path: '/ReactComponents',

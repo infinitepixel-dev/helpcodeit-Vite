@@ -69,11 +69,11 @@ const AlertMessage = ({
         >
             <div
                 ref={containerRef}
-                className="relative h-6 flex-grow overflow-hidden"
+                className="relative flex-grow h-6 overflow-hidden"
             >
                 <div
                     ref={contentRef}
-                    className="absolute top-0 whitespace-nowrap text-lg font-bold"
+                    className="absolute top-0 text-lg font-bold whitespace-nowrap"
                 >
                     {message}
                 </div>
@@ -83,9 +83,9 @@ const AlertMessage = ({
                     onClose()
                     setIsVisible(false)
                 }}
-                className="ml-4 flex-shrink-0 focus:outline-none"
+                className="flex-shrink-0 ml-4 focus:outline-none"
             >
-                <XCircle className="h-5 w-5" />
+                <XCircle className="w-5 h-5" />
             </button>
         </div>
     )
