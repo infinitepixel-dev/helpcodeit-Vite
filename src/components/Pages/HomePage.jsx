@@ -54,12 +54,28 @@ function HomePage() {
                 <meta property="og:url" content="https://www.helpcodeit.com" />
 
                 <link rel="canonical" href="https://www.helpcodeit.com" />
+
+
+
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.helpcodeit.com/" />
+<meta property="og:title" content="Help Code It" />
+<meta property="og:description" content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!" />
+<meta property="og:image" content="https://www.helpcodeit.com/helpcodeitsociallogo.png" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://www.helpcodeit.com/" />
+<meta property="twitter:title" content="Help Code It" />
+<meta property="twitter:description" content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!" />
+<meta property="twitter:image" content="https://www.helpcodeit.com/helpcodeitsociallogo.png" />
+
+
             </Helmet>
             {new Date(filteredEvents[0].ISOdate) > currentDate ? <AlertMessage message={message} type={daysUntilEvent > 2 ? "info": daysUntilEvent > 1 ? "warning" : "error"} duration={25000} onClose={() => console.log('closed')} />: null}
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
 
-            <div className="bg-neutral-800 text-white hero-text">
+            <div className="text-white bg-neutral-800 hero-text">
                 <div className="relative grid-cols-2">
                     <JumboBackground />
                 </div>
@@ -68,17 +84,17 @@ function HomePage() {
             <div className="container">
                 <div className="grid md:grid-cols-1 lg:grid-cols-2">
                     <div className="mx-auto mb-3">
-                        <h2 className="mt-6 font-bold text-3xl text-center">
+                        <h2 className="mt-6 text-3xl font-bold text-center">
                             Upcoming Event
                         </h2>
                         <EventCard limit={1} />
                     </div>
                     <div className="clearfix my-auto">
-                        <h2 className="mb-6 font-bold text-3xl text-center">
+                        <h2 className="mb-6 text-3xl font-bold text-center">
                             Get expert coding help and tutoring
                         </h2>
-                        <div className="mx-auto my-8 p-8 rounded-lg max-w-2xl">
-                            <h2 className="mb-6 font-bold text-3xl text-center">
+                        <div className="max-w-2xl p-8 mx-auto my-8 rounded-lg">
+                            <h2 className="mb-6 text-3xl font-bold text-center">
                                 Book a session now!
                             </h2>
                             <p className="mb-6 text-center">
@@ -90,7 +106,7 @@ function HomePage() {
                             <Link to="/schedule-meeting" className="block">
                                 <button
                                     aria-label="explore meeting options button"
-                                    className="flex bg-blue-700 hover:bg-red-700 mx-auto px-6 py-3 rounded-full w-fit font-bold text-white transition duration-300"
+                                    className="flex px-6 py-3 mx-auto font-bold text-white transition duration-300 bg-blue-700 rounded-full hover:bg-red-700 w-fit"
                                 >
                                     Explore Meeting Options
                                     <CalendarSearch
