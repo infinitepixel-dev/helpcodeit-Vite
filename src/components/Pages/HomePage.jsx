@@ -63,12 +63,12 @@ function HomePage() {
 <meta property="og:title" content="Help Code It" />
 <meta property='author' content='Help Code It' />
 <meta property="og:description" content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!" />
-<meta property="og:image" content={`${process.env.PUBLIC_URL}assets/helpcodeitsociallogo.png`} />
+<meta property="og:image" content={`${process.env.PUBLIC_URL}/assets/helpcodeitsociallogo.png`} />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://www.helpcodeit.com/" />
 <meta property="twitter:title" content="Help Code It" />
 <meta property="twitter:description" content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!" />
-<meta property="twitter:image" content={`${process.env.PUBLIC_URL}assets/helpcodeitsociallogo.png`} />
+<meta property="twitter:image" content={`${process.env.PUBLIC_URL}/assets/helpcodeitsociallogo.png`} />
 
 
             </Helmet>
