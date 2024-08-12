@@ -21,11 +21,10 @@ function Calendar() {
     const convertedEvents = convertDates()
 
     return (
-        <div className="z-30 mb-32 container">
-            <h1 className="mt-10 font-bold text-5xl text-center">
+        <div className="container z-30 mb-32">
+            <h1 className="mt-10 text-5xl font-bold text-center">
                 Upcoming Events
             </h1>
-            <EventCard />
 
             <FullCalendar
                 plugins={[dayGridPlugin]}
@@ -36,6 +35,7 @@ function Calendar() {
                     window.open(info.event.extendedProps.link, '_blank')
                 }}
             />
+                <EventCard />
         </div>
     )
 }
