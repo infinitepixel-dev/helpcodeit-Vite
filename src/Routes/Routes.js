@@ -61,6 +61,7 @@ export const navItems = [
 ]
 
 export const componentRoutes = [
+    
     //INFO: HTML Pages
     {
         path: '/htmlPages/HTMLMain',
