@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react'
 import propTypes from 'prop-types'
-
+import forloop from '@assets/forloop.svg'
 import { Link } from 'react-router-dom'
 import reloadImg from '@assets/Feather refresh icon.svg'
 import reloadingDark from '@assets/refreshdark.svg'
@@ -130,7 +130,7 @@ console.log("Password accepted!");
 // Output: Password accepted!`
 
     return (
-        <div className="container mx-auto px-4 py-8 pb-40">
+        <div className="container px-4 py-8 pb-40 mx-auto">
             <Helmet>
                 <title>JavaScript Loops | Help Code It</title>
                 <meta
@@ -148,21 +148,21 @@ console.log("Password accepted!");
                 />
             </Helmet>
 
-            <h1 className="mb-8 text-center text-4xl font-bold sm:text-6xl md:text-7xl">
+            <h1 className="mb-8 text-4xl font-bold text-center sm:text-6xl md:text-7xl">
                 Loops...{' '}
                 <span className="text-3xl sm:text-5xl">in JavaScript</span>
                 <img
                     src={isDark ? reloadImg : reloadingDark}
                     alt="Reload Image"
                     ref={logoRef}
-                    className="animate-spin-slow ml-2 inline h-14 w-14"
+                    className="inline ml-2 animate-spin-slow h-14 w-14"
                 />
             </h1>
 
             <hr className="mb-10 border-black dark:border-white" />
 
-            <div className="mx-auto mb-8 w-fit rounded-lg border border-gray-300 bg-gray-100 p-4 shadow-lg dark:border-gray-500 dark:bg-gray-800">
-                <p className="satisfyFont text-center text-4xl">
+            <div className="p-4 mx-auto mb-8 bg-gray-100 border border-gray-300 rounded-lg shadow-lg w-fit dark:border-gray-500 dark:bg-gray-800">
+                <p className="text-4xl text-center satisfyFont">
                     Loops are a programmer&apos;s best friend, helping us avoid
                     repetitive code and making our lives easier!
                 </p>
@@ -199,7 +199,7 @@ console.log("Password accepted!");
                         <strong>How it works:</strong> The for loop has three
                         parts:
                     </p>
-                    <ol className="list-decimal pl-6">
+                    <ol className="pl-6 list-decimal">
                         <li>
                             Initialization: Where you set the starting value
                             (e.g., <i>let i = 1</i>)
@@ -213,10 +213,11 @@ console.log("Password accepted!");
                             (e.g., <i>i++</i> to increment i by 1)
                         </li>
                     </ol>
+                    <img src={forloop} alt="For Loop" className="w-2/5 p-12 mx-auto my-5 border border-gray-500 shadow-lg bg-slate-400 rounded-2xl" />
                     <p className="mt-4">
                         <strong>Example explanations:</strong>
                     </p>
-                    <ul className="list-disc pl-6">
+                    <ul className="pl-6 list-disc">
                         <li>Example 1 shows a simple count from 1 to 5.</li>
                         <li>
                             Example 2 demonstrates how to use a for loop to
@@ -246,7 +247,7 @@ console.log("Password accepted!");
                         <strong>How it works:</strong> The while loop has one
                         main part:
                     </p>
-                    <ul className="list-disc pl-6">
+                    <ul className="pl-6 list-disc">
                         <li>
                             Condition: The loop continues as long as this
                             condition is true
@@ -261,7 +262,7 @@ console.log("Password accepted!");
                     <p className="mt-4">
                         <strong>Example explanations:</strong>
                     </p>
-                    <ul className="list-disc pl-6">
+                    <ul className="pl-6 list-disc">
                         <li>Example 1 shows a countdown from 5 to 1.</li>
                         <li>
                             Example 2 simulates rolling a die until we get a 6.
@@ -292,7 +293,7 @@ console.log("Password accepted!");
                         <strong>How it works:</strong> The do...while loop has
                         two main parts:
                     </p>
-                    <ol className="list-decimal pl-6">
+                    <ol className="pl-6 list-decimal">
                         <li>Do: The block of code to be executed</li>
                         <li>
                             While: The condition that, if true, will make the
@@ -308,7 +309,7 @@ console.log("Password accepted!");
                     <p className="mt-4">
                         <strong>Example explanations:</strong>
                     </p>
-                    <ul className="list-disc pl-6">
+                    <ul className="pl-6 list-disc">
                         <li>
                             Example 1 demonstrates that the loop body executes
                             once even when the condition is false from the
@@ -334,7 +335,7 @@ console.log("Password accepted!");
                 <h2 className="mb-4 text-3xl font-semibold">
                     Which Loop Should I Use?
                 </h2>
-                <ul className="list-disc pl-6 text-lg">
+                <ul className="pl-6 text-lg list-disc">
                     <li className="mb-2">
                         Use a <strong>for loop</strong> when you know exactly
                         how many times you want to run the loop, like iterating
@@ -361,7 +362,7 @@ console.log("Password accepted!");
             <div className="m-10 text-center">
                 <Link
                     to="/javascriptPrincipals/PracticeProblems"
-                    className="m-4 rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700"
+                    className="px-4 py-2 m-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
                 >
                     Ready for Some Practice Problems?
                 </Link>
