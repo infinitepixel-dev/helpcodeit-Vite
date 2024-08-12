@@ -1,6 +1,8 @@
 import React from 'react';
 import CodeBlock from '@subComponents/CodeBlock';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async'
+
 
 
 const ReactRouter5 = () => {
@@ -98,6 +100,14 @@ function Topic() {
 
 return (
     <div className="max-w-4xl p-6 mx-auto">
+      <Helmet>
+        <title>React Router 5 Guide</title>
+        <meta name="description" content="React Router 5 Guide" />
+        <meta name="keywords" content="React Router 5, React Router 5 Guide, React Router 5 Tutorial" />
+        <meta type="canonical" src="https://www.helpcodeit.com/ReactRouter5" />
+        </Helmet>
+
+
       <h1 className="mb-6 text-3xl font-bold">React Router 5 Guide</h1>
         <p className="mb-4">If you are just getting started with React Router, it is highly encouraged that you use React Router 6, as it is the latest version and has many improvements over previous versions. However, if you are working on a project that uses React Router 5, this guide will help you get up to speed with the basics.</p>
         <p className="mb-4">React Router 6 is easier to implement and understand as a whole so if you are trying to decide, head on over to <Link to='/ReactRouter6' className="font-bold text-blue-500 hover:text-blue-700 hover:underline"> React Router 6</Link></p>

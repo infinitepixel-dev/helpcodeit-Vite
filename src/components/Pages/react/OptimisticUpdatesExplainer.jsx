@@ -2,6 +2,8 @@ import React from 'react';
 import { ArrowRight, Check, AlertCircle, RefreshCcw, MessageSquare } from 'lucide-react';
 import CodeBlock from '@subComponents/CodeBlock';
 import optimisticUpdate from '@assets/optimisticupdate.svg';
+import { Helmet } from 'react-helmet-async'
+
 
 
 
@@ -34,6 +36,12 @@ const handleToggleTask = (taskId) => {
 
 return (
   <div className="container p-8 ">
+    <Helmet>
+      <title>Understanding Simultaneous State Updates and API Calls in React for Instant Feedback</title>
+      <meta name="description" content="In modern web applications, especially those built with frameworks like React, user experience (UX) is paramount. A seamless and responsive interface can make the difference between a user staying on your site or abandoning it. One critical aspect of creating a smooth UX is how we handle state updates and API calls during CRUD (Create, Read, Update, Delete) operations." />
+      <meta name="keywords" content="React, JavaScript, Web Development, Optimistic Updates, API Calls, State Updates, User Experience, Web Applications" />
+      <meta type="canonical" content="https://www.helpcodeit.com/react/OptimisticUpdatesExplainer" />
+    </Helmet>
     <h1 className="mb-6 text-6xl text-balance">Understanding Simultaneous State Updates and API Calls in React for Instant Feedback</h1>
 
     <p className="mb-4">In modern web applications, especially those built with frameworks like React, user experience (UX) is paramount. A seamless and responsive interface can make the difference between a user staying on your site or abandoning it. One critical aspect of creating a smooth UX is how we handle state updates and API calls during CRUD (Create, Read, Update, Delete) operations.</p>
