@@ -356,6 +356,11 @@ export const componentRoutes = [
         key: 'reactRouter',
     },
     {
+        path: '/ReactRouter5',
+        componentPath: '../components/Pages/react/ReactRouter5.jsx',
+        key: 'reactRouter5',
+    },
+    {
         path: '/PropsAndState',
         componentPath: '../components/Pages/react/PropsAndState.jsx',
         key: 'propsAndState',
