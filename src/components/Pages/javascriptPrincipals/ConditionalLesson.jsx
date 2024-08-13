@@ -1,7 +1,15 @@
 import React from 'react';
 import CodeBlock from '@subComponents/CodeBlock';
+import ifChart from '@assets/flowcharts/ifChart.svg';
+import ifElseChart from '@assets/flowcharts/ifElseChart.svg';
+import switchChart from '@assets/flowcharts/switchChart.svg';
+import conditionalMan from '@assets/conditionalMan.webp';
 
 const ConditionalLesson = () => {
+
+
+
+
   const codeExamples = {
     ifElse: `let temperature = 75;
 
@@ -51,13 +59,15 @@ console.log(\`Can vote: \${canVote}\`);`,
   };
 
   return (
-    <div className="container px-4 py-8 mx-auto space-y-8 animate-fadeIn">
+    <div className="container px-4 py-8 mx-auto mb-24 space-y-8 animate-fadeIn">
       <h1 className="mb-4 text-4xl font-bold text-center ">
         Understanding Conditionals in JavaScript
+
       </h1>
       <section className="space-y-6">
         <h2 className="text-2xl font-semibold ">Introduction to Conditionals</h2>
         <p>
+        <img src={conditionalMan} className='hidden float-right w-1/4 m-4 my-3 rounded-md md:block' />
           Conditionals are one of the foundational concepts in programming. They allow your code to make decisions based
           on certain conditions or criteria. In JavaScript, conditionals enable you to execute different blocks of code
           depending on whether a specific condition is <span className="font-semibold text-green-500">true</span> or{' '}
@@ -67,6 +77,15 @@ console.log(\`Can vote: \${canVote}\`);`,
 
       <section className="space-y-6">
         <h2 className="text-2xl font-semibold ">1. if, else if, and else Statements</h2>
+        <p>'if' statements are used to execute a block of code if a specified condition is true. You can also use 'else if' and 'else' statements to provide additional conditions and fallback options.</p>
+        <p className=''>The syntax for an 'if' statement is to type if followed by a condition in parentheses and then the block of code you want to execute in curly braces, which I like to call 'action brackets'.</p>
+        <p>Here is a chart to illustrate what happens when you use an 'if' statement:</p>
+        <img src={ifChart} alt="if statement flowchart" className="w-3/4 mx-auto my-5 md:w-1/4 dark:bg-gray-300 rounded-2xl" />
+        <p>'else if' statements are used to check additional conditions if the first condition is false. You can have multiple 'else if' statements to check for different conditions.</p>
+        <p>Here is a chart to illustrate what happens when you use an 'else if' statement:</p>
+        <img src={ifElseChart} alt="if else statement flowchart" className="w-4/5 mx-auto my-5 md:w-3/5 dark:bg-gray-300 rounded-2xl" />
+        <p>'else' statements are used to execute a block of code if none of the conditions are true. It acts as a fallback option when all other conditions are false.</p>
+        <p>Below are the examples in code:</p>
         <CodeBlock code={codeExamples.ifElse} language="javascript" />
       </section>
 
@@ -138,7 +157,10 @@ console.log(\`Can vote: \${canVote}\`);`,
       <section className="space-y-6">
         <h2 className="text-2xl font-semibold ">3. The switch Statement</h2>
         <p>Switch statements are useful when you have multiple conditions to check against a single value. They provide a cleaner alternative to long chains of if-else statements.</p>
+        <p>Below is a chart to illustrate what is happening: </p>
+        <img src={switchChart} alt="switch statement flowchart" className="w-4/5 mx-auto my-5 dark:bg-gray-300 rounded-2xl" />
         <p className=''>While not often used in modern JavaScript, switch statements can be helpful in certain scenarios such as when you need to check for specific values.</p>
+        <p>Here is an example of a switch statement:</p>
         <CodeBlock code={codeExamples.switchStatement} language="javascript" />
       </section>
 
