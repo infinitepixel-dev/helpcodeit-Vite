@@ -10,7 +10,7 @@ import {
     isAfter,
 } from 'date-fns'
 import EventCard from '../Sub_Components/EventCard'
-import { CalendarSearch } from 'lucide-react'
+import { CalendarSearch, Youtube } from 'lucide-react'
 import JumboBackground from '../Sub_Components/JumboBackground'
 import './HomePage.css'
 import AlertMessage from '@subComponents/AlertMessage'
@@ -19,6 +19,7 @@ import events from '@subComponents/Events'
 import YouTubeLiveStream from '../Sub_Components/YouTubeLiveStream'
 //env YT Credentials
 const { VITE_YT_API_KEY_MV, VITE_YT_CHANNEL_ID_MV } = import.meta.env
+
 
 function HomePage() {
     let filteredEvents = events.filter((event) =>
@@ -108,7 +109,9 @@ function HomePage() {
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
 
+
             <div className="hero-text bg-neutral-800 text-white">
+
                 <div className="relative grid-cols-2">
                     <JumboBackground />
                 </div>
@@ -120,7 +123,19 @@ function HomePage() {
                 />
             </div>
             {/* !SECTION end Jumbotron */}
+            <div className="flex justify-center p-4">
+      <a
+        href="https://www.youtube.com/@HelpCodeIt"
+        target="_blank"
+        rel="noreferrer"
+        className="flex items-center px-4 py-2 space-x-2 font-semibold text-white transition duration-300 ease-in-out transform bg-red-600 rounded-lg hover:bg-red-700 hover:scale-105"
+      >
+        <Youtube size={24} />
+        <span>Subscribe on YouTube</span>
+      </a>
+    </div>
             <div className="container">
+
                 <div className="grid md:grid-cols-1 lg:grid-cols-2">
                     <div className="mx-auto mb-3">
                         <h2 className="mt-6 text-center text-3xl font-bold">
