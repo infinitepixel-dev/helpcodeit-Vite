@@ -1,17 +1,8 @@
-import React, { useEffect, useRef } from 'react'
+import propTypes from 'prop-types'
 
-function CRUD({ Object, hljs }) {
-    console.log('accordion')
+import CodeBlock from '@/components/Sub_Components/CodeBlock'
 
-    const codeRef = useRef(null)
-
-    useEffect(() => {
-        // Apply syntax highlighting to all code elements
-        document.querySelectorAll('pre code').forEach((block) => {
-            hljs.highlightBlock(block)
-        })
-    }, [])
-    console.log(Object)
+export default function CRUD({ Object }) {
     return (
         <div className="text-lg">
             <p>
@@ -28,16 +19,13 @@ function CRUD({ Object, hljs }) {
                         )
                     })}
                 </ul>
-                <pre>
-                    <code
-                        ref={codeRef}
-                        className="language-javascript mx-auto mt-10"
-                    >
-                        {Object.code}
-                    </code>
-                </pre>
+                <CodeBlock code={Object.code} language="javascript" />
             </div>
         </div>
     )
 }
-export default CRUD
+
+CRUD.propTypes = {
+    Object: propTypes.object,
+    hljs: propTypes.object,
+}
