@@ -5,12 +5,11 @@ import MainCards from '../Sub_Components/MainCards'
 import { Helmet } from 'react-helmet-async'
 import { parseISO, formatDistanceToNow, differenceInDays, isAfter } from 'date-fns';
 import EventCard from '../Sub_Components/EventCard'
-import { CalendarSearch } from 'lucide-react'
+import { CalendarSearch, Youtube } from 'lucide-react'
 import JumboBackground from '../Sub_Components/JumboBackground'
 import './HomePage.css'
 import AlertMessage from '@subComponents/AlertMessage'
 import events from '@subComponents/Events'
-
 
 
 function HomePage() {
@@ -77,14 +76,25 @@ function HomePage() {
             {new Date(filteredEvents[0].ISOdate) > currentDate ? <AlertMessage message={message} type={daysUntilEvent > 2 ? "info": daysUntilEvent > 1 ? "warning" : "error"} duration={25000} onClose={() => console.log('closed')} />: null}
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
-
             <div className="text-white bg-neutral-800 hero-text">
                 <div className="relative grid-cols-2">
                     <JumboBackground />
                 </div>
             </div>
             {/* !SECTION end Jumbotron */}
+            <div className="flex justify-center p-4">
+      <a
+        href="https://www.youtube.com/@HelpCodeIt"
+        target="_blank"
+        rel="noreferrer"
+        className="flex items-center px-4 py-2 space-x-2 font-semibold text-white transition duration-300 ease-in-out transform bg-red-600 rounded-lg hover:bg-red-700 hover:scale-105"
+      >
+        <Youtube size={24} />
+        <span>Subscribe on YouTube</span>
+      </a>
+    </div>
             <div className="container">
+
                 <div className="grid md:grid-cols-1 lg:grid-cols-2">
                     <div className="mx-auto mb-3">
                         <h2 className="mt-6 text-3xl font-bold text-center">
