@@ -1,12 +1,12 @@
 import './App.css'
 // eslint-disable-next-line no-unused-vars
-import { useEffect, useState, lazy, Suspense } from 'react'
+import React, { useEffect, useState, lazy, Suspense } from 'react'
 import { DarkModeProvider } from './components/Context/DarkModeProvider'
 import Navbar from './components/Navigation/Navbar'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/github-dark.css'
 import { Routes, Route } from 'react-router-dom'
-import Footer from '@subComponents/Footer'
+// import Footer from '@subComponents/Footer'
 import RoutesWithComponents from './Routes/Routes.js'
 import { Helmet } from 'react-helmet-async'
 
@@ -34,6 +34,10 @@ const useTheme = () => {
 
 function App() {
     const theme = useTheme()
+    const footerComponent = RoutesWithComponents.find(
+        (route) => route.key === 'footer'
+    )?.component
+    // console.log('footerComponent: ', footerComponent)
 
     useEffect(() => {
         hljs.highlightAll()
@@ -84,7 +88,10 @@ function App() {
                 </Suspense>
 
                 <div className="m-0 mt-5 w-full p-0">
-                    <Footer />
+                    {/* <Footer /> */}
+                    {footerComponent
+                        ? React.createElement(footerComponent)
+                        : null}
                 </div>
             </div>
             <button

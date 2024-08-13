@@ -1,4 +1,3 @@
-
 import { lazy } from 'react'
 
 export const navItems = [
@@ -24,7 +23,7 @@ export const navItems = [
         ],
     },
     {
-        type : 'dropdown',
+        type: 'dropdown',
         label: 'Meetings and Events',
         items: [
             { to: '/calendar', label: 'Event Calendar' },
@@ -61,7 +60,6 @@ export const navItems = [
 ]
 
 export const componentRoutes = [
-
     //INFO: HTML Pages
     {
         path: '/htmlPages/HTMLMain',
@@ -121,6 +119,21 @@ export const componentRoutes = [
         path: '/MediaRecommendations',
         componentPath: '../components/Pages/MiscPages/MediaRecommendations.jsx',
         key: 'mediaRecommendations',
+    },
+    {
+        path: '/footer',
+        componentPath: '../components/Sub_Components/Footer.jsx',
+        key: 'footer',
+    },
+    {
+        path: '/PrivacyPolicy',
+        componentPath: '../components/Pages/PrivacyPolicy.jsx',
+        key: 'privacyPolicy',
+    },
+    {
+        path: '/TermsOfService',
+        componentPath: '../components/Pages/TermsOfService.jsx',
+        key: 'termsOfService',
     },
     //INFO: JAVASCRIPT Pages
     {
@@ -254,7 +267,10 @@ export const componentRoutes = [
         key: 'unitTestingGuide',
     },
     {
-        path: '/javascriptPrincipals/ConditionalLesson', componentPath: '../components/Pages/javascriptPrincipals/ConditionalLesson.jsx', key: 'conditionalLesson'
+        path: '/javascriptPrincipals/ConditionalLesson',
+        componentPath:
+            '../components/Pages/javascriptPrincipals/ConditionalLesson.jsx',
+        key: 'conditionalLesson',
     },
     {
         path: '/MiscPages/RubberDucky',
@@ -346,7 +362,8 @@ export const componentRoutes = [
     },
     {
         path: '/OptimisticUpdatesExplainer',
-        componentPath: '../components/Pages/react/OptimisticUpdatesExplainer.jsx',
+        componentPath:
+            '../components/Pages/react/OptimisticUpdatesExplainer.jsx',
         key: 'optimisticUpdates',
     },
     {
@@ -389,7 +406,7 @@ if (typeof window !== 'undefined') {
     const subComponentMap = import.meta.glob(
         '../components/Sub_Components/**/*.{jsx,js}'
     )
-    console.log('Component Map:', { ...componentMap, ...subComponentMap })
+    /* console.log('Component Map:', { ...componentMap, ...subComponentMap }) */
 
     // Initialize the components object
     const components = {}

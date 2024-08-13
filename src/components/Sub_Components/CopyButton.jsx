@@ -82,12 +82,14 @@ const CopyButton = ({ textToCopy, position }) => {
                     src={ClipboardCopyCheckedIcon}
                     className={styles['copy-btn-checked']}
                     ref={iconRef}
+                    alt="Copied to clipboard"
                 />
             ) : (
                 <img
                     src={ClipboardCopyIcon}
                     className={styles['copy-btn']}
                     ref={iconRef}
+                    alt="Copy to clipboard"
                 />
             )}
         </button>
