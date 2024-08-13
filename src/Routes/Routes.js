@@ -365,6 +365,9 @@ export const componentRoutes = [
         key: 'reactRouter5',
     },
     {
+        path: '/RouterConversionGuide', componentPath: '../components/Pages/react/RouterConversionGuide.jsx', key: 'routerConversionGuide'
+    },
+    {
         path: '/PropsAndState',
         componentPath: '../components/Pages/react/PropsAndState.jsx',
         key: 'propsAndState',

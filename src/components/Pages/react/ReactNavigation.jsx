@@ -18,6 +18,7 @@ const ReactNavigation = ({ reactLogo }) => {
     { to: "/ReactEvolution", icon: GitBranch, label: "The Evolution of React: OOP to Function Based" },
     { to: "/ReactComponents", icon: Code, label: "React Component Basics" },
     { to: "/ReactRouter6", icon: Route, label: "React Router 6+" },
+    { to: "/RouterConversionGuide", icon: Route, label: "React Router 5 to 6 Conversion Guide" },
     { to: "/ReactRouter5", icon: Route, label: "React Router 5" },
     { to: "/PropsAndState", icon: Zap, label: "Understanding Props and State" },
     { to: '/OptimisticUpdatesExplainer', icon: Layers, label: 'Optimistic Updates in React' },
