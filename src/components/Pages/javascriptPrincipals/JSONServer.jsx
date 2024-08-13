@@ -125,13 +125,13 @@ function JSONServer() {
                                         </span>
                                     </li>
                                     <li className="font-semibold">
-                                        http://localhost:3000/{' '}
+                                        http://localhost:3000/
                                         <span style={HighlightText.comments}>
                                             comments
                                         </span>
                                     </li>
                                     <li className="font-semibold">
-                                        http://localhost:3000/{' '}
+                                        http://localhost:3000/
                                         <span style={HighlightText.profile}>
                                             profile
                                         </span>
