@@ -30,7 +30,6 @@
         "gsap": "^3.12.5",
         "highlight.js": "^11.9.0",
         "lucide-react": "^0.331.0",
-        "mermaid": "^10.9.1",
         "prop-types": "^15.8.1",
         "react": "^18.2.0",
         "react-ace": "^12.0.0",
