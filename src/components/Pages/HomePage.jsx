@@ -12,6 +12,7 @@ import AlertMessage from '@subComponents/AlertMessage'
 import events from '@subComponents/Events'
 
 
+
 function HomePage() {
     let filteredEvents = events.filter((event) => isAfter(parseISO(event.ISOdate), new Date()));
     console.log(filteredEvents);
@@ -27,7 +28,8 @@ function HomePage() {
         daysUntilEvent = differenceInDays(AlertDate, currentDate);
         console.log(daysUntilEvent);
 
-        message = `Our next event is ${filteredEvents[0].title} in ${daysUntilEvent} days. The cost is $${filteredEvents[0].cost} and registration is open.`;
+        message = `Our next event is ${filteredEvents[0].title} in ${daysUntilEvent} day${daysUntilEvent > 1 ? "s":""}. The cost is $${filteredEvents[0].cost} and registration is open.`;
+        daysUntilEvent === 0 ? message = `Our next event is ${filteredEvents[0].title} today. The cost is $${filteredEvents[0].cost} and registration is open till 5 minutes before.` : null;
         console.log(message);
     } else {
         console.log('No upcoming events.');
@@ -63,8 +65,8 @@ function HomePage() {
 <meta property="og:title" content="Help Code It" />
 <meta property='author' content='Help Code It' />
 <meta property="og:description" content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!" />
-<meta property="og:image" content={`${process.env.PUBLIC_URL}/assets/helpcodetsociallogo.png?v=1.0`} />
-<meta property="twitter:image" content={`${process.env.PUBLIC_URL}/assets/helpcodetsociallogo.png?v=1.0`} />
+<meta property="og:image" content={LogoImage} />
+<meta property="twitter:image" content={LogoImage} />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://www.helpcodeit.com/" />
 <meta property="twitter:title" content="Help Code It" />
