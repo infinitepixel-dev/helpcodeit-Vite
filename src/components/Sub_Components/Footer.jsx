@@ -1,12 +1,12 @@
 function Footer() {
     return (
-        <div className="fixed bottom-0 mt-5 flex h-5 w-full items-end z-10">
+        <div className="fixed bottom-0 z-10 mt-5 flex h-5 w-full items-end">
             <div className="fixed bottom-0 w-full">
                 <footer className="bg-gray-200 p-1  dark:bg-gray-800">
                     <div className="flex justify-center space-x-4">
-                        {/* copywrite Michael Varnell statement */}
+                        {/* copyright Michael Varnell statement */}
                         <p className="text-base font-bold">
-                            &copy; 2024{' '}
+                            &copy; 2024&nbsp;
                             <a
                                 href="https://michaelvarnell.com"
                                 target="_blank"
@@ -14,8 +14,8 @@ function Footer() {
                                 rel="noreferrer"
                             >
                                 Michael Varnell
-                            </a>{' '}
-                            &{' '}
+                            </a>
+                            &nbsp;&&nbsp;
                             <a
                                 href="https://www.linkedin.com/in/matthewthomascox/"
                                 target="_blank"
@@ -25,6 +25,19 @@ function Footer() {
                                 Matthew Cox
                             </a>
                         </p>
+
+                        <a
+                            href="/PrivacyPolicy"
+                            className="underline hover:text-blue-500"
+                        >
+                            Privacy Policy
+                        </a>
+                        <a
+                            href="/TermsOfService"
+                            className="underline hover:text-blue-500"
+                        >
+                            Terms of Service
+                        </a>
                     </div>
                 </footer>
             </div>

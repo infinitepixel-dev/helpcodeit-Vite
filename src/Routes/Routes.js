@@ -120,6 +120,21 @@ export const componentRoutes = [
         componentPath: '../components/Pages/MiscPages/MediaRecommendations.jsx',
         key: 'mediaRecommendations',
     },
+    {
+        path: '/footer',
+        componentPath: '../components/Sub_Components/Footer.jsx',
+        key: 'footer',
+    },
+    {
+        path: '/PrivacyPolicy',
+        componentPath: '../components/Pages/PrivacyPolicy.jsx',
+        key: 'privacyPolicy',
+    },
+    {
+        path: '/TermsOfService',
+        componentPath: '../components/Pages/TermsOfService.jsx',
+        key: 'termsOfService',
+    },
     //INFO: JAVASCRIPT Pages
     {
         path: '/data-generator',

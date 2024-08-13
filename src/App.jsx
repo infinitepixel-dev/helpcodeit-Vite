@@ -1,6 +1,6 @@
 import './App.css'
 // eslint-disable-next-line no-unused-vars
-import { useEffect, useState, lazy, Suspense } from 'react'
+import React, { useEffect, useState, lazy, Suspense } from 'react'
 import { DarkModeProvider } from './components/Context/DarkModeProvider'
 import Navbar from './components/Navigation/Navbar'
 import hljs from 'highlight.js'
@@ -37,6 +37,7 @@ function App() {
     const footerComponent = RoutesWithComponents.find(
         (route) => route.key === 'footer'
     )?.component
+    // console.log('footerComponent: ', footerComponent)
 
     useEffect(() => {
         hljs.highlightAll()
@@ -88,7 +89,9 @@ function App() {
 
                 <div className="m-0 mt-5 w-full p-0">
                     {/* <Footer /> */}
-                    {footerComponent}
+                    {footerComponent
+                        ? React.createElement(footerComponent)
+                        : null}
                 </div>
             </div>
             <button
