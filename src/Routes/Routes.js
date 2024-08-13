@@ -61,7 +61,7 @@ export const navItems = [
 ]
 
 export const componentRoutes = [
-    
+
     //INFO: HTML Pages
     {
         path: '/htmlPages/HTMLMain',
@@ -252,6 +252,9 @@ export const componentRoutes = [
         componentPath:
             '../components/Pages/javascriptPrincipals/UnitTestingGuide.jsx',
         key: 'unitTestingGuide',
+    },
+    {
+        path: '/javascriptPrincipals/ConditionalLesson', componentPath: '../components/Pages/javascriptPrincipals/ConditionalLesson.jsx', key: 'conditionalLesson'
     },
     {
         path: '/MiscPages/RubberDucky',
