@@ -1,68 +1,68 @@
-import propTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-function APICard({ data }) {
-    console.log(data)
-    if (data === undefined) {
-        data = []
-    }
+function APICard({ data = [] }) {
+    console.log('Data:', data);
 
-    console.log('data in card', data)
     return (
         <div>
-            {data.length === 0 && (
-                <h1 className="my-10 animate-pulse text-center text-4xl">
+            {data.length === 0 ? (
+                <h1 className="my-10 text-4xl text-center text-gray-700 animate-pulse dark:text-gray-300">
                     No results found
                 </h1>
-            )}
-            {data &&
-                data.map((data, index) => {
-                    return (
-                        <div
-                            key={index}
-                            className="m-4 rounded-lg border border-gray-400 bg-blue-100 p-4 drop-shadow-xl dark:bg-slate-800"
-                        >
-                            <div className="flex">
-                                {data.API && (
-                                    <h2 className="text-4xl">{data.API}</h2>
-                                )}
-                                {data.Category && (
-                                    <p className="ms-auto text-xl">
-                                        Category: {data.Category}
-                                    </p>
-                                )}
-                            </div>
-                            {data.Description && (
-                                <p className="text-xl font-semibold">
-                                    Description: {data.Description}
+            ) : (
+                data.map((item, index) => (
+                    <div
+                        key={index}
+                        className="p-6 m-4 transition-transform duration-300 ease-in-out border border-gray-300 rounded-lg shadow-lg bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 hover:scale-105 hover:shadow-2xl dark:border-gray-600 dark:bg-gradient-to-r dark:from-gray-700 dark:via-gray-800 dark:to-gray-900"
+                    >
+                        <div className="flex items-center justify-between">
+                            {item.API && (
+                                <h2 className="text-3xl font-bold text-indigo-700 dark:text-indigo-300">
+                                    {item.API}
+                                </h2>
+                            )}
+                            {item.Category && (
+                                <p className="text-lg text-gray-600 dark:text-gray-400">
+                                    Category: {item.Category}
                                 </p>
                             )}
-                            <a
-                                href={data.URL}
-                                target="_blank"
-                                rel="noreferrer"
-                                className="text-blue-500 hover:underline"
-                            >
-                                {data.URL}
-                            </a>
-                            <div className="flex justify-evenly">
-                                <p>
-                                    API Key Required: {data['API Key Required']}
-                                </p>
-                                <p>HTTPS Support: {data['HTTPS Support']}</p>
-                                <p>
-                                    CORS Support:{' '}
-                                    {data['CORS Support'].replace(/\|/g, '')}
-                                </p>
-                            </div>
                         </div>
-                    )
-                })}
+                        {item.Description && (
+                            <p className="mt-2 text-lg text-gray-700 dark:text-gray-300">
+                                {item.Description}
+                            </p>
+                        )}
+                        <a
+                            href={item.URL}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="block mt-4 text-indigo-500 hover:text-indigo-700 dark:text-indigo-300 dark:hover:text-indigo-500"
+                        >
+                            {item.URL}
+                        </a>
+                        <div className="flex justify-around mt-4 text-sm text-center text-gray-600 dark:text-gray-400">
+                            <p>
+                                API Key Required:
+                                <span className="font-semibold text-indigo-700 dark:text-indigo-300">{item['API Key Required']}</span>
+                            </p>
+                            <p>
+                                HTTPS Support:
+                                <span className="font-semibold text-indigo-700 dark:text-indigo-300">{item['HTTPS Support']}</span>
+                            </p>
+                            <p>
+                                CORS Support:
+                                <span className="font-semibold text-indigo-700 dark:text-indigo-300">{item['CORS Support'].replace(/\|/g, '')}</span>
+                            </p>
+                        </div>
+                    </div>
+                ))
+            )}
         </div>
-    )
+    );
 }
 
 APICard.propTypes = {
-    data: propTypes.array,
-}
+    data: PropTypes.array,
+};
 
-export default APICard
+export default APICard;

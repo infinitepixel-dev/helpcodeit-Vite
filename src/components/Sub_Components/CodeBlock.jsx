@@ -108,7 +108,8 @@ const CodeBlock = ({ code, language, readOnly }) => {
                 fontSize={16}
                 showPrintMargin={true}
                 showGutter={true}
-                highlightActiveLine={true}
+                highlightActiveLine={false}
+
                 value={code}
                 setOptions={{
                     vScrollBarAlwaysVisible: false,
@@ -117,8 +118,14 @@ const CodeBlock = ({ code, language, readOnly }) => {
                     enableLiveAutocompletion: false,
                     enableSnippets: false,
                     showLineNumbers: true,
-                    tabSize: 2,
+                    tabSize: 4,
                     readOnly: readOnlyValue,
+                    wrap: true,
+                    highlightGutterLine: false,
+                    highlightSelectedWord: false,
+                    lineHeight: 1.3,
+                    showCursor: false,
+                    behavioursEnabled: false,
                 }}
                 style={{ width: '100%', height: '100%' }}
                 onLoad={() => handleEditorLoad(code, 'arrowFunction')}
