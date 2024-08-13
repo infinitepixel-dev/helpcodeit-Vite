@@ -65,8 +65,10 @@ function HomePage() {
 <meta property="og:title" content="Help Code It" />
 <meta property='author' content='Help Code It' />
 <meta property="og:description" content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!" />
+
 <meta property="og:image" content={LogoImage} />
 <meta property="twitter:image" content={LogoImage} />
+
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://www.helpcodeit.com/" />
 <meta property="twitter:title" content="Help Code It" />
