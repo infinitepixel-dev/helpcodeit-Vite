@@ -16,6 +16,10 @@ import './HomePage.css'
 import AlertMessage from '@subComponents/AlertMessage'
 import events from '@subComponents/Events'
 
+import YouTubeLiveStream from '../Sub_Components/YouTubeLiveStream'
+//env YT Credentials
+const { VITE_YT_API_KEY_MV, VITE_YT_CHANNEL_ID_MV } = import.meta.env
+
 function HomePage() {
     let filteredEvents = events.filter((event) =>
         isAfter(parseISO(event.ISOdate), new Date())
@@ -108,6 +112,12 @@ function HomePage() {
                 <div className="relative grid-cols-2">
                     <JumboBackground />
                 </div>
+            </div>
+            <div>
+                <YouTubeLiveStream
+                    apiKey={VITE_YT_API_KEY_MV}
+                    channelId={VITE_YT_CHANNEL_ID_MV}
+                />
             </div>
             {/* !SECTION end Jumbotron */}
             <div className="container">
