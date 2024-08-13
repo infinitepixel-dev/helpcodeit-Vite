@@ -1,4 +1,7 @@
 const TermsOfService = () => {
+    // get current date mm/dd/yyyy
+    const date = new Date().toLocaleDateString()
+
     return (
         <div className="flex min-h-screen items-center justify-center">
             <div className="rounded-lgp-6 w-full max-w-3xl shadow-md">
@@ -6,7 +9,7 @@ const TermsOfService = () => {
                     Terms of Service
                 </h1>
                 <p className="mb-4 text-center text-sm">
-                    Effective Date: [Insert Date]
+                    Effective Date: {date}
                 </p>
 
                 <h2 className="mb-4 text-2xl font-semibold">Introduction</h2>
@@ -44,8 +47,8 @@ const TermsOfService = () => {
 
                 <h2 className="mb-4 text-2xl font-semibold">Contact Us</h2>
                 <p className="mb-4">
-                    If you have any questions, contact us at [Your Contact
-                    Information].
+                    If you have any questions, contact us at
+                    michaelvarnell@icloud.com.
                 </p>
             </div>
         </div>
