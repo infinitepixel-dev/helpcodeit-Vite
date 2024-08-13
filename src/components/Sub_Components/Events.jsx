@@ -79,5 +79,5 @@ const events = [
 
 // Sort events by ISOdate
 events.sort((a, b) => new Date(a.ISOdate) - new Date(b.ISOdate))
-console.log('Events: ', events)
+// console.log('Events: ', events)
 export default events

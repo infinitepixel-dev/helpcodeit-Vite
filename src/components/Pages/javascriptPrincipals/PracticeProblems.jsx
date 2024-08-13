@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
 import { Helmet } from 'react-helmet-async'
 
+import CodeBlock from '@/components/Sub_Components/CodeBlock'
 
 const PracticeProblems = () => {
     useEffect(() => {
@@ -11,6 +12,8 @@ const PracticeProblems = () => {
             hljs.highlightBlock(block)
         })
     }, [])
+
+    const gitClone = `git clone "repository-link`
 
     return (
         <div className="mx-auto  min-h-screen px-4 sm:px-6 lg:px-8">
@@ -88,7 +91,7 @@ const PracticeProblems = () => {
                         coding problems. It has a wide variety of problems that
                         you can work on to improve your coding skills.
                     </p>
-                    <div className="mx-auto mt-auto w-fit rounded-3xl border border-2 border-black p-2 text-center shadow-lg dark:border-white">
+                    <div className="mx-auto mt-auto w-fit rounded-3xl border-2 border-black p-2 text-center shadow-lg dark:border-white">
                         <p>Click the link below to go to the site:</p>
                         <a
                             href="https://codeproblems.michaelvarnell.com"
@@ -141,11 +144,8 @@ const PracticeProblems = () => {
                         the link to the repository. It should look something
                         like this:
                     </p>
-                    <pre>
-                        <code className="language-bash text-sm">
-                            git clone "repository-link"
-                        </code>
-                    </pre>
+                    <CodeBlock code={gitClone} language="bash" />
+
                     <p>
                         Once you have typed this, you will hit enter and the
                         repository will be cloned to your local machine.

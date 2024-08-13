@@ -1,8 +1,6 @@
 import fetchDogDark from '../../../../../assets/fetchdog.svg'
 import fetchDogLight from '../../../../../assets/fetchdog white.svg'
-import hljs from 'highlight.js'
-import 'highlight.js/styles/atom-one-dark.css'
-import { useEffect, useRef } from 'react'
+
 import FetchArray from '../CRUD_Operations/FetchArray'
 import {
     Accordion,
@@ -18,15 +16,6 @@ import {
 } from '../../../../ui/hover-card'
 
 function Fetch() {
-    const codeRef = useRef(null)
-
-    useEffect(() => {
-        // Apply syntax highlighting to all code elements
-        document.querySelectorAll('pre code').forEach((block) => {
-            hljs.highlightBlock(block)
-        })
-    }, [])
-
     let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
 
     return (
@@ -48,7 +37,7 @@ function Fetch() {
             </div>
             <hr className="border-1 my-2 border-black dark:border-white" />
             <h3 className="text-center text-2xl font-bold">
-                Before we get into the code, let's talk about Fetch.
+                Before we get into the code, let&apos;s talk about Fetch.
             </h3>
             <p className="py-2">
                 Fetch is a modern replacement for XMLHttpRequest. It is a
@@ -115,14 +104,14 @@ function Fetch() {
                 <Accordion type="single" collapsible>
                     {FetchArray.map((Object, index) => (
                         <AccordionItem key={index} value={`item-${index + 1}`}>
-                            {console.log(Object)}
+                            {/* {console.log("Accordian object:",Object)} */}
                             <AccordionTrigger>
                                 <h4 className="mb-4 mt-10 text-2xl font-bold">
                                     {Object.title}
                                 </h4>
                             </AccordionTrigger>
                             <AccordionContent>
-                                <CRUD Object={Object} hljs={hljs} />
+                                <CRUD Object={Object} />
                             </AccordionContent>
                             <hr className="border-1 my-2 border-black dark:border-white" />
                         </AccordionItem>
