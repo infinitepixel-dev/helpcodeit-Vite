@@ -2,11 +2,11 @@
 
 const channels = [
     {
-        name: 'crankyCoder',
-        url: 'https://www.youtube.com/@crankyCoder84',
-        subscribers: '41',
+        name: 'Help Code It',
+        url: 'https://www.youtube.com/@HelpCodeIt',
+        subscribers: '44',
         category: 'Web Development',
-        imgURL: 'https://yt3.googleusercontent.com/c7vEWKRoWWAKPkJXGCBURLjrnmV8IBYbrt07AlP9BZtoBPuQtO5rmUO5YwBU5336pEYqxXL50w=s160-c-k-c0x00ffffff-no-rj',
+        imgURL: 'https://yt3.googleusercontent.com/GBhEftXng7rbt9BpZpE64xb0lxT0Ri8TOnqWG13a9AYjQWkrkrmbMftdh3_3xvAQSU-yESjXyQo=s160-c-k-c0x00ffffff-no-rj',
     },
     {
         name: 'Web Dev Simplified',
@@ -61,15 +61,15 @@ const channels = [
 
 const YouTubeChannels = () => {
     return (
-        <div className="container mx-auto p-6">
-            <h2 className="mb-6 text-center text-3xl font-bold">
+        <div className="container p-6 mx-auto">
+            <h2 className="mb-6 text-3xl font-bold text-center">
                 YouTube Channels We Love
             </h2>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {channels.map((channel, index) => (
                     <div
                         key={index}
-                        className="grid justify-center overflow-hidden rounded-xl border border-gray-300 bg-white text-black shadow-md transition-shadow duration-300 hover:shadow-lg"
+                        className="grid justify-center overflow-hidden text-black transition-shadow duration-300 bg-white border border-gray-300 shadow-md rounded-xl hover:shadow-lg"
                     >
                         <img
                             src={channel.imgURL}
@@ -77,7 +77,7 @@ const YouTubeChannels = () => {
                             className="w-screen rounded-md "
                         />
                         <div className="p-4">
-                            <div className="mb-2 flex items-center">
+                            <div className="flex items-center mb-2">
                                 <h3 className="text-xl font-semibold">
                                     {channel.name}
                                 </h3>
@@ -93,7 +93,7 @@ const YouTubeChannels = () => {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <button className="w-full rounded bg-red-600 px-4 py-2 font-bold text-white transition-colors duration-300 hover:bg-red-700">
+                                <button className="w-full px-4 py-2 font-bold text-white transition-colors duration-300 bg-red-600 rounded hover:bg-red-700">
                                     Subscribe
                                 </button>
                             </a>

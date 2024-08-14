@@ -10,7 +10,7 @@ import {
     isAfter,
 } from 'date-fns'
 import EventCard from '../Sub_Components/EventCard'
-import { CalendarSearch } from 'lucide-react'
+import { CalendarSearch, Youtube } from 'lucide-react'
 import JumboBackground from '../Sub_Components/JumboBackground'
 import './HomePage.css'
 import AlertMessage from '@subComponents/AlertMessage'
@@ -108,7 +108,7 @@ function HomePage() {
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
             {/* SECTION Jumbotron */}
 
-            <div className="hero-text bg-neutral-800 text-white">
+            <div className="text-white hero-text bg-neutral-800">
                 <div className="relative grid-cols-2">
                     <JumboBackground />
                 </div>
@@ -118,22 +118,34 @@ function HomePage() {
                     apiKey={VITE_YT_API_KEY_MV}
                     channelId={VITE_YT_CHANNEL_ID_MV}
                 />
+                </div>
+                <div className='grid justify-center mt-5 me-5'>
+                <a
+      href="https://www.youtube.com/@HelpCodeIt"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center px-4 py-2 font-bold text-white transition-colors duration-300 bg-red-600 rounded-full hover:bg-red-700"
+    >
+      <Youtube size={20} className="mr-2" />
+      {'Visit our YouTube Channel'}
+    </a>
+
             </div>
             {/* !SECTION end Jumbotron */}
             <div className="container">
                 <div className="grid md:grid-cols-1 lg:grid-cols-2">
                     <div className="mx-auto mb-3">
-                        <h2 className="mt-6 text-center text-3xl font-bold">
+                        <h2 className="mt-6 text-3xl font-bold text-center">
                             Upcoming Event
                         </h2>
                         <EventCard limit={1} />
                     </div>
                     <div className="clearfix my-auto">
-                        <h2 className="mb-6 text-center text-3xl font-bold">
+                        <h2 className="mb-6 text-3xl font-bold text-center">
                             Get expert coding help and tutoring
                         </h2>
-                        <div className="mx-auto my-8 max-w-2xl rounded-lg p-8">
-                            <h2 className="mb-6 text-center text-3xl font-bold">
+                        <div className="max-w-2xl p-8 mx-auto my-8 rounded-lg">
+                            <h2 className="mb-6 text-3xl font-bold text-center">
                                 Book a session now!
                             </h2>
                             <p className="mb-6 text-center">
@@ -145,7 +157,7 @@ function HomePage() {
                             <Link to="/schedule-meeting" className="block">
                                 <button
                                     aria-label="explore meeting options button"
-                                    className="mx-auto flex w-fit rounded-full bg-blue-700 px-6 py-3 font-bold text-white transition duration-300 hover:bg-red-700"
+                                    className="flex px-6 py-3 mx-auto font-bold text-white transition duration-300 bg-blue-700 rounded-full w-fit hover:bg-red-700"
                                 >
                                     Explore Meeting Options
                                     <CalendarSearch
