@@ -3,7 +3,6 @@ import propTypes from 'prop-types'
 import AceEditor from 'react-ace'
 import '@/Routes/aceEditorStyles'
 import CopyButton from '@/components/Sub_Components/CopyButton'
-import { useEffect } from 'react'
 
 /*INFO Supported ACE Languages
 https://cloud9-sdk.readme.io/docs/language-mode

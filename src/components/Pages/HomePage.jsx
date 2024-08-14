@@ -10,7 +10,7 @@ import {
     isAfter,
 } from 'date-fns'
 import EventCard from '../Sub_Components/EventCard'
-import { CalendarSearch } from 'lucide-react'
+import { CalendarSearch, Youtube } from 'lucide-react'
 import JumboBackground from '../Sub_Components/JumboBackground'
 import './HomePage.css'
 import AlertMessage from '@subComponents/AlertMessage'
@@ -118,6 +118,18 @@ function HomePage() {
                     apiKey={VITE_YT_API_KEY_MV}
                     channelId={VITE_YT_CHANNEL_ID_MV}
                 />
+                </div>
+                <div className='grid justify-center mt-5 me-5'>
+                <a
+      href="https://www.youtube.com/@HelpCodeIt"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center px-4 py-2 font-bold text-white transition-colors duration-300 bg-red-600 rounded-full hover:bg-red-700"
+    >
+      <Youtube size={20} className="mr-2" />
+      {'Visit our YouTube Channel'}
+    </a>
+
             </div>
             {/* !SECTION end Jumbotron */}
             <div className="container">
