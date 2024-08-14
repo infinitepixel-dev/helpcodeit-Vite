@@ -14,10 +14,10 @@ const events = [
     },
     {
         title: 'Boost Learning with AI: 30-Minute Prompt Mastery',
-        date: 'Wednesday August 14th, 2024',
+        date: 'Wednesday August 21st, 2024',
         time: '6:00 PM pst | 7:00 PM mst | 8:00 PM cst | 9:00 PM est',
         link: 'https://calendly.com/michaelvarnell/prompting-for-learning',
-        ISOdate: '2024-08-15T01:00:00.000Z',
+        ISOdate: '2024-08-22T01:00:00.000Z',
         description: `Unlock the full potential of AI in your learning journey! Join us for a 30-minute, power-packed session where you'll discover the art of crafting effective prompts to get the most insightful and educational responses from AI. Whether you're new to AI or looking to refine your skills, this short course will equip you with practical techniques to enhance your learning experience. Don't miss this opportunity to learn how to ask the right questions and make AI your best study partner!`,
         cost: '4.99',
         show: true,
