@@ -15,6 +15,7 @@ import JumboBackground from '../Sub_Components/JumboBackground'
 import './HomePage.css'
 import AlertMessage from '@subComponents/AlertMessage'
 import events from '@subComponents/Events'
+import discord from "@assets/discord.svg"
 
 import YouTubeLiveStream from '../Sub_Components/YouTubeLiveStream'
 //env YT Credentials
@@ -130,6 +131,9 @@ function HomePage() {
       {'Visit our YouTube Channel'}
     </a>
 
+            </div>
+            <div><img src={discord} alt="discord" />
+            Join our Discord Server
             </div>
             {/* !SECTION end Jumbotron */}
             <div className="container">
