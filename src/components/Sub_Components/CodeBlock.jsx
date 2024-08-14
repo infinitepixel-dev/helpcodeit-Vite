@@ -3,7 +3,6 @@ import propTypes from 'prop-types'
 import AceEditor from 'react-ace'
 import '@/Routes/aceEditorStyles'
 import CopyButton from '@/components/Sub_Components/CopyButton'
-import { useEffect } from 'react'
 
 /*INFO Supported ACE Languages
 https://cloud9-sdk.readme.io/docs/language-mode
@@ -30,22 +29,16 @@ const CodeBlock = ({ code, language, readOnly }) => {
 
         const userAgent = window.navigator.userAgentData.platform
         if (userAgent === 'Windows') {
-
             console.log('windows')
             padding = 40
             lineHeight = fontSize * 1.2
             charWidth = fontSize / 2 + 2
         } else if (userAgent === 'macOS') {
-
             console.log('mac')
-
             padding = 40
             lineHeight = fontSize * 1.3
             charWidth = fontSize / 2 + 3
         } else {
-
-            console.log('Other', userAgent)
-
             padding = 40
             lineHeight = fontSize * 1.3
             charWidth = fontSize / 2 + 3
@@ -67,7 +60,6 @@ const CodeBlock = ({ code, language, readOnly }) => {
     }
 
     useEffect(() => {
-
         const setEditorToReadOnly = async () => {
             //set readonly
             if (readOnly === true) {
@@ -80,7 +72,6 @@ const CodeBlock = ({ code, language, readOnly }) => {
         }
         setEditorToReadOnly()
     }, [readOnly])
-
 
     return (
         <div
