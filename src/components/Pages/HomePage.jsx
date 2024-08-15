@@ -22,7 +22,6 @@ import YouTubeLiveStream from '../Sub_Components/YouTubeLiveStream'
 
 function HomePage() {
     const { VITE_YT_API_KEY_MV, VITE_YT_CHANNEL_ID_MV } = import.meta.env
-    console.log(VITE_YT_API_KEY_MV, VITE_YT_CHANNEL_ID_MV)
     let filteredEvents = events.filter((event) =>
         isAfter(parseISO(event.ISOdate), new Date())
     )
