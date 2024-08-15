@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
 import { ArrowBigUp } from 'lucide-react';
+import Helmet from 'react-helmet-async';
 
 const GitHubPagesGuide = () => {
   useEffect(() => {
@@ -9,19 +10,25 @@ const GitHubPagesGuide = () => {
   }, []);
 
   return (
-    <div className="max-w-4xl mx-auto container mt-12 mb-28 ">
-      <h1 className="text-3xl font-bold mb-6">Comprehensive Guide to Hosting a Project on GitHub Pages</h1>
+    <div className="container max-w-4xl mx-auto mt-12 mb-28 ">
+      <Helmet>
+        <title>Comprehensive Guide to Hosting a Project on GitHub Pages</title>
+        <meta name="description" content="A comprehensive guide to hosting a project on GitHub Pages, including setting up a repository, configuring GitHub Pages, updating your site, and adding a custom domain." />
+        <meta name="keywords" content="GitHub Pages, hosting, project, repository, custom domain" />
+        <meta name="canonical" href="https://justinto.dev/githubPages/GitHubPagesGuide" />
+      </Helmet>
+      <h1 className="mb-6 text-3xl font-bold">Comprehensive Guide to Hosting a Project on GitHub Pages</h1>
 
       <div className="mb-4">
-        <h2 className="text-2xl font-semibold mb-2">Step 1: Set Up a GitHub Repository</h2>
-        <ul className=" list-inside space-y-2">
+        <h2 className="mb-2 text-2xl font-semibold">Step 1: Set Up a GitHub Repository</h2>
+        <ul className="space-y-2 list-inside ">
           <li>
             <p className="font-semibold">Create a GitHub Account:</p>
             <p>If you don't have one already, sign up for a free GitHub account at <a href="https://github.com" className="text-blue-500">github.com</a>.</p>
           </li>
           <li>
             <p className="font-semibold">Create a New Repository:</p>
-            <ol className="list-decimal list-inside space-y-2 pl-6">
+            <ol className="pl-6 space-y-2 list-decimal list-inside">
               <li>Go to your GitHub profile and click on the "Repositories" tab.</li>
               <li>Click the "New" button to create a new repository.</li>
               <li>Fill in the repository name (e.g., <code className="shadow-none px-1 py-0.5 border-none rounded">my-awesome-project</code>).</li>
@@ -35,8 +42,8 @@ const GitHubPagesGuide = () => {
       </div>
 
       <div className="mb-4">
-        <h2 className="text-2xl font-semibold mb-2">Step 2: Add Your Project Files</h2>
-        <ul className=" list-inside space-y-2">
+        <h2 className="mb-2 text-2xl font-semibold">Step 2: Add Your Project Files</h2>
+        <ul className="space-y-2 list-inside ">
           <li>
             <p className="font-semibold">Clone the Repository to Your Local Machine:</p>
             <pre>
@@ -64,15 +71,15 @@ git push origin main`}
       </div>
 
       <div className="mb-4">
-        <h2 className="text-2xl font-semibold mb-2">Step 3: Configure GitHub Pages</h2>
-        <ul className=" list-inside space-y-2">
+        <h2 className="mb-2 text-2xl font-semibold">Step 3: Configure GitHub Pages</h2>
+        <ul className="space-y-2 list-inside ">
           <li>
             <p className="font-semibold">Go to Repository Settings:</p>
             <p>On GitHub, navigate to your repository. Click on the "Settings" tab.</p>
           </li>
           <li>
             <p className="font-semibold">Enable GitHub Pages:</p>
-            <ol className="list-decimal list-inside space-y-2 pl-6">
+            <ol className="pl-6 space-y-2 list-decimal list-inside">
               <li>Scroll down to the "Pages" section.</li>
               <li>Under "Source," select the branch you want to use (usually <code className="shadow-none px-1 py-0.5 border-none rounded">main</code> or <code className="shadow-none px-1 py-0.5 border-none rounded">master</code>).</li>
               <li>Optionally, select the folder (if you have a <code className="shadow-none px-1 py-0.5 border-none rounded">docs</code> folder, for example).</li>
@@ -87,8 +94,8 @@ git push origin main`}
       </div>
 
       <div className="mb-4">
-        <h2 className="text-2xl font-semibold mb-2">Step 4: Update Your Site</h2>
-        <ul className="list-inside space-y-2">
+        <h2 className="mb-2 text-2xl font-semibold">Step 4: Update Your Site</h2>
+        <ul className="space-y-2 list-inside">
           <li>
             <p className="font-semibold">Make Changes Locally:</p>
             <p>Edit your project files locally on your machine.</p>
@@ -111,8 +118,8 @@ git push origin main`}
       </div>
 
       <div className="mb-4">
-        <h2 className="text-2xl font-semibold mb-2">Step 5: Custom Domain (Optional)</h2>
-        <ul className=" list-inside space-y-2">
+        <h2 className="mb-2 text-2xl font-semibold">Step 5: Custom Domain (Optional)</h2>
+        <ul className="space-y-2 list-inside ">
           <li>
             <p className="font-semibold">Set Up a Custom Domain:</p>
             <p>If you have a custom domain, you can configure GitHub Pages to use it. In the repository settings, under the "Pages" section, enter your custom domain.</p>
@@ -129,8 +136,8 @@ git push origin main`}
       </div>
 
       <div className="mb-4">
-        <h2 className="text-2xl font-semibold mb-2">Tips</h2>
-        <ul className="list-disc list-inside space-y-2">
+        <h2 className="mb-2 text-2xl font-semibold">Tips</h2>
+        <ul className="space-y-2 list-disc list-inside">
           <li>Ensure your <code className="shadow-none px-1 py-0.5 border-none rounded">index.html</code> file is correctly set up as it serves as the homepage.</li>
           <li>Use a <code className="shadow-none px-1 py-0.5 border-none rounded">.nojekyll</code> file if your project requires skipping Jekyll processing.</li>
           <li>Regularly commit and push changes to keep your site updated.</li>
