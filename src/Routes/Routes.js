@@ -1,3 +1,4 @@
+import path from 'path'
 import { lazy } from 'react'
 
 export const navItems = [
@@ -324,6 +325,12 @@ export const componentRoutes = [
         path: '/githubPages/GitHubPagesGuide',
         componentPath: '../components/Pages/githubPages/GitHubPagesGuide.jsx',
         key: 'gitHubPagesGuide',
+    },
+    {
+        path: '/githubPages/GitProbAndAnswers',
+        componentPath:
+            '../components/Pages/githubPages/GitProbAndAnswers.jsx',
+        key: 'gitProbAndAnswers',
     },
     //INFO: Markdown Pages
     {
