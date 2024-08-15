@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
 import { ArrowBigUp } from 'lucide-react';
-import Helmet from 'react-helmet-async';
 
 const GitHubPagesGuide = () => {
   useEffect(() => {
@@ -11,12 +10,7 @@ const GitHubPagesGuide = () => {
 
   return (
     <div className="container max-w-4xl mx-auto mt-12 mb-28 ">
-      <Helmet>
-        <title>Comprehensive Guide to Hosting a Project on GitHub Pages</title>
-        <meta name="description" content="A comprehensive guide to hosting a project on GitHub Pages, including setting up a repository, configuring GitHub Pages, updating your site, and adding a custom domain." />
-        <meta name="keywords" content="GitHub Pages, hosting, project, repository, custom domain" />
-        <meta name="canonical" href="https://justinto.dev/githubPages/GitHubPagesGuide" />
-      </Helmet>
+
       <h1 className="mb-6 text-3xl font-bold">Comprehensive Guide to Hosting a Project on GitHub Pages</h1>
 
       <div className="mb-4">
