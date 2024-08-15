@@ -51,7 +51,7 @@ const AccessibilityChecklist = () => {
     ];
 
     return (
-      <div className="container">
+      <div className="container mb-36">
         <section>
           <h2 className="pb-5 text-5xl text-center text-balance">Guide to Common Accessibility in HTML</h2>
           <ul className="pl-5 space-y-4 list-disc">
