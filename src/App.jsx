@@ -12,7 +12,7 @@ import { Helmet } from 'react-helmet-async'
 
 // console.log('RoutesWithComponents: ', RoutesWithComponents)
 
-// Define theme outside of App component
+//INFO Define theme outside of App component
 const useTheme = () => {
     const [theme, setTheme] = useState(
         window.matchMedia('(prefers-color-scheme: light)').matches
