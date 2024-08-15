@@ -3,6 +3,7 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
 import githubFlow from '@assets/CleanShot 2023-12-05 at 12.18.20.png'
 import DetailedGitWorkflow from '@subComponents/DetailedGitWorkflow';
+import Helmet from 'react-helmet-async';
 
 
 const PushingUpdates = () => {
@@ -35,10 +36,16 @@ const PushingUpdates = () => {
   `;
 
   return (
-    <div className="container mx-auto p-4  rounded-lg shadow-md">
-      <h1 className="text-4xl font-bold mb-6 text-center">GitHub Workflow</h1>
-  <div className="mt-8  p-6 rounded-lg shadow-sm">
-    <div className="flex items-center justify-center space-x-4 h-16 text-2xl">
+    <div className="container p-4 mx-auto rounded-lg shadow-md">
+      <Helmet>
+        <title>Pushing Updates to an Existing Repository</title>
+        <meta name="description" content="Learn how to push updates to an existing repository on GitHub using Git commands like git add, git commit, and git push." />
+        <meta name="keywords" content="GitHub, Git, push, updates, existing repository" />
+        <meta name="canonical" href="https://justinto.dev/githubPages/push" />
+      </Helmet>
+      <h1 className="mb-6 text-4xl font-bold text-center">GitHub Workflow</h1>
+  <div className="p-6 mt-8 rounded-lg shadow-sm">
+    <div className="flex items-center justify-center h-16 space-x-4 text-2xl">
       <div className={`transition-all duration-200 transform ${animationStep >= 1 ? 'scale-110 text-green-500' : 'dark:text-gray-100 light:text-gray-700'}`}>
         git add <strong>.</strong>
       </div>
@@ -57,10 +64,10 @@ const PushingUpdates = () => {
     </div>
   </div>
 
-      <div className=" p-6 rounded-lg shadow-sm grid justify-center">
+      <div className="grid justify-center p-6 rounded-lg shadow-sm ">
         <h2 className="text-2xl font-semibold text-center">Basic Git Commands</h2>
-        <p className="text-center mb-4 text-lg">Use these commands to push updates to your repository</p>
-        <pre className="rounded-md overflow-hidden">
+        <p className="mb-4 text-lg text-center">Use these commands to push updates to your repository</p>
+        <pre className="overflow-hidden rounded-md">
           <code className="language-bash">{workflowCode}</code>
         </pre>
       </div>
@@ -73,11 +80,11 @@ const PushingUpdates = () => {
                     />
 </div>
 
-      <div className="mt-8  p-6 rounded-lg shadow-sm">
+      <div className="p-6 mt-8 rounded-lg shadow-sm">
       <DetailedGitWorkflow />
-        <h2 className="text-2xl font-semibold mb-4 ">Tips</h2>
+        <h2 className="mb-4 text-2xl font-semibold ">Tips</h2>
         <ul className="list-disc list-inside ">
-          <li>Always check your changes with <code className=" px-1 rounded border-none shadow-none">git status</code> before committing</li>
+          <li>Always check your changes with <code className="px-1 border-none rounded shadow-none ">git status</code> before committing</li>
           <li>Write clear and concise commit messages</li>
           <li>Push your changes regularly to keep your remote repository up-to-date</li>
         </ul>

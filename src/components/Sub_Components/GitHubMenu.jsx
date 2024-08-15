@@ -4,6 +4,7 @@ import { Key, GitBranch, GitPullRequest, FileText, UserCheck, GitCommit, GitFork
 
 
 import gitHubLogo from '@assets/github-icon-white.svg';
+import path from 'path';
 
 const GitHubMenu = () => {
   const menuItems = [
@@ -13,14 +14,15 @@ const GitHubMenu = () => {
     { title: 'Changing Your Credentials', path: '/githubPages/ChangingGitHubCredentials', icon: UserCheck },
     { title: 'Branching Guide', path: '/githubPages/GitHubBranching', icon: GitFork },
     { title: 'Cheatsheet of Git Commands for CLI', path: '/githubPages/GitHubCheatsheet', icon: FileText },
+    { title: 'Common Problems and Solutions', path: '/githubPages/GitProbAndAnswers', icon: GitCommit },
     { title: 'Comprehensive Guide to Hosting a Project on GitHub Pages', path: '/githubPages/GitHubPagesGuide', icon: GitCommit },
   ];
 
   return (
-    <div className="bg-gray-800 p-4 rounded-lg shadow-md">
+    <div className="p-4 bg-gray-800 rounded-lg shadow-md">
       <div className="flex items-center justify-between mb-4">
         <div className="mx-auto">
-            <h2 className="text-4xl font-bold text-white flex items-center">
+            <h2 className="flex items-center text-4xl font-bold text-white">
               <img src={gitHubLogo} alt='logo for github' width={50} className='me-4' /> GitHub Navigation
             </h2>
         </div>
@@ -33,7 +35,7 @@ const GitHubMenu = () => {
 
               <Link
                 to={item.path}
-                className="flex py-2 px-4 text-gray-300 hover:bg-blue-800 hover:text-white rounded transition duration-500 ease-in-out"
+                className="flex px-4 py-2 text-gray-300 transition duration-500 ease-in-out rounded hover:bg-blue-800 hover:text-white"
               >
                 <item.icon className="w-6 h-6 mr-3 text-blue-600 dark:text-blue-400" />
                  {item.title}
