@@ -19,9 +19,9 @@ import discord from "@assets/discord.svg"
 
 import YouTubeLiveStream from '../Sub_Components/YouTubeLiveStream'
 //env YT Credentials
-const { VITE_YT_API_KEY_MV, VITE_YT_CHANNEL_ID_MV } = import.meta.env
 
 function HomePage() {
+    const { VITE_YT_API_KEY_MV, VITE_YT_CHANNEL_ID_MV } = import.meta.env
     let filteredEvents = events.filter((event) =>
         isAfter(parseISO(event.ISOdate), new Date())
     )
