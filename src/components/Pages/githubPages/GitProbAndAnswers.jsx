@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet-async";
 
 const GitProbAndAnswers = () => {
   const problems = [
@@ -92,12 +91,7 @@ const GitProbAndAnswers = () => {
 
   return (
     <div className="container p-4 mx-auto my-8 mb-28">
-      <Helmet>
-        <title>Common GitHub Problems and Solutions</title>
-        <meta name="description" content="Common GitHub problems and solutions, including how to fix them using Git commands." />
-      <meta name="keywords" content="GitHub, Git, common problems, solutions, fix, commands" />
-      <meta name="canonical" href="https://justinto.dev/githubPages/GitProbAndAnswers" />
-      </Helmet>
+ 
 
       <h1 className="mb-4 text-4xl font-bold text-balance">Common GitHub Problems and Solutions</h1>
       <div className="overflow-x-auto">
