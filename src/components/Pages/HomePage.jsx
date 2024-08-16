@@ -92,7 +92,7 @@ function HomePage() {
                     content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
                 />
             </Helmet>
-            {new Date(filteredEvents[0].ISOdate) > currentDate ? (
+            {new Date(filteredEvents[0].ISOdate) > currentDate && filteredEvents[0].show ? (
                 <AlertMessage
                     message={message}
                     type={
@@ -106,7 +106,7 @@ function HomePage() {
                     onClose={() => console.log('closed')}
                 />
             ) : null}
-            {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />} */}
+            {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />}
             {/* SECTION Jumbotron */}
 
             <div className="text-white hero-text bg-neutral-800">
