@@ -4,6 +4,7 @@ import CodeBlock from "@subComponents/CodeBlock";
 import 'ace-builds/src-noconflict/mode-html';
 import 'ace-builds/src-noconflict/mode-css';
 import listSloth from "@assets/listSloth.webp";
+import { Helmet } from "react-helmet-async";
 
 
 const HTMLLists = () => {
@@ -82,6 +83,23 @@ language: "html"
 
   return (
     <div className="container p-8">
+      <Helmet>
+        <title>Understanding Lists in HTML | Help Code It</title>
+        <meta
+          name="description"
+          content="Learn how to create ordered, unordered, and description lists in HTML. Lists are a fundamental part of HTML, allowing you to organize content in a structured, easy-to-read format."
+        />
+        <meta
+          property="og:title"
+          content="Understanding Lists in HTML | Help Code It"
+        />
+        <meta
+          name='keywords'
+          content='HTML Lists, HTML Ordered Lists, HTML Unordered Lists, HTML Description Lists'
+        />
+        <meta
+          canonical="https://www.helpcodeit.com/htmlPages/HTMLLists" />
+      </Helmet>
       <div className="flex items-center justify-center mb-8">
           <List className="my-auto mb-3 h-14 w-14 me-4" />
           <h1 className="my-auto mb-4 text-5xl font-bold">Understanding Lists in HTML </h1>

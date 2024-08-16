@@ -1,6 +1,7 @@
 import React from 'react';
 import CodeBlock from '@subComponents/CodeBlock';
 import 'ace-builds/src-noconflict/mode-html';
+import { Helmet } from 'react-helmet-async';
 
 const AccessibilityChecklist = () => {
     const codeExamples = [
@@ -52,6 +53,20 @@ const AccessibilityChecklist = () => {
 
     return (
       <div className="container mb-36">
+        <Helmet>
+          <title>Accessibility Checklist | Help Code It</title>
+          <meta
+
+            name="description"
+            content="Learn how to create accessible websites by following a checklist of common accessibility practices in HTML. Accessibility is essential for ensuring that all users, including those with disabilities, can access and interact with your content."
+          />
+          <meta property="og:title" content="Accessibility in HTML Checklist | Help Code It" />
+          <meta name='keywords' content='Accessibility, Web Accessibility, HTML Accessibility, Accessibility Checklist' />
+          <meta canonical="https://www.helpcodeit.com/htmlPages/AccessibilityChecklist" />
+        </Helmet>
+
+
+
         <section>
           <h2 className="pb-5 text-5xl text-center text-balance">Guide to Common Accessibility in HTML</h2>
           <ul className="pl-5 space-y-4 list-disc">

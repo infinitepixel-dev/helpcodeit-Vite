@@ -71,6 +71,11 @@ const YouTubeChannels = () => {
                         key={index}
                         className="grid justify-center overflow-hidden text-black transition-shadow duration-300 bg-white border border-gray-300 shadow-md rounded-xl hover:shadow-lg"
                     >
+                    <a
+                        href={channel.url}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
                         <img
                             src={channel.imgURL}
                             alt={channel.name}
@@ -88,16 +93,11 @@ const YouTubeChannels = () => {
                             </p>
                         </div>
                         <div className="px-4 py-2">
-                            <a
-                                href={channel.url}
-                                target="_blank"
-                                rel="noreferrer"
-                            >
                                 <button className="w-full px-4 py-2 font-bold text-white transition-colors duration-300 bg-red-600 rounded hover:bg-red-700">
                                     Subscribe
                                 </button>
-                            </a>
                         </div>
+                            </a>
                     </div>
                 ))}
             </div>
