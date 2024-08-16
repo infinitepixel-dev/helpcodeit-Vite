@@ -3,10 +3,29 @@ import { Table, Info, Columns, AlignJustify, Layout } from "lucide-react";
 import CodeBlock from "@subComponents/CodeBlock";
 import 'ace-builds/src-noconflict/mode-html';
 import 'ace-builds/src-noconflict/mode-css';
+import { Helmet } from 'react-helmet-async';
 
 const HTMLTables = () => {
   return (
     <div className="container p-8 mb-24">
+      <Helmet>
+        <title>Tables in HTML | Help Code It</title>
+        <meta
+          name="description"
+          content="Learn how to create tables in HTML to display data in an organized grid-like format. HTML tables are used to arrange data in rows and columns."
+        />
+        <meta
+          property="og:title"
+          content="Tables in HTML | Help Code It"
+        />
+        <meta
+          name='keywords'
+
+          content='HTML Tables, HTML Table Structure, HTML Table Headers, HTML Table Styling, HTML Table Best Practices'
+        />
+        <meta
+          canonical="https://www.helpcodeit.com/htmlPages/Tables" />
+      </Helmet>
       <h1 className="mb-4 text-5xl font-bold">Understanding Tables in HTML</h1>
 
       <p className="mb-6">
