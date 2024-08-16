@@ -19,10 +19,13 @@ jobs:
           node-version: '18'  # Or your desired Node version
 
       - name: Install dependencies
-        run: npm install  
+        run: npm install
 
       - name: Build Vite app
         run: npm run build
+        env:
+          REACT_APP_YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          REACT_APP_YOUTUBE_CHANNEL_ID_MV: ${{ secrets.YOUTUBE_CHANNEL_ID_MV }}
 
       - name: Deploy to FTP server
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
@@ -31,4 +34,3 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/  # Assuming Vite outputs the build files to a 'dist' folder
-
