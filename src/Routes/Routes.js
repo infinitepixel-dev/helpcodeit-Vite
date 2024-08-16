@@ -82,6 +82,17 @@ export const componentRoutes = [
         componentPath: '../components/Pages/htmlPages/AccessibilityChecklist.jsx',
         key: 'accessibilityChecklist',
     },
+    {
+        path: '/htmlPages/HTMLLists',
+        componentPath: '../components/Pages/htmlPages/HTMLLists.jsx',
+        key: 'htmlLists',
+    },
+    {
+        path: '/htmlPages/Tables',
+        componentPath: '../components/Pages/htmlPages/HTMLTables.jsx',
+        key: 'htmlTables'
+    },
+
     //INFO: CSS Pages.
 
     {
