@@ -8,7 +8,7 @@ import 'ace-builds/src-noconflict/mode-css';
 const Form = () => {
   return (
     <div className="container p-8 mb-24">
-      <h1 className="mb-4 text-3xl font-bold">Understanding Forms in HTML</h1>
+      <h1 className="mb-4 text-5xl font-bold text-balance">Understanding Forms in HTML</h1>
 
       <p className="mb-6">
         Forms are a crucial part of web development, allowing users to input and submit data.
