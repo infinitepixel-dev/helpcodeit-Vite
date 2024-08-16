@@ -3,6 +3,7 @@ import { Image, Info, Code, ChevronRight } from "lucide-react";
 import CodeBlock from "@subComponents/CodeBlock";
 import 'ace-builds/src-noconflict/mode-html';
 import 'ace-builds/src-noconflict/mode-css';
+import { Helmet } from "react-helmet-async";
 
 const HTMLImages = () => {
 
@@ -62,6 +63,21 @@ const HTMLImages = () => {
 
     return (
         <div className="container p-8 mb-28">
+            <Helmet>
+                <title>Understanding How Images Work with HTML and CSS | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Learn how to add and style images using HTML and CSS. This guide covers best practices for using images on the web."
+                />
+                <meta
+                    property="og:title"
+                    content="Understanding How Images Work with HTML and CSS | Help Code It"
+                />
+                <meta
+                    name="canonical"
+                    content="https://www.helpcodeit.com/html/HTMLImages"
+                />
+            </Helmet>
             <div className="flex items-center justify-center mb-8">
                 <Image className="my-auto mb-3 h-14 w-14 me-4" />
                 <h1 className="my-auto mb-4 text-5xl font-bold text-pretty">Understanding How Images Work with HTML and CSS</h1>
