@@ -59,7 +59,7 @@ const events = [
         ISOdate: '2024-08-17T23:00:00.000Z',
         description: `Unlock the power of APIs! Join our hands-on workshop where you'll learn how to set up a mock API and master the fundamentals of JavaScript's fetch function. Plus, we'll dive into real API documentation and guide you step-by-step as we implement it live together. Don't miss out on this practical, skill-building experience!`,
         cost: '10',
-        show: true,
+        show: false,
         youtubeEmbed: `<div class="relative pb-[56.25%] overflow-hidden"><iframe  src="https://www.youtube.com/embed/dn_wq5QT7cY?si=3o94vRiJFpIYHp53" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="top-0 left-0 absolute w-full h-full" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`,
     },
     {
