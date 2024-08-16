@@ -97,6 +97,7 @@ export const componentRoutes = [
         componentPath: '../components/Pages/htmlPages/Forms.jsx',
         key: 'htmlForms',
     },
+    { path: '/htmlPages/HTMLImages', componentPath: '../components/Pages/htmlPages/HTMLImages.jsx', key: 'htmlImages' },
 
     //INFO: CSS Pages.
 
