@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Code, List, AlertTriangle, Table, Link as LinkIcon } from 'lucide-react';
+import { Code, List, AlertTriangle, Table, TextCursorInput, Link as LinkIcon } from 'lucide-react';
 import HTMLlogo from '@assets/HTMLlogo.svg';
 
 const NavItem = ({ to, icon: Icon, label }) => (
@@ -20,7 +20,7 @@ const HTMLMain = () => {
     { to: "/htmlPages/HTMLStructure", icon: Code, label: "Page Structure" },
     { to: "/htmlPages/HTMLLists", icon: List, label: "Lists in HTML" },
     { to: "/htmlPages/Tables", icon: Table, label: "Tables" },
-    // { to: "/htmlPages/Forms", icon: Form, label: "Forms" },
+    { to: "/htmlPages/Forms", icon: TextCursorInput, label: "Forms" },
     // { to: "/htmlPages/Images", icon: Image, label: "Images" },
     // { to: "/htmlPages/Links", icon: LinkIcon, label: "Links" },
     // { to: "/htmlPages/Multimedia", icon: Video, label: "Audio and Video" },

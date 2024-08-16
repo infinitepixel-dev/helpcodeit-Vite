@@ -92,6 +92,11 @@ export const componentRoutes = [
         componentPath: '../components/Pages/htmlPages/HTMLTables.jsx',
         key: 'htmlTables'
     },
+    {
+        path: '/htmlPages/Forms',
+        componentPath: '../components/Pages/htmlPages/Forms.jsx',
+        key: 'htmlForms',
+    },
 
     //INFO: CSS Pages.
 
