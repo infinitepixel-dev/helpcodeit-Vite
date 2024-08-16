@@ -108,7 +108,7 @@ const podcasts = [
 ]
 
 const PodcastCard = ({ podcast }) => (
-    <div className="overflow-hidden rounded-lg bg-white shadow-md transition-transform duration-300 hover:scale-105">
+    <div className="overflow-hidden transition-transform duration-300 bg-white rounded-lg shadow-md hover:scale-105">
         <Helmet>
             <title>Media Recommendations | Help Code It</title>
 
@@ -129,10 +129,16 @@ const PodcastCard = ({ podcast }) => (
                 href="https://www.helpcodeit.com/media-recommendations"
             />
         </Helmet>
+        <a
+                    href={podcast.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+
+                >
         <img
             src={podcast.img}
             alt={podcast.title}
-            className="w-full object-cover"
+            className="object-cover w-full"
         />
         <div className="p-4">
             <h2 className="mb-2 text-xl font-semibold text-gray-600">
@@ -153,16 +159,17 @@ const PodcastCard = ({ podcast }) => (
                 </a>
             </div>
         </div>
+        </a>
     </div>
 )
 
 const MediaRecommendations = () => (
-    <div className="container mx-auto mb-14 px-4 py-8">
-        <h1 className="mb-8 text-center text-6xl font-bold">
+    <div className="container px-4 py-8 mx-auto mb-14">
+        <h1 className="mb-8 text-6xl font-bold text-center">
           Our Media Recommendations
         </h1>
         <YoutubeChannelRecommendations />
-        <h1 className="mb-8 text-center text-3xl font-bold mt-14">
+        <h1 className="mb-8 text-3xl font-bold text-center mt-14">
             Our Recommended Software Development and Tech Podcasts
         </h1>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
