@@ -8,6 +8,7 @@ import {
     // formatDistanceToNow,
     differenceInDays,
     isAfter,
+    set,
 } from 'date-fns'
 import EventCard from '../Sub_Components/EventCard'
 import { CalendarSearch, Youtube } from 'lucide-react'
@@ -15,14 +16,41 @@ import JumboBackground from '../Sub_Components/JumboBackground'
 import './HomePage.css'
 import AlertMessage from '@subComponents/AlertMessage'
 import events from '@subComponents/Events'
-import discord from "@assets/discord.svg"
-import getPosts from '../Sub_Components/BlogAPI'
+// import discord from "@assets/discord.svg"
 
-import YouTubeLiveStream from '../Sub_Components/YouTubeLiveStream'
+
+// import YouTubeLiveStream from '../Sub_Components/YouTubeLiveStream'
+import { useState } from 'react'
+import { useEffect } from 'react'
+import BlogPost from './BlogPost'
 //env YT Credentials
 
 function HomePage() {
-    getPosts()
+    const[posts, setPosts] = useState()
+
+    useEffect(() => {
+        getPosts()
+    }, []);
+    //NOTE -------START BLOG API CALL
+    const VITE_BLOG_API_KEY = import.meta.env.VITE_BLOG_API_KEY;
+    const VITE_BLOG_SPACE_ID = import.meta.env.VITE_BLOG_SPACE_ID;
+    const BLOG_URL = `https://cdn.contentful.com/spaces/${VITE_BLOG_SPACE_ID}/environments/master/entries?access_token=${VITE_BLOG_API_KEY}`;
+
+
+    const getPosts = async () => {
+        console.log('BLOG_URL:', BLOG_URL);
+        console.log('VITE_BLOG_API_KEY:', VITE_BLOG_API_KEY);
+        console.log('VITE_BLOG_SPACE_ID:', VITE_BLOG_SPACE_ID);
+        const response = await fetch(BLOG_URL);
+        const data = await response.json();
+        console.log(data);
+        setPosts(data);
+        return data;
+    }
+
+    //NOTE -------END BLOG API CALL
+    console.log(posts)
+    // console.log(posts[0].content.content[0].content[0].value)
     const { VITE_YT_API_KEY_MV, VITE_YT_CHANNEL_ID_MV } = import.meta.env
     let filteredEvents = events.filter((event) =>
         isAfter(parseISO(event.ISOdate), new Date())
@@ -50,8 +78,13 @@ function HomePage() {
     }
     currentDate = new Date()
     // console.log(message)
+    let limit = 1
     return (
         <div>
+           {posts && posts.items.map((post, index) => (
+                <BlogPost key={index} post={post} limit={limit} />
+            ))}
+
             <Helmet>
                 <title>Help Code It | Resources for Beginning Developers</title>
                 <meta
@@ -117,10 +150,10 @@ function HomePage() {
                 </div>
             </div>
             <div>
-                <YouTubeLiveStream
+                {/* <YouTubeLiveStream
                     apiKey={VITE_YT_API_KEY_MV}
                     channelId={VITE_YT_CHANNEL_ID_MV}
-                />
+                /> */}
                 </div>
                 <div className="mx-auto overflow-hidden bg-gray-800 shadow-md w-fit rounded-xl ">
       <div className="px-2 py-4 space-y-6">
