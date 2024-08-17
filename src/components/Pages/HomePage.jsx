@@ -16,11 +16,13 @@ import './HomePage.css'
 import AlertMessage from '@subComponents/AlertMessage'
 import events from '@subComponents/Events'
 import discord from "@assets/discord.svg"
+import getPosts from '../Sub_Components/BlogAPI'
 
 import YouTubeLiveStream from '../Sub_Components/YouTubeLiveStream'
 //env YT Credentials
 
 function HomePage() {
+    getPosts()
     const { VITE_YT_API_KEY_MV, VITE_YT_CHANNEL_ID_MV } = import.meta.env
     let filteredEvents = events.filter((event) =>
         isAfter(parseISO(event.ISOdate), new Date())
