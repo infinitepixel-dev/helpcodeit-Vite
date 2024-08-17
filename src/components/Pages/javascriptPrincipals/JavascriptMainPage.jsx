@@ -1,6 +1,6 @@
 import javascriptlogo from '@assets/jswithburstlogo.svg'
 import { Helmet } from 'react-helmet-async'
-import JavaScriptNavigation from '../Sub_Components/JavaScriptNavigation'
+import JavaScriptNavigation from '../../Sub_Components/JavaScriptNavigation'
 
 function JavascriptMainPage() {
     return (
