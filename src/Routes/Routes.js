@@ -98,6 +98,7 @@ export const componentRoutes = [
         key: 'htmlForms',
     },
     { path: '/htmlPages/HTMLImages', componentPath: '../components/Pages/htmlPages/HTMLImages.jsx', key: 'htmlImages' },
+    { path: '/htmlPages/GuideToMetaTags', componentPath: '../components/Pages/htmlPages/GuideToMetaTags.jsx', key: 'guideToMetaTags' },
 
     //INFO: CSS Pages.
 

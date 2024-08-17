@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Code, List, AlertTriangle, Table, TextCursorInput, Image, Link as LinkIcon } from 'lucide-react';
+import { Code, List, AlertTriangle, Search, Table, TextCursorInput, Image, Link as LinkIcon } from 'lucide-react';
 import HTMLlogo from '@assets/HTMLlogo.svg';
 
 const NavItem = ({ to, icon: Icon, label }) => (
@@ -25,7 +25,7 @@ const HTMLMain = () => {
     // { to: "/htmlPages/Links", icon: LinkIcon, label: "Links" },
     // { to: "/htmlPages/Multimedia", icon: Video, label: "Audio and Video" },
     // { to: "/htmlPages/Semantics", icon: Tag, label: "Semantic HTML" },
-    // { to: "/htmlPages/MetaTags", icon: Search, label: "Meta Tags" },
+    { to: "/htmlPages/GuideToMetaTags", icon: Search, label: "Guide To Meta Tags" },
     { to: "/htmlPages/AccessibilityChecklist", icon: AlertTriangle, label: "Accessibility" },
     // { to: "/htmlPages/ResponsiveDesign", icon: Grid, label: "Responsive Design" },
     // { to: "/htmlPages/SEO", icon: Globe, label: "SEO Basics" },
