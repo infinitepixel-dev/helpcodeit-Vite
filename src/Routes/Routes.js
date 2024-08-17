@@ -167,9 +167,10 @@ export const componentRoutes = [
     },
     {
         path: '/javascript',
-        componentPath: '../components/Pages/JavascriptMainPage.jsx',
+        componentPath: '../components/Pages/javascriptPrincipals/JavascriptMainPage.jsx',
         key: 'javascriptMain',
     },
+    { path: '/javascriptPrincipals/AsyncAwait', componentPath: '../components/Pages/javascriptPrincipals/AsyncAwait.jsx', key: 'asyncAwait' },
     {
         path: '/javascriptPrincipals/PracticeProblems',
         componentPath:
