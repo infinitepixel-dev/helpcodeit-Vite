@@ -26,6 +26,7 @@ const JavaScriptNavigation = () => {
     { to: "/javascriptPrincipals/ConditionalLesson", icon: Code, label: "Conditionals" },
     { to: "/javascriptPrincipals/StringConcatenation", icon: FileText, label: "String Concatenation" },
     { to: "/javascriptPrincipals/UnitTestingMochaChai", icon: Zap, label: "Unit Testing with Mocha & Chai" },
+    { to: '/javascriptPrincipals/AsyncAwait', icon: Database, label: "Async/Await" },
     { to: "/javascriptPrincipals/CRUD-Main", icon: Database, label: "C.R.U.D. Operations with APIs" },
     { to: "/javascriptPrincipals/MenuApp", icon: Layout, label: "Menu App OOP diagram" },
     { to: "/javascriptPrincipals/WarGameTutorial", icon: Zap, label: "War Game" },

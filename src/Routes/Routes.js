@@ -98,6 +98,7 @@ export const componentRoutes = [
         key: 'htmlForms',
     },
     { path: '/htmlPages/HTMLImages', componentPath: '../components/Pages/htmlPages/HTMLImages.jsx', key: 'htmlImages' },
+    { path: '/htmlPages/GuideToMetaTags', componentPath: '../components/Pages/htmlPages/GuideToMetaTags.jsx', key: 'guideToMetaTags' },
 
     //INFO: CSS Pages.
 
@@ -166,9 +167,10 @@ export const componentRoutes = [
     },
     {
         path: '/javascript',
-        componentPath: '../components/Pages/JavascriptMainPage.jsx',
+        componentPath: '../components/Pages/javascriptPrincipals/JavascriptMainPage.jsx',
         key: 'javascriptMain',
     },
+    { path: '/javascriptPrincipals/AsyncAwait', componentPath: '../components/Pages/javascriptPrincipals/AsyncAwait.jsx', key: 'asyncAwait' },
     {
         path: '/javascriptPrincipals/PracticeProblems',
         componentPath:
