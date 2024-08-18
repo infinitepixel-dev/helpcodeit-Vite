@@ -48,6 +48,15 @@ function HomePage() {
         return data;
     }
 
+    //NOTE Utility function to find the matching image for a post
+    const findAssetForEntry = (entry, assets) => {
+        if (!entry.fields.picture) return null
+        if (!assets) return null
+        const pictureId = entry.fields.picture.sys.id
+        const asset = assets.find(asset => asset.sys.id === pictureId)
+        return asset ? asset.fields.file.url : null
+    }
+
     //NOTE -------END BLOG API CALL
     console.log(posts)
     // console.log(posts[0].content.content[0].content[0].value)
@@ -79,11 +88,20 @@ function HomePage() {
     currentDate = new Date()
     // console.log(message)
     let limit = 1
+    console.log(posts)
     return (
         <div>
-           {posts && posts.items.map((post, index) => (
-                <BlogPost key={index} post={post} limit={limit} />
-            ))}
+            {posts && posts.items.map((post, index) => {
+                const imageUrl = findAssetForEntry(post, posts.includes.Asset)
+                return (
+                    <BlogPost
+                        key={index}
+                        post={post}
+                        limit={1}
+                        imageUrl={imageUrl}
+                    />
+                )
+            })}
 
             <Helmet>
                 <title>Help Code It | Resources for Beginning Developers</title>

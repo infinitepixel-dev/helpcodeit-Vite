@@ -1,23 +1,48 @@
-function BlogPost({index, post, limit}) {
+import React from 'react';
 
+function BlogPost({ key, post, limit, imageUrl }) {
+  console.log("Post data: ", post);
+  console.log("Image URL: ", imageUrl);
 
+  const renderContent = (content, index) => {
+    switch (content.nodeType) {
+      case 'paragraph':
+        return <p key={index} className="content">{content.content[0].value}</p>;
+      case 'embedded-asset-block':
+        return (
+          <img
+            key={index}
+            src={content.data.target.fields.file.url}
+            alt={content.data.target.fields.title}
+            className="float-right w-1/3 m-2 rounded-lg"
+          />
+        );
+      default:
+        if (content.nodeType.startsWith("heading-")) {
+          const HeadingTag = `h${content.nodeType.charAt(content.nodeType.length - 1)}`;
+          return (
+            <HeadingTag key={index} className={`py-5 text-${parseInt(content.nodeType.charAt(content.nodeType.length - 1)) + 1}xl`}>
+              {content.content[0].value}
+            </HeadingTag>
+          );
+        }
+        return null;
+    }
+  };
 
 
   return (
-    <div className="container">
+    <div key={key} className="container blog-post">
       <h1 className="my-8 text-5xl">{post.fields.title}</h1>
-      {post.fields.content.content.map((content, index) => {
-        if(content.nodeType === 'paragraph') {
-          return <p className="mb-6" key={index}>{content.content[0].value}</p>
-
-
-        }
-      })}
-
+      <p className="text-gray-500 text-bold">{post.fields.date}</p>
+      {imageUrl && (
+        <img src={imageUrl} alt="blog post" className="float-right w-1/3 m-2 rounded-lg" />
+      )}
+      <div>
+        {post.fields.content.content.map(renderContent)}
+      </div>
     </div>
-  )
+  );
 }
-
-
 
 export default BlogPost;
