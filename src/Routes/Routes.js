@@ -1,4 +1,3 @@
-import path from 'path' /*  */
 import { lazy } from 'react'
 
 export const navItems = [
