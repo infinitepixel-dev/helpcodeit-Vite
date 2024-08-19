@@ -25,7 +25,7 @@ if(posts && posts.length > limit) {
 
     return (
         <div className="container py-8 mx-auto">
-                {posts.length === 1 ? <h1 className='mt-8 text-4xl text-center'>Recent Blog Posts</h1> : null}
+                {posts.length === 1 ? <h1 className='mb-3 text-4xl text-center '>Recent Blog Posts</h1> : null}
             <div className="grid border border-gray-800 rounded-lg bg-gray-50 dark:bg-gray-600 ">
                 {posts && posts.length > 0 ? (
                     posts.map((post) => {

@@ -158,7 +158,7 @@ console.log("Posts: ", posts);
             </div>
 
 
-            <div>
+            <div className='container'>
                     <div className="grid grid-cols-1 mx-8 mt-5 overflow-hidden bg-gray-800 shadow-md lg:grid-cols-3 rounded-xl">
                 <div>
                     <div>
@@ -242,10 +242,11 @@ console.log("Posts: ", posts);
                         <EventCard limit={1} />
                     </div>
                     <div className="clearfix my-auto">
-                        <h2 className="mb-6 text-3xl font-bold text-center">
+                        <h2 className="mb-3 text-4xl font-bold text-center">
                             Get expert coding help and tutoring
                         </h2>
-                        <div className="max-w-2xl p-8 mx-auto my-8 rounded-lg">
+
+                        <div className="max-w-2xl p-8 mx-auto mt-3 mb-8 rounded-lg">
                             <h2 className="mb-6 text-3xl font-bold text-center">
                                 Book a session now!
                             </h2>
