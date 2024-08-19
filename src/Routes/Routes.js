@@ -446,7 +446,6 @@ export const componentRoutes = [
         key: 'reactHooks',
     },
 ]
-
 let RoutesWithComponents = componentRoutes
 
 if (typeof window !== 'undefined') {
@@ -455,11 +454,11 @@ if (typeof window !== 'undefined') {
     const subComponentMap = import.meta.glob(
         '../components/Sub_Components/**/*.{jsx,js}'
     )
-    /* console.log('Component Map:', { ...componentMap, ...subComponentMap }) */
 
     // Initialize the components object
     const components = {}
 
+    // Meta field validation and component lazy-loading
     // Define required meta fields
     const requiredMetaFields = [
         'title', // SEO: Page title
@@ -479,7 +478,6 @@ if (typeof window !== 'undefined') {
         'breadcrumbs', // Breadcrumb navigation information
     ]
 
-    // Adjust componentPath if necessary to match the keys in componentMap
     componentRoutes.forEach((route) => {
         const importPath = route.componentPath
         let componentPromise = null
@@ -494,18 +492,19 @@ if (typeof window !== 'undefined') {
             console.warn(`Component for path ${importPath} not found.`)
         }
 
-        // If the component was found, check for meta information
         if (componentPromise) {
             componentPromise.then((componentModule) => {
                 const component = componentModule.default
                 const meta = component?.meta || {}
-                requiredMetaFields.forEach((field) => {
-                    if (!meta[field]) {
-                        console.warn(
-                            `Meta field "${field}" is missing in component for path ${importPath}`
-                        )
-                    }
-                })
+
+                const missingFields = requiredMetaFields.filter(
+                    (field) => !meta[field]
+                )
+                if (missingFields.length > 0) {
+                    console.warn(
+                        `Missing meta fields for ${importPath}: ${missingFields.join(', ')}`
+                    )
+                }
             })
         }
     })
