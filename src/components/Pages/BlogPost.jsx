@@ -63,7 +63,7 @@ function BlogPost() {
             key={index}
             src={content.data.target.fields.file.url}
             alt={content.data.target.fields.title}
-            className="float-right w-1/3 m-2 rounded-lg"
+            className="float-right w-1/3 m-2 rounded-lg md:w-1/4"
           />
         );
       default:

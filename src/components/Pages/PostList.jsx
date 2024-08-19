@@ -4,18 +4,14 @@ import { format } from 'date-fns';
 
 
 
-function BlogList({posts}) {
-console.log("PostList: ", posts);
+function BlogList({posts, limit=3}) {
+console.log("Posts: ", posts);
 
-    //Match each post with its images if available
-    // const postImages = posts.includes?.Asset || [];
-    // posts.items.forEach((post) => {
-    //     const imageId = post.fields.picture?.sys.id;
-    //     post.fields.picture = postImages.find((img) => img.sys.id === imageId);
-    // }
-    // );
+if(posts && posts.length > limit) {
+    posts = posts.slice(0, limit);
+}
 
-// FIXME: This function is not working as expected needs 'previewtext' to be defined
+
     const getPreviewText = (posts) => {
         const previewText = posts.content[0].content[0].value;
         // previewText += posts.content[0].content[1].value;
@@ -26,10 +22,11 @@ console.log("PostList: ", posts);
         return previewText;
     };
 
-// console.log('Posts: ', posts);
+
     return (
         <div className="container py-8 mx-auto">
-            <div className="grid bg-gray-300 border border-gray-800 rounded-lg dark:bg-gray-600 ">
+                {posts.length === 1 ? <h1 className='mt-8 text-4xl text-center'>Recent Blog Posts</h1> : null}
+            <div className="grid border border-gray-800 rounded-lg bg-gray-50 dark:bg-gray-600 ">
                 {posts && posts.length > 0 ? (
                     posts.map((post) => {
 
@@ -39,12 +36,11 @@ console.log("PostList: ", posts);
                         return (
                             <div
                                 key={post.sys.id}
-                                className="flex flex-col overflow-hidden rounded-lg md:flex-row"
+                                className="grid "
                             >
-
-                                <div className="flex flex-col justify-between p-6">
+                                <div className="flex flex-col justify-between px-6 pt-3">
                                     <div>
-                                        <h2 className="mb-2 text-xl font-bold text-balance ">
+                                        <h2 className="text-xl font-bold text-balance">
                                             {post.fields.title}
                                         </h2>
                                         <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">
@@ -58,10 +54,11 @@ console.log("PostList: ", posts);
                                     <Link
                                         to={`/post/${post.sys.id}`}
                                         state={{ post }}  // Pass the entire post data through the Link state
-                                        className="self-start mt-4 font-bold text-blue-600 dark:text-blue-400 hover:underline"
+                                        className="self-start font-bold text-blue-600 dark:text-blue-400 hover:underline"
                                     >
                                         Read This Post
                                     </Link>
+                               {posts.length > 1 ?  <hr className="w-full my-3 border-gray-800 border-b-1 dark:border-gray-800" />: <br />}
                                 </div>
                             </div>
                         );
