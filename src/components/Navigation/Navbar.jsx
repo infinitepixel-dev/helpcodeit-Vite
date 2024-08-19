@@ -10,13 +10,11 @@ const Navbar = ({ theme }) => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
 
-  // Consume BlogContext to get posts
   const { posts } = useContext(BlogContext);
 
   useEffect(() => {
     const handleResize = () => {
       setIsSmallScreen(window.innerWidth <= 960);
-
     };
 
     window.addEventListener('resize', handleResize);
@@ -52,13 +50,13 @@ const Navbar = ({ theme }) => {
         </button>
         <div
           id="custom-drop"
-          style={{ top: '30px' }}
           className={`
             absolute w-48 mt-2 right-0 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50
             ${isSmallScreen
               ? isDropdownOpen ? 'block' : 'hidden'
               : 'invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300'}
           `}
+          style={{ top: isSmallScreen ? 'auto' : '30px', right: isSmallScreen ? '0' : 'auto' }}
         >
           <div
             className="py-1"
@@ -106,15 +104,13 @@ const Navbar = ({ theme }) => {
     });
   };
 
-  // Example of passing posts to the /blogs link
   const renderBlogsNavLink = () => {
-    console.log("navbar:",posts);
-
     return (
       <NavLink
         to="/blogs"
         className={navLinkClasses}
-        state={{ posts }}  // Pass the posts via state
+        state={{ posts }}
+        onClick={() => isSmallScreen && setIsOpen(false)}
       >
         Blogs
       </NavLink>
@@ -130,13 +126,13 @@ const Navbar = ({ theme }) => {
               <img className="w-10 h-10 rounded-lg" src={logo} alt="Logo" />
             </div>
           </div>
-          <div className="hidden md:block me-5 ms-auto">
+          <div className={`${isSmallScreen ? 'hidden' : 'block'} me-5 ms-auto`}>
             <div className="flex items-baseline space-x-3 ml-28">
               {renderNavItems()}
-              {renderBlogsNavLink()} {/* Add Blogs NavLink */}
+              {renderBlogsNavLink()}
             </div>
           </div>
-          <div className="flex -mr-2 md:hidden">
+          <div className={`flex ${isSmallScreen ? 'block' : 'hidden'}`}>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:bg-gray-700 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white focus:outline-none"
@@ -167,11 +163,11 @@ const Navbar = ({ theme }) => {
         </div>
       </div>
 
-      {isOpen && (
-        <div className="absolute z-50 w-full bg-gray-800 md:hidden">
+      {isOpen && isSmallScreen && (
+        <div className="absolute z-50 w-full bg-gray-800">
           <div className="flex flex-col items-end px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {renderNavItems(true)}
-            {renderBlogsNavLink()} {/* Add Blogs NavLink for mobile */}
+            {renderBlogsNavLink()}
           </div>
         </div>
       )}
