@@ -45,7 +45,7 @@ const Navbar = ({ theme }) => {
       <div className="relative group">
         <button
           onClick={toggleDropdown}
-          className="hover:bg-gray-700 px-3 py-2 rounded-md font-medium text-base text-gray-300 hover:text-white"
+          className="px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
         >
           {label}
         </button>
@@ -69,7 +69,7 @@ const Navbar = ({ theme }) => {
               <NavLink
                 key={index}
                 to={item.to}
-                className="block hover:bg-gray-50 px-4 py-2 font-bold text-base text-gray-600"
+                className="block px-4 py-2 text-base font-bold text-gray-600 hover:bg-gray-50"
                 role="menuitem"
                 onClick={() => {
                   setOpenDropdown(null);
@@ -122,23 +122,23 @@ const Navbar = ({ theme }) => {
 
   return (
     <nav className="relative z-40 bg-neutral-900">
-      <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <div className="flex justify-between items-center h-16">
+      <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <img className="rounded-lg w-10 h-10" src={logo} alt="Logo" />
+              <img className="w-10 h-10 rounded-lg" src={logo} alt="Logo" />
             </div>
           </div>
-          <div className="md:block hidden me-5 ms-auto">
+          <div className="hidden md:block me-5 ms-auto">
             <div className="flex items-baseline space-x-3 ml-28">
               {renderNavItems()}
               {renderBlogsNavLink()} {/* Add Blogs NavLink */}
             </div>
           </div>
-          <div className="flex md:hidden -mr-2">
+          <div className="flex -mr-2 md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex justify-center items-center hover:bg-gray-700 p-2 rounded-md focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 text-gray-400 hover:text-white focus:outline-none"
+              className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:bg-gray-700 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               <svg
@@ -167,8 +167,8 @@ const Navbar = ({ theme }) => {
       </div>
 
       {isOpen && (
-        <div className="z-50 absolute md:hidden bg-gray-800 w-full">
-          <div className="flex flex-col items-end space-y-1 px-2 sm:px-3 pt-2 pb-3">
+        <div className="absolute z-50 w-full bg-gray-800 md:hidden">
+          <div className="flex flex-col items-end px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {renderNavItems(true)}
             {renderBlogsNavLink()} {/* Add Blogs NavLink for mobile */}
           </div>

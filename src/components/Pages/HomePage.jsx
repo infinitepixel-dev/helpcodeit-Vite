@@ -151,7 +151,7 @@ console.log("Posts: ", posts);
 
 
             <div>
-                    <div className="grid grid-cols-1 mx-8 mt-5 overflow-hidden bg-gray-800 shadow-md md:grid-cols-3 rounded-xl">
+                    <div className="grid grid-cols-1 mx-8 mt-5 overflow-hidden bg-gray-800 shadow-md lg:grid-cols-3 rounded-xl">
                 <div>
                     <div>
                         <YouTubeLiveStream
