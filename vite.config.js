@@ -2,7 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'path'
 import { fileURLToPath } from 'url'
-import { visualizer } from 'rollup-plugin-visualizer'
+/* import { visualizer } from 'rollup-plugin-visualizer' */
+import compression from 'vite-plugin-compression'
 
 // Define __dirname
 const __filename = fileURLToPath(import.meta.url)
@@ -11,12 +12,15 @@ const __dirname = path.dirname(__filename)
 export default defineConfig({
     plugins: [
         react(),
-        visualizer({
+        /*         visualizer({
             open: true,
             gzipSize: true,
             brotliSize: true,
             template: 'treemap', // sunburst, treemap, network
             filename: 'bundle-stats.html',
+        }), */
+        compression({
+            algorithm: 'gzip', // Enable gzip compression
         }),
     ],
     resolve: {
@@ -37,15 +41,19 @@ export default defineConfig({
                 __dirname,
                 'src/components/Pages/fundamentals'
             ),
-
             '@fullcalendar/react': '@fullcalendar/react',
             '@fullcalendar/daygrid': '@fullcalendar/daygrid',
         },
     },
     build: {
         outDir: 'dist',
-        /*      rollupOptions: {
-            external: ['@fullcalendar/react', '@fullcalendar/daygrid'],
-        }, */
+        assetsDir: 'assets',
+        rollupOptions: {
+            output: {
+                entryFileNames: 'assets/[name].[hash].js',
+                chunkFileNames: 'assets/[name].[hash].js',
+                assetFileNames: 'assets/[name].[hash].[ext]',
+            },
+        },
     },
 })
