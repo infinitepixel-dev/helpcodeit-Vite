@@ -125,7 +125,6 @@ export const componentRoutes = [
         path: '/',
         componentPath: '../components/Pages/HomePage.jsx',
         key: 'home',
-        props: { posts: posts } // Add your props here
     },
     {
         path: '/about',
