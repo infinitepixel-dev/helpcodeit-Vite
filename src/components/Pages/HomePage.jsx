@@ -18,7 +18,7 @@ import AlertMessage from '@subComponents/AlertMessage'
 import events from '@subComponents/Events'
 // import discord from "@assets/discord.svg"
 
-
+import PostList from './PostList'
 // import YouTubeLiveStream from '../Sub_Components/YouTubeLiveStream'
 import { useState } from 'react'
 import { useEffect } from 'react'
@@ -26,7 +26,7 @@ import BlogPost from './BlogPost'
 //env YT Credentials
 
 function HomePage() {
-    const[posts, setPosts] = useState()
+    const[posts, setPosts] = useState(null)
 
     useEffect(() => {
         getPosts()
@@ -38,15 +38,18 @@ function HomePage() {
 
 
     const getPosts = async () => {
-        console.log('BLOG_URL:', BLOG_URL);
-        console.log('VITE_BLOG_API_KEY:', VITE_BLOG_API_KEY);
-        console.log('VITE_BLOG_SPACE_ID:', VITE_BLOG_SPACE_ID);
-        const response = await fetch(BLOG_URL);
-        const data = await response.json();
-        console.log(data);
-        setPosts(data);
-        return data;
-    }
+        try {
+            const response = await fetch(BLOG_URL);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            setPosts(data);
+        } catch (error) {
+            console.error('Fetch error: ', error);
+            setPosts(null); // Optionally set an error state
+        }
+    };
 
     //NOTE Utility function to find the matching image for a post
     const findAssetForEntry = (entry, assets) => {
@@ -81,27 +84,35 @@ function HomePage() {
         daysUntilEvent === 0
             ? (message = `Our next event is ${filteredEvents[0].title} today. The cost is $${filteredEvents[0].cost} and registration is open till 5 minutes before.`)
             : null
-        // console.log(message);
     } else {
         console.log('No upcoming events.')
     }
     currentDate = new Date()
     // console.log(message)
-    let limit = 1
-    console.log(posts)
+    const selectedPost = posts?.items?.length > 0 ? posts.items[0] : null;
+    const imageUrl = posts && selectedPost ? findAssetForEntry(selectedPost, posts.includes?.Asset) : null;
+
     return (
         <div>
-            {posts && posts.items.map((post, index) => {
-                const imageUrl = findAssetForEntry(post, posts.includes.Asset)
-                return (
-                    <BlogPost
-                        key={index}
-                        post={post}
-                        limit={1}
-                        imageUrl={imageUrl}
-                    />
-                )
-            })}
+            <PostList posts={posts} />
+            {posts && selectedPost ? (
+            <div>
+                <BlogPost
+                  key={selectedPost.sys.id}
+                  post={selectedPost}
+                  limit={1}
+                  imageUrl={imageUrl}
+                />
+            </div>
+          ) : (
+              <div>
+                  <h1>No posts found</h1>
+              </div>
+          )}
+
+
+
+
 
             <Helmet>
                 <title>Help Code It | Resources for Beginning Developers</title>

@@ -123,6 +123,7 @@ export const componentRoutes = [
         componentPath: '../components/Pages/About.jsx',
         key: 'about',
     },
+
     {
         path: '/schedule-meeting',
         componentPath: '../components/Pages/ScheduleMeeting.jsx',

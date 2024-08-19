@@ -1,8 +1,11 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 function BlogPost({ key, post, limit, imageUrl }) {
   console.log("Post data: ", post);
   console.log("Image URL: ", imageUrl);
+
+
 
   const renderContent = (content, index) => {
     switch (content.nodeType) {
@@ -32,7 +35,7 @@ function BlogPost({ key, post, limit, imageUrl }) {
 
 
   return (
-    <div key={key} className="container blog-post">
+    <div key={key} className="container mb-24 blog-post">
       <h1 className="my-8 text-5xl">{post.fields.title}</h1>
       <p className="text-gray-500 text-bold">{post.fields.date}</p>
       {imageUrl && (
