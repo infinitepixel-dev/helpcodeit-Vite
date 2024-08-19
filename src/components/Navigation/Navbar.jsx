@@ -1,15 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '@assets/helpcodeitlogo.svg';
 import { navItems } from '../../Routes/Routes';
 import './Navbar.module.css';
+import { BlogContext } from '@subComponents/BlogAPI';
 
 const Navbar = ({ theme }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
 
-
+  // Consume BlogContext to get posts
+  const { posts } = useContext(BlogContext);
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,8 +41,6 @@ const Navbar = ({ theme }) => {
       }
     };
 
-
-
     return (
       <div className="relative group">
         <button
@@ -49,21 +49,32 @@ const Navbar = ({ theme }) => {
         >
           {label}
         </button>
-        <div id='custom-drop' style={{top: "30px"}} className={`
-          absolute  w-48 mt-2 right-0 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50
-          ${isSmallScreen
-            ? (isDropdownOpen ? 'block' : 'hidden')
-            : 'invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300'
-          }
-        `}>
-          <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+        <div
+          id="custom-drop"
+          style={{ top: '30px' }}
+          className={`
+            absolute w-48 mt-2 right-0 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50
+            ${isSmallScreen
+              ? isDropdownOpen ? 'block' : 'hidden'
+              : 'invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300'}
+          `}
+        >
+          <div
+            className="py-1"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="options-menu"
+          >
             {items.map((item, index) => (
               <NavLink
                 key={index}
                 to={item.to}
                 className="block hover:bg-gray-50 px-4 py-2 font-bold text-base text-gray-600"
                 role="menuitem"
-                onClick={() => { setOpenDropdown(null); setIsOpen(false); }}
+                onClick={() => {
+                  setOpenDropdown(null);
+                  setIsOpen(false);
+                }}
               >
                 {item.label}
               </NavLink>
@@ -94,6 +105,21 @@ const Navbar = ({ theme }) => {
     });
   };
 
+  // Example of passing posts to the /blogs link
+  const renderBlogsNavLink = () => {
+    console.log("navbar:",posts);
+
+    return (
+      <NavLink
+        to="/blogs"
+        className={navLinkClasses}
+        state={{ posts }}  // Pass the posts via state
+      >
+        Blogs
+      </NavLink>
+    );
+  };
+
   return (
     <nav className="relative z-40 bg-neutral-900">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
@@ -106,6 +132,7 @@ const Navbar = ({ theme }) => {
           <div className="md:block hidden me-5 ms-auto">
             <div className="flex items-baseline space-x-3 ml-28">
               {renderNavItems()}
+              {renderBlogsNavLink()} {/* Add Blogs NavLink */}
             </div>
           </div>
           <div className="flex md:hidden -mr-2">
@@ -136,7 +163,6 @@ const Navbar = ({ theme }) => {
               </svg>
             </button>
           </div>
-        { !isSmallScreen && <div ><a href="https://www.buymeacoffee.com/michaelvarnell" ><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=michaelvarnell&button_colour=fa2e42&font_colour=000000&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00" className='h-9'/></a></div>}
         </div>
       </div>
 
@@ -144,6 +170,7 @@ const Navbar = ({ theme }) => {
         <div className="z-50 absolute md:hidden bg-gray-800 w-full">
           <div className="flex flex-col items-end space-y-1 px-2 sm:px-3 pt-2 pb-3">
             {renderNavItems(true)}
+            {renderBlogsNavLink()} {/* Add Blogs NavLink for mobile */}
           </div>
         </div>
       )}

@@ -1,8 +1,10 @@
+import { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import LogoImage from '../Sub_Components/LogoImage'
+import LogoImage from '@subComponents/LogoImage'
 import MainCards from '../Sub_Components/MainCards'
 // import EventAlert from '../Sub_Components/EventAlert'
 import { Helmet } from 'react-helmet-async'
+
 import {
     parseISO,
     // formatDistanceToNow,
@@ -10,46 +12,31 @@ import {
     isAfter,
     set,
 } from 'date-fns'
-import EventCard from '../Sub_Components/EventCard'
+import EventCard from '@subComponents/EventCard'
 import { CalendarSearch, Youtube } from 'lucide-react'
-import JumboBackground from '../Sub_Components/JumboBackground'
+import JumboBackground from '@subComponents/JumboBackground'
 import './HomePage.css'
 import AlertMessage from '@subComponents/AlertMessage'
 import events from '@subComponents/Events'
 // import discord from "@assets/discord.svg"
 
 import PostList from './PostList'
-// import YouTubeLiveStream from '../Sub_Components/YouTubeLiveStream'
-import { useState } from 'react'
-import { useEffect } from 'react'
+import YouTubeLiveStream from '@subComponents/YouTubeLiveStream'
+
 import BlogPost from './BlogPost'
 //env YT Credentials
 
+import { BlogContext } from '@subComponents/BlogAPI'; // Correct import
 function HomePage() {
-    const[posts, setPosts] = useState(null)
 
-    useEffect(() => {
-        getPosts()
-    }, []);
-    //NOTE -------START BLOG API CALL
-    const VITE_BLOG_API_KEY = import.meta.env.VITE_BLOG_API_KEY;
-    const VITE_BLOG_SPACE_ID = import.meta.env.VITE_BLOG_SPACE_ID;
-    const BLOG_URL = `https://cdn.contentful.com/spaces/${VITE_BLOG_SPACE_ID}/environments/master/entries?access_token=${VITE_BLOG_API_KEY}`;
+    const context = useContext(BlogContext);  // Use BlogContext, not BlogProvider
 
+     if (!context) {
+        console.error('BlogContext is undefined. Make sure the component is wrapped with BlogProvider.');
+        return null;
+    }
 
-    const getPosts = async () => {
-        try {
-            const response = await fetch(BLOG_URL);
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            const data = await response.json();
-            setPosts(data);
-        } catch (error) {
-            console.error('Fetch error: ', error);
-            setPosts(null); // Optionally set an error state
-        }
-    };
+    const { posts } = context;
 
     //NOTE Utility function to find the matching image for a post
     const findAssetForEntry = (entry, assets) => {
@@ -61,8 +48,6 @@ function HomePage() {
     }
 
     //NOTE -------END BLOG API CALL
-    console.log(posts)
-    // console.log(posts[0].content.content[0].content[0].value)
     const { VITE_YT_API_KEY_MV, VITE_YT_CHANNEL_ID_MV } = import.meta.env
     let filteredEvents = events.filter((event) =>
         isAfter(parseISO(event.ISOdate), new Date())
@@ -95,20 +80,17 @@ function HomePage() {
     return (
         <div>
             <PostList posts={posts} />
-            {posts && selectedPost ? (
+            {/* {posts && selectedPost ? (
             <div>
                 <BlogPost
-                  key={selectedPost.sys.id}
                   post={selectedPost}
-                  limit={1}
-                  imageUrl={imageUrl}
                 />
             </div>
           ) : (
               <div>
                   <h1>No posts found</h1>
               </div>
-          )}
+          )} */}
 
 
 
@@ -179,10 +161,10 @@ function HomePage() {
                 </div>
             </div>
             <div>
-                {/* <YouTubeLiveStream
+                <YouTubeLiveStream
                     apiKey={VITE_YT_API_KEY_MV}
                     channelId={VITE_YT_CHANNEL_ID_MV}
-                /> */}
+                />
                 </div>
                 <div className="mx-auto overflow-hidden bg-gray-800 shadow-md w-fit rounded-xl ">
       <div className="px-2 py-4 space-y-6">

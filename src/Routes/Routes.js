@@ -1,4 +1,3 @@
-import path from 'path'
 import { lazy } from 'react'
 
 export const navItems = [
@@ -44,6 +43,7 @@ export const navItems = [
             { to: '/MediaRecommendations', label: 'Our Media Recommendations' },
         ],
     },
+    /* {type: 'link', to: '/blogs', label: 'Blogs'}, */
     {
         type: 'dropdown',
         label: 'Topics',
@@ -431,6 +431,11 @@ export const componentRoutes = [
         componentPath: '../components/Pages/react/ReactHooks.jsx',
         key: 'reactHooks',
     },
+    {
+        path: '/blogs',
+        componentPath: '../components/Pages/BlogsPage.jsx',
+        key: 'blogs',
+    }
 ]
 
 let RoutesWithComponents = componentRoutes
