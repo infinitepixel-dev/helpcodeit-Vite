@@ -28,7 +28,15 @@ import BlogPost from './BlogPost'
 
 import { BlogContext } from '@subComponents/BlogAPI'; // Correct import
 function HomePage() {
+    const [isX, setIsX] = useState(true);
 
+    const handleMouseEnter = () => {
+      setIsX(false);
+    };
+
+    const handleMouseLeave = () => {
+      setIsX(true);
+    };
     const context = useContext(BlogContext);  // Use BlogContext, not BlogProvider
 
      if (!context) {
@@ -185,24 +193,36 @@ console.log("Posts: ", posts);
                                                       Join our Discord Server
                                   </a>
                               </div>
-                       <div><a
-                    href="https://x.com/HelpCodeIt"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center w-full px-6 py-3 font-bold text-white transition-all duration-300 transform bg-black rounded-full hover:bg-blue-400 hover:shadow-lg hover:-translate-y-1"
-                    ><svg
-                    className="w-6 h-6 mr-3 fill-current"
-                    role="img"
-                    viewBox="0 0 300 300.251"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66"/>
-                  </svg>
-
-                               Follow us @HelpCodeIt</a>
-
-
-                              </div>
+                              <div>
+      <a
+        href="https://x.com/HelpCodeIt"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center w-full px-6 py-3 font-bold text-white transition-all duration-300 transform bg-black rounded-full hover:bg-blue-400 hover:shadow-lg hover:-translate-y-1"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <svg
+          className="w-6 h-6 mr-3 transition-all duration-300 fill-current"
+          role="img"
+          viewBox={isX ? "0 0 300 300" : "0 0 24 24"}
+          xmlns="http://www.w3.org/2000/svg"
+          style={{
+            transform: isX ? "scale(1)" : "scale(1.3)", // Scale the Twitter logo to match the X logo
+            transition: "transform 0.3s ease-in-out",
+          }}
+        >
+          {isX ? (
+            // X Logo SVG
+            <path d="M178.57 127.15 290.27 0h-26.46l-97.03 110.38L89.34 0H0l117.13 166.93L0 300.25h26.46l102.4-116.59 81.8 116.59h89.34M36.01 19.54H76.66l187.13 262.13h-40.66" />
+          ) : (
+            // Twitter Logo SVG (with scale adjustment)
+            <path d="M24 4.557a9.805 9.805 0 01-2.828.775 4.932 4.932 0 002.165-2.724 9.866 9.866 0 01-3.127 1.195A4.918 4.918 0 0016.616 3a4.92 4.92 0 00-4.92 4.92c0 .385.043.76.127 1.122A13.979 13.979 0 011.675 3.149a4.92 4.92 0 001.523 6.57 4.9 4.9 0 01-2.228-.616v.062a4.921 4.921 0 003.946 4.83 4.898 4.898 0 01-2.224.085 4.921 4.921 0 004.604 3.421A9.866 9.866 0 010 21.539a13.951 13.951 0 007.548 2.209c9.057 0 14.01-7.506 14.01-14.01 0-.214-.005-.427-.014-.639A10.025 10.025 0 0024 4.557z" />
+          )}
+        </svg>
+        {isX ? "Follow us @HelpCodeIt" : "Follow us @HelpCodeIt"}
+      </a>
+    </div>
                         </div>
 
 

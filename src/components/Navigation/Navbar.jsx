@@ -15,7 +15,8 @@ const Navbar = ({ theme }) => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 778);
+      setIsSmallScreen(window.innerWidth <= 960);
+
     };
 
     window.addEventListener('resize', handleResize);
