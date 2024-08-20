@@ -1,3 +1,4 @@
+
 import { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import LogoImage from '@subComponents/LogoImage'
@@ -20,8 +21,10 @@ import AlertMessage from '@subComponents/AlertMessage'
 import events from '@subComponents/Events'
 // import discord from "@assets/discord.svg"
 
+
 import PostList from './PostList'
 import YouTubeLiveStream from '@subComponents/YouTubeLiveStream'
+
 
 import BlogPost from './BlogPost'
 //env YT Credentials
@@ -134,7 +137,8 @@ console.log("Posts: ", posts);
                     content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
                 />
             </Helmet>
-            {new Date(filteredEvents[0].ISOdate) > currentDate && filteredEvents[0].show ? (
+            {new Date(filteredEvents[0].ISOdate) > currentDate &&
+            filteredEvents[0].show ? (
                 <AlertMessage
                     message={message}
                     type={
@@ -151,11 +155,12 @@ console.log("Posts: ", posts);
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />}
             {/* SECTION Jumbotron */}
 
-            <div className="text-white hero-text bg-neutral-800">
+            <div className="hero-text bg-neutral-800 text-white">
                 <div className="relative grid-cols-2">
                     <JumboBackground />
                 </div>
             </div>
+
 
 
             <div className='container'>
@@ -230,24 +235,27 @@ console.log("Posts: ", posts);
                 </div>
                         <div className='col-span-1 md:col-span-2'><PostList posts={posts} limit={1} /></div>
                     </div>
+
             </div>
 
             {/* !SECTION end Jumbotron */}
             <div className="container">
                 <div className="grid md:grid-cols-1 lg:grid-cols-2">
                     <div className="mx-auto mb-3">
-                        <h2 className="mt-6 text-3xl font-bold text-center">
+                        <h2 className="mt-6 text-center text-3xl font-bold">
                             Upcoming Event
                         </h2>
                         <EventCard limit={1} />
                     </div>
                     <div className="clearfix my-auto">
+
                         <h2 className="mb-3 text-4xl font-bold text-center">
                             Get expert coding help and tutoring
                         </h2>
 
                         <div className="max-w-2xl p-8 mx-auto mt-3 mb-8 rounded-lg">
                             <h2 className="mb-6 text-3xl font-bold text-center">
+
                                 Book a session now!
                             </h2>
                             <p className="mb-6 text-center">
@@ -259,7 +267,7 @@ console.log("Posts: ", posts);
                             <Link to="/schedule-meeting" className="block">
                                 <button
                                     aria-label="explore meeting options button"
-                                    className="flex px-6 py-3 mx-auto font-bold text-white transition duration-300 bg-blue-700 rounded-full w-fit hover:bg-red-700"
+                                    className="mx-auto flex w-fit rounded-full bg-blue-700 px-6 py-3 font-bold text-white transition duration-300 hover:bg-red-700"
                                 >
                                     Explore Meeting Options
                                     <CalendarSearch
