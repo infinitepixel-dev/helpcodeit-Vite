@@ -24,8 +24,8 @@ jobs:
       - name: Build Vite app
         run: npm run build
         env:
-          VITE_YT_API_KEY_MV: ${{ secrets.YOUTUBE_API_KEY }}
-          VITE_TY_CHANNEL_ID_MV: ${{ secrets.YOUTUBE_CHANNEL_ID_MV }}
+          VITE_YT_API_KEY_MV: ${{ secrets.VITE_YT_API_KEY_MV }}
+          VITE_TY_CHANNEL_ID_MV: ${{ secrets.VITE_YT_CHANNEL_ID_MV}}
           VITE_BLOG_API_KEY: ${{secrets.VITE_BLOG_API_KEY}}
           VITE_BLOG_SPACE_ID: ${{secrets.VITE_BLOG_SPACE_ID}}
 
