@@ -1,4 +1,3 @@
-
 import { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import LogoImage from '@subComponents/LogoImage'
@@ -21,10 +20,8 @@ import AlertMessage from '@subComponents/AlertMessage'
 import events from '@subComponents/Events'
 // import discord from "@assets/discord.svg"
 
-
 import PostList from './PostList'
 import YouTubeLiveStream from '@subComponents/YouTubeLiveStream'
-
 
 import BlogPost from './BlogPost'
 //env YT Credentials
@@ -137,8 +134,7 @@ console.log("Posts: ", posts);
                     content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
                 />
             </Helmet>
-            {new Date(filteredEvents[0].ISOdate) > currentDate &&
-            filteredEvents[0].show ? (
+            {new Date(filteredEvents[0].ISOdate) > currentDate && filteredEvents[0].show ? (
                 <AlertMessage
                     message={message}
                     type={
@@ -162,7 +158,7 @@ console.log("Posts: ", posts);
             </div>
 
 
-            <div>
+            <div className='container'>
                     <div className="grid grid-cols-1 mx-8 mt-5 overflow-hidden bg-gray-800 shadow-md lg:grid-cols-3 rounded-xl">
                 <div>
                     <div>
@@ -234,7 +230,6 @@ console.log("Posts: ", posts);
                 </div>
                         <div className='col-span-1 md:col-span-2'><PostList posts={posts} limit={1} /></div>
                     </div>
-
             </div>
 
             {/* !SECTION end Jumbotron */}
@@ -247,13 +242,12 @@ console.log("Posts: ", posts);
                         <EventCard limit={1} />
                     </div>
                     <div className="clearfix my-auto">
-
                         <h2 className="mb-3 text-4xl font-bold text-center">
                             Get expert coding help and tutoring
                         </h2>
-                        <div className="max-w-2xl p-8 mx-auto my-8 rounded-lg">
-                            <h2 className="mb-6 text-3xl font-bold text-center">
 
+                        <div className="max-w-2xl p-8 mx-auto mt-3 mb-8 rounded-lg">
+                            <h2 className="mb-6 text-3xl font-bold text-center">
                                 Book a session now!
                             </h2>
                             <p className="mb-6 text-center">

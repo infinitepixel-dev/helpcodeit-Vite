@@ -1,13 +1,14 @@
-
 import React, { useState, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '@assets/helpcodeitlogo.svg';
+import logo from '@assets/helpcodeitlogo.webp';
 import { navItems } from '../../Routes/Routes';
 import './Navbar.module.css';
+import { BlogContext } from '@subComponents/BlogAPI';
 
-import React, { useState, useEffect } from 'react'
-import propTypes from 'prop-types'
-
+const Navbar = ({ theme }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
 
   const { posts } = useContext(BlogContext);
 
@@ -16,44 +17,28 @@ import propTypes from 'prop-types'
       setIsSmallScreen(window.innerWidth <= 960);
     };
 
-const LogoImage = React.lazy(() => import('../Sub_Components/LogoImage.jsx'))
+    window.addEventListener('resize', handleResize);
+    handleResize();
 
-// eslint-disable-next-line no-unused-vars
-const Navbar = ({ theme }) => {
-    const [isOpen, setIsOpen] = useState(false)
-    const [isSmallScreen, setIsSmallScreen] = useState(false)
-    const [openDropdown, setOpenDropdown] = useState(null)
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
-    useEffect(() => {
-        const handleResize = () => {
-            setIsSmallScreen(window.innerWidth <= 778)
-        }
-
-
-        window.addEventListener('resize', handleResize)
-        handleResize()
-
-        return () => window.removeEventListener('resize', handleResize)
-    }, [])
-
-    const navLinkClasses = ({ isActive }) => `
+  const navLinkClasses = ({ isActive }) => `
     px-3 py-2 rounded-md text-base font-medium
-    ${
-        isActive
-            ? 'bg-gray-900 text-white'
-            : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+    ${isActive
+      ? 'bg-gray-900 text-white'
+      : 'text-gray-300 hover:bg-gray-700 hover:text-white'
     }
-  `
+  `;
 
-    const Dropdown = ({ label, items }) => {
-        const isDropdownOpen = openDropdown === label
+  const Dropdown = ({ label, items }) => {
+    const isDropdownOpen = openDropdown === label;
 
-        const toggleDropdown = () => {
-            if (isSmallScreen) {
-                setOpenDropdown(isDropdownOpen ? null : label)
-            }
-        }
-
+    const toggleDropdown = () => {
+      if (isSmallScreen) {
+        setOpenDropdown(isDropdownOpen ? null : label);
+      }
+    };
 
     return (
       <div className="relative group">
@@ -191,5 +176,3 @@ const Navbar = ({ theme }) => {
 };
 
 export default Navbar;
-
-
