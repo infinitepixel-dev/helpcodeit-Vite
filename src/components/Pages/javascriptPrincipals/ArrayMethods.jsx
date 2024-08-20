@@ -1,6 +1,3 @@
-import React, { useEffect, useRef } from 'react'
-import hljs from 'highlight.js'
-import 'highlight.js/styles/atom-one-dark.css'
 import MethodComponent from './MethodComponent'
 import ArrayMethodsArray from './MethodArrays/ArrayMethodsArray'
 
