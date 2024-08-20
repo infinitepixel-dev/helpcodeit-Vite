@@ -43,6 +43,7 @@ export const navItems = [
             { to: '/MediaRecommendations', label: 'Our Media Recommendations' },
         ],
     },
+    /* {type: 'link', to: '/blogs', label: 'Blogs'}, */
     {
         type: 'dropdown',
         label: 'Topics',
@@ -131,6 +132,7 @@ export const componentRoutes = [
         componentPath: '../components/Pages/About.jsx',
         key: 'about',
     },
+
     {
         path: '/schedule-meeting',
         componentPath: '../components/Pages/ScheduleMeeting.jsx',
@@ -445,6 +447,11 @@ export const componentRoutes = [
         componentPath: '../components/Pages/react/ReactHooks.jsx',
         key: 'reactHooks',
     },
+    {
+        path: '/blogs',
+        componentPath: '../components/Pages/BlogsPage.jsx',
+        key: 'blogs',
+    }
 ]
 let RoutesWithComponents = componentRoutes
 
