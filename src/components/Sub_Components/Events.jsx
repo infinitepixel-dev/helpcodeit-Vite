@@ -70,7 +70,7 @@ const events = [
         ISOdate: '2024-08-21T01:00:00Z',
         description: `WEEKDAY: Join us for a comprehensive introduction to Tailwind CSS! We'll guide you through the essentials of setting up and learning Tailwind, from understanding core classes to discovering new ones. Learn how to leverage free components effectively, navigate common pitfalls, and enhance your web design skills. Don't miss this opportunity to boost your frontend development expertise with Tailwind CSS!`,
         cost: '10',
-        show: true,
+        show: false,
         youtubeEmbed: `<div class="relative pb-[56.25%] overflow-hidden">
         <iframe  src="https://www.youtube.com/embed/Mfyh1jjqsfU?si=46zt2bY9khenrkPN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" class="top-0 left-0 absolute w-full h-full" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>`,
