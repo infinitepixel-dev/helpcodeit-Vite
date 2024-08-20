@@ -10,7 +10,7 @@ console.log("Posts: ", posts);
 if(posts && posts.length > limit) {
     posts = posts.slice(0, limit);
 }
-
+//Amazing function to get the preview text of the blog post
 
     const getPreviewText = (posts) => {
         const previewText = posts.content[0].content[0].value;
