@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
-import { format } from 'date-fns'
+import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import {format} from 'date-fns';
+import { Youtube } from 'lucide-react';
+
 
 function BlogPost() {
     const location = useLocation()
@@ -68,7 +70,7 @@ function BlogPost() {
                         key={index}
                         src={content.data.target.fields.file.url}
                         alt={content.data.target.fields.title}
-                        className="float-right m-2 w-1/3 rounded-lg md:w-1/4"
+                        className="float-right w-1/3 m-2 rounded-lg md:w-1/4"
                     />
                 )
             default:
@@ -94,22 +96,18 @@ function BlogPost() {
         }
     }
 
-    return (
-        <div key={post.sys.id} className="blog-post container mb-24">
-            <h1 className="my-8 text-5xl">{post.fields.title}</h1>
-            <p className="mb-3 text-sm font-bold text-gray-500">
-                {format(post.sys.updatedAt, 'MMMM dd, yyyy')}
-            </p>
-            {imageUrl && (
-                <img
-                    src={imageUrl}
-                    alt="blog post"
-                    className="float-right m-2 w-1/3 rounded-lg"
-                />
-            )}
-            <div>{post.fields.content.content.map(renderContent)}</div>
-        </div>
-    )
+  return (
+    <div key={post.sys.id} className="container mb-24 blog-post">
+      <h1 className="my-8 text-5xl">{post.fields.title}</h1>
+      <p className="mb-3 text-sm font-bold text-gray-500">{
+      format(post.sys.updatedAt, 'MMMM dd, yyyy')
+      }</p>
+      {imageUrl && (
+        <img src={imageUrl} alt="blog post" className="float-right w-1/3 m-2 rounded-lg" />
+      )}
+      <div>{post.fields.content.content.map(renderContent)}</div>
+    </div>
+  );
 }
 
-export default BlogPost
+export default BlogPost;
