@@ -1,17 +1,24 @@
-import { useEffect } from 'react'
+import { useRef, useEffect, Suspense, lazy } from 'react'
 import { Link } from 'react-router-dom'
+import hljs from 'highlight.js'
 import { Helmet } from 'react-helmet-async'
-
+import CopyButton from '@subComponents/CopyButton'
+import 'highlight.js/styles/atom-one-dark.css'
 import styles from './animations.module.css'
 
-import CodeBlock from '@/components/Sub_Components/CodeBlock'
+
+
+const CodePractice = lazy(() => import('@subComponents/Code_Practice'))
 
 function StandardFunctions() {
+    const codeRef = useRef(null)
+
+
     const codeContainerStyles = {
         backgroundColor: 'lightgray',
         padding: '10px',
         borderRadius: '5px',
-    }
+      };
     //Used to handle the fade in animation
     useEffect(() => {
         let delayIncrement = 6 // Increment the delay by 200ms for each element
@@ -45,11 +52,19 @@ function StandardFunctions() {
         return () => elements.forEach((el) => observer.unobserve(el))
     }, [])
 
+    useEffect(() => {
+        // Apply syntax highlighting to all code elements
+
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block)
+        })
+    }, [])
+
     const sayHelloString = `function sayHello() {
     alert("Hello, World!");
   };`
 
-    const callHelloString = `sayHello();  `
+    const callHelloString = `sayHello();`
 
     const addNumbersString = `function addNumbers(num1, num2) {
     alert(num1 + num2);
@@ -67,7 +82,7 @@ function StandardFunctions() {
         >
             <Helmet>
                 <title>
-                    JavaScript Functions: A Beginner&apos;s Guide | Help Code It
+                    JavaScript Functions: A Beginner's Guide | Help Code It
                 </title>
                 <meta
                     name="description"
@@ -142,10 +157,22 @@ function StandardFunctions() {
                         {/*REVIEW -  Code Container - BEGIN */}
                         <div className="m-2 flex items-start gap-5">
                             <div className="relative">
-                                <CodeBlock
-                                    code={sayHelloString}
-                                    language="javascript"
-                                />
+                                <div
+                                    className={`${codeContainerStyles['code-container']} flex-none`}
+                                >
+                                    <CopyButton
+                                        textToCopy={sayHelloString}
+                                        className="absolute left-0 top-0" // This positions the copy button inside the relative container
+                                    />
+                                    <pre>
+                                        <code
+                                            ref={codeRef}
+                                            className="language-javascript p-2"
+                                        >
+                                            {sayHelloString}
+                                        </code>
+                                    </pre>
+                                </div>
                             </div>
 
                             <p className="flex-auto">
@@ -174,17 +201,19 @@ function StandardFunctions() {
 
                     <p className="mb-5">
                         Once you have created a function, you can use it by
-                        calling its name followed by parentheses. <br />
-                        Here&apos;s how you call the &apos;sayHello&apos;
-                        function:
+                        calling its name followed by parentheses. Here&apos;s
+                        how you call the &apos;sayHello&apos; function:
                     </p>
 
                     <div>
-                        <CodeBlock
-                            code={callHelloString}
-                            language="javascript"
-                        />
-
+                        <pre className="my-5">
+                            <code
+                                ref={codeRef}
+                                className="language-javascript float-start me-5 p-2"
+                            >
+                                {callHelloString}
+                            </code>
+                        </pre>
                         <p>
                             When this line of code is run, it will make a pop-up
                             appear that says &apos;Hello, World!&apos; because
@@ -233,10 +262,18 @@ function StandardFunctions() {
                             <div
                                 className={`${codeContainerStyles['code-container']} flex-none`}
                             >
-                                <CodeBlock
-                                    code={addNumbersString}
-                                    language="javascript"
+                                <CopyButton
+                                    textToCopy={addNumbersString}
+                                    className="absolute left-0 top-0" // This positions the copy button inside the relative container
                                 />
+                                <pre>
+                                    <code
+                                        ref={codeRef}
+                                        className="language-javascript p-2"
+                                    >
+                                        {addNumbersString}
+                                    </code>
+                                </pre>
                             </div>
                         </div>
                         <p className="flex-auto">
@@ -255,50 +292,77 @@ function StandardFunctions() {
                         make your code more powerful and easier to read.
                     </p>
                     {/* Code Container - End */}
+
+                    {/* <hr className="my-7 border-2 border-black dark:border-white" /> */}
                 </div>
+                {/* FIXME This is commented out because it is not working */}
+                {/* <div className="observeMe">
+                    <h2 className="mt-10 py-2 text-3xl">
+                        Let&apos;s Practice!
+                    </h2>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <CodePractice
+                            codeRef={codeRef}
+                            instructions={`Create a function named "addNumbers" that takes two
+          parameters, adds them together, and then shows a pop-up with the
+          result.`}
+                            inputs={{
+                                input1: 'textarea',
+                                input2: 'singleLine',
+                            }}
+                            variables={{
+                                variable1: 'let num1 = 2;',
+                                variable2: 'let num2 = 3;',
+                            }}
+                            expectedOutput={'5'}
+                            // functionData={""}
+                            hljs={hljs}
+                        />
+                    </Suspense> */}
+                {/* </div>
+            </div> */}
 
-                <div className="observeMe">
-                    <p className="mt-10">
-                        Now you know what functions are, how to create them, how
-                        to use them, and why they&apos;re helpful. Try making
-                        your own functions and see what you can do with them.
-                        Remember, coding is all about experimenting and having
-                        fun!
-                    </p>
+            <div className="observeMe">
+                <p className="mt-10">
+                    Now you know what functions are, how to create them, how to
+                    use them, and why they&apos;re helpful. Try making your own
+                    functions and see what you can do with them. Remember,
+                    coding is all about experimenting and having fun!
+                </p>
 
-                    <hr className="mb-5 mt-7 border-2 border-black dark:border-white" />
-                </div>
+                <hr className="mb-5 mt-7 border-2 border-black dark:border-white" />
+            </div>
 
-                <div className="observeMe">
-                    <div className="flex flex-row">
-                        <div className="flex-1"></div>
-                        <div className="flex-1 sm:w-1/2 sm:flex-none">
-                            <h2 className="text-center text-5xl  font-extrabold">
-                                Need deeper explanation?
-                            </h2>
-                            <h2 className="text-center text-4xl font-extrabold">
-                                Here is a Video from Web Dev Simplified
-                            </h2>
-                            <iframe
-                                width="560"
-                                height="315"
-                                src="https://www.youtube.com/embed/FOD408a0EzU"
-                                title="YouTube video player"
-                                // frameBorder="0"
-                                className="youtube-video mt-10 h-auto"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowFullScreen
-                            ></iframe>
-                        </div>
-                        <div className="flex-1"></div>
+            <div className="observeMe">
+                <div className="flex flex-row">
+                    <div className="flex-1"></div>
+                    <div className="flex-1 sm:w-1/2 sm:flex-none">
+                        <h2 className="text-center text-5xl  font-extrabold">
+                            Need deeper explanation?
+                        </h2>
+                        <h2 className="text-center text-4xl font-extrabold">
+                            Here is a Video from Web Dev Simplified
+                        </h2>
+                        <iframe
+                            width="560"
+                            height="315"
+                            src="https://www.youtube.com/embed/FOD408a0EzU"
+                            title="YouTube video player"
+                            // frameBorder="0"
+                            className="youtube-video mt-10 h-auto"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                        ></iframe>
                     </div>
-                </div>
-                <div className="pb-10 text-center text-2xl text-red-500 dark:text-white">
-                    <Link to="/javascript">Back to JavaScript Main Page</Link>
+                    <div className="flex-1"></div>
                 </div>
             </div>
+            <div className="pb-10 text-center text-2xl text-red-500 dark:text-white">
+                <Link to="/javascript">Back to JavaScript Main Page</Link>
+            </div>
         </div>
+    </div>
     )
 }
 
-export default StandardFunctions
+export default StandardFunctions;

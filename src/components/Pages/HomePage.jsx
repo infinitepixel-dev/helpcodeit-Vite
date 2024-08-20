@@ -1,34 +1,61 @@
-
 import { useContext, useState, useEffect } from 'react'
-
 import { Link } from 'react-router-dom'
-const LogoImage = React.lazy(() => import('../Sub_Components/LogoImage.jsx'))
+import LogoImage from '@subComponents/LogoImage'
 import MainCards from '../Sub_Components/MainCards'
 // import EventAlert from '../Sub_Components/EventAlert'
 import { Helmet } from 'react-helmet-async'
+
 import {
     parseISO,
     // formatDistanceToNow,
     differenceInDays,
     isAfter,
+    set,
 } from 'date-fns'
-import EventCard from '../Sub_Components/EventCard'
+import EventCard from '@subComponents/EventCard'
 import { CalendarSearch, Youtube } from 'lucide-react'
-import JumboBackground from '../Sub_Components/JumboBackground'
+import JumboBackground from '@subComponents/JumboBackground'
 import './HomePage.css'
 import AlertMessage from '@subComponents/AlertMessage'
 import events from '@subComponents/Events'
 // import discord from "@assets/discord.svg"
 
-
 import PostList from './PostList'
 import YouTubeLiveStream from '@subComponents/YouTubeLiveStream'
 
 import BlogPost from './BlogPost'
-
 //env YT Credentials
 
+import { BlogContext } from '@subComponents/BlogAPI'; // Correct import
 function HomePage() {
+    const [isX, setIsX] = useState(true);
+
+    const handleMouseEnter = () => {
+      setIsX(false);
+    };
+
+    const handleMouseLeave = () => {
+      setIsX(true);
+    };
+    const context = useContext(BlogContext);  // Use BlogContext, not BlogProvider
+
+     if (!context) {
+        console.error('BlogContext is undefined. Make sure the component is wrapped with BlogProvider.');
+        return null;
+    }
+
+    const { posts } = context;
+
+    //NOTE Utility function to find the matching image for a post
+    const findAssetForEntry = (entry, assets) => {
+        if (!entry.fields.picture) return null
+        if (!assets) return null
+        const pictureId = entry.fields.picture.sys.id
+        const asset = assets.find(asset => asset.sys.id === pictureId)
+        return asset ? asset.fields.file.url : null
+    }
+
+    //NOTE -------END BLOG API CALL
     const { VITE_YT_API_KEY_MV, VITE_YT_CHANNEL_ID_MV } = import.meta.env
     let filteredEvents = events.filter((event) =>
         isAfter(parseISO(event.ISOdate), new Date())
@@ -50,12 +77,19 @@ function HomePage() {
         daysUntilEvent === 0
             ? (message = `Our next event is ${filteredEvents[0].title} today. The cost is $${filteredEvents[0].cost} and registration is open till 5 minutes before.`)
             : null
-        // console.log(message);
     } else {
         console.log('No upcoming events.')
     }
     currentDate = new Date()
     // console.log(message)
+    const selectedPost = posts?.items?.length > 0 ? posts.items[0] : null;
+    const imageUrl = posts && selectedPost ? findAssetForEntry(selectedPost, posts.includes?.Asset) : null;
+
+    let limitPosts = 1;
+    let limitedToOne = posts[0] ? posts[1] : null;
+console.log("LimitedToOne: ", limitedToOne);
+console.log("Posts: ", posts);
+
     return (
         <div>
             <Helmet>
@@ -122,7 +156,6 @@ function HomePage() {
                     <JumboBackground />
                 </div>
             </div>
-
 
 
             <div className='container'>
@@ -197,7 +230,6 @@ function HomePage() {
                 </div>
                         <div className='col-span-1 md:col-span-2'><PostList posts={posts} limit={1} /></div>
                     </div>
-
             </div>
 
             {/* !SECTION end Jumbotron */}
@@ -210,14 +242,12 @@ function HomePage() {
                         <EventCard limit={1} />
                     </div>
                     <div className="clearfix my-auto">
-
                         <h2 className="mb-3 text-4xl font-bold text-center">
                             Get expert coding help and tutoring
                         </h2>
 
                         <div className="max-w-2xl p-8 mx-auto mt-3 mb-8 rounded-lg">
                             <h2 className="mb-6 text-3xl font-bold text-center">
-
                                 Book a session now!
                             </h2>
                             <p className="mb-6 text-center">

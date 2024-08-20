@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect, useContext } from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '@assets/helpcodeitlogo.webp';
+import logo from '@assets/helpcodeitlogo.svg';
 import { navItems } from '../../Routes/Routes';
 import './Navbar.module.css';
 import { BlogContext } from '@subComponents/BlogAPI';
@@ -23,7 +22,6 @@ const Navbar = ({ theme }) => {
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
 
   const navLinkClasses = ({ isActive }) => `
     px-3 py-2 rounded-md text-base font-medium
@@ -89,53 +87,50 @@ const Navbar = ({ theme }) => {
   const renderNavItems = (isMobile = false) => {
     return navItems.map((item, index) => {
       if (item.type === 'link') {
-
         return (
-            <div className="group relative">
-                <button
-                    onClick={toggleDropdown}
-                    className="rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
-                >
-                    {label}
-                </button>
-                <div
-                    id="custom-drop"
-                    style={{ top: '30px' }}
-                    className={`
-          absolute  right-0 z-50 mt-2 w-48 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5
-          ${
-              isSmallScreen
-                  ? isDropdownOpen
-                      ? 'block'
-                      : 'hidden'
-                  : 'invisible opacity-0 transition-all duration-300 group-hover:visible group-hover:opacity-100'
-          }
-        `}
-                >
-                    <div
-                        className="py-1"
-                        role="menu"
-                        aria-orientation="vertical"
-                        aria-labelledby="options-menu"
-                    >
-                        {items.map((item, index) => (
-                            <NavLink
-                                key={index}
-                                to={item.to}
-                                className="block px-4 py-2 text-base font-bold text-gray-600 hover:bg-gray-50"
-                                role="menuitem"
-                                onClick={() => {
-                                    setOpenDropdown(null)
-                                    setIsOpen(false)
-                                }}
-                            >
-                                {item.label}
-                            </NavLink>
-                        ))}
-                    </div>
-                </div>
-            </div>
+          <NavLink
+            key={index}
+            to={item.to}
+            className={navLinkClasses}
+            end={item.to === '/'}
+            onClick={() => isMobile && setIsOpen(false)}
+          >
+            {item.label}
+          </NavLink>
+        );
+      } else if (item.type === 'dropdown') {
+        return <Dropdown key={index} label={item.label} items={item.items} />;
+      }
+    });
+  };
 
+  const renderBlogsNavLink = () => {
+    return (
+      <NavLink
+        to="/blogs"
+        className={navLinkClasses}
+        state={{ posts }}
+        onClick={() => isSmallScreen && setIsOpen(false)}
+      >
+        Blogs
+      </NavLink>
+    );
+  };
+
+  return (
+    <nav className="relative z-40 bg-neutral-900">
+      <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+        <div className="flex items-center justify-between h-16">
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <img className="w-10 h-10 rounded-lg" src={logo} alt="Logo" />
+            </div>
+          </div>
+          <div className={`${isSmallScreen ? 'hidden' : 'block'} me-5 ms-auto`}>
+            <div className="flex items-baseline space-x-3 ml-28">
+              {renderNavItems()}
+              {renderBlogsNavLink()}
+            </div>
           </div>
           <div className={`flex ${isSmallScreen ? 'block' : 'hidden'}`}>
             <button
@@ -181,4 +176,3 @@ const Navbar = ({ theme }) => {
 };
 
 export default Navbar;
-

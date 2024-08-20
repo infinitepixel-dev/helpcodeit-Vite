@@ -43,6 +43,7 @@ export const navItems = [
             { to: '/MediaRecommendations', label: 'Our Media Recommendations' },
         ],
     },
+    /* {type: 'link', to: '/blogs', label: 'Blogs'}, */
     {
         type: 'dropdown',
         label: 'Topics',
@@ -78,8 +79,7 @@ export const componentRoutes = [
     },
     {
         path: '/htmlPages/AccessibilityChecklist',
-        componentPath:
-            '../components/Pages/htmlPages/AccessibilityChecklist.jsx',
+        componentPath: '../components/Pages/htmlPages/AccessibilityChecklist.jsx',
         key: 'accessibilityChecklist',
     },
     {
@@ -90,23 +90,15 @@ export const componentRoutes = [
     {
         path: '/htmlPages/Tables',
         componentPath: '../components/Pages/htmlPages/HTMLTables.jsx',
-        key: 'htmlTables',
+        key: 'htmlTables'
     },
     {
         path: '/htmlPages/Forms',
         componentPath: '../components/Pages/htmlPages/Forms.jsx',
         key: 'htmlForms',
     },
-    {
-        path: '/htmlPages/HTMLImages',
-        componentPath: '../components/Pages/htmlPages/HTMLImages.jsx',
-        key: 'htmlImages',
-    },
-    {
-        path: '/htmlPages/GuideToMetaTags',
-        componentPath: '../components/Pages/htmlPages/GuideToMetaTags.jsx',
-        key: 'guideToMetaTags',
-    },
+    { path: '/htmlPages/HTMLImages', componentPath: '../components/Pages/htmlPages/HTMLImages.jsx', key: 'htmlImages' },
+    { path: '/htmlPages/GuideToMetaTags', componentPath: '../components/Pages/htmlPages/GuideToMetaTags.jsx', key: 'guideToMetaTags' },
 
     //INFO: CSS Pages.
 
@@ -131,6 +123,7 @@ export const componentRoutes = [
         componentPath: '../components/Pages/About.jsx',
         key: 'about',
     },
+
     {
         path: '/schedule-meeting',
         componentPath: '../components/Pages/ScheduleMeeting.jsx',
@@ -175,16 +168,10 @@ export const componentRoutes = [
     },
     {
         path: '/javascript',
-        componentPath:
-            '../components/Pages/javascriptPrincipals/JavascriptMainPage.jsx',
+        componentPath: '../components/Pages/javascriptPrincipals/JavascriptMainPage.jsx',
         key: 'javascriptMain',
     },
-    {
-        path: '/javascriptPrincipals/AsyncAwait',
-        componentPath:
-            '../components/Pages/javascriptPrincipals/AsyncAwait.jsx',
-        key: 'asyncAwait',
-    },
+    { path: '/javascriptPrincipals/AsyncAwait', componentPath: '../components/Pages/javascriptPrincipals/AsyncAwait.jsx', key: 'asyncAwait' },
     {
         path: '/javascriptPrincipals/PracticeProblems',
         componentPath:
@@ -361,7 +348,8 @@ export const componentRoutes = [
     },
     {
         path: '/githubPages/GitProbAndAnswers',
-        componentPath: '../components/Pages/githubPages/GitProbAndAnswers.jsx',
+        componentPath:
+            '../components/Pages/githubPages/GitProbAndAnswers.jsx',
         key: 'gitProbAndAnswers',
     },
     //INFO: Markdown Pages
@@ -426,9 +414,7 @@ export const componentRoutes = [
         key: 'reactRouter5',
     },
     {
-        path: '/RouterConversionGuide',
-        componentPath: '../components/Pages/react/RouterConversionGuide.jsx',
-        key: 'routerConversionGuide',
+        path: '/RouterConversionGuide', componentPath: '../components/Pages/react/RouterConversionGuide.jsx', key: 'routerConversionGuide'
     },
     {
         path: '/PropsAndState',
@@ -445,7 +431,13 @@ export const componentRoutes = [
         componentPath: '../components/Pages/react/ReactHooks.jsx',
         key: 'reactHooks',
     },
+    {
+        path: '/blogs',
+        componentPath: '../components/Pages/BlogsPage.jsx',
+        key: 'blogs',
+    }
 ]
+
 let RoutesWithComponents = componentRoutes
 
 if (typeof window !== 'undefined') {
@@ -454,58 +446,20 @@ if (typeof window !== 'undefined') {
     const subComponentMap = import.meta.glob(
         '../components/Sub_Components/**/*.{jsx,js}'
     )
+    /* console.log('Component Map:', { ...componentMap, ...subComponentMap }) */
 
     // Initialize the components object
     const components = {}
 
-    // Meta field validation and component lazy-loading
-    // Define required meta fields
-    const requiredMetaFields = [
-        'title', // SEO: Page title
-        'description', // SEO: Meta description
-        'keywords', // SEO: Meta keywords
-        'og:title', // Social: Open Graph title
-        'og:description', // Social: Open Graph description
-        'og:image', // Social: Open Graph image
-        'og:url', // Social: Canonical URL for Open Graph
-        'twitter:title', // Social: Twitter title
-        'twitter:description', // Social: Twitter description
-        'twitter:image', // Social: Twitter image
-        'path', // Route Path
-        'layout', // Layout to use for rendering
-        'requiresAuth', // Whether authentication is required
-        'roles', // Roles allowed to access
-        'breadcrumbs', // Breadcrumb navigation information
-    ]
-
+    // Adjust componentPath if necessary to match the keys in componentMap
     componentRoutes.forEach((route) => {
         const importPath = route.componentPath
-        let componentPromise = null
-
         if (componentMap[importPath]) {
-            componentPromise = componentMap[importPath]()
             components[route.key] = lazy(componentMap[importPath])
         } else if (subComponentMap[importPath]) {
-            componentPromise = subComponentMap[importPath]()
             components[route.key] = lazy(subComponentMap[importPath])
         } else {
             console.warn(`Component for path ${importPath} not found.`)
-        }
-
-        if (componentPromise) {
-            componentPromise.then((componentModule) => {
-                const component = componentModule.default
-                const meta = component?.meta || {}
-
-                const missingFields = requiredMetaFields.filter(
-                    (field) => !meta[field]
-                )
-                if (missingFields.length > 0) {
-                    console.warn(
-                        `Missing meta fields for ${importPath}: ${missingFields.join(', ')}`
-                    )
-                }
-            })
         }
     })
 

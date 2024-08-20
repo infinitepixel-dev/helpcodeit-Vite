@@ -11,51 +11,46 @@ const JumboBackground = () => {
 
     useEffect(() => {
         const backgroundElement = backgroundRef.current
+        const sources = [
+            { type: 'image/webp', srcset: bgImg1 },
+            { type: 'image/avif', srcset: bgImg2 },
+        ]
+        let fallbackImage = bgImg3
 
-        const setBackgroundImage = (src) => {
+        const setImage = (src) => {
             if (backgroundElement) {
                 backgroundElement.style.backgroundImage = `url('${src}')`
             }
         }
 
-        const testImageSupport = (src, callback) => {
-            const img = new Image()
-            img.src = src
-            img.onload = () => callback(true)
-            img.onerror = () => callback(false)
-        }
-
-        // Test WebP support first
-        testImageSupport(bgImg1, (webpSupported) => {
-            if (webpSupported) {
-                setBackgroundImage(bgImg1)
-            } else {
-                // Test AVIF support if WebP fails
-                testImageSupport(bgImg2, (avifSupported) => {
-                    if (avifSupported) {
-                        setBackgroundImage(bgImg2)
-                    } else {
-                        // Fallback to JPG
-                        setBackgroundImage(bgImg3)
-                    }
-                })
+        sources.forEach((source) => {
+            const testImage = new Image()
+            testImage.src = source.srcset
+            testImage.onload = function () {
+                if (testImage.complete && testImage.naturalWidth !== 0) {
+                    setImage(source.srcset)
+                }
             }
         })
+
+        // Fallback to jpg if none of the sources load
+        setImage(fallbackImage)
     }, [])
 
     return (
-        <div className="jumbo-background grid grid-cols-2" ref={backgroundRef}>
-            <div className="col-span-2 my-9 place-content-center text-center text-white sm:col-span-2 md:col-span-1">
-                <LogoImage
-                    classNameValue="mx-auto place-content-center h-64 w-64 rounded-xl"
-                    altValue="Help code it logo"
-                />
-                <h1 className="hero-text mx-auto mb-0 text-pretty font-extrabold">
-                    Resources for <br /> beginning developers
-                </h1>
-            </div>
-            <div className=""></div>
-        </div>
+    <div className=" jumbo-background grid grid-cols-2" ref={backgroundRef}>
+
+    <div className=" text-center my-9 text-white md:col-span-1 sm:col-span-2 col-span-2 place-content-center">
+                            <LogoImage
+                                classNameValue="mx-auto  place-content-center h-64 w-64 rounded-xl"
+                                altValue="Help code it logo"
+                            />
+                            <h1 className="hero-text mx-auto mb-0 text-pretty font-extrabold">
+                                Resources for <br /> beginning developers
+                            </h1>
+                        </div>
+<div className=''></div>
+    </div>
     )
 }
 

@@ -1,10 +1,20 @@
 import objectImg from '@assets/objectpagegraphic.svg'
+import { useEffect, useRef } from 'react'
+import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
 import { Helmet } from 'react-helmet-async'
 
-import CodeBlock from '@/components/Sub_Components/CodeBlock'
 
 export default function JSObjects() {
+    const codeRef = useRef(null)
+
+    useEffect(() => {
+        // Apply syntax highlighting to all code elements
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block)
+        })
+    }, [])
+
     const objectExample = `var person = {
   firstName:"John",
   lastName:"Doe",
@@ -72,12 +82,14 @@ export default function JSObjects() {
                         <h2 className="mb-5 text-center text-4xl">
                             Example of an Object
                         </h2>
-                        <div className="flex items-center justify-center">
-                            <CodeBlock
-                                code={objectExample}
-                                language="javascript"
-                            />
-                        </div>
+                        <pre>
+                            <code
+                                ref={codeRef}
+                                className="language-javascript mx-auto py-5"
+                            >
+                                {objectExample}
+                            </code>
+                        </pre>
                     </div>
                     <div className="m-4 h-fit rounded-2xl border border-black bg-slate-200 shadow-xl dark:border-white dark:bg-slate-600">
                         <p className="p-4   font-bold">
@@ -101,13 +113,12 @@ export default function JSObjects() {
                     </p>
                     <p className="p-4 text-center text-4xl">or</p>
                     <p className="p-4">
-                        objectName[&quot;propertyName&quot;] -- This is known as
-                        bracket notation. It&apos;s useful when you need to
-                        access a property that has a space in the name or when
-                        you need to use a variable to access the property. It is
-                        poor practice to name your properties with spaces, but
-                        it&apos;s good to know how to access them if you
-                        encounter them.
+                        objectName["propertyName"] -- This is known as bracket
+                        notation. It's useful when you need to access a property
+                        that has a space in the name or when you need to use a
+                        variable to access the property. It is poor practice to
+                        name your properties with spaces, but it's good to know
+                        how to access them if you encounter them.
                     </p>
                 </div>
             </div>

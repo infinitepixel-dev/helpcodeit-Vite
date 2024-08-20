@@ -1,16 +1,26 @@
+import { useEffect, useRef } from 'react'
+import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
 import { Helmet } from 'react-helmet-async'
 
-import CodeBlock from '@/components/Sub_Components/CodeBlock'
 
 function StringConcatenation() {
+    const codeRef = useRef(null)
+
+    useEffect(() => {
+        // Apply syntax highlighting to all code elements
+        document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block)
+        })
+    }, [])
+
     const codeString = `let firstName = 'John';
 let lastName = 'Doe';
 let fullName = firstName + ' ' + lastName;
 console.log(fullName); // John Doe
 `
 
-    const codeString2 = `let firstName = 'John';
+const codeString2 = `let firstName = 'John';
 let lastName = 'Doe';
 let fullName = firstName + ' ' + lastName;
 console.log(fullName); // John Doe
@@ -22,10 +32,11 @@ let fullName = \` First Name: \${firstName}, Last Name: \${lastName}\`;
 console.log(fullName); // First Name: John, Last Name: Doe
 `
 
-    const teplateLiteral2 = `let firstName = 'John';
+const teplateLiteral2 = `let firstName = 'John';
 let lastName = 'Doe';
 console.log(\`Hello, my name is \${firstName} \${lastName}\`); // Hello, my name is John Doe
 `
+
 
     return (
         <div className="container text-lg">
@@ -63,13 +74,21 @@ console.log(\`Hello, my name is \${firstName} \${lastName}\`); // Hello, my name
                 Below is an example of how to concatenate strings using the +
                 operator:
             </>
-            <CodeBlock code={codeString} language="javascript" />
+            <pre>
+                <code ref={codeRef} className="javascript mt-4 text-base">
+                    {codeString}
+                </code>
+            </pre>
             <p>
                 You can declare a variable and then concatenate the strings, but
                 you also can use this when logging a string directly.
             </p>
+            <pre>
+                <code ref={codeRef} className="javascript mt-4 text-base">
+                    {codeString2}
+                </code>
+            </pre>
 
-            <CodeBlock code={codeString2} language="javascript" />
             <h3 className="my-5 text-2xl">Template Literal</h3>
             <p>
                 The other method of concatenating strings is by using template
@@ -87,12 +106,20 @@ console.log(\`Hello, my name is \${firstName} \${lastName}\`); // Hello, my name
                 Below is an example of how to concatenate strings using template
                 literals:
             </p>
-            <CodeBlock code={templateLiteral} language="javascript" />
+            <pre>
+                <code ref={codeRef} className="javascript mt-4 text-base">
+                    {templateLiteral}
+                </code>
+            </pre>
             <p>
                 You can also use template literals to directly log a string
                 without having to store it in a variable first.
             </p>
-            <CodeBlock code={teplateLiteral2} language="javascript" />
+            <pre>
+                <code ref={codeRef} className="javascript mt-4 text-base">
+                    {teplateLiteral2}
+                </code>
+            </pre>
         </div>
     )
 }

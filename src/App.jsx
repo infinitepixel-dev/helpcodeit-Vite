@@ -9,6 +9,10 @@ import { Routes, Route } from 'react-router-dom'
 // import Footer from '@subComponents/Footer'
 import RoutesWithComponents from './Routes/Routes.js'
 import { Helmet } from 'react-helmet-async'
+import BlogPost from './components/Pages/BlogPost'
+import { BlogProvider } from '@subComponents/BlogAPI';  // Correct import for BlogProvider
+
+
 
 // console.log('RoutesWithComponents: ', RoutesWithComponents)
 
@@ -33,6 +37,32 @@ const useTheme = () => {
 }
 
 function App() {
+
+    const[posts, setPosts] = useState(null)
+
+    useEffect(() => {
+        getPosts()
+    }, []);
+    //NOTE -------START BLOG API CALL
+    const VITE_BLOG_API_KEY = import.meta.env.VITE_BLOG_API_KEY;
+    const VITE_BLOG_SPACE_ID = import.meta.env.VITE_BLOG_SPACE_ID;
+    const BLOG_URL = `https://cdn.contentful.com/spaces/${VITE_BLOG_SPACE_ID}/environments/master/entries?access_token=${VITE_BLOG_API_KEY}`;
+
+
+    const getPosts = async () => {
+        try {
+            const response = await fetch(BLOG_URL);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
+            setPosts(data);
+        } catch (error) {
+            console.error('Fetch error: ', error);
+            setPosts(null); // Optionally set an error state
+        }
+    };
+    //NOTE -------END BLOG API CALL
     const theme = useTheme()
     const footerComponent = RoutesWithComponents.find(
         (route) => route.key === 'footer'
@@ -45,6 +75,7 @@ function App() {
 
     return (
         <DarkModeProvider>
+                 <BlogProvider>
             <div>
                 <Helmet>
                     <meta
@@ -69,25 +100,27 @@ function App() {
                     />
                     <meta name="type" property="og:type" content="website" />
                 </Helmet>
-                <div className="m-0 w-full p-0">
+                <div className="w-full p-0 m-0">
                     <Navbar theme={theme} />
                 </div>
 
                 <Suspense fallback={<div>Loading...</div>}>
                     <Routes>
                         {RoutesWithComponents.map(
-                            ({ path, component: Component, key }) => (
+                            ({ path, component: Component, key, props }) => (
                                 <Route
                                     key={key}
                                     path={path}
-                                    element={<Component />}
+                                    element={<Component {...props} />}
                                 />
                             )
                         )}
+                        <Route path='/post/:id' element={<BlogPost />} />
                     </Routes>
+
                 </Suspense>
 
-                <div className="m-0 mt-5 w-full p-0">
+                <div className="w-full p-0 m-0 mt-5">
                     {/* <Footer /> */}
                     {footerComponent
                         ? React.createElement(footerComponent)
@@ -96,10 +129,11 @@ function App() {
             </div>
             <button
                 onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-                className="fixed bottom-12 right-5 z-0 rounded-full bg-blue-500 px-4 py-2 text-xs font-bold text-white hover:bg-blue-700"
+                className="fixed z-0 px-4 py-2 text-xs font-bold text-white bg-blue-500 rounded-full bottom-12 right-5 hover:bg-blue-700"
             >
                 Back to top ↑
             </button>
+            </BlogProvider>
         </DarkModeProvider>
     )
 }
