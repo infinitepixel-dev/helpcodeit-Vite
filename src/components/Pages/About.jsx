@@ -8,7 +8,6 @@ function About() {
             <Helmet>
                 <title>About Us | Help Code It</title>
                 <meta
-                    title="About Us | Help Code It"
                     name="description"
                     content="Learn about Help Code It, a website dedicated to teaching JavaScript and web development. Meet the team: Michael Varnell and Matthew Cox, experienced developers committed to education and mentorship."
                 />
@@ -137,4 +136,4 @@ function About() {
     )
 }
 
-export default About
+export default About;
