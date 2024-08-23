@@ -1,10 +1,27 @@
-import { useRef, useEffect } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { gsap } from 'gsap'
 import propTypes from 'prop-types'
 import { Trash } from 'react-feather'
 
 function CartPage({ cartItems, removeFromCart, updateQuantity }) {
     const itemRefs = useRef([]) // Initialize with an empty array
+    const [isModalVisible, setIsModalVisible] = useState(false) // Track modal visibility
+    const [itemToDelete, setItemToDelete] = useState(null) // Track which item to delete
+    const [deletingItemIndex, setDeletingItemIndex] = useState(null) // Track the index of the item being deleted
+
+    const convertBlobToBase64 = (blob) => {
+        if (!blob) return null
+
+        const byteArray = new Uint8Array(blob.data)
+        const base64String = btoa(
+            byteArray.reduce(
+                (data, byte) => data + String.fromCharCode(byte),
+                ''
+            )
+        )
+
+        return `data:image/jpeg;base64,${base64String}`
+    }
 
     // This effect only runs once when the component mounts and when new items are added
     useEffect(() => {
@@ -38,20 +55,6 @@ function CartPage({ cartItems, removeFromCart, updateQuantity }) {
             .toFixed(2)
     }
 
-    const convertBlobToBase64 = (blob) => {
-        if (!blob) return null
-
-        const byteArray = new Uint8Array(blob.data)
-        const base64String = btoa(
-            byteArray.reduce(
-                (data, byte) => data + String.fromCharCode(byte),
-                ''
-            )
-        )
-
-        return `data:image/jpeg;base64,${base64String}`
-    }
-
     const handleIncrease = (id, currentQuantity) => {
         updateQuantity(id, currentQuantity + 1)
     }
@@ -60,6 +63,36 @@ function CartPage({ cartItems, removeFromCart, updateQuantity }) {
         if (currentQuantity > 1) {
             updateQuantity(id, currentQuantity - 1)
         }
+    }
+
+    const showDeleteModal = (item, index) => {
+        setItemToDelete(item)
+        setDeletingItemIndex(index)
+        setIsModalVisible(true)
+    }
+
+    const handleDeleteConfirm = () => {
+        if (deletingItemIndex !== null) {
+            // Animate item removal
+            const tl = gsap.timeline({
+                onComplete: () => {
+                    // Remove the item from the cart after animation completes
+                    removeFromCart(itemToDelete.id)
+                    setIsModalVisible(false) // Hide modal after deletion
+                },
+            })
+
+            tl.to(itemRefs.current[deletingItemIndex], {
+                opacity: 0,
+                y: -50,
+                duration: 0.5,
+                ease: 'power3.in',
+            })
+        }
+    }
+
+    const handleDeleteCancel = () => {
+        setIsModalVisible(false)
     }
 
     return (
@@ -73,7 +106,7 @@ function CartPage({ cartItems, removeFromCart, updateQuantity }) {
                 ) : (
                     cartItems.map((item, index) => (
                         <div
-                            key={item.id} // Use item.id instead of index to avoid key issues
+                            key={item.id}
                             ref={(el) => (itemRefs.current[index] = el)} // Attach GSAP ref to each item
                             className="flex flex-col items-center justify-between rounded bg-slate-800 p-4 shadow md:flex-row"
                         >
@@ -137,8 +170,9 @@ function CartPage({ cartItems, removeFromCart, updateQuantity }) {
                                     </button>
                                 </div>
 
+                                {/* Delete Button */}
                                 <button
-                                    onClick={() => removeFromCart(item.id)}
+                                    onClick={() => showDeleteModal(item, index)}
                                     className="text-red-500"
                                 >
                                     <Trash className="h-8 w-8" />
@@ -157,6 +191,35 @@ function CartPage({ cartItems, removeFromCart, updateQuantity }) {
                     <h2 className="text-2xl font-bold">
                         Total: ${calculateTotal()}
                     </h2>
+                </div>
+            )}
+
+            {/* Delete Confirmation Modal */}
+            {isModalVisible && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="w-96 rounded-lg bg-white bg-opacity-90 p-6 text-black shadow-lg">
+                        <h2 className="mb-4 text-lg font-bold">
+                            Confirm Deletion
+                        </h2>
+                        <p className="mb-4">
+                            Are you sure you want to remove{' '}
+                            <strong>{itemToDelete.title}</strong> from the cart?
+                        </p>
+                        <div className="flex justify-end space-x-4">
+                            <button
+                                onClick={handleDeleteCancel}
+                                className="rounded bg-gray-300 px-4 py-2 text-black hover:bg-gray-400"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                onClick={handleDeleteConfirm}
+                                className="rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600"
+                            >
+                                Delete
+                            </button>
+                        </div>
+                    </div>
                 </div>
             )}
         </div>

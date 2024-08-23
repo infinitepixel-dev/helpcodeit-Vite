@@ -18,6 +18,7 @@ import Dashboard from './components/Product_Management/pages/Dashboard'
 import AddProductForm from './components/Product_Management/pages/AddProductForm'
 import MerchPage from './components/Product_Management/pages/MerchPage'
 import CartPage from './components/Product_Management/pages/CartPage'
+import CartPopOut from './components/Product_Management/pages/CartPopOut'
 
 //INFO Define theme outside of App component
 const useTheme = () => {
@@ -143,7 +144,12 @@ function App() {
                             {/* /products */}
                             <Route
                                 path="/merch"
-                                element={<MerchPage addToCart={addToCart} />}
+                                element={
+                                    <MerchPage
+                                        cartItems={cartItems}
+                                        addToCart={addToCart}
+                                    />
+                                }
                             />
                             {/* Cart Page */}
                             <Route
@@ -155,6 +161,11 @@ function App() {
                                         updateQuantity={updateQuantity}
                                     />
                                 }
+                            />
+                            {/* Cart Pop Out */}
+                            <Route
+                                path="/cartPopOut"
+                                element={<CartPopOut cartItems={cartItems} />}
                             />
                         </Routes>
                     </Suspense>
