@@ -56,4 +56,25 @@ export default defineConfig({
             },
         },
     },
+    //overrides for node payments management
+    overrides: [
+        {
+            files: {
+                '/src/components/Product_Management/db_server/productServer.js':
+                    '/src/components/Product_Management/db_server/productServer.js',
+            },
+            env: {
+                node: true,
+            },
+            rules: {
+                'global-require': 'off', // Allow use of require()
+                'import/no-extraneous-dependencies': 'off', // Disable any import rules
+            },
+        },
+    ],
+    server: {
+        host: '0.0.0.0', // This will allow access over the network
+        port: 5173, // Default port; change if necessary
+        strictPort: true, // Ensure the specified port is used
+    },
 })

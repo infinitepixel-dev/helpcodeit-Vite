@@ -13,6 +13,12 @@ import { BlogProvider } from '@subComponents/BlogAPI' // Correct import for Blog
 
 // console.log('RoutesWithComponents: ', RoutesWithComponents)
 
+//ANCHOR Product Management Components
+import Dashboard from './components/Product_Management/pages/Dashboard'
+import AddProductForm from './components/Product_Management/pages/AddProductForm'
+import MerchPage from './components/Product_Management/pages/MerchPage'
+import CartPage from './components/Product_Management/pages/CartPage'
+
 //INFO Define theme outside of App component
 const useTheme = () => {
     const [theme, setTheme] = useState(
@@ -34,6 +40,38 @@ const useTheme = () => {
 }
 
 function App() {
+    // Cart Items
+    const [cartItems, setCartItems] = useState([])
+
+    const addToCart = (product) => {
+        const existingProduct = cartItems.find((item) => item.id === product.id)
+        if (existingProduct) {
+            setCartItems(
+                cartItems.map((item) =>
+                    item.id === product.id
+                        ? { ...item, quantity: item.quantity + 1 }
+                        : item
+                )
+            )
+        } else {
+            setCartItems([...cartItems, { ...product, quantity: 1 }])
+        }
+    }
+
+    const removeFromCart = (id) => {
+        setCartItems(cartItems.filter((item) => item.id !== id))
+    }
+
+    const updateQuantity = (id, quantity) => {
+        setCartItems(
+            cartItems.map((item) =>
+                item.id === id
+                    ? { ...item, quantity: Math.max(1, quantity) }
+                    : item
+            )
+        )
+    }
+
     //NOTE -------END BLOG API CALL
     const theme = useTheme()
     const footerComponent = RoutesWithComponents.find(
@@ -93,6 +131,31 @@ function App() {
                                 )
                             )}
                             <Route path="/post/:id" element={<BlogPost />} />
+
+                            {/* Product Management Routes */}
+                            {/* /add-product */}
+                            <Route
+                                path="/add-product"
+                                element={<AddProductForm />}
+                            />
+                            {/* /dashboard */}
+                            <Route path="/dashboard" element={<Dashboard />} />
+                            {/* /products */}
+                            <Route
+                                path="/merch"
+                                element={<MerchPage addToCart={addToCart} />}
+                            />
+                            {/* Cart Page */}
+                            <Route
+                                path="/cart"
+                                element={
+                                    <CartPage
+                                        cartItems={cartItems}
+                                        removeFromCart={removeFromCart}
+                                        updateQuantity={updateQuantity}
+                                    />
+                                }
+                            />
                         </Routes>
                     </Suspense>
 
