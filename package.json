@@ -13,6 +13,8 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "@contentful/rich-text-react-renderer": "^15.22.9",
+        "@contentful/rich-text-types": "^16.8.3",
         "@fullcalendar/daygrid": "^6.1.15",
         "@fullcalendar/react": "^6.1.15",
         "@ngneat/falso": "^7.2.0",
