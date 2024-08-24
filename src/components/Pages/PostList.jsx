@@ -5,6 +5,7 @@ import { format } from 'date-fns';
 
 
 function BlogList({posts, limit=3}) {
+    posts.sort((a, b) => new Date(b.sys.createdAt) - new Date(a.sys.createdAt));
 console.log("Posts: ", posts);
 
 if(posts && posts.length > limit) {
@@ -30,7 +31,7 @@ if(posts && posts.length > limit) {
                 {posts && posts.length > 0 ? (
                     posts.map((post) => {
 
-                        let publishedDate = format(new Date(post.sys.updatedAt), 'MMMM dd, yyyy');
+                        let publishedDate = format(new Date(post.sys.createdAt), 'MMMM dd, yyyy');
                         // const imageUrl = post.fields.picture?.fields.file.url;
                         // console.log('Post: ', post);
                         return (
@@ -43,6 +44,9 @@ if(posts && posts.length > limit) {
                                         <h2 className="text-xl font-bold text-balance">
                                             {post.fields.title}
                                         </h2>
+                                        <p className="text-sm font-semibold text-gray-700 dark:text-gray-200">
+                                            By: {post.fields.Author}
+                                        </p>
                                         <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                                             {publishedDate}
                                         </p>
