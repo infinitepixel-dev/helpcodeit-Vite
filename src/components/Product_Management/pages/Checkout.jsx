@@ -6,9 +6,13 @@ import {
     useStripe,
     useElements,
     CardElement,
+    // TODO: Add PaymentElement
 } from '@stripe/react-stripe-js'
 import { useNavigate } from 'react-router-dom' // To handle navigation
 import { gsap } from 'gsap'
+
+// Load Stripe with your publishable key
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY)
 
 const apiUrl = `${window.location.protocol}//${window.location.hostname}:3082/api/payment`
 
@@ -43,7 +47,6 @@ const CheckoutForm = ({ cartItems }) => {
         console.log('Stripe response: ', dataResponse)
 
         const cardElement = elements.getElement(CardElement)
-
         const { error, paymentIntent } = await stripe.confirmCardPayment(
             dataResponse.clientSecret,
             {
@@ -115,6 +118,7 @@ const CheckoutForm = ({ cartItems }) => {
                 onSubmit={handleSubmit}
                 className="rounded-md bg-gray-100 p-8 shadow-md"
             >
+                {/* Card Element */}
                 <CardElement className="rounded-md border bg-white p-4" />
 
                 <button
@@ -158,12 +162,8 @@ const CheckoutForm = ({ cartItems }) => {
     )
 }
 
-function CheckoutPage({ cartItems }) {
-    // Load Stripe with your publishable key
-    const stripePromise = loadStripe(
-        import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY
-    )
-
+// eslint-disable-next-line react/prop-types, no-unused-vars
+function CheckoutPage({ cartItems, clearCart }) {
     return (
         <Elements stripe={stripePromise}>
             <div className="flex min-h-screen items-center justify-center bg-gray-50">
