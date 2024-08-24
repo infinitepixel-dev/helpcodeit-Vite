@@ -11,7 +11,7 @@ const NotFound404 = () => {
 
     setTimeout(() => {
       clearInterval(interval);
-      
+
       if (document.referrer.includes('helpcodeit.com')) {
         window.location.href = document.referrer;
       } else {
@@ -21,8 +21,6 @@ const NotFound404 = () => {
 
     return () => clearInterval(interval);
   }, []);
-
-
 
 
   return (
