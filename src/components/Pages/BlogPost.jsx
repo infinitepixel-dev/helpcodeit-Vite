@@ -59,24 +59,35 @@ function BlogPost() {
     }
 
     const options = {
+        renderMark: {
+            [MARKS.BOLD]: text => <strong>{text}</strong>,
+            [MARKS.ITALIC]: text => <em>{text}</em>,
+            [MARKS.UNDERLINE]: text => <u>{text}</u>,
+            [MARKS.CODE]: text => <code className="p-1 bg-gray-100 rounded">{text}</code>,
+        },
         renderNode: {
-            [BLOCKS.PARAGRAPH]: (node, children) => <p className="content">{children}</p>,
-            [BLOCKS.HEADING_1]: (node, children) => <h1 className="my-4 text-4xl">{children}</h1>,
-            [BLOCKS.HEADING_2]: (node, children) => <h2 className="my-3 text-3xl">{children}</h2>,
-            [BLOCKS.HEADING_3]: (node, children) => <h3 className="my-2 text-2xl">{children}</h3>,
-            [BLOCKS.HEADING_4]: (node, children) => <h4 className="my-2 text-xl">{children}</h4>,
-            [BLOCKS.HEADING_5]: (node, children) => <h5 className="my-1 text-lg">{children}</h5>,
+            [BLOCKS.PARAGRAPH]: (node, children) => <p className="my-4 content">{children}</p>,
+            [BLOCKS.HEADING_1]: (node, children) => <h1 className="my-6 text-4xl">{children}</h1>,
+            [BLOCKS.HEADING_2]: (node, children) => <h2 className="my-5 text-3xl">{children}</h2>,
+            [BLOCKS.HEADING_3]: (node, children) => <h3 className="my-4 text-2xl">{children}</h3>,
+            [BLOCKS.HEADING_4]: (node, children) => <h4 className="my-3 text-xl">{children}</h4>,
+            [BLOCKS.HEADING_5]: (node, children) => <h5 className="my-2 text-lg">{children}</h5>,
             [BLOCKS.HEADING_6]: (node, children) => <h6 className="my-1 text-base">{children}</h6>,
             [BLOCKS.EMBEDDED_ASSET]: (node) => {
                 const { url, title } = node.data.target.fields.file;
                 return <img src={url} alt={title} className="float-right w-1/3 m-2 rounded-lg md:w-1/4" />;
             },
+            [BLOCKS.UL_LIST]: (node, children) => <ul className="pl-6 my-4 list-disc">{children}</ul>,
+            [BLOCKS.OL_LIST]: (node, children) => <ol className="pl-6 my-4 list-decimal">{children}</ol>,
+            [BLOCKS.LIST_ITEM]: (node, children) => <li className="mb-2">{children}</li>,
             [INLINES.HYPERLINK]: (node, children) => {
                 return <a href={node.data.uri} className="text-blue-500 hover:underline">{children}</a>;
             },
+            [BLOCKS.QUOTE]: (node, children) => <blockquote className="pl-4 my-4 italic border-l-4 border-gray-300">{children}</blockquote>,
+            [BLOCKS.HR]: () => <hr className="my-8 border-t border-gray-300" />,
         },
     };
-
+    
     return (
         <div key={post.sys.id} className="container mb-24 blog-post">
             <h1 className="my-8 text-5xl">{post.fields.title}</h1>
