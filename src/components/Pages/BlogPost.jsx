@@ -92,7 +92,7 @@ function BlogPost() {
             },
             [BLOCKS.UL_LIST]: (node, children) => <ul className="pl-6 my-4 list-disc">{children}</ul>,
             [BLOCKS.OL_LIST]: (node, children) => <ol className="pl-6 my-4 list-decimal">{children}</ol>,
-            [BLOCKS.LIST_ITEM]: (node, children) => <li className="mb-2">-{children}</li>,
+            [BLOCKS.LIST_ITEM]: (node, children) => <li className="mb-2">{children}</li>,
             [INLINES.HYPERLINK]: (node, children) => {
                 return <a href={node.data.uri} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">{children}</a>;
             },
