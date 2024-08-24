@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&family=Roboto+Slab:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -49,11 +50,11 @@
 
 
     code {
-        border-radius: 10px;
-        box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.58);
+        font-family: "JetBrains Mono", monospace;
+        font-weight: bold;
         margin-bottom: 1rem;
         max-width: fit-content;
-        @apply p-0 text-base dark:border dark:border-gray-500;
+        @apply p-0 text-base ;
     }
 
     .overridecode {

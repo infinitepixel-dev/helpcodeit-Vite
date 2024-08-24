@@ -11,6 +11,8 @@ function BlogsPage() {
     if (!posts || posts.length === 0) {
         return <p>No posts available.</p>
     }
+    
+    posts.sort((a, b) => new Date(b.sys.createdAt) - new Date(a.sys.createdAt))
 
     const getPreviewText = (posts) => {
         let previewText = ''
@@ -56,7 +58,7 @@ function BlogsPage() {
                 <ul>
                     {posts.map((post) => {
                         let publishedDate = format(
-                            new Date(post.sys.updatedAt),
+                            new Date(post.sys.createdAt),
                             'MMMM dd, yyyy'
                         )
                         return (
@@ -66,6 +68,9 @@ function BlogsPage() {
                                         <h2 className="mb-2 text-xl font-bold text-balance ">
                                             {post.fields.title}
                                         </h2>
+                                        <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">
+                                           By: {post.fields.Author}
+                                        </p>
                                         <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">
                                             {publishedDate}
                                         </p>
