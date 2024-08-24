@@ -9,6 +9,8 @@ function CartPopOut({ cartItems }) {
 
     // Function to toggle the cart sidebar
     const toggleCart = () => {
+        if (cartItems.length === 0) return // Do nothing if the cart is empty
+
         if (isVisible) {
             // Close cart
             gsap.to('.cart-sidebar', {
@@ -35,11 +37,16 @@ function CartPopOut({ cartItems }) {
                 style={{
                     zIndex: 1200, // Ensure button is always on top of the sidebar
                     right: '16px', // Adjust position for visibility
-                    top: '16px',
+                    top: '72px',
                     position: 'fixed',
+                    opacity: cartItems.length === 0 ? 0.5 : 1, // Reduce opacity if the cart is empty
+                    cursor: cartItems.length === 0 ? 'not-allowed' : 'pointer', // Change cursor style if empty
                 }}
                 onClick={toggleCart}
-                className="fixed rounded bg-blue-500 px-4 py-2 text-white"
+                className={`fixed rounded px-4 py-2 text-white ${
+                    cartItems.length === 0 ? 'bg-gray-400' : 'bg-blue-500'
+                }`} // Change background color if empty
+                disabled={cartItems.length === 0} // Disable the button if the cart is empty
             >
                 {isVisible ? (
                     <div>
@@ -60,7 +67,7 @@ function CartPopOut({ cartItems }) {
 
             {/* Cart Sidebar */}
             <div
-                className={`cart-sidebar fixed right-0 top-0 h-full transform bg-white shadow-lg ${
+                className={`cart-sidebar fixed right-0 top-16 h-full transform bg-white shadow-lg ${
                     isVisible ? '' : 'translate-x-full'
                 }`}
                 style={{

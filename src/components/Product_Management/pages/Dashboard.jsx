@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { Trash } from 'react-feather'
 
+import BandsInTownEvents from './BandsInTownEvents'
+
 function Dashboard() {
     const [products, setProducts] = useState([])
 
@@ -104,6 +106,12 @@ function Dashboard() {
             >
                 Cart
             </Link>
+            <Link
+                to="/checkout"
+                className="mb-6 block text-center text-lg text-blue-500 hover:underline"
+            >
+                Checkout
+            </Link>
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {products.map((product, index) => (
@@ -150,6 +158,8 @@ function Dashboard() {
                     </div>
                 ))}
             </div>
+
+            <BandsInTownEvents artistName="Metallica" />
         </div>
     )
 }

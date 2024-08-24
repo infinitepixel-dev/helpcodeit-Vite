@@ -1,13 +1,16 @@
 import { useRef, useState, useEffect } from 'react'
 import { gsap } from 'gsap'
 import propTypes from 'prop-types'
-import { Trash } from 'react-feather'
+import { Trash, Trash2 } from 'react-feather'
+import { Link } from 'react-router-dom'
 
-function CartPage({ cartItems, removeFromCart, updateQuantity }) {
+function CartPage({ cartItems, setCartItems, removeFromCart, updateQuantity }) {
     const itemRefs = useRef([]) // Initialize with an empty array
     const [isModalVisible, setIsModalVisible] = useState(false) // Track modal visibility
     const [itemToDelete, setItemToDelete] = useState(null) // Track which item to delete
     const [deletingItemIndex, setDeletingItemIndex] = useState(null) // Track the index of the item being deleted
+    const [isEmptyCartModalVisible, setIsEmptyCartModalVisible] =
+        useState(false) // Track empty cart modal
 
     const convertBlobToBase64 = (blob) => {
         if (!blob) return null
@@ -95,8 +98,24 @@ function CartPage({ cartItems, removeFromCart, updateQuantity }) {
         setIsModalVisible(false)
     }
 
+    // Show the confirmation modal before emptying the cart
+    const handleEmptyCartClick = () => {
+        setIsEmptyCartModalVisible(true)
+    }
+
+    // Confirm emptying the cart
+    const handleEmptyCartConfirm = () => {
+        setCartItems([]) // Clear all cart items at once
+        setIsEmptyCartModalVisible(false) // Hide the modal
+    }
+
+    // Cancel emptying the cart
+    const handleEmptyCartCancel = () => {
+        setIsEmptyCartModalVisible(false)
+    }
+
     return (
-        <div className="container mx-auto p-4">
+        <div className="container-fluid mx-auto mb-20 mt-4 p-4">
             <h1 className="mb-8 text-center text-4xl font-bold">
                 Shopping Cart
             </h1>
@@ -173,7 +192,7 @@ function CartPage({ cartItems, removeFromCart, updateQuantity }) {
                                 {/* Delete Button */}
                                 <button
                                     onClick={() => showDeleteModal(item, index)}
-                                    className="text-red-500"
+                                    className="relative text-red-500"
                                 >
                                     <Trash className="h-8 w-8" />
                                 </button>
@@ -182,16 +201,41 @@ function CartPage({ cartItems, removeFromCart, updateQuantity }) {
                                 Total: $
                                 {(item.price * item.quantity).toFixed(2)}
                             </p>
+
+                            <button
+                                onClick={() => removeFromCart(item.id)}
+                                className="text-red-500"
+                            ></button>
                         </div>
                     ))
                 )}
             </div>
+
             {cartItems.length > 0 && (
-                <div className="mt-8 text-right">
-                    <h2 className="text-2xl font-bold">
-                        Total: ${calculateTotal()}
-                    </h2>
-                </div>
+                <>
+                    <div className="mt-8 flex items-center justify-between">
+                        <h2 className="text-2xl font-bold">
+                            Total: ${calculateTotal()}
+                        </h2>
+                        <Link
+                            to="/checkout"
+                            className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+                        >
+                            Proceed to Checkout
+                        </Link>
+                    </div>
+
+                    <div>
+                        <span
+                            onClick={handleEmptyCartClick} // Show confirmation modal
+                            className="relative top-4 cursor-pointer text-rose-500"
+                        >
+                            <div className="flex-between flex">
+                                Empty Cart <Trash2 className="h-8 w-8" />
+                            </div>
+                        </span>
+                    </div>
+                </>
             )}
 
             {/* Delete Confirmation Modal */}
@@ -222,12 +266,41 @@ function CartPage({ cartItems, removeFromCart, updateQuantity }) {
                     </div>
                 </div>
             )}
+
+            {/* Empty Cart Confirmation Modal */}
+            {isEmptyCartModalVisible && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="w-96 rounded-lg bg-white bg-opacity-90 p-6 text-black shadow-lg">
+                        <h2 className="mb-4 text-lg font-bold">
+                            Confirm Empty Cart
+                        </h2>
+                        <p className="mb-4">
+                            Are you sure you want to empty your entire cart?
+                        </p>
+                        <div className="flex justify-end space-x-4">
+                            <button
+                                onClick={handleEmptyCartCancel}
+                                className="rounded bg-gray-300 px-4 py-2 text-black hover:bg-gray-400"
+                            >
+                                Cancel
+                            </button>
+                            <button
+                                onClick={handleEmptyCartConfirm}
+                                className="rounded bg-red-500 px-4 py-2 text-white hover:bg-red-600"
+                            >
+                                Empty Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
 
 CartPage.propTypes = {
     cartItems: propTypes.array.isRequired,
+    setCartItems: propTypes.func.isRequired,
     removeFromCart: propTypes.func.isRequired,
     updateQuantity: propTypes.func.isRequired,
 }

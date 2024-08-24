@@ -1,3 +1,6 @@
+//WINDOWS
+//nodemon --exec "cls && node" ./productServer.js
+
 /* eslint-disable no-undef */
 // Import dependencies
 const express = require('express')
@@ -6,8 +9,13 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const multer = require('multer') // For handling file uploads
 const dotenv = require('dotenv')
+const Stripe = require('stripe') // Import Stripe
 
 dotenv.config()
+
+// Initialize Stripe with secret key
+const stripe = new Stripe(process.env.VITE_STRIPE_SECRET_KEY)
+// console.log('stripe secret key: ', process.env.VITE_STRIPE_SECRET_KEY)
 
 const app = express()
 
@@ -128,7 +136,35 @@ app.delete('/api/products/:id', (req, res) => {
     })
 })
 
-// Set server to public on a port
+//ANCHOR Stripe Payment
+/*
+
+API calls return simulated objects. For example, you can retrieve and use test account, payment, customer, charge, refund, transfer, balance, and subscription objects.
+
+*/
+
+// Stripe payment route
+app.post('/api/payment', async (req, res) => {
+    const { amount, currency, description } = req.body
+
+    try {
+        const paymentIntent = await stripe.paymentIntents.create({
+            amount: amount, // Amount is now in cents and correctly rounded
+            currency,
+            description,
+            payment_method_types: ['card'],
+        })
+
+        return res
+            .status(200)
+            .json({ clientSecret: paymentIntent.client_secret })
+    } catch (error) {
+        console.error('Error creating payment intent:', error)
+        return res.status(500).json({ error: 'Payment failed.' })
+    }
+})
+
+//ANCHOR Set server to public on a port
 app.listen(3082, '0.0.0.0', () => console.log('Server started on port 3082'))
 
 /* 

@@ -4,6 +4,11 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 /* import { visualizer } from 'rollup-plugin-visualizer' */
 import compression from 'vite-plugin-compression'
+import legacy from '@vitejs/plugin-legacy'
+
+import 'core-js/es/promise' // Polyfill for Promises
+import 'core-js/es/map' // Polyfill for Map object
+import 'core-js/es/set' // Polyfill for Set object
 
 // Define __dirname
 const __filename = fileURLToPath(import.meta.url)
@@ -21,6 +26,11 @@ export default defineConfig({
         }), */
         compression({
             algorithm: 'gzip', // Enable gzip compression
+        }),
+        legacy({
+            browsers: ['last 2 versions', 'safari >= 9'],
+            useBuiltIns: 'entry',
+            corejs: 3,
         }),
     ],
     resolve: {
