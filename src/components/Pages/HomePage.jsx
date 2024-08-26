@@ -49,6 +49,17 @@ function HomePage() {
     let filteredEvents = events.filter((event) =>
         isAfter(parseISO(event.ISOdate), new Date())
     )
+
+    //mock a filtered event
+    filteredEvents = [
+        {
+            title: 'Test Event',
+            ISOdate: '2022-09-01T00:00:00.000Z',
+            cost: 0,
+            show: true,
+        },
+    ]
+
     // console.log(filteredEvents)
     let { message, AlertDate, daysUntilEvent, currentDate } = ''
     if (filteredEvents.length > 0) {

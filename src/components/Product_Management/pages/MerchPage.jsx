@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import propTypes from 'prop-types'
 import { gsap } from 'gsap'
+import { Helmet } from 'react-helmet-async' // Import Helmet for meta tags
 import CartPopOut from './CartPopOut'
 
 function MerchPage({ addToCart, cartItems }) {
@@ -9,6 +10,11 @@ function MerchPage({ addToCart, cartItems }) {
     const [messagePosition, setMessagePosition] = useState({ top: 0, left: 0 })
     const [activeCardIndex, setActiveCardIndex] = useState(null)
     const [isAnimating, setIsAnimating] = useState([]) // Track animation status for each card
+
+    // eslint-disable-next-line no-unused-vars
+    const [metaTitle, setMetaTitle] = useState('Merch - Bow to the Corgi') // Default meta title
+    const [metaDescription, setMetaDescription] = useState('') // Default meta description
+    const [metaKeywords, setMetaKeywords] = useState('') // Default meta keywords
 
     // GSAP Ref for the confirmation message
     const confirmRef = useRef(null)
@@ -39,6 +45,14 @@ function MerchPage({ addToCart, cartItems }) {
                 setIsAnimating(new Array(data.length).fill(false))
                 // Reset cardRefs after products have been fetched
                 cardRefs.current = Array(data.length).fill(null)
+
+                // Set meta description and keywords based on the first product as an example
+                if (data.length > 0) {
+                    setMetaDescription(
+                        data[0].description || 'The best pet ever!'
+                    )
+                    setMetaKeywords(data[0].keywords || 'Corgi, Ruler, Bork')
+                }
             })
             .catch((err) => console.error(err))
     }, [apiUrl])
@@ -140,6 +154,12 @@ function MerchPage({ addToCart, cartItems }) {
 
     return (
         <div className="container z-10 mx-auto p-4">
+            <Helmet>
+                <title>{metaTitle}</title>
+                <meta name="description" content={metaDescription} />
+                <meta name="keywords" content={metaKeywords} />
+            </Helmet>
+
             <CartPopOut cartItems={cartItems} />
             <h1 className="mb-8 text-center text-4xl font-bold">Merch</h1>
 

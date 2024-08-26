@@ -41,7 +41,7 @@ const BandsInTownEvents = ({ artistName }) => {
     }, [events])
 
     return (
-        <div className="min-h-screen bg-gray-900 px-4 py-10 text-white">
+        <div className="mt-4 min-h-screen rounded-lg bg-gray-900 px-4 py-10 text-white">
             <h1 className="mb-8 text-center text-4xl font-bold">
                 Events for {artistName}
             </h1>

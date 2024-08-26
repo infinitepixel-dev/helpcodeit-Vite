@@ -64,24 +64,28 @@ db.getConnection((err, connection) => {
     }
 })
 
-// Get all products
+//API GETS all products from the 'products' table of the database
 app.get('/api/products', (req, res) => {
     db.query('SELECT * FROM products', (err, result) => {
+        console.log('Products: ', result) // Debug log to check for duplicates;
+
         if (err) throw err
         res.json(result)
     })
 })
 
-// Add a product (either with image URL or uploaded image)
+//API Creates a new product in the 'products' table of the database
 app.post('/api/products', upload.single('image'), (req, res) => {
     const {
         title,
         price,
         description,
         category,
-        seo_meta,
         payment_id,
         image_url,
+        meta_title,
+        meta_description,
+        meta_keywords,
     } = req.body
     let image = null
 
@@ -97,16 +101,19 @@ app.post('/api/products', upload.single('image'), (req, res) => {
 
     // Insert the product into the database
     db.query(
-        'INSERT INTO products (title, price, description, category, seo_meta, payment_id, image_url, image) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+        'INSERT INTO products (title, price, description, category, payment_id, image_url, image, meta_title, meta_description, meta_keywords) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+
         [
             title,
             price,
             description,
             category,
-            seo_meta,
             payment_id,
             image_url,
             image,
+            meta_title,
+            meta_description,
+            meta_keywords,
         ],
         (err, result) => {
             if (err) {
@@ -123,6 +130,23 @@ app.post('/api/products', upload.single('image'), (req, res) => {
     )
 })
 
+//API GET a single product from the 'products' table of the database
+app.get('/api/products/:id', (req, res) => {
+    const { id } = req.params
+
+    db.query('SELECT * FROM products WHERE id = ?', [id], (err, result) => {
+        if (err) {
+            console.error(err)
+            return res.status(500).json({ error: 'Database error occurred.' })
+        }
+        if (result.length === 0) {
+            return res.status(404).json({ error: 'Product not found.' })
+        }
+        return res.json(result[0])
+    })
+})
+
+//API DELETES a product from the 'products' table of the database
 app.delete('/api/products/:id', (req, res) => {
     const { id } = req.params
 
@@ -133,6 +157,82 @@ app.delete('/api/products/:id', (req, res) => {
             return res.status(500).json({ error: 'Database error occurred.' })
         }
         return res.json({ message: 'Product deleted successfully.' })
+    })
+})
+
+/* 
+  title VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    description TEXT,
+    category VARCHAR(255),
+    payment_id VARCHAR(255),
+    image_url VARCHAR(255),  -- URL for the product image
+    image BLOB,  -- Binary data for the product image if stored directly
+    meta_title VARCHAR(255),  -- SEO Title for the product
+    meta_description TEXT,  -- SEO Description for the product
+    meta_keywords TEXT,  -- SEO Keywords for the product
+*/
+
+//API UPDATES a product in the 'products' table of the database
+app.put('/api/products/:id', upload.single('image'), (req, res) => {
+    const { id } = req.params
+    const {
+        title,
+        price,
+        description,
+        category,
+        payment_id,
+        image_url,
+        meta_title,
+        meta_description,
+        meta_keywords,
+    } = req.body
+
+    console.log('Image URL: ', image_url) // Debug log to check for duplicates
+
+    let image = null
+
+    // If the image file is uploaded, set it
+    if (req.file) {
+        image = req.file.buffer // Store the image as a buffer in the database
+        console.log('Image uploaded:', image)
+    }
+
+    // Validate that the title and price fields are not empty
+    if (!title || !price) {
+        return res.status(400).json({ error: 'Title and price are required.' })
+    }
+
+    // Construct the SQL query for updating
+    const sql = `
+        UPDATE products 
+        SET title = ?, price = ?, description = ?, category = ?, payment_id = ?, 
+            image_url = ?, image = ?, meta_title = ?, meta_description = ?, meta_keywords = ?
+        WHERE id = ?
+    `
+
+    const values = [
+        title,
+        price,
+        description,
+        category,
+        payment_id,
+        image_url || '', // Ensure image_url is passed correctly
+        image,
+        meta_title,
+        meta_description,
+        meta_keywords,
+        id,
+    ]
+
+    //REVIEW Unused result variable
+    // eslint-disable-next-line no-unused-vars
+    db.query(sql, values, (err, result) => {
+        if (err) {
+            console.error('Uh oh PUT product error:', err)
+            return res.status(500).json({ error: 'Database error occurred.' })
+        }
+        return res.json({ message: 'Product updated successfully.' })
     })
 })
 
@@ -167,7 +267,8 @@ app.post('/api/payment', async (req, res) => {
 //ANCHOR Set server to public on a port
 app.listen(3082, '0.0.0.0', () => console.log('Server started on port 3082'))
 
-/* 
+//INFO Seed the db with product data if one doesn't exist
+/*
 
 CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -175,11 +276,17 @@ CREATE TABLE products (
     price DECIMAL(10, 2) NOT NULL,
     description TEXT,
     category VARCHAR(255),
-    seo_meta TEXT,  -- for SEO meta information
     payment_id VARCHAR(255),
     image_url VARCHAR(255),  -- URL for the product image
     image BLOB,  -- Binary data for the product image if stored directly
+    meta_title VARCHAR(255),  -- SEO Title for the product
+    meta_description TEXT,  -- SEO Description for the product
+    meta_keywords TEXT,  -- SEO Keywords for the product
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+
 */
+
+//INFO drop seo_meta from existing products if it
+//ALTER TABLE products DROP COLUMN seo_meta;

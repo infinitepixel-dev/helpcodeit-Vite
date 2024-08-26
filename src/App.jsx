@@ -14,7 +14,7 @@ import { BlogProvider } from '@subComponents/BlogAPI' // Correct import for Blog
 // console.log('RoutesWithComponents: ', RoutesWithComponents)
 
 //ANCHOR Product Management Components
-import Dashboard from './components/Product_Management/pages/Dashboard'
+import Dashboard from './components/Product_Management/pages/Dashboard.jsx'
 import AddProductForm from './components/Product_Management/pages/AddProductForm'
 import MerchPage from './components/Product_Management/pages/MerchPage'
 import CartPage from './components/Product_Management/pages/CartPage'
@@ -174,6 +174,9 @@ function App() {
                                 path="/checkout"
                                 element={<CheckoutPage cartItems={cartItems} />}
                             />
+                            {/* No Access */}
+                            <Route path="no-access" element={<Dashboard />} />
+                            <Route path="/login" element={<Dashboard />} />
                         </Routes>
                     </Suspense>
 

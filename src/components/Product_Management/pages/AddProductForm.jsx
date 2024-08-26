@@ -7,10 +7,12 @@ function AddProductForm() {
         price: '',
         description: '',
         category: '',
-        seo_meta: '',
         payment_id: '',
         image_url: '', // Always initialize with an empty string to make it controlled
         image: null, // For uploaded image file, initialized with null
+        meta_title: '',
+        meta_description: '',
+        meta_keywords: '',
     })
 
     const [selectedImageType, setSelectedImageType] = useState('file') // Track selected image type
@@ -43,8 +45,10 @@ function AddProductForm() {
         data.append('price', formData.price)
         data.append('description', formData.description)
         data.append('category', formData.category)
-        data.append('seo_meta', formData.seo_meta)
         data.append('payment_id', formData.payment_id)
+        data.append('meta_title', formData.meta_title)
+        data.append('meta_description', formData.meta_description)
+        data.append('meta_keywords', formData.meta_keywords)
 
         if (formData.image_url) {
             data.append('image_url', formData.image_url) // Append image URL
@@ -135,12 +139,40 @@ function AddProductForm() {
                     className="w-full rounded-lg border bg-white p-3 text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
 
-                {/* SEO Meta */}
-                <textarea
-                    placeholder="SEO Meta"
-                    value={formData.seo_meta || ''} // Ensure the value is always a string
+                {/* Meta Title */}
+                <input
+                    type="text"
+                    placeholder="Meta Title"
+                    value={formData.meta_title || ''} // Ensure the value is always a string
                     onChange={(e) =>
-                        setFormData({ ...formData, seo_meta: e.target.value })
+                        setFormData({ ...formData, meta_title: e.target.value })
+                    }
+                    className="w-full rounded-lg border bg-white p-3 text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+
+                {/* Meta Description */}
+                <textarea
+                    placeholder="Meta Description"
+                    value={formData.meta_description || ''} // Ensure the value is always a string
+                    onChange={(e) =>
+                        setFormData({
+                            ...formData,
+                            meta_description: e.target.value,
+                        })
+                    }
+                    className="w-full rounded-lg border bg-white p-3 text-black focus:outline-none focus:ring-2 focus:ring-blue-500 md:col-span-2"
+                />
+
+                {/* Meta Keywords */}
+                <input
+                    type="text"
+                    placeholder="Meta Keywords"
+                    value={formData.meta_keywords || ''} // Ensure the value is always a string
+                    onChange={(e) =>
+                        setFormData({
+                            ...formData,
+                            meta_keywords: e.target.value,
+                        })
                     }
                     className="w-full rounded-lg border bg-white p-3 text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
