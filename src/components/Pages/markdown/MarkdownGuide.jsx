@@ -3,6 +3,7 @@ import hljs from 'highlight.js/lib/core';
 import markdown from 'highlight.js/lib/languages/markdown';
 import 'highlight.js/styles/atom-one-dark.css'
 import { Helmet } from 'react-helmet-async';
+import CodeBlock from '@/components/Sub_Components/CodeBlock';
 
 hljs.registerLanguage('markdown', markdown);
 
@@ -23,7 +24,7 @@ const MarkdownGuide = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container px-4 py-8 mx-auto">
       <Helmet>
         <title>Markdown Guide | Help Code It</title>
         <meta
@@ -42,28 +43,28 @@ const MarkdownGuide = () => {
         canonical="https://www.helpcodeit.com/markdown/MarkdownGuide" />
       </Helmet>
 
-      <h1 className="text-6xl font-bold mb-6">Introduction to Markdown</h1>
-      <h2 className="text-2xl font-semibold mb-4">## A Versitile Markup Language Used Everywhere!</h2>
+      <h1 className="mb-6 text-6xl font-bold">Introduction to Markdown</h1>
+      <h2 className="mb-4 text-2xl font-semibold">## A Versitile Markup Language Used Everywhere!</h2>
       <p className="mb-6 text-lg">
         Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents.
         Created by John Gruber in 2004, Markdown is now one of the world's most popular markup languages. We see if first as developers in README files on GitHub, but it's also used in forums, blogs, and other platforms. It is a simple way to format text that can be converted to HTML and other formats. There are tons of formatters that can convert it to HTML, PDF, and other formats.
       </p>
-      <h2 className="text-2xl font-semibold mb-4">Why use Markdown?</h2>
-      <ul className="list-disc list-inside mb-6 space-y-2">
+      <h2 className="mb-4 text-2xl font-semibold">Why use Markdown?</h2>
+      <ul className="mb-6 space-y-2 list-disc list-inside">
         <li>It's easy to learn and use</li>
         <li>It's readable even in its raw form</li>
         <li>It's widely supported across various platforms</li>
         <li>It can display code with language syntax highlights.</li>
         <li>It can be converted to HTML and other formats</li>
       </ul>
-      <h2 className="text-3xl font-semibold text-center mb-4">Markdown Examples</h2>
-      <hr className="border-b-2 border-gray-300 mb-6" />
+      <h2 className="mb-4 text-3xl font-semibold text-center">Markdown Examples</h2>
+      <hr className="mb-6 border-b-2 border-gray-300" />
       <div className="grid grid-cols-2">
         {examples.map((example, index) => (
-          <div key={index} className="mb-6 mx-auto">
-            <h3 className="text-xl text-center font-semibold mb-2">{example.title}</h3>
-            <pre className=" p-4 rounded-lg">
-              <code className="language-markdown">{example.content}</code>
+          <div key={index} className="mx-auto mb-6">
+            <h3 className="mb-2 text-xl font-semibold text-center">{example.title}</h3>
+            <pre className="p-4 rounded-lg ">
+              <CodeBlock code={example.content} language="markdown"/>
             </pre>
           </div>
         ))}
