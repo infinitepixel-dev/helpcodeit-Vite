@@ -3,6 +3,9 @@ import propTypes from 'prop-types'
 import AceEditor from 'react-ace'
 import '@/Routes/aceEditorStyles'
 import CopyButton from '@/components/Sub_Components/CopyButton'
+// import vibrant ink theme and javascript mode
+import 'ace-builds/src-noconflict/theme-vibrant_ink'
+import 'ace-builds/src-noconflict/mode-javascript'
 
 /*INFO Supported ACE Languages
 https://cloud9-sdk.readme.io/docs/language-mode

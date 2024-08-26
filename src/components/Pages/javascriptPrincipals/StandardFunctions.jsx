@@ -1,17 +1,19 @@
-import { useRef, useEffect, Suspense, lazy } from 'react'
+import {  useEffect, Suspense, lazy } from 'react'
 import { Link } from 'react-router-dom'
-import hljs from 'highlight.js'
+
 import { Helmet } from 'react-helmet-async'
 import CopyButton from '@subComponents/CopyButton'
-import 'highlight.js/styles/atom-one-dark.css'
+
 import styles from './animations.module.css'
+import CodeBlock from '@/components/Sub_Components/CodeBlock'
+import { Code } from 'lucide-react'
 
 
 
 const CodePractice = lazy(() => import('@subComponents/Code_Practice'))
 
 function StandardFunctions() {
-    const codeRef = useRef(null)
+
 
 
     const codeContainerStyles = {
@@ -64,7 +66,7 @@ function StandardFunctions() {
     alert("Hello, World!");
   };`
 
-    const callHelloString = `sayHello();`
+    const callHelloString = `sayHello(); `
 
     const addNumbersString = `function addNumbers(num1, num2) {
     alert(num1 + num2);
@@ -72,7 +74,7 @@ function StandardFunctions() {
 
     return (
         <div
-            className="roboto-font container mx-auto p-2 px-4 text-xl sm:p-8"
+            className="container p-2 px-4 mx-auto text-xl roboto-font sm:p-8"
             //NOTE This was commented out because it was adding a second scroll bar
             // style={{
             //     scrollSnapType: 'y mandatory',
@@ -100,14 +102,14 @@ function StandardFunctions() {
             </Helmet>
             <div className="flex flex-col">
                 <div className="observeMe">
-                    <h1 className="my-20 text-center text-5xl">
+                    <h1 className="my-20 text-5xl text-center">
                         Learning About JavaScript Functions: A Beginner&apos;s
                         Guide
                     </h1>
                     <hr className="border-2 border-black dark:border-white" />
                     <div className="my-1">
                         <h2 className="mt-10 text-4xl ">What Is a Function?</h2>
-                        <p className="roboto-font mb-10 text-2xl">
+                        <p className="mb-10 text-2xl roboto-font">
                             A function is a set of instructions that performs a
                             specific task. It&apos;s like a tiny computer
                             program inside your main program That you can easily
@@ -155,22 +157,17 @@ function StandardFunctions() {
                         {/* REVIEW bring in a code container, with the copy button and pre/code */}
 
                         {/*REVIEW -  Code Container - BEGIN */}
-                        <div className="m-2 flex items-start gap-5">
+                        <div className="flex items-start gap-5 m-2">
                             <div className="relative">
                                 <div
                                     className={`${codeContainerStyles['code-container']} flex-none`}
                                 >
                                     <CopyButton
                                         textToCopy={sayHelloString}
-                                        className="absolute left-0 top-0" // This positions the copy button inside the relative container
+                                        className="absolute top-0 left-0" // This positions the copy button inside the relative container
                                     />
                                     <pre>
-                                        <code
-                                            ref={codeRef}
-                                            className="language-javascript p-2"
-                                        >
-                                            {sayHelloString}
-                                        </code>
+                                        <CodeBlock code={sayHelloString} language="javascript"/>
                                     </pre>
                                 </div>
                             </div>
@@ -207,12 +204,7 @@ function StandardFunctions() {
 
                     <div>
                         <pre className="my-5">
-                            <code
-                                ref={codeRef}
-                                className="language-javascript float-start me-5 p-2"
-                            >
-                                {callHelloString}
-                            </code>
+                          <CodeBlock code={callHelloString} language="javascript"/>
                         </pre>
                         <p>
                             When this line of code is run, it will make a pop-up
@@ -224,7 +216,7 @@ function StandardFunctions() {
                             function.{' '}
                         </p>
                     </div>
-                    <hr className="my-7 border-2 border-black dark:border-white" />
+                    <hr className="border-2 border-black my-7 dark:border-white" />
                 </div>
 
                 <div className="observeMe">
@@ -240,7 +232,7 @@ function StandardFunctions() {
                         wanted to make cookies. That would be a lot of extra
                         work!
                     </p>
-                    <hr className="my-7 border-2 border-black dark:border-white" />
+                    <hr className="border-2 border-black my-7 dark:border-white" />
                 </div>
 
                 <div className="observeMe">
@@ -257,22 +249,17 @@ function StandardFunctions() {
                     </p>
 
                     {/*REVIEW -  Code Container - BEGIN */}
-                    <div className="m-2 flex items-start gap-5">
+                    <div className="flex items-start gap-5 m-2">
                         <div className="relative">
                             <div
                                 className={`${codeContainerStyles['code-container']} flex-none`}
                             >
                                 <CopyButton
                                     textToCopy={addNumbersString}
-                                    className="absolute left-0 top-0" // This positions the copy button inside the relative container
+                                    className="absolute top-0 left-0" // This positions the copy button inside the relative container
                                 />
                                 <pre>
-                                    <code
-                                        ref={codeRef}
-                                        className="language-javascript p-2"
-                                    >
-                                        {addNumbersString}
-                                    </code>
+                                    <CodeBlock code={addNumbersString} language="javascript"/>
                                 </pre>
                             </div>
                         </div>
@@ -293,11 +280,11 @@ function StandardFunctions() {
                     </p>
                     {/* Code Container - End */}
 
-                    {/* <hr className="my-7 border-2 border-black dark:border-white" /> */}
+                    {/* <hr className="border-2 border-black my-7 dark:border-white" /> */}
                 </div>
                 {/* FIXME This is commented out because it is not working */}
                 {/* <div className="observeMe">
-                    <h2 className="mt-10 py-2 text-3xl">
+                    <h2 className="py-2 mt-10 text-3xl">
                         Let&apos;s Practice!
                     </h2>
                     <Suspense fallback={<div>Loading...</div>}>
@@ -330,17 +317,17 @@ function StandardFunctions() {
                     coding is all about experimenting and having fun!
                 </p>
 
-                <hr className="mb-5 mt-7 border-2 border-black dark:border-white" />
+                <hr className="mb-5 border-2 border-black mt-7 dark:border-white" />
             </div>
 
             <div className="observeMe">
                 <div className="flex flex-row">
                     <div className="flex-1"></div>
                     <div className="flex-1 sm:w-1/2 sm:flex-none">
-                        <h2 className="text-center text-5xl  font-extrabold">
+                        <h2 className="text-5xl font-extrabold text-center">
                             Need deeper explanation?
                         </h2>
-                        <h2 className="text-center text-4xl font-extrabold">
+                        <h2 className="text-4xl font-extrabold text-center">
                             Here is a Video from Web Dev Simplified
                         </h2>
                         <iframe
@@ -349,7 +336,7 @@ function StandardFunctions() {
                             src="https://www.youtube.com/embed/FOD408a0EzU"
                             title="YouTube video player"
                             // frameBorder="0"
-                            className="youtube-video mt-10 h-auto"
+                            className="h-auto mt-10 youtube-video"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen
                         ></iframe>
@@ -357,7 +344,7 @@ function StandardFunctions() {
                     <div className="flex-1"></div>
                 </div>
             </div>
-            <div className="pb-10 text-center text-2xl text-red-500 dark:text-white">
+            <div className="pb-10 text-2xl text-center text-red-500 dark:text-white">
                 <Link to="/javascript">Back to JavaScript Main Page</Link>
             </div>
         </div>

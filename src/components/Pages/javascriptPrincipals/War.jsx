@@ -1,6 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
+import CodeBlock from '@/components/Sub_Components/CodeBlock'
+
 import { Helmet } from 'react-helmet-async'
 
 const War = () => {
@@ -131,7 +133,7 @@ game.play();
     ]
 
     return (
-        <div className="container mb-28 text-lg">
+        <div className="container text-lg mb-28">
             <Helmet>
                 <title>Build a War Card Game | Help Code It</title>
                 <meta
@@ -148,10 +150,10 @@ game.play();
                     content="War card game, JavaScript tutorial, coding game, game development, card game tutorial, coding project, beginner coding, JavaScript classes"
                 />
             </Helmet>
-            <h1 className="satisfyFont my-4 text-center text-6xl">
+            <h1 className="my-4 text-6xl text-center satisfyFont">
                 Building a War Card Game
             </h1>
-            <h2 className="mb-5 mt-5 text-center text-2xl">
+            <h2 className="mt-5 mb-5 text-2xl text-center">
                 Student Guide: Step-by-Step Tutorial
             </h2>
             <hr className="border-2 border-black dark:border-white" />
@@ -168,14 +170,7 @@ game.play();
                         <p className="whitespace-pre-line">{step.content}</p>
                     )}
                     {step.code && (
-                        <pre className="mt-4">
-                            <code
-                                ref={codeRef}
-                                className="javascript text-base"
-                            >
-                                {step.code}
-                            </code>
-                        </pre>
+                        <CodeBlock code={step.code} language="javascript" />
                     )}
                     {step.explanation && (
                         <p className="mt-4">{step.explanation}</p>
@@ -197,4 +192,4 @@ game.play();
     )
 }
 
-export default War;
+export default War
