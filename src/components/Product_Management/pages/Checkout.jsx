@@ -83,7 +83,7 @@ const CheckoutForm = ({ cartItems }) => {
         ) // Convert dollars to cents and round
     }
 
-    // GSAP Animation to show the modal
+    // Show the modal on Pay
     const showModal = () => {
         gsap.to('.payment-modal', {
             opacity: 1,
@@ -94,6 +94,7 @@ const CheckoutForm = ({ cartItems }) => {
         })
     }
 
+    // Hide the modal on Ok, clicking outside, or pressing Esc
     const hideModal = () => {
         gsap.to('.payment-modal', {
             opacity: 0,
@@ -112,52 +113,71 @@ const CheckoutForm = ({ cartItems }) => {
         }
     }
 
+    console.log('cartItems:', cartItems)
+
     return (
         <>
-            <form
-                onSubmit={handleSubmit}
-                className="rounded-md bg-gray-100 p-8 shadow-md"
-            >
-                {/* Card Element */}
-                <CardElement className="rounded-md border bg-white p-4" />
+            {/* if carItems is empty */}
+            {`${cartItems.length}` > 0 ? (
+                <>
+                    <form
+                        onSubmit={handleSubmit}
+                        className="rounded-md p-8 shadow-md"
+                    >
+                        {/* Card Element */}
+                        <CardElement className="rounded-md border  p-4" />
 
-                <button
-                    type="submit"
-                    disabled={!stripe || loading}
-                    className={`mt-4 rounded-lg bg-blue-500 px-4 py-2 text-white shadow transition hover:bg-blue-700 ${
-                        loading ? 'cursor-not-allowed opacity-50' : ''
-                    }`}
-                >
-                    {loading
-                        ? 'Processing...'
-                        : `Pay $${calculateTotalInDollars(cartItems)}`}
-                </button>
-            </form>
+                        <button
+                            type="submit"
+                            disabled={!stripe || loading}
+                            className={`mt-4 rounded-lg bg-blue-500 px-4 py-2 text-white shadow transition hover:bg-blue-700 ${
+                                loading ? 'cursor-not-allowed opacity-50' : ''
+                            }`}
+                        >
+                            {loading
+                                ? 'Processing...'
+                                : `Pay $${calculateTotalInDollars(cartItems)}`}
+                        </button>
+                    </form>
 
-            {/* Payment Status Modal */}
-            <div className="payment-modal invisible fixed inset-0 flex scale-50 items-center justify-center bg-black bg-opacity-50 text-black opacity-0">
-                <div className="rounded-lg bg-white p-8 text-center shadow-lg">
-                    <h2 className="mb-4 text-2xl font-bold">
-                        {paymentStatus === 'success' && 'Payment Successful!'}
-                        {paymentStatus === 'failed' && 'Payment Failed!'}
-                        {paymentStatus === 'pending' && 'Payment Processing!'}
-                    </h2>
-                    <p className="mb-4">
-                        {paymentStatus === 'success' &&
-                            'Your payment has been processed successfully.'}
-                        {paymentStatus === 'failed' &&
-                            'There was an issue with your payment. Please try again.'}
-                        {paymentStatus === 'pending' &&
-                            'Your payment is currently being processed. Please wait.'}
-                    </p>
+                    <div className="payment-modal invisible fixed inset-0 flex scale-50 items-center justify-center bg-black bg-opacity-50 text-black opacity-0">
+                        <div className="rounded-lg bg-white p-8 text-center shadow-lg">
+                            <h2 className="mb-4 text-2xl font-bold">
+                                {paymentStatus === 'success' &&
+                                    'Payment Successful!'}
+                                {paymentStatus === 'failed' &&
+                                    'Payment Failed!'}
+                                {paymentStatus === 'pending' &&
+                                    'Payment Processing!'}
+                            </h2>
+                            <p className="mb-4">
+                                {paymentStatus === 'success' &&
+                                    'Your payment has been processed successfully.'}
+                                {paymentStatus === 'failed' &&
+                                    'There was an issue with your payment. Please try again.'}
+                                {paymentStatus === 'pending' &&
+                                    'Your payment is currently being processed. Please wait.'}
+                            </p>
+                            <button
+                                className="rounded-lg bg-blue-500 px-4 py-2 text-white shadow transition hover:bg-blue-700"
+                                onClick={handleOkClick}
+                            >
+                                OK
+                            </button>
+                        </div>
+                    </div>
+                </>
+            ) : (
+                <div className="text-center">
+                    <p className="mb-4">Your cart is empty.</p>
                     <button
                         className="rounded-lg bg-blue-500 px-4 py-2 text-white shadow transition hover:bg-blue-700"
-                        onClick={handleOkClick}
+                        onClick={() => navigate('/merch')}
                     >
-                        OK
+                        Go Shopping
                     </button>
                 </div>
-            </div>
+            )}
         </>
     )
 }

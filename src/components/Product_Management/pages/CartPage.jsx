@@ -119,6 +119,44 @@ function CartPage({ cartItems, setCartItems, removeFromCart, updateQuantity }) {
             <h1 className="mb-8 text-center text-4xl font-bold">
                 Shopping Cart
             </h1>
+            {/* Navigation */}
+            <nav aria-label="Page navigation" className="mb-6">
+                <ul className="flex justify-center space-x-6">
+                    <li>
+                        <Link
+                            to="/add-product"
+                            className="text-lg font-medium text-blue-600 hover:text-blue-800"
+                        >
+                            Add Product
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/merch"
+                            className="text-lg font-medium text-blue-600 hover:text-blue-800"
+                        >
+                            Merch Page
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/cart"
+                            className="text-lg font-medium text-blue-600 hover:text-blue-800"
+                        >
+                            Cart Page
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/checkout"
+                            className="text-lg font-medium text-blue-600 hover:text-blue-800"
+                        >
+                            Checkout Page
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
+
             <div className="grid grid-cols-1 gap-6">
                 {cartItems.length === 0 ? (
                     <p>Your cart is empty</p>

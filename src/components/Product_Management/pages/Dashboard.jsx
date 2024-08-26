@@ -160,23 +160,6 @@ function Dashboard() {
         }
     }
 
-    //Hover effect for the down arrow
-    useEffect(() => {
-        if (hoveredIndex !== null && arrowRefs.current[hoveredIndex]) {
-            gsap.to(arrowRefs.current[hoveredIndex], {
-                opacity: 1,
-                y: 10,
-                duration: 0.3,
-            })
-        } else {
-            gsap.to(arrowRefs.current, {
-                opacity: 0,
-                y: 0,
-                duration: 0.3,
-            })
-        }
-    }, [hoveredIndex])
-
     const closeModal = () => {
         setShowModal(false)
     }

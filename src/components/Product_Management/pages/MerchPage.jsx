@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import propTypes from 'prop-types'
 import { gsap } from 'gsap'
 import { Helmet } from 'react-helmet-async' // Import Helmet for meta tags
@@ -41,9 +42,7 @@ function MerchPage({ addToCart, cartItems }) {
             .then((res) => res.json())
             .then((data) => {
                 setProducts(data)
-                // Initialize isAnimating array to false for each card
                 setIsAnimating(new Array(data.length).fill(false))
-                // Reset cardRefs after products have been fetched
                 cardRefs.current = Array(data.length).fill(null)
 
                 // Set meta description and keywords based on the first product as an example
@@ -67,9 +66,9 @@ function MerchPage({ addToCart, cartItems }) {
                     {
                         opacity: 1,
                         y: 0,
-                        stagger: 0.2,
-                        duration: 1,
-                        ease: 'power3.out',
+                        stagger: 0.1, // Reduced stagger for faster appearance
+                        duration: 0.8, // Slightly increased duration for smoothness
+                        ease: 'power3.out', // Smooth easing for fluid animation
                     }
                 )
             }
@@ -88,63 +87,55 @@ function MerchPage({ addToCart, cartItems }) {
                 },
             })
 
-            // Dim the card by reducing its opacity slightly
             tl.to(cardRefs.current[activeCardIndex], {
                 opacity: 0.5,
-                duration: 0.2,
+                duration: 0.3, // Slightly longer for smooth dimming
                 ease: 'power2.out',
             })
-            // Animate the confirmation message
             tl.fromTo(
                 confirmRef.current,
                 { opacity: 0, y: -20 },
-                { opacity: 1, y: 0, duration: 0.5, ease: 'power2.out' }
+                { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' } // Slightly extended
             )
-            // Hide the confirmation and restore the card opacity
             tl.to(confirmRef.current, {
                 opacity: 0,
                 y: -20,
-                duration: 0.5,
+                duration: 0.6, // Smooth hide animation
                 ease: 'power2.out',
-                delay: 1.5, // Delay before fading out
+                delay: 1.5,
             })
             tl.to(cardRefs.current[activeCardIndex], {
                 opacity: 1,
-                duration: 0.2,
+                duration: 0.3, // Restores opacity smoothly
                 ease: 'power2.out',
             })
         }
     }, [confirmationMessage, activeCardIndex])
 
     const handleAddToCart = (product, index) => {
-        if (isAnimating[index]) return // Block clicks if animation is running on this card
+        if (isAnimating[index]) return
 
         setIsAnimating((prev) => {
             const updated = [...prev]
             updated[index] = true
             return updated
-        }) // Set animation flag for this specific card
+        })
 
         addToCart(product)
 
-        // Reset the message to force re-triggering the animation
         setConfirmationMessage('')
-
         setTimeout(() => {
             setConfirmationMessage(`${product.title} added to cart!`)
-        }, 0) // Delay to ensure the state change is applied
+        }, 0)
 
         setActiveCardIndex(index)
 
         const card = cardRefs.current[index]
         if (card) {
             const rect = card.getBoundingClientRect()
-
-            // Calculate the center of the card
             const cardCenterX = rect.left + rect.width / 2
             const cardCenterY = rect.top + rect.height / 2
 
-            // Set the confirmation message position to the card's center
             setMessagePosition({
                 top: cardCenterY + window.scrollY,
                 left: cardCenterX + window.scrollX,
@@ -163,14 +154,51 @@ function MerchPage({ addToCart, cartItems }) {
             <CartPopOut cartItems={cartItems} />
             <h1 className="mb-8 text-center text-4xl font-bold">Merch</h1>
 
-            {/* Confirmation message */}
+            {/* Navigation */}
+            <nav aria-label="Page navigation" className="mb-6">
+                <ul className="flex justify-center space-x-6">
+                    <li>
+                        <Link
+                            to="/add-product"
+                            className="text-lg font-medium text-blue-600 hover:text-blue-800"
+                        >
+                            Add Product
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/merch"
+                            className="text-lg font-medium text-blue-600 hover:text-blue-800"
+                        >
+                            Merch Page
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/cart"
+                            className="text-lg font-medium text-blue-600 hover:text-blue-800"
+                        >
+                            Cart Page
+                        </Link>
+                    </li>
+                    <li>
+                        <Link
+                            to="/checkout"
+                            className="text-lg font-medium text-blue-600 hover:text-blue-800"
+                        >
+                            Checkout Page
+                        </Link>
+                    </li>
+                </ul>
+            </nav>
+
             <div
                 ref={confirmRef}
                 className="absolute z-50 rounded bg-green-500 p-2 text-center text-white shadow-lg"
                 style={{
                     top: `${messagePosition.top}px`,
                     left: `${messagePosition.left}px`,
-                    transform: 'translate(-50%, -50%)', // Center the message
+                    transform: 'translate(-50%, -50%)',
                     opacity: 0,
                 }}
             >
@@ -217,7 +245,7 @@ function MerchPage({ addToCart, cartItems }) {
                                     ? 'cursor-not-allowed opacity-50'
                                     : ''
                             }`}
-                            disabled={isAnimating[index]} // Disable button during animation for this specific card
+                            disabled={isAnimating[index]}
                         >
                             Add to Cart
                         </button>
