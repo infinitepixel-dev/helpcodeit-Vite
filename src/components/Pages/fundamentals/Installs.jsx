@@ -5,23 +5,19 @@ import homebrewlogo from '@assets/homebrew.svg'
 import nodeLogo from '@assets/nodejs.svg'
 import vsCodeLogo from '@assets/visual-studio-code.svg'
 import { Helmet } from 'react-helmet-async'
+import CodeBlock from '@/components/Sub_Components/CodeBlock'
 
 function Installs() {
     const codeRef = useRef(null)
 
-    useEffect(() => {
-        // Apply syntax highlighting to all code elements
-        document.querySelectorAll('pre code').forEach((block) => {
-            hljs.highlightBlock(block)
-        })
-    }, [])
+
 
     const homebrew = `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
     const nodeUsingHomebrew = `brew install node`
 
     return (
-        <div className="pb-14 container">
+        <div className="container pb-14">
             <Helmet>
                 <title>Installations Needed for Front End Developers</title>
                 <meta
@@ -39,7 +35,7 @@ function Installs() {
                 />
             </Helmet>
             <div className="container">
-                <h1 className="my-5 text-center text-6xl">
+                <h1 className="my-5 text-6xl text-center">
                     Installations Needed for Front End Developers
                 </h1>
                 <hr className="my-4 border-2 border-black dark:border-white" />
@@ -50,7 +46,7 @@ function Installs() {
                         get started. Below are the installations that you will
                         need to have:
                     </p>
-                    <ul className="list-inside list-disc font-bold">
+                    <ul className="font-bold list-disc list-inside">
                         <li className="my-4">
                             <a
                                 href="#homebrew"
@@ -100,7 +96,7 @@ function Installs() {
                             width="50px"
                             className="me-2"
                         />
-                        <h2 className="mukataFont mt-6 text-center text-4xl">
+                        <h2 className="mt-6 text-4xl text-center mukataFont">
                             Homebrew (Mac Only)
                         </h2>
                     </div>
@@ -117,12 +113,7 @@ function Installs() {
                             following command:
                         </p>
                         <pre className="">
-                            <code
-                                ref={codeRef}
-                                className="language-bash"
-                            >
-                                {homebrew}
-                            </code>
+                           <CodeBlock code={homebrew} language="bash"/>
                         </pre>
                         <p className="my-4">
                             Once you have run the command, follow the
@@ -149,7 +140,7 @@ function Installs() {
                         <img
                             src={nodeLogo}
                             alt="Node.js Logo"
-                            className="rounded-md bg-white p-1"
+                            className="p-1 bg-white rounded-md"
                             width="200px"
                             id="Node"
                         />
@@ -173,12 +164,8 @@ function Installs() {
                             run the following command:
                         </p>
                         <pre>
-                            <code
-                                ref={codeRef}
-                                className="language-bash"
-                            >
-                                {nodeUsingHomebrew}
-                            </code>
+                            <CodeBlock code={nodeUsingHomebrew} language="bash"/>
+
                         </pre>
                         <p className="my-4">
                             Once you have run the command, follow the
@@ -203,7 +190,7 @@ function Installs() {
                             have downloaded the file, run the installer and
                             follow the instructions.
                         </p>
-                        <div className="mt-14 flex justify-center">
+                        <div className="flex justify-center mt-14">
                             {' '}
                             <img
                                 src={vsCodeLogo}

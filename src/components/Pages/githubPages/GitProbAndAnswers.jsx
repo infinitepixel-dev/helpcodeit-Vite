@@ -3,6 +3,13 @@ import React from "react";
 const GitProbAndAnswers = () => {
   const problems = [
     {
+      problem: "Pushing Code Results in Unexpected Hangups",
+      commands: `git config --global http.postBuffer 524288000\n`,
+      explanation:
+        "Increase the buffer size to prevent issues when pushing large files or repositories. The default buffer size is 1 MB. This command increases it to 500 MB.",
+
+    },
+    {
       problem: "Accidentally committed to the wrong branch",
       commands: `git checkout correct-branch\n
   git merge wrong-branch`,
@@ -91,7 +98,7 @@ const GitProbAndAnswers = () => {
 
   return (
     <div className="container p-4 mx-auto my-8 mb-28">
- 
+
 
       <h1 className="mb-4 text-4xl font-bold text-balance">Common GitHub Problems and Solutions</h1>
       <div className="overflow-x-auto">
