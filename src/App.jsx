@@ -20,6 +20,7 @@ import MerchPage from './components/Product_Management/pages/MerchPage'
 import CartPage from './components/Product_Management/pages/CartPage'
 import CartPopOut from './components/Product_Management/pages/CartPopOut'
 import CheckoutPage from './components/Product_Management/pages/Checkout'
+import UsersManager from './components/Product_Management/pages/UsersManager'
 
 //INFO Define theme outside of App component
 const useTheme = () => {
@@ -173,6 +174,11 @@ function App() {
                             <Route
                                 path="/checkout"
                                 element={<CheckoutPage cartItems={cartItems} />}
+                            />
+                            {/* Users Manager */}
+                            <Route
+                                path="/users-manager"
+                                element={<UsersManager />}
                             />
                             {/* No Access */}
                             <Route path="no-access" element={<Dashboard />} />

@@ -66,6 +66,9 @@ function Dashboard() {
         if (userParam && !user) {
             const userData = JSON.parse(decodeURIComponent(userParam))
             if (userData.role !== 'admin') {
+                console.log('User Data: ', userData)
+                console.log('User Param', userParam)
+
                 navigate('/no-access')
             } else {
                 login(userData)
@@ -393,16 +396,40 @@ function Dashboard() {
                             Checkout Page
                         </Link>
                     </li>
+                    <li>
+                        <Link
+                            to="/users-manager"
+                            className="text-lg font-medium text-blue-600 hover:text-blue-800"
+                        >
+                            Users Manger
+                        </Link>
+                    </li>
                 </ul>
             </nav>
 
             {/* Product Grid */}
-            <div className="grid auto-rows-[minmax(auto,1fr)] grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="grid auto-rows-min grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {products.map((product, index) => (
                     <div
                         key={product.id}
                         ref={(el) => (cardRefs.current[index] = el)}
-                        className="group relative flex flex-col justify-between rounded-lg border border-gray-300 bg-white p-2 shadow-md transition-transform duration-300 hover:scale-105 hover:shadow-lg"
+                        className={`group relative flex flex-col justify-between rounded-lg border border-gray-300 bg-white p-2 shadow-md transition-transform duration-300 ${
+                            editProduct === product.id
+                                ? 'hover:scale-105 hover:shadow-lg'
+                                : ''
+                        }`}
+                        style={{
+                            height:
+                                editProduct === product.id ? 'auto' : 'initial', // Ensure edited card grows, others stay unchanged
+                            alignSelf:
+                                editProduct === product.id
+                                    ? 'stretch'
+                                    : 'start', // Expand the card independently
+                            overflow:
+                                editProduct === product.id
+                                    ? 'visible'
+                                    : 'hidden', // Ensure content is visible when editing
+                        }}
                     >
                         <button
                             onClick={() => handleDeleteClick(product.id, index)}
@@ -483,7 +510,7 @@ function Dashboard() {
                                     <div className="mb-4">
                                         <label
                                             htmlFor="image_url"
-                                            className="mb-1 block font-medium"
+                                            className="mb-1 block  font-medium"
                                         >
                                             Image URL
                                         </label>
@@ -495,7 +522,7 @@ function Dashboard() {
                                             name="image_url"
                                             value={imageUrl}
                                             onChange={handleImageUrlChange}
-                                            className="w-full rounded-lg border border-gray-300 p-2"
+                                            className="w-full rounded-lg border border-gray-300 p-2 "
                                         />
                                     </div>
                                 ) : (
@@ -518,6 +545,43 @@ function Dashboard() {
                                         {tailWindHR()}
                                     </div>
                                 )}
+
+                                <label
+                                    htmlFor="price"
+                                    className="mb-1 block font-medium"
+                                >
+                                    Price
+                                </label>
+                                {/* Product Price Input */}
+
+                                <input
+                                    type="number"
+                                    id="price"
+                                    name="price"
+                                    value={editedData.price}
+                                    onChange={handleInputChange}
+                                    className="mb-1.5 w-full rounded-lg border border-gray-300 "
+                                />
+                                {tailWindHR()}
+                                <label
+                                    htmlFor="description"
+                                    className="mb-1 block font-medium"
+                                >
+                                    Description
+                                </label>
+                                {/* Product Description Input */}
+                                <textarea
+                                    id="description"
+                                    name="description"
+                                    value={editedData.description}
+                                    onChange={handleInputChange}
+                                    className="w-full resize-none overflow-hidden rounded-lg border border-gray-300"
+                                    rows={1} // Start with 1 row
+                                    onInput={(e) => {
+                                        e.target.style.height = 'auto'
+                                        e.target.style.height = `${e.target.scrollHeight}px`
+                                    }}
+                                ></textarea>
 
                                 {/* Meta Data */}
                                 <div className="mb-4">
@@ -599,42 +663,49 @@ function Dashboard() {
                                 {/*ANCHOR  Display Product Info */}
 
                                 {/* Product Title */}
-                                <h2 className="mb-2 text-xl font-semibold text-gray-800">
+                                <h2 className="absolute top-0 mb-2 text-xl font-semibold text-gray-800">
                                     {product.title}
                                 </h2>
-
-                                {product.image_url ? (
-                                    // Display image URL if available
-                                    <img
-                                        className="mb-4 h-48 w-full rounded-lg object-contain"
-                                        src={product.image_url}
-                                        alt={`${product.title} product image`}
-                                    />
-                                ) : product.image ? (
-                                    // Display Image file if available
-                                    <img
-                                        className="mb-4 h-48 w-full rounded-lg object-contain"
-                                        src={convertBlobToBase64(product.image)}
-                                        alt={`${product.title} product image`}
-                                    />
-                                ) : (
-                                    <div className="text-gray-500">
-                                        No image available
-                                    </div>
-                                )}
-
+                                <div className="mt-8">
+                                    {product.image_url ? (
+                                        // Display image URL if available
+                                        <img
+                                            className="mb-4 h-48 w-full rounded-lg object-contain"
+                                            src={product.image_url}
+                                            alt={`${product.title} product image`}
+                                        />
+                                    ) : product.image ? (
+                                        // Display Image file if available
+                                        <img
+                                            className="mb-4 h-48 w-full rounded-lg object-contain"
+                                            src={convertBlobToBase64(
+                                                product.image
+                                            )}
+                                            alt={`${product.title} product image`}
+                                        />
+                                    ) : (
+                                        //   No image available
+                                        <img
+                                            className="h-48 w-full rounded-lg object-contain"
+                                            src="public/images/no-image.webp"
+                                            alt="No image available"
+                                        />
+                                    )}
+                                </div>
                                 <div className="rounded-lg bg-slate-200 p-2  text-gray-800">
-                                    {/* Product Description */}
-                                    <p className="mb-2 text-gray-700">
-                                        {product.description}
-                                    </p>
-
-                                    {tailWindHR()}
-
                                     {/* Product Price */}
                                     <p className="mb-2 font-bold text-gray-900">
                                         Price: ${product.price}
                                     </p>
+
+                                    {tailWindHR()}
+
+                                    {/* Product Description */}
+                                    <p className="mb-2 text-gray-700">
+                                        Description: {product.description}
+                                    </p>
+
+                                    {tailWindHR()}
 
                                     {/* Product Category */}
                                     <p className="text-gray-600">

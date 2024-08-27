@@ -67,7 +67,7 @@ db.getConnection((err, connection) => {
 //API GETS all products from the 'products' table of the database
 app.get('/api/products', (req, res) => {
     db.query('SELECT * FROM products', (err, result) => {
-        console.log('Products: ', result) // Debug log to check for duplicates;
+        // console.log('Products: ', result) // Debug log to check for duplicates;
 
         if (err) throw err
         res.json(result)
@@ -174,6 +174,7 @@ app.delete('/api/products/:id', (req, res) => {
 */
 
 //API UPDATES a product in the 'products' table of the database
+//Edit product
 app.put('/api/products/:id', upload.single('image'), (req, res) => {
     const { id } = req.params
     const {

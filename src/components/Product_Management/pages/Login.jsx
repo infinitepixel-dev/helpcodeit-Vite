@@ -4,7 +4,7 @@ import { FaGoogle } from 'react-icons/fa'
 const Login = () => {
     const handleGoogleLogin = () => {
         // Redirect to your Node server's Google login endpoint
-        window.location.href = 'http://66.128.253.47:3025/auth/google'
+        window.location.href = 'http://localhost:3025/auth/google'
     }
 
     return (
