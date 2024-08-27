@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { format } from 'date-fns';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES, MARKS  } from '@contentful/rich-text-types';
+import { Helmet } from 'react-helmet-async';
 
 function BlogPost() {
     const location = useLocation();
@@ -126,6 +127,19 @@ function BlogPost() {
 
     return (
         <div key={post.sys.id} className="container mb-24 blog-post">
+            <Helmet>
+                <title>{post.fields.title} | Help Code It</title>
+                <meta
+                    name="description"
+                    content={post.fields.description}
+                />
+                <link rel="canonical" href={`https://www.helpcodeit.com/post/${post.sys.id}`} />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content={post.fields.keywords || null}
+                />
+            </Helmet>
             <h1 className="my-8 text-5xl">{post.fields.title}</h1>
             <p className="mb-3 text-sm font-semibold text-gray-700 dark:text-gray-300">
                Written By: {post.fields.Author} on {format(new Date(post.sys.createdAt), 'MMMM dd, yyyy')}
