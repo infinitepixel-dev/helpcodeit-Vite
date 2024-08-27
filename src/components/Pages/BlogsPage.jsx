@@ -1,5 +1,6 @@
 import { useLocation, Link } from 'react-router-dom'
 import { format } from 'date-fns'
+import { Helmet } from 'react-helmet-async'
 
 function BlogsPage() {
     const location = useLocation()
@@ -11,7 +12,7 @@ function BlogsPage() {
     if (!posts || posts.length === 0) {
         return <p>No posts available.</p>
     }
-    
+
     posts.sort((a, b) => new Date(b.sys.createdAt) - new Date(a.sys.createdAt))
 
     const getPreviewText = (posts) => {
@@ -45,6 +46,25 @@ function BlogsPage() {
 
     return (
         <div>
+            <Helmet>
+                <title>Code Chronicles | Help Code It</title>
+                <meta
+                    name="description"
+                    content="Welcome to the Help Code It blog. Read the latest posts on coding, web development, and programming. Stay up-to-date with the latest tech news and tutorials."
+                />
+                <link rel="canonical" href="https://www.helpcodeit.com/blogs" />
+                <meta name="robots" content="index, follow" />
+                <meta
+                    name="keywords"
+                    content="Help Code It, coding blog, web development, programming, tech news, coding tutorials"
+                />
+                <meta property="og:title" content="Code Chronicles - The Help Code It Blog | Help Code It" />
+                <meta property="og:description" content="Welcome to the Help Code It blog. Read the latest posts on coding, web development, and programming. Stay up-to-date with the latest tech news and tutorials." />
+                <meta property="og:url" content="https://www.helpcodeit.com/blogs" />
+                <meta property="og:image" content="https://www.helpcodeit.com/assets/helpcodeitlogo.CsyqkzOG.svg" />
+                <meta property="og:type" content="website" />
+
+            </Helmet>
             <h1 className="my-8 text-center satisfyFont text-7xl">
                 Code Chronicles
             </h1>
