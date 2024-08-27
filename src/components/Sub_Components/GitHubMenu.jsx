@@ -8,10 +8,10 @@ import path from 'path';
 
 const GitHubMenu = () => {
   const menuItems = [
-    { title: 'Setting Up Authentication', path: '/githubPages/GitHubAuthentication', icon: Key },
-    { title: 'Making a New Repository and Linking It', path: '/githubPages/AddARepository', icon: GitBranch },
-    { title: 'Pushing Updates to an Existing Repository', path: '/githubPages/push', icon: GitPullRequest },
-    { title: 'Changing Your Credentials', path: '/githubPages/ChangingGitHubCredentials', icon: UserCheck },
+    { title: 'Setting Up Authentication - Only needed the first time using GitHub on your system', path: '/githubPages/GitHubAuthentication', icon: Key },
+    { title: 'Making a New Repository and Linking It - First time setting up any repository', path: '/githubPages/AddARepository', icon: GitBranch },
+    { title: 'Pushing Updates to an Existing Repository - Every time you need to update what is in the repo', path: '/githubPages/push', icon: GitPullRequest },
+    { title: 'Changing Your Credentials - Only when changing to a different github account', path: '/githubPages/ChangingGitHubCredentials', icon: UserCheck },
     { title: 'Branching Guide', path: '/githubPages/GitHubBranching', icon: GitFork },
     { title: 'Cheatsheet of Git Commands for CLI', path: '/githubPages/GitHubCheatsheet', icon: FileText },
     { title: 'Common Problems and Solutions', path: '/githubPages/GitProbAndAnswers', icon: GitCommit },
