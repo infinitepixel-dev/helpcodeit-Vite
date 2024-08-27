@@ -53,6 +53,7 @@ export const navItems = [
             { to: '/fundamentals/Bootstrap', label: 'Bootstrap' },
             { to: '/githubPages/GitHub', label: 'GitHub' },
             { to: '/markdown/MarkdownGuide', label: 'Markdown' },
+            {to: '/ViteMain' , label: 'Vite Guides'},
             { to: '/javascript', label: 'JavaScript' },
             { to: '/ReactMain', label: 'React.js' },
         ],
@@ -169,6 +170,10 @@ export const componentRoutes = [
         componentPath: '../components/Pages/TermsOfService.jsx',
         key: 'termsOfService',
     },
+    //INFO: VITE Pages
+    { path: '/ViteMain', componentPath: '../components/Pages/vite/ViteMain.jsx', key: 'viteMain' },
+    { path: '/Vite-Vanilla', componentPath: '../components/Pages/vite/ViteVanilla.jsx', key: 'viteVanilla' },
+    { path: '/Vite-React', componentPath: '../components/Pages/vite/ViteReact.jsx', key: 'viteReact' },
     //INFO: JAVASCRIPT Pages
     {
         path: '/data-generator',
