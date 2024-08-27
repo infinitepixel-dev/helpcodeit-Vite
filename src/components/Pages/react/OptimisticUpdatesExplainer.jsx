@@ -1,7 +1,8 @@
 import React from 'react';
 import { ArrowRight, Check, AlertCircle, RefreshCcw, MessageSquare } from 'lucide-react';
 import CodeBlock from '@subComponents/CodeBlock';
-import optimisticUpdate from '@assets/optimisticupdate.svg';
+import optimisticUpdate from '@assets/optimisticupdates.png';
+import staticUpdate from '@assets/staticUpdates.png'
 import { Helmet } from 'react-helmet-async'
 
 
@@ -84,7 +85,10 @@ return (
       <li className="mb-2"><strong>Immediate UI Update</strong>: Because the state is updated instantly, the UI re-renders immediately, giving the user the impression that their action was successful and processed instantly.</li>
       <li className="mb-2"><strong>Handling the API Response</strong>: When the API response returns, the application confirms that the operation was successful. If it was, the state remains unchanged. If there was an error (e.g., the server rejected the request), the state might need to be rolled back or adjusted, and the UI updated accordingly.</li>
     </ol>
-  <img src={optimisticUpdate} alt="Optimistic Updates" className="w-full h-auto mb-8" />
+  <div className="grid grid-cols-1 gap-1 row md:grid-cols-2">
+    <div className="col"><img src={optimisticUpdate} alt="Optimistic Updates" className="w-full mb-8" /></div>
+    <div className="col"><img src={staticUpdate} alt="Static Updates" className="w-full mb-8" /></div>
+  </div>
     <h2 className="mt-8 mb-4 text-2xl font-semibold">Example Scenario</h2>
 
     <p className="mb-4">Let's consider a simple example of a to-do list application. When a user marks a task as complete, the following steps occur:</p>
