@@ -54,6 +54,7 @@ export const navItems = [
             { to: '/githubPages/GitHub', label: 'GitHub' },
             { to: '/markdown/MarkdownGuide', label: 'Markdown' },
             {to: '/ViteMain' , label: 'Vite Guides'},
+            {to: '/typescriptPages/TypeScriptMain', label: 'TypeScript'},
             { to: '/javascript', label: 'JavaScript' },
             { to: '/ReactMain', label: 'React.js' },
         ],
@@ -174,6 +175,9 @@ export const componentRoutes = [
     { path: '/ViteMain', componentPath: '../components/Pages/vite/ViteMain.jsx', key: 'viteMain' },
     { path: '/Vite-Vanilla', componentPath: '../components/Pages/vite/ViteVanilla.jsx', key: 'viteVanilla' },
     { path: '/Vite-React', componentPath: '../components/Pages/vite/ViteReact.jsx', key: 'viteReact' },
+    // INFO: TypeScript Pages
+    { path: '/typescriptPages/WhatIsTypeScript', componentPath: '../components/Pages/typescriptPages/WhatIsTypeScript.jsx', key: 'whatIsTypeScript' },
+    {path: "/typescriptPages/TypeScriptMain", componentPath: "../components/Pages/typescriptPages/TypeScriptMain.jsx", key: "typeScriptMain"},
     //INFO: JAVASCRIPT Pages
     {
         path: '/data-generator',
