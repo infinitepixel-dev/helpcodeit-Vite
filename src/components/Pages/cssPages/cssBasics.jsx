@@ -65,8 +65,8 @@ const cssBasics = () => {
         <p className="mb-4 text-xl">
           CSS continues to evolve with new features like CSS Grid, Flexbox, and CSS variables, offering powerful tools for responsive design and maintainable styles.
         </p>
-
       </section>
+
       <section className="mb-8">
         <h2 className="mb-4 text-2xl font-semibold">How to Link and Use CSS</h2>
         <p className="mb-4">There are three ways to include CSS in your HTML:</p>

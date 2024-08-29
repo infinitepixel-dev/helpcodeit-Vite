@@ -123,6 +123,10 @@ export const componentRoutes = [
         componentPath: '../components/Pages/cssPages/CSSMain.jsx',
         key: 'cssMain',
     },
+    {
+        path: '/cssPages/CSSLayoutTechniques',
+        componentPath: '../components/Pages/cssPages/CSSLayoutTechniques.jsx',
+    },
     //INFO: MISC Pages
     {
         path: '*',

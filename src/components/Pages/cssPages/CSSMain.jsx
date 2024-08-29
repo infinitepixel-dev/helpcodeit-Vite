@@ -19,7 +19,7 @@ const NavItem = ({ to, icon: Icon, label }) => (
 const CSSNavigation = () => {
   const navItems = [
     { to: "/cssPages/CSSBasics", icon: Book, label: "CSS Fundamentals" },
-    { to: "/cssPages/CSSLayout", icon: Layout, label: "CSS Layout Techniques" },
+    { to: "/cssPages/CSSLayoutTechniques", icon: Layout, label: "CSS Layout Techniques" },
     { to: "/CSSBoxModel", icon: Box, label: "The CSS Box Model" },
     { to: "/CSSTypography", icon: Type, label: "Typography in CSS" },
     { to: "/CSSColors", icon: PaintBucket, label: "Working with Colors and Gradients" },
