@@ -49,7 +49,7 @@ export const navItems = [
         label: 'Topics',
         items: [
             { to: '/htmlPages/htmlMain', label: 'HTML' },
-            { to: '/cssPages/cssBasics', label: 'CSS' },
+            { to: '/cssPages/CSSMain', label: 'CSS' },
             { to: '/fundamentals/Bootstrap', label: 'Bootstrap' },
             { to: '/githubPages/GitHub', label: 'GitHub' },
             { to: '/markdown/MarkdownGuide', label: 'Markdown' },
@@ -117,6 +117,11 @@ export const componentRoutes = [
         path: '/cssPages/cssBasics',
         componentPath: '../components/Pages/cssPages/cssBasics.jsx',
         key: 'cssBasics',
+    },
+    {
+        path: '/cssPages/CSSMain',
+        componentPath: '../components/Pages/cssPages/CSSMain.jsx',
+        key: 'cssMain',
     },
     //INFO: MISC Pages
     {
