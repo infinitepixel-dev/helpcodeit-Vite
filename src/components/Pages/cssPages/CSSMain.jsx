@@ -20,13 +20,13 @@ const CSSNavigation = () => {
   const navItems = [
     { to: "/cssPages/CSSBasics", icon: Book, label: "CSS Fundamentals" },
     { to: "/cssPages/CSSLayoutTechniques", icon: Layout, label: "CSS Layout Techniques" },
-    { to: "/CSSBoxModel", icon: Box, label: "The CSS Box Model" },
-    { to: "/CSSTypography", icon: Type, label: "Typography in CSS" },
-    { to: "/CSSColors", icon: PaintBucket, label: "Working with Colors and Gradients" },
-    { to: "/CSSFlexbox", icon: Layout, label: "Flexbox Layout" },
-    { to: "/CSSGrid", icon: Layers, label: "CSS Grid Layout" },
-    { to: "/CSSResponsive", icon: Zap, label: "Responsive Design with CSS" },
-    { to: "/CSSAnimations", icon: Code, label: "CSS Animations and Transitions" },
+    // { to: "/CSSBoxModel", icon: Box, label: "The CSS Box Model" },
+    // { to: "/CSSTypography", icon: Type, label: "Typography in CSS" },
+    // { to: "/CSSColors", icon: PaintBucket, label: "Working with Colors and Gradients" },
+    // { to: "/CSSFlexbox", icon: Layout, label: "Flexbox Layout" },
+    // { to: "/CSSGrid", icon: Layers, label: "CSS Grid Layout" },
+    // { to: "/CSSResponsive", icon: Zap, label: "Responsive Design with CSS" },
+    // { to: "/CSSAnimations", icon: Code, label: "CSS Animations and Transitions" },
   ];
 
   return (

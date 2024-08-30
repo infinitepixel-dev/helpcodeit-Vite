@@ -3,9 +3,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Slider } from "@/components/ui/slider";
 
 const LayoutTechnique = ({ title, description, children }) => (
-  <div className="p-4 mb-8 bg-gray-100 rounded-lg">
-    <h2 className="mb-2 text-xl font-bold text-blue-600">{title}</h2>
-    <p className="mb-4 text-gray-700">{description}</p>
+  <div className="p-4 mb-8 bg-gray-200 rounded-lg">
+    <h2 className="mb-2 text-4xl font-bold text-blue-600">{title}</h2>
+    <p className="mb-4 text-lg text-gray-700">{description}</p>
     <div className="p-4 border-2 border-gray-300 rounded">
       {children}
     </div>
@@ -20,9 +20,9 @@ const FlexboxExample = () => {
   return (
     <div>
       <div className="mb-4">
-        <label className="block mb-2">Flex Direction:</label>
+        <label className="block mb-2 text-gray-700">Flex Direction:</label>
         <select
-          className="w-full p-2 border rounded"
+          className="w-full p-2 text-gray-700 border rounded"
           value={direction}
           onChange={(e) => setDirection(e.target.value)}
         >
@@ -33,9 +33,9 @@ const FlexboxExample = () => {
         </select>
       </div>
       <div className="mb-4">
-        <label className="block mb-2">Justify Content:</label>
+        <label className="block mb-2 text-gray-700">Justify Content:</label>
         <select
-          className="w-full p-2 border rounded"
+          className="w-full p-2 text-gray-700 border rounded"
           value={justifyContent}
           onChange={(e) => setJustifyContent(e.target.value)}
         >
@@ -44,12 +44,13 @@ const FlexboxExample = () => {
           <option value="center">Center</option>
           <option value="space-between">Space Between</option>
           <option value="space-around">Space Around</option>
+          <option value="space-evenly">Space Evenly</option>
         </select>
       </div>
       <div className="mb-4">
-        <label className="block mb-2">Align Items:</label>
+        <label className="block mb-2 text-gray-700">Align Items:</label>
         <select
-          className="w-full p-2 border rounded"
+          className="w-full p-2 text-gray-700 border rounded"
           value={alignItems}
           onChange={(e) => setAlignItems(e.target.value)}
         >
@@ -61,11 +62,12 @@ const FlexboxExample = () => {
         </select>
       </div>
       <div
-        className={`flex h-40 bg-gray-200 ${
-          direction === 'row' ? 'flex-row' :
-          direction === 'column' ? 'flex-col' :
-          direction === 'row-reverse' ? 'flex-row-reverse' : 'flex-col-reverse'
-        } justify-${justifyContent} items-${alignItems}`}
+        className="flex bg-gray-200 h-60"
+        style={{
+          flexDirection: direction,
+          justifyContent: justifyContent,
+          alignItems: alignItems
+        }}
       >
         <div className="p-4 m-2 text-white bg-blue-500">Item 1</div>
         <div className="p-4 m-2 text-white bg-green-500">Item 2</div>
@@ -78,6 +80,27 @@ const FlexboxExample = () => {
 const GridExample = () => {
   const [columns, setColumns] = useState(3);
   const [gap, setGap] = useState(4);
+
+  const columnClasses = {
+    1: 'grid-cols-1',
+    2: 'grid-cols-2',
+    3: 'grid-cols-3',
+    4: 'grid-cols-4',
+    5: 'grid-cols-5',
+    6: 'grid-cols-6',
+  };
+
+  const gapClasses = {
+    0: 'gap-0',
+    1: 'gap-1',
+    2: 'gap-2',
+    3: 'gap-3',
+    4: 'gap-4',
+    5: 'gap-5',
+    6: 'gap-6',
+    7: 'gap-7',
+    8: 'gap-8',
+  };
 
   return (
     <div>
@@ -103,7 +126,7 @@ const GridExample = () => {
           className="border-2 border-gray-300"
         />
       </div>
-      <div className={`grid grid-cols-${columns} gap-${gap}`}>
+      <div className={`grid ${columnClasses[columns]} ${gapClasses[gap]}`}>
         <div className="p-4 text-white bg-yellow-500">Grid 1</div>
         <div className="p-4 text-white bg-pink-500">Grid 2</div>
         <div className="p-4 text-white bg-purple-500">Grid 3</div>
@@ -168,16 +191,16 @@ const PositioningExample = () => (
 
 const DisplayExample = () => (
   <div>
-    <div className="mb-2"><span className="inline p-2 mr-2 text-white bg-blue-500">Inline</span> Text after inline element</div>
-    <div className="mb-2"><div className="inline-block p-2 mr-2 text-white bg-green-500">Inline-block</div> Text after inline-block element</div>
-    <div className="mb-2"><div className="block p-2 text-white bg-red-500">Block</div> Text after block element</div>
+    <div className="mb-2 text-gray-700"><span className="inline p-2 mr-2 text-white bg-blue-500">Inline</span> Text after inline element</div>
+    <div className="mb-2 text-gray-700"><div className="inline-block p-2 mr-2 text-white bg-green-500">Inline-block</div> Text after inline-block element</div>
+    <div className="mb-2 text-gray-700"><div className="block p-2 text-white bg-red-500">Block</div> Text after block element</div>
   </div>
 );
 
 const CSSLayoutTechniques = () => {
   return (
-    <div className="max-w-4xl p-6 mx-auto">
-      <h1 className="mb-6 text-3xl font-bold text-center text-purple-700">Comprehensive CSS Layout Techniques</h1>
+    <div className="container p-6 mx-auto h-fit">
+      <h1 className="mb-6 text-3xl font-bold text-center mukataFont dark:text-white">Comprehensive CSS Layout Techniques</h1>
 
       <Tabs defaultValue="flexbox">
         <TabsList className="grid w-full grid-cols-5">
