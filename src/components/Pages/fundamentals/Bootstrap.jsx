@@ -1,19 +1,12 @@
 import bootstrapLogo from '@assets/Bootstrap logo.svg'
-import { useEffect, useRef } from 'react'
-import hljs from 'highlight.js'
-import 'highlight.js/styles/atom-one-dark.css'
+import CodeBlock from '@subComponents/CodeBlock'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 
 function Bootstrap() {
-    const codeRef = useRef(null)
 
-    useEffect(() => {
-        // Apply syntax highlighting to all code elements
-        document.querySelectorAll('pre code').forEach((block) => {
-            hljs.highlightBlock(block)
-        })
-    }, [])
+
+
 
     const bootstrapLinking = `<!DOCTYPE html>
 <html lang="en">
@@ -52,7 +45,7 @@ function Bootstrap() {
                 />
             </Helmet>
             <div className="container">
-                <h1 className="my-8 text-center text-6xl">
+                <h1 className="my-8 text-6xl text-center">
                     Linking Up Bootstrap
                 </h1>
 
@@ -75,8 +68,8 @@ function Bootstrap() {
                                 allowfullscreen
                             ></iframe>
                         </div>
-                        <div className=" m-4 mx-auto my-auto grid grid-cols-1 rounded-xl bg-white p-3 text-center dark:bg-purple-600">
-                            <div className="mx-auto mb-2 flex items-center">
+                        <div className="grid grid-cols-1 p-3 m-4 mx-auto my-auto text-center bg-white rounded-xl dark:bg-purple-600">
+                            <div className="flex items-center mx-auto mb-2">
                                 <img
                                     src={bootstrapLogo}
                                     alt="Bootstrap logo"
@@ -93,7 +86,7 @@ function Bootstrap() {
                                     <a
                                         href="https://getbootstrap.com/"
                                         target="_blank"
-                                        className="rounded border border-white bg-purple-500 px-4 py-2 font-bold text-white hover:bg-purple-700"
+                                        className="px-4 py-2 font-bold text-white bg-purple-500 border border-white rounded hover:bg-purple-700"
                                     >
                                         Bootstrap Official Website
                                     </a>
@@ -102,16 +95,16 @@ function Bootstrap() {
                                     <a
                                         href="https://www.w3schools.com/bootstrap5/index.php"
                                         target="_blank"
-                                        className="rounded border border-white bg-purple-500 px-4 py-2 font-bold text-white hover:bg-purple-700"
+                                        className="px-4 py-2 font-bold text-white bg-purple-500 border border-white rounded hover:bg-purple-700"
                                     >
                                         W3Schools Bootstrap Tutorial
                                     </a>
                                 </li>
-                                <li className=" mb-1 mt-4">
+                                <li className="mt-4 mb-1 ">
                                     <a
                                         href="https://www.bootswatch.com"
                                         target="_blank"
-                                        className="rounded border border-white bg-purple-500 px-4 py-2 font-bold text-white hover:bg-purple-700"
+                                        className="px-4 py-2 font-bold text-white bg-purple-500 border border-white rounded hover:bg-purple-700"
                                     >
                                         Bootswatch
                                     </a>
@@ -121,7 +114,7 @@ function Bootstrap() {
                     </div>
                     <div>
                         <div>
-                            <p className="mb-2 mt-10">
+                            <p className="mt-10 mb-2">
                                 With Bootstrap you have to setup your project
                                 more than you would in a basic HTML site. You
                                 need to link the Bootstrap stylesheet, and the
@@ -158,9 +151,7 @@ function Bootstrap() {
                         </h2>
                         <div className="flex">
                             <pre>
-                                <code ref={codeRef} className="language-html">
-                                    {bootstrapLinking}
-                                </code>
+                                <CodeBlock code={bootstrapLinking} language={'html'} />
                             </pre>
                         </div>
                         <div>
