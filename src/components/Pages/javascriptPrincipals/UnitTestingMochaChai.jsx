@@ -1,18 +1,11 @@
-import React, { useEffect, useRef } from 'react'
-import hljs from 'highlight.js'
+
+import CodeBlock from '@subComponents/CodeBlock'
 import { Helmet } from 'react-helmet-async'
 
-import 'highlight.js/styles/atom-one-dark.css'
+
 
 function UnitTestingMochaChai() {
-    const codeRef = useRef(null)
 
-    useEffect(() => {
-        // Apply syntax highlighting to all code elements
-        document.querySelectorAll('pre code').forEach((block) => {
-            hljs.highlightBlock(block)
-        })
-    }, [])
 
     const mochaChaiHTML = `<!DOCTYPE html>
     <html>
@@ -67,7 +60,7 @@ describe('Array', function() {
                     content="Mocha, Chai, unit testing, JavaScript testing, BDD, TDD, test framework, JavaScript tutorial, testing tutorial, coding tests"
                 />
             </Helmet>
-            <h1 className="my-5 text-center text-6xl">
+            <h1 className="my-5 text-6xl text-center">
                 Unit Testing with Mocha and Chai
             </h1>
             <hr className="border-2 border-black dark:border-white" />
@@ -93,15 +86,15 @@ describe('Array', function() {
                 provide an expressive language & readable style, while the TDD
                 assert style provides a more classical feel.
             </p>
-            <div className="my-5 grid grid-cols-1 gap-2 md:grid-cols-2">
-                <div className="m-2 rounded-2xl border-2 border-black bg-slate-300 p-3 shadow-md  shadow-black dark:border-white dark:bg-gray-600">
+            <div className="grid grid-cols-1 gap-2 my-5 md:grid-cols-2">
+                <div className="p-3 m-2 border-2 border-black shadow-md rounded-2xl bg-slate-300 shadow-black dark:border-white dark:bg-gray-600">
                     <img
                         src="https://cdn.svgporn.com/logos/mocha.svg"
                         alt="Mocha Logo"
                         width="100px"
                         class="mx-auto my-auto"
                     />
-                    <h3 className="satisfyFont mb-2 mt-3 text-center text-4xl ">
+                    <h3 className="mt-3 mb-2 text-4xl text-center satisfyFont ">
                         Mocha
                     </h3>
                     <p>
@@ -112,7 +105,7 @@ describe('Array', function() {
                         while mapping uncaught exceptions to the correct test
                         cases.
                     </p>
-                    <div className="mx-auto my-5 h-fit w-fit rounded-2xl bg-amber-700 px-3 py-1 text-center font-bold text-white shadow-sm shadow-black">
+                    <div className="px-3 py-1 mx-auto my-5 font-bold text-center text-white shadow-sm h-fit w-fit rounded-2xl bg-amber-700 shadow-black">
                         <a href="https://mochajs.org/" target="_blank">
                             <button
                             aria-label='Mocha Documentation'
@@ -120,14 +113,14 @@ describe('Array', function() {
                         </a>
                     </div>
                 </div>
-                <div className="m-2 rounded-2xl border-2 border-black bg-slate-300 p-3 shadow-md shadow-black dark:border-white dark:bg-gray-600">
+                <div className="p-3 m-2 border-2 border-black shadow-md rounded-2xl bg-slate-300 shadow-black dark:border-white dark:bg-gray-600">
                     <img
                         src="https://cdn.svgporn.com/logos/chai.svg"
                         alt="Chai Logo"
                         width="100px"
                         class="mx-auto my-auto"
                     />
-                    <h3 className="satisfyFont mb-2 mt-3 text-center text-4xl">
+                    <h3 className="mt-3 mb-2 text-4xl text-center satisfyFont">
                         Chai
                     </h3>
 
@@ -139,7 +132,7 @@ describe('Array', function() {
                         language & readable style, while the TDD assert style
                         provides a more classical feel.
                     </p>
-                    <div className="mx-auto my-5 h-fit w-fit rounded-2xl bg-amber-700 px-3 py-1 text-center font-bold text-white shadow-lg shadow-sm shadow-black">
+                    <div className="px-3 py-1 mx-auto my-5 font-bold text-center text-white shadow-sm shadow-lg h-fit w-fit rounded-2xl bg-amber-700 shadow-black">
                         <a
                             href="https://www.chaijs.com/api/bdd/"
                             target="_blank"
@@ -157,9 +150,8 @@ describe('Array', function() {
                 terminal:
             </p>
             <pre>
-                <code ref={codeRef} className="bash mt-4 text-base">
-                    {`npm install mocha@10.2.0 chai@4.3.7`}
-                </code>
+                <CodeBlock code={`npm install mocha@10.2.0 chai@4.3.7`} language={`bash`} />
+
             </pre>
             <h2 className="my-5 text-3xl">Setting Up the HTML Page</h2>
             <p>Mocha and Chai use an HTML page to show the test results.</p>
@@ -168,9 +160,7 @@ describe('Array', function() {
                 tests:
             </p>
             <pre>
-                <code ref={codeRef} className="html mt-4 text-base">
-                    {mochaChaiHTML}
-                </code>
+                <CodeBlock code={mochaChaiHTML} language={'html'} />
             </pre>
             <h2 className="my-5 text-3xl">Setting Up the Testing File</h2>
             <p>
@@ -178,9 +168,7 @@ describe('Array', function() {
                 your tests:
             </p>
             <pre>
-                <code ref={codeRef} className="javascript mt-4 text-base">
-                    {mochaChaiTesting}
-                </code>
+                <CodeBlock code={mochaChaiTesting} language={'javascript'} />
             </pre>
             <p>
                 When you write your tests they are organized using 'describe'.
@@ -217,34 +205,34 @@ describe('Array', function() {
                 </thead>
                 <tbody>
                     <tr>
-                        <td className="border-2 border-black p-1 text-center dark:border-white">
+                        <td className="p-1 text-center border-2 border-black dark:border-white">
                             expect(foo).to.be.a('string');
                         </td>
-                        <td className="border-2 border-black p-1 text-center dark:border-white">
+                        <td className="p-1 text-center border-2 border-black dark:border-white">
                             Asserts that foo is a string.
                         </td>
                     </tr>
                     <tr>
-                        <td className="border-2 border-black p-1 text-center dark:border-white">
+                        <td className="p-1 text-center border-2 border-black dark:border-white">
                             expect(foo).to.equal('bar');
                         </td>
-                        <td className="border-2 border-black p-1 text-center dark:border-white">
+                        <td className="p-1 text-center border-2 border-black dark:border-white">
                             Asserts that foo is equal to 'bar'.
                         </td>
                     </tr>
                     <tr>
-                        <td className="border-2 border-black p-1 text-center dark:border-white">
+                        <td className="p-1 text-center border-2 border-black dark:border-white">
                             expect(foo).to.have.lengthOf(3);
                         </td>
-                        <td className="border-2 border-black p-1 text-center dark:border-white">
+                        <td className="p-1 text-center border-2 border-black dark:border-white">
                             Asserts that foo has a length of 3.
                         </td>
                     </tr>
                     <tr>
-                        <td className="border-2 border-black p-1 text-center dark:border-white">
+                        <td className="p-1 text-center border-2 border-black dark:border-white">
                             expect(foo).to.include('bar');
                         </td>
-                        <td className="border-2 border-black p-1 text-center dark:border-white">
+                        <td className="p-1 text-center border-2 border-black dark:border-white">
                             Asserts that foo includes 'bar'.
                         </td>
                     </tr>
