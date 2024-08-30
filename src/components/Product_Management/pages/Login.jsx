@@ -2,32 +2,6 @@ import { LogIn } from 'react-feather'
 import { FaGoogle } from 'react-icons/fa'
 
 const Login = () => {
-    //v1
-    // const handleGoogleLogin = () => {
-    //     // Redirect to your Node server's Google login endpoint
-    //     window.location.href = 'http://localhost:3025/auth/google'
-    // }
-
-    //v2
-    // const handleGoogleLogin = () => {
-    //     // Get the current website's URL
-    //     const currentUrl = window.location.origin
-    //     console.log('Current URL:', currentUrl)
-
-    //     // Redirect to your Node server's Google login endpoint with the current URL as a query parameter
-    //     window.location.href = `https://vps.infinitepixel.dev:3025/auth/google?redirect_url=${encodeURIComponent(currentUrl)}`
-    // }
-
-    //v3
-    // const handleGoogleLogin = () => {
-    //     // Get the current website's URL
-    //     const currentUrl = window.location.origin
-    //     console.log('Current URL:', currentUrl)
-
-    //     // Redirect to your Node server's Google login endpoint with the current URL as a query parameter
-    //     window.location.href = `https://vps.infinitepixel.dev:3025/auth/google?redirect_url=${encodeURIComponent(currentUrl)}`
-    // }
-
     //v4
     const generateSessionId = () => {
         // Generate a random session ID using window.crypto
@@ -73,3 +47,29 @@ const Login = () => {
 }
 
 export default Login
+
+//v1
+// const handleGoogleLogin = () => {
+//     // Redirect to your Node server's Google login endpoint
+//     window.location.href = 'http://localhost:3025/auth/google'
+// }
+
+//v2
+// const handleGoogleLogin = () => {
+//     // Get the current website's URL
+//     const currentUrl = window.location.origin
+//     console.log('Current URL:', currentUrl)
+
+//     // Redirect to your Node server's Google login endpoint with the current URL as a query parameter
+//     window.location.href = `https://vps.infinitepixel.dev:3025/auth/google?redirect_url=${encodeURIComponent(currentUrl)}`
+// }
+
+//v3
+// const handleGoogleLogin = () => {
+//     // Get the current website's URL
+//     const currentUrl = window.location.origin
+//     console.log('Current URL:', currentUrl)
+
+//     // Redirect to your Node server's Google login endpoint with the current URL as a query parameter
+//     window.location.href = `https://vps.infinitepixel.dev:3025/auth/google?redirect_url=${encodeURIComponent(currentUrl)}`
+// }

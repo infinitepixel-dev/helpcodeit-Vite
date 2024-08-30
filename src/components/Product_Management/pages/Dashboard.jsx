@@ -68,7 +68,7 @@ function Dashboard() {
 
         if (userParam && !user) {
             const userData = JSON.parse(decodeURIComponent(userParam))
-            if (userData.role !== ('admin' || 1)) {
+            if (userData.role !== 1) {
                 console.log('User Data: ', userData)
                 console.log('User Param', userParam)
 
