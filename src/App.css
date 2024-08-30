@@ -323,3 +323,45 @@
     font-style: italic;
     font-weight: 500;
 }
+.custom-tab-flexbox[data-state="active"].bg-red-500 {
+    background-color: red;
+    font-weight: bolder;
+    font-size: large;
+}
+.custom-tab-grid[data-state="active"].bg-green-500 {
+    background-color: green;
+    font-weight: bolder;
+    font-size: large;
+}
+.custom-tab-float[data-state="active"].bg-blue-500 {
+    background-color: blue;
+    font-weight: bolder;
+    font-size: large;
+}
+.custom-tab-positioning[data-state="active"].bg-yellow-500 {
+    background-color: yellow;
+    font-weight: bolder;
+    font-size: large;
+    color:rgb(129, 129, 129)
+}
+.custom-tab-display[data-state="active"].bg-purple-500 {
+    background-color: purple;
+    font-weight: bolder;
+    font-size: large;
+}
+
+.custom-tab-flexbox {
+    background: #f79898;
+}
+.custom-tab-grid {
+    background: #7bc086;
+}
+.custom-tab-float {
+    background: #90c3ec;
+}
+.custom-tab-positioning {
+    background: #fcc419;
+}
+.custom-tab-display {
+    background: #bcaee8;
+}
