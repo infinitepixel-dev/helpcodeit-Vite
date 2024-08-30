@@ -3,10 +3,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Slider } from "@/components/ui/slider";
 
 const LayoutTechnique = ({ title, description, children }) => (
-  <div className="p-4 mb-8 bg-gray-200 rounded-lg">
+  <div className="p-4 mb-8 bg-gray-100 rounded-lg">
     <h2 className="mb-2 text-4xl font-bold text-blue-600">{title}</h2>
     <p className="mb-4 text-lg text-gray-700">{description}</p>
-    <div className="p-4 border-2 border-gray-300 rounded">
+    <div className="p-4 bg-gray-200 border-2 border-gray-300 rounded shadow">
       {children}
     </div>
   </div>
@@ -200,20 +200,33 @@ const DisplayExample = () => (
 const CSSLayoutTechniques = () => {
   return (
     <div className="container p-6 mx-auto h-fit">
-      <h1 className="mb-6 text-3xl font-bold text-center mukataFont dark:text-white">Comprehensive CSS Layout Techniques</h1>
+      <h1 className="mb-6 text-4xl font-bold text-center mukataFont dark:text-white">Comprehensive CSS Layout Techniques</h1>
+      <p className="mb-6 text-lg text-center text-gray-700 dark:text-gray-300">
+        This guide will help you with each of the major CSS layout techniques, including Flexbox, Grid, Float, Positioning, and Display properties.
+      </p>
 
       <Tabs defaultValue="flexbox">
-        <TabsList className="grid w-full grid-cols-5">
-          <TabsTrigger value="flexbox">Flexbox</TabsTrigger>
-          <TabsTrigger value="grid">Grid</TabsTrigger>
-          <TabsTrigger value="float">Float</TabsTrigger>
-          <TabsTrigger value="positioning">Positioning</TabsTrigger>
-          <TabsTrigger value="display">Display</TabsTrigger>
+        <TabsList className="grid w-full grid-cols-5 bg-white">
+          <TabsTrigger
+            className="text-white bg-red-500 custom-tab-flexbox"
+            value="flexbox">Flexbox</TabsTrigger>
+          <TabsTrigger
+            className="text-white bg-green-500 custom-tab-grid"
+            value="grid">Grid</TabsTrigger>
+          <TabsTrigger
+            className="text-white bg-blue-500 custom-tab-float"
+            value="float">Float</TabsTrigger>
+          <TabsTrigger
+            className="text-white bg-yellow-500 custom-tab-positioning"
+            value="positioning">Positioning</TabsTrigger>
+          <TabsTrigger
+            className="text-white bg-purple-500 custom-tab-display"
+            value="display">Display</TabsTrigger>
         </TabsList>
         <TabsContent value="flexbox">
           <LayoutTechnique
             title="Flexbox"
-            description="Flexbox is a one-dimensional layout method for arranging items in rows or columns. It's ideal for distributing space and aligning content in complex ways."
+            description="Flexbox is a one-dimensional layout method for arranging items in rows or columns. It's ideal for distributing space and aligning content in complex ways. To implement it you need to use the CSS property display: flex. Then you will be able to use properties like justify-content, align-items, and flex-direction to control the layout."
           >
             <FlexboxExample />
           </LayoutTechnique>
@@ -221,7 +234,7 @@ const CSSLayoutTechniques = () => {
         <TabsContent value="grid">
           <LayoutTechnique
             title="Grid"
-            description="CSS Grid is a two-dimensional layout system for arranging content in rows and columns. It's perfect for creating complex layouts and alignment scenarios."
+            description="CSS Grid is a two-dimensional layout system for arranging content in rows and columns. It's perfect for creating complex layouts and alignment scenarios. To implement it you need to use the CSS property display: grid. Then you will be able to use properties like grid-template-columns, grid-template-rows, and grid-gap to control the layout."
           >
             <GridExample />
           </LayoutTechnique>
@@ -229,7 +242,7 @@ const CSSLayoutTechniques = () => {
         <TabsContent value="float">
           <LayoutTechnique
             title="Float"
-            description="Floating elements allows text and inline elements to wrap around it. While less common in modern layouts, it's still useful for specific scenarios."
+            description="Floating elements allows text and inline elements to wrap around it. While less common in modern layouts, it's still useful for specific scenarios. While it has gone out of favor for layout purposes, it's still useful for wrapping text around images or other elements when no other option works."
           >
             <FloatExample />
           </LayoutTechnique>
@@ -237,7 +250,7 @@ const CSSLayoutTechniques = () => {
         <TabsContent value="positioning">
           <LayoutTechnique
             title="Positioning"
-            description="CSS positioning allows you to precisely control the placement of elements. It's useful for creating overlays, sticky elements, and precise layouts."
+            description="CSS positioning allows you to precisely control the placement of elements. It's useful for creating overlays, sticky elements, and precise layouts. To implement it you need to use the CSS properties position, top, right, bottom, and left. Then you will be able to control the position of the element."
           >
             <PositioningExample />
           </LayoutTechnique>
@@ -245,7 +258,7 @@ const CSSLayoutTechniques = () => {
         <TabsContent value="display">
           <LayoutTechnique
             title="Display Properties"
-            description="The display property defines how an element should be displayed. It affects the layout flow and how elements interact with each other."
+            description="The display property defines how an element should be displayed. It affects the layout flow and how elements interact with each other. The most common values are block, inline, and inline-block. Block elements take up the full width available, inline elements take up only as much width as necessary, and inline-block elements are like inline elements but can have padding and margins."
           >
             <DisplayExample />
           </LayoutTechnique>
