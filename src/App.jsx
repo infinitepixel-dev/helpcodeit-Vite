@@ -1,26 +1,26 @@
 import './App.css'
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState, lazy, Suspense } from 'react'
-import { DarkModeProvider } from './components/Context/DarkModeProvider'
-import Navbar from './components/Navigation/Navbar'
+import { DarkModeProvider } from '@components/Context/DarkModeProvider'
+import Navbar from '@components/Navigation/Navbar'
 
 import { Routes, Route } from 'react-router-dom'
 // import Footer from '@subComponents/Footer'
 import RoutesWithComponents from './Routes/Routes.js'
 import { Helmet } from 'react-helmet-async'
-import BlogPost from './components/Pages/BlogPost'
+import BlogPost from '@components/Pages/BlogPost'
 import { BlogProvider } from '@subComponents/BlogAPI' // Correct import for BlogProvider
 
 // console.log('RoutesWithComponents: ', RoutesWithComponents)
 
 //ANCHOR Product Management Components
-import Dashboard from './components/Product_Management/pages/Dashboard.jsx'
-import AddProductForm from './components/Product_Management/pages/AddProductForm'
-import MerchPage from './components/Product_Management/pages/MerchPage'
-import CartPage from './components/Product_Management/pages/CartPage'
-import CartPopOut from './components/Product_Management/pages/CartPopOut'
-import CheckoutPage from './components/Product_Management/pages/Checkout'
-import UsersManager from './components/Product_Management/pages/UsersManager'
+import Dashboard from '@components/Product_Management/pages/Dashboard.jsx'
+import AddProductForm from '@components/Product_Management/pages/AddProductForm'
+import MerchPage from '@components/Product_Management/pages/MerchPage'
+import CartPage from '@components/Product_Management/pages/CartPage'
+import CartPopOut from '@components/Product_Management/pages/CartPopOut'
+import CheckoutPage from '@components/Product_Management/pages/Checkout'
+import UsersManager from '@components/Product_Management/pages/UsersManager'
 
 //INFO Define theme outside of App component
 const useTheme = () => {

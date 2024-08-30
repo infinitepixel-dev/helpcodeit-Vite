@@ -23,16 +23,43 @@ function AddProductForm() {
 
     const handleFileChange = (e) => {
         const file = e.target.files[0]
-        setFormData({ ...formData, image: file }) // Set the image blob file
+        const img = document.createElement('img')
+        const reader = new FileReader()
 
-        // Create a preview for the uploaded image file
-        if (file) {
-            const reader = new FileReader()
-            reader.onloadend = () => {
-                setPreview(reader.result) // Set the preview for display
+        reader.onload = (event) => {
+            img.src = event.target.result
+            img.onload = () => {
+                const canvas = document.createElement('canvas')
+                const ctx = canvas.getContext('2d')
+                const MAX_WIDTH = 800
+                const MAX_HEIGHT = 800
+                let width = img.width
+                let height = img.height
+
+                if (width > height) {
+                    if (width > MAX_WIDTH) {
+                        height *= MAX_WIDTH / width
+                        width = MAX_WIDTH
+                    }
+                } else {
+                    if (height > MAX_HEIGHT) {
+                        width *= MAX_HEIGHT / height
+                        height = MAX_HEIGHT
+                    }
+                }
+                canvas.width = width
+                canvas.height = height
+                ctx.drawImage(img, 0, 0, width, height)
+
+                canvas.toBlob((blob) => {
+                    setFormData({ ...formData, image: blob })
+                    const reader = new FileReader()
+                    reader.onloadend = () => setPreview(reader.result)
+                    reader.readAsDataURL(blob)
+                }, file.type)
             }
-            reader.readAsDataURL(file) // Read the file as a base64 URL
         }
+        reader.readAsDataURL(file)
     }
 
     const handleSubmit = async (e) => {

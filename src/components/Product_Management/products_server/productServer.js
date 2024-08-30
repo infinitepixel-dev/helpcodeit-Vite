@@ -8,6 +8,10 @@ const mysql = require('mysql2')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const multer = require('multer') // For handling file uploads
+const sharp = require('sharp')
+// const { promisify } = require('util')
+// const fs = require('fs')
+
 const dotenv = require('dotenv')
 const Stripe = require('stripe') // Import Stripe
 
@@ -75,7 +79,7 @@ app.get('/api/products', (req, res) => {
 })
 
 //API Creates a new product in the 'products' table of the database
-app.post('/api/products', upload.single('image'), (req, res) => {
+app.post('/api/products', upload.single('image'), async (req, res) => {
     const {
         title,
         price,
@@ -87,22 +91,27 @@ app.post('/api/products', upload.single('image'), (req, res) => {
         meta_description,
         meta_keywords,
     } = req.body
+
     let image = null
 
-    // If the image file is uploaded, set it
     if (req.file) {
-        image = req.file.buffer // Store the image as a buffer in the database
+        // Compress and resize the image
+        const compressedImage = await sharp(req.file.buffer)
+            .resize(800) // Resize to 800px width, maintaining aspect ratio
+            .jpeg({ quality: 80 }) // Convert to JPEG with 80% quality
+            .toBuffer()
+
+        image = compressedImage
     }
 
-    // Validate that the title and price fields are not empty
+    // Validate title and price fields
     if (!title || !price) {
         return res.status(400).json({ error: 'Title and price are required.' })
     }
 
-    // Insert the product into the database
+    // Insert into the database
     db.query(
         'INSERT INTO products (title, price, description, category, payment_id, image_url, image, meta_title, meta_description, meta_keywords) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
-
         [
             title,
             price,

@@ -44,7 +44,10 @@ function Dashboard() {
 
     // Animation for trash icon on mount
     useEffect(() => {
-        trashIconRefs.current.forEach((icon, index) => {
+        const validIcons = Array.from(trashIconRefs.current).filter(
+            (icon) => icon !== null
+        )
+        validIcons.forEach((icon, index) => {
             if (icon) {
                 gsap.set(icon, { scale: 0, opacity: 0 })
                 gsap.to(icon, {
@@ -65,7 +68,7 @@ function Dashboard() {
 
         if (userParam && !user) {
             const userData = JSON.parse(decodeURIComponent(userParam))
-            if (userData.role !== 'admin') {
+            if (userData.role !== ('admin' || 1)) {
                 console.log('User Data: ', userData)
                 console.log('User Param', userParam)
 
@@ -93,28 +96,12 @@ function Dashboard() {
         }
     }, [user, apiUrl])
 
-    // // Animate product cards on mount
-    // useEffect(() => {
-    //     const validRefs = cardRefs.current.filter((ref) => ref !== null)
-    //     if (validRefs.length > 0) {
-    //         gsap.fromTo(
-    //             validRefs,
-    //             { opacity: 0, y: 50 },
-    //             {
-    //                 opacity: 1,
-    //                 y: 0,
-    //                 stagger: 0.2,
-    //                 duration: 1,
-    //                 ease: 'power3.out',
-    //             }
-    //         )
-    //     }
-    // }, [products])
-
     // Animate product cards on initial mount
     useEffect(() => {
         if (!hasMounted.current) {
-            const validRefs = cardRefs.current.filter((ref) => ref !== null)
+            const validRefs = Array.from(cardRefs.current).filter(
+                (ref) => ref !== null
+            )
             if (validRefs.length > 0) {
                 gsap.fromTo(
                     validRefs,
@@ -130,7 +117,7 @@ function Dashboard() {
             }
             hasMounted.current = true // Set the flag to true after initial mount
         }
-    }, []) // Empty dependency array to run this effect only on mount
+    }, [])
 
     // Fetch updated products list
     const fetchProducts = () => {
@@ -269,7 +256,43 @@ function Dashboard() {
 
     // Handle file upload for image
     const handleFileChange = (e) => {
-        setImageFile(e.target.files[0] || null)
+        const file = e.target.files[0]
+        if (!file) return
+
+        const img = document.createElement('img')
+        const reader = new FileReader()
+
+        reader.onload = (event) => {
+            img.src = event.target.result
+            img.onload = () => {
+                const canvas = document.createElement('canvas')
+                const ctx = canvas.getContext('2d')
+                const MAX_WIDTH = 800
+                const MAX_HEIGHT = 800
+                let width = img.width
+                let height = img.height
+
+                if (width > height) {
+                    if (width > MAX_WIDTH) {
+                        height *= MAX_WIDTH / width
+                        width = MAX_WIDTH
+                    }
+                } else {
+                    if (height > MAX_HEIGHT) {
+                        width *= MAX_HEIGHT / height
+                        height = MAX_HEIGHT
+                    }
+                }
+                canvas.width = width
+                canvas.height = height
+                ctx.drawImage(img, 0, 0, width, height)
+
+                canvas.toBlob((blob) => {
+                    setImageFile(blob) // Set the compressed image file
+                }, file.type)
+            }
+        }
+        reader.readAsDataURL(file) // Load image as data URL
     }
 
     // Handle image URL input change
@@ -416,7 +439,7 @@ function Dashboard() {
                         className={`group relative flex flex-col justify-between rounded-lg border border-gray-300 bg-white p-2 shadow-md transition-transform duration-300 ${
                             editProduct === product.id
                                 ? 'hover:scale-105 hover:shadow-lg'
-                                : ''
+                                : 'hover:scale-105 hover:shadow-lg'
                         }`}
                         style={{
                             height:
@@ -670,14 +693,14 @@ function Dashboard() {
                                     {product.image_url ? (
                                         // Display image URL if available
                                         <img
-                                            className="mb-4 h-48 w-full rounded-lg object-contain"
+                                            className="mb-4 h-48 w-full rounded-lg object-cover shadow-sm transition-all duration-200 hover:shadow-md"
                                             src={product.image_url}
                                             alt={`${product.title} product image`}
                                         />
                                     ) : product.image ? (
                                         // Display Image file if available
                                         <img
-                                            className="mb-4 h-48 w-full rounded-lg object-contain"
+                                            className="mb-4 h-48 w-full rounded-lg object-cover shadow-sm transition-all duration-200 hover:shadow-md"
                                             src={convertBlobToBase64(
                                                 product.image
                                             )}
@@ -686,7 +709,7 @@ function Dashboard() {
                                     ) : (
                                         //   No image available
                                         <img
-                                            className="h-48 w-full rounded-lg object-contain"
+                                            className="mb-4 h-48 w-full rounded-lg object-cover shadow-sm transition-all duration-200 hover:shadow-md"
                                             src="public/images/no-image.webp"
                                             alt="No image available"
                                         />

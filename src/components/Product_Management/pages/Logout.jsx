@@ -10,13 +10,16 @@ const Logout = () => {
 
     const handleLogout = async () => {
         try {
-            const response = await fetch('http://localhost:3025/logout', {
-                method: 'GET',
-                credentials: 'include',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            })
+            const response = await fetch(
+                'https://vps.infinitepixel.dev:3025/logout',
+                {
+                    method: 'GET',
+                    credentials: 'include',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }
+            )
 
             if (response.ok) {
                 logout() // Clear the user from AuthContext and localStorage

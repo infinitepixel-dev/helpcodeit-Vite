@@ -15,7 +15,7 @@ export const BlogProvider = ({ children }) => {
         try {
             const response = await fetch(BLOG_URL)
             const data = await response.json()
-            console.log('Blog Data:', data)
+            // console.log('Blog Data:', data)
             setPosts(data.items) // Assuming data.items is an array of posts
         } catch (error) {
             console.error('Error fetching posts:', error)

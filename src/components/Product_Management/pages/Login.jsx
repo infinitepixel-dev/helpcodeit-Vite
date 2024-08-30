@@ -2,9 +2,55 @@ import { LogIn } from 'react-feather'
 import { FaGoogle } from 'react-icons/fa'
 
 const Login = () => {
+    //v1
+    // const handleGoogleLogin = () => {
+    //     // Redirect to your Node server's Google login endpoint
+    //     window.location.href = 'http://localhost:3025/auth/google'
+    // }
+
+    //v2
+    // const handleGoogleLogin = () => {
+    //     // Get the current website's URL
+    //     const currentUrl = window.location.origin
+    //     console.log('Current URL:', currentUrl)
+
+    //     // Redirect to your Node server's Google login endpoint with the current URL as a query parameter
+    //     window.location.href = `https://vps.infinitepixel.dev:3025/auth/google?redirect_url=${encodeURIComponent(currentUrl)}`
+    // }
+
+    //v3
+    // const handleGoogleLogin = () => {
+    //     // Get the current website's URL
+    //     const currentUrl = window.location.origin
+    //     console.log('Current URL:', currentUrl)
+
+    //     // Redirect to your Node server's Google login endpoint with the current URL as a query parameter
+    //     window.location.href = `https://vps.infinitepixel.dev:3025/auth/google?redirect_url=${encodeURIComponent(currentUrl)}`
+    // }
+
+    //v4
+    const generateSessionId = () => {
+        // Generate a random session ID using window.crypto
+        const array = new Uint8Array(16)
+        window.crypto.getRandomValues(array)
+        return Array.from(array, (byte) =>
+            ('0' + byte.toString(16)).slice(-2)
+        ).join('')
+    }
+
     const handleGoogleLogin = () => {
-        // Redirect to your Node server's Google login endpoint
-        window.location.href = 'http://localhost:3025/auth/google'
+        // Generate a unique session ID
+        const sessionId = generateSessionId()
+
+        // Store the session ID in local storage
+        localStorage.setItem('sessionId', sessionId)
+
+        // Get the current website's URL
+        const currentUrl = window.location.origin
+        console.log('Current URL:', currentUrl)
+
+        // Redirect to your Node server's Google login endpoint with the session ID and redirect URL as query parameters
+        window.location.href = `https://vps.infinitepixel.dev:3025/auth/google?sessionId=${sessionId}&redirect_url=${encodeURIComponent(currentUrl)}`
     }
 
     return (
