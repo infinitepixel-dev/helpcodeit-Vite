@@ -127,6 +127,11 @@ export const componentRoutes = [
         path: '/cssPages/CSSLayoutTechniques',
         componentPath: '../components/Pages/cssPages/CSSLayoutTechniques.jsx',
     },
+    {
+        path: '/cssPages/CSSTypography',
+        componentPath: '../components/Pages/cssPages/CSSTypography.jsx',
+        key: 'cssTypography',
+    },
     //INFO: MISC Pages
     {
         path: '*',
