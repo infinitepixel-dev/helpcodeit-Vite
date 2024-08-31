@@ -15,7 +15,7 @@ import EventCard from '@subComponents/EventCard'
 import { CalendarSearch, Youtube } from 'lucide-react'
 import JumboBackground from '@subComponents/JumboBackground'
 import './HomePage.css'
-import AlertMessage from '@subComponents/AlertMessage'
+//import AlertMessage from '@subComponents/AlertMessage'
 import events from '@subComponents/Events'
 // import discord from "@assets/discord.svg"
 
@@ -120,7 +120,7 @@ function HomePage() {
                     content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
                 />
             </Helmet>
-            {new Date(filteredEvents[0].ISOdate) > currentDate &&
+            {/* {new Date(filteredEvents[0].ISOdate) > currentDate &&
             filteredEvents[0].show ? (
                 <AlertMessage
                     message={message}
@@ -134,18 +134,18 @@ function HomePage() {
                     duration={25000}
                     onClose={() => console.log('closed')}
                 />
-            ) : null}
+            ) : null} */}
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />}
             {/* SECTION Jumbotron */}
 
-            <div className="hero-text bg-neutral-800 text-white">
+            <div className="text-white hero-text bg-neutral-800">
                 <div className="relative grid-cols-2">
                     <JumboBackground />
                 </div>
             </div>
 
             <div className="container">
-                <div className="mx-8 mt-5 grid grid-cols-1 overflow-hidden rounded-xl bg-gray-800 shadow-md lg:grid-cols-3">
+                <div className="grid grid-cols-1 mx-8 mt-5 overflow-hidden bg-gray-800 shadow-md rounded-xl lg:grid-cols-3">
                     <div>
                         <div>
                             <YouTubeLiveStream
@@ -153,14 +153,14 @@ function HomePage() {
                                 channelId={VITE_YT_CHANNEL_ID_MV}
                             />
                         </div>
-                        <div className="space-y-6 px-2 py-4">
+                        <div className="px-2 py-4 space-y-6">
                             <div className="grid justify-center gap-2">
                                 <div>
                                     <a
                                         href="https://www.youtube.com/@HelpCodeIt"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex transform items-center rounded-full bg-red-600 px-6 py-3 font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-red-700 hover:shadow-lg"
+                                        className="inline-flex items-center px-6 py-3 font-bold text-white transition-all duration-300 transform bg-red-600 rounded-full hover:-translate-y-1 hover:bg-red-700 hover:shadow-lg"
                                     >
                                         <Youtube size={24} className="mr-3" />
                                         Visit our YouTube Channel
@@ -171,10 +171,10 @@ function HomePage() {
                                         href="https://discord.gg/sDtKwcuK3J"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex w-full transform items-center rounded-full bg-indigo-600 px-6 py-3 font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-indigo-700 hover:shadow-lg"
+                                        className="inline-flex items-center w-full px-6 py-3 font-bold text-white transition-all duration-300 transform bg-indigo-600 rounded-full hover:-translate-y-1 hover:bg-indigo-700 hover:shadow-lg"
                                     >
                                         <svg
-                                            className="mr-3 h-6 w-6 fill-current"
+                                            className="w-6 h-6 mr-3 fill-current"
                                             role="img"
                                             viewBox="0 0 24 24"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -189,12 +189,12 @@ function HomePage() {
                                         href="https://x.com/HelpCodeIt"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex w-full transform items-center rounded-full bg-black px-6 py-3 font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-blue-400 hover:shadow-lg"
+                                        className="inline-flex items-center w-full px-6 py-3 font-bold text-white transition-all duration-300 transform bg-black rounded-full hover:-translate-y-1 hover:bg-blue-400 hover:shadow-lg"
                                         onMouseEnter={handleMouseEnter}
                                         onMouseLeave={handleMouseLeave}
                                     >
                                         <svg
-                                            className="mr-3 h-6 w-6 fill-current transition-all duration-300"
+                                            className="w-6 h-6 mr-3 transition-all duration-300 fill-current"
                                             role="img"
                                             viewBox={
                                                 isX
@@ -236,18 +236,18 @@ function HomePage() {
             <div className="container">
                 <div className="grid md:grid-cols-1 lg:grid-cols-2">
                     <div className="mx-auto mb-3">
-                        <h2 className="mt-6 text-center text-3xl font-bold">
+                        <h2 className="mt-6 text-3xl font-bold text-center">
                             Upcoming Event
                         </h2>
                         <EventCard limit={1} />
                     </div>
                     <div className="clearfix my-auto">
-                        <h2 className="mb-3 text-center text-4xl font-bold">
+                        <h2 className="mb-3 text-4xl font-bold text-center">
                             Get expert coding help and tutoring
                         </h2>
 
-                        <div className="mx-auto mb-8 mt-3 max-w-2xl rounded-lg p-8">
-                            <h2 className="mb-6 text-center text-3xl font-bold">
+                        <div className="max-w-2xl p-8 mx-auto mt-3 mb-8 rounded-lg">
+                            <h2 className="mb-6 text-3xl font-bold text-center">
                                 Book a session now!
                             </h2>
                             <p className="mb-6 text-center">
@@ -259,7 +259,7 @@ function HomePage() {
                             <Link to="/schedule-meeting" className="block">
                                 <button
                                     aria-label="explore meeting options button"
-                                    className="mx-auto flex w-fit rounded-full bg-blue-700 px-6 py-3 font-bold text-white transition duration-300 hover:bg-red-700"
+                                    className="flex px-6 py-3 mx-auto font-bold text-white transition duration-300 bg-blue-700 rounded-full w-fit hover:bg-red-700"
                                 >
                                     Explore Meeting Options
                                     <CalendarSearch
