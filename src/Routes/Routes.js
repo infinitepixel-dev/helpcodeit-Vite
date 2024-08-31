@@ -60,6 +60,7 @@ export const navItems = [
         ],
     },
     { type: 'link', to: '/about', label: 'About' },
+    { type: 'link', to: '/contact', label: 'Contact' },
 ]
 
 export const componentRoutes = [
@@ -127,6 +128,17 @@ export const componentRoutes = [
         path: '/cssPages/CSSLayoutTechniques',
         componentPath: '../components/Pages/cssPages/CSSLayoutTechniques.jsx',
     },
+    {
+        path: '/cssPages/CSSTypography',
+        componentPath: '../components/Pages/cssPages/CSSTypography.jsx',
+        key: 'cssTypography',
+    },
+    {
+        path: '/cssPages/CSSColors',
+        componentPath: '../components/Pages/cssPages/CSSColors.jsx',
+        key: 'cssColors',
+    },
+
     //INFO: MISC Pages
     {
         path: '*',
@@ -142,6 +154,11 @@ export const componentRoutes = [
         path: '/about',
         componentPath: '../components/Pages/About.jsx',
         key: 'about',
+    },
+    {
+        path: '/contact',
+        componentPath: '../components/Pages/Contact.jsx',
+        key: 'contact',
     },
 
     {
