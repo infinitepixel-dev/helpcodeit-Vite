@@ -4,7 +4,7 @@ import JavaScriptNavigation from '../../Sub_Components/JavaScriptNavigation'
 
 function JavascriptMainPage() {
     return (
-        <div className="mb-10 min-h-screen">
+        <div className="min-h-screen mb-10">
             <Helmet>
                 <title>Learn JavaScript | Help Code It</title>
                 <meta
@@ -21,10 +21,10 @@ function JavascriptMainPage() {
                     content="JavaScript, JavaScript tutorial, JavaScript practice problems, declaring variables, standard functions, arrow functions, array methods, string methods, npm init, package.json, objects, loops, string concatenation, unit testing, Mocha, Chai, CRUD operations, API, OOP, War Game"
                 />
             </Helmet>
-            <div className="pb-100 container mx-auto p-2 px-4 sm:p-8">
-                <div className="mt-5 flex flex-wrap items-center">
+            <div className="container p-2 px-4 mx-auto pb-100 sm:p-8">
+                <div className="flex flex-wrap items-center mt-5">
                     <div className="w-full md:w-2/3 lg:w-2/3 ">
-                        <h1 className="text-center text-3xl font-bold">
+                        <h1 className="text-3xl font-bold text-center">
                             JavaScript
                         </h1>
                         <p className="mt-4">
@@ -54,6 +54,41 @@ function JavascriptMainPage() {
                 {/* SECTION Main Content Goes Below This Line */}
                 <div className="mt-10">
                     <JavaScriptNavigation />
+                </div>
+
+                {/* NEW SECTION: JavaScript Terminology */}
+                <div className="mt-16">
+                    <h2 className="mb-6 text-2xl font-bold">Comprehensive JavaScript Terminology for Beginners</h2>
+                    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        {[
+                            { term: "Variable", definition: "A container for storing data values." },
+                            { term: "Function", definition: "A reusable block of code that performs a specific task." },
+                            { term: "Array", definition: "An ordered list of values." },
+                            { term: "Object", definition: "A collection of related data and/or functionality." },
+                            { term: "Loop", definition: "A way to repeat a block of code multiple times." },
+                            { term: "Conditional", definition: "A statement that performs different actions based on whether a condition is true or false." },
+                            { term: "DOM", definition: "Document Object Model, a programming interface for HTML and XML documents." },
+                            { term: "Event", definition: "An action that occurs in the browser, like a click or keypress." },
+                            { term: "Callback", definition: "A function passed as an argument to another function, to be executed later." },
+                            { term: "Scope", definition: "The context in which values and expressions are visible or can be referenced." },
+                            { term: "Closure", definition: "A function that has access to variables in its outer (enclosing) lexical scope." },
+                            { term: "Promise", definition: "An object representing the eventual completion or failure of an asynchronous operation." },
+                            { term: "Async/Await", definition: "A syntax for writing asynchronous code that looks and behaves like synchronous code." },
+                            { term: "Hoisting", definition: "JavaScript's default behavior of moving declarations to the top of their scope." },
+                            { term: "Prototype", definition: "The mechanism by which JavaScript objects inherit features from one another." },
+                            { term: "ES6+", definition: "Versions of ECMAScript (JavaScript) from 2015 onwards, introducing new features and syntax." },
+                            { term: "Destructuring", definition: "A way to unpack values from arrays or properties from objects into distinct variables." },
+                            { term: "Module", definition: "A file containing related code that can be imported and exported to share functionality." },
+                            { term: "Arrow Function", definition: "A concise way to write function expressions in JavaScript." },
+                            { term: "Template Literal", definition: "A way to create multi-line strings and embed expressions in strings." },
+                            { term: "Spread Operator", definition: "Allows an iterable to be expanded in places where zero or more arguments/elements are expected." }
+                        ].map(({ term, definition }, index) => (
+                            <div key={index} className="p-4 bg-white rounded-lg shadow">
+                                <h3 className="mb-2 text-lg font-semibold text-black">{term}</h3>
+                                <p className="text-black">{definition}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </div>
