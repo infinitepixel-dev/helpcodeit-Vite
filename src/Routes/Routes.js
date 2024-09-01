@@ -138,6 +138,11 @@ export const componentRoutes = [
         componentPath: '../components/Pages/cssPages/CSSColors.jsx',
         key: 'cssColors',
     },
+    {
+        path: '/cssPages/CSSResponsive',
+        componentPath: '../components/Pages/cssPages/CSSResponsive.jsx',
+        key: 'cssResponsive'
+      },
 
     //INFO: MISC Pages
     {
@@ -486,6 +491,11 @@ export const componentRoutes = [
         path: '/blogs',
         componentPath: '../components/Pages/BlogsPage.jsx',
         key: 'blogs',
+    },
+    {
+        path: '/javascriptPrincipals/InteractiveFetch',
+        componentPath: '../components/Pages/javascriptPrincipals/InteractiveFetch.jsx',
+        key: 'interactiveFetch',
     },
 ]
 
