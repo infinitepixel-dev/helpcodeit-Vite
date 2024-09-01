@@ -30,6 +30,7 @@ app.use(
             const allowedOrigins = [
                 'http://localhost:5173',
                 'http://66.128.253.47:5173',
+                'https://vps.infinitepixel.dev',
             ]
             // If the origin is in the list of allowed origins or no origin (for non-browser requests)
             if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
@@ -42,6 +43,7 @@ app.use(
         credentials: true,
     })
 )
+
 app.use(bodyParser.json())
 
 // Configure multer for handling file uploads (store image in memory)
@@ -275,7 +277,7 @@ app.post('/api/payment', async (req, res) => {
 })
 
 //ANCHOR Set server to public on a port
-app.listen(3082, '0.0.0.0', () => console.log('Server started on port 3082'))
+app.listen(3082, '0.0.0.0', () => console.log(`Server started on port 3082`))
 
 //INFO Seed the db with product data if one doesn't exist
 /*

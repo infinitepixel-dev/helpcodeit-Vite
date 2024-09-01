@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import propTypes from 'prop-types'
 import { gsap } from 'gsap'
 import { Helmet } from 'react-helmet-async' // Import Helmet for meta tags
-import CartPopOut from './CartPopOut'
+import CartPopOut from '../sub-components/CartPopOut'
 
 function MerchPage({ addToCart, cartItems }) {
     const [products, setProducts] = useState([])

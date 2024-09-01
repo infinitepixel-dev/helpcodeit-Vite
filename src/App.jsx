@@ -14,13 +14,18 @@ import { BlogProvider } from '@subComponents/BlogAPI' // Correct import for Blog
 // console.log('RoutesWithComponents: ', RoutesWithComponents)
 
 //ANCHOR Product Management Components
-import Dashboard from '@components/Product_Management/pages/Dashboard.jsx'
-import AddProductForm from '@components/Product_Management/pages/AddProductForm'
+//INFO Admin
+import Dashboard from '@components/Product_Management/admin/Dashboard.jsx'
+import UsersManager from '@components/Product_Management/admin/UsersManager'
+import AddProductForm from '@/components/Product_Management/admin/AddProductForm'
+
+//INFO Pages
 import MerchPage from '@components/Product_Management/pages/MerchPage'
 import CartPage from '@components/Product_Management/pages/CartPage'
-import CartPopOut from '@components/Product_Management/pages/CartPopOut'
 import CheckoutPage from '@components/Product_Management/pages/Checkout'
-import UsersManager from '@components/Product_Management/pages/UsersManager'
+
+// INFO Sub-components
+import CartPopOut from '@/components/Product_Management/sub-components/CartPopOut'
 
 //INFO Define theme outside of App component
 const useTheme = () => {

@@ -3,16 +3,17 @@ import { useNavigate, useLocation, Link } from 'react-router-dom'
 import { gsap } from 'gsap'
 import { FaTrash, FaArrowDown } from 'react-icons/fa'
 
-import { AuthContext } from './AuthContext'
+import { AuthContext } from '../sub-components/AuthContext'
 import Login from './Login'
 import Logout from './Logout'
-import BandsInTownEvents from './BandsInTownEvents'
+import BandsInTownEvents from '../sub-components/BandsInTownEvents'
 
 function Dashboard() {
     // Ref to track if component is mounted
     const hasMounted = useRef(false)
 
     const { user, login, loading } = useContext(AuthContext)
+
     const navigate = useNavigate()
     const location = useLocation()
     const [products, setProducts] = useState([])
@@ -41,6 +42,12 @@ function Dashboard() {
     const [selectedProduct, setSelectedProduct] = useState(null)
 
     const apiUrl = `${window.location.protocol}//${window.location.hostname}:3082`
+
+    const reverseRoleMap = {
+        1: 'admin',
+        2: 'storeManager',
+        3: 'user',
+    }
 
     // Animation for trash icon on mount
     useEffect(() => {
@@ -267,8 +274,8 @@ function Dashboard() {
             img.onload = () => {
                 const canvas = document.createElement('canvas')
                 const ctx = canvas.getContext('2d')
-                const MAX_WIDTH = 800
-                const MAX_HEIGHT = 800
+                const MAX_WIDTH = 1200
+                const MAX_HEIGHT = 1200
                 let width = img.width
                 let height = img.height
 
@@ -379,11 +386,12 @@ function Dashboard() {
 
     return (
         <div className="container mx-auto p-4">
-            <Logout />
+            <div>
+                <Logout user={user} role={reverseRoleMap[user.role]} />
+            </div>
             <h1 className="mb-8 text-center text-4xl font-bold text-white">
                 Product Dashboard
             </h1>
-
             {/* Navigation */}
             <nav aria-label="Page navigation" className="mb-6">
                 <ul className="flex justify-center space-x-6">
@@ -429,7 +437,6 @@ function Dashboard() {
                     </li>
                 </ul>
             </nav>
-
             {/* Product Grid */}
             <div className="grid auto-rows-min grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {products.map((product, index) => (
@@ -800,7 +807,6 @@ function Dashboard() {
                     </div>
                 )}
             </div>
-
             <BandsInTownEvents artistName="Metallica" />
         </div>
     )
