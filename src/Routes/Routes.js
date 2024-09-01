@@ -492,6 +492,11 @@ export const componentRoutes = [
         componentPath: '../components/Pages/BlogsPage.jsx',
         key: 'blogs',
     },
+    {
+        path: '/javascriptPrincipals/InteractiveFetch',
+        componentPath: '../components/Pages/javascriptPrincipals/InteractiveFetch.jsx',
+        key: 'interactiveFetch',
+    },
 ]
 
 let RoutesWithComponents = componentRoutes
