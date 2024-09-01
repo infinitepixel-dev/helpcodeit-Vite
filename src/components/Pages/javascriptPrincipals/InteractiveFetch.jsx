@@ -37,6 +37,7 @@ const InteractiveFetch = () => {
   const [inputData, setInputData] = useState({ id: '', name: '', email: '', age: '' });
   const [selectedMethod, setSelectedMethod] = useState('GET');
   const [fetchCode, setFetchCode] = useState('');
+  const [animationState, setAnimationState] = useState('idle');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -45,12 +46,18 @@ const InteractiveFetch = () => {
 
   const handleOperation = async () => {
     setLoading(true);
+    setAnimationState('sending');
     try {
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate request travel time
+      setAnimationState('processing');
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API processing time
+      setAnimationState('receiving');
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Simulate response travel time
+      setAnimationState('completed'); // New state to hide the green dot
       const response = await simulateAPI(selectedMethod, inputData);
       const data = await response.json();
       setResult(JSON.stringify(data, null, 2));
 
-      // If it's a POST operation, update the inputData with the new ID
       if (selectedMethod === 'POST' && data.data.id) {
         setInputData(prevData => ({ ...prevData, id: data.data.id.toString() }));
       }
@@ -58,6 +65,7 @@ const InteractiveFetch = () => {
       setResult(`Error: ${error.message}`);
     } finally {
       setLoading(false);
+      setTimeout(() => setAnimationState('idle'), 1000); // Reset animation after 1 second
     }
   };
 
@@ -183,6 +191,31 @@ const InteractiveFetch = () => {
       >
         {loading ? 'Processing...' : 'Send Request'}
       </button>
+
+      <div className="relative flex items-center justify-center h-32 my-6">
+        <div className="flex flex-col items-center">
+          <span className="mb-2 text-sm font-bold">Client</span>
+          <div className={`flex items-center justify-center w-20 h-20 text-center rounded-full ${animationState === 'sending' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}>
+            Send Request
+          </div>
+        </div>
+        <div className="relative w-32 h-4 mx-2 overflow-hidden bg-gray-300 rounded-full">
+          <div className={`absolute top-0 left-0 w-4 h-4 bg-blue-500 rounded-full ${animationState === 'sending' ? 'animate-move-right' : 'hidden'}`}></div>
+        </div>
+        <div className="relative flex items-center justify-center w-20 h-20 border-4 border-gray-300 rounded-full">
+          API
+          <div className={`absolute inset-0 bg-yellow-200 rounded-full ${animationState === 'processing' ? 'animate-pulse' : 'opacity-0'}`}></div>
+        </div>
+        <div className="relative w-32 h-4 mx-2 overflow-hidden bg-gray-300 rounded-full">
+          <div className={`absolute top-0 left-0 w-4 h-4 bg-green-500 rounded-full ${animationState === 'receiving' ? 'animate-move-right' : 'hidden'}`}></div>
+        </div>
+        <div className="flex flex-col items-center">
+          <span className="mb-2 text-sm font-bold">Client</span>
+          <div className={`flex items-center justify-center w-20 h-20 text-center rounded-full ${animationState === 'completed' || animationState === 'receiving' ? 'bg-green-500 text-white' : 'bg-gray-200'}`}>
+            Receive Result
+          </div>
+        </div>
+      </div>
 
       <div className="mt-6">
         <h2 className="mb-2 text-xl font-semibold">Fetch Code:</h2>
