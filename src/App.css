@@ -365,3 +365,30 @@
 .custom-tab-display {
     background: #bcaee8;
 }
+
+@keyframes moveRight {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(calc(100% + 5rem)); }
+}
+
+@keyframes moveLeft {
+  0% { transform: translateX(calc(100% + 5rem)); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.animate-move-right {
+  animation: moveRight 2s linear;
+}
+
+.animate-move-left {
+  animation: moveLeft 2s linear;
+}
+
+.animate-pulse {
+  animation: pulse 0.5s infinite;
+}

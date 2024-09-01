@@ -5,12 +5,35 @@ const Contact = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [status, setStatus] = useState('');
 
-  const handleSubmit = (e) => {
+const API_URL = "http://backend.michaelvarnell.com:3000/send-email";
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const subject = encodeURIComponent('Contact Form Submission from Help Code It');
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
-    window.location.href = `mailto:michael@helpcodeit.com?subject=${subject}&body=${body}`;
+    setStatus('Sending...');
+
+    try {
+      const response = await fetch(API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      if (response.ok) {
+        setStatus('Message sent successfully!');
+        setName('');
+        setEmail('');
+        setMessage('');
+      } else {
+        setStatus('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      setStatus('An error occurred. Please try again later.');
+    }
   };
 
   return (
@@ -80,6 +103,8 @@ const Contact = () => {
           >
             Send Message
           </button>
+
+          {status && <p className="mt-4 text-sm">{status}</p>}
         </form>
       </div>
     </div>

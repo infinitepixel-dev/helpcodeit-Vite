@@ -1,6 +1,7 @@
 import javascriptlogo from '@assets/jswithburstlogo.svg'
 import { Helmet } from 'react-helmet-async'
 import JavaScriptNavigation from '../../Sub_Components/JavaScriptNavigation'
+import { Link } from 'react-router-dom'  // Add this import
 
 function JavascriptMainPage() {
     return (
@@ -54,6 +55,22 @@ function JavascriptMainPage() {
                 {/* SECTION Main Content Goes Below This Line */}
                 <div className="mt-10">
                     <JavaScriptNavigation />
+                </div>
+
+                {/* Add this new section for the Interactive Fetch example */}
+                <div className="mt-8">
+                    <h2 className="text-2xl font-bold mb-4">Interactive Examples</h2>
+                    <ul className="list-disc pl-5">
+                        <li>
+                            <Link
+                                to="/javascriptPrincipals/InteractiveFetch"
+                                className="text-blue-500 hover:underline"
+                            >
+                                Interactive Fetch Example
+                            </Link>
+                            : Learn about CRUD operations and API interactions with a hands-on example.
+                        </li>
+                    </ul>
                 </div>
 
                 {/* NEW SECTION: JavaScript Terminology */}
