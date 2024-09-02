@@ -25,7 +25,7 @@ import CartPage from '@components/Product_Management/pages/CartPage'
 import CheckoutPage from '@components/Product_Management/pages/Checkout'
 
 // INFO Sub-components
-import CartPopOut from '@/components/Product_Management/sub-components/CartPopOut'
+import CartPopOut from '@/components/Product_Management/sub_components/sub-menus/CartPopOut'
 
 //INFO Define theme outside of App component
 const useTheme = () => {

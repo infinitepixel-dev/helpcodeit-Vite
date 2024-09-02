@@ -1,23 +1,80 @@
+//Dashboard.jsx
+
+/*
+A component that displays the product dashboard for the admin
+*/
+
+//INFO React Libraries
 import { useContext, useState, useEffect, useRef } from 'react'
 import { useNavigate, useLocation, Link } from 'react-router-dom'
-import { gsap } from 'gsap'
-import { FaTrash, FaArrowDown } from 'react-icons/fa'
 
-import { AuthContext } from '../sub-components/AuthContext'
+//INFO Animation Libraries
+import { gsap } from 'gsap'
+
+//INFO Icons
+import { FaRegListAlt } from 'react-icons/fa'
+
+//ANCHOR Product Management Components
+//INFO Admin
 import Login from './Login'
 import Logout from './Logout'
-import BandsInTownEvents from '../sub-components/BandsInTownEvents'
+
+//INFO Sub-components - apis
+//products
+import DashboardProductCard from '../sub_components/apis/products/DashboardProductCard'
+import ProductsAPI from '../sub_components/apis/products/ProductsAPI'
+
+//INFO Sub-components - contexts
+import { AuthContext } from '../sub_components/contexts/AuthContext'
+
+//INFO Sub-components - sub-menus
+import AdminSidebar from '../sub_components/sub-menus/AdminSidebar'
+
+//INFO Sub-components - utilities
+import ImageUtility from '../sub_components/utilities/ImageUtility'
+import ProductsUtility from '../sub_components/utilities/ProductsUtility'
+
+//INFO Sub-components - widgets
+import BandsInTownEvents from '../sub_components/widgets/BandsInTownEvents'
 
 function Dashboard() {
+    const apiUrl = `${window.location.protocol}//${window.location.hostname}:3082`
+    const { user, login, loading } = useContext(AuthContext)
+
+    const [products, setProducts] = useState([])
+
+    const { fetchProducts, handleDelete } = ProductsAPI(apiUrl, setProducts)
+
+    const {
+        editProduct,
+        handleEditClick,
+        handleInputChange,
+        handleSave,
+        handleCancel,
+        handleDeleteClick,
+        confirmDelete,
+        closeModal,
+    } = ProductsUtility()
+
+    const {
+        imageOption,
+        setImageOption,
+        imageFile,
+        setImageFile,
+        imageUrl,
+        setImageUrl,
+        convertBlobToBase64,
+        handleImageOptionChange,
+        handleFileChange,
+        handleImageUrlChange,
+    } = ImageUtility()
+
     // Ref to track if component is mounted
     const hasMounted = useRef(false)
 
-    const { user, login, loading } = useContext(AuthContext)
-
     const navigate = useNavigate()
     const location = useLocation()
-    const [products, setProducts] = useState([])
-    const [editProduct, setEditProduct] = useState(null)
+
     const [editedData, setEditedData] = useState({
         title: '',
         price: '',
@@ -29,19 +86,14 @@ function Dashboard() {
         meta_keywords: '',
     })
 
-    // State to manage image upload and image URL
-    const [imageOption, setImageOption] = useState('image_url')
-    const [imageFile, setImageFile] = useState(null)
-    const [imageUrl, setImageUrl] = useState('')
-
     const cardRefs = useRef([])
     const trashIconRefs = useRef([])
     const arrowRefs = useRef([])
     const [hoveredIndex, setHoveredIndex] = useState(null)
     const [showModal, setShowModal] = useState(false)
     const [selectedProduct, setSelectedProduct] = useState(null)
-
-    const apiUrl = `${window.location.protocol}//${window.location.hostname}:3082`
+    // Admin Sidebar state and functions
+    const [showSidebar, setShowSidebar] = useState(false)
 
     const reverseRoleMap = {
         1: 'admin',
@@ -86,22 +138,12 @@ function Dashboard() {
         }
     }, [location.search, user, login, navigate])
 
-    // Fetch products from API
+    // Fetch products from API if user is authenticated
     useEffect(() => {
         if (user) {
-            fetch(`${apiUrl}/api/products`)
-                .then((res) => res.json())
-                .then((data) => {
-                    const updatedProducts = data.map((product) => ({
-                        ...product,
-                        image_url: product.image_url || '',
-                        image: product.image || '',
-                    }))
-                    setProducts(updatedProducts)
-                })
-                .catch((err) => console.error(err))
+            fetchProducts()
         }
-    }, [user, apiUrl])
+    }, [user, apiUrl, fetchProducts])
 
     // Animate product cards on initial mount
     useEffect(() => {
@@ -126,76 +168,6 @@ function Dashboard() {
         }
     }, [])
 
-    // Fetch updated products list
-    const fetchProducts = () => {
-        fetch(`${apiUrl}/api/products`)
-            .then((res) => res.json())
-            .then((data) => setProducts(data))
-            .catch((err) => console.error(err))
-    }
-
-    // Handle trash icon animation on click (turn and shake)
-    const handleDeleteClick = (id, index) => {
-        setSelectedProduct({ id, index })
-        setShowModal(true) // Show the modal when delete is clicked
-    }
-
-    const confirmDelete = async () => {
-        if (selectedProduct) {
-            // Trash icon animation
-            await gsap.to(trashIconRefs.current[selectedProduct.index], {
-                rotate: 90,
-                repeat: 3,
-                yoyo: true,
-                duration: 0.1,
-            })
-
-            // Proceed with deletion
-            handleDelete(selectedProduct.id, selectedProduct.index)
-            setShowModal(false)
-            setSelectedProduct(null)
-        }
-    }
-
-    const closeModal = () => {
-        setShowModal(false)
-    }
-
-    // Handle product deletion
-    const handleDelete = async (id, index) => {
-        // Animate only the trash icon and the specific card before deletion
-        await gsap.to(trashIconRefs.current[index], {
-            rotate: 90,
-            repeat: 3,
-            yoyo: true,
-            duration: 0.1,
-        })
-
-        const deleteUrl = `${apiUrl}/api/products/${id}`
-        try {
-            const response = await fetch(deleteUrl, { method: 'DELETE' })
-            if (!response.ok) {
-                const errorData = await response.json()
-                console.error('Error:', errorData)
-            } else {
-                // Animate the card itself before removing it
-                await gsap.to(cardRefs.current[index], {
-                    opacity: 0,
-                    y: -50,
-                    duration: 0.5,
-                    onComplete: () => {
-                        // Once the animation completes, remove the card from the DOM
-                        setProducts((prevProducts) =>
-                            prevProducts.filter((product) => product.id !== id)
-                        )
-                    },
-                })
-            }
-        } catch (err) {
-            console.error(err)
-        }
-    }
-
     useEffect(() => {
         // Animate down arrow on hover
         if (hoveredIndex !== null) {
@@ -211,159 +183,10 @@ function Dashboard() {
         }
     }, [hoveredIndex])
 
-    // Edit product handler
-    const handleEditClick = (product) => {
-        setEditedData({
-            title: product.title || '',
-            price: product.price || '',
-            description: product.description || '',
-            category: product.category || '',
-            image_url: product.image_url || '',
-            meta_title: product.meta_title || '',
-            meta_description: product.meta_description || '',
-            meta_keywords: product.meta_keywords || '',
-        })
-        setImageOption(product.image_url ? 'image_url' : 'image_upload')
-        setImageUrl(product.image_url || '')
-        setImageFile(null)
-        setEditProduct(product.id)
-    }
-
-    // Input change handler for form fields
-    const handleInputChange = (e) => {
-        const { name, value } = e.target
-        setEditedData((prevData) => ({ ...prevData, [name]: value }))
-    }
-
-    // Handle image option change (URL or upload)
-    const handleImageOptionChange = (e) => {
-        const selectedOption = e.target.value
-        setImageOption(selectedOption)
-
-        if (selectedOption === 'image_url') {
-            setImageFile(null)
-            setImageUrl(editedData.image_url || '')
-        } else if (selectedOption === 'image_upload') {
-            setImageUrl('')
-        }
-    }
-
-    // Convert blob data to base64 string for image display
-    const convertBlobToBase64 = (blob) => {
-        if (!blob) return null
-        const byteArray = new Uint8Array(blob.data)
-        const base64String = btoa(
-            byteArray.reduce(
-                (data, byte) => data + String.fromCharCode(byte),
-                ''
-            )
-        )
-        return `data:image/jpeg;base64,${base64String}`
-    }
-
-    // Handle file upload for image
-    const handleFileChange = (e) => {
-        const file = e.target.files[0]
-        if (!file) return
-
-        const img = document.createElement('img')
-        const reader = new FileReader()
-
-        reader.onload = (event) => {
-            img.src = event.target.result
-            img.onload = () => {
-                const canvas = document.createElement('canvas')
-                const ctx = canvas.getContext('2d')
-                const MAX_WIDTH = 1200
-                const MAX_HEIGHT = 1200
-                let width = img.width
-                let height = img.height
-
-                if (width > height) {
-                    if (width > MAX_WIDTH) {
-                        height *= MAX_WIDTH / width
-                        width = MAX_WIDTH
-                    }
-                } else {
-                    if (height > MAX_HEIGHT) {
-                        width *= MAX_HEIGHT / height
-                        height = MAX_HEIGHT
-                    }
-                }
-                canvas.width = width
-                canvas.height = height
-                ctx.drawImage(img, 0, 0, width, height)
-
-                canvas.toBlob((blob) => {
-                    setImageFile(blob) // Set the compressed image file
-                }, file.type)
-            }
-        }
-        reader.readAsDataURL(file) // Load image as data URL
-    }
-
-    // Handle image URL input change
-    const handleImageUrlChange = (e) => {
-        const value = e.target.value
-        setImageUrl(value)
-        setEditedData((prevData) => ({ ...prevData, image_url: value }))
-    }
-
-    // Save product changes
-    const handleSave = async (id) => {
-        const updateUrl = `${apiUrl}/api/products/${id}`
-        const formData = new FormData()
-
-        // Add form data excluding image_url
-        for (const key in editedData) {
-            if (key !== 'image_url') {
-                formData.append(key, editedData[key])
-            }
-        }
-
-        // Add image file or URL based on the selected option
-        if (imageOption === 'image_upload' && imageFile) {
-            formData.append('image', imageFile)
-        } else if (imageOption === 'image_url' && imageUrl) {
-            formData.append('image_url', imageUrl)
-        }
-
-        try {
-            const response = await fetch(updateUrl, {
-                method: 'PUT',
-                body: formData,
-            })
-            if (!response.ok) {
-                const errorData = await response.json()
-                console.error('Error:', errorData)
-            } else {
-                fetchProducts()
-                setEditProduct(null)
-            }
-        } catch (err) {
-            console.error(err)
-        }
-    }
-
-    // Cancel editing mode
-    const handleCancel = () => {
-        setEditProduct(null)
-        setEditedData({
-            title: '',
-            price: '',
-            description: '',
-            category: '',
-            image_url: '',
-            meta_title: '',
-            meta_description: '',
-            meta_keywords: '',
-        })
-        setImageFile(null)
-        setImageUrl('')
-    }
-
+    //REVIEW If the page is loading display a loader
     if (loading) return <div>Loading...</div>
 
+    //ANCHOR If the user is not authenticated, display the login form
     if (!user) {
         return (
             <div className="container mx-auto p-4">
@@ -377,12 +200,14 @@ function Dashboard() {
         )
     }
 
-    // Tailwind CSS horizontal rule
-    const tailWindHR = () => (
-        <div className="flex items-center">
-            <div className="m-1 w-full border-b border-zinc-300"></div>
-        </div>
-    )
+    const openSidebar = () => {
+        setShowSidebar(true)
+        gsap.fromTo(
+            '.admin-sidebar',
+            { x: '-100%' },
+            { x: '0%', duration: 0.5, ease: 'power3.inOut' }
+        )
+    }
 
     return (
         <div className="container mx-auto p-4">
@@ -437,349 +262,62 @@ function Dashboard() {
                     </li>
                 </ul>
             </nav>
+
+            <button
+                className="fixed left-0 top-16 z-50 p-4"
+                onClick={openSidebar}
+            >
+                <FaRegListAlt
+                    className="text-3xl text-slate-400"
+                    alt="Sidebar Admin Menu"
+                />
+            </button>
+
+            {/* AdminSidebar here... */}
+            <AdminSidebar
+                showSidebar={showSidebar}
+                setShowSidebar={setShowSidebar}
+            />
+
             {/* Product Grid */}
             <div className="grid auto-rows-min grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                {products.map((product, index) => (
-                    <div
-                        key={product.id}
-                        ref={(el) => (cardRefs.current[index] = el)}
-                        className={`group relative flex flex-col justify-between rounded-lg border border-gray-300 bg-white p-2 shadow-md transition-transform duration-300 ${
-                            editProduct === product.id
-                                ? 'hover:scale-105 hover:shadow-lg'
-                                : 'hover:scale-105 hover:shadow-lg'
-                        }`}
-                        style={{
-                            height:
-                                editProduct === product.id ? 'auto' : 'initial', // Ensure edited card grows, others stay unchanged
-                            alignSelf:
-                                editProduct === product.id
-                                    ? 'stretch'
-                                    : 'start', // Expand the card independently
-                            overflow:
-                                editProduct === product.id
-                                    ? 'visible'
-                                    : 'hidden', // Ensure content is visible when editing
-                        }}
-                    >
-                        <button
-                            onClick={() => handleDeleteClick(product.id, index)}
-                            onMouseEnter={() => setHoveredIndex(index)}
-                            onMouseLeave={() => setHoveredIndex(null)}
-                            className="absolute right-1 top-1 text-red-500 transition-colors duration-300 hover:text-red-700"
-                            aria-label={`Delete ${product.title}`}
-                        >
-                            {/* Trash Icon - Wrap it in a span for ref */}
-                            <span
-                                ref={(el) =>
-                                    (trashIconRefs.current[index] = el)
-                                }
-                            >
-                                <FaTrash className="h-8 w-8" />
-                            </span>
+                {products.map((product, index) => {
+                    // console.log('Edited Data: ', editedData)
 
-                            {/* Down Arrow - Wrap it in a span for ref */}
-                            <span
-                                ref={(el) => (arrowRefs.current[index] = el)}
-                                className="absolute left-2 top-0 h-4 w-4 text-white opacity-0"
-                            >
-                                <FaArrowDown />
-                            </span>
-                        </button>
-
-                        {/* Edit Mode */}
-                        {editProduct === product.id ? (
-                            <div className="rounded-lg bg-slate-200 p-2  text-gray-800">
-                                {/* Form Group */}
-                                <div className="mb-0 ">
-                                    <label
-                                        htmlFor="title"
-                                        className="mb-1 block font-medium"
-                                    >
-                                        Title
-                                    </label>
-
-                                    {/* Product Title Input */}
-                                    <input
-                                        type="text"
-                                        id="title"
-                                        name="title"
-                                        value={editedData.title}
-                                        onChange={handleInputChange}
-                                        className="mb-1.5 w-full rounded-lg border border-gray-300 "
-                                    />
-                                </div>
-                                {tailWindHR()}
-
-                                {/* Image Selection */}
-                                <div className="mb-0">
-                                    <label
-                                        htmlFor="imageOption"
-                                        className="mb-1 block font-medium"
-                                    >
-                                        Choose Image Option
-                                    </label>
-
-                                    {/* Image Option Select */}
-                                    <select
-                                        id="imageOption"
-                                        name="imageOption"
-                                        value={imageOption}
-                                        onChange={handleImageOptionChange}
-                                        className="w-full rounded-lg border border-gray-300 p-2"
-                                    >
-                                        <option value="image_url">
-                                            Use Image URL
-                                        </option>
-                                        <option value="image_upload">
-                                            Upload New Image
-                                        </option>
-                                    </select>
-                                </div>
-
-                                {imageOption === 'image_url' ? (
-                                    <div className="mb-4">
-                                        <label
-                                            htmlFor="image_url"
-                                            className="mb-1 block  font-medium"
-                                        >
-                                            Image URL
-                                        </label>
-
-                                        {/* Image URL Input */}
-                                        <input
-                                            type="text"
-                                            id="image_url"
-                                            name="image_url"
-                                            value={imageUrl}
-                                            onChange={handleImageUrlChange}
-                                            className="w-full rounded-lg border border-gray-300 p-2 "
-                                        />
-                                    </div>
-                                ) : (
-                                    <div className="mb-4 ">
-                                        <label
-                                            htmlFor="image_upload"
-                                            className="mb-1 block font-medium"
-                                        >
-                                            Upload Image
-                                        </label>
-
-                                        {/* Image Upload Input */}
-                                        <input
-                                            type="file"
-                                            id="image_upload"
-                                            onChange={handleFileChange}
-                                            className="w-full rounded-lg border border-gray-300 p-2"
-                                        />
-
-                                        {tailWindHR()}
-                                    </div>
-                                )}
-
-                                <label
-                                    htmlFor="price"
-                                    className="mb-1 block font-medium"
-                                >
-                                    Price
-                                </label>
-                                {/* Product Price Input */}
-
-                                <input
-                                    type="number"
-                                    id="price"
-                                    name="price"
-                                    value={editedData.price}
-                                    onChange={handleInputChange}
-                                    className="mb-1.5 w-full rounded-lg border border-gray-300 "
-                                />
-                                {tailWindHR()}
-                                <label
-                                    htmlFor="description"
-                                    className="mb-1 block font-medium"
-                                >
-                                    Description
-                                </label>
-                                {/* Product Description Input */}
-                                <textarea
-                                    id="description"
-                                    name="description"
-                                    value={editedData.description}
-                                    onChange={handleInputChange}
-                                    className="w-full resize-none overflow-hidden rounded-lg border border-gray-300"
-                                    rows={1} // Start with 1 row
-                                    onInput={(e) => {
-                                        e.target.style.height = 'auto'
-                                        e.target.style.height = `${e.target.scrollHeight}px`
-                                    }}
-                                ></textarea>
-
-                                {/* Meta Data */}
-                                <div className="mb-4">
-                                    <label
-                                        htmlFor="meta_title"
-                                        className="mb-1 block font-medium"
-                                    >
-                                        Meta Title
-                                    </label>
-
-                                    {/* Meta Title Input */}
-                                    <input
-                                        type="text"
-                                        id="meta_title"
-                                        name="meta_title"
-                                        value={editedData.meta_title}
-                                        onChange={handleInputChange}
-                                        className="mb-1.5 w-full rounded-lg border border-gray-300 "
-                                    />
-                                    {tailWindHR()}
-                                    <label
-                                        htmlFor="meta_description"
-                                        className="mb-1 block font-medium"
-                                    >
-                                        Meta Description
-                                    </label>
-
-                                    {/* Meta Description Input */}
-                                    <textarea
-                                        id="meta_description"
-                                        name="meta_description"
-                                        value={editedData.meta_description}
-                                        onChange={handleInputChange}
-                                        className="w-full resize-none overflow-hidden rounded-lg border border-gray-300"
-                                        rows={1} // Start with 1 row
-                                        onInput={(e) => {
-                                            e.target.style.height = 'auto'
-                                            e.target.style.height = `${e.target.scrollHeight}px`
-                                        }}
-                                    ></textarea>
-
-                                    {tailWindHR()}
-                                    <label
-                                        htmlFor="meta_keywords"
-                                        className="mb-1 block font-medium"
-                                    >
-                                        Meta Keywords
-                                    </label>
-
-                                    {/* Meta Keywords Input */}
-                                    <textarea
-                                        id="meta_keywords"
-                                        name="meta_keywords"
-                                        value={editedData.meta_keywords}
-                                        onChange={handleInputChange}
-                                        className="w-full rounded-lg border border-gray-300 "
-                                    ></textarea>
-                                    {tailWindHR()}
-                                </div>
-
-                                {/* Save and Cancel Buttons */}
-                                <div className="flex justify-center space-x-4">
-                                    <button
-                                        onClick={() => handleSave(product.id)}
-                                        className="rounded-lg bg-green-600 px-4 py-2 text-white transition duration-300 hover:bg-green-800"
-                                    >
-                                        Save
-                                    </button>
-                                    <button
-                                        onClick={handleCancel}
-                                        className="rounded-lg bg-red-600 px-4 py-2 text-white transition duration-300 hover:bg-red-800"
-                                    >
-                                        Cancel
-                                    </button>
-                                </div>
-                            </div>
-                        ) : (
-                            <div className="mt-auto">
-                                {/*ANCHOR  Display Product Info */}
-
-                                {/* Product Title */}
-                                <h2 className="absolute top-0 mb-2 text-xl font-semibold text-gray-800">
-                                    {product.title}
-                                </h2>
-                                <div className="mt-8">
-                                    {product.image_url ? (
-                                        // Display image URL if available
-                                        <img
-                                            className="mb-4 h-48 w-full rounded-lg object-cover shadow-sm transition-all duration-200 hover:shadow-md"
-                                            src={product.image_url}
-                                            alt={`${product.title} product image`}
-                                        />
-                                    ) : product.image ? (
-                                        // Display Image file if available
-                                        <img
-                                            className="mb-4 h-48 w-full rounded-lg object-cover shadow-sm transition-all duration-200 hover:shadow-md"
-                                            src={convertBlobToBase64(
-                                                product.image
-                                            )}
-                                            alt={`${product.title} product image`}
-                                        />
-                                    ) : (
-                                        //   No image available
-                                        <img
-                                            className="mb-4 h-48 w-full rounded-lg object-cover shadow-sm transition-all duration-200 hover:shadow-md"
-                                            src="public/images/no-image.webp"
-                                            alt="No image available"
-                                        />
-                                    )}
-                                </div>
-                                <div className="rounded-lg bg-slate-200 p-2  text-gray-800">
-                                    {/* Product Price */}
-                                    <p className="mb-2 font-bold text-gray-900">
-                                        Price: ${product.price}
-                                    </p>
-
-                                    {tailWindHR()}
-
-                                    {/* Product Description */}
-                                    <p className="mb-2 text-gray-700">
-                                        Description: {product.description}
-                                    </p>
-
-                                    {tailWindHR()}
-
-                                    {/* Product Category */}
-                                    <p className="text-gray-600">
-                                        Category: {product.category}
-                                    </p>
-
-                                    {tailWindHR()}
-
-                                    {/* Meta Data */}
-
-                                    {/* Meta Title */}
-                                    <p className="text-gray-600">
-                                        Meta Title: {product.meta_title}
-                                    </p>
-
-                                    {tailWindHR()}
-
-                                    {/* Meta Description */}
-                                    <p className="text-gray-600">
-                                        Meta Description:{' '}
-                                        {product.meta_description}
-                                    </p>
-
-                                    {tailWindHR()}
-
-                                    {/* Meta Keywords */}
-                                    <p className="text-gray-600">
-                                        Meta Keywords: {product.meta_keywords}
-                                    </p>
-
-                                    {tailWindHR()}
-
-                                    {/* Edit Button */}
-                                    <button
-                                        onClick={() => handleEditClick(product)}
-                                        className="mt-4 w-full rounded-lg bg-yellow-600 px-4 py-2 text-white transition duration-300 hover:bg-yellow-800"
-                                    >
-                                        Edit
-                                    </button>
-                                </div>
-                            </div>
-                        )}
-                    </div>
-                ))}
+                    return (
+                        <DashboardProductCard
+                            key={product.id}
+                            product={product}
+                            editProduct={editProduct}
+                            editedData={editedData}
+                            setEditedData={setEditedData}
+                            imageOption={imageOption}
+                            imageUrl={imageUrl}
+                            handleFileChange={handleFileChange}
+                            handleImageUrlChange={handleImageUrlChange}
+                            handleImageOptionChange={handleImageOptionChange}
+                            handleDeleteClick={handleDeleteClick}
+                            handleInputChange={handleInputChange}
+                            cardRefs={cardRefs}
+                            trashIconRefs={trashIconRefs}
+                            arrowRefs={arrowRefs}
+                            setHoveredIndex={setHoveredIndex}
+                            index={index}
+                            handleSave={handleSave}
+                            apiUrl={apiUrl}
+                            fetchProducts={fetchProducts}
+                            imageFile={imageFile}
+                            handleCancel={handleCancel}
+                            setImageFile={setImageFile}
+                            setImageUrl={setImageUrl}
+                            convertBlobToBase64={convertBlobToBase64}
+                            handleEditClick={handleEditClick}
+                            setImageOption={setImageOption}
+                            setSelectedProduct={setSelectedProduct}
+                            setShowModal={setShowModal}
+                        />
+                    )
+                })}
 
                 {/* Delete Confirmation Modal */}
                 {showModal && (
@@ -793,13 +331,22 @@ function Dashboard() {
                             </p>
                             <button
                                 className="mr-4 rounded-lg bg-red-500 px-4 py-2 text-white shadow transition hover:bg-red-700"
-                                onClick={confirmDelete}
+                                onClick={() =>
+                                    confirmDelete(
+                                        selectedProduct,
+                                        trashIconRefs,
+                                        handleDelete,
+                                        cardRefs,
+                                        setShowModal,
+                                        setSelectedProduct
+                                    )
+                                }
                             >
                                 Confirm
                             </button>
                             <button
                                 className="rounded-lg bg-gray-500 px-4 py-2 text-white shadow transition hover:bg-gray-700"
-                                onClick={closeModal}
+                                onClick={() => closeModal(setShowModal)}
                             >
                                 Cancel
                             </button>

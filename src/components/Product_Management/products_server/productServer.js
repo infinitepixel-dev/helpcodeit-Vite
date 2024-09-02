@@ -248,6 +248,7 @@ app.put('/api/products/:id', upload.single('image'), (req, res) => {
     })
 })
 
+//TODO Break this out to a Stripe_Payments server file
 //ANCHOR Stripe Payment
 /*
 

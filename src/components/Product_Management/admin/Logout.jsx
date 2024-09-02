@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import propTypes from 'prop-types'
 
 import { useNavigate } from 'react-router-dom'
-import { AuthContext } from '../sub-components/AuthContext'
+import { AuthContext } from '../sub_components/contexts/AuthContext'
 import { LogOut } from 'react-feather'
 import { FaGoogle } from 'react-icons/fa'
 
