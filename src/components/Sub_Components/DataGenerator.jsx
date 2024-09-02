@@ -5,6 +5,9 @@ import {
     randPost,
     randCreditCard,
     randProduct,
+    randSuperhero,
+    randJSON,
+    randTodo,
 } from '@ngneat/falso'
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
@@ -44,11 +47,20 @@ function DataGenerator() {
             case 'posts':
                 response = randPost({ length: howMany })
                 break
+            case 'todos':
+                response = randTodo({ length: howMany })
+                break
             case 'creditCards':
                 response = randCreditCard({ length: howMany })
                 break
             case 'products':
                 response = randProduct({ length: howMany })
+                break
+            case 'superheroes':
+                response = randSuperhero({ length: howMany })
+                break
+            case 'json':
+                response = randJSON({ length: howMany })
                 break
         }
 
@@ -62,7 +74,7 @@ function DataGenerator() {
     return (
         <div className="container mx-auto">
             <div className="text-xl">
-                <h1 className="my-5 text-center text-6xl">
+                <h1 className="my-5 text-6xl text-center">
                     Random Fake Data Generator
                 </h1>
                 <ul>
@@ -86,17 +98,17 @@ function DataGenerator() {
                 </ul>
                 <Link to="/javascriptPrincipals/JSONServer">
                     <button
-                        className="mt-5 rounded-lg bg-red-500 px-4 py-2 font-bold text-white hover:bg-red-700"
+                        className="px-4 py-2 mt-5 font-bold text-white bg-red-500 rounded-lg hover:bg-red-700"
                         aria-label="Learn More About json-server"
                     >
                         Learn More About json-server
                     </button>
                 </Link>
             </div>
-            <form className=" mt-8 max-w-md rounded-lg p-6 shadow-md">
+            <form className="max-w-md p-6 mt-8 rounded-lg shadow-md ">
                 <div className="mb-4">
                     <label
-                        className="mb-2 block text-sm font-bold text-white"
+                        className="block mb-2 text-sm font-bold text-white"
                         htmlFor="category"
                     >
                         Category:
@@ -105,19 +117,23 @@ function DataGenerator() {
                         id="category"
                         value={category}
                         onChange={(e) => setCategory(e.target.value)}
-                        className="w-full rounded-lg border px-3 py-2 text-gray-700 focus:border-blue-500 focus:outline-none"
+                        className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:border-blue-500 focus:outline-none"
                     >
                         <option value="flights">Flights</option>
-                        <option value="users">Users</option>
-                        <option value="books">Books</option>
-                        <option value="posts">Posts</option>
-                        <option value="creditCards">Credit Card</option>
+                        <option value="users">Random Users</option>
+                        <option value="todos">Todos</option>
                         <option value="products">Products</option>
+                        <option value="creditCards">Credit Card</option>
+                        <option value="posts">Posts</option>
+                        <option value="superheroes">Superheroes</option>
+                        <option value="json">Random JSON</option>
+                        <option value="books">Books</option>
+
                     </select>
                 </div>
                 <div className="mb-6">
                     <label
-                        className="mb-2 block text-sm font-bold text-white"
+                        className="block mb-2 text-sm font-bold text-white"
                         htmlFor="howMany"
                     >
                         How many items for the category?:
@@ -128,12 +144,12 @@ function DataGenerator() {
                         placeholder="5"
                         value={howMany}
                         onChange={(e) => setHowMany(e.target.value)}
-                        className="w-full rounded-lg border px-3 py-2 text-gray-700 focus:border-blue-500 focus:outline-none"
+                        className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:border-blue-500 focus:outline-none"
                     />
                 </div>
                 <button
                     onClick={handleGeneration}
-                    className="focus:shadow-outline w-full rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none"
+                    className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded focus:shadow-outline hover:bg-blue-700 focus:outline-none"
                     type="button"
                     aria-label="generate data button"
                 >
