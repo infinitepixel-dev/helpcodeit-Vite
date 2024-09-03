@@ -72,10 +72,10 @@ function APIResources() {
                             content="API, APIs, API Resources, API List, API Directory, Free APIs, Public APIs, API Database"
                         />
                     </Helmet>
-                    <h1 className="mt-5 text-center text-5xl font-semibold">
+                    <h1 className="mt-5 text-5xl font-semibold text-center">
                         API Resources Database
                     </h1>
-                    <h2 className="mb-10 text-center text-xl font-semibold">
+                    <h2 className="mb-10 text-xl font-semibold text-center">
                         A list of APIs to help you build your next project
                     </h2>
                     <p>
@@ -92,7 +92,7 @@ function APIResources() {
                             rel="noreferrer"
                         >
                             API FORM
-                        </a>{' '}
+                        </a>{' '} Or via the Contact Form on the Contact Page.
                     </p>{' '}
                     <br />
                     <p className="italic">
@@ -109,7 +109,7 @@ function APIResources() {
                         compile them into the database!
                     </p>
                     <hr className="mb-10 border border-gray-200" />
-                    <div className="my-4 flex items-center justify-center space-x-2">
+                    <div className="flex items-center justify-center my-4 space-x-2">
                         <form className="flex items-center justify-center space-x-2">
                             <label
                                 className="text-lg font-semibold"
@@ -122,10 +122,10 @@ function APIResources() {
                                 id="search"
                                 placeholder="Search for APIs"
                                 onChange={(e) => setSearchTerm(e.target.value)}
-                                className="rounded-md border border-gray-300 px-2 py-1 text-black"
+                                className="px-2 py-1 text-black border border-gray-300 rounded-md"
                             />
                             <button
-                                className="rounded-md bg-blue-500 px-3 py-1 text-sm font-medium text-white hover:bg-blue-600"
+                                className="px-3 py-1 text-sm font-medium text-white bg-blue-500 rounded-md hover:bg-blue-600"
                                 onClick={(e) => submitSearch(e)}
                             >
                                 Search
@@ -133,11 +133,11 @@ function APIResources() {
                         </form>
                     </div>
                     <APICard data={data} />
-                    <form className="mb-4 flex justify-center">
+                    <form className="flex justify-center mb-4">
                         <label>
                             Show per page:{' '}
                             <select
-                                className="ms-2 text-black"
+                                className="text-black ms-2"
                                 value={limit}
                                 onChange={(e) =>
                                     setLimit(Number(e.target.value))
@@ -155,49 +155,49 @@ function APIResources() {
                                 type="text"
                                 placeholder={page}
                                 onChange={(e) => setSkip(e.target.value)}
-                                className="ms-2 w-14 rounded-md border border-gray-300 text-black"
+                                className="text-black border border-gray-300 rounded-md ms-2 w-14"
                             />
                             <button
                                 onClick={(e) => skipToPage(e)}
-                                className="ms-2 rounded-md bg-blue-500 px-3 py-1 text-sm font-medium text-white hover:bg-blue-600"
+                                className="px-3 py-1 text-sm font-medium text-white bg-blue-500 rounded-md ms-2 hover:bg-blue-600"
                             >
                                 Go
                             </button>
                         </label>
                     </form>
-                    <div className="my-4 flex items-center justify-center space-x-2">
+                    <div className="flex items-center justify-center my-4 space-x-2">
                         <button
                             onClick={() => onPageChange(1)}
-                            className="flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                            className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
                         >
-                            <ChevronsLeft className="mr-1 h-4 w-4" />
+                            <ChevronsLeft className="w-4 h-4 mr-1" />
                             First
                         </button>
                         <button
                             onClick={() => onPageChange(page - 1)}
                             disabled={page === 1}
-                            className="flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
+                            className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
                         >
-                            <ChevronLeft className="mr-1 h-4 w-4" />
+                            <ChevronLeft className="w-4 h-4 mr-1" />
                             Previous
                         </button>
-                        <p className="rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700">
+                        <p className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md">
                             Page {page} of {totalPages}
                         </p>
                         <button
                             onClick={() => onPageChange(page + 1)}
                             disabled={page === totalPages}
-                            className="flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
+                            className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 disabled:cursor-not-allowed disabled:opacity-50"
                         >
                             Next
-                            <ChevronRight className="ml-1 h-4 w-4" />
+                            <ChevronRight className="w-4 h-4 ml-1" />
                         </button>
                         <button
                             onClick={() => onPageChange(totalPages)}
-                            className="flex items-center rounded-md border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                            className="flex items-center px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
                         >
                             Last
-                            <ChevronsRight className="ml-1 h-4 w-4" />
+                            <ChevronsRight className="w-4 h-4 ml-1" />
                         </button>
                     </div>
                 </>

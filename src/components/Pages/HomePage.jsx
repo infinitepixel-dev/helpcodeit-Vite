@@ -79,47 +79,34 @@ function HomePage() {
     return (
         <div>
             <Helmet>
-                <title>Help Code It | Resources for Beginning Developers</title>
-                <meta
-                    name="description"
-                    content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
-                />
-                <meta
-                    property="og:title"
-                    content="Help Code It | Resources for Beginning Developers"
-                />
-                <meta
-                    property="og:description"
-                    content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
-                />
-                <meta property="og:image" content={LogoImage} />
-                <meta property="og:url" content="https://www.helpcodeit.com" />
+        <title>Help Code It | Resources for Beginning Developers</title>
+        <meta
+          name="description"
+          content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
+        />
 
-                <link rel="canonical" href="https://www.helpcodeit.com" />
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.helpcodeit.com/" />
+        <meta property="og:title" content="Help Code It | Resources for Beginning Developers" />
+        <meta
+          property="og:description"
+          content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
+        />
+        <meta property="og:image" content="https://www.helpcodeit.com/assets/helpcodeitlogo.CsyqkzOG.svg" />
 
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://www.helpcodeit.com/" />
-                <meta property="og:title" content="Help Code It" />
-                <meta property="author" content="Help Code It" />
-                <meta
-                    property="og:description"
-                    content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
-                />
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://www.helpcodeit.com/" />
+        <meta property="twitter:title" content="Help Code It | Resources for Beginning Developers" />
+        <meta
+          property="twitter:description"
+          content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
+        />
+        <meta property="twitter:image" content="https://www.helpcodeit.com/assets/helpcodeitlogo.CsyqkzOG.svg" />
 
-                <meta property="og:image" content={LogoImage} />
-                <meta property="twitter:image" content={LogoImage} />
-
-                <meta property="twitter:card" content="summary_large_image" />
-                <meta
-                    property="twitter:url"
-                    content="https://www.helpcodeit.com/"
-                />
-                <meta property="twitter:title" content="Help Code It" />
-                <meta
-                    property="twitter:description"
-                    content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
-                />
-            </Helmet>
+        <link rel="canonical" href="https://www.helpcodeit.com" />
+      </Helmet>
             {/* {new Date(filteredEvents[0].ISOdate) > currentDate &&
             filteredEvents[0].show ? (
                 <AlertMessage
@@ -241,7 +228,7 @@ function HomePage() {
                         </h2>
                         <EventCard limit={1} />
                     </div>
-                    <div className="clearfix my-auto">
+                    <div className="clearfix mt-8 mb-auto">
                         <h2 className="mb-3 text-4xl font-bold text-center">
                             Get expert coding help and tutoring
                         </h2>
@@ -250,13 +237,13 @@ function HomePage() {
                             <h2 className="mb-6 text-3xl font-bold text-center">
                                 Book a session now!
                             </h2>
-                            <p className="mb-6 text-center">
+                            <p className="mb-6 text-xl text-center">
                                 Elevate your software development skills with
                                 personalized guidance from an experienced
                                 professional. Choose the meeting option that
                                 best fits your needs and schedule.
                             </p>
-                            <Link to="/schedule-meeting" className="block">
+                            <Link to="/schedule-meeting" className="block mb-8">
                                 <button
                                     aria-label="explore meeting options button"
                                     className="flex px-6 py-3 mx-auto font-bold text-white transition duration-300 bg-blue-700 rounded-full w-fit hover:bg-red-700"
@@ -269,6 +256,17 @@ function HomePage() {
                                     />
                                 </button>
                             </Link>
+                            <div className="text-xl text-center">
+                                <p>If you have any questions and want to check in before scheduling a meeting, feel free to reach out via our contact page</p>
+                                <ul className='mt-6 list-disc list-inside'>
+                                <p className='font-semibold'>We can help you:</p>
+                                    <li className="font-semibold list-item">Get help with coding assignments</li>
+                                    <li className="font-semibold list-item">Learn new programming languages</li>
+                                    <li className="font-semibold list-item">Prepare for technical interviews</li>
+                                    <li className="font-semibold list-item">Get help with Git and GitHub</li>
+                                    <li className="font-semibold list-item">Learn how to build a portfolio</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
