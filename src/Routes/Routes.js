@@ -143,6 +143,11 @@ export const componentRoutes = [
         componentPath: '../components/Pages/cssPages/CSSResponsive.jsx',
         key: 'cssResponsive'
       },
+    {
+        path: '/cssPages/CSSAnimationIntro',
+        componentPath: '../components/Pages/cssPages/CSSAnimationIntro.jsx',
+        key: 'cssAnimationIntro',
+    },
 
     //INFO: MISC Pages
     {
