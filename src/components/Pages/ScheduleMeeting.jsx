@@ -6,15 +6,10 @@ import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 
 const ScheduleMeeting = () => {
-    // let event = {
-    //     title: 'Git and GitHub Workshop',
-    //     date: 'Saturday, July 20th',
-    //     time: '12:00 PM pst | 1:00 PM mst | 2:00 PM cst | 3:00 PM est',
-    //     link: 'https://calendly.com/michaelvarnell/git-and-github-basics',
-    // }
+
 
     return (
-        <div className="mb-10 min-h-screen">
+        <div className="min-h-screen mb-10">
             <Helmet>
                 <title>
                     Book a Meeting with Michael Varnell | Help Code It
@@ -35,13 +30,13 @@ const ScheduleMeeting = () => {
             </Helmet>
 
             {/* {event.ISOdate < new Date().toISOString() && <EventAlert event={event} />} */}
-            <div className="pb-100 container mx-auto p-2 px-4 sm:p-8">
-                <div className="mt-5 flex flex-wrap items-center">
+            <div className="container p-2 px-4 mx-auto pb-100 sm:p-8">
+                <div className="flex flex-wrap items-center mt-5">
                     <div className="w-full">
-                        <h1 className="mb-4 text-center text-3xl font-bold">
+                        <h1 className="mb-4 text-3xl font-bold text-center">
                             Book a Meeting with Michael Varnell
                         </h1>
-                        <p className="mx-auto mt-4 max-w-2xl text-center">
+                        <p className="max-w-2xl mx-auto mt-4 text-center">
                             Elevate your software development skills with
                             personalized guidance from an experienced
                             professional. Choose the meeting option that best
@@ -50,22 +45,22 @@ const ScheduleMeeting = () => {
                     </div>
                 </div>
 
-                <div className="mt-10 grid justify-center">
+                <div className="grid justify-center mt-10">
                     <Link
                         to="/calendar"
-                        className="border-1 mx-auto mb-5 inline-flex w-fit items-center rounded-3xl border border-gray-300 bg-blue-700 px-6 py-3 text-base font-bold text-white shadow-md dark:border-none"
+                        className="inline-flex items-center px-6 py-3 mx-auto mb-5 text-base font-bold text-white bg-blue-700 border border-gray-300 shadow-md border-1 w-fit rounded-3xl dark:border-none"
                     >
                         See the Event Calendar for Special Workshops!
                     </Link>
                 </div>
                 <div className="mt-2">
-                    <h2 className="mb-8 border-b-2 border-black pb-4 text-center text-2xl font-bold dark:border-white">
+                    <h2 className="pb-4 mb-8 text-2xl font-bold text-center border-b-2 border-black dark:border-white">
                         Available Meeting Options
                     </h2>
-                    <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+                    <div className="grid grid-cols-1 gap-5 md:grid-cols-2 justify-evenly ">
                         {[
                             {
-                                title: '30-Minute Focus Session',
+                                title: '30-Minute Session',
                                 duration: '30 minutes',
                                 price: '$14.99',
                                 description:
@@ -74,7 +69,7 @@ const ScheduleMeeting = () => {
                                 isAfterHours: false,
                             },
                             {
-                                title: 'In-Depth Development Hour',
+                                title: '60 Minute Session',
                                 duration: '1 hour',
                                 price: '$24.99',
                                 description:
@@ -82,32 +77,32 @@ const ScheduleMeeting = () => {
                                 link: 'https://calendly.com/michaelvarnell/1-hour-session',
                                 isAfterHours: false,
                             },
-                            {
-                                title: 'After-Hours Quick Consultation',
-                                duration: '30 minutes',
-                                price: '$29.99',
-                                description:
-                                    'Flexible evening sessions for urgent matters or busy schedules.',
-                                link: 'https://calendly.com/michaelvarnell/30-min-after-hours',
-                                isAfterHours: true,
-                            },
-                            {
-                                title: 'Extended After-Hours Collaboration',
-                                duration: '1 hour',
-                                price: '$49.99',
-                                description:
-                                    'Comprehensive evening sessions for urgent matters or busy schedules. 1 hour of in-depth problem-solving and guidance.',
-                                link: 'https://calendly.com/michaelvarnell/1-hour-session-after-hours',
-                                isAfterHours: true,
-                            },
+                            // {
+                            //     title: 'After-Hours Quick Consultation',
+                            //     duration: '30 minutes',
+                            //     price: '$29.99',
+                            //     description:
+                            //         'Flexible evening sessions for urgent matters or busy schedules.',
+                            //     link: 'https://calendly.com/michaelvarnell/30-min-after-hours',
+                            //     isAfterHours: true,
+                            // },
+                            // {
+                            //     title: 'Extended After-Hours Collaboration',
+                            //     duration: '1 hour',
+                            //     price: '$49.99',
+                            //     description:
+                            //         'Comprehensive evening sessions for urgent matters or busy schedules. 1 hour of in-depth problem-solving and guidance.',
+                            //     link: 'https://calendly.com/michaelvarnell/1-hour-session-after-hours',
+                            //     isAfterHours: true,
+                            // },
                         ].map((meeting, index) => (
                             <div
                                 key={index}
-                                className="flex flex-col overflow-hidden rounded-lg bg-white shadow-lg transition-transform hover:scale-105"
+                                className="flex flex-col transition-transform bg-white rounded-lg shadow-lg justify-items-center hover:scale-105"
                                 aria-label={`${meeting.title}, ${meeting.duration}, ${meeting.price}, ${meeting.description}`}
                             >
                                 <div
-                                    className={`p-6 ${meeting.isAfterHours ? 'bg-indigo-800' : 'bg-blue-600'} flex-grow text-white`}
+                                    className={`p-6 ${meeting.isAfterHours ? 'bg-indigo-800' : 'bg-blue-600'} flex-grow text-white rounded-t-md`}
                                 >
                                     <h3 className="mb-2 text-2xl font-bold">
                                         {meeting.title}
@@ -116,7 +111,7 @@ const ScheduleMeeting = () => {
                                         {meeting.duration}
                                     </p>
                                 </div>
-                                <div className="flex flex-grow flex-col justify-between p-6">
+                                <div className="flex flex-col justify-between flex-grow p-6">
                                     <div>
                                         <p className="mb-4 text-3xl font-bold text-black">
                                             {meeting.price}
@@ -127,7 +122,7 @@ const ScheduleMeeting = () => {
                                     </div>
                                     <a
                                         href={meeting.link}
-                                        className="mt-4 block w-full rounded bg-blue-600 px-4 py-2 text-center font-bold text-white transition duration-300 hover:bg-blue-700"
+                                        className="block w-full px-4 py-2 mt-4 font-bold text-center text-white transition duration-300 bg-blue-600 rounded hover:bg-blue-700"
                                         aria-label={`Book now for ${meeting.title}`}
                                     >
                                         Book Now
@@ -136,8 +131,11 @@ const ScheduleMeeting = () => {
                             </div>
                         ))}
                     </div>
+                        <div className="mx-auto">
+                            <p className="mt-8 text-center ">If you need an after hours appointment, please use our contact form on the contact page and we will try to accomidate it.</p>
+                        </div>
                 </div>
-                <div className="mt-16 rounded-lg bg-gray-100 p-8">
+                <div className="p-8 mt-16 bg-gray-100 rounded-lg">
                     <h2 className="mb-4 text-2xl font-bold text-gray-700">
                         About <br />{' '}
                         <span className="text-3xl">Michael Varnell</span>
