@@ -26,7 +26,7 @@ const CSSNavigation = () => {
     // { to: "/CSSFlexbox", icon: Layout, label: "Flexbox Layout" },
     // { to: "/CSSGrid", icon: Layers, label: "CSS Grid Layout" },
     { to: "/cssPages/CSSResponsive", icon: Zap, label: "Responsive Design with CSS" },
-   { to: "/CSSAnimationIntro", icon: Code, label: "CSS Animations" },
+   { to: "/cssPages/CSSAnimationIntro", icon: Code, label: "CSS Animations" },
   ];
 
   return (
