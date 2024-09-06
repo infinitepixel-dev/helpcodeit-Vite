@@ -133,37 +133,73 @@ function UserData() {
 
       <section className="mb-8">
         <h2 className="mb-4 text-2xl font-semibold">useEffect Approach</h2>
+        <p className="mb-4">
+          This example demonstrates how to fetch data using the useEffect hook. It shows the basic structure of managing loading states, error handling, and data storage using React's built-in hooks:
+        </p>
         <CodeBlock code={useEffectExample} language="javascript" />
       </section>
 
       <section className="mb-8">
         <h2 className="mb-4 text-2xl font-semibold">Tanstack Query Approach</h2>
+        <p className="mb-4">
+          First, you need to install Tanstack Query. You can do this by running the following command in your project directory:
+        </p>
+        <CodeBlock code="npm install @tanstack/react-query" language="bash" />
+        <p className="my-4">
+          Here's how you can achieve the same result using Tanstack Query. Notice how it simplifies state management and provides a more declarative approach to data fetching:
+        </p>
         <CodeBlock code={tanstackQueryExample} language="javascript" />
       </section>
 
       <section className="mb-8">
         <h2 className="mb-4 text-2xl font-semibold">Custom Hook Approach (Without Tanstack Query)</h2>
         <p className="mb-4">
-          If you prefer not to use Tanstack Query, you can create a custom hook to achieve similar functionality:
+          If you prefer not to use Tanstack Query, you can create a custom hook to achieve similar functionality. This example shows how to encapsulate the data fetching logic in a reusable hook:
         </p>
         <CodeBlock code={customHookExample} language="javascript" />
       </section>
 
       <section className="mb-8">
         <h2 className="mb-4 text-2xl font-semibold">Comparison</h2>
-        <p>
-          1. The useEffect approach is simple but requires manual state management and doesn't handle caching or background refetching.
+        <p className="mb-4">Let's compare these three approaches to help beginners understand their merits and intended purposes:</p>
+
+        <h3 className="mb-2 text-xl font-semibold">1. useEffect Approach</h3>
+        <p className="mb-4">
+          <strong>Merits:</strong>
+          <ul className="mb-2 ml-4 list-disc list-inside">
+            <li>Simple and straightforward for beginners</li>
+            <li>Uses built-in React hooks, no additional libraries needed</li>
+            <li>Good for learning how React works with side effects</li>
+          </ul>
+          <strong>Intended purpose:</strong> Best for simple, one-off data fetching in small applications or when learning React basics.
         </p>
-        <p>
-          2. The Tanstack Query approach provides built-in caching, background refetching, and easier management of loading and error states.
+
+        <h3 className="mb-2 text-xl font-semibold">2. Tanstack Query Approach</h3>
+        <p className="mb-4">
+          <strong>Merits:</strong>
+          <ul className="mb-2 ml-4 list-disc list-inside">
+            <li>Automatic caching and background refetching</li>
+            <li>Built-in loading and error states</li>
+            <li>Optimized for performance in larger applications</li>
+            <li>Reduces boilerplate code</li>
+          </ul>
+          <strong>Intended purpose:</strong> Ideal for medium to large applications with complex data fetching needs, or when you need advanced features like caching and synchronization out of the box.
         </p>
-        <p>
-          3. The custom hook approach offers a middle ground, providing better reusability than the useEffect approach while still allowing
-          full control over the implementation. However, it lacks the advanced features of Tanstack Query like automatic caching and background updates.
+
+        <h3 className="mb-2 text-xl font-semibold">3. Custom Hook Approach</h3>
+        <p className="mb-4">
+          <strong>Merits:</strong>
+          <ul className="mb-2 ml-4 list-disc list-inside">
+            <li>Reusable across components</li>
+            <li>More control over implementation than Tanstack Query</li>
+            <li>Can be tailored to specific project needs</li>
+            <li>No additional library dependencies</li>
+          </ul>
+          <strong>Intended purpose:</strong> Great for small to medium-sized applications where you want more reusability than the useEffect approach, but don't need the full feature set of Tanstack Query.
         </p>
-        <p>
-          While the custom hook approach can be suitable for simpler applications, Tanstack Query shines in more complex scenarios
-          where you need advanced caching, synchronization, and data management features out of the box.
+
+        <p className="mt-4">
+          For beginners, starting with the useEffect approach is a good way to understand how data fetching works in React. As you build more complex applications, you might find the custom hook approach helpful for organizing your code better. When you're working on larger projects or need advanced features, Tanstack Query can significantly simplify your data management.
         </p>
       </section>
     </div>
