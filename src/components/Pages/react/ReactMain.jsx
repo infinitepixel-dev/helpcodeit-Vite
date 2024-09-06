@@ -1,5 +1,4 @@
 import reactlogo from '../../../assets/React.svg'
-// import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import ReactNavigation from './ReactNavigation'
 
@@ -10,7 +9,7 @@ export default function reactmain() {
                 <title>React Topics | Help Code It</title>
                 <meta
                     name="description"
-                    content="Explore essential React topics including React component basics and React Router 6+. Learn how to build and navigate React applications efficiently."
+                    content="Explore essential React topics including React component basics, React Router 6+, and Tanstack Query. Learn how to build and navigate React applications efficiently."
                 />
                 <link
                     rel="canonical"
@@ -19,7 +18,7 @@ export default function reactmain() {
                 <meta name="robots" content="index, follow" />
                 <meta
                     name="keywords"
-                    content="React, React components, React Router, front-end development, JavaScript, web development, React tutorial"
+                    content="React, React components, React Router, Tanstack Query, front-end development, JavaScript, web development, React tutorial"
                 />
             </Helmet>
             <div className="flex items-center justify-center">

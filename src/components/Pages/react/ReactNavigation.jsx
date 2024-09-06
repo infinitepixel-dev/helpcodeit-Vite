@@ -25,6 +25,7 @@ const ReactNavigation = ({ reactLogo }) => {
     { to: "/Destructuring", icon: Layers, label: "Destructuring Props in React" },
     { to: "/PlanningReactApps", icon: BookOpen, label: "Planning and Organizing React Apps" },
     { to: "/ReactHooks", icon: Zap, label: "React Hooks" },
+    { to: "/TanstackQuery", icon: Zap, label: "Tanstack Query" },
   ];
 
   return (
