@@ -493,6 +493,11 @@ export const componentRoutes = [
         key: 'reactHooks',
     },
     {
+        path: '/TanstackQuery',
+        componentPath: '../components/Pages/react/TanstackQuery.jsx',
+        key: 'tanstackQuery',
+    },
+    {
         path: '/blogs',
         componentPath: '../components/Pages/BlogsPage.jsx',
         key: 'blogs',
