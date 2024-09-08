@@ -4,7 +4,7 @@ const channels = [
     {
         name: 'Help Code It',
         url: 'https://www.youtube.com/@HelpCodeIt',
-        subscribers: '46',
+        subscribers: '53',
         category: 'Web Development',
         imgURL: 'https://yt3.googleusercontent.com/GBhEftXng7rbt9BpZpE64xb0lxT0Ri8TOnqWG13a9AYjQWkrkrmbMftdh3_3xvAQSU-yESjXyQo=s160-c-k-c0x00ffffff-no-rj',
     },
