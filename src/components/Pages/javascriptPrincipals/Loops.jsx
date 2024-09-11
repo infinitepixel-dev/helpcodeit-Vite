@@ -6,6 +6,8 @@ import reloadImg from '@assets/Feather refresh icon.svg'
 import reloadingDark from '@assets/refreshdark.svg'
 import { Helmet } from 'react-helmet-async'
 import { gsap } from 'gsap'
+import whichLoop from '@assets/whichLoop.svg'
+import whileDoWhile from '@assets/whileDoWhile.png'
 
 import CodeBlock from '@/components/Sub_Components/CodeBlock'
 
@@ -279,6 +281,8 @@ console.log("Password accepted!");
 
             <hr className="my-5 border-black dark:border-white" />
 
+            <div><img src={whileDoWhile} alt="Which to use While or Do While" className='p-2 mx-auto my-10 bg-gray-200 border border-gray-500 rounded-lg shadow-lg h-96 ' /></div>
+            <hr className="my-5 border-black dark:border-white" />
             <section className="mb-8">
                 <h2 className="mb-4 text-3xl font-semibold">Do...While Loop</h2>
                 <p className="mb-4 text-lg">
@@ -329,12 +333,15 @@ console.log("Password accepted!");
                 </div>
             </section>
 
+            <div className='bg-red-400 rounded-md'>
+
+            </div>
+
             <hr className="my-5 border-black dark:border-white" />
 
             <section className="mb-8">
-                <h2 className="mb-4 text-3xl font-semibold">
-                    Which Loop Should I Use?
-                </h2>
+
+                <img src={whichLoop} alt="Which loop should I use graphic" className="p-12 mx-auto my-5 border border-gray-500 shadow-lg w-fit bg-slate-300 rounded-2xl" />
                 <ul className="pl-6 text-lg list-disc">
                     <li className="mb-2">
                         Use a <strong>for loop</strong> when you know exactly
