@@ -33,7 +33,7 @@ const JavaScriptNavigation = () => {
     { to: "/javascriptPrincipals/JSONServer", icon: Database, label: "JSON Server" },
     { to: "/javascriptPrincipals/CallbacksAndPromises", icon: GitBranch, label: "Callbacks and Promises" },
     { to: "/javascriptPrincipals/UnitTestingGuide", icon: Zap, label: "Unit Testing Guide" },
-
+    { to: "/javascriptPrincipals/EventListeners", icon: Code, label: "Event Listeners" },
   ];
 
   return (
