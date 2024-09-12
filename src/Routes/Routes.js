@@ -507,6 +507,11 @@ export const componentRoutes = [
         componentPath: '../components/Pages/javascriptPrincipals/InteractiveFetch.jsx',
         key: 'interactiveFetch',
     },
+    {
+        path: '/javascriptPrincipals/EventListeners',
+        componentPath: '../components/Pages/javascriptPrincipals/EventListeners.jsx',
+        key: 'eventListeners',
+    },
 ]
 
 let RoutesWithComponents = componentRoutes

@@ -59,8 +59,8 @@ function JavascriptMainPage() {
 
                 {/* Add this new section for the Interactive Fetch example */}
                 <div className="mt-8">
-                    <h2 className="text-2xl font-bold mb-4">Interactive Examples</h2>
-                    <ul className="list-disc pl-5">
+                    <h2 className="mb-4 text-2xl font-bold">Interactive Examples</h2>
+                    <ul className="pl-5 list-disc">
                         <li>
                             <Link
                                 to="/javascriptPrincipals/InteractiveFetch"
