@@ -1,3 +1,4 @@
+import path from 'path'
 import { lazy } from 'react'
 
 export const navItems = [
@@ -451,6 +452,8 @@ export const componentRoutes = [
         componentPath: '../components/Pages/react/ReactMain.jsx',
         key: 'reactMain',
     },
+    { path: '/ReactEvolution', componentPath: '../components/Pages/react/ReactEvolution.jsx', key: 'reactEvolution' },
+    { path: '/Destructuring', componentPath: '../components/Pages/react/Destructuring.jsx', key: 'destructuring' },
     {
         path: '/OptimisticUpdatesExplainer',
         componentPath:
