@@ -35,6 +35,7 @@ export const navItems = [
         type: 'dropdown',
         label: 'Tools',
         items: [
+            { to: 'https://codeproblems.michaelvarnell.com' , label: 'Practice Code Problems' },
             { to: '/data-generator', label: 'Data Generator' },
             {
                 to: '/JavascriptPrincipals/APIResources',
