@@ -132,7 +132,7 @@ describe('Array', function() {
                         language & readable style, while the TDD assert style
                         provides a more classical feel.
                     </p>
-                    <div className="px-3 py-1 mx-auto my-5 font-bold text-center text-white shadow-sm shadow-lg h-fit w-fit rounded-2xl bg-amber-700 shadow-black">
+                    <div className="px-3 py-1 mx-auto my-5 font-bold text-center text-white shadow-lg h-fit w-fit rounded-2xl bg-amber-700 shadow-black">
                         <a
                             href="https://www.chaijs.com/api/bdd/"
                             target="_blank"

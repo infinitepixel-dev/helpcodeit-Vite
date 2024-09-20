@@ -9,8 +9,8 @@ test.describe('Component Routes', () => {
     }
 
     test(`should load ${route.path} without errors - ${route.path}`, async ({ page }) => {
-      await page.goto(`https://www.helpcodeit.com${route.path}`); // Adjust the base URL to match your development server
-      await expect(page).toHaveURL(`https://www.helpcodeit.com${route.path}`);
+      await page.goto(`http://localhost:5174${route.path}`); // Adjust the base URL to match your development server
+      await expect(page).toHaveURL(`http://localhost:5174${route.path}`);
       await expect(page.locator('body')).not.toHaveText('Error'); // Adjust the selector and text to match your error handling
     })
 
