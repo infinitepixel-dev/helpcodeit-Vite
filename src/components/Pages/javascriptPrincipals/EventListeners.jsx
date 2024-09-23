@@ -171,64 +171,64 @@ changeColorBtn.addEventListener('click', function() {
           Here's a table of common event types you can use with event listeners, along with what they're listening for:
         </p>
         <div className="overflow-x-auto">
-          <table className="w-full mb-6 border-collapse table-auto bg-gray-50">
+          <table className="w-full mb-6 border-collapse table-auto">
             <thead>
-              <tr className="text-white bg-green-700">
-                <th className="p-2 text-center border border-gray-400">Event Type</th>
-                <th className="p-2 text-left border border-gray-400">Description</th>
-                <th className="p-2 text-left border border-gray-400">Example Usage</th>
+              <tr className="text-primary bg-secondary">
+                <th className="p-2 text-center border">Event Type</th>
+                <th className="p-2 text-left border">Description</th>
+                <th className="p-2 text-left border">Example Usage</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td className="p-2 text-center text-gray-700 border border-gray-400">"click"</td>
-                <td className="p-2 text-gray-700 border border-gray-400">When an element is clicked</td>
-                <td className="p-2 text-gray-700 border border-gray-400"><code>element.addEventListener('click', handleClick);</code></td>
+                <td className="p-2 text-center border">"click"</td>
+                <td className="p-2 border">When an element is clicked</td>
+                <td className="p-2 border"><code>element.addEventListener('click', handleClick);</code></td>
               </tr>
               <tr>
-                <td className="p-2 text-center text-gray-700 border border-gray-400">"mouseover"</td>
-                <td className="p-2 text-gray-700 border border-gray-400">When the mouse pointer enters an element</td>
-                <td className="p-2 text-gray-700 border border-gray-400"><code>element.addEventListener('mouseover', handleMouseOver);</code></td>
+                <td className="p-2 text-center border">"mouseover"</td>
+                <td className="p-2 border">When the mouse pointer enters an element</td>
+                <td className="p-2 border"><code>element.addEventListener('mouseover', handleMouseOver);</code></td>
               </tr>
               <tr>
-                <td className="p-2 text-center text-gray-700 border border-gray-400">"mouseout"</td>
-                <td className="p-2 text-gray-700 border border-gray-400">When the mouse pointer leaves an element</td>
-                <td className="p-2 text-gray-700 border border-gray-400"><code>element.addEventListener('mouseout', handleMouseOut);</code></td>
+                <td className="p-2 text-center border">"mouseout"</td>
+                <td className="p-2 border">When the mouse pointer leaves an element</td>
+                <td className="p-2 border"><code>element.addEventListener('mouseout', handleMouseOut);</code></td>
               </tr>
               <tr>
-                <td className="p-2 text-center text-gray-700 border border-gray-400">"keydown"</td>
-                <td className="p-2 text-gray-700 border border-gray-400">When a key is pressed down</td>
-                <td className="p-2 text-gray-700 border border-gray-400"><code>document.addEventListener('keydown', handleKeyDown); </code> <br /><br /> To get the key that was pressed, you can use <code>event.key</code></td>
+                <td className="p-2 text-center border">"keydown"</td>
+                <td className="p-2 border">When a key is pressed down</td>
+                <td className="p-2 border"><code>document.addEventListener('keydown', handleKeyDown);</code> <br /><br /> To get the key that was pressed, you can use <code>event.key</code></td>
               </tr>
               <tr>
-                <td className="p-2 text-center text-gray-700 border border-gray-400">"keyup"</td>
-                <td className="p-2 text-gray-700 border border-gray-400">When a key is released</td>
-                <td className="p-2 text-gray-700 border border-gray-400"><code>document.addEventListener('keyup', handleKeyUp);</code> <br /><br /> To get the key that was released, you can use <code>event.key</code></td>
+                <td className="p-2 text-center border">"keyup"</td>
+                <td className="p-2 border">When a key is released</td>
+                <td className="p-2 border"><code>document.addEventListener('keyup', handleKeyUp);</code> <br /><br /> To get the key that was released, you can use <code>event.key</code></td>
               </tr>
               <tr>
-                <td className="p-2 text-center text-gray-700 border border-gray-400">"submit"</td>
-                <td className="p-2 text-gray-700 border border-gray-400">When a form is submitted</td>
-                <td className="p-2 text-gray-700 border border-gray-400"><code>form.addEventListener('submit', handleSubmit);</code></td>
+                <td className="p-2 text-center border">"submit"</td>
+                <td className="p-2 border">When a form is submitted</td>
+                <td className="p-2 border"><code>form.addEventListener('submit', handleSubmit);</code></td>
               </tr>
               <tr>
-                <td className="p-2 text-center text-gray-700 border border-gray-400">"change"</td>
-                <td className="p-2 text-gray-700 border border-gray-400">When the value of an input element changes</td>
-                <td className="p-2 text-gray-700 border border-gray-400"><code>input.addEventListener('change', handleChange);</code></td>
+                <td className="p-2 text-center border">"change"</td>
+                <td className="p-2 border">When the value of an input element changes</td>
+                <td className="p-2 border"><code>input.addEventListener('change', handleChange);</code></td>
               </tr>
               <tr>
-                <td className="p-2 text-center text-gray-700 border border-gray-400">"load"</td>
-                <td className="p-2 text-gray-700 border border-gray-400">When a page or an element has finished loading</td>
-                <td className="p-2 text-gray-700 border border-gray-400"><code>window.addEventListener('load', handleLoad);</code></td>
+                <td className="p-2 text-center border">"load"</td>
+                <td className="p-2 border">When a page or an element has finished loading</td>
+                <td className="p-2 border"><code>window.addEventListener('load', handleLoad);</code></td>
               </tr>
               <tr>
-                <td className="p-2 text-center text-gray-700 border border-gray-400">"resize"</td>
-                <td className="p-2 text-gray-700 border border-gray-400">When the browser window is resized</td>
-                <td className="p-2 text-gray-700 border border-gray-400"><code>window.addEventListener('resize', handleResize);</code></td>
+                <td className="p-2 text-center border">"resize"</td>
+                <td className="p-2 border">When the browser window is resized</td>
+                <td className="p-2 border"><code>window.addEventListener('resize', handleResize);</code></td>
               </tr>
               <tr>
-                <td className="p-2 text-center text-gray-700 border border-gray-400">"scroll"</td>
-                <td className="p-2 text-gray-700 border border-gray-400">When the user scrolls in the specified element</td>
-                <td className="p-2 text-gray-700 border border-gray-400"><code>window.addEventListener('scroll', handleScroll);</code></td>
+                <td className="p-2 text-center border">"scroll"</td>
+                <td className="p-2 border">When the user scrolls in the specified element</td>
+                <td className="p-2 border"><code>window.addEventListener('scroll', handleScroll);</code></td>
               </tr>
             </tbody>
           </table>
