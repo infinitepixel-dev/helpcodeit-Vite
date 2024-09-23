@@ -9,6 +9,7 @@ export const navItems = [
         items: [
             { to: '/fundamentals/Installs', label: 'Installs' },
             { to: '/MiscPages/RubberDucky', label: 'Rubber Ducky Method' },
+            { to: '/fundamentals/NamingConventions', label: 'Naming Conventions' },
             {
                 to: '/fundamentals/VSCodeExtensions',
                 label: 'VS Code Extensions',
@@ -153,6 +154,11 @@ export const componentRoutes = [
     },
 
     //INFO: MISC Pages
+    {
+        path: '/fundamentals/NamingConventions',
+        componentPath: '../components/Pages/fundamentals/NamingConventions.jsx',
+        key: 'namingConventions',
+    },
     {
         path: '*',
         componentPath: '../components/Pages/NotFound404.jsx',
