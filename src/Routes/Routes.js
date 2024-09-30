@@ -225,6 +225,11 @@ export const componentRoutes = [
     {path: "/typescriptPages/TypeScriptMain", componentPath: "../components/Pages/typescriptPages/TypeScriptMain.jsx", key: "typeScriptMain"},
     //INFO: JAVASCRIPT Pages
     {
+        path: '/javascriptPrincipals/SortAlgorithms',
+        componentPath: '../components/Pages/javascriptPrincipals/SortAlgorithms.jsx',
+        key: 'sortAlgorithms',
+    },
+    {
         path: '/data-generator',
         componentPath: '../components/Sub_Components/DataGenerator.jsx',
         key: 'dataGenerator',
