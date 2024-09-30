@@ -34,6 +34,8 @@ const JavaScriptNavigation = () => {
     { to: "/javascriptPrincipals/CallbacksAndPromises", icon: GitBranch, label: "Callbacks and Promises" },
     { to: "/javascriptPrincipals/UnitTestingGuide", icon: Zap, label: "Unit Testing Guide" },
     { to: "/javascriptPrincipals/EventListeners", icon: Code, label: "Event Listeners" },
+    { to: "/javascriptPrincipals/SortAlgorithms", icon: ArrowRight, label: "Sort Algorithms" },
+
   ];
 
   return (
