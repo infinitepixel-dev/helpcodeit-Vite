@@ -3,6 +3,7 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
 import githubFlow from '@assets/CleanShot 2023-12-05 at 12.18.20.png'
 import DetailedGitWorkflow from '@subComponents/DetailedGitWorkflow';
+import CodeBlock from '@subComponents/CodeBlock'
 
 
 
@@ -62,9 +63,10 @@ const PushingUpdates = () => {
       <div className="grid justify-center p-6 rounded-lg shadow-sm ">
         <h2 className="text-2xl font-semibold text-center">Basic Git Commands</h2>
         <p className="mb-4 text-lg text-center">Use these commands to push updates to your repository</p>
-        <pre className="overflow-hidden rounded-md">
-          <code className="language-bash">{workflowCode}</code>
-        </pre>
+      <CodeBlock
+          language="bash"
+          code={workflowCode}
+        />
       </div>
 
 <div className='grid justify-center'>

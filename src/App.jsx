@@ -43,6 +43,7 @@ function App() {
     // console.log('footerComponent: ', footerComponent)
 
     return (
+                            <Suspense fallback={<div>Loading...</div>}>
         <HelmetProvider>
             <DarkModeProvider>
                 <BlogProvider>
@@ -74,11 +75,10 @@ function App() {
                                 content="website"
                             />
                         </Helmet>
-                        <div className="m-0 w-full p-0">
+                        <div className="w-full p-0 m-0">
                             <Navbar theme={theme} />
                         </div>
 
-                        <Suspense fallback={<div>Loading...</div>}>
                             <Routes>
                                 {RoutesWithComponents.map(
                                     ({
@@ -96,9 +96,8 @@ function App() {
                                 )}
                                 <Route path="/post/:id" element={<BlogPost />} />
                             </Routes>
-                        </Suspense>
 
-                        <div className="m-0 mt-5 w-full p-0">
+                        <div className="w-full p-0 m-0 mt-5">
                             {/* <Footer /> */}
                             {footerComponent
                                 ? React.createElement(footerComponent)
@@ -109,13 +108,14 @@ function App() {
                         onClick={() =>
                             window.scrollTo({ top: 0, behavior: 'smooth' })
                         }
-                        className="fixed bottom-12 right-5 z-0 rounded-full bg-blue-500 px-4 py-2 text-xs font-bold text-white hover:bg-blue-700"
-                    >
+                        className="fixed z-0 px-4 py-2 text-xs font-bold text-white bg-blue-500 rounded-full bottom-12 right-5 hover:bg-blue-700"
+                        >
                         Back to top ↑
                     </button>
                 </BlogProvider>
             </DarkModeProvider>
         </HelmetProvider>
+                            </Suspense>
     )
 }
 

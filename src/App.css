@@ -317,6 +317,11 @@
     }
 }
 
+
+.bold-icon {
+    stroke-width: 2px; /* Adjust the value as needed */
+}
+
 .custom-code-menuapp {
     font-family: monospace;
     border: none;
