@@ -1,15 +1,51 @@
-
-import React, { useEffect } from 'react';
 import 'tailwindcss/tailwind.css';
-import hljs from 'highlight.js';
-import 'highlight.js/styles/atom-one-dark.css';
 import cookingPasta from '@assets/cookingpasta.png';
+import CodeBlock from '@subComponents/CodeBlock';
+
+let callbacks = `function printMessage(message, callback) {
+  setTimeout(() => {
+    console.log(message);
+    callback();
+  }, 2000);
+}
+
+function afterPrint() {
+  console.log("This message appears after the previous one.");
+}
+
+printMessage("Hello, World!", afterPrint);`
+
+let promises = `function fetchData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const data = { name: "John", age: 30 };
+      resolve(data); // Simulate successful data fetching
+    }, 2000);
+  });
+}
+
+fetchData()
+  .then((data) => {
+    console.log("Data fetched successfully:", data);
+  })
+  .catch((error) => {
+    console.log("An error occurred:", error);
+  });`
+
+let callbacksAndPromises = `function fetchDataWithCallback(callback) {
+  setTimeout(() => {
+    const data = { name: "Jane", age: 25 };
+    callback(data);
+  }, 2000);
+}
+
+function fetchDataWithPromise() {
+  return new Promise((resolve) => {
+    fetchDataWithCallback(resolve);
+  });
+}`
 
 const CallbacksAndPromises = () => {
-  useEffect(() => {
-    hljs.highlightAll();
-  }, []);
-
   return (
     <div className="container p-6 mx-auto px-14">
       <div className="flex justify-evenly">
@@ -44,22 +80,8 @@ const CallbacksAndPromises = () => {
       </p>
 
       <h3 className="mb-2 text-2xl font-semibold">Example of Callbacks</h3>
-      <pre>
-        <code className="javascript">
-          {`function printMessage(message, callback) {
-  setTimeout(() => {
-    console.log(message);
-    callback();
-  }, 2000);
-}
 
-function afterPrint() {
-  console.log("This message appears after the previous one.");
-}
-
-printMessage("Hello, World!", afterPrint);`}
-        </code>
-      </pre>
+      <CodeBlock code={callbacks} language="javascript" />
       <p className="mb-4">
         In this example, the `printMessage` function accepts a message and a callback function as parameters. It waits for 2 seconds using `setTimeout` (simulating a delay, like waiting for an API response), and then prints the message. After that, the callback function `afterPrint` is executed, printing another message to the console.
       </p>
@@ -73,26 +95,7 @@ printMessage("Hello, World!", afterPrint);`}
       </p>
 
       <h3 className="mb-2 text-2xl font-semibold">Example of Promises</h3>
-      <pre>
-        <code className="javascript">
-          {`function fetchData() {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const data = { name: "John", age: 30 };
-      resolve(data); // Simulate successful data fetching
-    }, 2000);
-  });
-}
-
-fetchData()
-  .then((data) => {
-    console.log("Data fetched successfully:", data);
-  })
-  .catch((error) => {
-    console.log("An error occurred:", error);
-  });`}
-        </code>
-      </pre>
+      <CodeBlock code={promises} language="javascript" />
 
       <p className="mb-4">
         In this example, `fetchData` is a function that returns a promise. The promise either resolves with some data after 2 seconds or rejects in case of an error. When you call `fetchData`, you can use `.then()` to specify what to do when the promise resolves (data is fetched), and `.catch()` to handle any errors that occur during this process.
@@ -103,27 +106,7 @@ fetchData()
         Although promises are generally preferred for handling asynchronous operations in modern JavaScript code, you may still encounter callbacks in older codebases or some APIs. You can even combine callbacks and promises together. Below is an example that shows how to wrap a function that uses a callback into a promise:
       </p>
 
-      <pre>
-        <code className="javascript">
-          {`function fetchDataWithCallback(callback) {
-  setTimeout(() => {
-    const data = { name: "Jane", age: 25 };
-    callback(data);
-  }, 2000);
-}
-
-function fetchDataWithPromise() {
-  return new Promise((resolve) => {
-    fetchDataWithCallback(resolve);
-  });
-}
-
-fetchDataWithPromise()
-  .then((data) => {
-    console.log("Data fetched using promise:", data);
-  });`}
-        </code>
-      </pre>
+      <CodeBlock code={callbacksAndPromises} language="javascript" />
 
       <p className="mb-4">
         In this example, `fetchDataWithCallback` is an old function that uses a callback to return data. We can easily wrap this function in a promise by creating a new function called `fetchDataWithPromise`. This allows us to use modern promise-based syntax while still working with the original callback-based code.

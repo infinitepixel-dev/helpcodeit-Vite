@@ -159,7 +159,7 @@ const CommandItem = ({ command, explanation }) => {
     }
 
     return (
-        <div className="mb-4 overflow-hidden rounded-lg bg-white shadow-md  dark:bg-neutral-800">
+        <div className="mb-4 overflow-hidden bg-white rounded-lg shadow-md dark:bg-neutral-800">
             <Helmet>
                 <title>Git and GitHub Cheatsheet | Help Code It</title>
                 <meta
@@ -175,8 +175,8 @@ const CommandItem = ({ command, explanation }) => {
                     href="https://www.helpcodeit.com/fundamentals/GitHubCheatsheet"
                 />
             </Helmet>
-            <div className="m-px flex items-center justify-between rounded-lg border-2  bg-slate-400  p-3 dark:border-white dark:bg-zinc-600 dark:text-white">
-                <code className="rounded-sm bg-white px-1 font-mono font-semibold text-blue-700 dark:bg-black dark:text-white ">
+            <div className="flex items-center justify-between p-3 m-px border-2 rounded-lg bg-slate-400 dark:border-white dark:bg-zinc-600 dark:text-white">
+                <code className="px-1 font-mono font-semibold text-blue-700 bg-white rounded-sm dark:bg-black dark:text-white ">
                     {command}
                 </code>
                 <button
@@ -190,7 +190,7 @@ const CommandItem = ({ command, explanation }) => {
                 {explanation}
             </p>
             {copied && (
-                <div className="bg-green-400 p-1 text-center text-xs text-green-800">
+                <div className="p-1 text-xs text-center text-green-800 bg-green-400">
                     Copied to clipboard!
                 </div>
             )}
@@ -201,9 +201,9 @@ const CommandItem = ({ command, explanation }) => {
 const GitHubCheatsheet = () => {
     let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     return (
-        <div className="mx-auto max-w-4xl p-6">
-            <div className="mb-10 flex h-full items-center justify-center">
-                <h1 className="text-center text-3xl font-bold">
+        <div className="max-w-4xl p-6 mx-auto">
+            <div className="flex items-center justify-center h-full mb-10">
+                <h1 className="text-3xl font-bold text-center">
                     Git and GitHub Cheatsheet for Beginners
                 </h1>
                 <img
