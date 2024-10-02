@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async'
+import { ShieldAlert } from 'lucide-react'
 
 import CodeBlock from '@/components/Sub_Components/CodeBlock'
 
@@ -57,19 +58,24 @@ function JSONServer() {
                     content="JSON-Server, REST API, mock API, JavaScript, Node.js, web development, API testing"
                 />
             </Helmet>
-            <h1 className="my-4 text-center text-6xl">json-server Guide</h1>
-            <h2 className="mb-5 mt-5 text-center text-2xl">
+            <h1 className="my-4 text-6xl text-center">json-server Guide</h1>
+            <h2 className="mt-5 mb-5 text-2xl text-center">
                 Installation and Usage Instructions
             </h2>
             <hr className="border-2 border-black dark:border-white" />
 
             <h3 className="my-5 text-2xl">What is JSON-Server?</h3>
-            <p>
-                JSON-Server is a Node module that allows you to create a full
-                fake REST API with zero coding in less than 30 seconds.
-                It&apos;s perfect for prototyping and mocking, and it&apos;s
-                very easy to set up and use.
-            </p>
+
+            <div className="row">
+                <div className="grid ">
+                    <p>
+                        JSON-Server is a Node module that allows you to create a full
+                        fake REST API with zero coding in less than 30 seconds.
+                        It&apos;s perfect for prototyping and mocking, and it&apos;s
+                        very easy to set up and use.
+                    </p>
+                </div>
+            </div>
 
             <h3 className="my-5 text-2xl">Installation</h3>
             <p>
@@ -91,17 +97,17 @@ function JSONServer() {
 
             <CodeBlock code={sampleDbJson} language="json" />
 
-            <table className="mb-5 w-fit border-collapse border border-gray-300 dark:border-gray-700">
+            <table className="mb-5 border border-collapse border-gray-300 w-fit dark:border-gray-700">
                 <thead>
                     <tr className="bg-gray-100 dark:bg-gray-800">
-                        <th className="border border-gray-300 p-2 dark:border-gray-700">
+                        <th className="p-2 border border-gray-300 dark:border-gray-700">
                             Endpoints
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td className="border border-gray-300 p-2 dark:border-gray-700 dark:bg-gray-600">
+                        <td className="p-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-600">
                             <p>
                                 The &quot;
                                 <span style={HighlightText.posts}>posts</span>
@@ -118,7 +124,7 @@ function JSONServer() {
                                 <br />
                                 This means your address would be:
                                 <ul className="ml-5 list-disc">
-                                    <li className="list font-semibold">
+                                    <li className="font-semibold list">
                                         http://localhost:3000/
                                         <span style={HighlightText.posts}>
                                             posts
@@ -155,6 +161,19 @@ function JSONServer() {
                 code={`{ "id": 1, "title": "json-server", "author": "typicode" }`}
                 language="json"
             />
+                    <div className="p-4 mx-4 my-5 text-black bg-gray-100 border border-gray-300 rounded-xl">
+                    <div className="flex justify-center align-middle">
+                        <ShieldAlert className='mt-1 text-red-600 me-2 bold-icon'/>
+                            <h2 className='text-2xl font-bold text-center'>Having issues with your ID's?</h2>
+                    </div>
+                        <hr className='w-3/4 mx-auto my-3 border-black border-1' />
+                        <p className="text-center">In json-server when you create a new object, it will automatically assign an ID to it. If you want to change the default ID field to something else, you can use the <span className="font-semibold">--id</span> flag.</p>
+                        <p className="text-center">For example, if you want to use the <span className="font-semibold">_id</span> field as your ID, you can run the following command:</p>
+                        <div className='grid justify-center'>
+                            <CodeBlock code={jsonCustomId} language="bash"  />
+                        </div>
+                        <p className='italic text-center'>Another consideration is that the id will not auto increment numbers if they are 'strings' so make sure to use numbers for your ID's.</p>
+                    </div>
 
             <h3 className="my-5 text-2xl">Custom Port</h3>
             <p>
@@ -170,65 +189,65 @@ function JSONServer() {
                 current version of JSON-Server. The server will automatically
                 watch the db.json file for changes.
             </p>
-            <table className="w-full border-collapse border border-gray-300 dark:border-gray-700">
+            <table className="w-full border border-collapse border-gray-300 dark:border-gray-700">
                 <thead>
                     <tr className="bg-gray-100 dark:bg-gray-800">
-                        <th className="border border-gray-300 p-2 dark:border-gray-700">
+                        <th className="p-2 border border-gray-300 dark:border-gray-700">
                             Command
                         </th>
-                        <th className="border border-gray-300 p-2 dark:border-gray-700">
+                        <th className="p-2 border border-gray-300 dark:border-gray-700">
                             Description
                         </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td className="border border-gray-300 p-2 dark:border-gray-700 dark:bg-gray-600">
+                        <td className="p-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-600">
                             <CodeBlock code={basicUsageCode} language="bash" />
                         </td>
-                        <td className="border border-gray-300 p-2 dark:border-gray-700 dark:bg-gray-600">
+                        <td className="p-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-600">
                             Start JSON-Server and watch db.json for changes
                         </td>
                     </tr>
                     <tr>
-                        <td className="border border-gray-300 p-2 dark:border-gray-700 dark:bg-gray-600">
+                        <td className="p-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-600">
                             <CodeBlock code={customPortCode} language="bash" />
                         </td>
-                        <td className="border border-gray-300 p-2 dark:border-gray-700 dark:bg-gray-600">
+                        <td className="p-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-600">
                             Start JSON-Server on a custom port
                         </td>
                     </tr>
                     <tr>
-                        <td className="border border-gray-300 p-2 dark:border-gray-700 dark:bg-gray-600">
+                        <td className="p-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-600">
                             <CodeBlock
                                 code={jsonCustomRoutes}
                                 language="bash"
                             />
                         </td>
-                        <td className="border border-gray-300 p-2 dark:border-gray-700 dark:bg-gray-600">
+                        <td className="p-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-600">
                             Use a custom routes file
                         </td>
                     </tr>
                     <tr>
-                        <td className="border border-gray-300 p-2 dark:border-gray-700 dark:bg-gray-600">
+                        <td className="p-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-600">
                             <CodeBlock code={jsonCustomId} language="bash" />
                         </td>
-                        <td className="border border-gray-300 p-2 dark:border-gray-700 dark:bg-gray-600">
+                        <td className="p-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-600">
                             Set a custom ID field
                         </td>
                     </tr>
                     <tr>
-                        <td className="border border-gray-300 p-2 dark:border-gray-700 dark:bg-gray-600">
+                        <td className="p-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-600">
                             <CodeBlock code={jsonDelay} language="bash" />
                         </td>
-                        <td className="border border-gray-300 p-2 dark:border-gray-700 dark:bg-gray-600">
+                        <td className="p-2 border border-gray-300 dark:border-gray-700 dark:bg-gray-600">
                             Add a delay to responses (ms)
                         </td>
                     </tr>
                 </tbody>
             </table>
 
-            <p className="mb-24 mt-5">
+            <p className="mt-5 mb-24">
                 These are just a few examples of what you can do with
                 JSON-Server. For more advanced usage and options, refer to the{' '}
                 <a
