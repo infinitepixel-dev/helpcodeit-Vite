@@ -1,4 +1,3 @@
-import path from 'path'
 import { lazy } from 'react'
 
 export const navItems = [
@@ -9,7 +8,10 @@ export const navItems = [
         items: [
             { to: '/fundamentals/Installs', label: 'Installs' },
             { to: '/MiscPages/RubberDucky', label: 'Rubber Ducky Method' },
-            { to: '/fundamentals/NamingConventions', label: 'Naming Conventions' },
+            {
+                to: '/fundamentals/NamingConventions',
+                label: 'Naming Conventions',
+            },
             {
                 to: '/fundamentals/VSCodeExtensions',
                 label: 'VS Code Extensions',
@@ -37,7 +39,10 @@ export const navItems = [
         label: 'Tools',
         items: [
             { to: 'https://mockapi.helpcodeit.com', label: 'Free MockAPI' },
-            { to: 'https://codeproblems.michaelvarnell.com' , label: 'Practice Code Problems' },
+            {
+                to: 'https://codeproblems.michaelvarnell.com',
+                label: 'Practice Code Problems',
+            },
             { to: '/data-generator', label: 'Data Generator' },
             {
                 to: '/JavascriptPrincipals/APIResources',
@@ -57,8 +62,8 @@ export const navItems = [
             { to: '/fundamentals/Bootstrap', label: 'Bootstrap' },
             { to: '/githubPages/GitHub', label: 'GitHub' },
             { to: '/markdown/MarkdownGuide', label: 'Markdown' },
-            {to: '/ViteMain' , label: 'Vite Guides'},
-            {to: '/typescriptPages/TypeScriptMain', label: 'TypeScript'},
+            { to: '/ViteMain', label: 'Vite Guides' },
+            { to: '/typescriptPages/TypeScriptMain', label: 'TypeScript' },
             { to: '/javascript', label: 'JavaScript' },
             { to: '/ReactMain', label: 'React.js' },
         ],
@@ -145,8 +150,8 @@ export const componentRoutes = [
     {
         path: '/cssPages/CSSResponsive',
         componentPath: '../components/Pages/cssPages/CSSResponsive.jsx',
-        key: 'cssResponsive'
-      },
+        key: 'cssResponsive',
+    },
     {
         path: '/cssPages/CSSAnimationIntro',
         componentPath: '../components/Pages/cssPages/CSSAnimationIntro.jsx',
@@ -217,16 +222,38 @@ export const componentRoutes = [
         key: 'termsOfService',
     },
     //INFO: VITE Pages
-    { path: '/ViteMain', componentPath: '../components/Pages/vite/ViteMain.jsx', key: 'viteMain' },
-    { path: '/Vite-Vanilla', componentPath: '../components/Pages/vite/ViteVanilla.jsx', key: 'viteVanilla' },
-    { path: '/Vite-React', componentPath: '../components/Pages/vite/ViteReact.jsx', key: 'viteReact' },
+    {
+        path: '/ViteMain',
+        componentPath: '../components/Pages/vite/ViteMain.jsx',
+        key: 'viteMain',
+    },
+    {
+        path: '/Vite-Vanilla',
+        componentPath: '../components/Pages/vite/ViteVanilla.jsx',
+        key: 'viteVanilla',
+    },
+    {
+        path: '/Vite-React',
+        componentPath: '../components/Pages/vite/ViteReact.jsx',
+        key: 'viteReact',
+    },
     // INFO: TypeScript Pages
-    { path: '/typescriptPages/WhatIsTypeScript', componentPath: '../components/Pages/typescriptPages/WhatIsTypeScript.jsx', key: 'whatIsTypeScript' },
-    {path: "/typescriptPages/TypeScriptMain", componentPath: "../components/Pages/typescriptPages/TypeScriptMain.jsx", key: "typeScriptMain"},
+    {
+        path: '/typescriptPages/WhatIsTypeScript',
+        componentPath:
+            '../components/Pages/typescriptPages/WhatIsTypeScript.jsx',
+        key: 'whatIsTypeScript',
+    },
+    {
+        path: '/typescriptPages/TypeScriptMain',
+        componentPath: '../components/Pages/typescriptPages/TypeScriptMain.jsx',
+        key: 'typeScriptMain',
+    },
     //INFO: JAVASCRIPT Pages
     {
         path: '/javascriptPrincipals/SortAlgorithms',
-        componentPath: '../components/Pages/javascriptPrincipals/SortAlgorithms.jsx',
+        componentPath:
+            '../components/Pages/javascriptPrincipals/SortAlgorithms.jsx',
         key: 'sortAlgorithms',
     },
     {
@@ -465,8 +492,16 @@ export const componentRoutes = [
         componentPath: '../components/Pages/react/ReactMain.jsx',
         key: 'reactMain',
     },
-    { path: '/ReactEvolution', componentPath: '../components/Pages/react/ReactEvolution.jsx', key: 'reactEvolution' },
-    { path: '/Destructuring', componentPath: '../components/Pages/react/Destructuring.jsx', key: 'destructuring' },
+    {
+        path: '/ReactEvolution',
+        componentPath: '../components/Pages/react/ReactEvolution.jsx',
+        key: 'reactEvolution',
+    },
+    {
+        path: '/Destructuring',
+        componentPath: '../components/Pages/react/Destructuring.jsx',
+        key: 'destructuring',
+    },
     {
         path: '/OptimisticUpdatesExplainer',
         componentPath:
@@ -520,12 +555,14 @@ export const componentRoutes = [
     },
     {
         path: '/javascriptPrincipals/InteractiveFetch',
-        componentPath: '../components/Pages/javascriptPrincipals/InteractiveFetch.jsx',
+        componentPath:
+            '../components/Pages/javascriptPrincipals/InteractiveFetch.jsx',
         key: 'interactiveFetch',
     },
     {
         path: '/javascriptPrincipals/EventListeners',
-        componentPath: '../components/Pages/javascriptPrincipals/EventListeners.jsx',
+        componentPath:
+            '../components/Pages/javascriptPrincipals/EventListeners.jsx',
         key: 'eventListeners',
     },
 ]
@@ -583,9 +620,10 @@ if (typeof window !== 'undefined') {
                 const meta = component?.meta || {}
                 requiredMetaFields.forEach((field) => {
                     if (!meta[field]) {
-                        console.warn(
-                            `Meta field "${field}" is missing in component for path ${importPath}`
-                        )
+                        //TODO: Ensure all meta information is included when during test/dev...
+                        // console.warn(
+                        //     `Meta field "${field}" is missing in component for path ${importPath}`
+                        // )
                     }
                 })
             })

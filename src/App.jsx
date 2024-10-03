@@ -1,5 +1,5 @@
 import './App.css'
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState, lazy, Suspense } from 'react'
@@ -12,7 +12,7 @@ import RoutesWithComponents from './Routes/Routes.js'
 import { Helmet } from 'react-helmet-async'
 import BlogPost from './components/Pages/BlogPost'
 import { BlogProvider } from '@subComponents/BlogAPI' // Correct import for BlogProvider
-import { HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async'
 
 // console.log('RoutesWithComponents: ', RoutesWithComponents)
 
@@ -76,30 +76,29 @@ function App() {
                                 content="website"
                             />
                         </Helmet>
-                        <div className="w-full p-0 m-0">
+                        <div className="m-0 w-full p-0">
                             <Navbar theme={theme} />
                         </div>
 
-                            <Routes>
-                                {RoutesWithComponents.map(
-                                    ({
-                                        path,
-                                        component: Component,
+                        <Routes>
+                            {RoutesWithComponents.map(
+                                ({
+                                    path,
+                                    component: Component,
 
-                                        props,
-                                    }) => (
-                                        <Route
-                                            key={uuidv4()}
-                                            path={path}
-                                            element={<Component {...props} />}
-                                        />
-                                    )
+                                    props,
+                                }) => (
+                                    <Route
+                                        key={uuidv4()}
+                                        path={path}
+                                        element={<Component {...props} />}
+                                    />
+                                )
+                            )}
+                            <Route path="/post/:id" element={<BlogPost />} />
+                        </Routes>
 
-                                )}
-                                <Route path="/post/:id" element={<BlogPost />} />
-                            </Routes>
-
-                        <div className="w-full p-0 m-0 mt-5">
+                        <div className="m-0 mt-5 w-full p-0">
                             {/* <Footer /> */}
                             {footerComponent
                                 ? React.createElement(footerComponent)
@@ -110,8 +109,8 @@ function App() {
                         onClick={() =>
                             window.scrollTo({ top: 0, behavior: 'smooth' })
                         }
-                        className="fixed z-0 px-4 py-2 text-xs font-bold text-white bg-blue-500 rounded-full bottom-12 right-5 hover:bg-blue-700"
-                        >
+                        className="fixed bottom-12 right-5 z-0 rounded-full bg-blue-500 px-4 py-2 text-xs font-bold text-white hover:bg-blue-700"
+                    >
                         Back to top ↑
                     </button>
                 </BlogProvider>
