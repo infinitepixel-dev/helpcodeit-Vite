@@ -1,4 +1,6 @@
 import './App.css'
+import { v4 as uuidv4 } from 'uuid';
+
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState, lazy, Suspense } from 'react'
 import { DarkModeProvider } from './components/Context/DarkModeProvider'
@@ -83,17 +85,16 @@ function App() {
                                     ({
                                         path,
                                         component: Component,
-                                        key,
+
                                         props,
                                     }) => (
-                                        <Suspense fallback={<div>Loading...</div>}>
                                         <Route
-                                            key={key}
+                                            key={uuidv4()}
                                             path={path}
                                             element={<Component {...props} />}
                                         />
-                                        </Suspense>
                                     )
+
                                 )}
                                 <Route path="/post/:id" element={<BlogPost />} />
                             </Routes>
