@@ -1,11 +1,11 @@
-import { useRef, useState, useEffect } from 'react'
-import propTypes from 'prop-types'
-import AceEditor from 'react-ace'
-import '@/Routes/aceEditorStyles'
-import CopyButton from '@/components/Sub_Components/CopyButton'
+import { useRef, useState, useEffect } from 'react';
+import propTypes from 'prop-types';
+import AceEditor from 'react-ace';
+import '@/Routes/aceEditorStyles';
+import CopyButton from '@/components/Sub_Components/CopyButton';
 // import vibrant ink theme and javascript mode
-import 'ace-builds/src-noconflict/theme-vibrant_ink'
-import 'ace-builds/src-noconflict/mode-javascript'
+import 'ace-builds/src-noconflict/theme-vibrant_ink';
+import 'ace-builds/src-noconflict/mode-javascript';
 
 /*INFO Supported ACE Languages
 https://cloud9-sdk.readme.io/docs/language-mode
@@ -19,62 +19,60 @@ text
 */
 
 const CodeBlock = ({ code, language, readOnly }) => {
-    // console.log('language', language)
-
-    const codeRef = useRef(null)
-    const [editorHeights, setEditorHeights] = useState({})
-    const [editorWidths, setEditorWidths] = useState({})
-    const [readOnlyValue, setReadOnly] = useState(true)
+    const codeRef = useRef(null);
+    const [editorHeights, setEditorHeights] = useState({});
+    const [editorWidths, setEditorWidths] = useState({});
+    const [readOnlyValue, setReadOnly] = useState(true);
 
     const calculateEditorDimensions = (code, fontSize = 16, padding = 30) => {
-        let lineHeight = fontSize * 1.3
-        let charWidth = fontSize / 2 + 3
+        let lineHeight = fontSize * 1.3;
+        let charWidth = fontSize / 2 + 3;
 
-        const userAgent = window.navigator.userAgentData.platform
-        if (userAgent === 'Windows') {
-            console.log('windows')
-            padding = 40
-            lineHeight = fontSize * 1.2
-            charWidth = fontSize / 2 + 2
-        } else if (userAgent === 'macOS') {
-            console.log('mac')
-            padding = 40
-            lineHeight = fontSize * 1.3
-            charWidth = fontSize / 2 + 3
+        const userAgent = window.navigator.userAgentData?.platform || window.navigator.userAgent;
+
+        if (/Windows/.test(userAgent)) {
+            console.log('windows');
+            padding = 40;
+            lineHeight = fontSize * 1.2;
+            charWidth = fontSize / 2 + 2;
+        } else if (/Mac/.test(userAgent)) {
+            console.log('mac');
+            padding = 40;
+            lineHeight = fontSize * 1.3;
+            charWidth = fontSize / 2 + 3;
         } else {
-            padding = 40
-            lineHeight = fontSize * 1.3
-            charWidth = fontSize / 2 + 3
+            padding = 40;
+            lineHeight = fontSize * 1.3;
+            charWidth = fontSize / 2 + 3;
         }
 
-        const numLines = code.split('\n').length
-        const maxLineLength = Math.max(...code.split('\n').map((line) => line.length))
+        const numLines = code.split('\n').length;
+        const maxLineLength = Math.max(...code.split('\n').map((line) => line.length));
 
-        const contentHeight = numLines * lineHeight + padding
-        const contentWidth = maxLineLength * charWidth + padding
+        const contentHeight = numLines * lineHeight + padding;
+        const contentWidth = maxLineLength * charWidth + padding;
 
-        return { height: `${contentHeight}px`, width: `${contentWidth}px` }
-    }
+        return { height: `${contentHeight}px`, width: `${contentWidth}px` };
+    };
 
     const handleEditorLoad = (code, key) => {
-        const { height, width } = calculateEditorDimensions(code)
-        setEditorHeights((prev) => ({ ...prev, [key]: height }))
-        setEditorWidths((prev) => ({ ...prev, [key]: width }))
-    }
+        const { height, width } = calculateEditorDimensions(code);
+        setEditorHeights((prev) => ({ ...prev, [key]: height }));
+        setEditorWidths((prev) => ({ ...prev, [key]: width }));
+    };
 
     useEffect(() => {
         const setEditorToReadOnly = async () => {
-            //set readonly
             if (readOnly === true) {
-                setReadOnly(true)
+                setReadOnly(true);
             } else if (readOnly === false) {
-                setReadOnly(false)
+                setReadOnly(false);
             } else {
-                setReadOnly(true)
+                setReadOnly(true);
             }
-        }
-        setEditorToReadOnly()
-    }, [readOnly])
+        };
+        setEditorToReadOnly();
+    }, [readOnly]);
 
     return (
         <div
@@ -114,18 +112,15 @@ const CodeBlock = ({ code, language, readOnly }) => {
                 style={{ width: '100%', height: '100%' }}
                 onLoad={() => handleEditorLoad(code, 'arrowFunction')}
             />
-            <CopyButton
-                textToCopy={code}
-                position="absolute bottom-1 right-1"
-            />
+            <CopyButton textToCopy={code} position="absolute bottom-1 right-1" />
         </div>
-    )
-}
+    );
+};
 
 CodeBlock.propTypes = {
     code: propTypes.string.isRequired,
     language: propTypes.string.isRequired,
     readOnly: propTypes.bool,
-}
+};
 
-export default CodeBlock
+export default CodeBlock;
