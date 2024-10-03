@@ -91,7 +91,11 @@ function App() {
                                     <Route
                                         key={key}
                                         path={path}
-                                        element={<Component {...props} />}
+                                        element={
+                                            <Suspense fallback={<div>Loading...</div>}>
+                                                <Component {...props} />
+                                            </Suspense>
+                                        }
                                     />
                                 )
                             )}
