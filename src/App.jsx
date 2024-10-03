@@ -43,7 +43,6 @@ function App() {
     // console.log('footerComponent: ', footerComponent)
 
     return (
-                            <Suspense fallback={<div>Loading...</div>}>
         <HelmetProvider>
             <DarkModeProvider>
                 <BlogProvider>
@@ -87,11 +86,13 @@ function App() {
                                         key,
                                         props,
                                     }) => (
+                                        <Suspense fallback={<div>Loading...</div>}>
                                         <Route
                                             key={key}
                                             path={path}
                                             element={<Component {...props} />}
                                         />
+                                        </Suspense>
                                     )
                                 )}
                                 <Route path="/post/:id" element={<BlogPost />} />
@@ -115,7 +116,6 @@ function App() {
                 </BlogProvider>
             </DarkModeProvider>
         </HelmetProvider>
-                            </Suspense>
     )
 }
 
