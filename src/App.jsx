@@ -10,7 +10,7 @@ import RoutesWithComponents from './Routes/Routes.js'
 import { Helmet } from 'react-helmet-async'
 import BlogPost from './components/Pages/BlogPost'
 import { BlogProvider } from '@subComponents/BlogAPI' // Correct import for BlogProvider
-import { HelmetProvider } from 'react-helmet-async';
+import { HelmetProvider } from 'react-helmet-async'
 
 // console.log('RoutesWithComponents: ', RoutesWithComponents)
 
@@ -43,41 +43,41 @@ function App() {
     // console.log('footerComponent: ', footerComponent)
 
     return (
-                            <Suspense fallback={<div>Loading...</div>}>
-        <HelmetProvider>
-            <DarkModeProvider>
-                <BlogProvider>
-                    <div>
-                        <Helmet>
-                            <meta
-                                name="title"
-                                property="og:title"
-                                content="Help Code It"
-                            />
-                            <meta
-                                name="description"
-                                property="og:description"
-                                content="Help Code It is a site for beginning developers that helps you learn how to code."
-                            />
-                            <meta
-                                name="image"
-                                property="og:image"
-                                content="https://www.helpcodeit.com/assets/helpcodeitlogo-CsyqkzOG.svg"
-                            />
-                            <meta
-                                name="url"
-                                property="og:url"
-                                content="https://www.helpcodeit.com"
-                            />
-                            <meta
-                                name="type"
-                                property="og:type"
-                                content="website"
-                            />
-                        </Helmet>
-                        <div className="w-full p-0 m-0">
-                            <Navbar theme={theme} />
-                        </div>
+        <Suspense fallback={<div>Loading...</div>}>
+            <HelmetProvider>
+                <DarkModeProvider>
+                    <BlogProvider>
+                        <div>
+                            <Helmet>
+                                <meta
+                                    name="title"
+                                    property="og:title"
+                                    content="Help Code It"
+                                />
+                                <meta
+                                    name="description"
+                                    property="og:description"
+                                    content="Help Code It is a site for beginning developers that helps you learn how to code."
+                                />
+                                <meta
+                                    name="image"
+                                    property="og:image"
+                                    content="https://www.helpcodeit.com/assets/helpcodeitlogo-CsyqkzOG.svg"
+                                />
+                                <meta
+                                    name="url"
+                                    property="og:url"
+                                    content="https://www.helpcodeit.com"
+                                />
+                                <meta
+                                    name="type"
+                                    property="og:type"
+                                    content="website"
+                                />
+                            </Helmet>
+                            <div className="m-0 w-full p-0">
+                                <Navbar theme={theme} />
+                            </div>
 
                             <Routes>
                                 {RoutesWithComponents.map(
@@ -94,28 +94,31 @@ function App() {
                                         />
                                     )
                                 )}
-                                <Route path="/post/:id" element={<BlogPost />} />
+                                <Route
+                                    path="/post/:id"
+                                    element={<BlogPost />}
+                                />
                             </Routes>
 
-                        <div className="w-full p-0 m-0 mt-5">
-                            {/* <Footer /> */}
-                            {footerComponent
-                                ? React.createElement(footerComponent)
-                                : null}
+                            <div className="m-0 mt-5 w-full p-0">
+                                {/* <Footer /> */}
+                                {footerComponent
+                                    ? React.createElement(footerComponent)
+                                    : null}
+                            </div>
                         </div>
-                    </div>
-                    <button
-                        onClick={() =>
-                            window.scrollTo({ top: 0, behavior: 'smooth' })
-                        }
-                        className="fixed z-0 px-4 py-2 text-xs font-bold text-white bg-blue-500 rounded-full bottom-12 right-5 hover:bg-blue-700"
+                        <button
+                            onClick={() =>
+                                window.scrollTo({ top: 0, behavior: 'smooth' })
+                            }
+                            className="fixed bottom-12 right-5 z-0 rounded-full bg-blue-500 px-4 py-2 text-xs font-bold text-white hover:bg-blue-700"
                         >
-                        Back to top ↑
-                    </button>
-                </BlogProvider>
-            </DarkModeProvider>
-        </HelmetProvider>
-                            </Suspense>
+                            Back to top ↑
+                        </button>
+                    </BlogProvider>
+                </DarkModeProvider>
+            </HelmetProvider>
+        </Suspense>
     )
 }
 
