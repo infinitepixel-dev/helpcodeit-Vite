@@ -76,7 +76,7 @@ function App() {
                                 content="website"
                             />
                         </Helmet>
-                        <div className="m-0 w-full p-0">
+                        <div className="w-full p-0 m-0">
                             <Navbar theme={theme} />
                         </div>
 
@@ -85,20 +85,24 @@ function App() {
                                 ({
                                     path,
                                     component: Component,
-
+                                    key,
                                     props,
                                 }) => (
                                     <Route
-                                        key={uuidv4()}
+                                        key={key}
                                         path={path}
-                                        element={<Component {...props} />}
+                                        element={
+                                            <Suspense fallback={<div>Loading...</div>}>
+                                                <Component {...props} />
+                                            </Suspense>
+                                        }
                                     />
                                 )
                             )}
                             <Route path="/post/:id" element={<BlogPost />} />
                         </Routes>
 
-                        <div className="m-0 mt-5 w-full p-0">
+                        <div className="w-full p-0 m-0 mt-5">
                             {/* <Footer /> */}
                             {footerComponent
                                 ? React.createElement(footerComponent)
@@ -109,7 +113,7 @@ function App() {
                         onClick={() =>
                             window.scrollTo({ top: 0, behavior: 'smooth' })
                         }
-                        className="fixed bottom-12 right-5 z-0 rounded-full bg-blue-500 px-4 py-2 text-xs font-bold text-white hover:bg-blue-700"
+                        className="fixed z-0 px-4 py-2 text-xs font-bold text-white bg-blue-500 rounded-full bottom-12 right-5 hover:bg-blue-700"
                     >
                         Back to top ↑
                     </button>
