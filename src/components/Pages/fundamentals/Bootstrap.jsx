@@ -65,7 +65,7 @@ function Bootstrap() {
                                 title="YouTube video player"
                                 frameborder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                allowfullscreen
+                                allowFullScreen
                             ></iframe>
                         </div>
                         <div className="grid grid-cols-1 p-3 m-4 mx-auto my-auto text-center bg-white rounded-xl dark:bg-purple-600">
