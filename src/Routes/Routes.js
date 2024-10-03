@@ -620,9 +620,10 @@ if (typeof window !== 'undefined') {
                 const meta = component?.meta || {}
                 requiredMetaFields.forEach((field) => {
                     if (!meta[field]) {
-                        console.warn(
-                            `Meta field "${field}" is missing in component for path ${importPath}`
-                        )
+                        //TODO: Ensure all meta information is included when during test/dev...
+                        // console.warn(
+                        //     `Meta field "${field}" is missing in component for path ${importPath}`
+                        // )
                     }
                 })
             })
