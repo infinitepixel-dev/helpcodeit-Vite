@@ -18,6 +18,16 @@ json
 text
 */
 
+const getPlatform = () => {
+    if (navigator.userAgentData && navigator.userAgentData.platform) {
+        return navigator.userAgentData.platform;
+    } else if (navigator.platform) {
+        return navigator.platform;
+    } else {
+        return 'unknown';
+    }
+};
+
 const CodeBlock = ({ code, language, readOnly }) => {
     const codeRef = useRef(null);
     const [editorHeights, setEditorHeights] = useState({});
@@ -28,14 +38,14 @@ const CodeBlock = ({ code, language, readOnly }) => {
         let lineHeight = fontSize * 1.3;
         let charWidth = fontSize / 2 + 3;
 
-        const userAgent = window.navigator.userAgentData?.platform || window.navigator.userAgent;
+        const platform = getPlatform();
 
-        if (/Windows/.test(userAgent)) {
+        if (/Win/.test(platform)) {
             console.log('windows');
             padding = 40;
             lineHeight = fontSize * 1.2;
             charWidth = fontSize / 2 + 2;
-        } else if (/Mac/.test(userAgent)) {
+        } else if (/Mac/.test(platform)) {
             console.log('mac');
             padding = 40;
             lineHeight = fontSize * 1.3;
