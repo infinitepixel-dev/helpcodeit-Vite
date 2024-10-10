@@ -76,7 +76,7 @@ function App() {
                                 content="website"
                             />
                         </Helmet>
-                        <div className="w-full p-0 m-0">
+                        <div className="m-0 w-full p-0">
                             <Navbar theme={theme} />
                         </div>
 
@@ -89,10 +89,13 @@ function App() {
                                     props,
                                 }) => (
                                     <Route
+                                        id={uuidv4()}
                                         key={key}
                                         path={path}
                                         element={
-                                            <Suspense fallback={<div>Loading...</div>}>
+                                            <Suspense
+                                                fallback={<div>Loading...</div>}
+                                            >
                                                 <Component {...props} />
                                             </Suspense>
                                         }
@@ -102,7 +105,7 @@ function App() {
                             <Route path="/post/:id" element={<BlogPost />} />
                         </Routes>
 
-                        <div className="w-full p-0 m-0 mt-5">
+                        <div className="m-0 mt-5 w-full p-0">
                             {/* <Footer /> */}
                             {footerComponent
                                 ? React.createElement(footerComponent)
@@ -113,7 +116,7 @@ function App() {
                         onClick={() =>
                             window.scrollTo({ top: 0, behavior: 'smooth' })
                         }
-                        className="fixed z-0 px-4 py-2 text-xs font-bold text-white bg-blue-500 rounded-full bottom-12 right-5 hover:bg-blue-700"
+                        className="fixed bottom-12 right-5 z-0 rounded-full bg-blue-500 px-4 py-2 text-xs font-bold text-white hover:bg-blue-700"
                     >
                         Back to top ↑
                     </button>
