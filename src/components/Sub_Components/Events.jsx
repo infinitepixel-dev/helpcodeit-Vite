@@ -85,6 +85,17 @@ const events = [
       cost: "10",
       show: true,
       youtubeEmbed: `<div class="relative pb-[56.25%] overflow-hidden"><iframe  src="https://www.youtube.com/embed/k-HrTJiyoAM?si=bAdqUk3pcVrsQ5X5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="top-0 left-0 absolute w-full h-full" allowfullscreen></iframe> `,
+    },
+    {
+      title: "Git and Github Collaboration for Beginners Workshop",
+      date: "Saturday October 26th, 2024",
+      time: "3:00 PM pst | 4:00 PM mst | 5:00 PM cst | 6:00 PM est",
+      link: "https://calendly.com/michaelvarnell/git-and-github-basics",
+      ISOdate: "2024-10-26T22:00:00.000Z",
+      description: `This class will cover Git and GitHub Collaboration Basics. This will have an overview of how to setup and use Git with GitHub, and will also cover branching, common terminology, pull requests, issues, and other basics. The highlight of this class will be the hands-on practice of using Git and GitHub to collaborate on a example project.`,
+      cost: "10",
+      show: true,
+      youtubeEmbed: `<div class="relative pb-[56.25%] overflow-hidden"><iframe  src="https://www.youtube.com/embed/k-HrTJiyoAM?si=bAdqUk3pcVrsQ5X5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" class="top-0 left-0 absolute w-full h-full" allowfullscreen></iframe> `,
     }
 ]
 
