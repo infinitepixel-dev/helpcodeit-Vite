@@ -15,7 +15,7 @@ import { BlogProvider } from '@subComponents/BlogAPI' // Correct import for Blog
 import { HelmetProvider } from 'react-helmet-async'
 
 // console.log('RoutesWithComponents: ', RoutesWithComponents)
-asdfdsfdfadsfdsfsdfd
+
 //INFO Define theme outside of App component
 const useTheme = () => {
     const [theme, setTheme] = useState(
