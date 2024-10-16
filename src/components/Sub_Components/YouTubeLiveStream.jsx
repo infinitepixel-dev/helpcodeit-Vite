@@ -30,9 +30,9 @@ const YouTubeLiveStream = ({ apiKey, channelId }) => {
 
     if (!liveVideoId) {
         return (
-            <div className="mt-5 text-center text-rose-500">
-                No live stream currently ongoing.
+            <div className="mb-3 grid align-middle justify-center text-center text-rose-500">
                 <span className="ml-2 inline-flex items-center ">
+                No live stream currently ongoing.
                     <PodcastIcon />
                 </span>
             </div>
