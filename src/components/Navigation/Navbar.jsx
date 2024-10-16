@@ -24,10 +24,10 @@ const Navbar = ({ theme }) => {
   }, []);
 
   const navLinkClasses = ({ isActive }) => `
-    px-3 py-2 rounded-md text-base font-medium
+    px-3 py-2 rounded-md text-base barlow-semi-condensed-regular
     ${isActive
-      ? 'bg-gray-900 text-white'
-      : 'text-gray-300 hover:bg-gray-700 hover:text-white'
+      ? 'bg-gray-900 text-white dark:bg-gray-700 dark:text-white'
+      : 'text-gray-300 hover:bg-gray-700 hover:text-white dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white'
     }
   `;
 
@@ -44,7 +44,7 @@ const Navbar = ({ theme }) => {
       <div className="relative group">
         <button
           onClick={toggleDropdown}
-          className="px-3 py-2 text-base font-medium text-gray-300 rounded-md hover:bg-gray-700 hover:text-white"
+          className="px-3 py-2 text-base text-gray-300 rounded-md hover:bg-gray-700 hover:text-white barlow-semi-condensed-regular dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
         >
           {label}
         </button>
@@ -52,14 +52,16 @@ const Navbar = ({ theme }) => {
           id="custom-drop"
           className={`
             absolute w-48 mt-2 right-0 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 z-50
+            dark:bg-gray-800
             ${isSmallScreen
               ? isDropdownOpen ? 'block' : 'hidden'
-              : 'invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300'}
+              : 'invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300'
+            }
           `}
           style={{ top: isSmallScreen ? 'auto' : '30px', right: isSmallScreen ? '0' : 'auto' }}
         >
           <div
-            className="py-1"
+            className="py-1 barlow-semi-condensed-regular"
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="options-menu"
@@ -68,7 +70,7 @@ const Navbar = ({ theme }) => {
               <NavLink
                 key={index}
                 to={item.to}
-                className="block px-4 py-2 text-base font-bold text-gray-600 hover:bg-gray-50"
+                className="block px-4 py-2 text-base text-gray-700 hover:bg-gray-50 barlow-semi-condensed-regular dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
                 role="menuitem"
                 onClick={() => {
                   setOpenDropdown(null);
@@ -118,7 +120,7 @@ const Navbar = ({ theme }) => {
   };
 
   return (
-    <nav className="relative z-40 bg-neutral-900">
+    <nav className="relative z-40 bg-neutral-900 dark:bg-gray-900">
       <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
@@ -127,7 +129,7 @@ const Navbar = ({ theme }) => {
             </div>
           </div>
           <div className={`${isSmallScreen ? 'hidden' : 'block'} me-5 ms-auto`}>
-            <div className="flex items-baseline space-x-3 ml-28">
+            <div className="flex items-baseline space-x-3 ml-28 barlow-semi-condensed-regular">
               {renderNavItems()}
               {renderBlogsNavLink()}
             </div>
@@ -135,7 +137,7 @@ const Navbar = ({ theme }) => {
           <div className={`flex ${isSmallScreen ? 'block' : 'hidden'}`}>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:bg-gray-700 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white focus:outline-none"
+              className="inline-flex items-center justify-center p-2 text-gray-400 rounded-md hover:bg-gray-700 focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 hover:text-white focus:outline-none barlow-semi-condensed-regular dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
             >
               <span className="sr-only">Open main menu</span>
               <svg
@@ -164,7 +166,7 @@ const Navbar = ({ theme }) => {
       </div>
 
       {isOpen && isSmallScreen && (
-        <div className="absolute z-50 w-full bg-gray-800">
+        <div className="absolute z-50 w-full bg-gray-800 dark:bg-gray-800 barlow-semi-condensed-regular">
           <div className="flex flex-col items-end px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {renderNavItems(true)}
             {renderBlogsNavLink()}

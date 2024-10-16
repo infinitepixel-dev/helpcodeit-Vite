@@ -90,7 +90,7 @@ function App() {
                                 }) => (
                                     <Route
                                         id={uuidv4()}
-                                        key={key}
+                                        key={uuidv4()}
                                         path={path}
                                         element={
                                             <Suspense

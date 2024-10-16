@@ -30,8 +30,8 @@ export const navItems = [
         type: 'dropdown',
         label: 'Meetings and Events',
         items: [
-            { to: '/calendar', label: 'Event Calendar' },
             { to: '/schedule-meeting', label: 'Schedule a Meeting' },
+            { to: '/calendar', label: 'Event Calendar' },
         ],
     },
     {
