@@ -125,7 +125,10 @@ const Navbar = ({ theme }) => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0">
-              <img className="w-10 h-10 rounded-lg" src={logo} alt="Logo" />
+              <div className="flex items-center space-x-2">
+                <img className="w-10 h-10 rounded-lg" src={logo} alt="Logo" />
+                <h1 className="text-xl roboto-font text-white dark:text-white">HelpCodeIT</h1>
+              </div>
             </div>
           </div>
           <div className={`${isSmallScreen ? 'hidden' : 'block'} me-5 ms-auto`}>
