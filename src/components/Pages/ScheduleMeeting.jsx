@@ -9,7 +9,7 @@ const ScheduleMeeting = () => {
 
 
     return (
-        <div className="min-h-screen mb-10">
+        <div className="min-h-screen mb-10 barlow-semi-condensed-regular">
             <Helmet>
                 <title>
                     Book a Meeting with Michael Varnell | Help Code It
@@ -132,17 +132,17 @@ const ScheduleMeeting = () => {
                         ))}
                     </div>
                         <div className="mx-auto">
-                            <p className="mt-8 text-center ">If you need an after hours appointment, please use our contact form on the contact page and we will try to accomidate it.</p>
+                            <p className="mt-8 text-balance text-center ">If you need an after hours appointment, or even a longer appointment, please use our contact form on the contact page and we will try to accomidate it.</p>
                         </div>
                 </div>
                 <div className="p-8 mt-16 bg-gray-100 rounded-lg">
-                    <h2 className="mb-4 text-2xl font-bold text-gray-700">
+                    <h2 className="mb-4 text-2xl font-bold text-gray-700barlow-semi-condensed-heavy">
                         About <br />{' '}
-                        <span className="text-3xl">Michael Varnell</span>
+                        <span className="text-3xl barlow-semi-condensed-heavy">Michael Varnell</span>
                     </h2>
                     <div className="grid grid-cols-3">
                         <div className="col-span-3 text-xl md:col-span-2">
-                            <p className="mb-4 text-gray-700">
+                            <p className="mb-4 text-gray-700 barlow-semi-condensed-regular">
                                 Michael is a skilled Software Developer with
                                 expertise in modern Front End technologies,
                                 including React.js, JavaScript, TypeScript, and
@@ -151,14 +151,14 @@ const ScheduleMeeting = () => {
                                 of Central Arkansas, where he focused on web
                                 development.
                             </p>
-                            <p className="mb-4 text-gray-700">
+                            <p className="mb-4 text-gray-700 barlow-semi-condensed-regular">
                                 Currently enhancing his skills in backend
                                 technologies, Michael&apos;s capabilities also
                                 encompass UI/UX design and API integration,
                                 enabling him to craft engaging and cutting-edge
                                 web experiences.
                             </p>
-                            <p className="text-gray-700">
+                            <p className="text-gray-700 barlow-semi-condensed-regular">
                                 As an educator, Michael is deeply committed to
                                 guiding students through the intricacies of
                                 front-end development, inspiring them to
