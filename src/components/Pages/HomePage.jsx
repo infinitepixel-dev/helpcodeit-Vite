@@ -174,7 +174,7 @@ function HomePage() {
             <div className="container ">
 <hr className="border-1 border-gray-300 " />
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                    <EventCard limit={1} />
+                    
                     <div className="space-y-6 mt-8">
                     <div className="grid justify-end">
                             <BlogPostLists posts={posts} />
@@ -266,6 +266,7 @@ function HomePage() {
 
                         
                     </div>
+                    <EventCard limit={1} />
                 </div>
             </div>
 {/* !SECTION Content */}
