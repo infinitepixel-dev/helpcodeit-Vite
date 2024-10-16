@@ -4,7 +4,7 @@ import MainCards from '../Sub_Components/MainCards'
 // import EventAlert from '../Sub_Components/EventAlert'
 import { Helmet } from 'react-helmet-async'
 import { ArrowUpRight } from 'lucide-react'
-import heroImage from '@assets/pexels-lukas-574069.jpg'
+import heroImage from '@assets/ImpostorSyndromeIllustration.webp'
 
 import {
     parseISO,
@@ -125,13 +125,13 @@ function HomePage() {
             </Helmet>
          {/* SECTION Hero */}
 
-            <div className="container ">
+            <div className="container">
                 <div
                     className="mx-auto mt-12 grid grid-cols-1 md:grid-cols-2"
                     data-label="Hero Section"
                 >
-                    <div className="flex align-middle">
-                        <div className="p-8">
+                    <div className="flex align-middle justify-center">
+                        <div className="p-14">
                             <img
                                 src={heroImage}
                                 alt="Hero Image"
@@ -140,38 +140,48 @@ function HomePage() {
                         </div>
                     </div>
 
-                    <div className="my-auto w-3/4 ">
-                        <p className="barlow-semi-condensed-regular">
-                            Learning Coding Just Got Easier
-                        </p>
-                        <h1 className="barlow-semi-condensed-medium mb-2 text-balance text-5xl">
-                            Everyone Gets Impostor Syndrome
-                        </h1>
-                        <p className="barlow-semi-condensed-regular">
-                        Don't let challenging topics slow you down! Schedule a meeting with one of our experienced Software Engineers for personalized support. Sometimes, all you need is a little guidance to spark your progress. Click below to get started and take that next step forward!
-                        </p>
-                        <div className="flex flex-row">
-                            <Link
-                                to="/schedule-meeting"
-                                className="barlow-semi-condensed-semibold mb-8 mt-3 flex items-center text-lg text-blue-500 hover:text-blue-800 dark:text-blue-300 hover:dark:text-blue-500"
-                            >
-                                Schedule a Session Now{' '}
-                                <ArrowUpRight className="ml-1" />
-                            </Link>
+                    <div className="my-auto w-3/4">
+                        <div className="|">
+                            <p className="roboto-font text-sm text-gray-500  dark:text-gray-200">
+                                Learning Coding Just Got Easier
+                            </p>
+                            <h1 className="barlow-semi-condensed-medium mb-2 text-balance text-5xl">
+                                Everyone Gets Impostor Syndrome
+                            </h1>
+                            <p className="barlow-semi-condensed-regular">
+                            Don't let challenging topics slow you down! Schedule a meeting with one of our experienced Software Engineers for personalized support. Sometimes, all you need is a little guidance to spark your progress. Click below to get started and take that next step forward!
+                            </p>
+                            <div className="my-3">
+                                <p className="barlow-semi-condensed-semibold">Michael Varnell</p>
+                                <p className="barlow-semi-condensed-regular">Software Engineer</p>
+                            </div>
+                            <hr className="border-1 border-gray-300 w-2/3" />
+                            <div className="flex flex-row">
+                                <Link
+                                    to="/schedule-meeting"
+                                    className="barlow-semi-condensed-semibold mb-8 mt-3 flex items-center text-lg text-blue-500 hover:text-blue-800 dark:text-blue-300 hover:dark:text-blue-500"
+                                >
+                                    Schedule a Session Now{' '}
+                                    <ArrowUpRight className="ml-1" />
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         {/* !SECTION Hero */}
-
 {/* SECTION Content */}
             <div className="container ">
+<hr className="border-1 border-gray-300 " />
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                    <EventCard limit={1} />
+                    
                     <div className="space-y-6 mt-8">
-                        <div className="rounded-xl bg-blue-950 p-3">
+                    <div className="grid justify-end">
+                            <BlogPostLists posts={posts} />
+                        </div>
+                        <div className="rounded-xl bg-blue-950 mx-2 p-3">
                             <h2 className="text-white text-2xl barlow-semi-condensed-regular text-center">Social Media</h2>
-                            <div className="overflow-hidden rounded-xl shadow-md">
+                            <div className="overflow-hidden rounded-xl">
                                 <YouTubeLiveStream
                                     apiKey={VITE_YT_API_KEY_MV}
                                     channelId={VITE_YT_CHANNEL_ID_MV}
@@ -254,10 +264,9 @@ function HomePage() {
                             </div>{' '}
                         </div>
 
-                        <div className="grid justify-end">
-                            <BlogPostLists posts={posts} />
-                        </div>
+                        
                     </div>
+                    <EventCard limit={1} />
                 </div>
             </div>
 {/* !SECTION Content */}
