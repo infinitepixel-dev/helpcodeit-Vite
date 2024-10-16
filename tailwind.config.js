@@ -16,12 +16,12 @@ module.exports = {
             '@fundamentals': path.resolve(__dirname, 'src/components/Pages/fundamentals'),
         },
       },
-    content: [
-        './pages/**/*.{js,jsx}',
-        './components/**/*.{js,jsx}',
-        './app/**/*.{js,jsx}',
-        './src/**/*.{js,jsx}',
-    ],
+    content: {
+       files: ['./pages/**/*.{js,jsx}',
+            './components/**/*.{js,jsx}',
+            './app/**/*.{js,jsx}',
+            './src/**/*.{js,jsx}'],
+    },
     prefix: '',
     theme: {
         container: {
@@ -86,12 +86,16 @@ module.exports = {
                 md: 'calc(var(--radius) - 2px)',
                 sm: 'calc(var(--radius) - 4px)',
             },
+            fontFamily: {
+                sans: ['barlow-semi-condensed-regular', 'sans-serif'],
+                mono: ['JetBrains Mono', 'monospace'],
+            },
         },
     },
     plugins: [
         // eslint-disable-next-line no-undef
         require('tailwindcss-animate'), // Ensure this is the correct package name
         'prettier-plugin-tailwindcss',
-        'daisyui',
+        'daisyui', 'fluid',
     ],
 }
