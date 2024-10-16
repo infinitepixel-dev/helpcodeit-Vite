@@ -4,6 +4,8 @@ import LogoImage from '@subComponents/LogoImage'
 import MainCards from '../Sub_Components/MainCards'
 // import EventAlert from '../Sub_Components/EventAlert'
 import { Helmet } from 'react-helmet-async'
+import { ArrowUpRight } from 'lucide-react'
+import  heroImage  from '@assets/pexels-lukas-574069.jpg'
 
 import {
     parseISO,
@@ -79,34 +81,49 @@ function HomePage() {
     return (
         <div>
             <Helmet>
-        <title>Help Code It | Resources for Beginning Developers</title>
-        <meta
-          name="description"
-          content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
-        />
+                <title>Help Code It | Resources for Beginning Developers</title>
+                <meta
+                    name="description"
+                    content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
+                />
 
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.helpcodeit.com/" />
-        <meta property="og:title" content="Help Code It | Resources for Beginning Developers" />
-        <meta
-          property="og:description"
-          content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
-        />
-        <meta property="og:image" content="https://www.helpcodeit.com/assets/helpcodeitlogo.CsyqkzOG.svg" />
+                {/* Open Graph / Facebook */}
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.helpcodeit.com/" />
+                <meta
+                    property="og:title"
+                    content="Help Code It | Resources for Beginning Developers"
+                />
+                <meta
+                    property="og:description"
+                    content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
+                />
+                <meta
+                    property="og:image"
+                    content="https://www.helpcodeit.com/assets/helpcodeitlogo.CsyqkzOG.svg"
+                />
 
-        {/* Twitter */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://www.helpcodeit.com/" />
-        <meta property="twitter:title" content="Help Code It | Resources for Beginning Developers" />
-        <meta
-          property="twitter:description"
-          content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
-        />
-        <meta property="twitter:image" content="https://www.helpcodeit.com/assets/helpcodeitlogo.CsyqkzOG.svg" />
+                {/* Twitter */}
+                <meta property="twitter:card" content="summary_large_image" />
+                <meta
+                    property="twitter:url"
+                    content="https://www.helpcodeit.com/"
+                />
+                <meta
+                    property="twitter:title"
+                    content="Help Code It | Resources for Beginning Developers"
+                />
+                <meta
+                    property="twitter:description"
+                    content="Get expert coding help and tutoring for beginning developers. Join our Git and GitHub Workshop and explore our resources. Reference, examples, and more!"
+                />
+                <meta
+                    property="twitter:image"
+                    content="https://www.helpcodeit.com/assets/helpcodeitlogo.CsyqkzOG.svg"
+                />
 
-        <link rel="canonical" href="https://www.helpcodeit.com" />
-      </Helmet>
+                <link rel="canonical" href="https://www.helpcodeit.com" />
+            </Helmet>
             {/* {new Date(filteredEvents[0].ISOdate) > currentDate &&
             filteredEvents[0].show ? (
                 <AlertMessage
@@ -125,14 +142,47 @@ function HomePage() {
             {/* {event.ISOdate > new Date().toISOString() && <EventAlert event={event} />}
             {/* SECTION Jumbotron */}
 
-            <div className="text-white hero-text bg-neutral-800">
-                <div className="relative grid-cols-2">
-                    <JumboBackground />
+            <div className="container ">
+                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 mx-auto">
+                    <div className='flex align-middle'>
+                        <div className="p-8">
+                            <img
+                                src={heroImage}
+                                alt="Hero Image"
+                                className="h-full w-full object-cover rounded-lg"
+                            />
+                        </div>
+                    </div>
+                    <div className="w-3/4 my-auto ">
+                        <p className="barlow-semi-condensed-regular">
+                            Learning Coding Just Got Easier
+                        </p>
+                        <h1 className="barlow-semi-condensed-medium mb-2 text-balance text-5xl">
+                            Everyone Gets Impostor Syndrome
+                        </h1>
+                        <p className="barlow-semi-condensed-regular">
+                            We're here to help! Meet with a Software Engineer to
+                            work through that difficult topic, or just for
+                            support! Sometimes you just need that one piece of
+                            data that can start the ball rolling again. Our
+                            focus is to give you that small nudge to get things
+                            going again!
+                        </p>
+                        <div className="flex flex-row">
+                            <Link
+                                to="/schedule-meeting"
+                                className="mb-8 mt-3 flex barlow-semi-condensed-semibold text-lg items-center text-blue-500 hover:text-blue-800 dark:text-blue-300 hover:dark:text-blue-500"
+                            >
+                                Schedule a Session Now{' '}
+                                <ArrowUpRight className="ml-1" />
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <div className="container">
-                <div className="grid grid-cols-1 mx-8 mt-5 overflow-hidden bg-gray-800 shadow-md rounded-xl lg:grid-cols-3">
+                <div className="mx-8 mt-5 grid grid-cols-1 overflow-hidden rounded-xl bg-gray-800 shadow-md lg:grid-cols-3">
                     <div>
                         <div>
                             <YouTubeLiveStream
@@ -140,14 +190,14 @@ function HomePage() {
                                 channelId={VITE_YT_CHANNEL_ID_MV}
                             />
                         </div>
-                        <div className="px-2 py-4 space-y-6">
+                        <div className="space-y-6 px-2 py-4">
                             <div className="grid justify-center gap-2">
                                 <div>
                                     <a
                                         href="https://www.youtube.com/@HelpCodeIt"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center px-6 py-3 font-bold text-white transition-all duration-300 transform bg-red-600 rounded-full hover:-translate-y-1 hover:bg-red-700 hover:shadow-lg"
+                                        className="inline-flex transform items-center rounded-full bg-red-600 px-6 py-3 font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-red-700 hover:shadow-lg"
                                     >
                                         <Youtube size={24} className="mr-3" />
                                         Visit our YouTube Channel
@@ -158,10 +208,10 @@ function HomePage() {
                                         href="https://discord.gg/sDtKwcuK3J"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center w-full px-6 py-3 font-bold text-white transition-all duration-300 transform bg-indigo-600 rounded-full hover:-translate-y-1 hover:bg-indigo-700 hover:shadow-lg"
+                                        className="inline-flex w-full transform items-center rounded-full bg-indigo-600 px-6 py-3 font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-indigo-700 hover:shadow-lg"
                                     >
                                         <svg
-                                            className="w-6 h-6 mr-3 fill-current"
+                                            className="mr-3 h-6 w-6 fill-current"
                                             role="img"
                                             viewBox="0 0 24 24"
                                             xmlns="http://www.w3.org/2000/svg"
@@ -176,12 +226,12 @@ function HomePage() {
                                         href="https://x.com/HelpCodeIt"
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="inline-flex items-center w-full px-6 py-3 font-bold text-white transition-all duration-300 transform bg-black rounded-full hover:-translate-y-1 hover:bg-blue-400 hover:shadow-lg"
+                                        className="inline-flex w-full transform items-center rounded-full bg-black px-6 py-3 font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-blue-400 hover:shadow-lg"
                                         onMouseEnter={handleMouseEnter}
                                         onMouseLeave={handleMouseLeave}
                                     >
                                         <svg
-                                            className="w-6 h-6 mr-3 transition-all duration-300 fill-current"
+                                            className="mr-3 h-6 w-6 fill-current transition-all duration-300"
                                             role="img"
                                             viewBox={
                                                 isX
@@ -223,30 +273,30 @@ function HomePage() {
             <div className="container">
                 <div className="grid md:grid-cols-1 lg:grid-cols-2">
                     <div className="mx-auto mb-3">
-                        <h2 className="mt-6 text-3xl font-bold text-center">
+                        <h2 className="mt-6 text-center text-3xl font-bold">
                             Upcoming Event
                         </h2>
                         <EventCard limit={1} />
                     </div>
-                    <div className="clearfix mt-8 mb-auto">
-                        <h2 className="mb-3 text-4xl font-bold text-center">
+                    <div className="clearfix mb-auto mt-8">
+                        <h2 className="mb-3 text-center text-4xl font-bold">
                             Get expert coding help and tutoring
                         </h2>
 
-                        <div className="max-w-2xl p-8 mx-auto mt-3 mb-8 rounded-lg">
-                            <h2 className="mb-6 text-3xl font-bold text-center">
+                        <div className="mx-auto mb-8 mt-3 max-w-2xl rounded-lg p-8">
+                            <h2 className="mb-6 text-center text-3xl font-bold">
                                 Book a session now!
                             </h2>
-                            <p className="mb-6 text-xl text-center">
+                            <p className="mb-6 text-center text-xl">
                                 Elevate your software development skills with
                                 personalized guidance from an experienced
                                 professional. Choose the meeting option that
                                 best fits your needs and schedule.
                             </p>
-                            <Link to="/schedule-meeting" className="block mb-8">
+                            <Link to="/schedule-meeting" className="mb-8 block">
                                 <button
                                     aria-label="explore meeting options button"
-                                    className="flex px-6 py-3 mx-auto font-bold text-white transition duration-300 bg-blue-700 rounded-full w-fit hover:bg-red-700"
+                                    className="mx-auto flex w-fit rounded-full bg-blue-700 px-6 py-3 font-bold text-white transition duration-300 hover:bg-red-700"
                                 >
                                     Explore Meeting Options
                                     <CalendarSearch
@@ -256,15 +306,31 @@ function HomePage() {
                                     />
                                 </button>
                             </Link>
-                            <div className="text-xl text-center">
-                                <p>If you have any questions and want to check in before scheduling a meeting, feel free to reach out via our contact page</p>
-                                <ul className='mt-6 list-disc list-inside'>
-                                <p className='font-semibold'>We can help you:</p>
-                                    <li className="font-semibold list-item">Get help with coding assignments</li>
-                                    <li className="font-semibold list-item">Learn new programming languages</li>
-                                    <li className="font-semibold list-item">Prepare for technical interviews</li>
-                                    <li className="font-semibold list-item">Get help with Git and GitHub</li>
-                                    <li className="font-semibold list-item">Learn how to build a portfolio</li>
+                            <div className="text-center text-xl">
+                                <p>
+                                    If you have any questions and want to check
+                                    in before scheduling a meeting, feel free to
+                                    reach out via our contact page
+                                </p>
+                                <ul className="mt-6 list-inside list-disc">
+                                    <p className="font-semibold">
+                                        We can help you:
+                                    </p>
+                                    <li className="list-item font-semibold">
+                                        Get help with coding assignments
+                                    </li>
+                                    <li className="list-item font-semibold">
+                                        Learn new programming languages
+                                    </li>
+                                    <li className="list-item font-semibold">
+                                        Prepare for technical interviews
+                                    </li>
+                                    <li className="list-item font-semibold">
+                                        Get help with Git and GitHub
+                                    </li>
+                                    <li className="list-item font-semibold">
+                                        Learn how to build a portfolio
+                                    </li>
                                 </ul>
                             </div>
                         </div>
