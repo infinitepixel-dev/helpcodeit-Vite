@@ -54,6 +54,10 @@ function JSONServer() {
                 Installation and Usage Instructions
             </h2>
             <hr className="mb-12 border-t-2 border-gray-300 dark:border-gray-700" />
+          
+
+            <p className='mb-8 text-lg text-center text-gray-600 dark:text-gray-400'>After the video we provide a step-by-step guide on how to install and use JSON-Server, complete with examples and other commands you may find useful.</p>
+            <div className="grid justify-center"><iframe width="560" height="315" src="https://www.youtube.com/embed/hnIt8IzcUpk?si=FVjcFklP22a3tqfX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
 
             <section className="mb-16">
                 <h3 className="mb-6 text-2xl font-semibold text-indigo-500 sm:text-3xl dark:text-indigo-300">What is JSON-Server?</h3>
