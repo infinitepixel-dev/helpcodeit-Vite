@@ -57,6 +57,7 @@ export const navItems = [
         type: 'dropdown',
         label: 'Topics',
         items: [
+            { to: '/fundamentals/WebDesignPrincipals', label: 'Web Design Principals' },
             { to: '/htmlPages/htmlMain', label: 'HTML' },
             { to: '/cssPages/CSSMain', label: 'CSS' },
             { to: '/fundamentals/Bootstrap', label: 'Bootstrap' },
@@ -485,6 +486,10 @@ export const componentRoutes = [
         componentPath:
             '../components/Pages/fundamentals/PracticeEnvironment.jsx',
         key: 'settingUpPracticeEnvironment',
+    },
+    {   path: '/fundamentals/WebDesignPrincipals',
+        componentPath: '../components/Pages/fundamentals/WebDesignPrincipals.jsx',
+        key: 'webDesignPrincipals',
     },
     //INFO:  REACT Pages
     {
