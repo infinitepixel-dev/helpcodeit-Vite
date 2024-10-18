@@ -1,5 +1,4 @@
-import React, { useEffect, useRef } from 'react'
-import hljs from 'highlight.js'
+// import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
 import homebrewlogo from '@assets/homebrew.svg'
 import nodeLogo from '@assets/nodejs.svg'
@@ -8,9 +7,7 @@ import { Helmet } from 'react-helmet-async'
 import CodeBlock from '@/components/Sub_Components/CodeBlock'
 
 function Installs() {
-    const codeRef = useRef(null)
-
-
+    // const codeRef = useRef(null)
 
     const homebrew = `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
@@ -35,7 +32,7 @@ function Installs() {
                 />
             </Helmet>
             <div className="container">
-                <h1 className="my-5 text-6xl text-center">
+                <h1 className="my-5 text-center text-6xl">
                     Installations Needed for Front End Developers
                 </h1>
                 <hr className="my-4 border-2 border-black dark:border-white" />
@@ -46,7 +43,7 @@ function Installs() {
                         get started. Below are the installations that you will
                         need to have:
                     </p>
-                    <ul className="font-bold list-disc list-inside">
+                    <ul className="list-inside list-disc font-bold">
                         <li className="my-4">
                             <a
                                 href="#homebrew"
@@ -96,7 +93,7 @@ function Installs() {
                             width="50px"
                             className="me-2"
                         />
-                        <h2 className="mt-6 text-4xl text-center mukataFont">
+                        <h2 className="mukataFont mt-6 text-center text-4xl">
                             Homebrew (Mac Only)
                         </h2>
                     </div>
@@ -113,7 +110,7 @@ function Installs() {
                             following command:
                         </p>
                         <pre className="">
-                           <CodeBlock code={homebrew} language="bash"/>
+                            <CodeBlock code={homebrew} language="bash" />
                         </pre>
                         <p className="my-4">
                             Once you have run the command, follow the
@@ -131,16 +128,17 @@ function Installs() {
                         </p>
                         <p>
                             Another major advantage is that updating software is
-                            as simple as running 'brew update' and 'brew
-                            upgrade' in your terminal. This will update all the
-                            software that you have installed using Homebrew.
+                            as simple as running &apos;brew update&apos; and
+                            &apos;brew upgrade&apos; in your terminal. This will
+                            update all the software that you have installed
+                            using Homebrew.
                         </p>
                     </div>
                     <div className="flex justify-center pt-16">
                         <img
                             src={nodeLogo}
                             alt="Node.js Logo"
-                            className="p-1 bg-white rounded-md"
+                            className="rounded-md bg-white p-1"
                             width="200px"
                             id="Node"
                         />
@@ -148,12 +146,12 @@ function Installs() {
                     <hr className="my-4 border-2 border-black dark:border-white" />
                     <div className="text-xl">
                         <p className="my-4">
-                            Node.js is a JavaScript runtime built on Chrome's V8
-                            JavaScript engine. Node.js uses an event-driven,
-                            non-blocking I/O model that makes it lightweight and
-                            efficient. Node.js' package ecosystem, npm, is the
-                            largest ecosystem of open source libraries in the
-                            world.
+                            Node.js is a JavaScript runtime built on
+                            Chrome&apos;s V8 JavaScript engine. Node.js uses an
+                            event-driven, non-blocking I/O model that makes it
+                            lightweight and efficient. Node.js&apos; package
+                            ecosystem, npm, is the largest ecosystem of open
+                            source libraries in the world.
                         </p>
                         <h3 className="text-4xl">
                             Installing Node.js with Homebrew
@@ -164,8 +162,10 @@ function Installs() {
                             run the following command:
                         </p>
                         <pre>
-                            <CodeBlock code={nodeUsingHomebrew} language="bash"/>
-
+                            <CodeBlock
+                                code={nodeUsingHomebrew}
+                                language="bash"
+                            />
                         </pre>
                         <p className="my-4">
                             Once you have run the command, follow the
@@ -182,6 +182,7 @@ function Installs() {
                                 href="https://nodejs.org/en"
                                 target="_blank"
                                 className="text-blue-600 underline hover:text-blue-900"
+                                rel="noreferrer"
                             >
                                 {' '}
                                 Node.js website
@@ -190,7 +191,7 @@ function Installs() {
                             have downloaded the file, run the installer and
                             follow the instructions.
                         </p>
-                        <div className="flex justify-center mt-14">
+                        <div className="mt-14 flex justify-center">
                             {' '}
                             <img
                                 src={vsCodeLogo}
@@ -207,6 +208,7 @@ function Installs() {
                                 href="https://code.visualstudio.com"
                                 target="_blank"
                                 className="text-blue-600 underline hover:text-blue-900"
+                                rel="noreferrer"
                             >
                                 {' '}
                                 Visual Studio Code website
