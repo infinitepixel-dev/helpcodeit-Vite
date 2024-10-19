@@ -74,7 +74,7 @@ const CopyButton = ({ textToCopy, position }) => {
     return (
         <button
             onClick={() => copyToClipboard(textToCopy)}
-            className={`copy-btn absolute m-1 ${position}`}
+            className={`copy-btn relative m-1 ${position}`}
             aria-label="Copy to clipboard"
         >
             {copied ? (
