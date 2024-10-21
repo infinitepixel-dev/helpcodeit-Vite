@@ -162,13 +162,6 @@ function StandardFunctions() {
                                 <div
                                     className={`${codeContainerStyles['code-container']} flex-none`}
                                 >
-                                    <CopyButton
-                                        textToCopy={sayHelloString}
-                                        className="absolute top-0 left-0" // This positions the copy button inside the relative container
-                                    />
-                                    <pre>
-                                        <CodeBlock code={sayHelloString} language="javascript"/>
-                                    </pre>
                                 </div>
                             </div>
 
@@ -178,7 +171,7 @@ function StandardFunctions() {
                                     named &apos;sayHello&apos; and make it show
                                     an alert pop-up with the words &apos;Hello,
                                     World!&apos; when it&apos;s used.&quot;
-                                </i>{' '}
+                                </i>
                                 This is a simple function with one purpose: to
                                 show a pop-up that says &apos;Hello,
                                 World!&apos;. You can create functions that do
@@ -188,7 +181,7 @@ function StandardFunctions() {
                                 endless!
                             </p>
                         </div>
-                        {/* Code Container - End */}
+                       <CodeBlock code={sayHelloString} language="javascript"/>
                     </div>
                     <hr className="mb-10 border-2 border-black dark:border-white" />
                 </div>
@@ -249,20 +242,10 @@ function StandardFunctions() {
                     </p>
 
                     {/*REVIEW -  Code Container - BEGIN */}
-                    <div className="flex items-start gap-5 m-2">
-                        <div className="relative">
-                            <div
-                                className={`${codeContainerStyles['code-container']} flex-none`}
-                            >
-                                <CopyButton
-                                    textToCopy={addNumbersString}
-                                    className="absolute top-0 left-0" // This positions the copy button inside the relative container
-                                />
-                                <pre>
-                                    <CodeBlock code={addNumbersString} language="javascript"/>
-                                </pre>
-                            </div>
+                        <div>
+                           <CodeBlock code={addNumbersString} language="javascript"/>
                         </div>
+                    <div className="flex items-start gap-5 m-2">
                         <p className="flex-auto">
                             If you wanted to have this function return the
                             result return the answer instead of showing a
@@ -278,37 +261,8 @@ function StandardFunctions() {
                         features. You can use them in many different ways to
                         make your code more powerful and easier to read.
                     </p>
-                    {/* Code Container - End */}
-
-                    {/* <hr className="border-2 border-black my-7 dark:border-white" /> */}
+                    <hr className="border-2 border-black my-7 dark:border-white" />
                 </div>
-                {/* FIXME This is commented out because it is not working */}
-                {/* <div className="observeMe">
-                    <h2 className="py-2 mt-10 text-3xl">
-                        Let&apos;s Practice!
-                    </h2>
-                    <Suspense fallback={<div>Loading...</div>}>
-                        <CodePractice
-                            codeRef={codeRef}
-                            instructions={`Create a function named "addNumbers" that takes two
-          parameters, adds them together, and then shows a pop-up with the
-          result.`}
-                            inputs={{
-                                input1: 'textarea',
-                                input2: 'singleLine',
-                            }}
-                            variables={{
-                                variable1: 'let num1 = 2;',
-                                variable2: 'let num2 = 3;',
-                            }}
-                            expectedOutput={'5'}
-                            // functionData={""}
-                            hljs={hljs}
-                        />
-                    </Suspense> */}
-                {/* </div>
-            </div> */}
-
             <div className="observeMe">
                 <p className="mt-10">
                     Now you know what functions are, how to create them, how to
