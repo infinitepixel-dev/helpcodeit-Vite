@@ -12,7 +12,7 @@ const sftp = new Client()
 const ssh = new SSHClient()
 
 const privateKeyPath = path.join(
-    process.env.USERPROFILE,
+    process.env.HOME,
     '.ssh',
     process.env.SSH_SK
 )
@@ -20,16 +20,18 @@ const privateKeyPath = path.join(
 // SSH connection settings
 const sftpConfig = {
     host: process.env.SFTP_HOST,
-    port: process.env.SFTP_PORT || 22,
-    username: process.env.SFTP_USER,
+    port: process.env.SSH_PORT || 22,
+    username: process.env.SSH_USER,
     privateKey: fs.existsSync(privateKeyPath)
         ? readFileSync(privateKeyPath)
         : null,
-    passphrase: process.env.SFTP_PASSWORD,
+    passphrase: process.env.SSH_PASSWORD,
     readyTimeout: 60000,
     keepaliveInterval: 10000,
     compression: 'none', // Disable compression for speed
 }
+
+console.log('SFTP config:', sftpConfig)
 
 if (!sftpConfig.privateKey) {
     throw new Error(`Private key not found at ${privateKeyPath}`)
@@ -130,8 +132,10 @@ sftp.connect(sftpConfig)
         })
     })
     .then(async () => {
-        const remoteDir = '/dev'
-        const tempDir = '/dev_tmp'
+        const remoteDir =
+            '/home/u504367542/domains/helpcodeit.com/public_html/dev'
+        const tempDir =
+            '/home/u504367542/domains/helpcodeit.com/public_html/dev_tmp'
         const localDistDir = path.join(process.cwd(), 'dist')
         const tarGzFilePath = path.join(process.cwd(), 'dist.tar.gz')
 
