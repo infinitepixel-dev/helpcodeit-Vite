@@ -1,4 +1,4 @@
-name: Build and Deploy Vite App
+name: Build and Deploy Vite App to MAIN Domain
 
 on:
   pull_request:

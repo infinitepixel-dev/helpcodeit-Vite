@@ -78,6 +78,11 @@ function UsefulLinks() {
             url: 'https://htmlcheatsheet.com/',
         },
         {
+            title: 'Emmet Cheatsheet',
+            description: 'Emmet cheatsheet for faster coding',
+            url: 'https://docs.emmet.io/cheat-sheet/',
+        },
+        {
             title: 'CSS Cheatsheet',
             description: 'Comprehensive CSS cheatsheet',
             url: 'https://htmlcheatsheet.com/css/',
@@ -131,6 +136,110 @@ function UsefulLinks() {
             title: 'PM2 Cheatsheet',
             description: 'Cheatsheet for PM2 process manager',
             url: 'https://devhints.io/pm2',
+        },
+    ]
+
+    const mappingLinks = [
+        {
+            title: 'OpenFreeMap',
+            description: 'OpenFreeMap official website',
+            url: 'https://openfreemap.org/',
+        },
+        {
+            title: 'MapLibre',
+            description: 'MapLibre official website',
+            url: 'https://maplibre.org/',
+        },
+        {
+            title: 'OpenStreetMap',
+            description: 'OpenStreetMap official website',
+            url: 'https://www.openstreetmap.org',
+        },
+        {
+            title: 'Google Maps JavaScript',
+            description: 'Google Maps JavaScript documentation',
+            url: 'https://developers.google.com/maps/do...',
+        },
+        {
+            title: 'Google Maps Pricing',
+            description: 'Google Maps pricing information',
+            url: 'https://mapsplatform.google.com/pricing/',
+        },
+        {
+            title: 'Mapbox',
+            description: 'Mapbox official website',
+            url: 'https://www.mapbox.com/',
+        },
+        {
+            title: 'Mapbox Pricing',
+            description: 'Mapbox pricing details',
+            url: 'https://www.mapbox.com/pricing',
+        },
+        {
+            title: 'MapTiler',
+            description: 'MapTiler official website',
+            url: 'https://www.maptiler.com/',
+        },
+        {
+            title: 'MapTiler Server',
+            description: 'MapTiler server information',
+            url: 'https://www.maptiler.com/server/',
+        },
+        {
+            title: 'Protomaps',
+            description: 'Protomaps official website',
+            url: 'https://protomaps.com/',
+        },
+        {
+            title: 'Leaflet',
+            description: 'Leaflet official website',
+            url: 'https://leafletjs.com/',
+        },
+        {
+            title: 'OpenLayers',
+            description: 'OpenLayers official website',
+            url: 'https://openlayers.org/',
+        },
+        {
+            title: 'Raster Tile Providers',
+            description:
+                'Information on raster tile providers from OpenStreetMap',
+            url: 'https://wiki.openstreetmap.org/Wiki/R...',
+        },
+        {
+            title: 'Vector Tiles',
+            description: 'Vector tiles documentation from OpenStreetMap',
+            url: 'https://wiki.openstreetmap.org/wiki/V...',
+        },
+        {
+            title: 'Maputnik Map Style Editor',
+            description: 'Maputnik map style editor',
+            url: 'https://maputnik.github.io/',
+        },
+        {
+            title: 'React-MapLibre',
+            description: 'React MapLibre component library',
+            url: 'https://visg|.github.io/react-maplibre/',
+        },
+        {
+            title: 'Vue-MapLibre-GL',
+            description: 'Vue MapLibre GL component library',
+            url: 'https://indoorequal.github.io/vue-map...',
+        },
+        {
+            title: 'Svelte-MapLibre',
+            description: 'Svelte MapLibre component library',
+            url: 'https://github.com/dimfeld/svelte-map...',
+        },
+        {
+            title: 'Awesome MapLibre',
+            description: 'Awesome MapLibre resources on GitHub',
+            url: 'https://github.com/maplibre/awesome-m...',
+        },
+        {
+            title: 'OpenFreeMap Self Hosting',
+            description: 'OpenFreeMap self hosting documentation',
+            url: 'https://github.com/hyperknot/openfree...',
         },
     ]
 
@@ -484,7 +593,7 @@ function UsefulLinks() {
                 A collection of useful resources for web developers
             </p>
             <div className="">
-                <ul className="flex flex-wrap justify-center space-x-4 text-lg ">
+                <ul className="flex flex-wrap justify-center space-x-4 text-lg">
                     <div className="grid grid-cols-2">
                         <li className="px-1 text-2xl font-semibold text-blue-500 hover:bg-blue-500 hover:text-white">
                             <a href="#generalresources">General Resources</a>
@@ -497,6 +606,9 @@ function UsefulLinks() {
                         </li>
                         <li className="px-1 text-2xl font-semibold text-blue-500 hover:bg-blue-500 hover:text-white">
                             <a href="#git&github">Git and GitHub</a>
+                        </li>
+                        <li className="px-1 text-2xl font-semibold text-blue-500 hover:bg-blue-500 hover:text-white">
+                            <a href="#mapping">Mapping for Websites</a>
                         </li>
                         <li className="px-1 text-2xl font-semibold text-blue-500 hover:bg-blue-500 hover:text-white">
                             <a href="#designresources">Design Resources</a>
@@ -606,6 +718,18 @@ function UsefulLinks() {
                         <ArrowBigUp className="ml-1" />
                     </a>
                 </div>
+                <h1 id='mapping' className='my-8 text-center text-3xl font-bold'>Mapping for Websites</h1>
+                <UsefulLinksTable links={mappingLinks} />
+                <div className="grid justify-center">
+                    <a
+                        href="#top"
+                        className="flex items-center text-blue-500 hover:text-blue-700"
+                    >
+                        Back to top
+                        <ArrowBigUp className="ml-1" />
+                    </a>
+                </div>
+
                 <h1
                     id="tailwind"
                     className="my-8 text-center text-3xl font-bold"
