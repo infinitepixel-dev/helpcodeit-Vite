@@ -1,7 +1,5 @@
-
-
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES, MARKS  } from '@contentful/rich-text-types';
@@ -149,6 +147,14 @@ function BlogPost() {
             )}
             <div>
                 {documentToReactComponents(post.fields.content, options)}
+            </div>
+            <div className="grid justify-center">
+                <Link
+                    to="/"
+                    className="inline-block px-6 py-3 mt-8 text-lg font-semibold  transition-colors duration-200 text-blue-600 dark:text-white rounded-lg hover:text-blue-700 dark:hover:text-blue-500"
+                >
+                    ← Back to Homepage
+                </Link>
             </div>
         </div>
     );
