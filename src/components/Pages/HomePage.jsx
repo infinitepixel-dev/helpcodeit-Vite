@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import MainCards from '../Sub_Components/MainCards'
 // import EventAlert from '../Sub_Components/EventAlert'
@@ -23,9 +23,31 @@ import PostList from './PostList'
 import YouTubeLiveStream from '@subComponents/YouTubeLiveStream'
 import { BlogContext } from '@subComponents/BlogAPI' // Correct import
 import BlogPostLists from '../Sub_Components/BlogViews/BlogPostLists'
+import EventModal from '../Sub_Components/EventModal/eventModal'
+
+
+
 
 function HomePage() {
     const [isX, setIsX] = useState(true)
+
+    //SECTION - MODAL STATUS
+    const [isModalOpen, setIsModalOpen] = useState(false)
+
+    
+
+    useEffect(() => {
+        const hasSeenModal = document.cookie.split('; ').find(row => row.startsWith('seenModal='));
+        if (!hasSeenModal && filteredEvents.length > 0) {
+          setIsModalOpen(true);
+        }
+      }, []);
+    
+      const handleCloseModal = () => {
+        setIsModalOpen(false);
+        document.cookie = "seenModal=true; max-age=31536000; path=/";
+    };
+    //!SECTION - MODAL STATUS
 
     const handleMouseEnter = () => {
         setIsX(false)
@@ -77,8 +99,18 @@ function HomePage() {
     console.log('LimitedToOne: ', limitedToOne)
     console.log('Posts: ', posts)
 
+    
+    
     return (
         <div>
+                {filteredEvents.length > 0 && (
+                <EventModal
+                    eventObject={filteredEvents[0]}
+                    isOpen={isModalOpen}
+                    onClose={handleCloseModal}
+                />
+            )}
+
             <Helmet>
                 <title>Help Code It | Resources for Beginning Developers</title>
                 <meta
