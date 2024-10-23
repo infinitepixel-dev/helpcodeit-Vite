@@ -24,6 +24,7 @@ import YouTubeLiveStream from '@subComponents/YouTubeLiveStream'
 import { BlogContext } from '@subComponents/BlogAPI' // Correct import
 import BlogPostLists from '../Sub_Components/BlogViews/BlogPostLists'
 import EventModal from '../Sub_Components/EventModal/eventModal'
+import CookieConsent from '@subComponents/CookieConsent/CookieConsent';
 
 
 
@@ -34,7 +35,7 @@ function HomePage() {
     //SECTION - MODAL STATUS
     const [isModalOpen, setIsModalOpen] = useState(false)
 
-    
+
 
     useEffect(() => {
         const hasSeenModal = document.cookie.split('; ').find(row => row.startsWith('seenModal='));
@@ -104,13 +105,14 @@ function HomePage() {
     return (
         <div>
                 {filteredEvents.length > 0 && (
-                <EventModal
+                    <EventModal
                     eventObject={filteredEvents[0]}
                     isOpen={isModalOpen}
                     onClose={handleCloseModal}
-                />
-            )}
+                    />
+                )}
 
+                <CookieConsent />
             <Helmet>
                 <title>Help Code It | Resources for Beginning Developers</title>
                 <meta
