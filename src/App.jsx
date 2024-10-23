@@ -10,7 +10,7 @@ import { Routes, Route } from 'react-router-dom'
 // import Footer from '@subComponents/Footer'
 import RoutesWithComponents from './Routes/Routes.js'
 import { Helmet } from 'react-helmet-async'
-import BlogPost from './components/Pages/BlogPost'
+import BlogPost from './components/Pages/Blog/BlogPost'
 import { BlogProvider } from '@subComponents/BlogAPI' // Correct import for BlogProvider
 import { HelmetProvider } from 'react-helmet-async'
 

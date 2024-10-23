@@ -1,0 +1,35 @@
+/* EventModal.css */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: 'Barlow', sans-serif;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.eventbutton {
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #0078d4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.eventbutton:hover {
+  background-color: #005a9e;
+}
