@@ -149,10 +149,10 @@ function Bootstrap() {
                             Example of setting up the links in the HTML
                             document:
                         </h2>
-                        <div className="flex">
-                            <pre>
+                        <div>
+                            
                                 <CodeBlock code={bootstrapLinking} language={'html'} />
-                            </pre>
+                            
                         </div>
                         <div>
                             <p className="mt-5">
