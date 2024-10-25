@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import vscodelogo from '@assets/visual-studio-code.svg';
 import imagePreview from '@assets/imagepreviewextension.jpeg';
+import autoprefixer from 'autoprefixer';
 
 const ExtensionCard = ({ title, author, description, iconUrl, link, languages }) => (
   <div className="bg-white dark:bg-gray-800 dark:border-none border border-1 border-gray-300 rounded-lg shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
@@ -31,6 +32,14 @@ const SettingItem = ({ title, description }) => (
 
 function VSCodeExtensions() {
   const extensions = [
+    {
+      title: 'Git Reminder',
+      author: 'Nicolas Hedger',
+      description: "Git Reminder is a Visual Studio Code extension that reminds you to commit and push your changes at regular intervals. It's a simple way to avoid losing your work and keep your repository up to date.",
+      iconUrl: 'https://nhedger.gallerycdn.vsassets.io/extensions/nhedger/git-reminder/2024.3.241749/1708796988472/Microsoft.VisualStudio.Services.Icons.Default',
+      link: 'https://marketplace.visualstudio.com/items?itemName=nhedger.git-reminder'
+
+    },
     {
       title: "Prettier",
       author: "Prettier",
@@ -73,6 +82,13 @@ function VSCodeExtensions() {
       description: "Preview images in your project without opening them. Great for quickly checking images.",
       iconUrl: imagePreview,
       link: "https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview"
+    },
+    {
+      title: "Version Lens",
+      Author: 'pflannery',
+      description: "Shows the latest version of your dependencies in package.json. Makes it easy to update your packages.",
+      iconUrl: "https://pflannery.gallerycdn.vsassets.io/extensions/pflannery/vscode-versionlens/1.14.2/1718202353384/Microsoft.VisualStudio.Services.Icons.Default",
+      link: "https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens"
     }
   ];
 
