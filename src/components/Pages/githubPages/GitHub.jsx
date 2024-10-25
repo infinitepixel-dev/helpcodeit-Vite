@@ -1,6 +1,6 @@
 import githubLogo from '@assets/github-icon.svg'
 import githublogolight from '@assets/github-icon-white.svg'
-import { useEffect, useRef } from 'react'
+//import { useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet-async'
 import GitHubMenu from '@subComponents/GitHubMenu'
 import library from '@assets/LibraryofCookbooks.webp'
