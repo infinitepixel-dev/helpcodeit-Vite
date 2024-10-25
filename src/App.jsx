@@ -2,7 +2,7 @@ import './App.css'
 import { v4 as uuidv4 } from 'uuid'
 
 // eslint-disable-next-line no-unused-vars
-import React, { useEffect, useState, lazy, Suspense } from 'react'
+import React, { useEffect, useState, Suspense } from 'react'
 import { DarkModeProvider } from './components/Context/DarkModeProvider'
 import Navbar from './components/Navigation/Navbar'
 
