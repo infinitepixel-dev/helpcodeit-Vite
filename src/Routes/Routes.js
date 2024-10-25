@@ -7,6 +7,7 @@ export const navItems = [
         label: 'Getting Started',
         items: [
             { to: '/fundamentals/Installs', label: 'Installs' },
+            { to: '/fundamentals/Files', label: 'Understanding Files' },
             { to: '/MiscPages/RubberDucky', label: 'Rubber Ducky Method' },
             {
                 to: '/fundamentals/NamingConventions',
@@ -164,6 +165,11 @@ export const componentRoutes = [
         path: '/fundamentals/NamingConventions',
         componentPath: '../components/Pages/fundamentals/NamingConventions.jsx',
         key: 'namingConventions',
+    },
+    {
+        path: '/fundamentals/Files',
+        componentPath: '../components/Pages/fundamentals/Files.jsx',
+        key: 'files',
     },
     {
         path: '*',
