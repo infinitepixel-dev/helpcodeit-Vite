@@ -27,7 +27,7 @@ const ExtensionCard = ({
                         className="mx-auto mb-4 h-24 w-24 rounded-md"
                     />
                 )}
-                <h3 className="mb-2 text-center text-2xl font-semibold">
+                <h3 className="mb-2 text-center text-2xl font-semibold text-balance">
                     {title}
                 </h3>
                 <p className="mb-4 text-center text-gray-600 dark:text-gray-400">
