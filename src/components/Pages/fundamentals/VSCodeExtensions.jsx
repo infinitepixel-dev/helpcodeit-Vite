@@ -41,19 +41,19 @@ function VSCodeExtensions() {
 
     },
     {
+      title: "Live Server",
+      author: "Ritwick Dey",
+      description: "See your changes in real-time without refreshing. Essential for immediate feedback during development.",
+      iconUrl: "https://ritwickdey.github.io/vscode-live-server/images/icon.png",
+      link: "https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
+    },
+    {
       title: "Prettier",
       author: "Prettier",
       description: "Format your code with a click. Highly customizable and can format on save. Works with various languages and frameworks.",
       iconUrl: "https://esbenp.gallerycdn.vsassets.io/extensions/esbenp/prettier-vscode/10.1.0/1690819498575/Microsoft.VisualStudio.Services.Icons.Default",
       link: "https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode",
       languages: "JavaScript · TypeScript · Flow · JSX · JSON · CSS · SCSS · Less · HTML · Vue · Angular · HANDLEBARS · Ember · Glimmer · GraphQL · Markdown · YAML"
-    },
-    {
-      title: "Live Server",
-      author: "Ritwick Dey",
-      description: "See your changes in real-time without refreshing. Essential for immediate feedback during development.",
-      iconUrl: "https://ritwickdey.github.io/vscode-live-server/images/icon.png",
-      link: "https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer"
     },
     {
       title: "Comment Anchors",
@@ -63,11 +63,11 @@ function VSCodeExtensions() {
       link: "https://marketplace.visualstudio.com/items?itemName=ExodiusStudios.comment-anchors"
     },
     {
-      title: "Inline Fold",
-      author: "Mohammed Alamri",
-      description: "Fold code blocks inline, making it easier to read and navigate through your code. This really helps with CSS!",
-      iconUrl: "https://raw.githubusercontent.com/moalamri/vscode-inline-fold/master/res/icon.png",
-      link: "https://marketplace.visualstudio.com/items?itemName=moalamri.inline-fold"
+      title: "Auto Rename Tag",
+      author: "Jun Han",
+      description: "Automatically rename paired HTML/XML tags. Saves time and reduces errors.",
+      iconUrl: "https://formulahendry.gallerycdn.vsassets.io/extensions/formulahendry/auto-rename-tag/0.1.10/1644319230173/Microsoft.VisualStudio.Services.Icons.Default",
+      link: "https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag"
     },
     {
       title: "Template String Converter",
@@ -85,7 +85,7 @@ function VSCodeExtensions() {
     },
     {
       title: "Version Lens",
-      Author: 'pflannery',
+      Author: "pflannery",
       description: "Shows the latest version of your dependencies in package.json. Makes it easy to update your packages.",
       iconUrl: "https://pflannery.gallerycdn.vsassets.io/extensions/pflannery/vscode-versionlens/1.14.2/1718202353384/Microsoft.VisualStudio.Services.Icons.Default",
       link: "https://marketplace.visualstudio.com/items?itemName=pflannery.vscode-versionlens"
@@ -94,7 +94,6 @@ function VSCodeExtensions() {
 
   const obsoleteExtensions = [
     { title: "- Auto Close Tag", description: "Search for 'auto close tags' in settings. Automatically closes tags in HTML." },
-    { title: "- Auto Rename Tag", description: "Search for 'auto rename tags' in settings. Automatically renames tags in HTML." },
     { title: "- Bracket Pair Colorizer", description: "Search for 'bracket pair colorizer' in settings. Colorizes brackets for better visibility." },
     { title: "- Indent Rainbow", description: "Search for 'indent rainbow' in settings. Colorizes indents for clearer code structure." }
   ];
