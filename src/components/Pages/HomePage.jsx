@@ -104,7 +104,7 @@ function HomePage() {
     
     return (
         <div>
-                {filteredEvents.length > 0 && (
+                {filteredEvents.length > 0 && filteredEvents[0].show == true && (
                     <EventModal
                     eventObject={filteredEvents[0]}
                     isOpen={isModalOpen}
