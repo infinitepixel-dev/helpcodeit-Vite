@@ -101,15 +101,15 @@ const ReactRouter6 = () => {
           </p>
           <CodeBlock code={`
 import React from 'react';
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom'; // <--- Import BrowserRouter
 
 function index() {
     return (
-        <BrowserRouter>
+        <BrowserRouter> {/* <--- Wrap your App component with BrowserRouter */}
         <StrictMode>
             <App />
         </StrictMode>
-        </BrowserRouter>
+        </BrowserRouter> {/* <--- Wrap your App component with BrowserRouter */}
     );
 }
 
@@ -127,17 +127,17 @@ export default index;
           <CodeBlock code={`
 import React from 'react';
 import {Route, Routes} from 'react-router-dom';
-import Home from './Home';
-import About from './About';
-import Contact from './Contact';
+import Home from './Home'; // <--- Import your components
+import About from './About'; // <--- Import your components
+import Contact from './Contact'; // <--- Import your components
 
 function App() {
     return (
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <Routes> {/* <--- Wrap all your Route components with Routes */}
+            <Route path="/" element={<Home />} />              {/* <--- Define your routes */}
+            <Route path="/about" element={<About />} />        {/* <--- Define your routes */}
+            <Route path="/contact" element={<Contact />} />    {/* <--- Define your routes */}
+        </Routes> {/* <--- Wrap all your Route components with Routes */}
     );
 }
 
@@ -159,20 +159,20 @@ export default App;
           </p>
           <CodeBlock code={`
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom'; // <--- Import the Link component
 
 function Navbar() {
     return (
         <nav>
             <ul>
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/">Home</Link>  {/* <--- Use the Link component */}
                 </li>
                 <li>
-                    <Link to="/about">About</Link>
+                    <Link to="/about">About</Link> {/* <--- Use the Link component */}
                 </li>
                 <li>
-                    <Link to="/contact">Contact</Link>
+                    <Link to="/contact">Contact</Link> {/* <--- Use the Link component */}
                 </li>
             </ul>
         </nav>
