@@ -94,10 +94,10 @@ const ReactRouter6 = () => {
 
         <section className="mb-8 rounded-lg bg-white p-6 shadow-md dark:bg-gray-800 border border-gray-200">
           <h3 className="mb-4 text-2xl font-semibold text-gray-800 dark:text-gray-100">
-            Basic Example: index.js
+            Basic Example: index.js/main.js/main.tsx
           </h3>
           <p className="mb-2 text-gray-600 dark:text-gray-300">
-            Here's how to set up BrowserRouter in your index.js file:
+            Here's how to set up BrowserRouter in your index.js/main.js/main.tsx file:
           </p>
           <CodeBlock code={`
 import React from 'react';
@@ -122,7 +122,7 @@ export default index;
             Defining Routes
           </h3>
           <p className="mb-2 text-gray-600 dark:text-gray-300">
-            Here's how to define routes in your application:
+            Here's how to define routes in your application in the App.js/App.tsx file:
           </p>
           <CodeBlock code={`
 import React from 'react';
