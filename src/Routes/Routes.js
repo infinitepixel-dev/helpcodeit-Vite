@@ -159,6 +159,11 @@ export const componentRoutes = [
         componentPath: '../components/Pages/cssPages/CSSAnimationIntro.jsx',
         key: 'cssAnimationIntro',
     },
+    { 
+        path: '/cssPages/CSSGenerators',
+        componentPath: '../components/Pages/cssPages/CSSGenerators.jsx',
+        key: 'cssGenerators',
+    },
 
     //INFO: MISC Pages
     {
