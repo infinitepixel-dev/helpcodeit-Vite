@@ -1,7 +1,7 @@
 import React from 'react';
 import reactLogo from '@assets/React.svg';
 import { Link } from 'react-router-dom';
-import { Code, BookOpen, Route, Zap, Layers, GitBranch } from 'lucide-react';
+import { Code, BookOpen, Route, Zap, Layers, GitBranch,HardDriveUpload } from 'lucide-react';
 
 const NavItem = ({ to, icon: Icon, label }) => (
   <Link
@@ -26,6 +26,7 @@ const ReactNavigation = ({ reactLogo }) => {
     { to: "/PlanningReactApps", icon: BookOpen, label: "Planning and Organizing React Apps" },
     { to: "/ReactHooks", icon: Zap, label: "React Hooks" },
     { to: "/TanstackQuery", icon: Zap, label: "Tanstack Query" },
+    { to: "/DeployAWS_S3", icon: HardDriveUpload, label: "Deploying a React App to AWS S3" },
   ];
 
   return (

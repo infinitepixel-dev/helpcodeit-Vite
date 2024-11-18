@@ -1,0 +1,168 @@
+.gradient-generator {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2.5rem;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.gradient-generator h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.controls {
+    display: grid;
+    gap: 2rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.type-selector {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.type-selector label {
+    flex: 1;
+    max-width: 150px;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.type-selector label:hover {
+    border-color: #3498db;
+}
+
+.type-selector input[type="radio"] {
+    margin-right: 8px;
+}
+
+.angle-control {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+}
+
+.angle-control label {
+    display: block;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.angle-control input[type="range"] {
+    width: 100%;
+    height: 8px;
+    background: #e2e8f0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.angle-control input[type="range"]::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+    background: #3498db;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.color-inputs {
+    display: grid;
+    gap: 1rem;
+}
+
+.color-input {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+}
+
+.color-input input[type="color"] {
+    width: 80px;
+    height: 45px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+button.add {
+    background: #3498db;
+    color: white;
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+button.add:hover {
+    background: #2980b9;
+    transform: translateY(-1px);
+}
+
+button.remove {
+    background: #f72626;
+    color: #ffffff;
+    padding:.4em
+}
+
+button.remove:hover {
+    background: #fba4a4;
+}
+
+.preview {
+    width: 100% !important;
+    height: 250px !important;
+    border-radius: 12px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.css-code {
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 2px solid #e2e8f0;
+}
+
+.css-code p {
+    font-weight: 500;
+    color: #4a5568;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 640px) {
+    .gradient-generator {
+        padding: 1.5rem;
+    }
+    
+    .type-selector {
+        flex-direction: column;
+    }
+    
+    .type-selector label {
+        max-width: 100%;
+    }
+}
+
