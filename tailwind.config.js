@@ -81,5 +81,9 @@ export default {
       },
     },
   },
-  plugins: [typography, forms, animate],
+  plugins: [
+    import('@tailwindcss/typography'),
+    import('@tailwindcss/forms'),
+    import('tailwindcss-animate'),
+  ],
 }
