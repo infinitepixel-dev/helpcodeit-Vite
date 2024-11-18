@@ -27,6 +27,7 @@ const CSSNavigation = () => {
     // { to: "/CSSGrid", icon: Layers, label: "CSS Grid Layout" },
     { to: "/cssPages/CSSResponsive", icon: Zap, label: "Responsive Design with CSS" },
    { to: "/cssPages/CSSAnimationIntro", icon: Code, label: "CSS Animations" },
+   { to: "/cssPages/CSSGenerators", icon: Code, label: "CSS Generators" },
   ];
 
   return (

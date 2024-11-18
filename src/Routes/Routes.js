@@ -159,6 +159,11 @@ export const componentRoutes = [
         componentPath: '../components/Pages/cssPages/CSSAnimationIntro.jsx',
         key: 'cssAnimationIntro',
     },
+    {
+        path: '/cssPages/CSSGenerators',
+        componentPath: '../components/Pages/cssPages/CSSGenerators.jsx',
+        key: 'cssGenerators',
+    },
 
     //INFO: MISC Pages
     {
@@ -559,6 +564,12 @@ export const componentRoutes = [
         componentPath: '../components/Pages/react/TanstackQuery.jsx',
         key: 'tanstackQuery',
     },
+    {
+        path: '/DeployAWS_S3',
+        componentPath: '../components/Pages/react/DeployAWS_S3.jsx',
+        key: 'deployAWS_S3',
+    },
+    // INFO Other Misc Pages
     {
         path: '/blogs',
         componentPath: '../components/Pages/BlogsPage.jsx',
