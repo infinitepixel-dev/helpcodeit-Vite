@@ -73,6 +73,11 @@ function UsefulLinks() {
 
     const cheatSheetLinks = [
         {
+            title: 'Command Line Commands',
+            description: 'List of common command line commands',
+            url: 'https://www.git-tower.com/blog/command-line-cheat-sheet/',
+        },
+        {
             title: 'HTML Cheatsheet',
             description: 'Comprehensive HTML cheatsheet',
             url: 'https://htmlcheatsheet.com/',
@@ -586,10 +591,10 @@ function UsefulLinks() {
                 />
             </Helmet>
 
-            <h1 className="my-8 text-center text-3xl font-bold">
+            <h1 className="my-8 text-3xl font-bold text-center">
                 Useful Links
             </h1>
-            <p className="mb-8 text-center text-lg">
+            <p className="mb-8 text-lg text-center">
                 A collection of useful resources for web developers
             </p>
             <div className="">
@@ -625,7 +630,7 @@ function UsefulLinks() {
                 </ul>
             </div>
             <div className="container mx-auto">
-                <h1 className="my-8 text-center text-3xl font-bold">
+                <h1 className="my-8 text-3xl font-bold text-center">
                     General Resources
                 </h1>
                 <UsefulLinksTable links={genlinks} />
@@ -640,7 +645,7 @@ function UsefulLinks() {
                 </div>
                 <h1
                     id="cheatsheets"
-                    className="my-8 text-center text-3xl font-bold"
+                    className="my-8 text-3xl font-bold text-center"
                 >
                     Cheatsheets
                 </h1>
@@ -656,7 +661,7 @@ function UsefulLinks() {
                 </div>
                 <h1
                     id="codinggames"
-                    className="my-8 text-center text-3xl font-bold"
+                    className="my-8 text-3xl font-bold text-center"
                 >
                     Coding Games
                 </h1>
@@ -672,7 +677,7 @@ function UsefulLinks() {
                 </div>
                 <h1
                     id="git&github"
-                    className="my-8 text-center text-3xl font-bold"
+                    className="my-8 text-3xl font-bold text-center"
                 >
                     Git and GitHub
                 </h1>
@@ -688,7 +693,7 @@ function UsefulLinks() {
                 </div>
                 <h1
                     id="designresources"
-                    className="my-8 text-center text-3xl font-bold"
+                    className="my-8 text-3xl font-bold text-center"
                 >
                     Design Resources
                 </h1>
@@ -704,7 +709,7 @@ function UsefulLinks() {
                 </div>
                 <h1
                     id="opensource"
-                    className="my-8 text-center text-3xl font-bold"
+                    className="my-8 text-3xl font-bold text-center"
                 >
                     Beginner Open Source Resources
                 </h1>
@@ -718,7 +723,7 @@ function UsefulLinks() {
                         <ArrowBigUp className="ml-1" />
                     </a>
                 </div>
-                <h1 id='mapping' className='my-8 text-center text-3xl font-bold'>Mapping for Websites</h1>
+                <h1 id='mapping' className='my-8 text-3xl font-bold text-center'>Mapping for Websites</h1>
                 <UsefulLinksTable links={mappingLinks} />
                 <div className="grid justify-center">
                     <a
@@ -732,7 +737,7 @@ function UsefulLinks() {
 
                 <h1
                     id="tailwind"
-                    className="my-8 text-center text-3xl font-bold"
+                    className="my-8 text-3xl font-bold text-center"
                 >
                     UI Resources
                 </h1>
