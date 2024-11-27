@@ -21,17 +21,17 @@ function JSCRUDMain() {
                     content="CRUD operations, APIs, JavaScript CRUD, AJAX, Axios, Fetch API, coding tutorial, web development, API examples"
                 />
             </Helmet>
-            <h1 className="my-10 text-center text-6xl">
+            <h1 className="my-10 text-6xl text-center">
                 CRUD Operations with API's
             </h1>
-            <div className="grid grid-cols-2 justify-center">
+            <div className="grid justify-center grid-cols-2">
                 <Link
                     to="/javascriptPrincipals/CRUD-AJAX"
                     className="mx-auto text-3xl"
                 >
                     <button
                     aria-label='AJAX/Axios CRUD Operations Examples'
-                    className="rounded-xl bg-blue-700 p-2 text-white hover:bg-blue-500">
+                    className="p-2 text-white bg-blue-700 rounded-xl hover:bg-blue-500">
                         AJAX/Axios
                     </button>
                 </Link>
@@ -41,15 +41,16 @@ function JSCRUDMain() {
                 >
                     <button
                     aria-label='Fetch API CRUD Operations Examples'
-                    className="rounded-xl bg-blue-700 p-2 text-white hover:bg-blue-500">
+                    className="p-2 text-white bg-blue-700 rounded-xl hover:bg-blue-500">
                         Fetch
                     </button>
                 </Link>
             </div>
             <hr className="my-5 border border-black dark:border-white" />
-            <p className="mb-4 text-center font-semibold">
+            <p className="mb-4 font-semibold text-center">
                 Above are links to see examples that you can use as templates.
             </p>
+            
             <p>
                 <span className="text-2xl font-bold">
                     CRUD stands for Create, Read, Update, and Delete.
@@ -81,8 +82,8 @@ function JSCRUDMain() {
                 for API's. Feel free to look through these sites and find an API
                 that you would like to use to practice your CRUD operations.
             </p>
-            <div className="mb-5 mt-4 rounded-3xl border-4 border-black bg-slate-300 p-5 pt-0 shadow-lg dark:border-white dark:bg-slate-600">
-                <h2 className="mb-5 mt-5 text-center text-4xl font-semibold">
+            <div className="p-5 pt-0 mt-4 mb-5 border-4 border-black shadow-lg rounded-3xl bg-slate-300 dark:border-white dark:bg-slate-600">
+                <h2 className="mt-5 mb-5 text-4xl font-semibold text-center">
                     Example Repositories and Useful Links
                 </h2>
                 <ul className="pb-4">
