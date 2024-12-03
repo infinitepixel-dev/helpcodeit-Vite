@@ -21,9 +21,6 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # - name: Deploy to MAIN domain
-      #   run: npm run uploadMain
-
       - name: Build Vite app
         run: npm run build
         env:
