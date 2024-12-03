@@ -30,6 +30,7 @@ jobs:
           VITE_BLOG_SPACE_ID: ${{secrets.VITE_BLOG_SPACE_ID}}
 
 
+
       - name: Deploy to FTP server
         uses: SamKirkland/FTP-Deploy-Action@4.3.0
         with:
