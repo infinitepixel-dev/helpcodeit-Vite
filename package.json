@@ -7,6 +7,7 @@
         "build:jsx": "babel src --out-dir dist --extensions \".jsx,.js\"",
         "generate-sitemap": "node ./node-apps/generate-sitemap.js",
         "dev": "vite",
+        "uploadMain": "npm run generate-sitemap && npm run build && node ./node-apps/uploadMain.js",
         "testDev": "npm run generate-sitemap && npm run build && node ./node-apps/uploadDev.js",
         "testDev2": "npm run generate-sitemap && npm run build && node ./node-apps/uploadDev_v2.js",
         "build": "vite build",
