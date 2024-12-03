@@ -43,7 +43,7 @@ function HomePage() {
           setIsModalOpen(true);
         }
       }, []);
-    
+
       const handleCloseModal = () => {
         setIsModalOpen(false);
         document.cookie = "seenModal=true; max-age=31536000; path=/";
@@ -100,8 +100,8 @@ function HomePage() {
     console.log('LimitedToOne: ', limitedToOne)
     console.log('Posts: ', posts)
 
-    
-    
+
+
     return (
         <div>
                 {filteredEvents.length > 0 && filteredEvents[0].show == true && (
@@ -161,25 +161,25 @@ function HomePage() {
 
             <div className="container">
                 <div
-                    className="mx-auto mt-12 grid grid-cols-1 md:grid-cols-2"
+                    className="grid grid-cols-1 mx-auto mt-12 md:grid-cols-2"
                     data-label="Hero Section"
                 >
-                    <div className="flex align-middle justify-center">
+                    <div className="flex justify-center align-middle">
                         <div className="p-14">
                             <img
                                 src={heroImage}
                                 alt="Hero Image"
-                                className="h-full w-full rounded-lg object-cover"
+                                className="object-cover w-full h-full rounded-lg"
                             />
                         </div>
                     </div>
 
-                    <div className="my-auto w-3/4">
+                    <div className="w-3/4 my-auto">
                         <div className="|">
-                            <p className="roboto-font text-sm text-gray-500  dark:text-gray-200">
+                            <p className="text-sm text-gray-500 roboto-font dark:text-gray-200">
                                 Learning Coding Just Got Easier
                             </p>
-                            <h1 className="barlow-semi-condensed-medium mb-2 text-balance text-5xl">
+                            <h1 className="mb-2 text-5xl barlow-semi-condensed-medium text-balance">
                                 Everyone Gets Impostor Syndrome
                             </h1>
                             <p className="barlow-semi-condensed-regular">
@@ -189,11 +189,11 @@ function HomePage() {
                                 <p className="barlow-semi-condensed-semibold">Michael Varnell</p>
                                 <p className="barlow-semi-condensed-regular">Software Engineer</p>
                             </div>
-                            <hr className="border-1 border-gray-300 w-2/3" />
+                            <hr className="w-2/3 border-gray-300 border-1" />
                             <div className="flex flex-row">
                                 <Link
                                     to="/schedule-meeting"
-                                    className="barlow-semi-condensed-semibold mb-8 mt-3 flex items-center text-lg text-blue-500 hover:text-blue-800 dark:text-blue-300 hover:dark:text-blue-500"
+                                    className="flex items-center mt-3 mb-8 text-lg text-blue-500 barlow-semi-condensed-semibold hover:text-blue-800 dark:text-blue-300 hover:dark:text-blue-500"
                                 >
                                     Schedule a Session Now{' '}
                                     <ArrowUpRight className="ml-1" />
@@ -206,29 +206,32 @@ function HomePage() {
         {/* !SECTION Hero */}
 {/* SECTION Content */}
             <div className="container ">
-<hr className="border-1 border-gray-300 " />
+<hr className="border-gray-300 border-1 " />
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                    
-                    <div className="space-y-6 mt-8">
+
+                    <div className="mt-8 space-y-6">
                     <div className="grid justify-end">
                             <BlogPostLists posts={posts} />
                         </div>
-                        <div className="rounded-xl bg-blue-950 mx-2 p-3">
-                            <h2 className="text-white text-2xl barlow-semi-condensed-regular text-center">Social Media</h2>
+
+
+                    </div>
+                        <div className="p-3 mx-2 mt-10 rounded-xl bg-blue-950">
+                            <h2 className="text-2xl text-center text-white barlow-semi-condensed-regular">Social Media</h2>
                             <div className="overflow-hidden rounded-xl">
                                 <YouTubeLiveStream
                                     apiKey={VITE_YT_API_KEY_MV}
                                     channelId={VITE_YT_CHANNEL_ID_MV}
                                 />
                             </div>
-                            <div> 
+                            <div>
                                 <div className="grid justify-center gap-2">
                                     <div>
                                         <a
                                             href="https://www.youtube.com/@HelpCodeIt"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex transform items-center rounded-full bg-red-600 px-6 py-3 font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-red-700 hover:shadow-lg"
+                                            className="inline-flex items-center px-6 py-3 font-bold text-white transition-all duration-300 transform bg-red-600 rounded-full hover:-translate-y-1 hover:bg-red-700 hover:shadow-lg"
                                         >
                                             <Youtube
                                                 size={24}
@@ -242,10 +245,10 @@ function HomePage() {
                                             href="https://discord.gg/sDtKwcuK3J"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex w-full transform items-center rounded-full bg-indigo-600 px-6 py-3 font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-indigo-700 hover:shadow-lg"
+                                            className="inline-flex items-center w-full px-6 py-3 font-bold text-white transition-all duration-300 transform bg-indigo-600 rounded-full hover:-translate-y-1 hover:bg-indigo-700 hover:shadow-lg"
                                         >
                                             <svg
-                                                className="mr-3 h-6 w-6 fill-current"
+                                                className="w-6 h-6 mr-3 fill-current"
                                                 role="img"
                                                 viewBox="0 0 24 24"
                                                 xmlns="http://www.w3.org/2000/svg"
@@ -260,12 +263,12 @@ function HomePage() {
                                             href="https://x.com/HelpCodeIt"
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="inline-flex w-full transform items-center rounded-full bg-black px-6 py-3 font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-blue-400 hover:shadow-lg"
+                                            className="inline-flex items-center w-full px-6 py-3 font-bold text-white transition-all duration-300 transform bg-black rounded-full hover:-translate-y-1 hover:bg-blue-400 hover:shadow-lg"
                                             onMouseEnter={handleMouseEnter}
                                             onMouseLeave={handleMouseLeave}
                                         >
                                             <svg
-                                                className="mr-3 h-6 w-6 fill-current transition-all duration-300"
+                                                className="w-6 h-6 mr-3 transition-all duration-300 fill-current"
                                                 role="img"
                                                 viewBox={
                                                     isX
@@ -297,9 +300,6 @@ function HomePage() {
                                 </div>
                             </div>{' '}
                         </div>
-
-                        
-                    </div>
                     <EventCard limit={1} />
                 </div>
             </div>
