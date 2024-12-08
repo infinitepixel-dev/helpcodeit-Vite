@@ -39,7 +39,7 @@ export const navItems = [
         type: 'dropdown',
         label: 'Tools',
         items: [
-            { to: 'https://mockapi.helpcodeit.com', label: 'Free MockAPI' },
+            // { to: 'https://mockapi.helpcodeit.com', label: 'Free MockAPI' },
             {
                 to: 'https://codeproblems.michaelvarnell.com',
                 label: 'Practice Code Problems',
