@@ -77,6 +77,10 @@ function UsefulLinks() {
             description: 'List of common command line commands',
             url: 'https://www.git-tower.com/blog/command-line-cheat-sheet/',
         },
+        {   title: 'Bash Cheatsheet and Quick Reference',
+            description: 'More than a cheatsheet for Bash commands',
+            url: 'https://devhints.io/bash',
+        },
         {
             title: 'HTML Cheatsheet',
             description: 'Comprehensive HTML cheatsheet',
