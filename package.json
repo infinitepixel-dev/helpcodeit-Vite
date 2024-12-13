@@ -1,7 +1,8 @@
 {
     "name": "helpcodeit",
     "private": true,
-    "version": "0.0.0",
+    "authors" : "Michael Varnell and Matthew Cox",
+    "version": "1.0.0",
     "type": "module",
     "scripts": {
         "build:jsx": "babel src --out-dir dist --extensions \".jsx,.js\"",
