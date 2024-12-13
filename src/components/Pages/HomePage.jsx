@@ -217,7 +217,6 @@ function HomePage() {
                         </div>
 
 
-                    </div>
                         <div className="p-3 mx-2 mt-10 rounded-xl bg-blue-950">
                             <h2 className="text-2xl text-center text-white barlow-semi-condensed-regular">Social Media</h2>
                             <div className="overflow-hidden rounded-xl">
@@ -302,7 +301,8 @@ function HomePage() {
                                 </div>
                             </div>{' '}
                         </div>
-                    <EventCard limit={1} />
+                    </div>
+                                <EventCard limit={1} />
                 </div>
             </div>
 {/* !SECTION Content */}
