@@ -101,6 +101,9 @@ function HomePage() {
     console.log('Posts: ', posts)
 
 
+{/* <div className='downtime-alert'>
+    <div className='text-2xl text-center'>NOTICE: Downtime this weekend December 13-15 is possible as we migrate servers...</div>
+</div> */}
 
     return (
         <div>
@@ -158,9 +161,6 @@ function HomePage() {
                 <link rel="canonical" href="https://www.helpcodeit.com" />
             </Helmet>
          {/* SECTION Hero */}
-<div className='downtime-alert'>
-    <div className='text-2xl text-center'>NOTICE: Downtime this weekend December 13-15 is possible as we migrate servers...</div>
-</div>
             <div className="container">
                 <div
                     className="grid grid-cols-1 mx-auto mt-12 md:grid-cols-2"
