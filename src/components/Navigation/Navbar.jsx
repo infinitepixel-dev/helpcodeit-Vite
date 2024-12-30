@@ -64,10 +64,10 @@ const Navbar = ({ theme }) => {
         }
 
         return (
-            <div className="group relative">
+            <div className="relative group">
                 <button
                     onClick={toggleDropdown}
-                    className="barlow-semi-condensed-regular rounded-md px-3 py-2 text-base text-gray-300 hover:bg-gray-700 hover:text-white dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                    className="px-3 py-2 text-base text-gray-300 rounded-md barlow-semi-condensed-regular hover:bg-gray-700 hover:text-white dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                 >
                     {label}
                 </button>
@@ -88,7 +88,7 @@ const Navbar = ({ theme }) => {
                     }}
                 >
                     <div
-                        className="barlow-semi-condensed-regular py-1"
+                        className="py-1 barlow-semi-condensed-regular"
                         role="menu"
                         aria-orientation="vertical"
                         aria-labelledby="options-menu"
@@ -97,7 +97,7 @@ const Navbar = ({ theme }) => {
                             <NavLink
                                 key={index}
                                 to={item.to}
-                                className="barlow-semi-condensed-regular block px-4 py-2 text-base text-gray-700 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
+                                className="block px-4 py-2 text-base text-gray-700 barlow-semi-condensed-regular hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
                                 role="menuitem"
                                 onClick={() => {
                                     setOpenDropdown(null)
@@ -139,32 +139,32 @@ const Navbar = ({ theme }) => {
         })
     }
 
-    const renderBlogsNavLink = () => {
-        return (
-            <NavLink
-                to="/blogs"
-                className={navLinkClasses}
-                state={{ posts }}
-                onClick={() => isSmallScreen && setIsOpen(false)}
-            >
-                Blogs
-            </NavLink>
-        )
-    }
+    // const renderBlogsNavLink = () => {
+    //     return (
+    //         <NavLink
+    //             to="/blogs"
+    //             className={navLinkClasses}
+    //             state={{ posts }}
+    //             onClick={() => isSmallScreen && setIsOpen(false)}
+    //         >
+    //             Blogs
+    //         </NavLink>
+    //     )
+    // }
 
     return (
         <nav className="relative z-40 bg-neutral-900 dark:bg-gray-900">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="flex h-16 items-center justify-between">
+            <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
                         <div className="flex-shrink-0">
                             <div className="flex items-center space-x-2">
                                 <img
-                                    className="h-10 w-10 rounded-lg"
+                                    className="w-10 h-10 rounded-lg"
                                     src={logo}
                                     alt="Logo"
                                 />
-                                <h1 className="roboto-font text-xl text-white dark:text-white">
+                                <h1 className="text-xl text-white roboto-font dark:text-white">
                                     HelpCodeIT
                                 </h1>
                             </div>
@@ -173,7 +173,7 @@ const Navbar = ({ theme }) => {
                     <div
                         className={`${isSmallScreen ? 'hidden' : 'block'} me-5 ms-auto`}
                     >
-                        <div className="barlow-semi-condensed-regular ml-28 flex items-baseline space-x-3">
+                        <div className="flex items-baseline space-x-3 barlow-semi-condensed-regular ml-28">
                             {renderNavItems()}
                             {renderBlogsNavLink()}
                         </div>
@@ -183,7 +183,7 @@ const Navbar = ({ theme }) => {
                     >
                         <button
                             onClick={() => setIsOpen(!isOpen)}
-                            className="barlow-semi-condensed-regular relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
+                            className="relative inline-flex items-center justify-center p-2 text-gray-400 rounded-md barlow-semi-condensed-regular hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
                             ref={closeButtonRef}
                         >
                             <span className="sr-only">Open main menu</span>
@@ -222,7 +222,7 @@ const Navbar = ({ theme }) => {
                             {isOpen && (
                                 <div
                                     ref={beaconRef}
-                                    className="absolute inset-2 rounded-full bg-white opacity-70"
+                                    className="absolute bg-white rounded-full inset-2 opacity-70"
                                     style={{ zIndex: -1 }}
                                 />
                             )}
@@ -232,8 +232,8 @@ const Navbar = ({ theme }) => {
             </div>
 
             {isOpen && isSmallScreen && (
-                <div className="barlow-semi-condensed-regular absolute z-50 w-full bg-gray-800 dark:bg-gray-800">
-                    <div className="flex flex-col items-end space-y-1 px-2 pb-3 pt-2 sm:px-3">
+                <div className="absolute z-50 w-full bg-gray-800 barlow-semi-condensed-regular dark:bg-gray-800">
+                    <div className="flex flex-col items-end px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         {renderNavItems(true)}
                         {renderBlogsNavLink()}
                     </div>
