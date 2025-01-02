@@ -16,7 +16,7 @@
         "preview": "vite preview"
     },
     "overrides": {
-        "path-to-regexp": "^latest"
+        "path-to-regexp": "0.1.12"
     },
     "dependencies": {
         "@contentful/rich-text-react-renderer": "^15.22.11",
