@@ -570,11 +570,11 @@ export const componentRoutes = [
         key: 'deployAWS_S3',
     },
     // INFO Other Misc Pages
-    {
-        path: '/blogs',
-        componentPath: '../components/Pages/BlogsPage.jsx',
-        key: 'blogs',
-    },
+    // {
+    //     path: '/blogs',
+    //     componentPath: '../components/Pages/BlogsPage.jsx',
+    //     key: 'blogs',
+    // },
     {
         path: '/javascriptPrincipals/InteractiveFetch',
         componentPath:
