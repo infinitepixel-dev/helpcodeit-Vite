@@ -1,7 +1,7 @@
 {
     "name": "helpcodeit",
     "private": true,
-    "authors" : "Michael Varnell and Matthew Cox",
+    "authors": "Michael Varnell and Matthew Cox",
     "version": "1.0.0",
     "type": "module",
     "scripts": {
@@ -14,6 +14,9 @@
         "build": "vite build",
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
+    },
+    "overrides": {
+        "path-to-regexp": "0.1.12"
     },
     "dependencies": {
         "@contentful/rich-text-react-renderer": "^15.22.11",

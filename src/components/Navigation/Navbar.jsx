@@ -175,7 +175,7 @@ const Navbar = ({ theme }) => {
                     >
                         <div className="flex items-baseline space-x-3 barlow-semi-condensed-regular ml-28">
                             {renderNavItems()}
-                            {renderBlogsNavLink()}
+                            {/* {renderBlogsNavLink()} */}
                         </div>
                     </div>
                     <div
@@ -235,7 +235,7 @@ const Navbar = ({ theme }) => {
                 <div className="absolute z-50 w-full bg-gray-800 barlow-semi-condensed-regular dark:bg-gray-800">
                     <div className="flex flex-col items-end px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         {renderNavItems(true)}
-                        {renderBlogsNavLink()}
+                        {/* {renderBlogsNavLink()} */}
                     </div>
                 </div>
             )}
