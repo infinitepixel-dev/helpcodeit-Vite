@@ -8,8 +8,15 @@ const podcasts = [
         link: 'https://syntax.fm/',
         description:
             'A Tasty Treats Podcast for Web Developers. These episodes are often a mix of fun and informative. There are times you will want to watch via youtube to see the code examples.',
-        img: 'https://begin.com/_public/blog/post-assets/syntaxfm-0bcdedfdb4.png',
-        category: 'Web Development',
+        img: 'https://github.com/syntaxfm.png',
+        category: 'Front End Development',
+    },
+    {
+        title: 'The Programming Podcast',
+        link: 'https://creators.spotify.com/pod/show/the-programming-podcast',
+        description: "Leon Noel and Danny Thompson explain technical problems, industry information, career advice and more on The Programming Podcast! Danny Thompson, Director of Technology @ This Dot Labs Leon Noel, Managing Director @ Resilient Coders & 100Devs. This is an excellent podcast for beginner developers with tons of advice!",
+        img: 'https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/staging/podcast_uploaded_nologo400/42391843/42391843-1731606917796-66ea396490ab2.jpg',
+        category: 'Beginner Career Advice'
     },
     {
         title: 'Stack Overflow Podcast',
@@ -41,6 +48,7 @@ const podcasts = [
         description:
             'A podcast featuring a panel of Software Engineers from Netflix, Evernote, Atlassian & LinkedIn talking over drinks about all things Front End development.',
         img: 'https://i.scdn.co/image/ab6765630000ba8a144f9e61e8a815833a1def11',
+        category: 'Front End Development'
     },
     {
         title: 'This Week in Tech',
@@ -56,7 +64,7 @@ const podcasts = [
         description:
             'A daily podcast that covers the latest news in artificial intelligence.',
         img: 'https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/staging/podcast_uploaded_nologo400/41472609/675e9452d5e46741.jpg',
-        category: 'AI',
+        category: 'AI News',
     },
     {
         title: 'Hard Fork',
@@ -64,7 +72,7 @@ const podcasts = [
         description:
             'The New York Times puts on this podcast that covers some of the latest cultural topics in tech.',
         img: 'https://static01.nyt.com/images/2022/09/28/podcasts/hard-fork-album-art/hard-fork-album-art-thumbLarge-v2.png',
-        category: 'General Tech',
+        category: 'General Tech and Pop Culture',
     },
     {
         title: 'React Native Radio',
@@ -103,7 +111,7 @@ const podcasts = [
         description:
             'Follow Una Kravets and Adam Argyle, Developer Advocates from Google, who gleefully breakdown complex aspects of CSS into digestible episodes covering everything from accessibility to z-index.',
         img: 'https://images.libsyn.com/p/assets/b/a/f/2/baf27719094b3d2fe55e3c100dce7605/unnamed_22.png?h=500&auto=compress',
-        category: 'CSS',
+        category: 'CSS Development',
     },
 ]
 
