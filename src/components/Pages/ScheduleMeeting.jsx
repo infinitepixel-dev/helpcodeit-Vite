@@ -132,7 +132,7 @@ const ScheduleMeeting = () => {
                         ))}
                     </div>
                         <div className="mx-auto">
-                            <p className="mt-8 text-balance text-center ">If you need an after hours appointment, or even a longer appointment, please use our contact form on the contact page and we will try to accomidate it.</p>
+                            <p className="mt-8 text-center text-balance ">If you need an after hours appointment, or even a longer appointment, please use our contact form on the contact page and we will try to accomidate it.</p>
                         </div>
                 </div>
                 <div className="p-8 mt-16 bg-gray-100 rounded-lg">

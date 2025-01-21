@@ -193,13 +193,13 @@ function HomePage() {
                             </div>
                             <hr className="w-2/3 border-gray-300 border-1" />
                             <div className="flex flex-row">
-                                <Link
+                                {/* <Link
                                     to="/schedule-meeting"
                                     className="flex items-center mt-3 mb-8 text-lg text-blue-500 barlow-semi-condensed-semibold hover:text-blue-800 dark:text-blue-300 hover:dark:text-blue-500"
                                 >
                                     Schedule a Session Now{' '}
                                     <ArrowUpRight className="ml-1" />
-                                </Link>
+                                </Link> */}
                             </div>
                         </div>
                     </div>
