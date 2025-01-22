@@ -27,14 +27,14 @@ export const navItems = [
             },
         ],
     },
-    {
-        type: 'dropdown',
-        label: 'Meetings and Events',
-        items: [
-            { to: '/schedule-meeting', label: 'Schedule a Meeting' },
-            { to: '/calendar', label: 'Event Calendar' },
-        ],
-    },
+    // {
+    //     type: 'dropdown',
+    //     label: 'Meetings and Events',
+    //     items: [
+    //         { to: '/schedule-meeting', label: 'Schedule a Meeting' },
+    //         { to: '/calendar', label: 'Event Calendar' },
+    //     ],
+    // },
     {
         type: 'dropdown',
         label: 'Tools',
