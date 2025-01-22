@@ -19,7 +19,7 @@ function About() {
                 />
             </Helmet>
             <div className="container text-lg font-semibold">
-                <h1 className="my-5 text-center text-6xl">About</h1>
+                <h1 className="my-5 text-6xl text-center">About</h1>
                 <p className="my-1">
                     This is a website for learning JavaScript and other web
                     development technologies. It is a work in progress, and will
@@ -35,9 +35,9 @@ function About() {
                     providing a resource that is easy to understand and use.
                 </p>
 
-                <div className="grid  grid-cols-1 pb-14 pt-8 md:grid-cols-2">
+                <div className="grid grid-cols-1 pt-8 pb-14 md:grid-cols-2">
                     <div className="mx-auto">
-                        <h2 className="my-4 text-center text-3xl">
+                        <h2 className="my-4 text-3xl text-center">
                             Michael Varnell
                         </h2>
                         <img
@@ -47,7 +47,7 @@ function About() {
                             className="mx-auto rounded"
                             aria-label="Photo of Michael Varnell"
                         />
-                        <p className="text-pretty px-4 pt-5">
+                        <p className="px-4 pt-5 text-pretty">
                             Michael Varnell is a skilled Software Developer with
                             expertise in modern Front End technologies,
                             including React.js, JavaScript, TypeScript, and
@@ -70,7 +70,7 @@ function About() {
                             technical skills and his dedication to promoting
                             growth and creativity in software development.
                         </p>
-                        <div className="my-5  text-center ">
+                        {/* <div className="my-5 text-center ">
                             <a
                                 href="https://calendly.com/michaelvarnell/30min"
                                 target="_blank"
@@ -78,15 +78,15 @@ function About() {
                             >
                                 <button
                                     aria-label="Book a meeting with Michael button"
-                                    className="animate-bounce rounded-full bg-blue-700 px-4 py-2 font-bold text-white hover:animate-none hover:bg-green-500"
+                                    className="px-4 py-2 font-bold text-white bg-blue-700 rounded-full animate-bounce hover:animate-none hover:bg-green-500"
                                 >
                                     Book a meeting
                                 </button>
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="mx-auto my-auto">
-                        <h2 className="my-4 text-center text-3xl">
+                        <h2 className="my-4 text-3xl text-center">
                             Matthew Cox
                         </h2>
                         <img
@@ -96,7 +96,7 @@ function About() {
                             className="mx-auto rounded"
                             aria-label="Photo of Matthew Cox"
                         />
-                        <p className="text-balance px-4 pt-5">
+                        <p className="px-4 pt-5 text-balance">
                             Matthew is a Full Stack Developer with a deep
                             expertise in a broad range of front-end and back-end
                             technologies. Leveraging a comprehensive skill set
