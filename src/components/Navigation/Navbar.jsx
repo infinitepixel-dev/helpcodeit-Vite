@@ -28,11 +28,11 @@ const Navbar = ({ theme }) => {
     useEffect(() => {
         if (menuOpen && beaconRef.current) {
             gsap.to(beaconRef.current, {
-                scale: 1.4,
-                opacity: 0.6,
+                scale: 1.2,
+                opacity: 0.4,
                 repeat: -1,
                 yoyo: true,
-                duration: 1.2,
+                duration: 1,
                 ease: 'power2.inOut',
             })
         } else {
@@ -70,7 +70,10 @@ const Navbar = ({ theme }) => {
         if (item.type === 'dropdown') {
             const isOpen = activeDropdown === item.label
             return (
-                <div key={index} className="relative w-full">
+                <div
+                    key={index}
+                    className={`relative ${isMobile ? '' : 'group'}`}
+                >
                     <button
                         onClick={() => toggleDropdown(item.label)}
                         className="flex w-full items-center justify-between rounded-md px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
@@ -92,13 +95,13 @@ const Navbar = ({ theme }) => {
                         </svg>
                     </button>
                     <div
-                        className={`overflow-hidden transition-all duration-300 ${
+                        className={`overflow-hidden rounded-md bg-gray-700 shadow-lg transition-all duration-300 ${
                             isMobile
                                 ? isOpen
                                     ? 'visible max-h-96 opacity-100'
                                     : 'invisible max-h-0 opacity-0'
                                 : 'invisible absolute right-0 mt-2 w-48 opacity-0 group-hover:visible group-hover:opacity-100'
-                        } rounded-md bg-gray-700 shadow-lg`}
+                        }`}
                     >
                         {item.items.map((subItem, subIndex) => (
                             <NavLink
