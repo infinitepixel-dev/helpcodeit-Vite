@@ -1,194 +1,154 @@
-import React, { useState, useEffect, useContext, useRef } from 'react'
+import React, { useState, useEffect, useRef, useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '@assets/helpcodeitlogo.svg'
 import { navItems } from '../../Routes/Routes'
-import './Navbar.module.css'
 import { BlogContext } from '@subComponents/BlogAPI'
 import { gsap } from 'gsap'
+import './Navbar.module.css'
 
 const Navbar = ({ theme }) => {
-    const [isOpen, setIsOpen] = useState(false)
-    const [isSmallScreen, setIsSmallScreen] = useState(false)
-    const [openDropdown, setOpenDropdown] = useState(null)
-
-    const closeButtonRef = useRef(null)
-    const beaconRef = useRef(null)
+    const [menuOpen, setMenuOpen] = useState(false)
+    const [activeDropdown, setActiveDropdown] = useState(null)
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 960)
     const mobileMenuRef = useRef(null)
+    const beaconRef = useRef(null)
 
     const { posts } = useContext(BlogContext)
 
     useEffect(() => {
-        const handleResize = () => setIsSmallScreen(window.innerWidth <= 960)
+        const handleResize = () => setIsMobile(window.innerWidth <= 960)
         window.addEventListener('resize', handleResize)
-        handleResize()
         return () => window.removeEventListener('resize', handleResize)
     }, [])
 
     useEffect(() => {
-        if (isOpen && beaconRef.current) {
+        document.body.style.overflow = menuOpen ? 'hidden' : 'auto'
+    }, [menuOpen])
+
+    useEffect(() => {
+        if (menuOpen && beaconRef.current) {
             gsap.to(beaconRef.current, {
-                scale: 1.5,
-                opacity: 0.5,
+                scale: 1.4,
+                opacity: 0.6,
                 repeat: -1,
                 yoyo: true,
-                duration: 1.5,
-                ease: 'power1.inOut',
+                duration: 1.2,
+                ease: 'power2.inOut',
             })
         } else {
             gsap.killTweensOf(beaconRef.current)
             gsap.set(beaconRef.current, { scale: 1, opacity: 0 })
         }
-    }, [isOpen])
+    }, [menuOpen])
 
-    useEffect(() => {
-        // Lock body scroll when mobile menu open
-        document.body.style.overflow = isOpen ? 'hidden' : ''
-    }, [isOpen])
-
-    useEffect(() => {
-        const handleClickOutside = (e) => {
-            if (
-                isOpen &&
-                closeButtonRef.current &&
-                !closeButtonRef.current.contains(e.target)
-            ) {
-                setIsOpen(false)
-                setOpenDropdown(null)
-            }
+    const toggleDropdown = (label) => {
+        if (isMobile) {
+            setActiveDropdown(activeDropdown === label ? null : label)
         }
-        document.addEventListener('mousedown', handleClickOutside)
-        return () =>
-            document.removeEventListener('mousedown', handleClickOutside)
-    }, [isOpen])
-
-    useEffect(() => {
-        if (isSmallScreen && mobileMenuRef.current) {
-            if (isOpen) {
-                gsap.fromTo(
-                    mobileMenuRef.current,
-                    { height: 0 },
-                    { height: 'auto', duration: 0.5, ease: 'power3.out' }
-                )
-            } else {
-                gsap.to(mobileMenuRef.current, {
-                    height: 0,
-                    duration: 0.5,
-                    ease: 'power3.in',
-                })
-            }
-        }
-    }, [isOpen, isSmallScreen])
-
-    const navLinkClasses = ({ isActive }) => `
-    px-3 py-2 rounded-md text-base barlow-semi-condensed-regular
-    ${
-        isActive
-            ? 'bg-gray-900 text-white dark:bg-gray-700 dark:text-white'
-            : 'text-gray-300 hover:bg-gray-700 hover:text-white dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white'
     }
-  `
 
-    const Dropdown = ({ label, items }) => {
-        const isDropdownOpen = openDropdown === label
-
-        const toggleDropdown = () => {
-            if (isSmallScreen) setOpenDropdown(isDropdownOpen ? null : label)
+    const renderNavItem = (item, index) => {
+        if (item.type === 'link') {
+            return (
+                <NavLink
+                    key={index}
+                    to={item.to}
+                    className={({ isActive }) =>
+                        `flex items-center justify-between rounded-md px-4 py-2 text-base font-medium transition hover:bg-gray-700 hover:text-white ${
+                            isActive
+                                ? 'bg-gray-900 text-white'
+                                : 'text-gray-300'
+                        }`
+                    }
+                    onClick={() => setMenuOpen(false)}
+                >
+                    {item.label}
+                </NavLink>
+            )
         }
 
-        return (
-            <div className="group relative">
-                <button
-                    onClick={toggleDropdown}
-                    className="barlow-semi-condensed-regular rounded-md px-3 py-2 text-base text-gray-300 hover:bg-gray-700 hover:text-white dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                >
-                    {label}
-                </button>
-                <div
-                    className={`absolute right-0 z-50 mt-2 w-48 overflow-hidden rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-300 dark:bg-gray-800 ${isSmallScreen ? (isDropdownOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0') : 'invisible opacity-0 group-hover:visible group-hover:opacity-100'} `}
-                    style={{ top: isSmallScreen ? 'auto' : '30px' }}
-                >
-                    <div
-                        className="barlow-semi-condensed-regular py-1"
-                        role="menu"
-                        aria-orientation="vertical"
+        if (item.type === 'dropdown') {
+            const isOpen = activeDropdown === item.label
+            return (
+                <div key={index} className="relative w-full">
+                    <button
+                        onClick={() => toggleDropdown(item.label)}
+                        className="flex w-full items-center justify-between rounded-md px-4 py-2 text-gray-300 hover:bg-gray-700 hover:text-white"
                     >
-                        {items.map((item, index) => (
+                        <span>{item.label}</span>
+                        <svg
+                            className={`h-5 w-5 transform transition-transform ${isOpen ? 'rotate-180' : ''}`}
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 9l-7 7-7-7"
+                            />
+                        </svg>
+                    </button>
+                    <div
+                        className={`overflow-hidden transition-all duration-300 ${
+                            isMobile
+                                ? isOpen
+                                    ? 'visible max-h-96 opacity-100'
+                                    : 'invisible max-h-0 opacity-0'
+                                : 'invisible absolute right-0 mt-2 w-48 opacity-0 group-hover:visible group-hover:opacity-100'
+                        } rounded-md bg-gray-700 shadow-lg`}
+                    >
+                        {item.items.map((subItem, subIndex) => (
                             <NavLink
-                                key={index}
-                                to={item.to}
-                                className="barlow-semi-condensed-regular block px-4 py-2 text-base text-gray-700 hover:bg-gray-50 dark:text-gray-300 dark:hover:bg-gray-700 dark:hover:text-white"
-                                role="menuitem"
+                                key={subIndex}
+                                to={subItem.to}
+                                className="block w-full px-4 py-2 text-left text-gray-300 hover:bg-gray-600"
                                 onClick={() => {
-                                    setOpenDropdown(null)
-                                    setIsOpen(false)
+                                    setMenuOpen(false)
+                                    setActiveDropdown(null)
                                 }}
                             >
-                                {item.label}
+                                {subItem.label}
                             </NavLink>
                         ))}
                     </div>
                 </div>
-            </div>
-        )
+            )
+        }
     }
 
-    const renderNavItems = (isMobile = false) =>
-        navItems.map((item, index) =>
-            item.type === 'link' ? (
-                <NavLink
-                    key={index}
-                    to={item.to}
-                    className={navLinkClasses}
-                    end={item.to === '/'}
-                    onClick={() => {
-                        if (isMobile) {
-                            setIsOpen(false)
-                            setOpenDropdown(null)
-                        }
-                    }}
-                >
-                    {item.label}
-                </NavLink>
-            ) : (
-                <Dropdown key={index} label={item.label} items={item.items} />
-            )
-        )
-
     return (
-        <nav className="relative z-40 bg-neutral-900 dark:bg-gray-900">
-            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="flex h-16 items-center justify-between">
-                    <div className="flex items-center">
-                        <div className="flex flex-shrink-0 items-center space-x-2">
-                            <img
-                                className="h-10 w-10 rounded-lg"
-                                src={logo}
-                                alt="Logo"
-                            />
-                            <h1 className="roboto-font text-xl text-white dark:text-white">
-                                HelpCodeIT
-                            </h1>
-                        </div>
-                    </div>
-                    <div
-                        className={`${isSmallScreen ? 'hidden' : 'block'} me-5 ms-auto`}
+        <nav className="relative z-50 bg-neutral-900 dark:bg-gray-900">
+            <div className="container mx-auto flex items-center justify-between px-4 py-4">
+                <div className="flex items-center space-x-3">
+                    <img
+                        src={logo}
+                        alt="Logo"
+                        className="h-10 w-10 rounded-lg"
+                    />
+                    <span className="text-xl font-bold text-white">
+                        HelpCodeIT
+                    </span>
+                </div>
+
+                {/* Desktop Navigation */}
+                <div className="ml-10 hidden space-x-6 md:flex">
+                    {navItems.map(renderNavItem)}
+                </div>
+
+                {/* Mobile Menu Button */}
+                <div className="md:hidden">
+                    <button
+                        onClick={() => setMenuOpen(!menuOpen)}
+                        ref={mobileMenuRef}
+                        className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white"
                     >
-                        <div className="barlow-semi-condensed-regular ml-28 flex items-baseline space-x-3">
-                            {renderNavItems()}
-                        </div>
-                    </div>
-                    <div
-                        className={`flex ${isSmallScreen ? 'block' : 'hidden'}`}
-                    >
-                        <button
-                            onClick={() => setIsOpen(!isOpen)}
-                            className="relative inline-flex items-center justify-center rounded-md p-3 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 dark:text-gray-200 dark:hover:bg-gray-600 dark:hover:text-white"
-                            ref={closeButtonRef}
-                        >
-                            <span className="sr-only">Open main menu</span>
+                        <span className="sr-only">Open main menu</span>
+                        {menuOpen ? (
                             <svg
-                                className={`${isOpen ? 'hidden' : 'block'} h-6 w-6`}
-                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-6 w-6"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke="currentColor"
@@ -196,45 +156,40 @@ const Navbar = ({ theme }) => {
                                 <path
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M4 6h16M4 12h16M4 18h16"
-                                />
-                            </svg>
-                            <svg
-                                className={`${isOpen ? 'block' : 'hidden'} h-6 w-6`}
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
+                                    strokeWidth={2}
                                     d="M6 18L18 6M6 6l12 12"
                                 />
                             </svg>
-                            {isOpen && (
-                                <div
-                                    ref={beaconRef}
-                                    className="absolute inset-2 rounded-full bg-white opacity-70"
-                                    style={{ zIndex: -1 }}
+                        ) : (
+                            <svg
+                                className="h-6 w-6"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M4 6h16M4 12h16M4 18h16"
                                 />
-                            )}
-                        </button>
-                    </div>
+                            </svg>
+                        )}
+                        <div
+                            ref={beaconRef}
+                            className="absolute inset-0 m-auto h-8 w-8 rounded-full bg-white opacity-30"
+                            style={{ zIndex: 1 }}
+                        ></div>
+                    </button>
                 </div>
             </div>
-            <div
-                ref={mobileMenuRef}
-                className="barlow-semi-condensed-regular absolute z-50 w-full overflow-hidden bg-gray-800 dark:bg-gray-800"
-            >
-                {isOpen && isSmallScreen && (
-                    <div className="flex flex-col items-end space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                        {renderNavItems(true)}
-                    </div>
-                )}
-            </div>
+
+            {/* Mobile Navigation */}
+            {menuOpen && (
+                <div className="flex flex-col items-start space-y-2 bg-gray-800 p-4 md:hidden">
+                    {navItems.map(renderNavItem)}
+                </div>
+            )}
         </nav>
     )
 }
