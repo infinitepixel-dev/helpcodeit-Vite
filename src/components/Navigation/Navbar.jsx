@@ -120,8 +120,8 @@ const Navbar = ({ theme }) => {
     }
 
     return (
-        <nav className="relative z-50 bg-neutral-900 dark:bg-gray-900">
-            <div className="container mx-auto flex items-center justify-between px-4 py-4">
+        <nav className="fixed left-0 right-0 top-0 z-50 bg-neutral-900 dark:bg-gray-900">
+            <div className="container mx-auto flex items-center justify-between px-3 py-4">
                 <div className="flex items-center space-x-3">
                     <img
                         src={logo}
@@ -134,7 +134,7 @@ const Navbar = ({ theme }) => {
                 </div>
 
                 {/* Desktop Navigation */}
-                <div className="ml-10 hidden space-x-6 md:flex">
+                <div className="hidden items-center justify-center space-x-6 md:flex">
                     {navItems.map(renderNavItem)}
                 </div>
 

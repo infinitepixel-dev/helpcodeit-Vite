@@ -7,7 +7,7 @@ import { DarkModeProvider } from './components/Context/DarkModeProvider'
 import Navbar from './components/Navigation/Navbar'
 
 import { Routes, Route } from 'react-router-dom'
-// import Footer from '@subComponents/Footer'
+import Footer from '@subComponents/Footer'
 import RoutesWithComponents from './Routes/Routes.js'
 import { Helmet } from 'react-helmet-async'
 import BlogPost from './components/Pages/Blog/BlogPost'
@@ -106,7 +106,7 @@ function App() {
                         </Routes>
 
                         <div className="m-0 mt-5 w-full p-0">
-                            {/* <Footer /> */}
+                            <Footer />
                             {footerComponent
                                 ? React.createElement(footerComponent)
                                 : null}
