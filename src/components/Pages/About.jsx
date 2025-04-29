@@ -15,7 +15,7 @@ function About() {
             name: 'Daniel Cox',
             img: daniel,
             alt: 'Daniel Cox',
-            bio: `Daniel is a Front-End Software Engineer with 16 years of SaaS industry experience. He specializes in React, Tailwind CSS, GSAP, and UX/UI design, building intuitive, high-performance applications. Daniel also has working knowledge of backend technologies like MySQL and Next.js, enabling full-stack collaboration.`,
+            bio: `Daniel is a Front-End Software Developer with 16 years of SaaS industry experience. He specializes in React, Tailwind CSS, GSAP, and UX/UI design, building intuitive, high-performance applications. Daniel also has working knowledge of backend technologies like MySQL and Next.js, enabling full-stack collaboration.`,
         },
         {
             name: 'Matthew Cox',
