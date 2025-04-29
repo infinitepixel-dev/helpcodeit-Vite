@@ -118,14 +118,14 @@ function HomePage() {
             </Helmet>
 
             {/* Hero Section */}
-            <section className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-12">
+            <section className="grid grid-cols-1 gap-8 bg-gradient-to-b from-slate-600 to-slate-900 md:grid-cols-12">
                 {/* Empty Spacer Div (optional, depending on layout intention) */}
                 <div className="p-8 md:p-16"></div>
 
                 {/* Hero Content */}
                 <div className="grid grid-rows-[auto,auto,auto,auto,auto] place-items-center p-8 text-center md:col-span-10 md:p-16">
                     {/* Small Upper Text */}
-                    <p className="mb-2 text-sm font-medium uppercase tracking-wide text-indigo-500">
+                    <p className="mb-2 text-sm font-medium uppercase tracking-wide text-indigo-300">
                         Learning Coding Just Got Easier
                     </p>
 
@@ -150,19 +150,18 @@ function HomePage() {
                         journey. Start learning today – let's code your future
                         together!
                     </p>
+                    <div className="mb-12 flex justify-center">
+                        <iframe
+                            src="https://www.youtube.com/embed/b4g3-xmam_g?si=TA-RbApT5eVMDgVT"
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerPolicy="strict-origin-when-cross-origin"
+                            allowFullScreen
+                            className="h-[400px] w-[550px]"
+                        ></iframe>
+                    </div>
                 </div>
-            </section>
-            <section className="mb-12 flex justify-center gap-8 md:grid-cols-12">
-                <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/b4g3-xmam_g?si=TA-RbApT5eVMDgVT"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                ></iframe>
             </section>
 
             <section className="bg-gradient-to-bl from-slate-200 via-slate-100 to-slate-50 py-12 text-center">
@@ -309,7 +308,7 @@ function HomePage() {
                     </div>
 
                     {/* YouTube Section */}
-                    <div className="mx-2 mb-10 mt-10 rounded-xl bg-blue-950 p-4">
+                    <div className="mx-2 mb-10 mt-10 rounded-lg bg-slate-800 p-4 shadow-lg">
                         <h2 className="mb-4 text-center text-2xl text-white">
                             Social Media
                         </h2>
