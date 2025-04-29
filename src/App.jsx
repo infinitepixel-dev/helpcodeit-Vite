@@ -96,7 +96,9 @@ function App() {
                                             <Suspense
                                                 fallback={<div>Loading...</div>}
                                             >
-                                                <Component {...props} />
+                                                <div className="mt-20">
+                                                    <Component {...props} />
+                                                </div>
                                             </Suspense>
                                         }
                                     />

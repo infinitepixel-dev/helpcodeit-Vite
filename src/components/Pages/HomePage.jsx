@@ -99,7 +99,7 @@ function HomePage() {
                 <div className="p-8 md:p-16" />
                 <div
                     ref={heroRef}
-                    className="grid place-items-center p-8 text-center md:col-span-10 md:p-16"
+                    className="mt-6 grid place-items-center p-8 text-center md:col-span-10 md:p-16"
                 >
                     <p className="mb-2 text-sm font-medium uppercase tracking-wide text-indigo-300">
                         Learning Coding Just Got Easier
