@@ -23,6 +23,7 @@
         "@contentful/rich-text-types": "^17.0.0",
         "@fullcalendar/daygrid": "^6.1.17",
         "@fullcalendar/react": "^6.1.17",
+        "@headlessui/react": "^2.2.4",
         "@ngneat/falso": "^7.3.0",
         "@radix-ui/react-accordion": "^1.2.11",
         "@radix-ui/react-hover-card": "^1.1.14",

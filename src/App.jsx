@@ -10,8 +10,6 @@ import { Routes, Route } from 'react-router-dom'
 import Footer from '@subComponents/Footer'
 import RoutesWithComponents from './Routes/Routes.js'
 import { Helmet } from 'react-helmet-async'
-import BlogPost from './components/Pages/Blog/BlogPost'
-import { BlogProvider } from '@/components/Sub_Components/_BlogAPI' // Correct import for BlogProvider
 import { HelmetProvider } from 'react-helmet-async'
 
 // console.log('RoutesWithComponents: ', RoutesWithComponents)
@@ -37,7 +35,6 @@ const useTheme = () => {
 }
 
 function App() {
-    //NOTE -------END BLOG API CALL
     const theme = useTheme()
     const footerComponent = RoutesWithComponents.find(
         (route) => route.key === 'footer'
@@ -47,82 +44,74 @@ function App() {
     return (
         <HelmetProvider>
             <DarkModeProvider>
-                <BlogProvider>
-                    <div>
-                        <Helmet>
-                            <meta
-                                name="title"
-                                property="og:title"
-                                content="Help Code It"
-                            />
-                            <meta
-                                name="description"
-                                property="og:description"
-                                content="Help Code It is a site for beginning developers that helps you learn how to code."
-                            />
-                            <meta
-                                name="image"
-                                property="og:image"
-                                content="https://www.helpcodeit.com/assets/helpcodeitlogo-CsyqkzOG.svg"
-                            />
-                            <meta
-                                name="url"
-                                property="og:url"
-                                content="https://www.helpcodeit.com"
-                            />
-                            <meta
-                                name="type"
-                                property="og:type"
-                                content="website"
-                            />
-                        </Helmet>
-                        <div className="m-0 w-full p-0">
-                            <Navbar theme={theme} />
-                        </div>
-
-                        <Routes>
-                            {RoutesWithComponents.map(
-                                ({
-                                    path,
-                                    component: Component,
-                                    key,
-                                    props,
-                                }) => (
-                                    <Route
-                                        id={uuidv4()}
-                                        key={uuidv4()}
-                                        path={path}
-                                        element={
-                                            <Suspense
-                                                fallback={<div>Loading...</div>}
-                                            >
-                                                <div className="mt-20">
-                                                    <Component {...props} />
-                                                </div>
-                                            </Suspense>
-                                        }
-                                    />
-                                )
-                            )}
-                            <Route path="/post/:id" element={<BlogPost />} />
-                        </Routes>
-
-                        <div className="m-0 mt-5 w-full p-0">
-                            <Footer />
-                            {footerComponent
-                                ? React.createElement(footerComponent)
-                                : null}
-                        </div>
+                <div>
+                    <Helmet>
+                        <meta
+                            name="title"
+                            property="og:title"
+                            content="Help Code It"
+                        />
+                        <meta
+                            name="description"
+                            property="og:description"
+                            content="Help Code It is a site for beginning developers that helps you learn how to code."
+                        />
+                        <meta
+                            name="image"
+                            property="og:image"
+                            content="https://www.helpcodeit.com/assets/helpcodeitlogo-CsyqkzOG.svg"
+                        />
+                        <meta
+                            name="url"
+                            property="og:url"
+                            content="https://www.helpcodeit.com"
+                        />
+                        <meta
+                            name="type"
+                            property="og:type"
+                            content="website"
+                        />
+                    </Helmet>
+                    <div className="m-0 w-full p-0">
+                        <Navbar theme={theme} />
                     </div>
-                    <button
-                        onClick={() =>
-                            window.scrollTo({ top: 0, behavior: 'smooth' })
-                        }
-                        className="fixed right-5 bottom-12 z-0 rounded-full bg-blue-500 px-4 py-2 text-xs font-bold text-white hover:bg-blue-700"
-                    >
-                        Back to top ↑
-                    </button>
-                </BlogProvider>
+
+                    <Routes>
+                        {RoutesWithComponents.map(
+                            ({ path, component: Component, key, props }) => (
+                                <Route
+                                    id={uuidv4()}
+                                    key={uuidv4()}
+                                    path={path}
+                                    element={
+                                        <Suspense
+                                            fallback={<div>Loading...</div>}
+                                        >
+                                            <div className="mt-15">
+                                                <Component {...props} />
+                                            </div>
+                                        </Suspense>
+                                    }
+                                />
+                            )
+                        )}
+                    </Routes>
+
+                    <div className="m-0 mt-5 w-full p-0">
+                        <Footer />
+                        {footerComponent
+                            ? React.createElement(footerComponent)
+                            : null}
+                    </div>
+                </div>
+                <button
+                    onClick={() =>
+                        window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }
+                    className="fixed right-5 bottom-12 z-0 rounded-full bg-blue-500 px-4 py-2 text-xs font-bold text-white hover:bg-blue-700"
+                >
+                    Back to top ↑
+                </button>
             </DarkModeProvider>
         </HelmetProvider>
     )
