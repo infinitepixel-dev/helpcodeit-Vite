@@ -1,4 +1,3 @@
-// import hljs from 'highlight.js'
 import 'highlight.js/styles/atom-one-dark.css'
 import homebrewlogo from '@assets/homebrew.svg'
 import nodeLogo from '@assets/nodejs.svg'
@@ -7,14 +6,11 @@ import { Helmet } from 'react-helmet-async'
 import CodeBlock from '@/components/Sub_Components/CodeBlock'
 
 function Installs() {
-    // const codeRef = useRef(null)
-
     const homebrew = `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-
     const nodeUsingHomebrew = `brew install node`
 
     return (
-        <div className="container pb-14">
+        <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-200 py-16 dark:from-gray-900 dark:to-gray-600">
             <Helmet>
                 <title>Installations Needed for Front End Developers</title>
                 <meta
@@ -31,196 +27,154 @@ function Installs() {
                     content="front end development, installations, Homebrew, Node.js, Visual Studio Code, Git, GitHub, web development"
                 />
             </Helmet>
-            <div className="container">
-                <h1 className="my-5 text-center text-6xl">
-                    Installations Needed for Front End Developers
-                </h1>
-                <hr className="my-4 border-2 border-black dark:border-white" />
-                <div className="">
-                    <p className="my-4">
-                        As a front end developer, there are a few installations
-                        that you will need to have on your computer in order to
-                        get started. Below are the installations that you will
-                        need to have:
-                    </p>
-                    <ul className="list-inside list-disc font-bold">
-                        <li className="my-4">
-                            <a
-                                href="#homebrew"
-                                className="text-blue-600 underline hover:text-blue-900"
-                            >
-                                Homebrew on Mac
-                            </a>
-                        </li>
-                        <li className="my-4">
-                            <a
-                                href="#Node"
-                                className="text-blue-600 underline hover:text-blue-900"
-                            >
-                                Node.js
-                            </a>
-                        </li>
 
-                        <li className="my-4">
-                            <a
-                                href="#vscode"
-                                className="text-blue-600 underline hover:text-blue-900"
-                            >
-                                Visual Studio Code
-                            </a>
-                        </li>
-                        <li className="my-4">
-                            Git - Typically this will be installed with Homebrew
-                            on Mac or with Node.js on Windows
-                        </li>
-                    </ul>
-                    <p className="my-3">
-                        It is not necessary to install the GitHub desktop app.
-                        There are other ways to interact with GitHub that are
-                        more efficient and will help you learn more about Git
-                        and GitHub.
-                    </p>
-                    <p className="my-4">
-                        In the next few sections, we will go over what each of
-                        these installations are and how to install them.
-                    </p>
-                </div>
-                <div id="homebrew" className="mt-10">
-                    <div className="flex items-center justify-center ">
-                        <img
-                            src={homebrewlogo}
-                            alt="Homebrew Logo"
-                            width="50px"
-                            className="me-2"
-                        />
-                        <h2 className="mukataFont mt-6 text-center text-4xl">
-                            Homebrew (Mac Only)
-                        </h2>
-                    </div>
-                    <hr className="my-4 border-2 border-black dark:border-white" />
-                    <div className="text-xl">
-                        <p className="my-4">
-                            Homebrew is a package manager for macOS. It allows
-                            you to install software packages from the command
-                            line. Homebrew is a great tool for installing
-                            software on your Mac, and it is very easy to use.
+            <div className="mx-auto max-w-4xl px-6">
+                <h1 className="mb-8 text-center text-5xl font-extrabold text-gray-700 dark:text-white">
+                    Essential Installations for Front End Developers
+                </h1>
+
+                <div className="space-y-8">
+                    <section className="rounded-xl bg-white p-6 shadow-md dark:bg-gray-700">
+                        <p className="text-lg text-gray-700 dark:text-gray-300">
+                            As a front end developer, you&apos;ll need to
+                            install a few essential tools to get started:
                         </p>
-                        <p className="my-4">
-                            To install Homebrew, open your terminal and run the
-                            following command:
+                        <ul className="mt-4 list-inside list-disc space-y-2 text-gray-500 dark:text-gray-200">
+                            <li>
+                                <a
+                                    href="#homebrew"
+                                    className="font-semibold hover:text-blue-600"
+                                >
+                                    Homebrew on Mac
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#Node"
+                                    className="font-semibold hover:text-blue-600"
+                                >
+                                    Node.js
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    href="#vscode"
+                                    className="font-semibold hover:text-blue-600"
+                                >
+                                    Visual Studio Code
+                                </a>
+                            </li>
+                            <li>
+                                Git (usually installed with Homebrew or Node.js)
+                            </li>
+                        </ul>
+                        <p className="mt-4 text-gray-600 dark:text-gray-400">
+                            Skip the GitHub Desktop app for now—using Git via
+                            the terminal gives you a deeper understanding.
                         </p>
-                        <pre className="">
-                            <CodeBlock code={homebrew} language="bash" />
-                        </pre>
-                        <p className="my-4">
-                            Once you have run the command, follow the
-                            instructions in the terminal to complete the
-                            installation. Once Homebrew is installed, you can
-                            use it to install other software packages on your
-                            Mac.
-                        </p>
-                        <p>
-                            One major advantage to using Homebrew is that
-                            anything installed with Homebrew is installed in the
-                            /usr/local directory. This means that you can easily
-                            find and manage the software that you have installed
-                            with Homebrew.
-                        </p>
-                        <p>
-                            Another major advantage is that updating software is
-                            as simple as running &apos;brew update&apos; and
-                            &apos;brew upgrade&apos; in your terminal. This will
-                            update all the software that you have installed
-                            using Homebrew.
-                        </p>
-                    </div>
-                    <div className="flex justify-center pt-16">
-                        <img
-                            src={nodeLogo}
-                            alt="Node.js Logo"
-                            className="rounded-md bg-white p-1"
-                            width="200px"
-                            id="Node"
-                        />
-                    </div>
-                    <hr className="my-4 border-2 border-black dark:border-white" />
-                    <div className="text-xl">
-                        <p className="my-4">
-                            Node.js is a JavaScript runtime built on
-                            Chrome&apos;s V8 JavaScript engine. Node.js uses an
-                            event-driven, non-blocking I/O model that makes it
-                            lightweight and efficient. Node.js&apos; package
-                            ecosystem, npm, is the largest ecosystem of open
-                            source libraries in the world.
-                        </p>
-                        <h3 className="text-4xl">
-                            Installing Node.js with Homebrew
-                        </h3>
-                        <p className="my-4">
-                            If you have Homebrew installed, you can use it to
-                            install Node.js. To do this, open your terminal and
-                            run the following command:
-                        </p>
-                        <pre>
-                            <CodeBlock
-                                code={nodeUsingHomebrew}
-                                language="bash"
+                    </section>
+
+                    <section
+                        id="homebrew"
+                        className="rounded-xl bg-white p-6 shadow-md dark:bg-gray-800"
+                    >
+                        <div className="mb-4 flex items-center gap-3">
+                            <img
+                                src={homebrewlogo}
+                                alt="Homebrew Logo"
+                                className="w-10"
                             />
-                        </pre>
-                        <p className="my-4">
-                            Once you have run the command, follow the
-                            instructions in the terminal to complete the
-                            installation. Once Node.js is installed, you can use
-                            it to run JavaScript code on your computer.
+                            <h2 className="text-3xl font-bold">
+                                Homebrew (Mac Only)
+                            </h2>
+                        </div>
+                        <p className="mb-4">
+                            Homebrew is a package manager for macOS, simplifying
+                            the process of installing software via the terminal.
                         </p>
-                        <h3 className="text-4xl">
-                            Installing Node.js without Homebrew (Windows)
+                        <CodeBlock code={homebrew} language="bash" />
+                        <p className="mt-4">
+                            After running the command, follow the terminal
+                            instructions. Homebrew installs tools in{' '}
+                            <code>/usr/local</code> for easy management.
+                        </p>
+                        <p className="mt-2">
+                            To update everything, simply run{' '}
+                            <code>brew update</code> and{' '}
+                            <code>brew upgrade</code>.
+                        </p>
+                    </section>
+
+                    <section
+                        id="Node"
+                        className="rounded-xl bg-white p-6 shadow-md dark:bg-gray-800"
+                    >
+                        <div className="mb-4 flex items-center gap-3">
+                            <img
+                                src={nodeLogo}
+                                alt="Node.js Logo"
+                                className="w-14 rounded-md bg-white p-1"
+                            />
+                            <h2 className="text-3xl font-bold">Node.js</h2>
+                        </div>
+                        <p className="mb-4">
+                            Node.js is a JavaScript runtime built on
+                            Chrome&apos;s V8 engine. It&apos;s essential for
+                            front end devs.
+                        </p>
+                        <h3 className="text-2xl font-semibold">
+                            Install Node.js with Homebrew (Mac)
                         </h3>
-                        <p className="my-4">
-                            To install Node.js, go to the{' '}
+                        <CodeBlock code={nodeUsingHomebrew} language="bash" />
+                        <h3 className="mt-4 text-2xl font-semibold">
+                            Install Node.js without Homebrew (Windows)
+                        </h3>
+                        <p>
+                            Download the latest LTS version from{' '}
                             <a
                                 href="https://nodejs.org/en"
                                 target="_blank"
-                                className="text-blue-600 underline hover:text-blue-900"
                                 rel="noreferrer"
+                                className="text-blue-600 hover:underline"
                             >
-                                {' '}
                                 Node.js website
                             </a>{' '}
-                            and download the LTS version of Node.js. Once you
-                            have downloaded the file, run the installer and
-                            follow the instructions.
+                            and follow the installer instructions.
                         </p>
-                        <div className="mt-14 flex justify-center">
-                            {' '}
+                    </section>
+
+                    <section
+                        id="vscode"
+                        className="rounded-xl bg-white p-6 shadow-md dark:bg-gray-800"
+                    >
+                        <div className="mb-4 flex items-center gap-3">
                             <img
                                 src={vsCodeLogo}
                                 alt="VS Code Logo"
-                                width="50px"
-                                className="me-2"
+                                className="w-10"
                             />
-                            <h3 className="text-4xl">Installing VS Code</h3>
+                            <h2 className="text-3xl font-bold">
+                                Visual Studio Code
+                            </h2>
                         </div>
-                        <hr className="my-4 border-2 border-black dark:border-white" />
-                        <p className="my-4">
-                            To install Visual Studio Code, go to the{' '}
+                        <p>
+                            Download and install Visual Studio Code from the{' '}
                             <a
                                 href="https://code.visualstudio.com"
                                 target="_blank"
-                                className="text-blue-600 underline hover:text-blue-900"
                                 rel="noreferrer"
+                                className="text-blue-600 hover:underline"
                             >
-                                {' '}
-                                Visual Studio Code website
-                            </a>{' '}
-                            and download the version for your operating system.
-                            Once you have downloaded the file, run the installer
-                            and follow the instructions.
+                                official website
+                            </a>
+                            . It&apos;s a powerful, lightweight code editor
+                            that&apos;s perfect for front end development.
                         </p>
-                    </div>
+                    </section>
                 </div>
             </div>
         </div>
     )
 }
+
 export default Installs
