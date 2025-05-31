@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { Youtube } from 'lucide-react'
-import { parseISO, differenceInDays, isAfter } from 'date-fns'
+import { parseISO, isAfter } from 'date-fns'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import events from '@subComponents/Events'
 import YouTubeLiveStream from '@subComponents/YouTubeLiveStream'
@@ -11,14 +12,13 @@ import EventModal from '@subComponents/EventModal/eventModal'
 import CookieConsent from '@subComponents/CookieConsent/CookieConsent'
 
 import './HomePage.css'
+gsap.registerPlugin(ScrollTrigger)
 
 function HomePage() {
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const { VITE_YT_API_KEY_MV, VITE_YT_CHANNEL_ID_MV } = import.meta.env
+    const [showMaintenanceModal, setShowMaintenanceModal] = useState(false)
 
     const heroRef = useRef(null)
-    const videoRef = useRef(null)
-    const postVideoTextRef = useRef(null)
     const cardSectionRef = useRef(null)
 
     const filteredEvents = events.filter((event) =>
@@ -37,6 +37,43 @@ function HomePage() {
         document.cookie = 'seenModal=true; max-age=31536000; path=/'
     }
 
+    useEffect(() => {
+        const maintenanceTimer = setTimeout(() => {
+            setShowMaintenanceModal(true)
+        }, 2000)
+
+        return () => clearTimeout(maintenanceTimer)
+    }, [])
+
+    const closeMaintenanceModal = () => setShowMaintenanceModal(false)
+
+    useEffect(() => {
+        gsap.from(heroRef.current, {
+            opacity: 0,
+            y: 50,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: heroRef.current,
+                start: 'top 80%',
+                once: true,
+            },
+        })
+
+        gsap.from('.fade-in-card', {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            stagger: 0.2,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: cardSectionRef.current,
+                start: 'top 80%',
+                once: true,
+            },
+        })
+    }, [])
+
     return (
         <div>
             {filteredEvents.length > 0 && filteredEvents[0].show && (
@@ -47,6 +84,33 @@ function HomePage() {
                 />
             )}
 
+            {showMaintenanceModal && (
+                <div className="bg-opacity-90 fixed inset-0 z-50 flex items-center justify-center bg-black/80">
+                    <div className="max-w-md rounded-xl bg-white p-6 text-center shadow-lg">
+                        <h2 className="mb-4 text-xl font-bold text-gray-800">
+                            Scheduled Maintenance Notice
+                        </h2>
+                        <p className="mb-4 text-gray-700">
+                            We’re working hard behind the scenes to enhance your
+                            learning experience! Our team is dedicated to
+                            bringing you the best tools and resources to support
+                            your coding journey. Thank you for your patience as
+                            we make improvements—feel free to continue exploring
+                            the site while we work to make it even better!
+                        </p>
+                        <p className="text-sm text-gray-500">
+                            — The HelpCodeIt Team
+                        </p>
+                        <button
+                            onClick={closeMaintenanceModal}
+                            className="mt-4 rounded-full bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+                        >
+                            Close
+                        </button>
+                    </div>
+                </div>
+            )}
+
             <CookieConsent />
 
             <Helmet>
@@ -54,52 +118,82 @@ function HomePage() {
                 <link rel="canonical" href="https://www.helpcodeit.com" />
             </Helmet>
 
-            <section className="grid grid-cols-1 gap-8 bg-gradient-to-b from-slate-600 to-slate-900 md:grid-cols-12">
-                <div className="p-8 md:p-16" />
+            {/* Hero Section */}
+            <section className="relative grid grid-cols-1 overflow-hidden bg-gradient-to-bl from-slate-100 via-slate-200 to-slate-100">
+                <div className="absolute inset-0 bg-gradient-to-tr from-slate-900/70 via-slate-800/70 to-slate-500/70 [clip-path:polygon(0_0,100%_0,100%_90%,0_100%)]"></div>
+                <div className="p-8 md:p-8" />
+
                 <div
                     ref={heroRef}
-                    className="mt-6 grid place-items-center p-8 text-center md:col-span-10 md:p-16"
+                    className="relative z-10 mx-auto max-w-4xl space-y-10 p-4 text-center md:p-20"
                 >
-                    <p className="mb-2 text-sm font-medium uppercase tracking-wide text-indigo-300">
-                        Learning Coding Just Got Easier
-                    </p>
-                    <h1 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
-                        Everyone Gets Impostor Syndrome
-                    </h1>
-                    <p className="mb-8 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
-                        Don't let challenging topics slow you down! Sometimes,
-                        all you need is a little guidance to spark your
-                        progress.
-                    </p>
-                    <p className="mb-8 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
-                        At Help Code It, we empower developers of all skill
-                        levels to thrive. Start learning today – let's code your
-                        future together!
+                    <p className="text-xl font-semibold tracking-wider text-blue-200 uppercase">
+                        100% Free Coding Resources
                     </p>
 
-                    <div
-                        ref={postVideoTextRef}
-                        className="mt-8 max-w-2xl text-center text-gray-200 dark:text-gray-400"
-                    >
-                        <h2 className="mb-4 text-3xl font-bold">
-                            Get Inspired. Get Started.
-                        </h2>
-                        <p className="text-lg">
-                            Learning to code isn't just about memorizing syntax
-                            — it's about building real skills, solving real
-                            problems, and changing your future.
-                        </p>
-                        <p className="mt-4 text-lg">
-                            Embrace the journey. Embrace the challenge. Every
-                            great developer started exactly where you are.
-                        </p>
+                    <h1 className="text-4xl font-bold text-white md:text-5xl">
+                        Learn to Code. Build Your Future. For Free.
+                    </h1>
+
+                    <p className="mx-auto max-w-3xl text-lg text-slate-200">
+                        Whether you're a total beginner or looking to level up,
+                        Help Code It offers clear, step-by-step guidance,
+                        real-world projects, and a supportive community—at no
+                        cost to you.
+                    </p>
+
+                    <div className="mt-12 grid grid-cols-1 gap-8 text-left md:grid-cols-2">
+                        <div className="space-y-6">
+                            <h2 className="text-2xl font-bold text-blue-200">
+                                Why Learn with Us?
+                            </h2>
+                            <ul className="list-inside list-disc space-y-3 text-slate-200">
+                                <li>Beginner-friendly tutorials and guides</li>
+                                <li>Real-world coding challenges & projects</li>
+                                <li>Active community via YouTube & Discord</li>
+                                <li>Motivation and mindset coaching</li>
+                                <li>Fresh content and updates—always free</li>
+                            </ul>
+                        </div>
+
+                        <div className="space-y-6">
+                            <h2 className="text-2xl font-bold text-blue-200">
+                                What You'll Gain
+                            </h2>
+                            <ul className="list-inside list-disc space-y-3 text-slate-200">
+                                <li>Confidence in your coding abilities</li>
+                                <li>A portfolio of real-world projects</li>
+                                <li>
+                                    Support from a passionate learning community
+                                </li>
+                                <li>
+                                    Resources to keep learning at your own pace
+                                </li>
+                                <li>
+                                    A clear roadmap to becoming a skilled
+                                    developer
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+
+                    <Link
+                        to="/resources"
+                        className="inline-block rounded-full bg-blue-600 px-8 py-4 text-lg font-bold text-white transition-transform hover:scale-105 hover:bg-blue-700"
+                    >
+                        Start Learning Now
+                    </Link>
+
+                    <p className="mt-4 text-2xl font-semibold text-blue-950 uppercase">
+                        No fees. No signups. Just free learning, forever!
+                    </p>
                 </div>
             </section>
 
+            {/* Cards Section */}
             <section
                 ref={cardSectionRef}
-                className="bg-gradient-to-bl from-slate-200 via-slate-100 to-slate-50 py-12 text-center"
+                className="relative bg-gradient-to-bl from-slate-200 via-slate-100 to-slate-50 py-16 text-center"
             >
                 <div className="container mx-auto max-w-screen-lg px-4">
                     <h2 className="mb-6 text-4xl font-extrabold text-gray-900">
@@ -145,7 +239,7 @@ function HomePage() {
                         ].map(({ title, desc, link }, idx) => (
                             <div
                                 key={idx}
-                                className="rounded-lg bg-white p-6 shadow-lg transition-shadow hover:shadow-blue-500"
+                                className="fade-in-card rounded-lg bg-white p-6 shadow-lg transition-transform hover:scale-105 hover:shadow-blue-500"
                             >
                                 <h3 className="mb-4 text-2xl font-semibold text-gray-800">
                                     {title}
@@ -153,7 +247,7 @@ function HomePage() {
                                 <p className="mb-4 text-gray-600">{desc}</p>
                                 <Link
                                     to={link}
-                                    className="inline-block font-bold text-blue-600"
+                                    className="inline-block font-bold text-blue-600 hover:underline"
                                 >
                                     Learn More
                                 </Link>
@@ -171,46 +265,10 @@ function HomePage() {
                         </p>
                         <Link
                             to="/fundamentals/WebDesignPrincipals"
-                            className="mt-6 inline-block rounded-full bg-blue-600 px-6 py-3 text-lg font-semibold text-white transition-colors hover:bg-blue-700"
+                            className="mt-6 inline-block rounded-full bg-blue-600 px-6 py-3 text-lg font-semibold text-white transition-transform hover:scale-105 hover:bg-blue-700"
                         >
                             Start with Web Design Principles
                         </Link>
-                    </div>
-                </div>
-            </section>
-
-            <section className="container mx-auto mt-16 max-w-screen-lg px-4">
-                <hr className="border-1 mb-8 border-gray-300" />
-                <div className="grid grid-cols-1 md:grid-cols-1">
-                    <div className="mx-2 mb-10 mt-10 rounded-lg bg-slate-800 p-4 shadow-lg">
-                        <h2 className="mb-4 text-center text-2xl text-white">
-                            Social Media
-                        </h2>
-                        <div className="mb-6 overflow-hidden rounded-xl">
-                            <YouTubeLiveStream
-                                apiKey={VITE_YT_API_KEY_MV}
-                                channelId={VITE_YT_CHANNEL_ID_MV}
-                            />
-                        </div>
-                        <div className="mb-4 grid justify-center gap-4">
-                            <a
-                                href="https://www.youtube.com/@HelpCodeIt"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex w-80 items-center justify-center rounded-full bg-red-600 p-4 font-bold text-white transition hover:-translate-y-1 hover:bg-red-700"
-                            >
-                                <Youtube size={24} className="mr-3" /> Visit our
-                                YouTube Channel
-                            </a>
-                            <a
-                                href="https://discord.gg/sDtKwcuK3J"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex w-80 items-center justify-center rounded-full bg-indigo-600 p-4 font-bold text-white transition hover:-translate-y-1 hover:bg-indigo-700"
-                            >
-                                Join us on Discord
-                            </a>
-                        </div>
                     </div>
                 </div>
             </section>

@@ -50,6 +50,7 @@ export const componentRoutes = [
   { path: '/', componentPath: '../components/Pages/HomePage.jsx', key: 'home' },
   { path: '/about', componentPath: '../components/Pages/About.jsx', key: 'about' },
   { path: '/contact', componentPath: '../components/Pages/Contact.jsx', key: 'contact' },
+  { path: '/resources', componentPath: '../components/Pages/Resources.jsx', key: 'resources' },
   { path: '/fundamentals/installs', componentPath: '../components/Pages/fundamentals/Installs.jsx', key: 'installs' },
   { path: '/fundamentals/files', componentPath: '../components/Pages/fundamentals/Files.jsx', key: 'files' },
   { path: '/miscpages/rubberducky', componentPath: '../components/Pages/MiscPages/RubberDucky.jsx', key: 'rubberducky' },

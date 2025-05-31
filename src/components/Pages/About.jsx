@@ -46,7 +46,7 @@ function About() {
                     About Us
                 </h1>
 
-                <div className="mx-auto mb-16 max-w-3xl text-center text-gray-200">
+                <div className="mx-auto mb-16 max-w-3xl text-center text-blue-950">
                     <p className="mb-4">
                         Help Code It is a platform dedicated to teaching
                         JavaScript and web development technologies. Built with
@@ -74,10 +74,10 @@ function About() {
                                 className="mb-6 h-48 w-48 rounded-full object-cover"
                                 aria-label={`Photo of ${member.name}`}
                             />
-                            <h2 className="mb-4 text-2xl font-bold text-gray-800">
+                            <h2 className="mb-4 text-2xl font-bold text-blue-950">
                                 {member.name}
                             </h2>
-                            <p className="text-center text-base font-normal text-gray-600">
+                            <p className="text-center text-base font-normal text-blue-950">
                                 {member.bio}
                             </p>
                         </div>

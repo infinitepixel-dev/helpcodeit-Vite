@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef, useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import logo from '@assets/helpcodeitlogo.svg'
 import { navItems } from '../../Routes/Routes'
-// import { BlogContext } from '@subComponents/BlogAPI'
 import { gsap } from 'gsap'
 import './Navbar.module.css'
 
@@ -12,8 +11,6 @@ const Navbar = ({ theme }) => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 960)
     const mobileMenuRef = useRef(null)
     const beaconRef = useRef(null)
-
-    // const { posts } = useContext(BlogContext)
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 960)
@@ -123,7 +120,7 @@ const Navbar = ({ theme }) => {
     }
 
     return (
-        <nav className="fixed left-0 right-0 top-0 z-50 bg-neutral-900 dark:bg-gray-900">
+        <nav className="fixed top-0 right-0 left-0 z-50 bg-neutral-900 dark:bg-gray-900">
             <div className="container mx-auto flex items-center justify-between px-3 py-4">
                 <div className="flex items-center space-x-3">
                     <img
