@@ -1,14 +1,11 @@
-import { useContext, useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import { Youtube } from 'lucide-react'
 import { parseISO, differenceInDays, isAfter } from 'date-fns'
 import { gsap } from 'gsap'
 
-//INFO sub Components
-// import { BlogContext } from '@subComponents/BlogAPI'
 import events from '@subComponents/Events'
-// import BlogPostLists from '@subComponents/BlogViews/BlogPostLists'
 import YouTubeLiveStream from '@subComponents/YouTubeLiveStream'
 import EventModal from '@subComponents/EventModal/eventModal'
 import CookieConsent from '@subComponents/CookieConsent/CookieConsent'
@@ -17,7 +14,6 @@ import './HomePage.css'
 
 function HomePage() {
     const [isModalOpen, setIsModalOpen] = useState(false)
-    // const { posts } = useContext(BlogContext) || {}
     const { VITE_YT_API_KEY_MV, VITE_YT_CHANNEL_ID_MV } = import.meta.env
 
     const heroRef = useRef(null)
@@ -36,47 +32,10 @@ function HomePage() {
         if (!hasSeenModal && filteredEvents.length > 0) setIsModalOpen(true)
     }, [filteredEvents.length])
 
-    useEffect(() => {
-        gsap.from(heroRef.current, {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            ease: 'power3.out',
-        })
-        gsap.from(videoRef.current, {
-            opacity: 0,
-            y: 30,
-            duration: 1,
-            delay: 0.5,
-            ease: 'power3.out',
-        })
-        gsap.from(postVideoTextRef.current, {
-            opacity: 0,
-            y: 20,
-            duration: 1,
-            delay: 1,
-            ease: 'power3.out',
-        })
-        gsap.from(cardSectionRef.current, {
-            opacity: 0,
-            y: 50,
-            duration: 1,
-            delay: 1.5,
-            ease: 'power3.out',
-        })
-    }, [])
-
     const handleCloseModal = () => {
         setIsModalOpen(false)
         document.cookie = 'seenModal=true; max-age=31536000; path=/'
     }
-
-    // if (!posts) {
-    //     console.error(
-    //         'BlogContext is undefined. Make sure HomePage is wrapped in BlogProvider.'
-    //     )
-    //     return null
-    // }
 
     return (
         <div>
@@ -118,7 +77,6 @@ function HomePage() {
                         future together!
                     </p>
 
-                    {/* Text Below Video */}
                     <div
                         ref={postVideoTextRef}
                         className="mt-8 max-w-2xl text-center text-gray-200 dark:text-gray-400"
@@ -223,8 +181,7 @@ function HomePage() {
 
             <section className="container mx-auto mt-16 max-w-screen-lg px-4">
                 <hr className="border-1 mb-8 border-gray-300" />
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                    <div>{/* <BlogPostLists posts={posts} /> */}</div>
+                <div className="grid grid-cols-1 md:grid-cols-1">
                     <div className="mx-2 mb-10 mt-10 rounded-lg bg-slate-800 p-4 shadow-lg">
                         <h2 className="mb-4 text-center text-2xl text-white">
                             Social Media
@@ -235,12 +192,12 @@ function HomePage() {
                                 channelId={VITE_YT_CHANNEL_ID_MV}
                             />
                         </div>
-                        <div className="mb-4 grid gap-4">
+                        <div className="mb-4 grid justify-center gap-4">
                             <a
                                 href="https://www.youtube.com/@HelpCodeIt"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center rounded-full bg-red-600 px-6 py-3 font-bold text-white transition hover:-translate-y-1 hover:bg-red-700"
+                                className="inline-flex w-80 items-center justify-center rounded-full bg-red-600 p-4 font-bold text-white transition hover:-translate-y-1 hover:bg-red-700"
                             >
                                 <Youtube size={24} className="mr-3" /> Visit our
                                 YouTube Channel
@@ -249,7 +206,7 @@ function HomePage() {
                                 href="https://discord.gg/sDtKwcuK3J"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center rounded-full bg-indigo-600 px-6 py-3 font-bold text-white transition hover:-translate-y-1 hover:bg-indigo-700"
+                                className="inline-flex w-80 items-center justify-center rounded-full bg-indigo-600 p-4 font-bold text-white transition hover:-translate-y-1 hover:bg-indigo-700"
                             >
                                 Join us on Discord
                             </a>
