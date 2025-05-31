@@ -6,9 +6,9 @@ import { parseISO, differenceInDays, isAfter } from 'date-fns'
 import { gsap } from 'gsap'
 
 //INFO sub Components
-import { BlogContext } from '@subComponents/BlogAPI'
+// import { BlogContext } from '@subComponents/BlogAPI'
 import events from '@subComponents/Events'
-import BlogPostLists from '@subComponents/BlogViews/BlogPostLists'
+// import BlogPostLists from '@subComponents/BlogViews/BlogPostLists'
 import YouTubeLiveStream from '@subComponents/YouTubeLiveStream'
 import EventModal from '@subComponents/EventModal/eventModal'
 import CookieConsent from '@subComponents/CookieConsent/CookieConsent'
@@ -17,7 +17,7 @@ import './HomePage.css'
 
 function HomePage() {
     const [isModalOpen, setIsModalOpen] = useState(false)
-    const { posts } = useContext(BlogContext) || {}
+    // const { posts } = useContext(BlogContext) || {}
     const { VITE_YT_API_KEY_MV, VITE_YT_CHANNEL_ID_MV } = import.meta.env
 
     const heroRef = useRef(null)
@@ -71,12 +71,12 @@ function HomePage() {
         document.cookie = 'seenModal=true; max-age=31536000; path=/'
     }
 
-    if (!posts) {
-        console.error(
-            'BlogContext is undefined. Make sure HomePage is wrapped in BlogProvider.'
-        )
-        return null
-    }
+    // if (!posts) {
+    //     console.error(
+    //         'BlogContext is undefined. Make sure HomePage is wrapped in BlogProvider.'
+    //     )
+    //     return null
+    // }
 
     return (
         <div>
@@ -224,9 +224,7 @@ function HomePage() {
             <section className="container mx-auto mt-16 max-w-screen-lg px-4">
                 <hr className="border-1 mb-8 border-gray-300" />
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-                    <div>
-                        <BlogPostLists posts={posts} />
-                    </div>
+                    <div>{/* <BlogPostLists posts={posts} /> */}</div>
                     <div className="mx-2 mb-10 mt-10 rounded-lg bg-slate-800 p-4 shadow-lg">
                         <h2 className="mb-4 text-center text-2xl text-white">
                             Social Media

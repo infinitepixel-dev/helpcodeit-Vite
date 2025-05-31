@@ -11,7 +11,7 @@ import Footer from '@subComponents/Footer'
 import RoutesWithComponents from './Routes/Routes.js'
 import { Helmet } from 'react-helmet-async'
 import BlogPost from './components/Pages/Blog/BlogPost'
-import { BlogProvider } from '@subComponents/BlogAPI' // Correct import for BlogProvider
+import { BlogProvider } from '@/components/Sub_Components/_BlogAPI' // Correct import for BlogProvider
 import { HelmetProvider } from 'react-helmet-async'
 
 // console.log('RoutesWithComponents: ', RoutesWithComponents)
