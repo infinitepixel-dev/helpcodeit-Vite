@@ -118,7 +118,7 @@ function App() {
                         onClick={() =>
                             window.scrollTo({ top: 0, behavior: 'smooth' })
                         }
-                        className="fixed bottom-12 right-5 z-0 rounded-full bg-blue-500 px-4 py-2 text-xs font-bold text-white hover:bg-blue-700"
+                        className="fixed right-5 bottom-12 z-0 rounded-full bg-blue-500 px-4 py-2 text-xs font-bold text-white hover:bg-blue-700"
                     >
                         Back to top ↑
                     </button>
